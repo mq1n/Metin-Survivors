@@ -84,7 +84,7 @@ content/            Model & icon production rosters
 | Durable Object | `CoopRoom` (`new_sqlite_classes`, tag `v1`) | Hibernating WebSocket relay (one object per active room) |
 | Rate Limiters | `RL_IP` (`1001`), `RL_PLAYER` (`1002`) | Zero-D1-write edge flood protection (120/min IP, 60/min player) |
 
-The browser talks only to the Pages origin (`https://metin-survivors.pages.dev`). `apps/game/public/_routes.json` routes **only** `/api/*` (including co-op WebSockets) to the Pages Function, which forwards to `metin-survivors-api` over the `API` Service Binding (zero CORS preflights, single-request billing). Every other path is served as a free static asset with `apps/game/public/_headers` (`immutable` 1-year caching for content-hashed `/assets/*`, `no-cache` for `index.html` and manifests, strict CSP). If the API is unreachable, the client stays playable offline and queues runs locally.
+The browser talks only to the Pages origin (`https://metin-survivors.com`). `apps/game/public/_routes.json` routes **only** `/api/*` (including co-op WebSockets) to the Pages Function, which forwards to `metin-survivors-api` over the `API` Service Binding (zero CORS preflights, single-request billing). Every other path is served as a free static asset with `apps/game/public/_headers` (`immutable` 1-year caching for content-hashed `/assets/*`, `no-cache` for `index.html` and manifests, strict CSP). If the API is unreachable, the client stays playable offline and queues runs locally.
 
 ### First-Time Account Setup
 

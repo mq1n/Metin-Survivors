@@ -38,6 +38,7 @@ const API = path.join(ROOT, 'workers', 'api');
 export const NAMES = {
   pagesProject: 'metin-survivors',
   pagesOrigin: 'https://metin-survivors.pages.dev',
+  customOrigin: 'https://metin-survivors.com',
   worker: 'metin-survivors-api',
   d1: 'metin-survivors-db',
   r2: 'metin-survivors-blobs',
@@ -541,13 +542,13 @@ const STEPS: Step[] = [
     title: 'Smoke test (read-only): site + headers + /api/v1/health through the proxy',
     remote: true,
     plan: (ctx) => {
-      const origin = ctx.opts.preview ? '<preview alias>' : NAMES.pagesOrigin;
+      const origin = ctx.opts.preview ? '<preview alias>' : NAMES.customOrigin;
       return ctx.opts.preview
         ? [`GET ${origin}/ (new index.html + Content-Security-Policy)`, `GET ${origin}/api/v1/health (503 unavailable: preview isolated from production backend)`]
         : [`GET ${origin}/ (new index.html + Content-Security-Policy)`, `GET ${origin}/api/v1/health (200, ok: true)`];
     },
     async run(ctx) {
-      const origin = ctx.opts.preview ? (ctx.pagesAlias ?? ctx.pagesUrl) : NAMES.pagesOrigin;
+      const origin = ctx.opts.preview ? (ctx.pagesAlias ?? ctx.pagesUrl) : NAMES.customOrigin;
       if (!origin) fail('no deployment URL to test');
       const built = readFileSync(path.join(ctx.opts.outDir, 'index.html'), 'utf8').match(/assets\/index-[\w-]+\.js/)?.[0];
       let lastError = '';
@@ -730,7 +731,7 @@ async function main(): Promise<number> {
     console.log(yellow(bold(`\nINCOMPLETE — skipped: ${[...opts.skip].join(', ')}. This is not a green release check.`)));
     return 2;
   }
-  const deployedTarget = opts.preview ? (ctx.pagesAlias ?? ctx.pagesUrl ?? '<preview>') : NAMES.pagesOrigin;
+  const deployedTarget = opts.preview ? (ctx.pagesAlias ?? ctx.pagesUrl ?? '<preview>') : NAMES.customOrigin;
   console.log(green(bold(opts.mode === 'deploy' ? `\nDeployed: ${deployedTarget}` : '\nAll local gates passed.')));
   return 0;
 }

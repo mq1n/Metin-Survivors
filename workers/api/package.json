@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev --local --var \"ALLOWED_ORIGINS:https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev,http://localhost:*,http://127.0.0.1:*\"",
+    "dev": "wrangler dev --local --var \"ALLOWED_ORIGINS:https://metin-survivors.com,https://www.metin-survivors.com,https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev,http://localhost:*,http://127.0.0.1:*\"",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p . && tsc --noEmit -p tsconfig.pages.json",
     "e2e": "bun scripts/e2e.ts",

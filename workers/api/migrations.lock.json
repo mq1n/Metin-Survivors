@@ -1,4 +1,17 @@
 {
   "database": "metin-survivors-db",
-  "applied": {}
+  "applied": {
+    "0001_init.sql": {
+      "sha256": "8a93f2fad48af82b78d2914727f4291a25e18b42d38d0b6da6bafba8e6fc8c2a",
+      "appliedAt": "2026-11-26T08:16:54.059Z"
+    },
+    "0002_coop_boards.sql": {
+      "sha256": "33320b24f0b6766d4673843d6c214eb61a8c83789be7867cbb4c8b1ac36c42bf",
+      "appliedAt": "2026-11-26T08:16:54.059Z"
+    },
+    "0003_save_blob_and_cron.sql": {
+      "sha256": "ac9ddda921816925f03fdb165de8ae8f2b5f18a2de52eb592fe3a32299304663",
+      "appliedAt": "2026-11-26T08:16:54.059Z"
+    }
+  }
 }

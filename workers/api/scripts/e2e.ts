@@ -50,7 +50,7 @@ const api = `${base}/api/v1`;
 const stateDir = path.join(root, '.wrangler', 'e2e-state');
 const ORIGIN = process.env.E2E_ORIGIN ?? 'http://localhost:5173';
 /** Production allows the Pages origins only (wrangler.toml); dev servers add localhost on any port (as `bun run dev`). */
-const DEV_ALLOWED_ORIGINS = 'https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev,http://localhost:*,http://127.0.0.1:*';
+const DEV_ALLOWED_ORIGINS = 'https://metin-survivors.com,https://www.metin-survivors.com,https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev,http://localhost:*,http://127.0.0.1:*';
 
 let steps = 0;
 function ok(label: string, detail?: unknown): void {

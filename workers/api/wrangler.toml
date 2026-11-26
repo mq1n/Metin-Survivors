@@ -19,7 +19,7 @@ port = 18686
 # Comma separated browser origins allowed by CORS / WebSocket Origin checks: exact origins, `https://*.host` (one
 # subdomain level: preview/branch aliases) and `http://host:*` (any port; dev only). Production allows the Pages project
 # only — add a custom domain here when one is attached. `bun run --cwd workers/api dev` (and the tests/e2e) add localhost.
-ALLOWED_ORIGINS = "https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev"
+ALLOWED_ORIGINS = "https://metin-survivors.com,https://www.metin-survivors.com,https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev"
 # Client versions accepted by POST /runs (exact, or a trailing `*` wildcard such as 1.*).
 ALLOWED_CLIENT_VERSIONS = "1.1.*"
 # Edge-cache shared leaderboard pages (seconds) to keep D1 reads minimal under traffic spikes.

@@ -61,7 +61,13 @@ describe('edge: errors, headers, CORS', () => {
   });
 
   it('applies the production origin allow-list (wrangler.toml) to every request', async () => {
-    const allowed = ['https://metin-survivors.pages.dev', 'https://abc123.metin-survivors.pages.dev', 'https://master.metin-survivors.pages.dev'];
+    const allowed = [
+      'https://metin-survivors.com',
+      'https://www.metin-survivors.com',
+      'https://metin-survivors.pages.dev',
+      'https://abc123.metin-survivors.pages.dev',
+      'https://master.metin-survivors.pages.dev',
+    ];
     for (const origin of allowed) {
       const res = await call('/health', { headers: { origin } });
       expect(res.status, origin).toBe(200);
