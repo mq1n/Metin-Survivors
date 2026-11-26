@@ -1,0 +1,91 @@
+# Metin Survivors — Complete Reference (`llms-full.txt`)
+
+> Metin Survivors is a free-to-play, zero-install 3D browser action roguelite (survivors-like) built for WebGL2. Play solo or team up with up to 4 players in real-time online co-op to survive relentless enemy waves, shatter corrupted Metin stones, defeat 20 bosses across 4 zones, and unlock permanent upgrades.
+
+- **Canonical URL:** https://metin-survivors.com/
+- **Summary file:** https://metin-survivors.com/llms.txt
+- **Sitemap:** https://metin-survivors.com/sitemap.xml
+- **Supported Languages:** Turkish (`tr`), English (`en`)
+- **Pricing:** Free-to-play (no download, no installation)
+- **Genre Classification:** Action Roguelite (not strict roguelike — features persistent cross-run meta-progression)
+
+---
+
+## Türkçe Özet
+
+Metin Survivors, tarayıcı üzerinden kurulum gerektirmeden doğrudan oynanabilen ücretsiz bir 3D aksiyon roguelite (survivors-like) hayatta kalma oyunudur.
+Oyuncular 5 farklı sınıf ve 10 doktrinden birini seçerek 4 farklı bölgede düşman dalgalarına karşı koyar, haritaya düşen Metin taşlarını kırar ve 20 patrona karşı mücadele eder.
+Tek oyunculu modun yanı sıra oda koduyla en fazla 4 kişiye kadar gerçek zamanlı çevrimiçi co-op, bulut kaydı, haftalık/sınıf/co-op skor tabloları ve kalıcı meta-ilerleme (Yetenekler, Cephanelik, Demirci, Koleksiyon, Kodeks) içerir.
+
+---
+
+## Playable Hero Classes & Doctrines (5 Classes, 10 Doctrines)
+
+Each hero class has two specialized doctrines that shape active skills, scaling, and combat identity:
+
+1. **Warrior / Savaşçı**
+   - **Sinew (`Kuvvet`):** Heavy melee vanguard focused on close-range cleave, physical burst, and frontline pressure.
+   - **Spirit (`Ruh`):** Disciplined sword-aura specialist combining sweeping area strikes with durable defensive tempo.
+2. **Ninja**
+   - **Silent Edge (`Sessiz Bıçak`):** High-mobility melee assassin specializing in rapid dashes, critical strikes, and close-quarters agility.
+   - **Quiver (`Sadak`):** Ranged marksman firing piercing volleys, arrow spreads, and mobile kiting salvos.
+3. **Yacha**
+   - **Spellsteel (`Büyü Çeliği`):** Hybrid blade-caster weaving enchanted sword arcs with arcane sustain.
+   - **Hexcraft (`Lanet Sanatı`):** Dark-magic specialist chaining curses, area-of-effect hex zones, and damage-over-time bursts.
+4. **Shaman / Şaman**
+   - **Talisman (`Tılsım`):** Elemental caster unleashing talisman barrages, lightning/flame sigils, and battlefield control.
+   - **Stormbalm (`Bora Merhemi`):** Support-oriented storm weaver pairing restorative utility and shields with storm pressure — especially valuable in 4-player co-op.
+5. **Wolfman**
+   - **Redmane (`Kızıl Yele`):** Ferocious melee brawler built around savage claws, bleed pressure, and relentless aggression.
+   - **Moonmane (`Ay Yelesi`):** Lunar-attuned feral striker blending agile lunges with spirit-infused area bursts.
+
+---
+
+## World Zones (4 Zones)
+
+1. **Yeonmu Plains (`Yeonmu Ovası`)** — Open frontier lowlands introducing core wave pacing, Metin stone drops, and early bosses.
+2. **Suryeon Valley (`Suryeon Vadisi`)** — Rugged valley terrain with denser enemy formations and escalating elite encounters.
+3. **Mount Seori (`Seori Dağı`)** — High-altitude frozen peaks with harsher hazards, tougher enemy archetypes, and high-tier boss fights.
+4. **Daeryeol (`Daeryeol`)** — Endgame volcanic/corrupted battleground designed to test maximized builds and coordinated co-op parties.
+
+---
+
+## Core Gameplay & Systems
+
+- **Waves, Metin Stones & Corruption:** Enemies arrive in escalating waves while burning Metin stones crash into the arena. Breaking Metin stones triggers risk-reward encounters, loot drops, and progression spikes.
+- **114 Skills & Build Crafting:** Level up during runs to draft, upgrade, and synergize class skills, doctrine abilities, and passives.
+- **20 Boss Encounters:** Multi-phase boss fights with telegraphed attacks and zone milestones.
+- **Combat Modes:** Supports both manual aiming/casting (mouse/keyboard) and optional auto-combat toggles for relaxed or mobile play.
+- **Roguelite Meta-Progression:**
+  - **Talents (`Yetenekler`):** Permanent stat and utility upgrades unlocked across runs.
+  - **Armory (`Cephanelik`):** Unlockable and equippable gear loadouts.
+  - **Blacksmith (`Demirci`):** Equipment enhancement and upgrading.
+  - **Collection (`Koleksiyon`):** Long-term completion milestones and bonuses.
+  - **Codex (`Kodeks`):** In-game encyclopedia tracking enemies, bosses, items, and discoveries.
+- **Online Co-op (1–4 Players):** Create or join a room with a short room code; real-time synchronized simulation over WebSockets with party revive/team play and dedicated co-op leaderboards.
+- **Cloud Save & Leaderboards:** Instant local save with optional cloud sync and verified global leaderboards (solo, co-op, weekly, and per-class rankings).
+
+---
+
+## Controls & Platform Support
+
+- **Desktop:** `WASD` or Arrow keys to move, mouse aim + click to attack/cast, hotkeys for active skills and dash/dodge, optional Auto-Attack / Auto-Skill toggle.
+- **Mobile & Touch:** On-screen virtual joystick and responsive portrait/landscape HUD.
+- **Gamepad / Controller:** Supported for movement, menus, and combat.
+- **Technical Stack:** 3D WebGL2 rendering (Three.js) served via Cloudflare global CDN, with real-time co-op rooms and cloud saves powered by Cloudflare Workers, Durable Objects, D1, and R2.
+
+---
+
+## Frequently Asked Questions
+
+**Is Metin Survivors free to play?**
+Yes. It is completely free to play in your browser with no download or installation.
+
+**Is Metin Survivors a roguelite or a roguelike?**
+It is an action roguelite (survivors-like). Individual runs start fresh with randomized skill drafts, while permanent meta-progression carries over between runs via Talents, Armory, Blacksmith, Collection, and Codex.
+
+**Can I play Metin Survivors with friends?**
+Yes. Up to 4 players can play together in real-time online co-op using a shareable room code.
+
+**Which browsers and devices work best?**
+Any modern Chromium, Firefox, or Safari browser with WebGL2 enabled on Windows, macOS, Linux, iOS, or Android. It can also be installed as a Progressive Web App (PWA).

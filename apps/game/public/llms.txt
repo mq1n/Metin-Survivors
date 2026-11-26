@@ -1,0 +1,28 @@
+# Metin Survivors
+
+> Free-to-play 3D browser action roguelite (survivors-like) playable instantly with zero install on desktop and mobile browsers (WebGL2). Supports solo runs and real-time 1–4 player online co-op, cloud save sync, global leaderboards, and full Turkish (`tr`) + English (`en`) localization.
+
+- Live URL: https://metin-survivors.com/
+- Genre: 3D Action Roguelite / Survivors-like / Hack-and-Slash / Online Co-op
+- Platform: Modern Web Browsers (WebGL2, Three.js — Desktop & Mobile, PWA-installable)
+- Cost: Free-to-play, no download, no account required to start playing
+- Languages: Turkish (Türkçe), English
+
+## Key Content
+
+- **5 Playable Hero Classes (10 Doctrines):**
+  - Warrior / Savaşçı: Sinew (`Kuvvet`), Spirit (`Ruh`)
+  - Ninja: Silent Edge (`Sessiz Bıçak`), Quiver (`Sadak`)
+  - Yacha: Spellsteel (`Büyü Çeliği`), Hexcraft (`Lanet Sanatı`)
+  - Shaman / Şaman: Talisman (`Tılsım`), Stormbalm (`Bora Merhemi`)
+  - Wolfman: Redmane (`Kızıl Yele`), Moonmane (`Ay Yelesi`)
+- **4 Zones:** Yeonmu Plains (`Yeonmu Ovası`), Suryeon Valley (`Suryeon Vadisi`), Mount Seori (`Seori Dağı`), Daeryeol (`Daeryeol`)
+- **Scale:** 20 bosses, 114 skills, Metin stone corruption risk-reward events, manual aim + auto-combat modes
+- **Multiplayer:** 1–4 player online co-op via shareable room codes with dedicated co-op leaderboards
+- **Meta-Progression (Roguelite):** Talents, Armory, Blacksmith, Collection, and Codex persisted locally and via optional cloud save
+
+## Documentation & Discovery
+
+- [Full Game Reference (llms-full.txt)](https://metin-survivors.com/llms-full.txt): Complete bilingual reference covering classes, doctrines, zones, mechanics, controls, co-op, and FAQ.
+- [XML Sitemap](https://metin-survivors.com/sitemap.xml): Canonical URL and localized alternate links.
+- [Web App Manifest](https://metin-survivors.com/manifest.webmanifest): PWA installation metadata and icons.

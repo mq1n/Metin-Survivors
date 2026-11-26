@@ -1,11 +1,15 @@
 {
   "name": "Metin Survivors",
   "short_name": "Metin Survivors",
-  "description": "Fast-paced browser survival game: pick a hero, hold out against the waves, break the Metin stones, beat the bosses.",
+  "description": "Free-to-play 3D browser action roguelite: choose from 5 hero classes and 10 doctrines, survive waves across 4 zones, shatter Metin stones, and defeat 20 bosses solo or in 4-player online co-op.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
+  "lang": "tr",
+  "dir": "ltr",
+  "categories": ["games", "action", "entertainment"],
   "display": "standalone",
+  "display_override": ["fullscreen", "standalone", "minimal-ui"],
   "orientation": "any",
   "background_color": "#120d0a",
   "theme_color": "#120d0a",
@@ -27,6 +31,15 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Metin Survivors — 3D Browser Action Roguelite & 4-Player Co-op"
     }
   ]
 }

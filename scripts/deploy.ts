@@ -639,9 +639,9 @@ function checkSite(ctx: Context): string {
     if (/sourceMappingURL=/.test(readFileSync(f, 'utf8').slice(-400))) fail(`${toPosix(path.relative(dir, f))} references a source map`);
   }
 
-  // index.html: no inline scripts (the CSP has no 'unsafe-inline' for scripts), entry chunk is hashed
+  // index.html: no executable inline scripts (the CSP has no 'unsafe-inline' for scripts; JSON-LD data blocks are non-executable), entry chunk is hashed
   const html = readFileSync(path.join(dir, 'index.html'), 'utf8');
-  if (/<script(?![^>]*\bsrc=)[^>]*>/i.test(html)) fail('index.html has an inline <script>: the CSP blocks it');
+  if (/<script(?![^>]*\bsrc=)(?![^>]*\btype=["']application\/ld\+json["'])[^>]*>/i.test(html)) fail('index.html has an inline <script>: the CSP blocks it');
   if (!/<script[^>]+src="\/assets\/index-[\w-]+\.js"/.test(html)) fail('index.html does not load a hashed /assets/index-*.js entry');
 
   // CSP: an absolute VITE_API_BASE (e.g. the workers.dev URL) must be allowed by connect-src

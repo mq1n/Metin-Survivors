@@ -32,11 +32,12 @@ const ALLOWED_EXTS = new Set([
   '.webmanifest',
   '.webp',
   '.woff2',
+  '.xml',
 ]);
 
 const ALLOWED_EXTENSIONLESS = new Set(['_headers', '_redirects']);
 
-const TEXT_EXTS = new Set(['.js', '.mjs', '.cjs', '.css', '.html', '.json', '.svg', '.txt', '.webmanifest']);
+const TEXT_EXTS = new Set(['.js', '.mjs', '.cjs', '.css', '.html', '.json', '.svg', '.txt', '.webmanifest', '.xml']);
 
 // Reject leaked developer machine paths in shipped assets or GLB JSON chunks.
 const HOST_PATH_RE = /(?:[A-Za-z]:\\(?:Users|Git)\\|\/(?:Users|home)\/[A-Za-z0-9._-]+\/|file:\/\/\/)/;
