@@ -1,7 +1,10 @@
 // Bootstrap. Production: boot the App state machine. DEV: ?demo=<name> / ?bench=<name> route to src/dev/demos/*.
+import { registerWebMcpTools } from './app/webmcp';
+
 type DemoModule = { default: () => Promise<void> | void };
 
 async function main(): Promise<void> {
+  registerWebMcpTools();
   // UI gallery (mock store, no engine): DEV, or a build made with VITE_UI_GALLERY=1 (staging review builds). A plain
   // production build neither routes /?ui=gallery nor bundles the gallery (the condition folds to false, the glob goes).
   if ((import.meta.env.DEV || import.meta.env.VITE_UI_GALLERY === '1') && new URLSearchParams(location.search).get('ui') === 'gallery') {

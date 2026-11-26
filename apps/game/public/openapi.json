@@ -1,0 +1,207 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Metin Survivors Public API",
+    "version": "1.1.0",
+    "description": "Backend API for Metin Survivors (https://metin-survivors.com) powering public leaderboards, health checks, anonymous player provisioning, cloud save synchronization, cross-device transfer codes, and real-time 1–4 player co-op rooms."
+  },
+  "servers": [
+    {
+      "url": "https://metin-survivors.com/api/v1",
+      "description": "Production same-origin API"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "PlayerBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "<playerId>.<secret>",
+        "description": "Anonymous player token obtained from POST /players. Public read endpoints (/health, /leaderboard) require no authentication."
+      }
+    }
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "getHealth",
+        "summary": "Check API, D1 database, and R2 storage health",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": { "type": "boolean" },
+                    "service": { "type": "string" },
+                    "api": { "type": "string" },
+                    "time": { "type": "integer" },
+                    "db": { "type": "boolean" },
+                    "blobs": { "type": "boolean" },
+                    "clientIp": { "type": "boolean" }
+                  },
+                  "required": ["ok", "service", "api", "time", "db", "blobs"]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service degraded"
+          }
+        }
+      }
+    },
+    "/leaderboard": {
+      "get": {
+        "operationId": "getLeaderboard",
+        "summary": "Query public solo, co-op, daily, weekly, and per-class leaderboards",
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "Leaderboard mode",
+            "schema": { "type": "string", "enum": ["solo", "coop"], "default": "solo" }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "description": "World zone ID",
+            "schema": { "type": "string", "enum": ["yeonmu", "suryeon", "seori", "daeryeol"], "default": "yeonmu" }
+          },
+          {
+            "name": "difficulty",
+            "in": "query",
+            "description": "Difficulty tier",
+            "schema": { "type": "string", "enum": ["normal", "hard", "nightmare"], "default": "normal" }
+          },
+          {
+            "name": "class",
+            "in": "query",
+            "description": "Hero class filter or all",
+            "schema": { "type": "string", "enum": ["all", "warrior", "ninja", "yacha", "shaman", "wolfman"], "default": "all" }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Time window (all-time, weekly, or daily challenge)",
+            "schema": { "type": "string", "enum": ["all", "week", "day"], "default": "all" }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of entries to return (1–100)",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Leaderboard entries and total count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "entries": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "rank": { "type": "integer" },
+                          "playerId": { "type": "string" },
+                          "name": { "type": "string" },
+                          "score": { "type": "integer" },
+                          "classId": { "type": "string" },
+                          "victory": { "type": "boolean" },
+                          "level": { "type": "integer" },
+                          "kills": { "type": "integer" },
+                          "durationMs": { "type": "integer" },
+                          "achievedAt": { "type": "integer" }
+                        }
+                      }
+                    },
+                    "total": { "type": "integer" }
+                  },
+                  "required": ["entries", "total"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/players": {
+      "post": {
+        "operationId": "registerPlayer",
+        "summary": "Create an anonymous player profile and secret credential",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string", "description": "Optional display name" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created anonymous player identity"
+          }
+        }
+      }
+    },
+    "/players/me": {
+      "delete": {
+        "operationId": "deletePlayer",
+        "summary": "Erase authenticated player profile, cloud save, and leaderboard entries",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": {
+          "204": { "description": "Player data erased" }
+        }
+      }
+    },
+    "/save": {
+      "get": {
+        "operationId": "getSave",
+        "summary": "Fetch authenticated player's cloud save",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": { "200": { "description": "Cloud save payload" } }
+      },
+      "put": {
+        "operationId": "putSave",
+        "summary": "Upload authenticated player's cloud save with optimistic revision lock",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": { "200": { "description": "Updated save revision" } }
+      }
+    },
+    "/runs": {
+      "post": {
+        "operationId": "submitRun",
+        "summary": "Submit a verified completed run result for leaderboard ranking",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": { "201": { "description": "Run accepted and scored" } }
+      }
+    },
+    "/transfer": {
+      "post": {
+        "operationId": "createTransferCode",
+        "summary": "Generate a short-lived transfer code to link another device",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": { "201": { "description": "Transfer code issued" } }
+      }
+    },
+    "/coop": {
+      "post": {
+        "operationId": "createCoopRoom",
+        "summary": "Create a real-time 1–4 player co-op lobby room",
+        "security": [{ "PlayerBearer": [] }],
+        "responses": { "201": { "description": "Room code and WebSocket connection details" } }
+      }
+    }
+  }
+}

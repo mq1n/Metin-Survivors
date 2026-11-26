@@ -19,10 +19,21 @@
   Strict-Transport-Security: max-age=31536000
   Cache-Control: no-cache
 
-# root document: explicit search indexing directives + machine-readable discovery links (llms.txt, sitemap.xml)
+# root document: explicit search indexing directives, Content Signals, Vary: Accept (Markdown negotiation), and RFC 8288 discovery links
 /
   X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
-  Link: <https://metin-survivors.com/llms.txt>; rel="describedby"; type="text/plain", <https://metin-survivors.com/sitemap.xml>; rel="sitemap"; type="application/xml"
+  Vary: Accept
+  Content-Signal: search=yes, ai-input=yes, ai-train=yes
+  Link: <https://metin-survivors.com/llms.txt>; rel="describedby"; type="text/plain", <https://metin-survivors.com/sitemap.xml>; rel="sitemap"; type="application/xml", <https://metin-survivors.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://metin-survivors.com/openapi.json>; rel="service-desc"; type="application/openapi+json", <https://metin-survivors.com/auth.md>; rel="describedby"; type="text/markdown"
+
+# Markdown representation served to AI agents requesting Accept: text/markdown on / via Cloudflare URL Rewrite Rule
+/index.md
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: text/markdown; charset=utf-8
+  Vary: Accept
+  Content-Signal: search=yes, ai-input=yes, ai-train=yes
+  X-Robots-Tag: noindex
 
 # content-hashed build output and assets (name.<hash>.ext / name-<hash>.js): never revalidate
 /assets/*
@@ -71,7 +82,7 @@
   ! Cache-Control
   Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
 
-# crawler policy, XML sitemap, and AI-readable llms.txt docs: short TTL so updates reach crawlers within the hour
+# crawler policy, XML sitemap, AI-readable docs, API Catalog (RFC 9727), OpenAPI, Auth.md, and Agent Skills
 /robots.txt
   ! Cache-Control
   Cache-Control: public, max-age=3600
@@ -85,11 +96,44 @@
   ! Cache-Control
   Cache-Control: public, max-age=3600
   Content-Type: text/plain; charset=utf-8
+  Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 /llms-full.txt
   ! Cache-Control
   Cache-Control: public, max-age=3600
   Content-Type: text/plain; charset=utf-8
+  Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+/auth.md
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: text/markdown; charset=utf-8
+
+/.well-known/auth.md
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: text/markdown; charset=utf-8
+
+/openapi.json
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: application/openapi+json; charset=utf-8
+
+/.well-known/api-catalog
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+
+/.well-known/agent-skills/*
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  Content-Type: text/markdown; charset=utf-8
+
+/.well-known/agent-skills/index.json
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+  ! Content-Type
+  Content-Type: application/json; charset=utf-8
 
 # IndexNow ownership verification key: keep out of search snippets while allowing verification crawlers
 /6989479cdd344176a3a883ef7ecf8ce9.txt

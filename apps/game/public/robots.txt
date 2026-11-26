@@ -2,6 +2,7 @@
 # The game API (/api/) is dynamic runtime state and answers no-store.
 # AI-readable overview: https://metin-survivors.com/llms.txt
 # AI-readable full guide: https://metin-survivors.com/llms-full.txt
+# API Catalog (RFC 9727): https://metin-survivors.com/.well-known/api-catalog
 
 User-agent: Googlebot
 Allow: /
@@ -64,6 +65,7 @@ Allow: /
 Disallow: /api/
 
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Disallow: /api/
 

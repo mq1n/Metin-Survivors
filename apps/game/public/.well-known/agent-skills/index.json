@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "metin-survivors-guide",
+      "type": "skill-md",
+      "description": "Look up accurate Metin Survivors game information (classes, doctrines, zones, bosses, co-op, controls) and query live public leaderboards or service health via the Metin Survivors public API.",
+      "url": "https://metin-survivors.com/.well-known/agent-skills/metin-survivors-guide/SKILL.md",
+      "digest": "sha256:23bee992857ef4ce1718e4c540a2eba0828114301e2d53ab3f6e2927a7e37792"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://metin-survivors.com/api/v1",
+      "service-desc": [
+        {
+          "href": "https://metin-survivors.com/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://metin-survivors.com/llms-full.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://metin-survivors.com/auth.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://metin-survivors.com/api/v1/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
