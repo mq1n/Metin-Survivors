@@ -313,7 +313,8 @@ export function createTerrain(ctx: ZoneContext): TerrainSystem {
   const geometries: BufferGeometry[] = [];
   let disposed = false;
 
-  const layerSize = (p: QualityProfile): number => (p.tier === 'low' ? 512 : 1024);
+  const mobile = ctx.core.isMobile;
+  const layerSize = (p: QualityProfile): number => (p.tier === 'low' ? (mobile ? 256 : 512) : 1024);
   let builtFor: { size: number; normals: boolean } | null = null;
   let farGeo: BufferGeometry | null = null;
   let qualGen = 0;
@@ -451,9 +452,11 @@ export function createTerrain(ctx: ZoneContext): TerrainSystem {
       const fx = focus.x;
       const fz = focus.z;
       const dist = (x0: number, z0: number, size: number): number => Math.min(dist2D(x0, z0, size, cx, cz), dist2D(x0, z0, size, fx, fz));
+      const lod0Dist = mobile && ctx.quality.tier === 'low' ? 34 : LOD0_DIST;
+      const megaDist = mobile && ctx.quality.tier === 'low' ? 74 : MEGA_DIST;
       for (const m of megas) {
         const md = dist(m.x0, m.z0, CHUNK * MEGA);
-        const useFar = md > MEGA_DIST;
+        const useFar = md > megaDist;
         if (useFar) {
           m.far ??= makeMesh(m.x0, m.z0, CHUNK, MEGA);
           m.far.visible = true;
@@ -467,7 +470,7 @@ export function createTerrain(ctx: ZoneContext): TerrainSystem {
             continue;
           }
           const d = dist(c.x0, c.z0, CHUNK);
-          const lod = d < LOD0_DIST ? 0 : 1;
+          const lod = d < lod0Dist ? 0 : 1;
           c.meshes[lod] ??= makeMesh(c.x0, c.z0, lod === 0 ? CHUNK : CHUNK / 2, lod === 0 ? 1 : 2);
           (c.meshes[lod] as Mesh).visible = true;
           const other = c.meshes[1 - lod];

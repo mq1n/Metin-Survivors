@@ -264,6 +264,18 @@ describe('AutoQuality', () => {
     expect(state.tier).toBe('high');
   });
 
+  it('invokes onSlowAtFloor when already on low and frame times stay slow', () => {
+    const state = new QualityState('low');
+    let floorDrops = 0;
+    const gov = new AutoQuality(state, undefined, () => floorDrops++);
+    warm(gov);
+    feed(gov, 3.2, 0.04);
+    expect(state.tier).toBe('low');
+    expect(floorDrops).toBe(1);
+    feed(gov, 3.2, 0.04);
+    expect(floorDrops).toBe(2);
+  });
+
   it('profiles are monotonic in cost-driving knobs', () => {
     const t = ['low', 'medium', 'high', 'ultra'] as const;
     for (let i = 1; i < t.length; i++) {

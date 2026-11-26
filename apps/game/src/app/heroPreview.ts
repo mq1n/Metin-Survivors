@@ -20,6 +20,7 @@ import type { HeroSpec } from '../render/world';
 import { WeaponHold } from '../render/weaponHold';
 import { hasEquipJoints, placeMirrored, planHeldWeapons, weaponFrameFix, isRig1to1 } from '../render/weaponHands';
 import { BowStringRig, bowAnchorsFromExtras, bowDraw, isBow, poseBowString } from '../render/bowString';
+import { isMobileDevice } from '../render/quality';
 import { cameraAt, framePreview, heldPoints, previewBounds, toPreviewPoints, type PointAcc, type PreviewBounds, type PreviewCamera, type PreviewPoints } from './previewFrame';
 import type { RunSelection } from './store';
 
@@ -56,7 +57,8 @@ export function createHeroPreview(
 ): HeroPreviewFactory {
   return {
     mount(container, initial) {
-      const renderer = new WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'default' });
+      const mobile = isMobileDevice();
+      const renderer = new WebGLRenderer({ alpha: true, antialias: !mobile, powerPreference: mobile ? 'low-power' : 'default' });
       renderer.setClearColor(0x000000, 0);
       renderer.outputColorSpace = SRGBColorSpace;
       renderer.toneMapping = ACESFilmicToneMapping;
@@ -267,7 +269,7 @@ export function createHeroPreview(
       const resize = (): void => {
         const w = Math.max(1, container.clientWidth);
         const hgt = Math.max(1, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 2));
         renderer.setSize(w, hgt, false);
         camera.aspect = w / hgt;
         camera.updateProjectionMatrix();
@@ -324,7 +326,10 @@ export function createHeroPreview(
       let raf = 0;
       const frame = (now: number): void => {
         if (disposed) return;
-        const dt = Math.min(0.1, (now - last) / 1000);
+        raf = requestAnimationFrame(frame);
+        const elapsed = now - last;
+        if (mobile && !realDragging && !syntheticHold && elapsed < 32) return;
+        const dt = Math.min(0.1, elapsed / 1000);
         last = now;
         if (!realDragging && !syntheticHold) yaw += dt * 0.35;
         pivot.rotation.y = yaw;
@@ -332,7 +337,6 @@ export function createHeroPreview(
         if (hold) hold.action.time = hold.time;
         mixer?.update(dt);
         renderer.render(scene, camera);
-        raf = requestAnimationFrame(frame);
       };
       raf = requestAnimationFrame(frame);
       void load(initial);

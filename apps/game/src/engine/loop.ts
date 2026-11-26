@@ -38,6 +38,8 @@ export class FixedLoop {
   paused = false;
   /** dev time-scale: 0.25…8; scales ticks per real second */
   timeScale = 1;
+  /** max simulation catch-up ticks per rendered frame (lower on mobile to prevent catch-up spirals) */
+  maxCatchupSteps = 5;
   readonly stats: LoopStats = { stepsLastFrame: 0, stepMs: 0, renderMs: 0, droppedSteps: 0, frameErrors: 0 };
 
   private acc = 0;
@@ -83,7 +85,8 @@ export class FixedLoop {
     const t0 = performance.now();
     if (!this.paused) {
       this.acc += dt * this.timeScale;
-      const maxSteps = Math.max(5, Math.ceil(5 * this.timeScale));
+      const baseMax = Math.max(1, Math.floor(this.maxCatchupSteps));
+      const maxSteps = Math.max(baseMax, Math.ceil(baseMax * this.timeScale));
       while (!this.paused && this.acc >= SIM_DT - EPS && steps < maxSteps) {
         this.cb.step(SIM_DT);
         this.acc = Math.max(0, this.acc - SIM_DT);

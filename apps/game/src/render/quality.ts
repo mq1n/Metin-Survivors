@@ -113,10 +113,20 @@ export class QualityState {
   }
 }
 
+/** Detects phones / tablets (touch-first mobile browsers) for GPU/CPU budget tuning. */
+export function isMobileDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  if (/Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent)) return true;
+  if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+    if (window.matchMedia('(pointer: coarse)').matches && window.matchMedia('(hover: none)').matches) return true;
+  }
+  const sw = typeof screen !== 'undefined' ? Math.min(screen.width, screen.height) : 9999;
+  return (navigator.maxTouchPoints ?? 0) > 1 && sw < 1100;
+}
+
 /** Picks a starting tier from device hints. Real adaptation happens via AutoQuality. */
 export function guessTier(gl: WebGL2RenderingContext | null): QualityTier {
-  const mobile = /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && screen.width < 1100);
-  if (mobile) return 'low';
+  if (isMobileDevice()) return 'low';
   let renderer = '';
   if (gl) {
     const ext = gl.getExtension('WEBGL_debug_renderer_info');
@@ -171,6 +181,7 @@ export class AutoQuality {
   constructor(
     private readonly state: QualityState,
     private readonly now: () => number = () => (typeof performance !== 'undefined' ? performance.now() : Date.now()),
+    private readonly onSlowAtFloor?: () => void,
   ) {}
 
   /** Restarts the observation: the next 8 s of frames are only watched. Call when a run starts. */
@@ -218,6 +229,7 @@ export class AutoQuality {
       const i = QUALITY_TIERS.indexOf(this.state.tier);
       const lower = QUALITY_TIERS[i - 1];
       if (lower) this.state.setTier(lower);
+      else this.onSlowAtFloor?.();
     }
   }
 }

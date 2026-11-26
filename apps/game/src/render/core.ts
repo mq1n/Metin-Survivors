@@ -17,7 +17,7 @@ import { settings, type SettingsData } from '../engine/settings';
 import type { BiomePreset } from '../data/schema';
 import { displayLayer } from '../vfx/spec/display';
 import { CameraRig } from './camera';
-import { AutoQuality, QualityState, guessTier, type QualityProfile, type QualityTier } from './quality';
+import { AutoQuality, QualityState, guessTier, isMobileDevice, type QualityProfile, type QualityTier } from './quality';
 import { GpuTimer } from './perf';
 
 /** Ordered per-frame work. `update` runs after the camera rig moved, before the scene is drawn. */
@@ -124,6 +124,8 @@ export class RenderCore {
   readonly governor: AutoQuality;
   readonly clock: RenderFrameClock = { time: 0, dt: 0, frame: 0 };
   readonly pixelRatioApplied = { value: 1 };
+  /** true on phones/tablets: tightens WebGL resolution, anisotropy, shader complexity, vegetation, crowd & VFX budgets */
+  readonly isMobile: boolean;
   /** terrain height sampler; replaced by the TERRAIN system when a zone loads */
   heightAt: (x: number, z: number) => number = () => 0;
   /** r7: where a metin break piece may rest (render/metin.ts REST_*: 0 ground, 1 under a liquid surface, 2 inside a static's body); replaced when a zone loads.
@@ -137,6 +139,8 @@ export class RenderCore {
   private readonly unsubscribe: Array<() => void> = [];
   private cssW = 0;
   private cssH = 0;
+  /** dynamic resolution multiplier stepped down by AutoQuality when already on 'low' (mobile starts at 0.8) */
+  private renderScale = 1;
   private readonly resizeObserver: ResizeObserver;
   private _contextLost = false;
   private readonly contextLostListeners = new Set<() => void>();
@@ -150,10 +154,15 @@ export class RenderCore {
     opts: RenderCoreOptions = {},
   ) {
     this.canvas = canvas;
+    this.isMobile = isMobileDevice();
+    if (this.isMobile && typeof document !== 'undefined') {
+      document.documentElement.dataset.mobile = '1';
+    }
+    this.renderScale = this.isMobile ? 0.8 : 1;
     const dpr = window.devicePixelRatio || 1;
     const renderer = new WebGLRenderer({
       canvas,
-      antialias: dpr <= 1.5,
+      antialias: !this.isMobile && dpr <= 1.5,
       alpha: false,
       // the hero x-ray (render/heroOutline.ts) masks itself with stencil, also when post is off (direct-to-canvas)
       stencil: true,
@@ -167,14 +176,14 @@ export class RenderCore {
     // several passes per frame (post): accumulate renderer.info across them and reset once per frame
     renderer.info.autoReset = false;
     renderer.setClearColor(new Color('#0b0b10'));
-    this.assets.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+    this.assets.anisotropy = this.isMobile ? 1 : Math.min(8, renderer.capabilities.getMaxAnisotropy());
 
     const wanted = opts.quality ?? 'auto';
     const s = settings.value.quality;
     const resolved: QualityTier =
       wanted !== 'auto' ? wanted : s !== 'auto' ? s : guessTier(renderer.getContext() as WebGL2RenderingContext);
     this.quality = new QualityState(resolved);
-    this.governor = new AutoQuality(this.quality);
+    this.governor = new AutoQuality(this.quality, undefined, () => this.stepDownResolution());
     this.governor.enabled = !opts.fixedQuality && wanted === 'auto' && s === 'auto';
 
     this.env = new Environment(this.scene);
@@ -243,6 +252,7 @@ export class RenderCore {
 
   /** Applies a user tier choice (settings screen) — 'auto' re-enables the governor. */
   setQualitySetting(q: SettingsData['quality']): void {
+    this.renderScale = this.isMobile && (q === 'auto' || q === 'low') ? 0.8 : 1;
     if (q === 'auto') {
       this.governor.enabled = true;
       this.governor.reset();
@@ -251,6 +261,16 @@ export class RenderCore {
       this.governor.enabled = false;
       this.quality.setTier(q);
     }
+    this.resize(true);
+  }
+
+  /** Adaptive resolution fallback when already at 'low' tier and frame times remain slow (especially mobile GPUs). */
+  private stepDownResolution(): void {
+    if (settings.value.dprCap > 0) return;
+    const floor = this.isMobile ? 0.5 : 0.7;
+    if (this.renderScale <= floor + 0.01) return;
+    this.renderScale = Math.max(floor, Math.round(this.renderScale * 0.85 * 100) / 100);
+    this.resize(true);
   }
 
   private applyQuality(p: QualityProfile): void {
@@ -276,8 +296,19 @@ export class RenderCore {
   resize(force = false): void {
     const w = Math.max(1, this.canvas.clientWidth);
     const h = Math.max(1, this.canvas.clientHeight);
-    const cap = settings.value.dprCap > 0 ? settings.value.dprCap : this.quality.profile.dprCap;
-    const pr = Math.min(window.devicePixelRatio || 1, cap);
+    const explicitCap = settings.value.dprCap > 0;
+    const cap = explicitCap ? settings.value.dprCap : this.quality.profile.dprCap;
+    let pr = Math.min(window.devicePixelRatio || 1, cap);
+    if (!explicitCap) {
+      if (this.renderScale < 1) pr *= this.renderScale;
+      // Mobile pixel-count ceiling (~520k px at initial 0.8 scale, scales down further with renderScale) so high-res tablets/phones never choke fill-rate.
+      if (this.isMobile && this.quality.tier === 'low') {
+        const maxPixels = 520_000 * (this.renderScale / 0.8);
+        const curPixels = w * h * pr * pr;
+        if (curPixels > maxPixels) pr *= Math.sqrt(maxPixels / curPixels);
+        pr = Math.max(0.45, Math.round(pr * 100) / 100);
+      }
+    }
     if (!force && w === this.cssW && h === this.cssH && pr === this.pixelRatioApplied.value) return;
     this.cssW = w;
     this.cssH = h;

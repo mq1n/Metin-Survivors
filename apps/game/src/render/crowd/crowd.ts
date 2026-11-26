@@ -258,7 +258,8 @@ export class CrowdRenderer implements RenderSystem {
   addCorpse(type: number, x: number, z: number, rot: number, scale: number): void {
     const b = this.batches[type];
     if (!b) return;
-    if (this.cCount >= MAX_CORPSES) {
+    const maxCorpses = this.core.isMobile && this.core.quality.tier === 'low' ? 24 : MAX_CORPSES;
+    if (this.cCount >= maxCorpses) {
       // drop the oldest by shifting; MAX_CORPSES is small so a copyWithin is cheaper than a ring bookkeeping bug
       this.cType.copyWithin(0, 1);
       this.cX.copyWithin(0, 1);
@@ -300,7 +301,8 @@ export class CrowdRenderer implements RenderSystem {
     const fx0 = rig.focus.x;
     const fz0 = rig.focus.z;
     const heightAt = core.heightAt;
-    const cap = core.quality.profile.crowdCap;
+    const mobileLow = core.isMobile && core.quality.tier === 'low';
+    const cap = mobileLow ? Math.min(core.quality.profile.crowdCap, 110) : core.quality.profile.crowdCap;
     const cullSq = this.cullRadiusSq;
     const sink = this.eliteSink;
     let drawn = 0;
@@ -431,7 +433,7 @@ export class CrowdRenderer implements RenderSystem {
         f[o + 1] = dis * dis * (3 - 2 * dis);
         f[o + 2] = 0;
         f[o + 3] = 0;
-        blobs.add(x, y, z, b.shadowR * s * 1.25, 0.85 * (1 - dis));
+        if (!mobileLow) blobs.add(x, y, z, b.shadowR * s * 1.25, 0.85 * (1 - dis));
         nc++;
       }
       i++;

@@ -121,6 +121,8 @@ export interface VfxOptions {
   renderOrder?: number;
   /** signature (elemental) effects: default true (they only run at tier ≥ their minTier) */
   elemental?: boolean;
+  /** mobile device hint: tightens low-tier particle/surface budgets and VRAM allocations */
+  mobile?: boolean;
 }
 
 export interface Vfx {

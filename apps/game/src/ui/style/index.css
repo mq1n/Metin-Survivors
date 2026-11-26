@@ -11,3 +11,5 @@
 @import './fx.css';
 /* ZoneMap (UI core lane H, C14): round HUD minimap + bordered atlas; own .ms-zm* classes only */
 @import './zonemap.css';
+/* Mobile compositor fast-path: drops heavy blur/drop-shadow passes over live WebGL on phones/tablets */
+@import './mobile.css';

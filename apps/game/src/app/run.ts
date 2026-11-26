@@ -28,6 +28,7 @@ import { findLook, resolveBiome } from '../render/terrain/look';
 import { asPostPipeline, type PostPipeline } from '../render/post';
 
 const HUD_INTERVAL = 0.1;
+const HUD_INTERVAL_MOBILE = 0.16;
 /** ambient particle box half-extent (m) around the camera focus: covers the gameplay view at max zoom */
 const AMBIENT_RADIUS = 26;
 /** loop length (s) for the ambient preset: longer than any run (preset default 900 s would expire mid-run) */
@@ -213,7 +214,7 @@ export class RunSession {
       inp.castMask = held ? 0 : wantCastMask;
       inp.aimX = undefined;
       inp.aimZ = undefined;
-      if (!held) {
+      if (!held && !deps.renderWorld.core.isMobile) {
         // Always resolve cursor world direction when a desktop mouse pointer is present so LMB, Space, and 1-8 aim where the player points.
         const ptr = deps.input.pointerClient();
         const p0 = world.players[0];
@@ -260,7 +261,8 @@ export class RunSession {
       rw.setProjectileStyles(this.styles.table);
     }
     this.hudAcc += rawDt;
-    if (this.hudAcc >= HUD_INTERVAL) {
+    const hudInterval = rw.core.isMobile ? HUD_INTERVAL_MOBILE : HUD_INTERVAL;
+    if (this.hudAcc >= hudInterval) {
       this.hudAcc = 0;
       this.pushHud();
     }

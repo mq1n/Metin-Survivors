@@ -180,7 +180,11 @@ export function createRocks(init: RockSystemInit): VegPart & { stats: () => stri
   const mats = ctx.field.layout.rockMaterials;
 
   function budget(l: RockLayer, q: VegQuality): void {
-    l.setBudget(q.rockSlots, Math.min(q.rockRange, ctx.core.env.fog.far + 8), q.lodNear);
+    const mobileLow = ctx.core.isMobile && q.tier === 'low';
+    const slots = mobileLow ? Math.min(q.rockSlots, 64) : q.rockSlots;
+    const range = mobileLow ? Math.min(q.rockRange, 58, ctx.core.env.fog.far + 8) : Math.min(q.rockRange, ctx.core.env.fog.far + 8);
+    const lod = mobileLow ? Math.min(q.lodNear, 20) : q.lodNear;
+    l.setBudget(slots, range, lod);
   }
 
   let disposed = false;
@@ -223,7 +227,10 @@ export function createRocks(init: RockSystemInit): VegPart & { stats: () => stri
       const style = rockStyleFor(rockLook, g.kind);
       const lift: StoneLift | null = rockLift(cliff, style, sky);
       const tune: StoneTune | null = rockTune(style);
-      const [texRes, nrm] = await Promise.all([loadOwnedVegTexture(ctx.assets, id), loadVegNormal(ctx.assets, id)]);
+      const [texRes, nrm] = await Promise.all([
+        loadOwnedVegTexture(ctx.assets, id),
+        ctx.core.isMobile && ctx.quality.tier === 'low' ? Promise.resolve(null) : loadVegNormal(ctx.assets, id),
+      ]);
       if (disposed) {
         texRes.dispose();
         return;
@@ -241,7 +248,7 @@ export function createRocks(init: RockSystemInit): VegPart & { stats: () => stri
       const grade: [number, number, number] = tint ? [base[0] * tint[0], base[1] * tint[1], base[2] * tint[2]] : base;
       const mat = createStoneMaterial({ map: tex as Texture, normal: nrm, texScale: (1 / 3.2) * (style?.scale ?? 1), cap, grade, lift, tune });
       disposables.push(mat);
-      const layer = new RockLayer(`rocks_${id}`, items, stoneSets.filter((s) => items.some((r) => r.kind === s.kind)), mat, 1000);
+      const layer = new RockLayer(`rocks_${id}`, items, stoneSets.filter((s) => items.some((r) => r.kind === s.kind)), mat, ctx.core.isMobile ? 160 : 1000);
       layers.push(layer);
       group.add(layer.mesh);
       info.push(`  ${id}: ${items.length} stone rocks${style ? ` (${g.kind} style)` : ''}`);
@@ -254,7 +261,7 @@ export function createRocks(init: RockSystemInit): VegPart & { stats: () => stri
       // ROCK-01: the zone look's crystal knobs (look.rocks.kind.crystal over look.rocks.all) reach the material
       const mat = crystalMaterialFor(crystalMatId, rockLook);
       disposables.push(mat);
-      const layer = new RockLayer('rocks_crystal', crystals, [crystalSet], mat, 400);
+      const layer = new RockLayer('rocks_crystal', crystals, [crystalSet], mat, ctx.core.isMobile ? 80 : 400);
       layers.push(layer);
       group.add(layer.mesh);
       info.push(`  crystal(${style}): ${crystals.length}`);

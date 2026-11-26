@@ -165,6 +165,11 @@ export function createCover(ctx: ZoneContext, specs: readonly CoverSpec[]): VegP
   const look = findLook(ctx.biome.id)?.cover;
 
   function apply(d: SpecDraw, q: VegQuality): void {
+    // Mobile TBDR GPUs choke on thousands of alpha-tested double-sided grass cards (breaks Early-Z/HSR); painted terrain splats stay crisp.
+    if (ctx.core.isMobile && q.tier === 'low') {
+      d.mesh.visible = false;
+      return;
+    }
     const base = d.spec.density * d.maxLayer * q.coverDensity;
     const dens = look?.density === undefined ? base : base * look.density;
     const on = dens > 1e-4 && (q.coverExtras || !d.extra);

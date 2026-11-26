@@ -145,6 +145,7 @@ export class App {
       render: (alpha, dt) => this.renderFrame(alpha, dt),
       error: (err, n) => this.onFrameError(err, n),
     });
+    if (this.core.isMobile) this.loop.maxCatchupSteps = 2;
 
     this.input.attach();
     this.input.touch.attach(canvas);

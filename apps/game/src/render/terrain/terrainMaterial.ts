@@ -176,6 +176,9 @@ float gRockBlur = 1.0;
 
 const SHADE = /* glsl */ `
 vec3 sampleAlb(vec2 uv, vec2 dx, vec2 dy, float layer, float scale) {
+#ifdef Q_FAST
+  return texture(uAlbedo, vec3(uv * scale, layer)).rgb;
+#else
   vec3 a = textureGrad(uAlbedo, vec3(uv * scale, layer), dx * scale, dy * scale).rgb;
 #ifdef Q_ANTITILE
   mat2 R = mat2(0.866, 0.5, -0.5, 0.866) * 0.37;
@@ -186,6 +189,7 @@ vec3 sampleAlb(vec2 uv, vec2 dx, vec2 dy, float layer, float scale) {
   a = mix(a, b + (lum - lumb), 0.42);
 #endif
   return a;
+#endif
 }
 
 // mean colour of a layer (its smallest mip)
@@ -224,6 +228,17 @@ float terrainCalm(vec2 wxz) {
 vec3 cliffRock(vec3 Ng, vec4 mB, float dist, out vec3 Nr) {
   float cl = uCliffLayer;
   float sc = uLayer[int(cl + 0.5)].x * 0.8;
+#ifdef Q_FAST
+  vec3 bw = abs(Ng);
+  bw *= bw;
+  bw /= max(bw.x + bw.y + bw.z, 1e-4);
+  vec2 sideUv = bw.x > bw.z ? vWPos.zy : vWPos.xy;
+  vec3 rock = texture(uAlbedo, vec3(vWPos.xz * sc, cl)).rgb * bw.y
+            + texture(uAlbedo, vec3(sideUv * sc, cl)).rgb * (1.0 - bw.y);
+  rock *= uTint[int(cl + 0.5)] * uCliffTint * (0.82 + 0.36 * mB.g);
+  Nr = Ng;
+  return rock;
+#else
 #ifdef CLIFF_V2
   // sharper blend (power 8); a projection the actual triangle is nearly parallel to (the smooth vertex normal disagrees
   // with a near-vertical 1 m triangle) would stretch the texture into streaks, so it is dropped
@@ -282,16 +297,19 @@ vec3 cliffRock(vec3 Ng, vec4 mB, float dist, out vec3 Nr) {
   Nr = normalize(tX.zyx * bw.x + tY.xzy * bw.y + tZ.xyz * bw.z);
 #endif
   return rock;
+#endif
 }
 
 // macro colour variation (brightness + hue patches) and grading
 vec3 terrainGrade(vec3 alb, vec2 wxz, vec4 mB) {
   float m = smoothstep(0.22, 0.78, mB.r * 0.62 + mB.g * 0.38);
   alb *= mix(vec3(1.0), mix(uMacroDark, uMacroLight, m), uMacroStrength);
+#ifndef Q_FAST
   if (uAccent.x > 0.0) {
     vec4 mH = texture2D(uNoise, wxz / uAccent.y + vec2(0.27, 0.61));
     alb *= mix(vec3(1.0), mix(uAccentA, uAccentB, smoothstep(0.3, 0.7, mH.g * 0.55 + mH.r * 0.45)), uAccent.x);
   }
+#endif
   float lumA = dot(alb, vec3(0.3, 0.5, 0.2));
   return mix(vec3(lumA), alb, uSat) * uGain;
 }
@@ -329,17 +347,28 @@ void terrainShade(out vec3 outAlb) {
 #endif
   vec2 wxz = vWPos.xz;
   vec3 Ng = normalize(vWNrm);
-#ifdef CLIFF_V2
+#if defined(CLIFF_V2) && !defined(Q_FAST)
   gFaceN = abs(normalize(cross(dFdx(vWPos), dFdy(vWPos))));
 #endif
+#ifdef Q_FAST
+  vec2 dx = vec2(0.0);
+  vec2 dy = vec2(0.0);
+  float pix = 0.0;
+#else
   vec2 dx = dFdx(wxz);
   vec2 dy = dFdy(wxz);
   float pix = max(length(dx), length(dy));
+#endif
   vec2 suv = (wxz + uHalf) / uSize;
   vec4 mA = texture2D(uNoise, wxz / 53.0);
   vec4 mB = texture2D(uNoise, wxz / uMacroScale);
+#ifdef Q_FAST
+  vec4 mC = mA;
+  vec2 warp = (mA.rg - 0.5) * 1.8 * uBlend.w;
+#else
   vec4 mC = texture2D(uNoise, wxz / 13.0);
   vec2 warp = ((mA.rg - 0.5) * 1.8 + (mC.rg - 0.5) * 0.5) * uBlend.w;
+#endif
   vec2 suvW = suv + warp / uSize;
   vec4 c0 = texture2D(uSplat0, suvW);
   vec4 c1 = texture2D(uSplat1, suvW);
@@ -350,7 +379,7 @@ void terrainShade(out vec3 outAlb) {
   vec4 bl = texture2D(uLight, suv);
 
   // ---- calm patches (C2): the tile detail recedes to a blurred mip inside large soft patches ----------------------
-#ifdef CALM
+#if defined(CALM) && !defined(Q_FAST)
   float calm = terrainCalm(wxz);
   float calmBlur = exp2(calm * uCalm.w);
   vec2 dxl = dx * calmBlur;
@@ -359,7 +388,7 @@ void terrainShade(out vec3 outAlb) {
   vec2 dxl = dx;
   vec2 dyl = dy;
 #endif
-#ifdef BLEND_V2
+#if defined(BLEND_V2) && !defined(Q_FAST)
   // ragged border noise: ~1.5-3 m lobes plus a ~0.3 m fray
   vec4 nE = texture2D(uNoise, wxz * 0.11) - 0.5;
   vec4 nF = texture2D(uNoise, wxz * 0.53 + 0.29) - 0.5;
@@ -371,19 +400,24 @@ void terrainShade(out vec3 outAlb) {
   float hgt[8];
   float wf[8];
   float mx = 0.0;
+#ifdef Q_FAST
+  const float minW = 0.06;
+#else
+  const float minW = 0.006;
+#endif
   for (int i = 0; i < LAYERS; i++) {
     wf[i] = 0.0;
     col[i] = vec3(0.0);
     hgt[i] = 0.0;
-    if (w[i] > 0.006) {
+    if (w[i] > minW) {
       vec3 a = sampleAlb(wxz, dxl, dyl, float(i), uLayer[i].x) * uTint[i];
-#ifdef CALM
+#if defined(CALM) && !defined(Q_FAST)
       // what is left of the blurred detail fades into the layer's mean colour (a soft tonal patch, not a smeared tile)
       a = mix(a, layerMean(float(i)) * uTint[i], calm * calm * 0.7);
 #endif
       col[i] = a;
       hgt[i] = dot(a, vec3(0.3, 0.5, 0.2));
-#ifdef BLEND_V2
+#if defined(BLEND_V2) && !defined(Q_FAST)
       // C2: per-layer bias (GroundLayer.h, weight units) and a per-layer noise breakup of the borders
       float fi = float(i);
       hgt[i] = hgt[i] * uBlend.y + uLayer[i].z + dot(nE.rgb, vec3(sin(fi * 2.4 + 0.3), cos(fi * 1.7 + 1.1), sin(fi * 3.1 + 2.2))) * uBlend.z;
@@ -396,8 +430,8 @@ void terrainShade(out vec3 outAlb) {
   float wsum = 0.0;
   vec3 alb = vec3(0.0);
   for (int i = 0; i < LAYERS; i++) {
-    if (w[i] > 0.006) {
-#ifdef BLEND_V2
+    if (w[i] > minW) {
+#if defined(BLEND_V2) && !defined(Q_FAST)
       float b = max(w[i] + hgt[i] - (mx - uBlend.x), 0.0);
 #else
       float b = max(w[i] + hgt[i] * 0.9 - (mx - 0.34), 0.0);
@@ -490,7 +524,7 @@ void terrainShade(out vec3 outAlb) {
   // also partly desaturated (dark mossy / sooty texels become pale stone, not a neon tint)
   alb = liftLuma(alb, uCliffB.x * cw);
 #endif
-#ifdef CLIFF_FOOT
+#if defined(CLIFF_FOOT) && !defined(Q_FAST)
   // C1: scree band at the cliff foot (baked foot proximity, ground only), grained by the rock texture seen from above
   {
     float footW = smoothstep(0.06, 0.6, bl.a) * (1.0 - cw);
@@ -524,11 +558,13 @@ void terrainShade(out vec3 outAlb) {
 #endif
     gEmissive += vec3(1.0, 0.33, 0.06) * g * 0.75 * uLavaGlow * (1.0 - cw * 0.5);
   }
+#ifndef Q_FAST
   if (uSparkle > 0.0) {
     float g = texture2D(uNoise, wxz * 0.13).a;
     float tw = 0.5 + 0.5 * sin(uTime * 2.3 + g * 90.0);
     gEmissive += vec3(0.8, 0.9, 1.0) * step(0.975, g) * tw * uSparkle * (1.0 - cw) * (1.0 - smoothstep(30.0, 90.0, dist));
   }
+#endif
 
   // ---- procedural ground dressing (seal, then decals on top of it): ground only, never on cliff faces --------------------
 #ifdef MEDALLION
@@ -808,6 +844,7 @@ export function createTerrainMaterial(o: TerrainMaterialOptions): TerrainMateria
       const wantNormals = p.tier !== 'low';
       const wantAnti = p.tier === 'high' || p.tier === 'ultra';
       const wantDecor = p.tier !== 'low';
+      const wantFast = p.tier === 'low';
       const wantDecals = p.tier === 'medium' ? Math.min(2, look.decals.length) : Math.min(slots, look.decals.length);
       uniforms.uDecalCount.value = wantDecals;
       for (const m of far ? [mat, far] : [mat]) {
@@ -827,6 +864,11 @@ export function createTerrainMaterial(o: TerrainMaterialOptions): TerrainMateria
         if (wantDecor !== ('Q_DECOR' in d)) {
           if (wantDecor) d.Q_DECOR = '';
           else delete d.Q_DECOR;
+          dirty = true;
+        }
+        if (wantFast !== ('Q_FAST' in d)) {
+          if (wantFast) d.Q_FAST = '';
+          else delete d.Q_FAST;
           dirty = true;
         }
         if (dirty) m.needsUpdate = true;

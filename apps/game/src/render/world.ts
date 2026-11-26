@@ -146,6 +146,7 @@ export class RenderWorld {
       const vfx = new VfxSystem(core.scene, core.camera, core.renderer, core.quality.tier, {
         heightAt: (x, z) => core.heightAt(x, z),
         onShake: (a) => core.rig.addTrauma(a),
+        mobile: core.isMobile,
       });
       this.vfx = vfx;
       // boss breath cones leave the drawn mouth (the crowd's baked `muzzle` socket), not the boss's feet

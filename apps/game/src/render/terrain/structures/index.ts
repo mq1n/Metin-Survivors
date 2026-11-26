@@ -664,7 +664,7 @@ export function createStructures(ctx: ZoneContext, opts: StructuresOptions = {})
       const occDt = dt > 0 ? Math.min(dt, 0.1) : 1;
       const occOn = occlusionRadius.value > 0;
       for (const e of entries) updateOcclusion(e, occDt, occOn);
-      const near = NEAR_RANGE[quality.tier];
+      const near = ctx.core.isMobile && quality.tier === 'low' ? 54 : NEAR_RANGE[quality.tier];
       for (const e of entries) select(e, focus, near);
     },
     setQuality(p: QualityProfile) {

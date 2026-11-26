@@ -64,7 +64,7 @@ float atmoMist(vec3 wp) {
 `;
 
 const FRAG_LIGHT = /* glsl */ `
-{
+if (uCloud.x > 0.001) {
   vec3 atmoWP = (uViewInv * vec4(-vViewPosition, 1.0)).xyz;
   float atmoShade = atmoCloud(atmoWP.xz);
   reflectedLight.directDiffuse *= atmoShade;
@@ -73,11 +73,13 @@ const FRAG_LIGHT = /* glsl */ `
 `;
 
 const FRAG_FOG = /* glsl */ `
-{
-  vec3 atmoWP2 = (uViewInv * vec4(-vViewPosition, 1.0)).xyz;
+if (uHaze.x > 0.001 || uHaze.w > 0.001) {
   float atmoDepth = length(vViewPosition);
   float atmoH = uHaze.x * smoothstep(0.0, uHaze.z, atmoDepth - uHaze.y);
-  atmoH = max(atmoH, atmoMist(atmoWP2));
+  if (uHaze.w > 0.001) {
+    vec3 atmoWP2 = (uViewInv * vec4(-vViewPosition, 1.0)).xyz;
+    atmoH = max(atmoH, atmoMist(atmoWP2));
+  }
   gl_FragColor.rgb = mix(gl_FragColor.rgb, uHazeColor, clamp(atmoH, 0.0, 0.92));
 }
 `;

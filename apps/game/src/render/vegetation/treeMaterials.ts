@@ -123,20 +123,28 @@ export function createFoliageMaterial(look: TreeLook, mapA: Texture, mapB: Textu
   const mat = new MeshLambertMaterial({ map: mapA, vertexColors: true, side: DoubleSide, alphaTest: 0.42, alphaToCoverage: true });
   mat.name = 'treeFoliage';
   const grade = new Color(look.grade[0], look.grade[1], look.grade[2]);
+  const hasB = mapB !== null && mapB !== mapA;
   mat.onBeforeCompile = (shader) => {
     windUniforms(shader.uniforms);
-    shader.uniforms.mapB = { value: mapB ?? mapA };
+    if (hasB) shader.uniforms.mapB = { value: mapB };
     shader.uniforms.uGrade = { value: grade };
     shader.uniforms.uTranslucency = { value: look.translucency };
     patchVertex(shader);
     let f = shader.fragmentShader;
-    f = replaceOnce(f, '#include <common>', `#include <common>\n${FRAG_PARS}\nuniform sampler2D mapB;\nuniform vec3 uGrade;\nuniform float uTranslucency;`);
+    f = replaceOnce(
+      f,
+      '#include <common>',
+      `#include <common>\n${FRAG_PARS}\n${hasB ? 'uniform sampler2D mapB;\n' : ''}uniform vec3 uGrade;\nuniform float uTranslucency;`,
+    );
     f = replaceOnce(
       f,
       '#include <map_fragment>',
-      `${FADE_FRAG}
+      hasB
+        ? `${FADE_FRAG}
       vec4 sampledDiffuseColor = mix(texture2D(map, vMapUv), texture2D(mapB, vMapUv), step(0.5, vDat.z));
-      diffuseColor *= sampledDiffuseColor;`,
+      diffuseColor *= sampledDiffuseColor;`
+        : `${FADE_FRAG}
+      diffuseColor *= texture2D(map, vMapUv);`,
     );
     f = replaceOnce(f, '#include <color_fragment>', 'diffuseColor.rgb *= vColor.rgb * uGrade;');
     f = replaceOnce(f, '#include <alphatest_fragment>', `#include <alphatest_fragment>\n${LOD_ALPHA}`);
@@ -157,7 +165,7 @@ export function createFoliageMaterial(look: TreeLook, mapA: Texture, mapB: Textu
     applyOcclusionFade(shader);
     applyAtmosphere(shader);
   };
-  mat.customProgramCacheKey = () => 'treeFoliage';
+  mat.customProgramCacheKey = () => (hasB ? 'treeFoliage2' : 'treeFoliage');
   return mat;
 }
 

@@ -31,6 +31,7 @@ const CAPS: ReadonlyArray<readonly [number, number, number, number]> = [
   [5000, 2400, 512, 256],
   [7000, 3200, 640, 320],
 ];
+const MOBILE_LOW_CAPS: readonly [number, number, number, number] = [500, 250, 80, 48];
 /** particle record flags (shaders.ts SPEC_PARTICLE_VERT) */
 const PF_TRAIL = 16;
 const PF_RIBBON = 32;
@@ -312,6 +313,7 @@ export class SpecHost implements DisplayLayer {
     tier: TierIdx,
     renderOrder: number,
     specs: Iterable<FxSpec>,
+    private readonly mobile = false,
   ) {
     this.tier = tier;
     this.atlas = bakeSpecAtlas(renderer);
@@ -344,7 +346,7 @@ export class SpecHost implements DisplayLayer {
       uInvRes: { value: { x: 1, y: 1 } },
       uSoftZ: { value: { x: 0.5, y: 220, z: 0 } },
     };
-    const cap = CAPS[3] as readonly [number, number, number, number];
+    const cap = (this.mobile ? CAPS[1] : CAPS[3]) as readonly [number, number, number, number];
     this.pAdd = new SpecBatch(cap[0], 'add', false, this.uniforms);
     this.pAlpha = new SpecBatch(cap[1], 'alpha', false, this.uniforms);
     this.sAdd = new SpecBatch(cap[2], 'add', true, this.uniforms);
@@ -374,13 +376,14 @@ export class SpecHost implements DisplayLayer {
 
   setTier(t: TierIdx): void {
     this.tier = t;
-    const c = CAPS[t] as readonly [number, number, number, number];
-    this.pAdd.setCap(c[0]);
-    this.pAlpha.setCap(c[1]);
-    this.sAdd.setCap(c[2]);
-    this.sAlpha.setCap(c[3]);
-    this.pAddD.setCap(c[0]);
-    this.sAddD.setCap(c[2]);
+    const c = (this.mobile && t === 0 ? MOBILE_LOW_CAPS : CAPS[t]) as readonly [number, number, number, number];
+    const maxAlloc = (this.mobile ? CAPS[1] : CAPS[3]) as readonly [number, number, number, number];
+    this.pAdd.setCap(Math.min(c[0], maxAlloc[0]));
+    this.pAlpha.setCap(Math.min(c[1], maxAlloc[1]));
+    this.sAdd.setCap(Math.min(c[2], maxAlloc[2]));
+    this.sAlpha.setCap(Math.min(c[3], maxAlloc[3]));
+    this.pAddD.setCap(Math.min(c[0], maxAlloc[0]));
+    this.sAddD.setCap(Math.min(c[2], maxAlloc[2]));
     this.art.setTier(t);
     this.syncArt();
   }

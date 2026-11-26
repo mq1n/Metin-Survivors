@@ -313,7 +313,7 @@ export function createTrees(init: TreeSystemInit): VegPart & { stats: () => stri
       const a = withTreeLook(assetsFor(species, style, scorched), overrides?.[species]);
       const [barkRes, norm, folARes, folBRes] = await Promise.all([
         loadOwnedVegTexture(ctx.assets, a.bark),
-        loadVegNormal(ctx.assets, a.bark),
+        ctx.core.isMobile && ctx.quality.tier === 'low' ? Promise.resolve(null) : loadVegNormal(ctx.assets, a.bark),
         loadOwnedVegTexture(ctx.assets, a.fol[0]),
         a.fol[1] ? loadOwnedVegTexture(ctx.assets, a.fol[1]) : Promise.resolve<OwnedVegTexture | null>(null),
       ]);
@@ -332,18 +332,24 @@ export function createTrees(init: TreeSystemInit): VegPart & { stats: () => stri
       const barkMat = createBarkMaterial(a.look, barkRes.texture, norm);
       const folMat = createFoliageMaterial(a.look, folARes.texture, folBRes?.texture ?? null);
       disposables.push(barkMat, folMat);
-      const layer = new TreeLayer(species, items, set, barkMat, folMat, 1100);
+      const layer = new TreeLayer(species, items, set, barkMat, folMat, ctx.core.isMobile ? 160 : 1100);
       for (const g of [...set.bark, ...set.foliage]) disposables.push(g);
       layers.push(layer);
       group.add(layer.bark, layer.foliage);
       const avg = set.tris.reduce((s, t) => [s[0] + t[0], s[1] + t[1]] as [number, number], [0, 0] as [number, number]);
       tris.push(`${species}: ${items.length} trees, tris/variant LOD0 ${Math.round(avg[0] / set.tris.length)} LOD1 ${Math.round(avg[1] / set.tris.length)}, gen ${(performance.now() - t0).toFixed(0)} ms`);
-      if (quality) layer.setBudget(quality.treeSlots, effectiveRange(quality));
+      if (quality) applyTreeBudget(layer, quality);
     }
   })();
 
   function effectiveRange(q: VegQuality): number {
-    return Math.min(q.treeRange, ctx.core.env.fog.far + 8);
+    const cap = ctx.core.isMobile && q.tier === 'low' ? Math.min(q.treeRange, 64) : q.treeRange;
+    return Math.min(cap, ctx.core.env.fog.far + 8);
+  }
+
+  function applyTreeBudget(layer: TreeLayer, q: VegQuality): void {
+    const slots = ctx.core.isMobile && q.tier === 'low' ? Math.min(q.treeSlots, 64) : q.treeSlots;
+    layer.setBudget(slots, effectiveRange(q));
   }
 
   return {
@@ -355,8 +361,9 @@ export function createTrees(init: TreeSystemInit): VegPart & { stats: () => stri
     },
     setQuality(q) {
       quality = q;
-      lodWindow.value.set(q.lodNear, q.lodFar);
-      for (const l of layers) l.setBudget(q.treeSlots, effectiveRange(q));
+      if (ctx.core.isMobile && q.tier === 'low') lodWindow.value.set(18, 24);
+      else lodWindow.value.set(q.lodNear, q.lodFar);
+      for (const l of layers) applyTreeBudget(l, q);
     },
     dispose() {
       disposed = true;

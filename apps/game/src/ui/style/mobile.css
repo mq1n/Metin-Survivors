@@ -1,0 +1,18 @@
+/* Mobile GPU compositor fast-path: activated when RenderCore detects a phone/tablet (html[data-mobile="1"]).
+ * Eliminates expensive per-frame CSS filter: drop-shadow() and backdrop-filter: blur() passes over the live WebGL canvas. */
+html[data-mobile='1'] .ms-hud {
+  contain: layout style;
+}
+
+html[data-mobile='1'] .ms-hud,
+html[data-mobile='1'] .ms-hud * {
+  filter: none !important;
+}
+
+html[data-mobile='1'] .ms-pause-backdrop,
+html[data-mobile='1'] .ms-reward-backdrop,
+html[data-mobile='1'] [class*='backdrop'],
+html[data-mobile='1'] .ms-ui * {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}

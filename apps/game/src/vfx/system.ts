@@ -42,6 +42,19 @@ import {
 import { parseColor, rgba } from './util';
 
 const TIER_OF: Record<VfxQuality, Tier> = { low: 0, medium: 1, high: 2, ultra: 3 };
+const MOBILE_LOW_PROFILE: VfxProfile = {
+  tier: 'low',
+  density: 0.25,
+  detail: 0,
+  maxAdd: 1200,
+  maxAlpha: 600,
+  maxShapes: 128,
+  maxRibbonChunks: 32,
+  maxDebris: 64,
+  spawnPerFrame: 220,
+  segments: 0.5,
+  soft: false,
+};
 
 /**
  * Lifetime of a looping instance (0 = until stopped): the caller's explicit duration, else 0 for `untilStopped`
@@ -214,7 +227,7 @@ export class VfxSystem implements Vfx {
     this.renderer = renderer;
     this.opts = opts;
     this.quality = quality;
-    this.profile = VFX_PROFILES[quality];
+    this.profile = opts.mobile && quality === 'low' ? MOBILE_LOW_PROFILE : VFX_PROFILES[quality];
     this.textures = bakeTextures(renderer);
     this.uniforms = {
       uTime: { value: 0 },
@@ -226,12 +239,13 @@ export class VfxSystem implements Vfx {
       uSoft: { value: 0 },
     };
     const u = this.uniforms;
-    this.pAlpha = new ParticleBatch(MAX_CAP.alpha, 'alpha', u);
-    this.pAdd = new ParticleBatch(MAX_CAP.add, 'add', u);
-    this.sAlpha = new ShapeBatch(MAX_CAP.shapes, 'alpha', u);
-    this.sAdd = new ShapeBatch(MAX_CAP.shapes, 'add', u);
-    this.ribbons = new RibbonBatch(MAX_CAP.ribbonChunks, u);
-    this.debris = new DebrisBatch(MAX_CAP.debris, u);
+    const alloc = opts.mobile ? VFX_PROFILES.medium : null;
+    this.pAlpha = new ParticleBatch(alloc ? alloc.maxAlpha : MAX_CAP.alpha, 'alpha', u);
+    this.pAdd = new ParticleBatch(alloc ? alloc.maxAdd : MAX_CAP.add, 'add', u);
+    this.sAlpha = new ShapeBatch(alloc ? alloc.maxShapes : MAX_CAP.shapes, 'alpha', u);
+    this.sAdd = new ShapeBatch(alloc ? alloc.maxShapes : MAX_CAP.shapes, 'add', u);
+    this.ribbons = new RibbonBatch(alloc ? alloc.maxRibbonChunks : MAX_CAP.ribbonChunks, u);
+    this.debris = new DebrisBatch(alloc ? alloc.maxDebris : MAX_CAP.debris, u);
     this.fx = new Fx(this.profile, this.pAdd, this.pAlpha, this.sAdd, this.sAlpha, this.ribbons, this.debris);
     this.fx.onShake = (a) => {
       this.screen.shake += a;
@@ -243,7 +257,7 @@ export class VfxSystem implements Vfx {
       this.fx.el = this.elemental;
       void this.elemental.precompile();
     }
-    this.spec = new SpecHost(scene, renderer, this.uniforms.uTime, this.fx, TIER_OF[quality], (opts.renderOrder ?? 40) + 8, SPEC_REGISTRY);
+    this.spec = new SpecHost(scene, renderer, this.uniforms.uTime, this.fx, TIER_OF[quality], (opts.renderOrder ?? 40) + 8, SPEC_REGISTRY, opts.mobile === true);
     this.fx.spec = this.spec;
     this.spec.followSrc = this;
     if (opts.heightAt) this.setHeightAt(opts.heightAt);
@@ -371,7 +385,7 @@ export class VfxSystem implements Vfx {
 
   setQuality(q: VfxQuality): void {
     this.quality = q;
-    this.profile = VFX_PROFILES[q];
+    this.profile = this.opts.mobile && q === 'low' ? MOBILE_LOW_PROFILE : VFX_PROFILES[q];
     this.elemental?.setTier(TIER_OF[q]);
     this.spec.setTier(TIER_OF[q]);
     this.applyProfile();

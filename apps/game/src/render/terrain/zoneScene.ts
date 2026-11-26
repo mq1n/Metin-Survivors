@@ -13,7 +13,7 @@ import type { QualityProfile } from '../quality';
 import { createVegetation } from '../vegetation';
 import { asPostPipeline } from '../post';
 import { RunArc, gradeSpecOf, pageArcSwitches, type ArcClock, type ArcState } from './arc';
-import { applyArcAtmosphere, configureAtmosphere, updateAtmosphere } from './atmosphere';
+import { applyArcAtmosphere, atmosphereUniforms, configureAtmosphere, updateAtmosphere } from './atmosphere';
 import { createFlares } from './flares';
 import { createLiquid } from './liquid';
 import { lookFor } from './look';
@@ -68,6 +68,14 @@ export function createZoneScene(core: RenderCore, field: TerrainField, biome: Bi
   // zone look: shadow fill (extra hemisphere), dynamic shadow strength, cloud shadows / haze for every lit material
   const look = lookFor(biome.id);
   configureAtmosphere(look);
+  const clampMobileAtmosphere = (p: QualityProfile): void => {
+    if (core.isMobile && p.tier === 'low') {
+      // Skip 4 per-pixel noise fetches + matrix multiplies in atmosphere.ts on mobile low; depth haze (uHaze.x) stays on.
+      atmosphereUniforms.uCloud.value.x = 0;
+      atmosphereUniforms.uHaze.value.w = 0;
+    }
+  };
+  clampMobileAtmosphere(core.quality.profile);
   const sunShadow = core.env.sun.shadow;
   const baseShadowIntensity = sunShadow.intensity;
   sunShadow.intensity = look.shadow.intensity;
@@ -100,6 +108,7 @@ export function createZoneScene(core: RenderCore, field: TerrainField, biome: Bi
       fill.groundColor.copy(s.zoneFill.ground);
     }
     applyArcAtmosphere(s.haze, s.poolGain);
+    clampMobileAtmosphere(ctx.quality);
     terrainArc.shadowFill = s.fill.shadowFill;
     terrainArc.medallionGlow = s.medallionGlow;
     setTerrainArc(terrainArc);
@@ -144,6 +153,12 @@ export function createZoneScene(core: RenderCore, field: TerrainField, biome: Bi
     },
     setQuality(p) {
       ctx.quality = p;
+      if (core.isMobile && p.tier === 'low') {
+        clampMobileAtmosphere(p);
+      } else {
+        atmosphereUniforms.uCloud.value.x = look.cloud?.strength ?? 0;
+        atmosphereUniforms.uHaze.value.w = arcApplied ? arc.state.haze.mist : (look.haze?.mist ?? 0);
+      }
       for (const s of systems) s.setQuality(p);
     },
     dispose() {
