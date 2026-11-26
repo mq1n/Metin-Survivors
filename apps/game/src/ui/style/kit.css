@@ -1,0 +1,357 @@
+
+
+/* ---- kit scope ------------------------------------------------------------------------------------------------- */
+.ms-kit--contents {
+  display: contents;
+}
+
+/* ---- Board (T1 + T2): Panel variant="board" ---------------------------------------------------------------------- */
+.ms-board {
+  position: relative;
+  border-radius: var(--k-r);
+  color: var(--k-text);
+  background-color: var(--k-board);
+  background-image:
+    linear-gradient(180deg, rgba(255, 236, 200, 0.035), transparent 26%, transparent 70%, rgba(0, 0, 0, 0.22)),
+    linear-gradient(var(--k-board-veil), var(--k-board-veil)),
+    var(--tex-uk-board, var(--k-grain-light));
+  background-size: auto, auto, var(--k-board-tile);
+  border: 1px solid var(--k-line);
+  /* 3-step pewter bevel: light top-left / shade bottom-right on a 3 px band, a dark inner line, a faint bronze hairline */
+  box-shadow:
+    inset 1px 1px 0 var(--k-pewter-hi),
+    inset -1px -1px 0 var(--k-pewter-lo),
+    inset 0 0 0 3px var(--k-pewter),
+    inset 0 0 0 4px var(--k-line-in),
+    inset 0 0 0 5px rgba(106, 81, 52, 0.32),
+    inset 0 0 1.4rem rgba(0, 0, 0, 0.5),
+    0 0.45rem 0.75rem rgba(0, 0, 0, 0.55);
+}
+/* four domed corner studs sitting on the bevel */
+.ms-board::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: 3;
+  pointer-events: none;
+  --rv: 0.62rem;
+  background:
+    var(--k-rivet) 0 0 / var(--rv) var(--rv) no-repeat,
+    var(--k-rivet) 100% 0 / var(--rv) var(--rv) no-repeat,
+    var(--k-rivet) 0 100% / var(--rv) var(--rv) no-repeat,
+    var(--k-rivet) 100% 100% / var(--rv) var(--rv) no-repeat;
+}
+.ms-board--ornate::before {
+  display: none;
+}
+.ms-board-body {
+  padding: 0.75rem 1rem 1rem;
+}
+/* ornate corner caps (40-56 px, never crushed): the painted uk_corner piece, mirrored per corner; SVG fallback */
+.ms-board-orn {
+  position: absolute;
+  z-index: 4;
+  width: var(--k-orn);
+  height: var(--k-orn);
+  pointer-events: none;
+  background: var(--tex-uk-corner, var(--k-orn-svg)) left top / contain no-repeat;
+  filter: drop-shadow(0 0.12rem 0.12rem rgba(0, 0, 0, 0.65));
+}
+.ms-board-orn.is-tl {
+  left: -0.32rem;
+  top: -0.32rem;
+}
+.ms-board-orn.is-tr {
+  right: -0.32rem;
+  top: -0.32rem;
+  transform: scaleX(-1);
+}
+.ms-board-orn.is-bl {
+  left: -0.32rem;
+  bottom: -0.32rem;
+  transform: scaleY(-1);
+}
+.ms-board-orn.is-br {
+  right: -0.32rem;
+  bottom: -0.32rem;
+  transform: scale(-1, -1);
+}
+.ms-ui {
+  --k-orn-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c9c1b3'/%3E%3Cstop offset='.45' stop-color='%236d665d'/%3E%3Cstop offset='1' stop-color='%232e2a26'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 45V9a6 6 0 0 1 6-6h36v6H13a4 4 0 0 0-4 4v32z' fill='url(%23g)' stroke='%230b0a09' stroke-width='1.6'/%3E%3Cpath d='M40 6a5 5 0 1 0 5 5' fill='none' stroke='url(%23g)' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M6 40a5 5 0 1 1 5 5' fill='none' stroke='url(%23g)' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='9' r='4.6' fill='%23a59a86' stroke='%230b0a09' stroke-width='1.2'/%3E%3Ccircle cx='8' cy='8' r='1.7' fill='%23f3ecdf'/%3E%3C/svg%3E");
+}
+
+/* ---- Thin board: translucent dark board with stepped fret corners (menus, notices, dialogs over the world) -------- */
+.ms-thinboard {
+  position: relative;
+  color: var(--k-text);
+  border-radius: 2px;
+  background: rgba(14, 14, 12, 0.84);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(124, 116, 104, 0.26), inset 0 0 1.2rem rgba(0, 0, 0, 0.45), 0 0.35rem 0.8rem rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.ms-thinboard::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  --fc: 0.8rem;
+  background:
+    var(--k-fret-tl) 0 0 / var(--fc) var(--fc) no-repeat,
+    var(--k-fret-tr) 100% 0 / var(--fc) var(--fc) no-repeat,
+    var(--k-fret-bl) 0 100% / var(--fc) var(--fc) no-repeat,
+    var(--k-fret-br) 100% 100% / var(--fc) var(--fc) no-repeat;
+}
+.ms-ui {
+  --k-fret-tl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23958c7e' stroke-width='1'/%3E%3Crect x='2' y='2' width='1.6' height='1.6' fill='%23958c7e'/%3E%3C/svg%3E");
+  --k-fret-tr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cg transform='matrix(-1 0 0 1 12 0)'%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23958c7e' stroke-width='1'/%3E%3Crect x='2' y='2' width='1.6' height='1.6' fill='%23958c7e'/%3E%3C/g%3E%3C/svg%3E");
+  --k-fret-bl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cg transform='matrix(1 0 0 -1 0 12)'%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23958c7e' stroke-width='1'/%3E%3Crect x='2' y='2' width='1.6' height='1.6' fill='%23958c7e'/%3E%3C/g%3E%3C/svg%3E");
+  --k-fret-br: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cg transform='matrix(-1 0 0 -1 12 12)'%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath d='M.5 12V5.5h3v-3h2v-2H12' fill='none' stroke='%23958c7e' stroke-width='1'/%3E%3Crect x='2' y='2' width='1.6' height='1.6' fill='%23958c7e'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ---- Sunken area: recessed inset inside a board (slot grids, lists, equipment), optional carved lattice ----------- */
+.ms-sunken {
+  position: relative;
+  border-radius: 3px;
+  background-color: var(--k-well-2);
+  background-image: linear-gradient(rgba(9, 8, 7, 0.5), rgba(9, 8, 7, 0.5)), var(--tex-uk-lattice, none);
+  background-size: auto, 10rem;
+  border: 1px solid #060505;
+  /* recessed bevel: dark top-left, faint light bottom-right, a soft inner shade; a pale hairline lip below */
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.95),
+    inset -1px -1px 0 rgba(160, 150, 134, 0.2),
+    inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.55),
+    0 1px 0 rgba(255, 240, 220, 0.06);
+}
+.ms-sunken--plain {
+  background-image: linear-gradient(rgba(9, 8, 7, 0.2), rgba(9, 8, 7, 0.2));
+}
+/* a thin pale frame line inset from the edge (the framed equipment / refine boxes) */
+.ms-sunken--framed::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  pointer-events: none;
+  border: 1px solid rgba(178, 168, 150, 0.32);
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+
+/* ---- Groove divider: a carved pewter line with a centre rivet ----------------------------------------------------- */
+.ms-groove {
+  position: relative;
+  height: 0.6rem;
+  margin: 0.45rem 0;
+  border: 0;
+  background:
+    linear-gradient(180deg, #050504 0 1px, rgba(140, 132, 120, 0.4) 1px 2px, transparent 2px) 0 50% / 100% 2px no-repeat;
+}
+.ms-groove::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  translate: -50% -50%;
+  background: var(--k-rivet);
+}
+.ms-groove--plain::after {
+  display: none;
+}
+
+/* ---- Title bar (T3): rust-copper leather between pewter edge lines, rivet caps, centred caption, boxed close ----- */
+.ms-titlebar {
+  --tb-h: 1.95rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--tb-h);
+  padding: 0.1rem 2.3rem;
+  border-radius: 0.32rem;
+  color: var(--k-tb-text);
+  background-color: var(--k-rust);
+  background-image:
+    linear-gradient(180deg, rgba(255, 196, 150, 0.16) 0%, rgba(255, 196, 150, 0) 38%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(var(--k-rust-veil), var(--k-rust-veil)),
+    var(--tex-uk-rust, var(--k-grain-light));
+  background-size: auto, auto, 14rem;
+  border: 1px solid var(--k-line);
+  box-shadow:
+    inset 0 1px 0 var(--k-tb-edge-hi),
+    inset 0 2px 0 var(--k-tb-edge),
+    inset 0 -1px 0 color-mix(in srgb, var(--k-tb-edge-hi) 82%, #000),
+    inset 0 -2px 0 var(--k-tb-edge),
+    inset 0 0 0.6rem rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(0, 0, 0, 0.7);
+}
+/* rivet end caps (left always; right when there is no close button) */
+.ms-titlebar::before,
+.ms-titlebar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.95rem;
+  height: 0.95rem;
+  translate: 0 -50%;
+  background: var(--k-rivet);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+.ms-titlebar::before {
+  left: -0.42rem;
+}
+.ms-titlebar::after {
+  right: -0.42rem;
+}
+.ms-titlebar.has-close::after {
+  display: none;
+}
+.ms-titlebar-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  line-height: 1.15;
+  letter-spacing: 0.07em;
+  text-shadow: 0 1px 0 rgba(36, 8, 2, 0.95), 0 0 0.4rem rgba(0, 0, 0, 0.55);
+}
+.ms-titlebar-icon {
+  display: inline-flex;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--k-gold);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.8));
+}
+.ms-titlebar-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+.ms-titlebar > .ms-capbtn {
+  position: absolute;
+  right: 0.22rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+.ms-titlebar--sm {
+  --tb-h: 1.6rem;
+}
+.ms-titlebar--sm .ms-titlebar-text {
+  font-size: var(--t-sm);
+}
+.ms-board > .ms-titlebar {
+  margin: 5px 5px 0;
+}
+
+/* ---- Plate recipe (shared by cap buttons, kit buttons, kit tabs, segments) ---------------------------------------
+   The element itself is never clipped (focus rings and glows are drop-shadows on it). ::after = the 1 px dark outline
+   polygon; ::before = bevel + face polygon inset by 1 px. Straight bevel lines are borders (light top / left, dark
+   bottom / right); the chamfer diagonals are gradient lines laid exactly on the cut (x + y = cut <=> a 135deg gradient
+   stop at cut x 0.7071), so the bevel follows all eight edges at every DPR. Variants only change the --pl-* tokens. */
+:is(.ms-plate, .ms-capbtn) {
+  --pl-c: 0.3rem;
+  --pl-ci: calc(var(--pl-c) - 0.6px);
+  --pl-bw: 1.5px;
+  --pl-line: #0b0a09;
+  --pl-hi: var(--k-stone-edge-hi);
+  --pl-mid: var(--k-stone-edge);
+  --pl-lo: var(--k-stone-shade);
+  --pl-veil: var(--k-stone-veil);
+  --pl-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 45%, rgba(0, 0, 0, 0.24));
+  --pl-face: var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-uk-stone, var(--k-grain-light)) 0 0 / var(--k-stone-tile), var(--k-stone);
+  position: relative;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+}
+:is(.ms-plate, .ms-capbtn)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--pl-line);
+  clip-path: polygon(var(--pl-c) 0, calc(100% - var(--pl-c)) 0, 100% var(--pl-c), 100% calc(100% - var(--pl-c)), calc(100% - var(--pl-c)) 100%, var(--pl-c) 100%, 0 calc(100% - var(--pl-c)), 0 var(--pl-c));
+}
+:is(.ms-plate, .ms-capbtn)::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  pointer-events: none;
+  border: var(--pl-bw) solid;
+  border-color: var(--pl-hi) var(--pl-lo) var(--pl-lo) var(--pl-hi);
+  background:
+    linear-gradient(135deg, transparent calc(var(--pl-ci) * 0.7071 - 0.25px), var(--pl-hi) 0 calc(var(--pl-ci) * 0.7071 + var(--pl-bw)), transparent 0) border-box,
+    linear-gradient(225deg, transparent calc(var(--pl-ci) * 0.7071 - 0.25px), var(--pl-mid) 0 calc(var(--pl-ci) * 0.7071 + var(--pl-bw)), transparent 0) border-box,
+    linear-gradient(315deg, transparent calc(var(--pl-ci) * 0.7071 - 0.25px), var(--pl-lo) 0 calc(var(--pl-ci) * 0.7071 + var(--pl-bw)), transparent 0) border-box,
+    linear-gradient(45deg, transparent calc(var(--pl-ci) * 0.7071 - 0.25px), var(--pl-mid) 0 calc(var(--pl-ci) * 0.7071 + var(--pl-bw)), transparent 0) border-box,
+    var(--pl-face);
+  clip-path: polygon(var(--pl-ci) 0, calc(100% - var(--pl-ci)) 0, 100% var(--pl-ci), 100% calc(100% - var(--pl-ci)), calc(100% - var(--pl-ci)) 100%, var(--pl-ci) 100%, 0 calc(100% - var(--pl-ci)), 0 var(--pl-ci));
+}
+/* invisible hit-area extender (touch targets >= --k-tap without growing the drawn plate) */
+.ms-hit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-touch .ms-hit {
+  pointer-events: auto;
+  inset: min(0px, calc((100% - var(--k-tap)) / 2));
+}
+
+/* ---- Cap button: small chamfered square stone button (close x, minus, plus, arrows) ------------------------------- */
+.ms-capbtn {
+  --cb: 1.45rem;
+  --pl-c: 0.24rem;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--cb);
+  height: var(--cb);
+  color: #e6dfd2;
+  cursor: pointer;
+}
+.ms-capbtn > svg {
+  width: 58%;
+  height: 58%;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.9));
+}
+@media (hover: hover) {
+  .ms-capbtn:hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    color: var(--k-gold);
+  }
+}
+.ms-capbtn:active {
+  --pl-veil: var(--k-stone-veil-press);
+  --pl-hi: var(--k-stone-shade);
+  --pl-lo: var(--k-stone-edge);
+}
+.ms-capbtn:active > svg {
+  translate: 0 1px;
+}
+.ms-capbtn--danger:hover {
+  color: #ff9a86;
+}
+.ms-ui .ms-plate[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-plate[data-nav]:focus,
+.ms-ui .ms-capbtn[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-capbtn[data-nav]:focus {
+  box-shadow: none;
+  filter: var(--focus-glow);
+}
+.ms-touch .ms-capbtn {
+  --cb: 1.9rem;
+}
+/* the touch area of the close / zoom cap buttons is the full --k-tap plus a 0.5 px reserve on every side: at exactly 44 px a sub-pixel
+   layout read 43.6 px on the region-map board of a 844 x 390 phone */
+.ms-touch .ms-capbtn > .ms-hit {
+  inset: min(0px, calc((100% - var(--k-tap)) / 2 - 0.5px));
+}

@@ -1,0 +1,295 @@
+[
+  {
+    "id": "sovereign_blood",
+    "name": {
+      "tr": "Gök Hükümdarı’nın Kanı",
+      "en": "Blood of the Sky Sovereign"
+    },
+    "desc": {
+      "tr": "Gök Hükümdarı’nın kanı damarlarında akar: her rütbede azami canı %8 artırır.",
+      "en": "The Sky Sovereign’s blood runs in your veins: +8% max HP per rank."
+    },
+    "icon": "icon_passive_sovereign_blood",
+    "perRank": {
+      "maxHpPct": 0.08
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "sanctified_mail",
+    "name": {
+      "tr": "Arınmış Zırh",
+      "en": "Sanctified Mail"
+    },
+    "desc": {
+      "tr": "Zırhına kutsal bir ışık işlenir: her rütbede zırhı 6 artırır.",
+      "en": "A holy light is woven into your armour: +6 armor per rank."
+    },
+    "icon": "icon_passive_sanctified_mail",
+    "perRank": {
+      "armor": 6
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "quickening",
+    "name": {
+      "tr": "Çevikleşme",
+      "en": "Quickening"
+    },
+    "desc": {
+      "tr": "Adımların hafifler, darbelerin sıklaşır: her rütbede hareket hızı %4, saldırı hızı %3 artar.",
+      "en": "Lighter steps, quicker strikes: +4% movement speed and +3% attack speed per rank."
+    },
+    "icon": "icon_passive_quickening",
+    "perRank": {
+      "moveSpeed": 0.04,
+      "attackSpeed": 0.03
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "sovereign_wrath",
+    "name": {
+      "tr": "Gök Hükümdarı’nın Gazabı",
+      "en": "Wrath of the Sky Sovereign"
+    },
+    "desc": {
+      "tr": "Öfken ejderha ateşine dönüşür: her rütbede kritik şansı %3, kritik hasarı %6 artar.",
+      "en": "Your fury turns to dragonfire: +3% crit chance and +6% crit damage per rank."
+    },
+    "icon": "icon_passive_sovereign_wrath",
+    "perRank": {
+      "critChance": 0.03,
+      "critDamage": 0.06
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "swift_invocation",
+    "name": {
+      "tr": "Süratli Çağrı",
+      "en": "Swift Invocation"
+    },
+    "desc": {
+      "tr": "Yetenekler daha çabuk toparlanır: her rütbede bekleme süreleri %4 kısalır.",
+      "en": "Skills recover faster: cooldowns are 4% shorter per rank."
+    },
+    "icon": "icon_passive_swift_invocation",
+    "perRank": {
+      "cooldown": 0.04
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "sovereign_eyes",
+    "name": {
+      "tr": "Hükümdar Gözleri",
+      "en": "Sovereign Eyes"
+    },
+    "desc": {
+      "tr": "Ejderhanın bakışı menzilini genişletir: her rütbede yeteneklerin alanı %6 büyür.",
+      "en": "The dragon’s gaze widens your reach: skill areas grow 6% per rank."
+    },
+    "icon": "icon_passive_sovereign_eyes",
+    "perRank": {
+      "area": 0.06
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "sovereign_boon",
+    "name": {
+      "tr": "Gök Hükümdarı’nın Lütfu",
+      "en": "Boon of the Sky Sovereign"
+    },
+    "desc": {
+      "tr": "Lütuf yaralarını zamanla kapatır: her rütbede saniyede 0,6 can yeniler.",
+      "en": "The blessing closes your wounds over time: regenerate 0.6 HP per second per rank."
+    },
+    "icon": "icon_passive_sovereign_boon",
+    "perRank": {
+      "regen": 0.6
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "blood_oath",
+    "name": {
+      "tr": "Kan Yemini",
+      "en": "Blood Oath"
+    },
+    "desc": {
+      "tr": "Her darbe yaralarını sarar: her rütbede verdiğin hasarın %0,5’i can olarak sana döner.",
+      "en": "Every blow mends your wounds: each rank returns 0.5% of the damage you deal as health."
+    },
+    "icon": "icon_passive_blood_oath",
+    "perRank": {
+      "lifesteal": 0.005
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "marshals_voice",
+    "name": {
+      "tr": "Komutanın Sesi",
+      "en": "Marshal's Voice"
+    },
+    "desc": {
+      "tr": "Ordu seni izler, deneyim yağar: her rütbede kazanılan deneyim %7 artar.",
+      "en": "Armies follow your banner and experience pours in: +7% XP gained per rank."
+    },
+    "icon": "icon_passive_marshals_voice",
+    "perRank": {
+      "xpGain": 0.07
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "follow_through",
+    "name": {
+      "tr": "Art Arda Vuruş",
+      "en": "Follow-Through"
+    },
+    "desc": {
+      "tr": "Darbeler birbirini kovalar: her iki rütbede bir yeteneklerine fazladan bir mermi, vuruş ya da çağrı eklenir.",
+      "en": "Strikes chase each other: every two ranks add one extra projectile, strike or summon to your skills."
+    },
+    "icon": "icon_passive_follow_through",
+    "perRank": {
+      "projectiles": 0.5
+    },
+    "maxRank": 4
+  },
+  {
+    "id": "true_flight",
+    "name": {
+      "tr": "İsabetli Uçuş",
+      "en": "True Flight"
+    },
+    "desc": {
+      "tr": "Her atış hedefini bulur: her rütbede mermi hızı %8 artar; mermiler iki rütbede bir fazladan düşman deler.",
+      "en": "Every shot finds its mark: +8% projectile speed per rank, and projectiles pierce one extra enemy every two or three ranks."
+    },
+    "icon": "icon_passive_true_flight",
+    "perRank": {
+      "projSpeed": 0.08,
+      "pierce": 0.4
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "saddlecraft",
+    "name": {
+      "tr": "Eyer Sanatı",
+      "en": "Saddlecraft"
+    },
+    "desc": {
+      "tr": "Süvari sabrı: her rütbede yetenek süreleri %8, hareket hızı %2 artar.",
+      "en": "A cavalryman’s endurance: skill durations +8% and movement speed +2% per rank."
+    },
+    "icon": "icon_passive_saddlecraft",
+    "perRank": {
+      "duration": 0.08,
+      "moveSpeed": 0.02
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "magpie_gloves",
+    "name": {
+      "tr": "Saksağan Eldiveni",
+      "en": "Magpie Gloves"
+    },
+    "desc": {
+      "tr": "Parmakların hiçbir keseyi boş bırakmaz: her rütbede kazanılan Yeop %10 artar.",
+      "en": "Your fingers leave no purse empty: +10% Yeop gained per rank."
+    },
+    "icon": "icon_passive_magpie_gloves",
+    "perRank": {
+      "yeopGain": 0.1
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "ghostly_grasp",
+    "name": {
+      "tr": "Görünmez Avuç",
+      "en": "Ghostly Grasp"
+    },
+    "desc": {
+      "tr": "Görünmez bir el yerdeki her şeyi sana uzatır: her rütbede toplama menzili %15 artar.",
+      "en": "An unseen hand reaches for everything on the ground: pickup range +15% per rank."
+    },
+    "icon": "icon_passive_ghostly_grasp",
+    "perRank": {
+      "pickupRadius": 0.15
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "fortunes_favour",
+    "name": {
+      "tr": "Talih Gülüşü",
+      "en": "Fortune's Favour"
+    },
+    "desc": {
+      "tr": "Talih sana güler: her rütbede şans 0,04 artar; nadir kartlar daha sık gelir.",
+      "en": "Fortune smiles on you: +0.04 luck per rank, so rare cards appear more often."
+    },
+    "icon": "icon_passive_fortunes_favour",
+    "perRank": {
+      "luck": 0.04
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "waters_of_return",
+    "name": {
+      "tr": "Dönüş Suyu",
+      "en": "Waters of Return"
+    },
+    "desc": {
+      "tr": "Ölüm eşiğinde ejderha suyu seni geri çağırır: iki rütbede bir diriliş hakkı verir ve canı biraz artırır.",
+      "en": "On the brink of death, the dragon water calls you back: grants a revive every two ranks and a little extra HP."
+    },
+    "icon": "icon_passive_waters_of_return",
+    "perRank": {
+      "revives": 0.5,
+      "maxHpPct": 0.03
+    },
+    "maxRank": 2
+  },
+  {
+    "id": "thorned_hide",
+    "name": {
+      "tr": "Diken Derisi",
+      "en": "Thorned Hide"
+    },
+    "desc": {
+      "tr": "Sana vuran kendi acısını tadar: her rütbede alınan yakın dövüş hasarının %8’i geri yansır.",
+      "en": "Whoever strikes you tastes their own pain: reflect 8% of melee damage taken per rank."
+    },
+    "icon": "icon_passive_thorned_hide",
+    "perRank": {
+      "thorns": 0.08
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "slayer_mark",
+    "name": {
+      "tr": "Ejderha Avcısı İşareti",
+      "en": "Dragon Slayer’s Mark"
+    },
+    "desc": {
+      "tr": "Büyük yaratıkların zayıf noktasını görürsün: her rütbede boss’lara %6 daha fazla hasar verirsin.",
+      "en": "You see the weak spot of great beasts: +6% damage to bosses per rank."
+    },
+    "icon": "icon_passive_slayer_mark",
+    "perRank": {
+      "vsBoss": 0.06
+    },
+    "maxRank": 5
+  }
+]

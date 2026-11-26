@@ -1,0 +1,19 @@
+{
+  "zonemap.mapOf": "{zone} haritası",
+  "zonemap.zoomIn": "Yakınlaştır",
+  "zonemap.zoomOut": "Uzaklaştır",
+  "zonemap.openAtlas": "Bölge haritası",
+  "zonemap.you": "Sen",
+  "zonemap.start": "Başlangıç noktası",
+  "zonemap.heart": "Son savaşın yeri",
+  "zonemap.bossArena": "Boss arenası",
+  "zonemap.poi": "Simge yer",
+  "zonemap.north": "K",
+  "zonemap.coords": "Konum {x}, {z}",
+  "zonemap.hide": "Haritayı gizle",
+  "zonemap.metin": "Metin taşı",
+  "zonemap.boss": "Boss",
+  "zonemap.chest": "Sandık",
+  "zonemap.ally": "Müttefik",
+  "zonemap.failed": "Harita kullanılamıyor"
+}

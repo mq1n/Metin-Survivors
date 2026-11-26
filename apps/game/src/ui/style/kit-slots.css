@@ -1,0 +1,574 @@
+
+
+/* ---- slot ----------------------------------------------------------------------------------------------------- */
+:where(.ms-slot--k) {
+  --rc: var(--k-slot-rim);
+}
+.ms-slot.ms-slot--k {
+  --sl-c: calc(var(--s) * 0.14);
+  --sl-bw: max(2px, calc(var(--s) * 0.032));
+  --sl-in: calc(1px + var(--sl-bw));
+  --sl-ci: calc(var(--sl-c) - 0.586 * var(--sl-in));
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+}
+/* the legacy awakened / legendary conic glows are replaced by the drop-shadow layer */
+.ms-slot.ms-slot--k::before,
+.ms-slot.ms-slot--k.ms-r-legendary::before {
+  content: none;
+}
+.ms-slot--k .ms-slot-fx {
+  position: absolute;
+  inset: 0;
+  filter: drop-shadow(0 0 0.4rem var(--rg));
+  transition: filter 0.14s;
+}
+.ms-slot--k .ms-slot-frame {
+  --pl-c: var(--sl-c);
+  --pl-bw: var(--sl-bw);
+  --pl-line: #070605;
+  --pl-hi: color-mix(in srgb, var(--rc) 38%, #dcd4c4);
+  --pl-mid: color-mix(in srgb, var(--rc) 82%, #000);
+  --pl-lo: color-mix(in srgb, var(--rc) 30%, #000);
+  --pl-face: radial-gradient(120% 100% at 50% 28%, #1f1b16 0%, #0e0c0a 72%);
+  position: absolute;
+  inset: 0;
+}
+.ms-slot--k .ms-slot-art,
+.ms-slot--k .ms-slot-cd,
+.ms-slot--k .ms-slot-ghost {
+  position: absolute;
+  inset: var(--sl-in);
+  clip-path: polygon(var(--sl-ci) 0, calc(100% - var(--sl-ci)) 0, 100% var(--sl-ci), 100% calc(100% - var(--sl-ci)), calc(100% - var(--sl-ci)) 100%, var(--sl-ci) 100%, 0 calc(100% - var(--sl-ci)), 0 var(--sl-ci));
+}
+.ms-slot--k .ms-slot-art {
+  border-radius: 0;
+  overflow: visible;
+  background: radial-gradient(120% 100% at 50% 28%, #1f1b16 0%, #0e0c0a 72%);
+}
+.ms-slot--k .ms-slot-art > img,
+.ms-slot--k .ms-slot-art > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* v2 pipeline icons: octagon tiles carry their own rim (no second rim: the frame keeps only its outline), cut-outs sit on
+   the well with a little air and a rarity-coloured under-light */
+.ms-slot--k .ms-slot-art > img.ms-icon--tile,
+.ms-slot--k .ms-slot-art > img.ms-icon--cutout {
+  object-fit: contain;
+}
+.ms-slot--k.ms-slot--tile .ms-slot-frame {
+  --pl-bw: 0px;
+  --sl-bw: 0px;
+}
+.ms-slot--k.ms-slot--tile {
+  --sl-in: 1px;
+}
+.ms-slot--k.ms-slot--tile .ms-slot-art {
+  background: none;
+}
+.ms-slot--k .ms-slot-art > img.ms-icon--cutout {
+  padding: 7%;
+  filter: drop-shadow(0 0.08rem 0.1rem rgba(0, 0, 0, 0.55));
+}
+.ms-slot--k.ms-slot--cutout .ms-slot-art {
+  background:
+    radial-gradient(75% 62% at 50% 108%, color-mix(in srgb, var(--rc) 30%, transparent), transparent 72%),
+    radial-gradient(120% 100% at 50% 28%, #211d18 0%, #0e0c0a 72%);
+}
+/* inner bevel + vignette over the art (the cell is recessed) */
+.ms-slot--k .ms-slot-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0.45rem rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 240, 200, 0.14);
+}
+.ms-slot--k.ms-slot--tile .ms-slot-art::after {
+  box-shadow: inset 0 0 0.2rem rgba(0, 0, 0, 0.35);
+}
+.ms-slot--k.ms-slot--empty .ms-slot-art {
+  opacity: 1;
+  background: radial-gradient(120% 100% at 50% 28%, #15120f 0%, #080706 74%);
+}
+.ms-slot--k.ms-slot--empty .ms-slot-frame {
+  --pl-hi: #5a554d;
+  --pl-mid: #3a3732;
+  --pl-lo: #14120f;
+}
+.ms-slot--k .ms-slot-ghost {
+  inset: calc(var(--sl-in) + var(--s) * 0.2);
+  clip-path: none;
+  opacity: 0.4;
+  color: var(--k-pewter);
+}
+.ms-slot--k .ms-slot-cd {
+  border-radius: 0;
+  background: conic-gradient(from 0deg, transparent 0 var(--cd-a, 360deg), rgba(4, 3, 2, 0.74) var(--cd-a, 360deg) 360deg);
+}
+.ms-slot--k .ms-slot-ready {
+  inset: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 246, 206, 0.95), rgba(255, 208, 110, 0.5) 55%, transparent 82%);
+  clip-path: polygon(var(--sl-c) 0, calc(100% - var(--sl-c)) 0, 100% var(--sl-c), 100% calc(100% - var(--sl-c)), calc(100% - var(--sl-c)) 100%, var(--sl-c) 100%, 0 calc(100% - var(--sl-c)), 0 var(--sl-c));
+}
+
+/* talent rows: rim tint by row (I-II olive bronze, III-IV ember orange, V crimson) */
+.ms-slot.ms-slot--k.ms-slot--row1,
+.ms-slot.ms-slot--k.ms-slot--row2 {
+  --rc: #8e8036;
+  --rg: rgba(160, 140, 60, 0.35);
+}
+.ms-slot.ms-slot--k.ms-slot--row3,
+.ms-slot.ms-slot--k.ms-slot--row4 {
+  --rc: #c8742a;
+  --rg: rgba(220, 120, 40, 0.4);
+}
+.ms-slot.ms-slot--k.ms-slot--row5 {
+  --rc: #b8302c;
+  --rg: rgba(210, 50, 40, 0.45);
+}
+
+/* locked (not owned): the icon stays readable at ~40 % brightness; a lock mark replaces the medal */
+.ms-slot--k.ms-slot--locked .ms-slot-art > img,
+.ms-slot--k.ms-slot--locked .ms-slot-art > svg {
+  filter: grayscale(0.78) brightness(0.37) contrast(0.95);
+}
+.ms-slot--k.ms-slot--locked .ms-slot-frame {
+  --pl-hi: #5a554d;
+  --pl-mid: #3a3732;
+  --pl-lo: #14120f;
+}
+.ms-slot--k.ms-slot--locked .ms-slot-fx {
+  filter: none;
+}
+.ms-slot-lock {
+  position: absolute;
+  right: -0.2rem;
+  bottom: -0.2rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: max(1rem, calc(var(--s) * 0.34));
+  height: max(1rem, calc(var(--s) * 0.34));
+  color: #d8d0c0;
+  background: linear-gradient(180deg, #3b3731, #181613);
+  clip-path: polygon(22% 0, 78% 0, 100% 22%, 100% 78%, 78% 100%, 22% 100%, 0 78%, 0 22%);
+}
+.ms-slot-lock .ms-icon-inline {
+  width: 62%;
+  height: 62%;
+}
+
+/* states */
+.ms-slot--k.is-hoverable {
+  transition: translate 0.12s var(--ease-soft);
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .ms-slot.ms-slot--k.is-hoverable:hover {
+    translate: 0 -0.14rem;
+    box-shadow: none;
+    transform: none;
+  }
+  .ms-slot--k.is-hoverable:hover .ms-slot-fx {
+    filter: drop-shadow(0 0 0.06rem #fff0b8) drop-shadow(0 0 0.55rem rgba(255, 224, 140, 0.55));
+  }
+}
+.ms-slot--k.is-hoverable:active {
+  translate: 0 1px;
+}
+.ms-slot.ms-slot--k.is-selected {
+  box-shadow: none;
+}
+.ms-slot--k.is-selected .ms-slot-fx {
+  filter: drop-shadow(0 0 0.06rem #fff0b8) drop-shadow(0 0 0.08rem #fff0b8) drop-shadow(0 0 0.65rem rgba(255, 224, 140, 0.8));
+}
+.ms-slot--k.is-selected .ms-slot-frame {
+  --pl-hi: #fff0b8;
+  --pl-mid: #e0b455;
+  --pl-lo: #6a4a14;
+}
+.ms-slot.ms-slot--k[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-slot.ms-slot--k[data-nav]:focus {
+  box-shadow: none;
+}
+.ms-slot--k[data-nav]:focus-visible .ms-slot-fx,
+.ms-ui.ms-kbd .ms-slot--k[data-nav]:focus .ms-slot-fx {
+  filter: var(--focus-glow);
+}
+@keyframes ms-k-awaken {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0.06rem #ffe9a8) drop-shadow(0 0 0.45rem rgba(255, 176, 64, 0.85));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.06rem #fff4c8) drop-shadow(0 0 0.8rem rgba(255, 112, 52, 0.95));
+  }
+}
+.ms-slot--k.ms-slot--awakened .ms-slot-fx {
+  animation: ms-k-awaken 2.4s ease-in-out infinite;
+}
+@keyframes ms-k-legend {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0.35rem var(--rg));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.6rem var(--rg)) drop-shadow(0 0 0.15rem rgba(255, 200, 100, 0.55));
+  }
+}
+.ms-slot--k.ms-r-legendary:not(.ms-slot--awakened):not(.is-selected):not(.ms-slot--locked) .ms-slot-fx {
+  animation: ms-k-legend 3.6s ease-in-out infinite;
+}
+
+/* hotkey plate: small chamfered tag, outside the frame */
+.ms-slot--k .ms-slot-key {
+  left: -0.2rem;
+  top: -0.2rem;
+  width: auto;
+  min-width: 1.05rem;
+  height: 1.05rem;
+  padding: 0 0.22rem;
+  border: 0;
+  border-radius: 0;
+  font-size: var(--t-2xs);
+  line-height: 1.05rem;
+  color: var(--k-gold);
+  background: linear-gradient(180deg, #24211d, #0c0b09);
+  box-shadow: none;
+  clip-path: polygon(0.2rem 0, 100% 0, 100% calc(100% - 0.2rem), calc(100% - 0.2rem) 100%, 0 100%, 0 0.2rem);
+  filter: none;
+}
+
+/* ---- medal ---------------------------------------------------------------------------------------------------- */
+.ms-medal {
+  --mh: 1.3rem;
+  --pl-c: calc(var(--mh) * 0.3);
+  --pl-bw: 1.5px;
+  --pl-line: #070605;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--mh);
+  height: var(--mh);
+  padding: 0 0.24rem;
+  font-family: var(--f-num);
+  font-weight: 800;
+  font-size: var(--t-2xs);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+.ms-medal--n {
+  --pl-hi: #dad5c8;
+  --pl-mid: #8c877c;
+  --pl-lo: #2a2723;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 50%), linear-gradient(180deg, #6f6c65, #3f3d38 62%, #2c2a27);
+  color: #f6f1e4;
+}
+.ms-medal--m {
+  --pl-hi: #ecc486;
+  --pl-mid: #a5753d;
+  --pl-lo: #35200e;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 50%), linear-gradient(180deg, #2f937a, #17594a 60%, #0e3c30);
+  color: #e6fff5;
+}
+.ms-medal--g {
+  --pl-hi: #ffe596;
+  --pl-mid: #c9962e;
+  --pl-lo: #4a3208;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 50%), linear-gradient(180deg, #a42438, #62121f 60%, #3b0913);
+  color: #ffeab4;
+}
+.ms-medal--p {
+  --pl-hi: #fff4c0;
+  --pl-mid: #eabc48;
+  --pl-lo: #5a3a08;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 52%), linear-gradient(180deg, #8456dc, #4a2796 56%, #2b1563);
+  color: #fff7d6;
+  filter: drop-shadow(0 0 0.32rem rgba(176, 120, 255, 0.85));
+}
+.ms-medal--tag {
+  --pl-c: 0.2rem;
+  --pl-hi: #d2c8b2;
+  --pl-mid: #6f6657;
+  --pl-lo: #1d1a16;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 50%), linear-gradient(180deg, #38342e, #181613);
+  padding: 0 0.34rem;
+  color: var(--k-gold);
+}
+.ms-medal--long {
+  padding: 0 0.3rem;
+}
+.ms-medal--xs {
+  --mh: 1rem;
+}
+.ms-medal--sm {
+  --mh: 1.15rem;
+}
+.ms-medal--md {
+  --mh: 1.3rem;
+}
+.ms-medal--lg {
+  --mh: 1.6rem;
+  font-size: var(--t-sm);
+}
+/* inside a slot the medal sits on the lower-right corner of the frame and scales with it */
+.ms-slot--k .ms-medal {
+  position: absolute;
+  right: -0.3rem;
+  bottom: -0.3rem;
+  z-index: 3;
+  --mh: clamp(1.05rem, calc(var(--s) * 0.34), 1.7rem);
+}
+.ms-slot--k.ms-slot--lg .ms-medal,
+.ms-slot--k.ms-slot--xl .ms-medal,
+.ms-slot--k.ms-slot--xxl .ms-medal {
+  font-size: var(--t-xs);
+}
+.ms-slot--k.ms-slot--xl .ms-medal,
+.ms-slot--k.ms-slot--xxl .ms-medal {
+  right: -0.4rem;
+  bottom: -0.4rem;
+}
+
+/* the medal also carries the legacy .ms-slot-rank class (screen sheets hook it): neutralise the legacy pill inside kit slots */
+.ms-slot--k .ms-medal.ms-slot-rank {
+  min-width: var(--mh);
+  height: var(--mh);
+  padding: 0 0.24rem;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: var(--t-2xs);
+  line-height: 1;
+}
+.ms-slot--k .ms-medal--tag.ms-slot-rank {
+  padding: 0 0.34rem;
+}
+.ms-slot--k.ms-slot--lg .ms-medal.ms-slot-rank,
+.ms-slot--k.ms-slot--xl .ms-medal.ms-slot-rank,
+.ms-slot--k.ms-slot--xxl .ms-medal.ms-slot-rank {
+  font-size: var(--t-xs);
+}
+
+/* ---- number well (T6) ----------------------------------------------------------------------------------------------- */
+.ms-well {
+  --wf: var(--t-lg);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  min-width: 3.4rem;
+  min-height: 1.8rem;
+  padding: 0.08rem 0.6rem;
+  color: var(--k-text);
+  font-size: var(--wf);
+  line-height: 1.1;
+  border-radius: 2px;
+  background-color: var(--k-well);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 55%);
+  /* black recessed box, a pale 1 px rim, a dark line outside it */
+  box-shadow:
+    inset 1px 1px 0 #000,
+    inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.75),
+    0 0 0 1px var(--k-well-rim),
+    0 0 0 2px #050404,
+    0 2px 0 2px rgba(255, 240, 220, 0.05);
+}
+.ms-well-value {
+  font-weight: 700;
+  color: inherit;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+.ms-well-unit {
+  font-size: 0.7em;
+  color: var(--k-text-3);
+}
+.ms-well-icon {
+  display: inline-flex;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: auto;
+  flex: none;
+}
+.ms-well-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+.ms-well--left {
+  justify-content: flex-start;
+}
+.ms-well--sm {
+  --wf: var(--t-md);
+  min-width: 2.6rem;
+  min-height: 1.5rem;
+  padding: 0.04rem 0.45rem;
+}
+.ms-well--lg {
+  --wf: var(--t-xl);
+  min-width: 5rem;
+  min-height: 2.5rem;
+  padding: 0.1rem 0.8rem;
+}
+.ms-well--hero {
+  --wf: var(--t-3xl);
+  min-width: 11rem;
+  min-height: 4rem;
+  padding: 0.2rem 1.1rem;
+  justify-content: center;
+  color: var(--k-gold);
+}
+.ms-well--hero .ms-well-value {
+  text-shadow: 0 0.08rem 0 #4a2a08, 0 0 1.2rem rgba(232, 160, 60, 0.35);
+}
+.ms-well--gold {
+  color: var(--k-gold);
+}
+.ms-well--good {
+  color: var(--k-good);
+}
+.ms-well--bad {
+  color: var(--k-bad);
+}
+.ms-well--info {
+  color: var(--k-info);
+}
+/* dotted-corner sunken box (refine / socket dialogs) */
+.ms-well--dotted {
+  background-image:
+    radial-gradient(circle, rgba(206, 196, 176, 0.7) 0 0.8px, transparent 1.2px) 3px 3px / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(206, 196, 176, 0.7) 0 0.8px, transparent 1.2px) calc(100% - 3px) 3px / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(206, 196, 176, 0.7) 0 0.8px, transparent 1.2px) 3px calc(100% - 3px) / 4px 4px no-repeat,
+    radial-gradient(circle, rgba(206, 196, 176, 0.7) 0 0.8px, transparent 1.2px) calc(100% - 3px) calc(100% - 3px) / 4px 4px no-repeat,
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 55%);
+}
+.ms-statwell {
+  display: flex;
+  min-width: 0;
+}
+.ms-statwell--row {
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.ms-statwell--stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.3rem;
+}
+.ms-statwell-label {
+  min-width: 0;
+  font-size: var(--t-md);
+  color: var(--k-text-2);
+}
+.ms-statwell--stack .ms-statwell-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+.ms-statwell--row .ms-well {
+  min-width: 5.2rem;
+}
+
+/* ---- chip (never a pill) -------------------------------------------------------------------------------------------- */
+.ms-kchip {
+  --pl-c: 0.22rem;
+  --pl-bw: 1px;
+  --pl-hi: #bdb3a0;
+  --pl-mid: #6f6657;
+  --pl-lo: #1d1a16;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 50%), linear-gradient(180deg, #38342e, #181613);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.55rem;
+  padding: 0.1rem 0.65rem;
+  font-family: var(--f-body);
+  font-weight: 800;
+  font-size: var(--t-xs);
+  line-height: 1.1;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+.ms-kchip--sm {
+  min-height: 1.3rem;
+  padding: 0.05rem 0.5rem;
+  --pl-c: 0.17rem;
+}
+.ms-kchip-icon {
+  display: inline-flex;
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: -0.15rem;
+}
+.ms-kchip-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+.ms-kchip--gold {
+  --pl-hi: #fff0b8;
+  --pl-mid: #c9962e;
+  --pl-lo: #4a3208;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 52%), linear-gradient(180deg, #edc660, #a67a1e);
+  color: #2a1604;
+  text-shadow: 0 1px 0 rgba(255, 240, 190, 0.5);
+}
+.ms-kchip--red {
+  --pl-hi: #f0b0a0;
+  --pl-mid: #a2392e;
+  --pl-lo: #3b0b08;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 52%), linear-gradient(180deg, #a42a1d, #5e120b);
+  color: #ffeedd;
+}
+.ms-kchip--jade {
+  --pl-hi: #a8e8cd;
+  --pl-mid: #2f8a6c;
+  --pl-lo: #0c2e24;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 52%), linear-gradient(180deg, #2d8a6e, #124a39);
+  color: #e6fff5;
+}
+.ms-kchip--violet {
+  --pl-hi: #d8c2ff;
+  --pl-mid: #7a52c4;
+  --pl-lo: #231048;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 52%), linear-gradient(180deg, #6a3fc0, #33186c);
+  color: #f4ecff;
+}
+.ms-kchip--info {
+  --pl-hi: #8f877b;
+  --pl-mid: #4d473f;
+  --pl-lo: #14120f;
+  --pl-face: linear-gradient(180deg, #14120f, #0b0a08);
+  color: var(--k-info);
+}
+.ms-kchip--new {
+  --pl-hi: #fff4c8;
+  --pl-mid: #e0a436;
+  --pl-lo: #5a3a08;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent 52%), linear-gradient(180deg, #f6d070, #b98420);
+  font-family: var(--f-head);
+  letter-spacing: 0.12em;
+  color: #2a1604;
+  text-shadow: 0 1px 0 rgba(255, 240, 190, 0.5);
+  filter: drop-shadow(0 0 0.5rem rgba(255, 200, 90, 0.55));
+}

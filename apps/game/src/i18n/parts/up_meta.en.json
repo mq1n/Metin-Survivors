@@ -1,0 +1,11 @@
+{
+  "talents.cap.line": "Cap {cap} / {max}",
+  "talents.cap.next": "Clear {zone} on Hard: +{n}",
+  "talents.cap.full": "Every zone cleared on Hard: all {max} points are open.",
+  "talents.cap.waiting": "{n} points of XP are waiting above the cap",
+  "talents.cap.pip": "{zone}: cleared on Hard",
+  "talents.cap.pipOpen": "{zone}: clear it on Hard for +{n}",
+  "talents.cap.tip": "Every zone you clear on Hard raises your talent cap by {n}, up to {max}. Talent XP keeps piling up above the cap and pays out the moment the cap rises.",
+  "talents.cap.pool": "Both trees share one pool of up to {cap} points; the cap is {max} with every zone cleared on Hard.",
+  "talents.fail.capped": "At the cap of {cap}: {n} more points are waiting. Clear {zone} on Hard to open {gain} of them."
+}

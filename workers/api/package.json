@@ -1,0 +1,24 @@
+{
+  "name": "@ms/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --var \"ALLOWED_ORIGINS:https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev,http://localhost:*,http://127.0.0.1:*\"",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p tsconfig.pages.json",
+    "e2e": "bun scripts/e2e.ts",
+    "deploy:dry": "wrangler deploy --dry-run --outdir .wrangler/dry",
+    "migrate:local": "wrangler d1 migrations apply metin-survivors-db --local"
+  },
+  "dependencies": {
+    "@ms/shared": "workspace:*",
+    "hono": "^4.13.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.4.0",
+    "@cloudflare/workers-types": "^5.20261012.1",
+    "typescript": "6.0.3",
+    "vitest": "^4.1.0",
+    "wrangler": "^4.149.0"
+  }
+}

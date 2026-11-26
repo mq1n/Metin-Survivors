@@ -1,0 +1,2505 @@
+[
+  {
+    "id": "warrior_armor_t1",
+    "slot": "armor",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Lamel Zırh",
+      "en": "Bronze Lamellar"
+    },
+    "icon": "icon_gear_warrior_armor_t1",
+    "stats": {
+      "armor": 8,
+      "maxHpPct": 0.05
+    },
+    "perPlus": {
+      "armor": 0.9,
+      "maxHpPct": 0.006
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ji_yul"
+    }
+  },
+  {
+    "id": "warrior_helmet_t1",
+    "slot": "helmet",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Savaş Miğferi",
+      "en": "Bronze Warhelm"
+    },
+    "icon": "icon_gear_warrior_helmet_t1",
+    "stats": {
+      "maxHp": 18,
+      "armor": 3,
+      "regen": 0.1
+    },
+    "perPlus": {
+      "maxHp": 2,
+      "armor": 0.4
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ung_jae"
+    }
+  },
+  {
+    "id": "warrior_weapon_twohand_t1",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Palaş",
+      "en": "Bronze Glaive"
+    },
+    "icon": "icon_gear_warrior_weapon_twohand_t1",
+    "model": "warrior_twohand_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "critDamage": 0.05
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "warrior_weapon_sword_t1",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Düz Kılıç",
+      "en": "Bronze Jian"
+    },
+    "icon": "icon_gear_warrior_weapon_sword_t1",
+    "model": "warrior_sword_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "critDamage": 0.05
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "ninja_armor_t1",
+    "slot": "armor",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Deri Kıyafet",
+      "en": "Hide Garb"
+    },
+    "icon": "icon_gear_ninja_armor_t1",
+    "stats": {
+      "armor": 8,
+      "maxHpPct": 0.05
+    },
+    "perPlus": {
+      "armor": 0.9,
+      "maxHpPct": 0.006
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ji_yul"
+    }
+  },
+  {
+    "id": "ninja_helmet_t1",
+    "slot": "helmet",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Kenevir Başlık",
+      "en": "Hempen Cowl"
+    },
+    "icon": "icon_gear_ninja_helmet_t1",
+    "stats": {
+      "maxHp": 18,
+      "armor": 3,
+      "regen": 0.1
+    },
+    "perPlus": {
+      "maxHp": 2,
+      "armor": 0.4
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ung_jae"
+    }
+  },
+  {
+    "id": "ninja_weapon_dagger_t1",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Hançer",
+      "en": "Bronze Dirk"
+    },
+    "icon": "icon_gear_ninja_weapon_dagger_t1",
+    "model": "ninja_dagger_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.025
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "ninja_weapon_bow_t1",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bambu Yay",
+      "en": "Bamboo Bow"
+    },
+    "icon": "icon_gear_ninja_weapon_bow_t1",
+    "model": "ninja_bow_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.025
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "yacha_armor_t1",
+    "slot": "armor",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Kasvetli Zırh",
+      "en": "Grim Plate"
+    },
+    "icon": "icon_gear_yacha_armor_t1",
+    "stats": {
+      "armor": 8,
+      "maxHpPct": 0.05
+    },
+    "perPlus": {
+      "armor": 0.9,
+      "maxHpPct": 0.006
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ji_yul"
+    }
+  },
+  {
+    "id": "yacha_helmet_t1",
+    "slot": "helmet",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Asık Maske",
+      "en": "Grim Visage"
+    },
+    "icon": "icon_gear_yacha_helmet_t1",
+    "stats": {
+      "maxHp": 18,
+      "armor": 3,
+      "regen": 0.1
+    },
+    "perPlus": {
+      "maxHp": 2,
+      "armor": 0.4
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ung_jae"
+    }
+  },
+  {
+    "id": "yacha_weapon_sword_t1",
+    "slot": "weapon",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Alacakaranlık Kılıcı",
+      "en": "Gloaming Blade"
+    },
+    "icon": "icon_gear_yacha_weapon_sword_t1",
+    "model": "yacha_sword_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "area": 0.02
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.28,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "shaman_armor_t1",
+    "slot": "armor",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Kenevir Cübbe",
+      "en": "Hempen Vestments"
+    },
+    "icon": "icon_gear_shaman_armor_t1",
+    "stats": {
+      "armor": 8,
+      "maxHpPct": 0.05
+    },
+    "perPlus": {
+      "armor": 0.9,
+      "maxHpPct": 0.006
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ji_yul"
+    }
+  },
+  {
+    "id": "shaman_helmet_t1",
+    "slot": "helmet",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Turna Şapkası",
+      "en": "Crane Hat"
+    },
+    "icon": "icon_gear_shaman_helmet_t1",
+    "stats": {
+      "maxHp": 18,
+      "armor": 3,
+      "regen": 0.1
+    },
+    "perPlus": {
+      "maxHp": 2,
+      "armor": 0.4
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ung_jae"
+    }
+  },
+  {
+    "id": "shaman_weapon_fan_t1",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bambu Yelpaze",
+      "en": "Bamboo Fan"
+    },
+    "icon": "icon_gear_shaman_weapon_fan_t1",
+    "model": "shaman_fan_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "cooldown": 0.01
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "shaman_weapon_bell_t1",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz El Çanı",
+      "en": "Bronze Handbell"
+    },
+    "icon": "icon_gear_shaman_weapon_bell_t1",
+    "model": "shaman_bell_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "cooldown": 0.01
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.25,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "wolfman_armor_t1",
+    "slot": "armor",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Kurt Postu Göğüslük",
+      "en": "Wolfhide Cuirass"
+    },
+    "icon": "icon_gear_wolfman_armor_t1",
+    "stats": {
+      "armor": 8,
+      "maxHpPct": 0.05
+    },
+    "perPlus": {
+      "armor": 0.9,
+      "maxHpPct": 0.006
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ji_yul"
+    }
+  },
+  {
+    "id": "wolfman_helmet_t1",
+    "slot": "helmet",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Dişli Miğfer",
+      "en": "Fanged Helm"
+    },
+    "icon": "icon_gear_wolfman_helmet_t1",
+    "stats": {
+      "maxHp": 18,
+      "armor": 3,
+      "regen": 0.1
+    },
+    "perPlus": {
+      "maxHp": 2,
+      "armor": 0.4
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_ung_jae"
+    }
+  },
+  {
+    "id": "wolfman_weapon_claw_t1",
+    "slot": "weapon",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Tırmık",
+      "en": "Bronze Rake"
+    },
+    "icon": "icon_gear_wolfman_weapon_claw_t1",
+    "model": "wolfman_claw_t0",
+    "stats": {
+      "damage": 0.08,
+      "critChance": 0.01,
+      "attackSpeed": 0.02
+    },
+    "perPlus": {
+      "damage": 0.008
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.28,
+      "boss": "boss_horyeong"
+    }
+  },
+  {
+    "id": "shield_t1",
+    "slot": "shield",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Bronz Yuvarlak Kalkan",
+      "en": "Bronze Roundshield"
+    },
+    "icon": "icon_gear_shield_t1",
+    "stats": {
+      "armor": 5,
+      "evasion": 0.01
+    },
+    "perPlus": {
+      "armor": 0.6,
+      "evasion": 0.002
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_dol_gwan"
+    }
+  },
+  {
+    "id": "shoes_t1",
+    "slot": "shoes",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Kenevir Sandalet",
+      "en": "Hempen Sandals"
+    },
+    "icon": "icon_gear_shoes_t1",
+    "stats": {
+      "moveSpeed": 0.02,
+      "evasion": 0.01
+    },
+    "perPlus": {
+      "moveSpeed": 0.003
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.3,
+      "boss": "boss_chan_dae"
+    }
+  },
+  {
+    "id": "bracelet_t1",
+    "slot": "bracelet",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Seladon Bileklik",
+      "en": "Celadon Bangle"
+    },
+    "icon": "icon_gear_bracelet_t1",
+    "stats": {
+      "critChance": 0.01,
+      "critDamage": 0.03
+    },
+    "perPlus": {
+      "critChance": 0.003,
+      "critDamage": 0.005
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "necklace_t1",
+    "slot": "necklace",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Seladon Kolye",
+      "en": "Celadon Pendant"
+    },
+    "icon": "icon_gear_necklace_t1",
+    "stats": {
+      "maxHpPct": 0.03,
+      "xpGain": 0.02
+    },
+    "perPlus": {
+      "maxHpPct": 0.003,
+      "xpGain": 0.003
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "earrings_t1",
+    "slot": "earrings",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 1,
+    "name": {
+      "tr": "Seladon Küpe",
+      "en": "Celadon Drops"
+    },
+    "icon": "icon_gear_earrings_t1",
+    "stats": {
+      "cooldown": 0.01,
+      "luck": 0.01
+    },
+    "perPlus": {
+      "cooldown": 0.002,
+      "luck": 0.001
+    },
+    "source": {
+      "zone": "yeonmu",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "warrior_armor_t2",
+    "slot": "armor",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Lamel Zırh",
+      "en": "Blackiron Lamellar"
+    },
+    "icon": "icon_gear_warrior_armor_t2",
+    "stats": {
+      "armor": 18,
+      "maxHpPct": 0.11
+    },
+    "perPlus": {
+      "armor": 2,
+      "maxHpPct": 0.012
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_black_orc_giant"
+    }
+  },
+  {
+    "id": "warrior_helmet_t2",
+    "slot": "helmet",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Savaş Miğferi",
+      "en": "Blackiron Warhelm"
+    },
+    "icon": "icon_gear_warrior_helmet_t2",
+    "stats": {
+      "maxHp": 40,
+      "armor": 6,
+      "regen": 0.2
+    },
+    "perPlus": {
+      "maxHp": 4.5,
+      "armor": 0.7
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_dark_inquisitor"
+    }
+  },
+  {
+    "id": "warrior_weapon_twohand_t2",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Satır",
+      "en": "Blackiron Cleaver"
+    },
+    "icon": "icon_gear_warrior_weapon_twohand_t2",
+    "model": "warrior_twohand_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "critDamage": 0.1
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "warrior_weapon_sword_t2",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Pala",
+      "en": "Blackiron Saber"
+    },
+    "icon": "icon_gear_warrior_weapon_sword_t2",
+    "model": "warrior_sword_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "critDamage": 0.1
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "ninja_armor_t2",
+    "slot": "armor",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Gölge Derisi Kıyafet",
+      "en": "Shadowleather Garb"
+    },
+    "icon": "icon_gear_ninja_armor_t2",
+    "stats": {
+      "armor": 18,
+      "maxHpPct": 0.11
+    },
+    "perPlus": {
+      "armor": 2,
+      "maxHpPct": 0.012
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_black_orc_giant"
+    }
+  },
+  {
+    "id": "ninja_helmet_t2",
+    "slot": "helmet",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Gölge Başlığı",
+      "en": "Shadow Cowl"
+    },
+    "icon": "icon_gear_ninja_helmet_t2",
+    "stats": {
+      "maxHp": 40,
+      "armor": 6,
+      "regen": 0.2
+    },
+    "perPlus": {
+      "maxHp": 4.5,
+      "armor": 0.7
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_dark_inquisitor"
+    }
+  },
+  {
+    "id": "ninja_weapon_dagger_t2",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Kris",
+      "en": "Blackiron Kris"
+    },
+    "icon": "icon_gear_ninja_weapon_dagger_t2",
+    "model": "ninja_dagger_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.05
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "ninja_weapon_bow_t2",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Ağaç Yay",
+      "en": "Blackwood Bow"
+    },
+    "icon": "icon_gear_ninja_weapon_bow_t2",
+    "model": "ninja_bow_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.05
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "yacha_armor_t2",
+    "slot": "armor",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Mezar Çeliği Zırh",
+      "en": "Gravesteel Plate"
+    },
+    "icon": "icon_gear_yacha_armor_t2",
+    "stats": {
+      "armor": 18,
+      "maxHpPct": 0.11
+    },
+    "perPlus": {
+      "armor": 2,
+      "maxHpPct": 0.012
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_black_orc_giant"
+    }
+  },
+  {
+    "id": "yacha_helmet_t2",
+    "slot": "helmet",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Mezar Çeliği Miğfer",
+      "en": "Gravesteel Helm"
+    },
+    "icon": "icon_gear_yacha_helmet_t2",
+    "stats": {
+      "maxHp": 40,
+      "armor": 6,
+      "regen": 0.2
+    },
+    "perPlus": {
+      "maxHp": 4.5,
+      "armor": 0.7
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_dark_inquisitor"
+    }
+  },
+  {
+    "id": "yacha_weapon_sword_t2",
+    "slot": "weapon",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kovucu Kılıç",
+      "en": "Banishing Blade"
+    },
+    "icon": "icon_gear_yacha_weapon_sword_t2",
+    "model": "yacha_sword_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "area": 0.04
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.28,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "shaman_armor_t2",
+    "slot": "armor",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Güneş İpeği Cübbe",
+      "en": "Sunsilk Vestments"
+    },
+    "icon": "icon_gear_shaman_armor_t2",
+    "stats": {
+      "armor": 18,
+      "maxHpPct": 0.11
+    },
+    "perPlus": {
+      "armor": 2,
+      "maxHpPct": 0.012
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_black_orc_giant"
+    }
+  },
+  {
+    "id": "shaman_helmet_t2",
+    "slot": "helmet",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Güneş Işığı Şapkası",
+      "en": "Sunray Hat"
+    },
+    "icon": "icon_gear_shaman_helmet_t2",
+    "stats": {
+      "maxHp": 40,
+      "armor": 6,
+      "regen": 0.2
+    },
+    "perPlus": {
+      "maxHp": 4.5,
+      "armor": 0.7
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_dark_inquisitor"
+    }
+  },
+  {
+    "id": "shaman_weapon_fan_t2",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Turna Tüyü Yelpaze",
+      "en": "Crane-Feather Fan"
+    },
+    "icon": "icon_gear_shaman_weapon_fan_t2",
+    "model": "shaman_fan_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "cooldown": 0.02
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "shaman_weapon_bell_t2",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Çınlayan Çan",
+      "en": "Chiming Bell"
+    },
+    "icon": "icon_gear_shaman_weapon_bell_t2",
+    "model": "shaman_bell_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "cooldown": 0.02
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.25,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "wolfman_armor_t2",
+    "slot": "armor",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Fırtına Derisi Göğüslük",
+      "en": "Stormhide Cuirass"
+    },
+    "icon": "icon_gear_wolfman_armor_t2",
+    "stats": {
+      "armor": 18,
+      "maxHpPct": 0.11
+    },
+    "perPlus": {
+      "armor": 2,
+      "maxHpPct": 0.012
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_black_orc_giant"
+    }
+  },
+  {
+    "id": "wolfman_helmet_t2",
+    "slot": "helmet",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Fırtına Tepeli Miğfer",
+      "en": "Stormcrest Helm"
+    },
+    "icon": "icon_gear_wolfman_helmet_t2",
+    "stats": {
+      "maxHp": 40,
+      "armor": 6,
+      "regen": 0.2
+    },
+    "perPlus": {
+      "maxHp": 4.5,
+      "armor": 0.7
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_dark_inquisitor"
+    }
+  },
+  {
+    "id": "wolfman_weapon_claw_t2",
+    "slot": "weapon",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Tırnak",
+      "en": "Blackiron Claws"
+    },
+    "icon": "icon_gear_wolfman_weapon_claw_t2",
+    "model": "wolfman_claw_t1",
+    "stats": {
+      "damage": 0.17,
+      "critChance": 0.02,
+      "attackSpeed": 0.04
+    },
+    "perPlus": {
+      "damage": 0.015
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.28,
+      "boss": "boss_chief_orc"
+    }
+  },
+  {
+    "id": "shield_t2",
+    "slot": "shield",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Kara Demir Siper",
+      "en": "Blackiron Bulwark"
+    },
+    "icon": "icon_gear_shield_t2",
+    "stats": {
+      "armor": 11,
+      "evasion": 0.02,
+      "thorns": 0.03
+    },
+    "perPlus": {
+      "armor": 1.2,
+      "evasion": 0.003
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_feral_maniac"
+    }
+  },
+  {
+    "id": "shoes_t2",
+    "slot": "shoes",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Pas Derisi Çizme",
+      "en": "Rustleather Boots"
+    },
+    "icon": "icon_gear_shoes_t2",
+    "stats": {
+      "moveSpeed": 0.04,
+      "evasion": 0.015
+    },
+    "perPlus": {
+      "moveSpeed": 0.005
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.3,
+      "boss": "boss_orc_sorcerer"
+    }
+  },
+  {
+    "id": "bracelet_t2",
+    "slot": "bracelet",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Ay Taşı Bileklik",
+      "en": "Moonstone Bangle"
+    },
+    "icon": "icon_gear_bracelet_t2",
+    "stats": {
+      "critChance": 0.02,
+      "critDamage": 0.06
+    },
+    "perPlus": {
+      "critChance": 0.004,
+      "critDamage": 0.008
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "necklace_t2",
+    "slot": "necklace",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Ay Taşı Kolye",
+      "en": "Moonstone Pendant"
+    },
+    "icon": "icon_gear_necklace_t2",
+    "stats": {
+      "maxHpPct": 0.06,
+      "xpGain": 0.04
+    },
+    "perPlus": {
+      "maxHpPct": 0.006,
+      "xpGain": 0.005
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "earrings_t2",
+    "slot": "earrings",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 2,
+    "name": {
+      "tr": "Ay Taşı Küpe",
+      "en": "Moonstone Drops"
+    },
+    "icon": "icon_gear_earrings_t2",
+    "stats": {
+      "cooldown": 0.02,
+      "luck": 0.02
+    },
+    "perPlus": {
+      "cooldown": 0.003,
+      "luck": 0.002
+    },
+    "source": {
+      "zone": "suryeon",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "warrior_armor_t3",
+    "slot": "armor",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Lamel Zırh",
+      "en": "Frostsilver Lamellar"
+    },
+    "icon": "icon_gear_warrior_armor_t3",
+    "stats": {
+      "armor": 32,
+      "maxHpPct": 0.19
+    },
+    "perPlus": {
+      "armor": 3.5,
+      "maxHpPct": 0.02
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_ice_golem"
+    }
+  },
+  {
+    "id": "warrior_helmet_t3",
+    "slot": "helmet",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Savaş Miğferi",
+      "en": "Frostsilver Warhelm"
+    },
+    "icon": "icon_gear_warrior_helmet_t3",
+    "stats": {
+      "maxHp": 70,
+      "armor": 10,
+      "regen": 0.3
+    },
+    "perPlus": {
+      "maxHp": 8,
+      "armor": 1.2
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_marshal"
+    }
+  },
+  {
+    "id": "warrior_weapon_twohand_t3",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Guandao",
+      "en": "Frostsilver Guandao"
+    },
+    "icon": "icon_gear_warrior_weapon_twohand_t3",
+    "model": "warrior_twohand_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "critDamage": 0.16
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "warrior_weapon_sword_t3",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Uzun Kılıç",
+      "en": "Frostsilver Longsword"
+    },
+    "icon": "icon_gear_warrior_weapon_sword_t3",
+    "model": "warrior_sword_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "critDamage": 0.16
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "ninja_armor_t3",
+    "slot": "armor",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Pullu Kıyafet",
+      "en": "Frostscale Garb"
+    },
+    "icon": "icon_gear_ninja_armor_t3",
+    "stats": {
+      "armor": 32,
+      "maxHpPct": 0.19
+    },
+    "perPlus": {
+      "armor": 3.5,
+      "maxHpPct": 0.02
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_ice_golem"
+    }
+  },
+  {
+    "id": "ninja_helmet_t3",
+    "slot": "helmet",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Kürklü Başlık",
+      "en": "Frostfur Cowl"
+    },
+    "icon": "icon_gear_ninja_helmet_t3",
+    "stats": {
+      "maxHp": 70,
+      "armor": 10,
+      "regen": 0.3
+    },
+    "perPlus": {
+      "maxHp": 8,
+      "armor": 1.2
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_marshal"
+    }
+  },
+  {
+    "id": "ninja_weapon_dagger_t3",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Sai",
+      "en": "Frostsilver Sai"
+    },
+    "icon": "icon_gear_ninja_weapon_dagger_t3",
+    "model": "ninja_dagger_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.075
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "ninja_weapon_bow_t3",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Huş Yayı",
+      "en": "Frostbirch Bow"
+    },
+    "icon": "icon_gear_ninja_weapon_bow_t3",
+    "model": "ninja_bow_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.075
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "yacha_armor_t3",
+    "slot": "armor",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Hayalet Kemiği Zırh",
+      "en": "Wraithbone Plate"
+    },
+    "icon": "icon_gear_yacha_armor_t3",
+    "stats": {
+      "armor": 32,
+      "maxHpPct": 0.19
+    },
+    "perPlus": {
+      "armor": 3.5,
+      "maxHpPct": 0.02
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_ice_golem"
+    }
+  },
+  {
+    "id": "yacha_helmet_t3",
+    "slot": "helmet",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Geyik Boynuzlu Miğfer",
+      "en": "Antlered Helm"
+    },
+    "icon": "icon_gear_yacha_helmet_t3",
+    "stats": {
+      "maxHp": 70,
+      "armor": 10,
+      "regen": 0.3
+    },
+    "perPlus": {
+      "maxHp": 8,
+      "armor": 1.2
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_marshal"
+    }
+  },
+  {
+    "id": "yacha_weapon_sword_t3",
+    "slot": "weapon",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Hortlak Keskisi",
+      "en": "Revenant Edge"
+    },
+    "icon": "icon_gear_yacha_weapon_sword_t3",
+    "model": "yacha_sword_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "area": 0.06
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.28,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "shaman_armor_t3",
+    "slot": "armor",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Ay İpeği Cübbe",
+      "en": "Moonsilk Vestments"
+    },
+    "icon": "icon_gear_shaman_armor_t3",
+    "stats": {
+      "armor": 32,
+      "maxHpPct": 0.19
+    },
+    "perPlus": {
+      "armor": 3.5,
+      "maxHpPct": 0.02
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_ice_golem"
+    }
+  },
+  {
+    "id": "shaman_helmet_t3",
+    "slot": "helmet",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Bilge Tacı",
+      "en": "Sage's Mitre"
+    },
+    "icon": "icon_gear_shaman_helmet_t3",
+    "stats": {
+      "maxHp": 70,
+      "armor": 10,
+      "regen": 0.3
+    },
+    "perPlus": {
+      "maxHp": 8,
+      "armor": 1.2
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_marshal"
+    }
+  },
+  {
+    "id": "shaman_weapon_fan_t3",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Bora Kanadı Yelpaze",
+      "en": "Stormwing Fan"
+    },
+    "icon": "icon_gear_shaman_weapon_fan_t3",
+    "model": "shaman_fan_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "cooldown": 0.035
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "shaman_weapon_bell_t3",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Bora Çanı",
+      "en": "Stormtoll Bell"
+    },
+    "icon": "icon_gear_shaman_weapon_bell_t3",
+    "model": "shaman_bell_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "cooldown": 0.035
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.25,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "wolfman_armor_t3",
+    "slot": "armor",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Kürklü Göğüslük",
+      "en": "Frostfur Cuirass"
+    },
+    "icon": "icon_gear_wolfman_armor_t3",
+    "stats": {
+      "armor": 32,
+      "maxHpPct": 0.19
+    },
+    "perPlus": {
+      "armor": 3.5,
+      "maxHpPct": 0.02
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_ice_golem"
+    }
+  },
+  {
+    "id": "wolfman_helmet_t3",
+    "slot": "helmet",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Taçlı Miğfer",
+      "en": "Frostcrown Helm"
+    },
+    "icon": "icon_gear_wolfman_helmet_t3",
+    "stats": {
+      "maxHp": 70,
+      "armor": 10,
+      "regen": 0.3
+    },
+    "perPlus": {
+      "maxHp": 8,
+      "armor": 1.2
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_marshal"
+    }
+  },
+  {
+    "id": "wolfman_weapon_claw_t3",
+    "slot": "weapon",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Pençe",
+      "en": "Frostsilver Talons"
+    },
+    "icon": "icon_gear_wolfman_weapon_claw_t3",
+    "model": "wolfman_claw_t2",
+    "stats": {
+      "damage": 0.28,
+      "critChance": 0.03,
+      "attackSpeed": 0.07
+    },
+    "perPlus": {
+      "damage": 0.024
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.28,
+      "boss": "boss_miho"
+    }
+  },
+  {
+    "id": "shield_t3",
+    "slot": "shield",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kırağı Gümüşü Kalkan",
+      "en": "Frostsilver Aegis"
+    },
+    "icon": "icon_gear_shield_t3",
+    "stats": {
+      "armor": 19,
+      "evasion": 0.03,
+      "thorns": 0.06
+    },
+    "perPlus": {
+      "armor": 2.2,
+      "evasion": 0.004
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_archer"
+    }
+  },
+  {
+    "id": "shoes_t3",
+    "slot": "shoes",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Kar Adımı Çizme",
+      "en": "Snowstep Boots"
+    },
+    "icon": "icon_gear_shoes_t3",
+    "stats": {
+      "moveSpeed": 0.06,
+      "evasion": 0.025
+    },
+    "perPlus": {
+      "moveSpeed": 0.007
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.3,
+      "boss": "boss_blighted_swordsman"
+    }
+  },
+  {
+    "id": "bracelet_t3",
+    "slot": "bracelet",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Opal Bileklik",
+      "en": "Opal Bangle"
+    },
+    "icon": "icon_gear_bracelet_t3",
+    "stats": {
+      "critChance": 0.035,
+      "critDamage": 0.1
+    },
+    "perPlus": {
+      "critChance": 0.005,
+      "critDamage": 0.012
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "necklace_t3",
+    "slot": "necklace",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Opal Kolye",
+      "en": "Opal Pendant"
+    },
+    "icon": "icon_gear_necklace_t3",
+    "stats": {
+      "maxHpPct": 0.1,
+      "xpGain": 0.07
+    },
+    "perPlus": {
+      "maxHpPct": 0.01,
+      "xpGain": 0.008
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "earrings_t3",
+    "slot": "earrings",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 3,
+    "name": {
+      "tr": "Opal Küpe",
+      "en": "Opal Drops"
+    },
+    "icon": "icon_gear_earrings_t3",
+    "stats": {
+      "cooldown": 0.035,
+      "luck": 0.03
+    },
+    "perPlus": {
+      "cooldown": 0.004,
+      "luck": 0.003
+    },
+    "source": {
+      "zone": "seori",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "warrior_armor_t4",
+    "slot": "armor",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Lamel Zırh",
+      "en": "Crimsongold Lamellar"
+    },
+    "icon": "icon_gear_warrior_armor_t4",
+    "stats": {
+      "armor": 50,
+      "maxHpPct": 0.3
+    },
+    "perPlus": {
+      "armor": 5.5,
+      "maxHpPct": 0.03
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_pyre_king"
+    }
+  },
+  {
+    "id": "warrior_helmet_t4",
+    "slot": "helmet",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Savaş Miğferi",
+      "en": "Crimsongold Warhelm"
+    },
+    "icon": "icon_gear_warrior_helmet_t4",
+    "stats": {
+      "maxHp": 115,
+      "armor": 16,
+      "regen": 0.4
+    },
+    "perPlus": {
+      "maxHp": 13,
+      "armor": 1.8
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_basalt_general"
+    }
+  },
+  {
+    "id": "warrior_weapon_twohand_t4",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Büyük Kılıç",
+      "en": "Crimsongold Greatblade"
+    },
+    "icon": "icon_gear_warrior_weapon_twohand_t4",
+    "model": "warrior_twohand_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "critDamage": 0.24
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "warrior_weapon_sword_t4",
+    "slot": "weapon",
+    "classes": [
+      "warrior"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Hwando",
+      "en": "Crimsongold Hwando"
+    },
+    "icon": "icon_gear_warrior_weapon_sword_t4",
+    "model": "warrior_sword_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "critDamage": 0.24
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "ninja_armor_t4",
+    "slot": "armor",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kül Pullu Kıyafet",
+      "en": "Ashscale Garb"
+    },
+    "icon": "icon_gear_ninja_armor_t4",
+    "stats": {
+      "armor": 50,
+      "maxHpPct": 0.3
+    },
+    "perPlus": {
+      "armor": 5.5,
+      "maxHpPct": 0.03
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_pyre_king"
+    }
+  },
+  {
+    "id": "ninja_helmet_t4",
+    "slot": "helmet",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kül Başlık",
+      "en": "Ashen Cowl"
+    },
+    "icon": "icon_gear_ninja_helmet_t4",
+    "stats": {
+      "maxHp": 115,
+      "armor": 16,
+      "regen": 0.4
+    },
+    "perPlus": {
+      "maxHp": 13,
+      "armor": 1.8
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_basalt_general"
+    }
+  },
+  {
+    "id": "ninja_weapon_dagger_t4",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Karambit",
+      "en": "Crimsongold Karambit"
+    },
+    "icon": "icon_gear_ninja_weapon_dagger_t4",
+    "model": "ninja_dagger_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.11
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "ninja_weapon_bow_t4",
+    "slot": "weapon",
+    "classes": [
+      "ninja"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kül Boynuz Yay",
+      "en": "Ashhorn Bow"
+    },
+    "icon": "icon_gear_ninja_weapon_bow_t4",
+    "model": "ninja_bow_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.11
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "yacha_armor_t4",
+    "slot": "armor",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Uçurum Zırhı",
+      "en": "Abyssal Plate"
+    },
+    "icon": "icon_gear_yacha_armor_t4",
+    "stats": {
+      "armor": 50,
+      "maxHpPct": 0.3
+    },
+    "perPlus": {
+      "armor": 5.5,
+      "maxHpPct": 0.03
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_pyre_king"
+    }
+  },
+  {
+    "id": "yacha_helmet_t4",
+    "slot": "helmet",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Uçurum Tacı",
+      "en": "Abyssal Crown"
+    },
+    "icon": "icon_gear_yacha_helmet_t4",
+    "stats": {
+      "maxHp": 115,
+      "armor": 16,
+      "regen": 0.4
+    },
+    "perPlus": {
+      "maxHp": 13,
+      "armor": 1.8
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_basalt_general"
+    }
+  },
+  {
+    "id": "yacha_weapon_sword_t4",
+    "slot": "weapon",
+    "classes": [
+      "yacha"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Cehennem Dövmesi Kılıç",
+      "en": "Hellforged Blade"
+    },
+    "icon": "icon_gear_yacha_weapon_sword_t4",
+    "model": "yacha_sword_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "area": 0.09
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.28,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "shaman_armor_t4",
+    "slot": "armor",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Altın İplik Cübbe",
+      "en": "Goldthread Vestments"
+    },
+    "icon": "icon_gear_shaman_armor_t4",
+    "stats": {
+      "armor": 50,
+      "maxHpPct": 0.3
+    },
+    "perPlus": {
+      "armor": 5.5,
+      "maxHpPct": 0.03
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_pyre_king"
+    }
+  },
+  {
+    "id": "shaman_helmet_t4",
+    "slot": "helmet",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Tılsım Tacı",
+      "en": "Talisman Crown"
+    },
+    "icon": "icon_gear_shaman_helmet_t4",
+    "stats": {
+      "maxHp": 115,
+      "armor": 16,
+      "regen": 0.4
+    },
+    "perPlus": {
+      "maxHp": 13,
+      "armor": 1.8
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_basalt_general"
+    }
+  },
+  {
+    "id": "shaman_weapon_fan_t4",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Altın Pençe Yelpaze",
+      "en": "Gilded Talon Fan"
+    },
+    "icon": "icon_gear_shaman_weapon_fan_t4",
+    "model": "shaman_fan_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "cooldown": 0.05
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "shaman_weapon_bell_t4",
+    "slot": "weapon",
+    "classes": [
+      "shaman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Hükümdarın Çanı",
+      "en": "Sovereign's Bell"
+    },
+    "icon": "icon_gear_shaman_weapon_bell_t4",
+    "model": "shaman_bell_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "cooldown": 0.05
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.25,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "wolfman_armor_t4",
+    "slot": "armor",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Alev Kürklü Göğüslük",
+      "en": "Flamefur Cuirass"
+    },
+    "icon": "icon_gear_wolfman_armor_t4",
+    "stats": {
+      "armor": 50,
+      "maxHpPct": 0.3
+    },
+    "perPlus": {
+      "armor": 5.5,
+      "maxHpPct": 0.03
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_pyre_king"
+    }
+  },
+  {
+    "id": "wolfman_helmet_t4",
+    "slot": "helmet",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Magma Yeleli Miğfer",
+      "en": "Moltenmane Helm"
+    },
+    "icon": "icon_gear_wolfman_helmet_t4",
+    "stats": {
+      "maxHp": 115,
+      "armor": 16,
+      "regen": 0.4
+    },
+    "perPlus": {
+      "maxHp": 13,
+      "armor": 1.8
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_basalt_general"
+    }
+  },
+  {
+    "id": "wolfman_weapon_claw_t4",
+    "slot": "weapon",
+    "classes": [
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Diş Bıçakları",
+      "en": "Crimsongold Fangblades"
+    },
+    "icon": "icon_gear_wolfman_weapon_claw_t4",
+    "model": "wolfman_claw_t3",
+    "stats": {
+      "damage": 0.42,
+      "critChance": 0.045,
+      "attackSpeed": 0.1
+    },
+    "perPlus": {
+      "damage": 0.036
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.28,
+      "boss": "boss_scarlet_wyrm"
+    }
+  },
+  {
+    "id": "shield_t4",
+    "slot": "shield",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kızıl Altın Kule Kalkan",
+      "en": "Crimsongold Towershield"
+    },
+    "icon": "icon_gear_shield_t4",
+    "stats": {
+      "armor": 30,
+      "evasion": 0.045,
+      "thorns": 0.1
+    },
+    "perPlus": {
+      "armor": 3.4,
+      "evasion": 0.005
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_greater_ash_wisp"
+    }
+  },
+  {
+    "id": "shoes_t4",
+    "slot": "shoes",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Kül Adımı Çizme",
+      "en": "Cinder Treads"
+    },
+    "icon": "icon_gear_shoes_t4",
+    "stats": {
+      "moveSpeed": 0.085,
+      "evasion": 0.035
+    },
+    "perPlus": {
+      "moveSpeed": 0.01
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.3,
+      "boss": "boss_blaze_tiger"
+    }
+  },
+  {
+    "id": "bracelet_t4",
+    "slot": "bracelet",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Granat Bileklik",
+      "en": "Garnet Bangle"
+    },
+    "icon": "icon_gear_bracelet_t4",
+    "stats": {
+      "critChance": 0.05,
+      "critDamage": 0.15
+    },
+    "perPlus": {
+      "critChance": 0.007,
+      "critDamage": 0.018
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "necklace_t4",
+    "slot": "necklace",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Granat Kolye",
+      "en": "Garnet Pendant"
+    },
+    "icon": "icon_gear_necklace_t4",
+    "stats": {
+      "maxHpPct": 0.15,
+      "xpGain": 0.1
+    },
+    "perPlus": {
+      "maxHpPct": 0.015,
+      "xpGain": 0.012
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.22
+    }
+  },
+  {
+    "id": "earrings_t4",
+    "slot": "earrings",
+    "classes": [
+      "warrior",
+      "ninja",
+      "yacha",
+      "shaman",
+      "wolfman"
+    ],
+    "tier": 4,
+    "name": {
+      "tr": "Granat Küpe",
+      "en": "Garnet Drops"
+    },
+    "icon": "icon_gear_earrings_t4",
+    "stats": {
+      "cooldown": 0.05,
+      "luck": 0.05
+    },
+    "perPlus": {
+      "cooldown": 0.006,
+      "luck": 0.005
+    },
+    "source": {
+      "zone": "daeryeol",
+      "chance": 0.22
+    }
+  }
+]

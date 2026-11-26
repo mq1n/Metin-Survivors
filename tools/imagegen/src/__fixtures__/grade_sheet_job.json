@@ -1,0 +1,35 @@
+{
+ "id": "icon_skill_test_grid",
+ "group": "icons",
+ "kind": "icon",
+ "aspect": "square",
+ "size": 256,
+ "goal": "a 2 x 2 SHEET of the pictogram of the skill icon \"Test Cut\" (Test Cut: three slashes) for a classic ARPG skill bar, showing how the ONE symbol grows with the skill grade. Four cells of equal size separated by wide black gutters (nothing crosses the gutters), reading order left to right, top row then bottom row: cell 1 = grade 1, the base pictogram: three long parallel slash strokes on the diagonal. Cell 2 = grade 2 = cell 1 plus: a fourth parallel slash stroke joins the three. Cell 3 = grade 3 = cell 2 plus: a fifth parallel slash stroke and thicker strokes. Cell 4 = grade 4 = cell 3 plus: six parallel slash strokes and a second ring. Rules: the SAME symbol at the SAME size and the SAME position in every cell, centred in its cell; each grade keeps the previous drawing and grows its OWN strokes (more slashes, blades, rays or chevrons, thicker parts) - never loose shards, sparks, dots or debris scattered around it. Expectation: bold, flat WHITE stencil pictograms on a pure black background: solid white shapes with crisp clean edges, inner details cut out as black gaps, every stroke at least 1/30 of the sheet wide, each pictogram filling about 70 % of its cell, centred, nothing near the cell borders; each must still read as the same symbol at 32 px. No tile, no frame, no stone ground, no shading, no gradient, no glow, no outline colour, no cell borders, no text, no letters or letter-like marks, no numbers.",
+ "background": "black",
+ "post": [
+  {
+   "op": "glyph",
+   "minIsland": 30
+  },
+  {
+   "op": "octile",
+   "family": "warm",
+   "fill": 0.8,
+   "bands": [
+    "n",
+    "m",
+    "g",
+    "p"
+   ],
+   "seed": "icon_skill_test_grid",
+   "size": 256,
+   "grid": 2
+  },
+  {
+   "op": "webp",
+   "quality": 92,
+   "lossless": "auto"
+  }
+ ],
+ "note": "icon v2 tile warm n,m,g,p grade-growth grid"
+}

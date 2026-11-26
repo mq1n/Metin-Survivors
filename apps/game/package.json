@@ -1,0 +1,27 @@
+{
+  "name": "@ms/game",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "bun ../../tools/pipeline/manifest.ts && tsc --noEmit -p . && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@ms/shared": "workspace:*",
+    "@preact/signals": "^2.11.3",
+    "preact": "^10.27.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^26.6.5",
+    "@types/three": "^0.186.0",
+    "fake-indexeddb": "^6.2.5",
+    "typescript": "6.0.3",
+    "vite": "^8.3.4",
+    "vitest": "^4.1.0"
+  }
+}

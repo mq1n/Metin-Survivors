@@ -1,0 +1,23 @@
+{
+  "stat.vsRace:animal": "damage to animals",
+  "stat.vsRace:orc": "damage to orcs",
+  "stat.vsRace:esoteric": "damage to mystics",
+  "stat.vsRace:undead": "damage to undead",
+  "stat.vsRace:devil": "damage to devils",
+  "stat.vsRace:insect": "damage to insects",
+  "stat.vsRace:desert": "damage to desert creatures",
+  "stat.vsRace:ice": "damage to frost creatures",
+  "stat.vsRace:fire": "damage to flame creatures",
+  "stat.vsRace:dragon": "damage to dragons",
+  "stat.vsRace:human": "damage to humans",
+  "stat.vsRace:metin": "damage to Metin stones",
+  "stat.resist:physical": "physical resistance",
+  "stat.resist:fire": "fire resistance",
+  "stat.resist:ice": "ice resistance",
+  "stat.resist:lightning": "lightning resistance",
+  "stat.resist:dark": "dark resistance",
+  "stat.resist:poison": "poison resistance",
+  "stat.resist:holy": "holy resistance",
+  "stat.resist:wind": "wind resistance",
+  "boot.loadFailed": "The run could not be loaded ({reason}). Check your connection, then go back and try again."
+}

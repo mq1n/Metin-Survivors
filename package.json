@@ -1,0 +1,29 @@
+{
+  "name": "metin-survivors",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "workers/*",
+    "packages/*",
+    "tools/forge",
+    "tools/imagegen",
+    "tools/painter",
+    "tools/pipeline"
+  ],
+  "scripts": {
+    "dev": "bun run --cwd apps/game dev",
+    "build": "bun run --cwd apps/game build",
+    "test": "bun run --filter \"*\" test",
+    "typecheck": "bun run --filter \"*\" typecheck && bun run typecheck:scripts",
+    "typecheck:scripts": "tsc --noEmit -p tsconfig.scripts.json",
+    "deploy": "bun scripts/deploy.ts",
+    "deploy:dry": "bun scripts/deploy.ts --dry-run",
+    "deploy:check": "bun scripts/deploy.ts --check",
+    "qa:soak": "bun apps/game/src/dev/soak.ts"
+  },
+  "devDependencies": {
+    "playwright-core": "1.59.1",
+    "typescript": "6.0.3"
+  }
+}

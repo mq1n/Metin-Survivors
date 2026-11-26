@@ -1,0 +1,2464 @@
+{
+  "prologue": [
+    {
+      "tr": "Bir gece gökyüzü yarıldı. Önce lake bir kâse gibi çatırdadı, sonra ufuktan ufka ince, parlak bir çatlak koştu — ve çatlaktan ateş çizgili taşlar yağmaya başladı.",
+      "en": "One night the sky split. First it creaked like a lacquered bowl, then a thin bright crack ran from horizon to horizon — and out of the crack came stones, trailing fire."
+    },
+    {
+      "tr": "Köylüler onlara Metin dedi. Kara, demir kadar ağır, rün damarlı taşlardı bunlar; üç krallığın topraklarına — Saehwa’ya, Chowon’a, Jihae’ye — aynı gece, aynı ağırlıkla düştüler. Vurdukları yerde toprak ısındı, rüzgâr kesildi ve kimsenin çağırmadığı bir şey uyanmaya başladı.",
+      "en": "The villagers called them Metin. Black, iron-heavy and veined with runes, they fell on all three kingdoms — Saehwa, Chowon, Jihae — in the same night, with the same weight. Where a stone struck, the ground grew warm, the wind died, and something nobody had called began to wake."
+    },
+    {
+      "tr": "Metin yalnızca ezmez; bozar. Köpekler aç kurda, kurtlar kana susamış bir şeye dönüşür. Orklar çılgınlığa kapılır. Dağların buzu öfkeyle çatlar, ateş diyarları cehenneme döner. Köyler fenerlerini söndürdü; yol kenarındaki pagodalar boş kaldı.",
+      "en": "A Metin does not only crush; it corrupts. Dogs become starving wolves, wolves become things that thirst for blood. Orcs fall into frenzy. The mountain ice cracks with rage, and the fire-lands harden into hell. The villages have put out their lanterns, and the roadside pagodas stand empty."
+    },
+    {
+      "tr": "Göğün en yüksek katında altın pullu bir ejderha yaşar; üç krallık ona Gök Hükümdarı der. Yağmur onun yuvasını da yırttı. Yaralı ve güçsüz, dünyaya inemiyor — ama hâlâ duyuyor, hâlâ seçebiliyor.",
+      "en": "On the highest floor of heaven lives a gold-scaled dragon, and the three kingdoms call him the Sky Sovereign. The rain has torn through his house as well. Wounded and weakened, he cannot come down — but he still listens, and he can still choose."
+    },
+    {
+      "tr": "Seni seçti. Bir gece avucunda sıcak, altın bir iz belirdi; bir pul kadar küçük, bir yemin kadar ağır. Kimse konuşmadı. Gerek de yoktu — ne istendiğini bütün kemiklerin anladı.",
+      "en": "He chose you. One night a warm golden mark opened in your palm, small as a scale and heavy as an oath. No one spoke. No one had to — every bone in your body understood what was being asked."
+    },
+    {
+      "tr": "Yağmurun bir kaynağı var ve kaynak yolun sonunda, gökyüzünün en kızıl yandığı yerde. Oraya giden yol dört diyardan geçer: Yeonmu Ovası, Suryeon Vadisi, Seori Dağı, Daeryeol. Her birinin sonunda bir Büyük Metin düşer ve o diyarın efendisi onun içinden doğar. O efendi ölmeden kapı açılmaz.",
+      "en": "The rain has a source, and the source lies at the end of the road, where the sky burns reddest. That road crosses four lands: the Yeonmu Plains, Suryeon Valley, Mount Seori, Daeryeol. At the end of each, a Great Metin falls and the lord of that land is born from it. Until that lord is dead, the gate stays shut."
+    },
+    {
+      "tr": "Sen yürürsün; yeteneklerin kendiliğinden konuşur. Sürüler gelecek, hem de gelmekten bıkmadan. Metin’i kır, Yeop’u topla, ayakta kal. Gökyüzü kapanana dek durmak yok.",
+      "en": "You walk; your skills speak for themselves. The hordes will come, and keep coming. Break the stones, gather the Yeop, stay on your feet. There is no stopping until the sky closes."
+    }
+  ],
+  "chapters": [
+    {
+      "zone": "yeonmu",
+      "title": {
+        "tr": "Yeonmu Ovası: İlk Yağmur",
+        "en": "The Yeonmu Plains: First Rain"
+      },
+      "text": [
+        {
+          "tr": "Yeonmu, üç krallığın arasında uzanan geniş bir ovadır: bitmek bilmeyen otlar, kırmızı toprak yollar, her kavşakta bir taş fener, her tepede bir çoban tapınağı. Burada kavga bile nazik başlardı — bir kemik, bir çit, geç kalmış bir akşam yemeği. Yağmurun ilk taşları buraya düştü; çünkü hiçbir toprak bu kadar açık, bu kadar savunmasız değildi.",
+          "en": "Yeonmu is a wide plain stretched between the three kingdoms: endless grass, red dirt roads, a stone lantern at every crossing and a herder’s shrine on every hill. Even quarrels here used to start gently — a bone, a fence, a late supper. The first stones of the rain fell here, because no land lay more open, or less defended."
+        },
+        {
+          "tr": "Metin, çevresindeki canlıları aç bıraktı. Kurtlar sürü olup köylere indi, yaban domuzları çitleri devirdi, ayılarla kaplanlar yollardan çekilmeyi unuttu; her biri bir öncekinden daha sıska, daha açgözlü, daha gözü kara. Her sürünün başında bir efendi belirdi: mavi sürünün alfası Chan-Dae, ovanın dişli bekçisi Dol-Gwan, yaşlı ayı beyi Ung-Jae. Ovayı bekleyen Gümüş Ant de dağıldı — kimi ayakta kaldı, kimi korkudan sıvıştı; büyücüleri Ji-Yul yeminini hâlâ hatırlıyor, yalnızca kime verdiğini unutmuş gibi savaşıyor.",
+          "en": "The Metin left every creature around it starving. Wolves came down on the villages in packs, boars knocked over the fences, bears and tigers forgot how to give way on the road — each one leaner, hungrier and bolder than the last. A master rose at the head of every pack: Chan-Dae, alpha of the blue pack; Dol-Gwan, the tusked warden of the plain; Ung-Jae, the elder bear lord. The Silver Vow that guarded the plain broke apart as well — some stood their ground, some slipped away in fear. Their sorceress Ji-Yul still remembers her oath; she has only forgotten, it seems, to whom she swore it."
+        },
+        {
+          "tr": "Ovanın gerçek efendisi ise Horyeong: yüzyıllardır bir tapınağın gölgesinde uyuyan, çobanların hâlâ ilk kuzuyu adadığı Kaplan Tanrısı. Yağmurdan beri adaklar av, tapınak in oldu; Büyük Abanoz Metin ovanın kalbine düştüğünde de Horyeong onun içinden, bozulmuş bir tanrı olarak yeniden doğar.",
+          "en": "The plain’s true lord is Horyeong, who has slept for centuries in the shade of a shrine — the Tiger God to whom herders still dedicate the first lamb. Since the rain, offerings have become prey and the shrine a den; and when the Great Ebon Metin falls at the heart of the plain, Horyeong is born again out of it, a god corrupted."
+        },
+        {
+          "tr": "Yürüyüş seni yoruyor: geride boş köyler ve sönük fenerler kalıyor. Ama ovanın uzak kıyısında yol değişir — toprak kurur, sararır; rüzgâr duman ve demir kokar. Üç sınırın birleştiği vadide orkların davulları çalıyor ve avucundaki altın iz, o yöne doğru biraz daha ısınıyor.",
+          "en": "The march is wearing you down: empty villages and cold lanterns are all you leave behind. But at the far edge of the plain the road changes — the earth dries and yellows, and the wind smells of smoke and iron. In the valley where three borders meet, orc drums are beating, and the golden mark in your palm grows warmer toward them."
+        }
+      ]
+    },
+    {
+      "zone": "suryeon",
+      "title": {
+        "tr": "Suryeon Vadisi: Üç Sınırın Gölgesi",
+        "en": "Suryeon Valley: Shadow of the Three Borders"
+      },
+      "text": [
+        {
+          "tr": "Suryeon, üç krallığın sınırlarının birleştiği kurak bir vadidir: kum renkli platolar, aralarından kıvrılan nehirler, çıplak taştan köprüler. Hiçbir bayrak burada uzun süre dalgalanamadı; orklar, mistikler ve yırtıcı savaş çeteleri vadiyi yıllarca çekişerek paylaştı. Bu bir barış değildi — yalnızca üç silahlı sessizliğin birbirini dengelemesiydi.",
+          "en": "Suryeon is a dry valley where the borders of the three kingdoms meet: sand-coloured plateaus, rivers winding between them, bridges of bare stone. No banner ever flew here for long, so orcs, mystics and feral war-bands shared the valley by quarrelling over it for years. It was not peace — only three armed silences holding one another in balance."
+        },
+        {
+          "tr": "Metin’ler düşünce denge bozuldu. Orklar çılgına döndü: gözcüleri sınır tanımaz, savaşçıları kendini cesur sanır oldu, siyah devleri çukurlarından çıktı. Örtülü Tarikat yağmuru kehanet sayıp cellatlarını ve işkencecilerini sahaya sürdü; yırtıcı askerler kan kokusuyla kudurdu; kumun altından kral akrepler fırladı.",
+          "en": "When the Metin fell, the balance broke. The orcs went mad: their scouts ignored every border, their fighters grew bold and broad, their black giants climbed out of the pits. The Veiled Order read the rain as prophecy and sent out its executioners and tormentors; the feral soldiers ran wild on the scent of blood; king scorpions burst from under the sand."
+        },
+        {
+          "tr": "Vadi yolu efendilerle dolu: gökten ateş indiren Kor Kâhin, kanla kudurmuş Kan Çılgını, darağacını her yere kuran Cellatların Efendisi, yolu çıplak gövdesiyle kapatan Demir Dişli Dev. Ama hepsinin ardında tek bir irade duruyor — orkların en yaşlı reisi, Metin’in sesini ilk duyan ve Büyük Alacakaranlık Metini düştüğünde içinden yeniden doğan.",
+          "en": "The valley road is lined with lords: the Cinder Seer calling fire down from the sky, the Blood-Mad Berserker, the Master of the Headsmen setting up his gallows everywhere, the Iron-Tusked Giant who blocks the way with his bare body. But behind them all stands a single will — the oldest chieftain of the orcs, the first to hear the Metin’s voice, who is reborn from the Great Dusk Metin when it falls."
+        },
+        {
+          "tr": "Vadiyi geçmenin bedeli ağır: nehirler çamurla ve külle akıyor, uykular kısa, dinlenmeler çalıntı. Avucundaki iz her kavgada biraz daha soluk yanıyor — ama yanıyor. Kuzeyde, ufkun ucunda beyaz bir çizgi belirdi ve rüzgâr ilk kez soğuk esiyor.",
+          "en": "Crossing the valley costs dearly: the rivers run with mud and ash, sleep is short, rest is stolen. The mark in your palm burns a little paler after every fight — but it still burns. On the northern horizon a white line has appeared, and for the first time the wind blows cold."
+        }
+      ]
+    },
+    {
+      "zone": "seori",
+      "title": {
+        "tr": "Seori Dağı: Beyaz Sessizlik",
+        "en": "Mount Seori: The White Silence"
+      },
+      "text": [
+        {
+          "tr": "Seori’de kar sesi yutar. Dağ yolu boyunca donmuş tapınaklar, buz kesmiş fenerler ve saçağına kadar karla dolu nöbet kulübeleri sıralanır; her şey yerli yerinde, yalnızca yaşayanlar yok. Yağmurdan önce burası, hacıların ve kış tüccarlarının rüzgârdan başka hiçbir şeyden korkmadan geçtiği, dünyanın en sessiz yoluydu.",
+          "en": "On Seori the snow swallows sound. Along the mountain road stand frozen shrines, lanterns sheathed in ice and watch-huts buried to the eaves; everything is still in its place, except the living. Before the rain this was the quietest road in the world, crossed by pilgrims and winter traders who feared nothing but the wind."
+        },
+        {
+          "tr": "Ecel Metini ilk titrediğinde dağ garnizonu uyandı — ama ölü olarak. Veba Alayı’nın askerleri, okçuları, mızrakçıları ve komutanı zehirli bir sabırla geçidi tutmaya devam ediyor; kimi hâlâ emir bekliyor, kimi yalnızca öfkesini hatırlıyor. Cin Metini ise buzulları öfkelendirdi: buz ruhları kıymık fırlatıyor, buz böcekleri sürü hâlinde patlıyor, yetilerle buz arslanları sırtlardan atlıyor.",
+          "en": "At the first tremor of the Metin of Demise the mountain garrison woke — but as the dead. The soldiers, archers, spearmen and commander of the Plague Host keep holding the pass with a poisonous patience; some still wait for an order, some remember only their rage. The Metin of the Fiend enraged the glaciers: ice spirits hurl splinters, ice bugs burst in swarms, yetis and ice lions leap down from the ridges."
+        },
+        {
+          "tr": "Ölüler de buz da, dağın efendisinin tahtını bekliyor: Miho, Seori’nin eski ruhu. Karlı geçitlerde kaybolanlara yüzyıllarca ışık tutan bir koruyucuydu; Büyük Ecel Metini onun yasına dokunduğunda o ışık intikama döndü. Dağın kalbinde ise Buz Golemi kıpırdıyor — Donmuş Dağın Kalbi, Metin’in ilk uyandırdıklarından biri.",
+          "en": "The dead and the ice alike guard the throne of the mountain’s lord: Miho, the ancient spirit of Seori. For centuries it lit the way for those lost in the snowy passes; when the Great Metin of Demise touched its grief, that light turned to vengeance. In the mountain’s heart the Ice Golem stirs — the Heart of the Frozen Mountain, one of the first things the Metin woke."
+        },
+        {
+          "tr": "Soğuk her adımın bedelini yüzüne yazıyor: parmaklar uyuşuyor, fenerler tutuşmuyor, avucundaki iz bile ince bir buz kabuğunun altında. Ama zirveden bakınca güneyde gökyüzü bütün gece kızıl yanıyor. Orası Daeryeol — yağmur oradan geliyor.",
+          "en": "The cold writes the price of every step on your face: fingers go numb, lanterns will not catch, and even the mark in your palm lies under a thin crust of ice. But from the summit you can see the southern sky burning red all night long. That is Daeryeol — and that is where the rain comes from."
+        }
+      ]
+    },
+    {
+      "zone": "daeryeol",
+      "title": {
+        "tr": "Daeryeol: Yağmurun Kaynağı",
+        "en": "Daeryeol: Source of the Rain"
+      },
+      "text": [
+        {
+          "tr": "Daeryeol’da taş kara, nehirler turuncudur. Zemin her adımda hafifçe nefes alır; sanki altında uyuyan bir şey her seferinde uyanmanın eşiğine gelir. Bu topraklar ateşte dövüldü, sonra unutuldu — yağmur gelene dek.",
+          "en": "In Daeryeol the stone is black and the rivers run orange. The ground breathes a little with every step, as if something sleeping beneath keeps coming to the brink of waking. These lands were forged in fire and then forgotten — until the rain came."
+        },
+        {
+          "tr": "Mezbaha Metini ateşin yaratıklarını cehennemin askerlerine çevirdi: Savaş Kaplanları lav çatlaklarından sıçrıyor, alev hayaletleri kor oklar yağdırıyor, Kor Ateş Golemleri yürüdükçe yer eriyor. Ateşin üstüne kurulu kürsüde Köz Kral oturuyor; yanında Magma Kumandanı ve Yanık Ruh bekliyor.",
+          "en": "The Metin of Slaughter turned the fire’s creatures into soldiers of hell: fighting tigers spring from the lava cracks, flame ghosts rain cinder bolts, ember golems melt the ground as they walk. On a throne raised over the fire sits the Pyre King, with the Magma Warlord and the Cinder Wraith at his side."
+        },
+        {
+          "tr": "Ama yağmur bu sarayda başlamıyor. Dağın altında, kor gölün de altında Al Ejder yatıyor — gökyüzünü çatlatan kükreme onundu. Her Metin onun öfkesinden kopmuş bir parça, her bozulmuş yaratık onun sesine verilmiş bir cevap. Büyük Kıyamet Ateşi Metini yüreğinin tam üstüne düştüğünde Ejderha onun içinden doğacak.",
+          "en": "But the rain does not begin in this palace. Beneath the mountain, beneath even the lake of embers, the Scarlet Wyrm lies — the roar that cracked the sky was his. Every Metin is a piece torn from his wrath, every corrupted creature an answer to his voice. When the Great Doomfire Metin falls squarely on his heart, the Dragon will be born from it."
+        },
+        {
+          "tr": "Burada yol biter. Her kırdığın taş, arkanda bıraktığın her boş köy, her soğuk gece bu son kapıya çıkıyordu. Gök Hükümdarı sessiz — ama bütün yolculuk boyunca ilk kez avucundaki iz titremiyor.",
+          "en": "Here the road ends. Every stone you broke, every empty village behind you, every cold night led to this last gate. The Sky Sovereign is silent — but for the first time on the whole journey, the mark in your palm does not tremble."
+        }
+      ]
+    }
+  ],
+  "codex": [
+    {
+      "id": "codex_lore_what_is_a_metin",
+      "title": {
+        "tr": "Metin Taşı Nedir?",
+        "en": "What Is a Metin?"
+      },
+      "text": {
+        "tr": "Metin, yarılan gökten düşen kara bir taştır; yüzeyindeki rünler damar gibi kızarır. Dikildiği yerde havayı ısıtır, çevresindeki yaratıkları bozar ve bitmek bilmeyen sürüler çağırır. Her Metin’in kendine özgü bir rünü, dolayısıyla kendine özgü bir huyu vardır: Üzüntü, Hırs, Gölge, Ölüm… Kırıldığında çaldığı her şeyi geri verir — öz, Yeop ve parça.",
+        "en": "A Metin is a black stone fallen from the broken sky, the runes on its face glowing red like veins. Wherever it stands it warms the air, corrupts the creatures around it and calls swarms that never run dry. Every Metin carries a rune of its own, and so a temper of its own: Sorrow, Greed, Shadow, Death… Break it, and it gives back everything it stole — essence, Yeop and shards."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_metin_rain",
+      "title": {
+        "tr": "Metin Yağmuru",
+        "en": "The Metin Rain"
+      },
+      "text": {
+        "tr": "Gökyüzünün yarıldığı geceden beri taşlar durmadan düşüyor. Yaşlılar, çatlamadan hemen önce yerin çok derinlerinden bir kükreme duyduklarını söylüyor; kimse bunu kanıtlayamıyor, kimse unutamıyor. Yağmur yalnızca taş getirmedi: hayvanları canavara, orkları çılgınlığa, buzulları öfkeye, ateş topraklarını cehenneme çevirdi. Herkes aynı şeyi fısıldıyor — kaynağı bulunmadıkça dinmeyecek.",
+        "en": "Since the night the sky split, the stones have not stopped falling. The elders say that just before the crack they heard a roar from very deep in the earth — nobody can prove it, nobody can forget it. The rain did not bring stone alone: it turned beasts into monsters, orcs into frenzy, glaciers into rage and fire-lands into hell. Everyone whispers the same thing — it will not stop until its source is found."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_sky_sovereign",
+      "title": {
+        "tr": "Gök Hükümdarı",
+        "en": "The Sky Sovereign"
+      },
+      "text": {
+        "tr": "Gök Hükümdarı, göğün en yüksek katında uyuyan altın pullu koruyucudur; üç krallığın tapınaklarında aynı adla, aynı saygıyla anılır. Yağmur yuvasını yırtalı beri dünyaya inemiyor, bu yüzden elini bir ölümlüye, sana emanet etti. Avucundaki altın iz onun nefesidir: düşsen de sönmez, bir sonraki yürüyüşte yeniden yanar. Seni neden seçtiğini hiç söylemedi.",
+        "en": "The Sky Sovereign is the gold-scaled guardian who sleeps on the highest floor of heaven, worshipped under the same name in the temples of all three kingdoms. Since the rain tore through his house he can no longer descend, so he has entrusted his hand to a mortal — to you. The golden mark in your palm is his breath: if you fall it does not go out, it burns again on the next march. He has never said why he chose you."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_yeop",
+      "title": {
+        "tr": "Yeop",
+        "en": "Yeop"
+      },
+      "text": {
+        "tr": "Yeop, üç krallığın ortak parasıdır: ağır, altın kenarlı, ortası kare delikli sikkeler. Metin taşları ejderhaların altın biriktirdiği gibi Yeop biriktirir; kırılınca kesenin ağzı açılır ve sikkeler yağmur gibi saçılır. Yolculukta Yeop sandık açmaya yarar, ama her sandık bir öncekinden pahalıdır — yalnızca bir efendinin sandığı bedavadır. Yolculuk bitince elinde kalan Yeop bankaya geçer ve Demirci’nin ocağında yeniden değer bulur.",
+        "en": "Yeop is the common coin of the three kingdoms: heavy, gold-rimmed, with a square hole through its heart. Metin stones hoard it the way dragons hoard gold, and when one breaks the purse bursts open and the coins scatter like rain. On the march Yeop opens chests, though every chest costs more than the last — only a lord’s chest comes free. Whatever you carry out at the end goes to the bank, and finds new worth at the Blacksmith’s fire."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_soul_pearls",
+      "title": {
+        "tr": "Ruh İncileri",
+        "en": "Soul Pearls"
+      },
+      "text": {
+        "tr": "Bir Metin kırılınca içine hapsettiği ruhlar küçük, soğuk incilere dönüşür: Ruh İncileri. Her inci bir şeyin anısını taşır — delici bir okun, bir avcının sabrının, bir ırkın zayıf noktasının — ve silaha ya da zırha gömüldüğünde o anıyı güç olarak geri verir. Silaha üç, zırha üç yuva açılır; aynı inci yeniden bulunursa +4’e kadar parlar, yuva doluysa en zayıfının yerine konabilir. Hayvan Belası, Ork Belası, Mürit Belası, Ölü Belası ve Cin Belası incileri, adlarını taşıdıkları ırkın canını yakmak için sertleştirilir.",
+        "en": "When a Metin breaks, the spirits it imprisoned settle into small cold pearls: Soul Pearls. Each carries the memory of something — a piercing arrow, a hunter’s patience, a race’s weak spot — and, set into weapon or armour, hands that memory back as strength. Three sockets open on the weapon and three on the armour; a pearl found twice burns brighter, up to +4, and when the sockets are full it may replace the weakest. The Beastbane, Orcbane, Zealotbane, Gravebane and Fiendbane pearls are tempered to hurt the very races they are named for."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_trinkets",
+      "title": {
+        "tr": "Takılar",
+        "en": "Trinkets"
+      },
+      "text": {
+        "tr": "Bilezikler, kolyeler ve küpeler: üç krallığın savaş alanlarında kaybolmuş, cesetlerden sökülmüş ya da sahibi hiç çıkmamış süslerdir. Metin’in özü onlara dokunduğunda her biri küçük bir marifet öğrenir — can çalmak, vuruşu sıçratmak, düşmanı sersemletmek, yavaşlatmak, zehirlemek, acıyı geri yansıtmak. Aynı takı yeniden bulunursa ustalaşır ve rütbe atlar.",
+        "en": "Bracelets, necklaces and earrings: ornaments lost on the battlefields of the three kingdoms, pried from the fallen, or never claimed by anyone. When the Metin’s essence touches them, each learns a small trick — to steal life, to bounce a blow, to stun, to slow, to poison, to throw pain back at whoever dealt it. Find the same trinket again and it grows into mastery, rising a rank."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_blacksmith",
+      "title": {
+        "tr": "Demirci",
+        "en": "The Blacksmith"
+      },
+      "text": {
+        "tr": "Üç krallığı bağlayan yolun bir köşesinde, hiç sönmeyen bir ocak yanar; başındaki yaşlı demirci kimsenin adını da derdini de sormaz, yalnızca Yeop ve Metin Parçası ister. Eşyanı +9’a kadar tavlar — ama her basamak bir öncekinden zordur ve ocak bazen ‘olmadı’ der. Olmadığında yalnızca harcadığın malzeme gider; silahın da zırhın da sağ salim sana döner. Nedenini soranlara omuz silkiyor: ‘Demir kırılmaz,’ diyor, ‘yalnızca bekler.’",
+        "en": "On one corner of the road that binds the three kingdoms burns a forge that has never gone out; the old Blacksmith who tends it asks nobody’s name or business, only Yeop and Metin Shards. He will temper your gear up to +9 — but every step is harder than the last, and sometimes the fire says no. When it does, only the materials are lost; your weapon and armour come back to you whole. Ask him why and he shrugs: ‘Iron doesn’t break,’ he says. ‘It only waits.’"
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_metin_shard",
+      "title": {
+        "tr": "Metin Parçası",
+        "en": "Metin Shard"
+      },
+      "text": {
+        "tr": "Kırılan her Metin, avuca sığacak kadar küçük bir parça bırakır: hâlâ ılık, hafifçe vınlayan bir Metin Parçası. Yolculuk bitince ödünç güçlerin dağılır; parçalar ise sende kalır — kazansan da, düşsen de. Demirci onları ocağına atar ve ocak, karşılığında eşyana bir basamak daha kazandırmaya çalışır.",
+        "en": "Every Metin that breaks leaves a fragment small enough to close your hand around: a Metin Shard, still warm, faintly humming. When a march ends your borrowed powers scatter; the shards stay with you, whether you won or fell. The Blacksmith feeds them to his fire, and the fire tries to repay you with one more step up the temper of your gear."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_metin_essence",
+      "title": {
+        "tr": "Metin’in Özü",
+        "en": "Essence of the Metin"
+      },
+      "text": {
+        "tr": "Bir Metin çatladığında içinden ılık, altın-kızıl bir sis yükselir: Metin’in Özü. Sis, onu kıranın önünde üç seçeneğe dönüşür — Ruh İncileri, takılar, bir soluk can ya da bir avuç Yeop arasından — ve yalnızca birini alabilirsin. Uyanmış bir Metin’in özü daha yoğundur; ilk bakışta bile daha değerli seçenekler sunar.",
+        "en": "When a Metin cracks, a warm gold-and-crimson mist rises from it: the Essence of the Metin. Before whoever broke the stone it settles into three choices — drawn from Soul Pearls, trinkets, a breath of life or a handful of Yeop — and you may take only one. The essence of an awakened Metin runs thicker, offering worthier choices even at first glance."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_awakening_and_corruption",
+      "title": {
+        "tr": "Uyanış ve Bozulma",
+        "en": "Awakening and Corruption"
+      },
+      "text": {
+        "tr": "Düşen Metin sessiz kalmaz: çevresine bozulmuş sürüler çağırır; aurasının içindeki her düşman parlar, daha hızlı koşar, daha sert vurur. Yaklaşık doksan saniye kırılmayan Metin uyanır: iki elit muhafızı taştan fırlar, aurası genişler, sürüleri sıklaşır. Bu sırada Bozulma göstergesi yükselir; gösterge doldukça daha çok düşman gelir, Metin’ler daha sık düşer — ama Yeop, EXP ve öz ödülleri de aynı oranda büyür. Göstergeyi ancak taşları kırarak indirebilirsin; bir Metin’i geç kırmak cesaret de olabilir, açgözlülük de.",
+        "en": "A fallen Metin does not stay quiet: it calls corrupted swarms around itself, and every enemy inside its aura glows, runs faster and hits harder. A stone left standing for about ninety seconds awakens — two elite guardians burst out of it, its aura widens, its swarms thicken. All the while the Corruption meter climbs; the fuller it gets, the more enemies come and the faster the Metin fall, but the Yeop, XP and essence rewards swell in step. Only breaking stones brings the meter down, and leaving a Metin standing a little longer can be courage or greed."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_afflictions",
+      "title": {
+        "tr": "Yağmurun Damgaları",
+        "en": "Marks of the Rain"
+      },
+      "text": {
+        "tr": "Aynı yaratık, farklı bir damgayla bambaşka bir şeye dönüşebilir; çünkü yağmur kimseyi aynı biçimde bozmaz. Aç olanlar Metin’in açlığını yutmuştur; Korkaklar savaş alanından kaçmış, Moralsizler yüreğini yitirmiş askerlerdir. İri ve Büyük olanları yağmur şişirmiş, yükseltmiştir; Kızgın ve Acımasız olanlar ise öfkelerini ölümden sonra bile taşır. Bir adın önündeki ek, o yaratığın savaşta nasıl davranacağının ilk ipucudur.",
+        "en": "The same creature can become something quite different under a different mark, because the rain corrupts no two the same way. The Hungry have swallowed the Metin’s hunger; the Craven fled the field, the Dispirited lost heart. The Hulking and the High were swollen and raised up by the rain, while the Angry and the Mean carry their rage even past death. The word in front of a name is the first hint of how that creature will fight."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_empire_saehwa",
+      "title": {
+        "tr": "Saehwa İmparatorluğu",
+        "en": "Saehwa Empire"
+      },
+      "text": {
+        "tr": "Saehwa’nın bayrağı kırmızıdır: kapı sövesine, savaş davuluna ve ilk yaraya aynı renk sürülür. Bu topraklarda çocuklar yürümeden önce düşmeyi, ağlamadan önce kalkmayı öğrenir. Kızıl bayrağın altında yürüyen savaşçı yağmurun ilk darbelerine diğerlerinden biraz daha sağlam dayanır; çünkü Saehwa evlatlarına ‘ölme’ demez, ‘ayakta kal’ der.",
+        "en": "Saehwa flies red: the same colour is brushed on doorposts, war drums and the first wound. Children there learn to fall before they walk, and to stand up before they cry. A warrior marching under the red banner weathers the rain’s first blows a little better than the rest — because Saehwa never tells its children ‘don’t die’; it says ‘stay on your feet’."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_empire_chowon",
+      "title": {
+        "tr": "Chowon İmparatorluğu",
+        "en": "Chowon Empire"
+      },
+      "text": {
+        "tr": "Chowon’un sarısı olgun buğdayın, bal mumunun ve tapınak levhalarının rengidir. Yazıcıları her savaşı, her kaybı, her dersi deftere geçirir; bu yüzden Chowon’un savaşçıları aynı hatayı iki kez yapmaz. Sarı bayrağın altında yürüyen yağmurdan öğrenir: her düşmandan, her diyardan biraz daha çabuk olgunlaşır.",
+        "en": "Chowon’s yellow is the colour of ripe wheat, beeswax and temple tablets. Its scribes set down every battle, every loss, every lesson, which is why a Chowon warrior seldom makes the same mistake twice. Whoever marches under the yellow banner learns from the rain itself, ripening a little faster with every foe and every land."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_empire_jihae",
+      "title": {
+        "tr": "Jihae İmparatorluğu",
+        "en": "Jihae Empire"
+      },
+      "text": {
+        "tr": "Jihae’nin mavisi nehrin, denizin ve tüccar yelkenlerinin rengidir. Burada herkes bir sayıyı iki kez, bir yüzü üç kez okur; talih de pazarlık gibi, öğrenilen bir sanattır. Mavi bayrağın altında yürüyenin kesesi de talihi de biraz daha dolu çıkar: yağmur Yeop saçıyorsa, onu ilk toplayan çoğu zaman bir Jihae’dir.",
+        "en": "Jihae’s blue is the colour of rivers, the sea and merchant sails. Everyone there reads a number twice and a face three times; luck, like haggling, is an art that can be learned. Whoever marches under the blue banner carries a fuller purse and better fortune — if the rain is scattering Yeop, it is most often a Jihae who gathers it first."
+      },
+      "unlock": "always"
+    },
+    {
+      "id": "codex_lore_class_warrior",
+      "title": {
+        "tr": "Savaşçı",
+        "en": "Warrior"
+      },
+      "text": {
+        "tr": "Savaşçılar, üç krallığın kışlalarında yetişen kılıç ustalarıdır; cepheye ilk girer, en son çıkarlar. Kuvvet doktrin onları kas ve çelikten bir surun ardına koyar: altın kılıç ışığı öfkeyle ve yaşama isteğiyle yanar. Ruh doktrin ise kılıcı ruha taşır — beyaz hilaller savurur, çevrelerinde kılıçlar döndürür, bedenlerini taşa çevirir.",
+        "en": "Warriors are swordmasters raised in the barracks of the three kingdoms: first onto the field, last off it. The Sinew doctrine puts them behind a wall of muscle and steel, their gold blade-light fed by rage and the will to live. The Spirit doctrine carries the blade into the spirit — they hurl white crescents, wheel swords around themselves and harden their bodies to stone."
+      },
+      "unlock": "class:warrior"
+    },
+    {
+      "id": "codex_lore_class_ninja",
+      "title": {
+        "tr": "Ninja",
+        "en": "Ninja"
+      },
+      "text": {
+        "tr": "Ninjalar gölgelerde yetişir; yağmur başladığından beri çatılardan, orman kenarlarından ve kimsenin bakmadığı yerlerden yürüyorlar. Sessiz Bıçak doktrininde çifte hançer, zehir bulutu ve iz bırakmadan kaybolma ustalığı öne çıkar. Sadak doktrini ise uzaktan çeker: ok yağmurları, ateşli ve zehirli oklar — koşarken bile ölüm yağdıran bir avcı.",
+        "en": "Ninja are raised in shadow, and since the rain began they have been walking the rooftops, the forest edges and every place no one thinks to look. The Silent Edge doctrine favours twin daggers, poison clouds and vanishing without a trace. The Quiver doctrine draws from afar — arrow rain, fire and poison shafts, a hunter who deals death even while running."
+      },
+      "unlock": "class:ninja"
+    },
+    {
+      "id": "codex_lore_class_yacha",
+      "title": {
+        "tr": "Yacha",
+        "en": "Yacha"
+      },
+      "text": {
+        "tr": "Yacha, karanlığın lanetlediği şövalye ve alevin dövdüğü büyücüdür; insanlar onlardan çekinir, çünkü bıçaklarına hayalet bağlarlar. Büyü Çeliği doktrininde kılıç hayaletle dolar, korku çığlığı sinirleri koparır, parmak uçlarında alev patlar. Lanet Sanatı doktrini ise uzaktan eritir: alev ruhları çağırır, çevresinde kara küreler döndürür, gökten lanet yağdırır.",
+        "en": "The Yacha are knights cursed by darkness and sorcerers forged in flame; people keep their distance, because the Yacha bind ghosts to their blades. In the Spellsteel doctrine the sword fills with a ghost, a scream snaps nerves and flame bursts from the fingertips. The Hexcraft doctrine melts from afar — it calls flame spirits, wheels black orbs around the caster and brings curses down from the sky."
+      },
+      "unlock": "class:yacha"
+    },
+    {
+      "id": "codex_lore_class_shaman",
+      "title": {
+        "tr": "Şaman",
+        "en": "Shaman"
+      },
+      "text": {
+        "tr": "Şamanlar, ejderhanın sesini taşıyan ruh çağırıcılardır; yelpaze ve tılsımlarla gökten mavi şimşek indirirler. Tılsım doktrini altın ejderhaları ve kutsamaları öne çıkarır: uzaktan vurur, hasarını, hızını ve menzilini kutsamayla büyütür. Bora Merhemi doktrini ise şimşekle iyileşmeyi birleştirir; en güçlü yenilenmeyi, zırh ve hız desteğini, düşmanı uzakta tutan çanları getirir.",
+        "en": "Shamans are spirit-callers who carry the voice of the dragon, bringing blue lightning down from the sky with fan and talisman. The Talisman doctrine leans on golden dragons and blessings: it strikes from range and swells damage, speed and reach with boons. The Stormbalm doctrine joins lightning to mending — the strongest recovery, armour and speed blessings, and tolling bells that keep foes at bay."
+      },
+      "unlock": "class:shaman"
+    },
+    {
+      "id": "codex_lore_class_wolfman",
+      "title": {
+        "tr": "Wolfman",
+        "en": "Wolfman"
+      },
+      "text": {
+        "tr": "Wolfman'ler dolunayda uyanan yarı insan, yarı kurt avcılardır; bozulan Yeonmu kurtlarının uluyuşundaki acıyı duyabilen tek soydur. Kızıl Yele doktrini kan kokusuyla çılgına döner: pençe pençe yırtar, can çalar, her yarayla biraz daha hızlanır. Ay Yelesi doktrini ise ay ışığında koşan ruh sürüsünü yönetir: hayalet kurtlar çağırır, buz gibi nefesiyle düşmanı yavaşlatır.",
+        "en": "Wolfmen are half-man, half-wolf hunters who wake under the full moon, the only kin who can hear the pain in the howls of Yeonmu’s corrupted wolves. The Redmane doctrine runs mad on the scent of blood: claw after claw it rends, steals life and grows faster with every wound. The Moonmane doctrine leads the spirit pack that runs by moonlight — it summons spectral wolves and chills its foes with an icy breath."
+      },
+      "unlock": "class:wolfman"
+    },
+    {
+      "id": "codex_lore_zone_yeonmu",
+      "title": {
+        "tr": "Yeonmu Ovası",
+        "en": "The Yeonmu Plains"
+      },
+      "text": {
+        "tr": "Yeonmu, üç krallığın arasında uzanan yeşil bir ovadır: kırmızı toprak yollar, her kavşakta taş fener, her tepede bir çoban tapınağı. Kurtlar, yaban domuzları, ayılar ve kaplanlar, ovayı koruyan Gümüş Ant askerleriyle aynı otlarda dolaşır; yağmurdan beri hepsi aç, hepsi huysuz. Burada hiçbir düşmanın özel bir direnci yoktur; asıl tehlike sayılarıdır — hareket halinde kalmayı öğrenmek için en iyi yer. Ovanın efendisi Kaplan Tanrısı Horyeong’dur ve Büyük Abanoz Metin düştüğünde içinden o doğar.",
+        "en": "Yeonmu is a green plain stretched between the three kingdoms: red dirt roads, a stone lantern at every crossing, a herder’s shrine on every hill. Wolves, boars, bears and tigers roam the same grass as the Silver Vow soldiers who guard it, and since the rain every one of them is hungry and ill-tempered. Nothing here carries a special resistance; the danger is in the numbers — the best place to learn how to keep moving. The plain’s lord is the Tiger God Horyeong, born from the Great Ebon Metin when it falls."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_lore_zone_suryeon",
+      "title": {
+        "tr": "Suryeon Vadisi",
+        "en": "Suryeon Valley"
+      },
+      "text": {
+        "tr": "Suryeon, üç krallığın sınırlarının birleştiği kurak bir vadidir: kum renkli platolar, aralarından kıvrılan nehirler, çıplak taştan köprüler. Orklar, Örtülü Tarikat’ın müritleri, yırtıcı askerler ve kral akrepler vadiyi yıllarca çekişerek paylaştı; Metin’ler düşünce bu denge kanla bozuldu. Vadinin efendisi Ork Reisi, klanların en yaşlı savaş lideri ve Büyük Alacakaranlık Metini’nin çağrısına ilk uyandır.",
+        "en": "Suryeon is a dry valley where the borders of the three kingdoms meet: sand-coloured plateaus, rivers winding between them, bridges of bare stone. Orcs, disciples of the Veiled Order, feral soldiers and king scorpions shared the valley by quarrelling over it for years; when the Metin fell, that balance broke in blood. Its lord, the Chief Orc, is the eldest war leader of the clans and the first to answer the call of the Great Dusk Metin."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_lore_zone_seori",
+      "title": {
+        "tr": "Seori Dağı",
+        "en": "Mount Seori"
+      },
+      "text": {
+        "tr": "Seori, kar altındaki tapınakların ve donmuş fenerlerin dağıdır; burada kar sesi yutar, ölüler bile sessiz yürür. Veba Alayı’nın ölüleri geçidi tutar; buz ruhları, yetiler ve buzdan doğmuş bir sürü yaratık sırtlardan iner. Ölüler zehre ve karanlığa dayanıklıdır ama kutsallıktan ürker; buz yaratıkları buza dayanıklıdır ama ateşten kaçar. Zirvede Seori’nin Dokuz Kuyruklu Ruhu bekler.",
+        "en": "Seori is a mountain of snowbound shrines and frozen lanterns, where the snow swallows sound and even the dead walk quietly. The dead of the Plague Host hold the pass while ice spirits, yetis and a host of creatures born from the ice come down from the ridges. The dead shrug off poison and darkness but flinch from what is holy; the ice creatures shrug off ice but flee from fire. At the summit waits the Nine-Tailed Spirit of Seori."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_lore_zone_daeryeol",
+      "title": {
+        "tr": "Daeryeol",
+        "en": "Daeryeol"
+      },
+      "text": {
+        "tr": "Daeryeol, kara bazalt ve turuncu nehirlerin diyarıdır; zemin her adımda hafifçe nefes alır. Savaş Kaplanları, alev hayaletleri, alev savaşçıları ve kor golemleri buranın yaratıklarıdır; hepsi ateşe dayanıklıdır ama buzdan ürker. Köz Kral kürsüsünde bekler ve onun ardında bütün yağmurun kaynağı durur: Al Ejder.",
+        "en": "Daeryeol is a land of black basalt and orange rivers, and the ground breathes a little with every step. Fighting tigers, flame ghosts, flame warriors and ember golems are its creatures; all shrug off fire, but flinch from ice. The Pyre King waits on his throne, and behind him waits the source of the whole rain: the Scarlet Wyrm."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_lore_silver_vow",
+      "title": {
+        "tr": "Gümüş Ant",
+        "en": "The Silver Vow"
+      },
+      "text": {
+        "tr": "Gümüş Ant, Yeonmu Ovası’nı bekleyen beyaz bayraklı bir muhafız birliğidir: erleri, okçuları, komutanları ve yeminli generalleri vardır. Yağmur geldiğinde yeminlerini sınadı — kimi ayakta kaldı, kimi korkuyla kaçtı, kimi yüreğini yitirdi. Ma-Sol, Ae-Rin ve Sa-Rim gibi subayları ovayı hâlâ uzaktan ok yağdırarak tutmaya çalışıyor, kime hizmet ettiklerinden emin olmasalar da.",
+        "en": "The Silver Vow is the white-bannered order sworn to keep watch over the Yeonmu Plains: soldiers, archers, commanders and sworn generals. When the rain came it tested their vow — some stood, some fled in terror, some simply lost heart. Officers like Ma-Sol, Ae-Rin and Sa-Rim still hold the plain, loosing arrows from a distance, though they are no longer sure whom they serve."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_lore_veiled_order",
+      "title": {
+        "tr": "Örtülü Tarikat",
+        "en": "The Veiled Order"
+      },
+      "text": {
+        "tr": "Örtülü Tarikat, Suryeon’un harap tapınaklarında yüzyıllardır kehanet okuyan kara cüppeli bir kardeşliktir: müritleri, münzevileri, cellatları, işkencecileri ve habercileri vardır. Gökyüzü yarıldığında ‘vakit geldi’ dediler ve Metin’lere dua ettiler; dualarına Gölge cevap verdi. Rütbe atlayanların adına ‘Büyük’ eklenir — bu vadide bunun anlamı, taşla pazarlığa oturmuş olmaktır.",
+        "en": "The Veiled Order is a dark-robed brotherhood that has read prophecy for centuries in Suryeon’s ruined temples: zealots, ascetics, executioners, tormentors and summoners. When the sky split they said ‘the hour has come’ and prayed to the Metin; the Shadow answered. Those who rise in rank earn the word ‘High’ before their names — a title that, in this valley, means they have sat down and bargained with the stone."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_lore_plague_host",
+      "title": {
+        "tr": "Veba Alayı",
+        "en": "The Plague Host"
+      },
+      "text": {
+        "tr": "Veba Alayı, Seori geçidini kış boyunca tutmakla görevli bir dağ garnizonuydu: mızrakçıları, okçuları, kılıç ustaları ve bir komutanı vardı. Bir kış vebası onları çoktan almıştı; Ecel Metini düştüğünde ölüler ayağa kalkıp nöbete döndü. Hâlâ nöbettedirler, yalnızca nöbetin ne için tutulduğunu unuttular. Kızgın olanlar ise hatırlıyor — ve en iyi hatırladıkları şey öfkeleri.",
+        "en": "The Plague Host was a mountain garrison charged with holding the Seori pass through winter: spearmen, archers, swordsmen and a commander. A winter plague had already taken them; when the Metin of Demise fell, the dead stood up and returned to their posts. They are still on watch, though they have forgotten what the watch was for. The Angry ones remember — and the thing they remember best is their rage."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_lore_great_metin",
+      "title": {
+        "tr": "Büyük Metin",
+        "en": "The Great Metin"
+      },
+      "text": {
+        "tr": "Her diyarın yolu sonunda bir Büyük Metin düşer: bir pagoda kadar yüksek, çatlaklarından ışık sızan, o diyarın bütün bozulmasını tek yerde toplayan dev bir taş. Diyarın efendisi — Yeonmu’da Horyeong — onun içinden doğar; taşın kendi bozulmuş yüreğinden yapılmış bir bekçidir. Efendi öldüğünde taş içeriden çatlar, rünleri söner ve bir sonraki yolun kapısı açılır. Büyük Abanoz Metin yalnızca ilkiydi; yolda üç tane daha bekliyor.",
+        "en": "At the end of every land’s road a Great Metin falls: a stone tall as a pagoda, light leaking from its cracks, gathering all of that land’s corruption into one place. The lord of the land — Horyeong, in Yeonmu — is born from it, a warden made from the stone’s own corrupted heart. When the lord dies the stone cracks from within, its runes go dark and the gate to the next road opens. The Great Ebon Metin was only the first; three more wait along the way."
+      },
+      "unlock": "clear:yeonmu"
+    },
+    {
+      "id": "codex_lore_orc_chieftain",
+      "title": {
+        "tr": "Esir Reis",
+        "en": "The Enthralled Chieftain"
+      },
+      "text": {
+        "tr": "Ork Reisi doğuştan bir canavar değildi; klanını yağmurdan korumak umuduyla Metin’in fısıltısına kulak veren, orkların en yaşlı savaş lideriydi. Büyük Alacakaranlık Metini ona güç verdi, karşılığında iradesini aldı — reis her emri kendi kararı sanarak vadiyi yaktı. Düşerken gözleri bir anlığına berraklaştı ve kimseye değil, kendi klanına fısıldadı: ‘Eve dönün.’",
+        "en": "The Chief Orc was no born monster; he was the eldest war leader of the orcs, who listened to the Metin’s whisper in the hope of shielding his clan from the rain. The Great Dusk Metin gave him strength and took his will in return — and the chieftain burned the valley believing every order was his own. As he fell his eyes cleared for one moment, and he whispered, to no one but his own clan: ‘Go home.’"
+      },
+      "unlock": "clear:suryeon"
+    },
+    {
+      "id": "codex_lore_miho",
+      "title": {
+        "tr": "Miho’nun Yası",
+        "en": "Miho’s Grief"
+      },
+      "text": {
+        "tr": "Miho, yüzyıllarca Seori’nin kar geçitlerinde yolunu kaybedenlere ışık tutan, karşılığında yalnızca bir hikâye isteyen koruyucu bir ruhtu. Veba Alayı’nın ölüleri geçitte yeniden ayağa kalkınca onları kendi ateşiyle uyutmaya çalıştı; Büyük Ecel Metini her kuyruğunu bir yasa, her yası bir öfkeye çevirdi. Dokuzuncu kuyruğa İntikamcı Ruh dendi ve o düştüğünde dağ ilk kez sustu. Son sözü bir uyarıydı: güneydeki ateş nefret değil, yastır.",
+        "en": "For centuries Miho was a guardian spirit who lit the way for those lost in Seori’s snow passes, asking only a story in return. When the dead of the Plague Host stood up in the pass, it tried to lull them back to sleep with its own fire; the Great Metin of Demise turned every tail into a grief and every grief into rage. The ninth tail came to be called the Vengeful Spirit, and when it fell the mountain went silent for the first time. Its last words were a warning: the fire in the south is not hatred — it is grief."
+      },
+      "unlock": "clear:seori"
+    },
+    {
+      "id": "codex_lore_scarlet_wyrm_truth",
+      "title": {
+        "tr": "Al Ejder’in Sırrı",
+        "en": "The Scarlet Wyrm’s Secret"
+      },
+      "text": {
+        "tr": "Eski anlatıcılar Gök Hükümdarı ile Al Ejder’in bir zamanlar tek bir ejderha olduğunu söyler: üstte altın, altta kızıl; gök ve ateş birbirinin yarısı. Krallıklar savaşa, korkuya ve yasa gömüldükçe dünyanın öfkesi aşağı sızdı ve Al Ejder onu yüzyıllarca tek başına taşıdı. Taşıyamaz olduğu gece kükredi; gök çatladı ve her Metin onun dinmeyen öfkesinden kopmuş bir damla olarak düştü. Gök Hükümdarı kendi kızıl yarısına el kaldıramazdı — bu yüzden elini sana ödünç verdi ve iş bittiğinde ufukta sessizce eğildi.",
+        "en": "The old tellers say the Sky Sovereign and the Scarlet Wyrm were once a single dragon — gold above, red below, sky and fire each the other’s half. As the kingdoms sank into war, fear and grief, the world’s anger seeped downward, and the Scarlet Wyrm carried it alone for centuries. The night it could carry it no longer it roared; the sky cracked, and every Metin fell as a drop of its unending wrath. The Sky Sovereign could not raise his hand against his own red half — so he lent that hand to you, and bowed his head on the horizon when it was done."
+      },
+      "unlock": "clear:daeryeol"
+    },
+    {
+      "id": "codex_lore_feat_hard_yeonmu",
+      "title": {
+        "tr": "Yeonmu, İkinci Kez",
+        "en": "Yeonmu, Twice Over"
+      },
+      "text": {
+        "tr": "Yeonmu Ovası’nı bir kez tuttun ve yağmur geri çekildi. Daha yoğun, daha aç, eski şefkatten eser kalmadan geri geldi — sen ovayı yine tuttun. Köylüler adını hâlâ bilmiyor; yalnızca yolun ikinci seferde daha kısa geldiğini söylüyorlar.",
+        "en": "You held the Yeonmu Plains once and the rain gave way. It came back thicker, hungrier, with nothing left of the old mercy — and you held the Plains again. The villagers still do not know your name, only that the road felt shorter the second time."
+      },
+      "unlock": "hard:yeonmu"
+    },
+    {
+      "id": "codex_lore_feat_hard_suryeon",
+      "title": {
+        "tr": "Suryeon’un Susan Davulları",
+        "en": "The Drums of Suryeon, Silenced"
+      },
+      "text": {
+        "tr": "Ork sürüsü savaş davullarını ikinci seferde daha sert çaldı ve vadi onlarla sarsıldı. Gürültünün içine yürüdün, ardındaki sessizlikten çıktın. Suryeon, Gök Hükümdarı’nın seçtiği kişinin geri çevrilmekten yorulmadığını öğrendi.",
+        "en": "The orc host beat its war drums harder the second time, and the valley shook with them. You walked into the noise and out of the silence after it. Suryeon has learned that the one the Sky Sovereign chose does not tire of being turned away."
+      },
+      "unlock": "hard:suryeon"
+    },
+    {
+      "id": "codex_lore_feat_hard_seori",
+      "title": {
+        "tr": "Seori’de Kırılan Buz",
+        "en": "Ice Broken on Seori"
+      },
+      "text": {
+        "tr": "Seori’nin soğuğu diş çıkardı. Veba karın içinde yürüdü, buz dondurduğu her ismi hatırladı. Hepsinin içinden ikinci kez tırmandın; Miho zirveyi geçişini izledi ve tek söz etmedi.",
+        "en": "Seori’s cold grew teeth. The plague walked in the snow and the ice remembered every name it had frozen. You climbed through all of it a second time, and the Miho watched you cross the summit and said nothing."
+      },
+      "unlock": "hard:seori"
+    },
+    {
+      "id": "codex_lore_feat_hard_daeryeol",
+      "title": {
+        "tr": "Daeryeol’un Küllenen Tacı",
+        "en": "The Ashen Crown of Daeryeol"
+      },
+      "text": {
+        "tr": "Ateş diyarları iki kez meydan okununca daha sıcak yanar. Köz Kral’ın tacı küle döndü, Al Ejder’in nefesi dumana inceldi ve son kapı ikinci kez açıldı. Senin durduğun yerde az kişi durdu; iki kez duran daha da az.",
+        "en": "The fire-lands burn hotter when they are challenged twice. The Pyre King’s crown cooled to ash, the Scarlet Wyrm’s breath thinned to smoke, and the last gate stood open for the second time. Few have stood where you stood, and fewer twice."
+      },
+      "unlock": "hard:daeryeol"
+    },
+    {
+      "id": "codex_lore_feat_wins_10",
+      "title": {
+        "tr": "On Kapanan Kapı",
+        "en": "Ten Closed Gates"
+      },
+      "text": {
+        "tr": "On kez bir yolu sonuna kadar yürüdün ve kapıyı ardından kapalı bıraktın. Gök Hükümdarı zaferleri saymaz ama fener bekçileri sayar: bitirdiğin her yol için bir fener asarlar.",
+        "en": "Ten times you walked a road to its end and left the gate shut behind you. The Sky Sovereign keeps no count of victories, but the lantern-keepers do: they hang one lantern for every road you finished."
+      },
+      "unlock": "wins:10"
+    },
+    {
+      "id": "codex_lore_feat_wins_25",
+      "title": {
+        "tr": "Yol Boyunca Fenerler",
+        "en": "Lanterns Along the Road"
+      },
+      "text": {
+        "tr": "Yirmi beş zafer. Yağmurun boşalttığı yollarda artık fenerler yanıyor, pagodalar bekçilerine kavuştu. Kimse onları senin adına yakmıyor; yine de her fitil, avucunda açılan aynı altın kıvılcımdan tutuşuyor.",
+        "en": "Twenty-five victories. Lanterns burn again along the roads the rain once emptied, and the pagodas have their keepers back. Nobody lights them in your name, yet every wick catches from the same gold spark that opened in your palm."
+      },
+      "unlock": "wins:25"
+    },
+    {
+      "id": "codex_lore_feat_kills_25k",
+      "title": {
+        "tr": "Biçilmiş Tarla",
+        "en": "A Field Cut Clean"
+      },
+      "text": {
+        "tr": "Yirmi beş bin bozulmuş yaratık senin elinde düştü ve durdukları yerde ot yeniden çıkıyor. Çiftçiler sürüleri kimin seyrelttiğini sormayı bıraktı; yol kenarına pirinç bırakıp başlarını çeviriyorlar.",
+        "en": "Twenty-five thousand corrupted things have fallen to you, and the grass is growing back where they stood. The farmers have stopped asking who is thinning the packs. They leave rice at the roadside and look away."
+      },
+      "unlock": "kills:25000"
+    },
+    {
+      "id": "codex_lore_feat_kills_100k",
+      "title": {
+        "tr": "Yüz Bin",
+        "en": "The Hundred Thousand"
+      },
+      "text": {
+        "tr": "Yüz bin. Üç krallığın katipleri sayı çubuklarını bitirdi ve rakamı tapınak kirişlerine oymaya başladı. Metin’ler hâlâ düşüyor ama onlara cevap veren sürüler artık daha seyrek ve daha ürkek.",
+        "en": "A hundred thousand. The scribes of the three kingdoms ran out of tally-sticks and began carving the number into temple beams instead. The Metin still fall, but the packs that answer them have grown thinner and warier."
+      },
+      "unlock": "kills:100000"
+    },
+    {
+      "id": "codex_lore_feat_kills_500k",
+      "title": {
+        "tr": "Yağmur Adını Öğrendi",
+        "en": "The Rain Learns Your Name"
+      },
+      "text": {
+        "tr": "Yarım milyon. Bozulma seni tanımaya başladı: sürüler sen gelmeden seyreliyor, taşlar adımlarının sesiyle çatlıyor. Bulutların çok üstünde yaralı bir ejderha başını kaldırıp dinliyor.",
+        "en": "Half a million. The corruption has begun to recognise you: packs thin before you arrive, and the stones crack at the sound of your steps. Far above the clouds a wounded dragon lifts his head and listens."
+      },
+      "unlock": "kills:500000"
+    },
+    {
+      "id": "codex_lore_feat_level_50",
+      "title": {
+        "tr": "Elli Pul",
+        "en": "Fifty Scales"
+      },
+      "text": {
+        "tr": "Ellinci seviye. Avucundaki iz tek bir pulken çoğaldı; sıcaklığı artık dirseğine kadar ulaşıyor. Onu artık senden istenen bir yemin gibi değil, senin verdiğin bir yemin gibi hissediyorsun.",
+        "en": "Level fifty. The mark in your palm has grown from one scale to many, and its warmth reaches your elbow now. You no longer feel it as an oath being asked of you, but as one you made."
+      },
+      "unlock": "level:50"
+    },
+    {
+      "id": "codex_lore_feat_level_70",
+      "title": {
+        "tr": "Altın İz Parlıyor",
+        "en": "The Mark Burns Gold"
+      },
+      "text": {
+        "tr": "Yetmişinci seviye. Altın iz artık avucuna muhtaç değil — kolundan, yol tozundan, ateş diyarlarının dumanından görünüyor. Gök Hükümdarı seni en yüksek katından görebiliyor ve uzun bir çağdan sonra ilk kez korkmuyor.",
+        "en": "Level seventy. The golden mark no longer needs your palm — it shows through your sleeve, through the dust of the road, through the smoke of the fire-lands. The Sky Sovereign can see you from his highest floor now, and for the first time in a long age he is not afraid."
+      },
+      "unlock": "level:70"
+    },
+    {
+      "id": "codex_lore_feat_runs_50",
+      "title": {
+        "tr": "Elli Yol",
+        "en": "Fifty Roads"
+      },
+      "text": {
+        "tr": "Elli kez heybeni omuzlayıp yağmura çıktın. Bazı yollar kapıda bitti, bazıları yerde; taşlar ikisini ayırt etmiyor, her biri ardında aynı yıpranmış patikayı bırakıyor. Gaziler buna Uzun Yürüyüş der.",
+        "en": "Fifty times you shouldered your pack and went out into the rain. Some roads ended at a gate, some in the dirt, and the stones do not tell them apart: each leaves the same worn path behind you. Veterans call it the Long Walk."
+      },
+      "unlock": "runs:50"
+    },
+    {
+      "id": "codex_lore_feat_metin_slaughter",
+      "title": {
+        "tr": "Geri Yanan Taş",
+        "en": "The Stone That Burns Back"
+      },
+      "text": {
+        "tr": "Ateş diyarlarında yalnızca Mezbaha Metini var ve yanında duran her şeyi kor gibi yakıyor. Yine de kırdın — ve parçaların içinden sıcak, sessiz bir şey yükseldi; sanki alevler yıllardır birinin onlardan durmasını istemesini bekliyordu.",
+        "en": "Slaughter is the only stone in the fire-lands, and it sears everything that stands beside it. You broke it anyway — and from inside the pieces something warm and quiet rose, as if the flames had waited years for someone to ask them to stop."
+      },
+      "unlock": "metin:metin_slaughter"
+    },
+    {
+      "id": "codex_enemy_wild_dog",
+      "title": {
+        "tr": "Yabani Köpek",
+        "en": "Wild Dog"
+      },
+      "text": {
+        "tr": "Köy kapılarından kovulmuş sahipsiz köpekler, gökten inen ışıkla gözleri kızarmış hâlde sürü sürü dolaşır. Biri zararsızdır ama hepsi birden gelir; hareket hâlinde kalın, sürüyü tek bir noktada toplayıp bir seferde silin.",
+        "en": "Strays driven from the village gates, red-eyed now under the light that falls from the sky. One is a nuisance, but they arrive all at once; keep moving and herd the whole pack into a single patch of your fire."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_stray_dog",
+      "title": {
+        "tr": "Aç Yabani Köpek",
+        "en": "Hungry Stray Dog"
+      },
+      "text": {
+        "tr": "Metin Yağmuru hem avı hem artıkları kuruttu; bu köpeğin kaburgaları davul derisi gibi gerilmiş, geriye yalnızca iştahı kalmış. Küçük, toz renkli ve açlıktan korkusuz bir sürüyle gelir; geri adım atmaz, bu yüzden köşeye sıkışmamaya bakın.",
+        "en": "The Metin Rain dried up the game and the scraps alike; this dog’s ribs stand out like a drum skin and only the appetite is left. Small, dust-coloured and fearless with hunger, it comes in a pack and never backs off, so don’t let yourself get pinned."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_wolf",
+      "title": {
+        "tr": "Kurt",
+        "en": "Wolf"
+      },
+      "text": {
+        "tr": "Ovanın sessiz avcısı; sürüden ayrılmadan yanlarınızda dolanır. Dalıp ısırır, sonra geri sıçrar; durmadan yürüyün ki dişleri boşa gitsin.",
+        "en": "The quiet hunter of the plain. It circles at your flanks, darts in to bite and springs away again; keep walking and its fangs find only air."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_wolf",
+      "title": {
+        "tr": "Aç Kurt",
+        "en": "Hungry Wolf"
+      },
+      "text": {
+        "tr": "Avı ovadan kaçmış, tüyü dökülmüş, bakışı camlaşmış bir kurt; Metin Yağmuru ona artık insanın tek av kaldığını öğretti. Yine yan yan dolanıp dalar, ama sıçrayıp uzaklaşır uzaklaşmaz geri döner; açlık ona pes etmeyi unutturmuş.",
+        "en": "Its prey has fled the plain, its coat is falling out and its eyes have gone glassy; the Metin Rain has taught it that people are the only game left. It still circles and darts in, but the moment it springs clear it turns and comes again, for hunger has made it forget how to give up."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_alpha_wolf",
+      "title": {
+        "tr": "Alfa Kurt",
+        "en": "Alpha Wolf"
+      },
+      "text": {
+        "tr": "Sürünün en iri ve en açık renkli kurdu; Metin ışığı tüylerini kül beyazına çevirmiş. Ötekiler gibi dolanmaz, doğrudan üstünüze yürür ve arkasındaki sürü onu izler.",
+        "en": "The largest and palest wolf of the pack, its coat bleached ash-white by the Metin light. It does not circle like the others; it walks straight at you, and the pack follows its lead."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_alpha_wolf",
+      "title": {
+        "tr": "Aç Alfa Kurt",
+        "en": "Hungry Alpha Wolf"
+      },
+      "text": {
+        "tr": "Sürüsünü doyuramayan bir alfa; boynunda kemikler sivrilmiş, tüyü kirli kum rengine dönmüş. Açlık onu yalnızca daha inatçı yapmış: peşinizi bırakmaz ve siz yorulana kadar yürür.",
+        "en": "An alpha that can no longer feed its pack, the bones standing out at its neck, its coat gone the colour of dirty sand. Hunger has only made it more stubborn: it never drops your trail and will keep walking until you tire."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_blue_wolf",
+      "title": {
+        "tr": "Mavi Kurt",
+        "en": "Blue Wolf"
+      },
+      "text": {
+        "tr": "Chan-Dae’nin sürüsünden bir kurt; tüyleri ay ışığında donmuş gibi mavi parlar, gözlerinde Metin Yağmuru’nun soluk ateşi yanar. Yanlardan dolanıp dalar ve çekilir; sürüyle birlikte çevreleyeceği için durmayın, hareket hâlinde kalın.",
+        "en": "A wolf of Chan-Dae’s pack, its fur shining blue as if frozen in moonlight, the pale fire of the Metin Rain burning in its eyes. It slips around your flanks, strikes and pulls back; the pack likes to ring a target in, so keep moving."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_blue_wolf",
+      "title": {
+        "tr": "Aç Mavi Kurt",
+        "en": "Hungry Blue Wolf"
+      },
+      "text": {
+        "tr": "Mavi tüyü kurşuni bir griye solmuş, kaburgaları ay ışığında bir kafes gibi görünüyor. Avsız kalan sürüsünün sabrı tükendi; yine yan yan dolanır ama dalışları daha sert, daha umutsuz.",
+        "en": "Its blue coat has faded to a leaden grey and its ribs show like a cage in the moonlight. The pack has gone without prey for too long and its patience is spent; it still circles at your flanks, but its lunges are harder and more desperate."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_alpha_blue_wolf",
+      "title": {
+        "tr": "Alfa Mavi Kurt",
+        "en": "Alpha Blue Wolf"
+      },
+      "text": {
+        "tr": "Mavi Sürü’nün gençlik çağını geride bırakmış, omuzları bir buzağı kadar iri bir alfası. Parlak mavi postu karanlıkta bile seçilir; sürü onun adımına göre yürür, o ise düz bir çizgide sizi hedef alır.",
+        "en": "An alpha of the Blue Pack, long past its youth, with shoulders as broad as a calf’s. Its bright blue coat can be picked out even in the dark; the pack moves to the rhythm of its stride, and it comes straight for you in a line."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_alpha_blue_wolf",
+      "title": {
+        "tr": "Aç Alfa Mavi Kurt",
+        "en": "Hungry Alpha Blue Wolf"
+      },
+      "text": {
+        "tr": "Soluk çelik rengine dönmüş bir alfa; sürüsünü doyuramadığı için güvenini yitirmiş, ama peşindeki aç dişler yine de ondan ayrılmıyor. Onu öldürmek sürüyü dağıtmaz, yalnızca bir sonraki lidere yol açar.",
+        "en": "An alpha gone the pale grey of steel; it can no longer feed the pack and has lost its trust, yet the hungry teeth behind it still will not leave. Killing it does not scatter the pack, it only makes room for the next leader."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_grey_wolf",
+      "title": {
+        "tr": "Gri Kurt",
+        "en": "Grey Wolf"
+      },
+      "text": {
+        "tr": "Ovanın kuzey kıyısında dolaşan, kül gibi donuk tüylü iri bir kurt; ısırığı ötekilerden belirgin biçimde sert. Yan yan yaklaşır, dalıp geri çekilir; sabırlıdır, sizi yoracağını bilir.",
+        "en": "A big wolf from the north edge of the plain, its coat dull as ash and its bite plainly harder than the rest. It approaches from the side, lunges and pulls back; it is patient and knows it can wear you down."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_grey_wolf",
+      "title": {
+        "tr": "Aç Gri Kurt",
+        "en": "Hungry Grey Wolf"
+      },
+      "text": {
+        "tr": "Tüyü eski keçe gibi yama yama dökülmüş, gözleri çukura kaçmış bir kurt. Metin Yağmuru yüzünden otlak da geyik de gitti; geriye siz ya da o düşene kadar peşinizi bırakmayacak sabırsız bir açlık kaldı.",
+        "en": "Its coat has come away in patches like old felt and its eyes have sunk deep. The Metin Rain took the pasture and the deer with it, and all that remains is an impatient hunger that will shadow you until one of you is dead."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_alpha_grey_wolf",
+      "title": {
+        "tr": "Alfa Gri Kurt",
+        "en": "Alpha Grey Wolf"
+      },
+      "text": {
+        "tr": "Kuzeyin gri sürülerini yöneten, boynunda eski kavgaların izlerini taşıyan bir alfa; Metin ışığı onu hem büyütmüş hem de acımasız yapmış. Dolaşmaz, doğrudan size yürür ve darbeleri sırtında taşıyabilecek kadar sağlamdır. Peşinde gelen sürüyü, kendisi yetişmeden önce temizleyin.",
+        "en": "An alpha that leads the grey packs of the north, carrying the scars of old fights on its neck; the Metin light has made it larger and crueller. It does not circle but marches straight at you, and its back can take a beating. Clear the pack at its heels before it catches up."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_alpha_grey_wolf",
+      "title": {
+        "tr": "Aç Alfa Gri Kurt",
+        "en": "Hungry Alpha Grey Wolf"
+      },
+      "text": {
+        "tr": "Karnı içine çökmüş ama omuzları hâlâ dimdik duran bir alfa; kemikleri gri kaya gibi sert. Açlık gururunu yemiş, geriye yalnızca bir inat bırakmış. Yavaşlamadan düz bir çizgide gelir ve peşindeki sürüyü de aynı çılgınlığa sürükler.",
+        "en": "Its belly has caved in, yet its shoulders still stand proud, the bones hard as grey stone. Hunger has eaten its pride and left only stubbornness. It comes in a straight line without slowing and drags the whole pack along into the same frenzy."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_wild_boar",
+      "title": {
+        "tr": "Yaban Domuzu",
+        "en": "Wild Boar"
+      },
+      "text": {
+        "tr": "Çalılıkların kalın derili, sabırsız sakini; düz bir çizgide hız alıp üstünüze atılır. Hamlesini yana adım atarak boşa çıkarın; durduğunda bir an savunmasızdır.",
+        "en": "A thick-skinned, short-tempered dweller of the thickets that builds speed in a straight line and throws itself at you. Sidestep the charge; it is exposed for a heartbeat as it pulls up."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_wild_boar",
+      "title": {
+        "tr": "Aç Yaban Domuzu",
+        "en": "Hungry Wild Boar"
+      },
+      "text": {
+        "tr": "Kökleri de palamutları da kül olmuş toprağı kazıp durmaktan dişleri kırılmış, ağzı köpükle dolu bir domuz. Ufak ve çevik görünüşü aldatıcıdır; yine de düz bir çizgide, gözü dönmüş hücum eder.",
+        "en": "A boar with chipped tusks and a mouth full of froth from rooting in soil where roots and acorns have turned to ash. It looks smaller and quicker, which fools the eye; it still charges in a straight line with its eyes half shut."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_red_boar",
+      "title": {
+        "tr": "Kırmızı Yaban Domuzu",
+        "en": "Red Wild Boar"
+      },
+      "text": {
+        "tr": "Metin ışığı postunu pas kırmızısına boyamış, boynunu ötekilerin iki katı kalınlaştırmış bir domuz. Hücumu uzun ve ağırdır; yönünü baştan kilitlediği için bir adım yana çekilmeniz yeter. Darbesi ağırdır, o yüzden çevresinde boşluk bırakın.",
+        "en": "The Metin light has stained its hide the red of rust and thickened its neck to twice that of the others. Its charge is long and heavy, and since it locks its direction at the start, a single step aside is enough. The blow is a heavy one, so leave room around it."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_red_boar",
+      "title": {
+        "tr": "Aç Kırmızı Yaban Domuzu",
+        "en": "Hungry Red Boar"
+      },
+      "text": {
+        "tr": "Pası kurumuş kan rengine dönmüş, soluğu çürümüş meyve gibi kokan bir domuz; açlık onu iyice gözü dönmüş yapmış. Küçülen bedeni eski gücü taşıyamasa da hücumları hâlâ sarsıcıdır. Her hamlenin sonunda soluklandığı an sizin fırsatınızdır.",
+        "en": "Its rust has dried to the colour of old blood and its breath stinks of rotten fruit; hunger has pushed it past all caution. Its shrunken body cannot carry the old strength, yet its charges still hit like a hammer. The moment it stops to catch its breath at the end of each rush is your chance."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_bear",
+      "title": {
+        "tr": "Ayı",
+        "en": "Bear"
+      },
+      "text": {
+        "tr": "Geniş omuzlu, ağır ve kalın derili bir dev; Metin ışığı onu kış uykusundan fırlatıp attı. Yavaş yürür ama sıçrayarak mesafeyi kapatır; yere düşen halka nereye ineceğini gösterir, oradan çekilin.",
+        "en": "A broad-shouldered, thick-hided giant, flung out of its winter sleep by the Metin light. It plods, but it can leap to close the gap; the ring on the ground shows where it will land, so be somewhere else."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_bear",
+      "title": {
+        "tr": "Aç Ayı",
+        "en": "Hungry Bear"
+      },
+      "text": {
+        "tr": "Açlık onu inin sıcağından koparıp çıkardı; tüyü sarkık, bakışı uyku ile öfke arasında gidip geliyor. Ağır adımlarla yürür, bütün hırsını son sıçrayışa saklar; yerde beliren halka, yüklenmeden önceki son uyarıdır.",
+        "en": "Hunger dragged it out of the warmth of its den; the fur hangs loose and its gaze swings between sleep and rage. It lumbers on heavy feet and saves all its fury for the final leap; the ring that appears on the ground is your last warning before it lands."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_grizzly_bear",
+      "title": {
+        "tr": "Boz Ayı",
+        "en": "Grizzly Bear"
+      },
+      "text": {
+        "tr": "Kürek gibi geniş pençeleriyle ağaç gövdelerini deviren, boz tüylü bir ayı; Metin Yağmuru onu bir kat daha iri ve huysuz yapmış. Yürüyüşü ağırdır ama sıçrayışı ani gelir; halkadan bir adım uzaklaşmak yeter. Yanında dolaşan küçük sürüyü önce temizleyin, ayıyı sonraya bırakın.",
+        "en": "A grizzled bear whose spade-wide paws knock tree trunks flat; the Metin Rain has made it larger and fouler-tempered. Its walk is ponderous but the leap comes fast, and one step out of the ring is enough to avoid it. Cut down the small pack that roams around it first and leave the bear for later."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_grizzly",
+      "title": {
+        "tr": "Aç Boz Ayı",
+        "en": "Hungry Grizzly"
+      },
+      "text": {
+        "tr": "Boz tüyü çamura bulanmış, kemikleri sırtında yamuk tepeler gibi sivrilmiş bir ayı. Açlık onu zayıflatmış ama merhametini de tüketmiş: bütün ağırlığını sıçrayışa verir ve nereye ineceğini saklamaya zahmet etmez. Halkayı görür görmez çekilin, indikten sonra da tüm gücünüzle yüklenin.",
+        "en": "Its grizzled coat is matted with mud and its bones jut from its back like crooked hills. Starvation has weakened it and used up every scrap of mercy: it throws its whole weight into the leap and does not bother hiding where it will land. Step clear the instant you see the ring, then hit it with everything you have once it touches down."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_black_bear",
+      "title": {
+        "tr": "Siyah Ayı",
+        "en": "Black Bear"
+      },
+      "text": {
+        "tr": "Orman gölgesi gibi koyu tüylü, alacakaranlıkta neredeyse görünmeyen iri bir ayı. Ağır ağır gelir ama sıçrayışı insanı hazırlıksız yakalar; yerdeki halkayı gözden kaçırmayın.",
+        "en": "A big bear with a coat as dark as forest shadow, nearly invisible at dusk. It is heavy, but its leap comes as a surprise, so keep an eye on the ring on the ground."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_black_bear",
+      "title": {
+        "tr": "Aç Siyah Ayı",
+        "en": "Hungry Black Bear"
+      },
+      "text": {
+        "tr": "Kömür tüyü toza bulanmış, yürürken kaburgalarının gölgesi seçilen bir ayı; Metin Yağmuru balıklı dereleri bile kurutmuş. Yavaştır ama vazgeçmez, son gücünü üstünüze çökmeye harcar.",
+        "en": "Its charcoal fur is caked with dust and the shadow of its ribs shows as it walks; the Metin Rain has dried up every fish-filled stream. It is slow but does not give in, spending its last strength on a leap meant to crush you."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_brown_bear",
+      "title": {
+        "tr": "Kahverengi Ayı",
+        "en": "Brown Bear"
+      },
+      "text": {
+        "tr": "Ovanın sıradan ayılarının en irisi; sıcak kahverengi postu Metin ışığında bakır gibi parlıyor. Dev bedenine rağmen şaşırtıcı bir hırsla sıçrar, yere çöktüğünde çevresindeki her şeyi sarsar. Kendi boyutunu bilir; karşısında durmayın, yürüyerek mesafe tutun ve halkanın dışında kalın.",
+        "en": "The largest of the plain’s ordinary bears, its warm brown coat shining like copper in the Metin light. For all its bulk it leaps with startling eagerness, and when it lands everything around it shudders. It knows its own size; don’t stand toe to toe, keep walking and stay outside the ring."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_brown_bear",
+      "title": {
+        "tr": "Aç Kahverengi Ayı",
+        "en": "Hungry Brown Bear"
+      },
+      "text": {
+        "tr": "Bakır parıltısı sönmüş, derisi kemiklerine yapışmış, bir zamanlar şişman olan bu ayı artık yalnızca öfkeyle besleniyor. Eskisi kadar hızlı sıçramaz ama indiğinde yine yeri titretir. Tehlikeli olan açlığıdır: durmaz, yorulmaz, bir an bile yön değiştirmez.",
+        "en": "The copper sheen has gone out of it and the hide clings to the bone; once fat, this bear now feeds on anger alone. It no longer leaps as quickly, yet it still shakes the ground when it lands. What makes it dangerous is the hunger itself: it does not stop, does not tire and never changes course."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_tiger",
+      "title": {
+        "tr": "Kaplan",
+        "en": "Tiger"
+      },
+      "text": {
+        "tr": "Turuncu postunda siyah şeritler taşıyan sessiz bir avcı; Metin Yağmuru onun sabrını öldürdü, geriye yalnızca kovalama güdüsü kaldı. Peşinize takılır ve uygun anda sıçrar; sıçrayışın ineceği daireden uzak durun.",
+        "en": "A silent hunter in a coat of black stripes on orange; the Metin Rain has killed its patience and left only the urge to give chase. It dogs your steps and pounces when the moment is right, so stay clear of the circle where it will land."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_tiger",
+      "title": {
+        "tr": "Aç Kaplan",
+        "en": "Hungry Tiger"
+      },
+      "text": {
+        "tr": "Şeritlerin altında kaburgaları sayılabilen, gözleri çukura çökmüş bir kaplan. Tapınaklara adak getiren kalmayınca ve av ovadan çekilince bu kedi karnını doyurmak için insana yöneldi; kovalar, sıçrar, yorulmaz.",
+        "en": "You can count its ribs beneath the stripes, and its eyes have sunk into its skull. When no one brought offerings to the shrines and the game left the plain, this cat turned to people to fill its belly; it chases, it pounces, it never tires."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_white_tiger",
+      "title": {
+        "tr": "Beyaz Kaplan",
+        "en": "White Tiger"
+      },
+      "text": {
+        "tr": "Kar rengi postuyla Yeonmu’nun kutsal sayılan kaplanı; Horyeong’un akrabası olduğuna inanılır. Metin ışığı kutsallığını bozmuş, zarafetine dokunmamış: kovalar, sıçrar ve çevik bir gölge gibi yeniden gelir. Hızlı bir pençe darbesiyle bitirir, bu yüzden sıçrayıştan sonra mesafe açmayı unutmayın.",
+        "en": "With its snow-pale coat it is the sacred tiger of Yeonmu, said to be kin to Horyeong. The Metin light has spoiled its holiness but left its grace untouched: it chases, it pounces and it comes again like a nimble shadow. Its claw is quick, so don’t forget to open the gap after each leap."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_hungry_white_tiger",
+      "title": {
+        "tr": "Aç Beyaz Kaplan",
+        "en": "Hungry White Tiger"
+      },
+      "text": {
+        "tr": "Beyazı eski kar gibi grileşmiş, bir zamanlar adak sunulan bu kutsal hayvan şimdi kemiklerine inen bir açlıkla dolaşıyor. Metin Yağmuru tapınakları susturdu, onu da aç bıraktı. Çevikliğini yitirmedi; kovalar ve sıçrar, ama gözlerinde artık yalnızca açlık var.",
+        "en": "Its white has dulled to the grey of old snow; this once-worshipped beast now wanders with a hunger that has sunk into the bone. The Metin Rain silenced the shrines and starved it along with them. It has not lost its agility; it chases and pounces as before, but all that is left in its eyes is hunger."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_cursed_red_boar",
+      "title": {
+        "tr": "Lanetli Kırmızı Yaban Domuzu",
+        "en": "Cursed Red Wild Boar"
+      },
+      "text": {
+        "tr": "Düşen bir Metin’in tam yanında doğmuş gibi duran bu domuz, hayvandan çok bir kaya yığınına benziyor; postu kızıl köze, gözleri kapkara bir lanete dönmüş. Hücumu uzun bir çizgi boyunca bir ağırlık gibi çöker ve yoluna çıkan her şeyi ezer. Çizginin nereye uzandığını okuyup yana atlayın; yön değiştiremez.",
+        "en": "This boar looks less like an animal than a heap of rock flung down beside a falling Metin; its hide has burned to the colour of a red coal and its eyes to a black curse. Its charge falls like a dropped weight along a long line and crushes whatever lies in the way. Read where the line points and leap aside; it cannot turn."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_cursed_alpha_grey_wolf",
+      "title": {
+        "tr": "Lanetli Alfa Gri Kurt",
+        "en": "Cursed Alpha Grey Wolf"
+      },
+      "text": {
+        "tr": "Tüylerine mor bir gölge sinmiş bu alfa, normal bir kurttan neredeyse bir at kadar iri; lanetin ışığını doğrudan solumuş. Ötekiler gibi dolanmaz, hiç yavaşlamadan tek bir çizgide üstünüze gelir ve sürüyü arkasına katar. Yaşlı kurtlar o mor gölgeyi gördüklerinde sesini keser; peşindeki sürü, onu yere sermeden dağılmaz.",
+        "en": "A violet shade clings to this alpha’s fur, and it is nearly the size of a horse; it has breathed the curse’s light straight in. It does not circle like the others but comes at you in a single line without slowing, the pack falling in behind. The old wolves go silent at the sight of that violet shadow, and the pack behind it will not scatter until it is down."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_cursed_brown_bear",
+      "title": {
+        "tr": "Lanetli Kahverengi Ayı",
+        "en": "Cursed Brown Bear"
+      },
+      "text": {
+        "tr": "Ormanın en yaşlı ayısı lanetin tam ortasında uyanmış gibi; derisi çatlamış, çatlaklarından kızıl-mor bir ışık sızıyor. Ağırlığını bir dağ gibi taşır, indiği yerde toprakta derin bir iz bırakır. Kıpırdamadan beklemeyin: halkanın dışına çıkın ve ayı toparlanırken vurun.",
+        "en": "As if the oldest bear of the forest had woken in the middle of the curse, its hide has split and a red-violet glow seeps from the cracks. It carries its weight like a mountain and leaves a deep scar in the earth where it lands. Don’t stand still: get out of the ring, and strike while it is recovering from the leap."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_cursed_white_tiger",
+      "title": {
+        "tr": "Lanetli Beyaz Kaplan",
+        "en": "Cursed White Tiger"
+      },
+      "text": {
+        "tr": "Kutsal beyazı lekelenmiş, gümüşi-mor bir parıltıyla ışıldayan bu kaplan, Horyeong’un en sadık ve en çok bozulmuş habercisi. Kovalar, sıçrar ve yere indiği an yeniden doğrulur; hiç durmadan peşinizde kalır. Gözünüzü halkadan ayırmayın: sıçrayış ölümcüldür, ardından gelen pençe daha da hızlıdır.",
+        "en": "The sacred white is stained and glitters with a silver-violet sheen; this tiger is the most faithful and most corrupted herald of Horyeong. It chases, it pounces, and the instant it lands it is up again, never leaving your heels. Keep your eyes on the ring: the leap is deadly, and the claw that follows is faster still."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_silver_vow_soldier",
+      "title": {
+        "tr": "Gümüş Ant Askeri",
+        "en": "Silver Vow Soldier"
+      },
+      "text": {
+        "tr": "Ovanın yollarını korumaya yemin etmiş bir Gümüş Ant neferi; Metin’in fısıltısı yemini çarpıttı, şimdi yoldan geçen herkese silah çekiyor. Düz ve inatçı bir yürüyüşle üstünüze gelir; omuz omuza yürüdükleri için alan hasarı onları toplu hâlde biçer.",
+        "en": "A foot soldier of the Silver Vow, sworn to guard the roads of the plain; the Metin’s whisper twisted that vow, and now he draws steel on everyone who passes. He marches at you in a flat, stubborn line, and because the soldiers walk shoulder to shoulder, area damage cuts them down together."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_craven_silver_vow_soldier",
+      "title": {
+        "tr": "Korkak Gümüş Ant Askeri",
+        "en": "Craven Silver Vow Soldier"
+      },
+      "text": {
+        "tr": "Bu asker yemini bırakıp kaçmak istedi; Metin’in fısıltısı korkusunu öldürmedi, yalnızca kaçış yolunu kapattı. Titreyen elleriyle bile üstünüze yürür, çünkü geri dönecek bir yeri kalmadı. Korkudan kör olmuş biri ne zaman duracağını bilmez, bu yüzden çevresindeki saflar seyrelene kadar mesafenizi koruyun.",
+        "en": "This soldier wanted to break his oath and run; the Metin’s whisper did not kill his fear, it only shut off the way out. His hands shake, yet he marches at you, because there is nowhere left to go back to. A man blinded by terror does not know when to stop, so keep your distance until the ranks around him have thinned."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_silver_vow_archer",
+      "title": {
+        "tr": "Gümüş Ant Okçusu",
+        "en": "Silver Vow Archer"
+      },
+      "text": {
+        "tr": "Gümüş Ant’ın yay çeken kolu; mesafesini korur, siz yaklaşınca geri çekilir ve etrafınızda yavaşça dönerek ok atar. Okçuları serbest bırakmayın: ya üstlerine yürüyüp sıkıştırın ya da menzillerinin dışına çıkın.",
+        "en": "The bow arm of the Silver Vow; it keeps its distance, backs off as you close in and circles slowly as it shoots. Don’t leave the archers free: either rush them and pin them down, or get out of their range."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_craven_silver_vow_archer",
+      "title": {
+        "tr": "Korkak Gümüş Ant Okçusu",
+        "en": "Craven Silver Vow Archer"
+      },
+      "text": {
+        "tr": "Korkusu ellerinden oklarına geçmiş bu okçu, isabet etmekten çok sizden uzak durmayı düşünüyor. Sürekli geri çekilir ve soluk soluğa ok bırakır; yine de her ok yaralar. Geri çekilmesine izin vermeyin: peşine takılıp kısa sürede bitirin.",
+        "en": "Fear has passed from this archer’s hands into his arrows; he cares less about hitting you than about staying far away. He keeps backing off and loosing shots between ragged breaths, yet every arrow still wounds. Don’t let him retreat: stick to him and finish him quickly."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_silver_vow_commander",
+      "title": {
+        "tr": "Gümüş Ant Komutanı",
+        "en": "Silver Vow Commander"
+      },
+      "text": {
+        "tr": "Eski zırhı bir kapı kadar ağır, adımları toprağı titreten bir komutan; yemininin bayrağını son nefesine dek taşımaya karar vermiş. Yavaştır ama dayanıklıdır ve neredeyse hiç geri adım atmaz. Önce çevresindeki erleri biçin, komutanı ise uzaktan yıpratarak bitirin.",
+        "en": "A commander in old armour heavy as a door, his steps shaking the ground; he has resolved to carry the banner of his oath until his last breath. He is slow but durable and hardly ever gives ground. Strike the soldiers around him first, and wear the commander down from a distance."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_craven_silver_vow_commander",
+      "title": {
+        "tr": "Korkak Gümüş Ant Komutanı",
+        "en": "Craven Silver Vow Commander"
+      },
+      "text": {
+        "tr": "Zırhını hâlâ taşıyan ama komuta hakkını çoktan yitirmiş bir subay; emir veremez, yalnızca ileri yürür. Yemininin çürüdüğünü bildiği için öfkesi daha keskindir. Ağır adım atar, ağır vurur; sağlam görünse de yanına girmeden önce çevresindeki askerleri temizleyin.",
+        "en": "An officer who still wears his armour but lost the right to command long ago; he cannot give orders, he can only march forward. Knowing that his oath has rotted makes his anger sharper. He steps heavily and strikes heavily; solid as he looks, clear the soldiers around him before you close in."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_silver_vow_general",
+      "title": {
+        "tr": "Gümüş Ant Generali",
+        "en": "Silver Vow General"
+      },
+      "text": {
+        "tr": "Gümüş Ant’ın bayraklarını taşıyan, mavi kuşağı yağmurdan kararmış bir general; Metin’in fısıltısı en çok onu kemirdi, çünkü yemin en çok onda yaşıyordu. Boyu ötekilerin başının üstündedir ve ağır yürür, ama o adım attığında kalabalık ona yol açar. Yeonmu’nun düşen ışığı altında hâlâ bir ordu gibi ilerliyor.",
+        "en": "A general who carries the banners of the Silver Vow, his blue sash darkened by rain; the Metin’s whisper has gnawed at him hardest, because the oath lived most strongly in him. He towers over the others and walks heavily, yet when he steps forward the crowd makes way. Under the falling light of Yeonmu he still marches like an army."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_ma_sol",
+      "title": {
+        "tr": "Ma-Sol",
+        "en": "Ma-Sol"
+      },
+      "text": {
+        "tr": "Gümüş Ant’ın kıdemli kaptanı; her akşam yol boyunca fenerleri yakan ilk kişi oydu, şimdi o fenerlerin söndüğü yerde ok atıyor. Solgun pembe pelerini hâlâ düzgün, nişanı hâlâ şaşmaz. Uzaktan durmadan atar, sıkıştırılınca geri çekilir; çevresindeki erleri temizleyip köşeye kıstırın.",
+        "en": "A senior captain of the Silver Vow; she was always the first to light the lanterns along the road at dusk, and now she shoots where those lanterns have gone out. Her pale rose cloak is still neat, her aim still flawless. She fires steadily from range and falls back when pressed; clear the soldiers around her and corner her."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_ae_rin",
+      "title": {
+        "tr": "Ae-Rin",
+        "en": "Ae-Rin"
+      },
+      "text": {
+        "tr": "Sakin ve hesapçı bir kaptan olan Ae-Rin, doğu köprüsünü tutmakla görevlendirilmişti; köprü yıkıldığında bile yerini bırakmayı reddetti. Gümüş-mavi pelerini yağmurda parlar, atışları tek tek ölçülmüş gibi isabetlidir. Menzil dışında kalırsanız sabırla bekler, fazla yaklaşırsanız bir adım geri çekilip aralığı açar.",
+        "en": "The calm, calculating captain Ae-Rin was ordered to hold the east bridge, and when the bridge fell she still refused to leave her post. Her silver-blue cloak gleams in the rain, and her shots land as if each had been measured. She waits patiently if you stay out of range, and opens the gap with a step back if you press too close."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_sa_rim",
+      "title": {
+        "tr": "Sa-Rim",
+        "en": "Sa-Rim"
+      },
+      "text": {
+        "tr": "Üç kaptanın en genci ve en çevik olanı Sa-Rim, yeminini kendi yoluyla kanıtlamak istemişti; Metin’in fısıltısı bu hırsı bir alev gibi körükledi. Menekşe rengi pelerini rüzgârda uçuşur, atışları sık ve çabuktur. Hareket hâlindeki hedef onu şaşırtır; olduğu yerde duran ise kolay av olur.",
+        "en": "The youngest and nimblest of the three captains, Sa-Rim wished to prove her oath in her own way, and the Metin’s whisper fanned that ambition like a flame. Her violet cloak streams in the wind, and her shots come tight and fast. A moving target rattles her; one that stands still is easy prey."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_dispirited_ma_sol",
+      "title": {
+        "tr": "Moralsiz Ma-Sol",
+        "en": "Dispirited Ma-Sol"
+      },
+      "text": {
+        "tr": "Fenerlerin bir türlü tutuşmadığı geceden sonra Ma-Sol’un bakışı sönmüş, pembe pelerini toza bulanmış. Hâlâ ok atar ama yeminini anımsamadan, yalnızca alışkanlığın elleriyle. Eskisi gibi menzilini korur; yalnızca eskisi kadar gözü pek ve umutlu değildir.",
+        "en": "Since the night the lanterns would not catch, Ma-Sol’s gaze has gone out and her rose cloak is caked with dust. She still shoots, but without remembering her oath, with the hands of habit alone. She keeps her range as she always did; she is simply no longer as bold, or as hopeful."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_dispirited_ae_rin",
+      "title": {
+        "tr": "Moralsiz Ae-Rin",
+        "en": "Dispirited Ae-Rin"
+      },
+      "text": {
+        "tr": "Planları birer birer çöken Ae-Rin artık hesap yapmıyor; gümüş-mavi pelerini omuzlarından sarkıyor, atışları ezbere. Sizinle arasına mesafe koymak onun son alışkanlığı. Yine de yayı boş değildir; morali kırılmış bir kaptan bile kaptandır.",
+        "en": "With her plans collapsing one by one, Ae-Rin no longer calculates; her silver-blue cloak hangs from her shoulders and her shots come by rote. Keeping her distance from you is the last habit she has left. Her bow is not empty for all that; even a captain who has lost heart is still a captain."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_enemy_dispirited_sa_rim",
+      "title": {
+        "tr": "Moralsiz Sa-Rim",
+        "en": "Dispirited Sa-Rim"
+      },
+      "text": {
+        "tr": "Silah arkadaşlarının gözü önünde yeminini yitiren Sa-Rim’in hırsı sönmüş, mor pelerininin rengi solmuş. Hâlâ hızlıdır ama peşinden koşacak bir şeyi kalmamış gibi savrulur. Atışları dağınıktır; hareket hâlinde kalıp nişan almasını zorlaştırın.",
+        "en": "Sa-Rim lost her oath in front of her comrades; her ambition is out and her violet cloak has faded. She is still fast, but she drifts as though there were nothing left to chase. Her shots are scattered; keep moving and make her aim harder."
+      },
+      "unlock": "enter:yeonmu"
+    },
+    {
+      "id": "codex_boss_boss_chan_dae",
+      "title": {
+        "tr": "Chan-Dae — Mavi Sürünün Alfası",
+        "en": "Chan-Dae — Alpha of the Blue Pack"
+      },
+      "text": {
+        "tr": "İlk Metin kurumuş pınarın başına düştüğünde sürüsünü ayakta tutan tek kurt Chan-Dae’ydi; şimdi gözlerinde o pınarın soluk ışığı yanıyor. Üstünüze atılır, çenesini bir kapan gibi kapatır ve uluduğunda koca ova ona karşılık verir. Sıçrayışını yana çıkarak boşa çıkarın, uluması sürüyü başınıza getirmeden önce de ona yüklenin.",
+        "en": "When the first Metin fell beside the dried-up spring, Chan-Dae was the only wolf who held his pack together; now that spring’s pale light burns in his eyes. He leaps at you, snaps his jaws shut like a trap, and when he howls the whole plain howls back. Step aside from the lunge, and press him hard before his howl brings the pack down on you."
+      },
+      "unlock": "boss:boss_chan_dae"
+    },
+    {
+      "id": "codex_boss_boss_dol_gwan",
+      "title": {
+        "tr": "Dol-Gwan — Ovanın Dişli Bekçisi",
+        "en": "Dol-Gwan — Tusked Warden of the Plain"
+      },
+      "text": {
+        "tr": "Dol-Gwan, ovanın sınırlarını dişleriyle işaretleyen en yaşlı yaban domuzudur; Metin Yağmuru ona nöbetinin hiç bitmeyeceğini fısıldadı. Koca bir kütle gibi yeri sarsar, ayağını vurduğu yerde toprak çatlar ve yaralandıkça öfkesi büyür. Her hamlenin nereye ineceğini yerdeki işaretten okuyup yana kayın; soluklanmak için durduğu an ona yüklenin.",
+        "en": "Dol-Gwan is the oldest boar of the plain, the one who marks its borders with his tusks; the Metin Rain whispered to him that his watch would never end. He shakes the ground like a falling boulder, the earth splits where he stamps, and the more he bleeds, the worse his rage grows. Read each strike from the marker on the ground and slide clear; hit him the moment he stops to catch his breath."
+      },
+      "unlock": "boss:boss_dol_gwan"
+    },
+    {
+      "id": "codex_boss_boss_ung_jae",
+      "title": {
+        "tr": "Ung-Jae — Yaşlı Ayı Beyi",
+        "en": "Ung-Jae — Elder Bear Lord"
+      },
+      "text": {
+        "tr": "Ung-Jae, ayılar arasında yalnızca yaşıyla bey ilan edilmiş kocaman bir dev; yırtık bir bayrağı toprağa dikip gittiği her yerde küçük ayıları çevresine toplar. Pençesini savurduğunda ağaçlar devrilir, kükremesi duyanın kulağını sağır eder. Gövdesi yavaş görünür ama hamlesi hızlıdır; onunla güç yarıştırmaya kalkmayın, pençesinin menzilinden uzak durun.",
+        "en": "Ung-Jae is a huge old bear crowned lord of the bears by age alone; he plants a torn banner in the earth and gathers lesser bears around it wherever he goes. When he swings a paw trees fall, and his roar deafens anyone who hears it. His bulk looks slow but his charge is fast; don’t try to match his strength, and keep out of the reach of his paws."
+      },
+      "unlock": "boss:boss_ung_jae"
+    },
+    {
+      "id": "codex_boss_boss_ji_yul",
+      "title": {
+        "tr": "Ji-Yul — Gümüş Ant’ın Büyücüsü",
+        "en": "Ji-Yul — Sorceress of the Silver Vow"
+      },
+      "text": {
+        "tr": "Ji-Yul, Gümüş Ant’ı kuran büyücü ve üç kaptanının, Ma-Sol’un, Ae-Rin’in ve Sa-Rim’in hocasıdır; askerleri yemine bağlayan büyü Metin’in fısıltısıyla tersine döndü ve şimdi herkesi ona esir ediyor. Rüzgâr bıçakları savurur, göz açıp kapayana dek başka bir yerde belirir ve tek bir çağrıyla eski askerlerini yeniden ayağa kaldırır. Fırtınasının dışında kalmak için durmadan hareket edin; belireceği yeri tahmin edip önceden o yöne dönün.",
+        "en": "Ji-Yul is the sorceress who founded the Silver Vow and taught its three captains, Ma-Sol, Ae-Rin and Sa-Rim; the spell that bound the soldiers to their vow turned inside out under the Metin’s whisper, and now it binds everyone to her. She hurls blades of wind, blinks away and reappears in the space of a breath, and with a single call raises her old soldiers to fight again. Keep moving to stay out of her gale, and guess where she will reappear so you are already turning that way."
+      },
+      "unlock": "boss:boss_ji_yul"
+    },
+    {
+      "id": "codex_boss_boss_horyeong",
+      "title": {
+        "tr": "Horyeong — Yeonmu’nun Kaplan Tanrısı",
+        "en": "Horyeong — Tiger God of Yeonmu"
+      },
+      "text": {
+        "tr": "Yeonmu’nun yol kenarı tapınaklarında yüzyıllardır anılan Kaplan Tanrısı Horyeong, Büyük Abanoz Metin tepesine düştüğünde içinden doğdu; tanrılığı artık ona hizmet etmiyor, onu yiyip bitiriyor. Pençeleriyle yırtar, sıçrayıp ezer, yerden pençe dalgaları gönderir ve kükremesiyle sürüsünü yanına çağırır. Kan kokusu onu daha da öfkelendirir: yaralandıkça hızlanır, kükreme halkaları sıklaşır. Pençe dalgalarını yana kayarak boşa çıkarın, halkanın dışına çıkın ve sürüsünü çağırmadan önce vurun.",
+        "en": "Horyeong, the Tiger God remembered for centuries at the roadside shrines of Yeonmu, was born from the Great Ebon Metin when it struck his hill; his godhood no longer serves him, it devours him. He rends with his claws, pounces to crush, sends waves of claw-light along the ground and calls his pack to his side with a roar. The scent of blood only enrages him: the more he is wounded, the faster he moves and the more often his roar rings out. Slide aside from the claw waves, stay outside the ring, and strike before he calls the pack."
+      },
+      "unlock": "boss:boss_horyeong"
+    },
+    {
+      "id": "codex_metin_metin_lament",
+      "title": {
+        "tr": "Yas Metini",
+        "en": "Metin of Lament"
+      },
+      "text": {
+        "tr": "Gökten düşen bu mavi taş, çevresine öyle ağır bir keder yayar ki içine giren herkesin adımları çamura batar gibi ağırlaşır. Kurtlar ve yaban domuzları bu yükü hissetmez, çünkü kederle beslenirler; yalnızca yabancıların ayağı bağlanır. Taş durmadan sürü çağırır, bu yüzden aurasında oyalanmayın ve onu çabuk kırın.",
+        "en": "This blue stone fallen from the sky exhales a sorrow so heavy that anyone who steps inside it moves as if wading through mud. The wolves and boars feel no weight, for they feed on grief; only strangers have their steps bound. The stone keeps calling packs, so don’t linger in its aura, and break it quickly."
+      },
+      "unlock": "metin:metin_lament"
+    },
+    {
+      "id": "codex_metin_metin_strife",
+      "title": {
+        "tr": "Çekişme Metini",
+        "en": "Metin of Strife"
+      },
+      "text": {
+        "tr": "Bu taşın çatlaklarından savaş davulunu andıran bir uğultu yükselir ve ovanın bütün canlıları o sese koşar. Bir sürü daha ölmeden bir yenisi gelir; çevresi hiçbir zaman boş kalmaz. Kalabalıktan hoşlanmayanlar için bir bela, dövüşü sevenler için bol ganimetli bir taştır.",
+        "en": "A hum like a war drum rises from the cracks of this stone, and every creature of the plain runs toward the sound. A pack has barely finished dying before the next arrives, so the ground around it is never empty. A curse to anyone who dislikes a crowd, a gift to anyone who loves a fight."
+      },
+      "unlock": "metin:metin_strife"
+    },
+    {
+      "id": "codex_metin_metin_onslaught",
+      "title": {
+        "tr": "Akın Metini",
+        "en": "Metin of Onslaught"
+      },
+      "text": {
+        "tr": "Çatlaklarında kızıl bir alev kıvrılan bu taş, ovanın en güçlü hayvanlarını kendine çağırır: yara izli kurt reisleri, boz ayılar, hiç açlık görmemiş kaplanlar. Kırılmadan bırakılırsa uyanır ve peş peşe seçkin canavarlar yollar. Hazırlıklı gelin; bu taş yalnızca hak edene ödül verir.",
+        "en": "A red flame writhes in the cracks of this stone, and it summons the strongest beasts of the plain: scarred wolf leaders, grizzlies, tigers that have never known hunger. Left unbroken, it wakes and sends one champion after another. Come prepared; it rewards only those who earn it."
+      },
+      "unlock": "metin:metin_onslaught"
+    },
+    {
+      "id": "codex_metin_metin_avarice",
+      "title": {
+        "tr": "Tamah Metini",
+        "en": "Metin of Avarice"
+      },
+      "text": {
+        "tr": "Altın damarlarla örülü bu taşın çevresine Yeop yağmur gibi yağar; ama parıltıyı koklayan yırtıcılar da çok geçmeden peşinden gelir. Ne kadar çok toplarsanız o kadar çok göze batarsınız. Cesur olan kazanır: Yeop yağarken içeri dalın, ama taşı kırmayı da unutmayın.",
+        "en": "Yeop falls like rain around this stone threaded with gold, and the predators that smell the glitter are never far behind. The more you gather, the more eyes you draw. Fortune favours the bold: wade in while the coins are falling, but don’t forget to break the stone."
+      },
+      "unlock": "metin:metin_avarice"
+    },
+    {
+      "id": "codex_metin_metin_ebon",
+      "title": {
+        "tr": "Abanoz Metin",
+        "en": "Ebon Metin"
+      },
+      "text": {
+        "tr": "Yanmış lake gibi parlayan bu taş çevresindeki ışığı yutar; yaklaşanın bakışı daralır, dünya bir tünele dönüşür. Çatlaklarından Gümüş Ant’ın eski bir çağrısı sızar ve yeminini unutmuş askerler bu çağrıya doğru yürür. Görüşünüz daraldığında durmayın; karanlık, duran hiç kimseye merhamet etmez.",
+        "en": "This stone gleams like burnt lacquer and swallows the light around it; anyone who nears it sees the world narrow into a tunnel. An old call of the Silver Vow seeps from its cracks, and soldiers who have forgotten their vows march toward it. When your sight closes in, don’t stand still; the dark shows no mercy to those who halt."
+      },
+      "unlock": "metin:metin_ebon"
+    },
+    {
+      "id": "codex_metin_metin_great_ebon",
+      "title": {
+        "tr": "Büyük Abanoz Metin",
+        "en": "Great Ebon Metin"
+      },
+      "text": {
+        "tr": "Yeonmu’ya düşen en büyük parça; yanık lake gibi kapkara, çevresindeki ovayı kavuran bir ısıyla ışığı emer. Yakınında durmak bile yakar; çevresindeki otlar kül olup rüzgâra karışır. Horyeong bu taşın içinden doğdu: ona tanrılığı geri verip onu kendinden alan da bu kara ışık oldu. Kaplan tanrı yere serildiğinde taş çatlar ve ova yıllar sonra ilk kez gerçekten susar.",
+        "en": "The greatest shard to fall on Yeonmu, black as burnt lacquer, drinking the light while a scorching heat rolls off it across the plain. Even standing near it burns, until the grass around it turns to ash on the wind. Horyeong was born from this stone: the same black light that gave him back his godhood took him from himself. When the tiger god is struck down the stone cracks, and the plain falls truly silent for the first time in years."
+      },
+      "unlock": "boss:boss_horyeong"
+    },
+    {
+      "id": "codex_enemy_orc_scout",
+      "title": {
+        "tr": "Ork Gözcüsü",
+        "en": "Orc Scout"
+      },
+      "text": {
+        "tr": "Ork ordusunun öncüsü; hafif zırhlı, ayağı çevik, gözleri sonbahar yaprakları kadar kızıl. Yanlardan dolanıp tek bir hamle vurur ve geri sıçrar; hızlıdır ama sağlam değildir. Onu serbest bırakırsanız asıl ordu da çok geçmeden arkasından gelir, bu yüzden gözcüyü erkenden temizleyin.",
+        "en": "The vanguard of the orc host: lightly armoured, quick on his feet, his eyes as red as autumn leaves. He circles in from the flanks, lands a single blow and springs away; he is swift but not sturdy. Let him roam and the main host is soon on his heels, so clear the scout early."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_orc_fighter",
+      "title": {
+        "tr": "Ork Savaşçısı",
+        "en": "Orc Fighter"
+      },
+      "text": {
+        "tr": "Ork ordusunun belkemiği; kalın boyunlu, ağır silahlı bir savaşçı. Metin ışığı hem korkusunu hem acısını söndürmüş, yaralansa da yürümeye devam eder. Tek başına kolay geçilir ama kalabalıkta sizi köşeye sıkıştırır; yaklaşmadan önce yolunuzu açın.",
+        "en": "The backbone of the orc host: a thick-necked warrior with a heavy weapon. The Metin light has quenched both his fear and his pain, and he keeps walking however many wounds he takes. Alone he is easy; in a crowd he corners you, so clear a path before closing in."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_orc_sorcerer",
+      "title": {
+        "tr": "Ork Büyücüsü",
+        "en": "Orc Sorcerer"
+      },
+      "text": {
+        "tr": "Ordunun ardından yürüyen kor ateşin kâhini; eski dilde kısa sözler mırıldanıp arka saftan alev gülleleri savurur. Siz yaklaşınca geri çekilir, uzaklaşınca yeniden ateş açar. Ağır silahlı erlerin arasına karışmadan önce büyücüyü hedef alın.",
+        "en": "The ember-seer who walks behind the host; he mutters short words in the old tongue and flings fireballs from the rear rank. When you close in he falls back, and when you retreat he opens fire again. Pick him out before he disappears among the heavy infantry."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_elite_orc",
+      "title": {
+        "tr": "Elit Ork",
+        "en": "Elite Orc"
+      },
+      "text": {
+        "tr": "Reisin kendi savaş kafilesinden seçilmiş bir ork; yüzündeki yara izleri herhangi bir rütbe işaretinden daha çok şey anlatır. Düz ve acımasız adımlarla ilerler, geri adım atmaz.",
+        "en": "An orc hand-picked from the chieftain’s own war-band, his facial scars worth more than any badge of rank. He advances with a flat, ruthless stride and never gives ground."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_elite_orc_scout",
+      "title": {
+        "tr": "Elit Ork Gözcüsü",
+        "en": "Elite Orc Scout"
+      },
+      "text": {
+        "tr": "Vadiyi kırk yıldır avucunun içi gibi bilen kıdemli bir gözcü; ordusunun gözü ve kulağı. Sizi uzaktan yoklar, bir hamle yapar ve gölgelerin arasında kaybolur. Açıkta durup onu beklemeyin; sürekli hareket ederek hamlelerini boşa çıkarın.",
+        "en": "A veteran scout who has known the valley like the back of his hand for forty years, the eyes and ears of his host. He probes you from a distance, strikes once and melts back into the shadows. Don’t stand still waiting for him; keep moving and let his strikes fall short."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_elite_orc_fighter",
+      "title": {
+        "tr": "Elit Ork Savaşçısı",
+        "en": "Elite Orc Fighter"
+      },
+      "text": {
+        "tr": "Yüzlerce akının gazisi, omuzlarında eski zaferlerden kalma sargılar taşıyan bir savaşçı. Sıradan bir ork savaşçısından daha iri ve daha sabırsız vurur. Yakınına girmesine izin verirseniz hem zırhınızı hem soğukkanlılığınızı ezer; mesafeyi korumak onu yormanın yoludur.",
+        "en": "A veteran of a hundred raids, his shoulders wrapped in bindings from old victories. He is bigger than the common orc fighter and strikes with less patience. Let him close and he will crush both your armour and your composure; keeping your distance is the only way to wear him down."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_elite_orc_sorcerer",
+      "title": {
+        "tr": "Elit Ork Büyücüsü",
+        "en": "Elite Orc Sorcerer"
+      },
+      "text": {
+        "tr": "Alevlerin dilini yıllardır konuşan kıdemli bir kâhin; atışları sıradan büyücününkinden daha sık ve daha inatçı. Daima uzakta durur, yaklaşırsanız bir adım geri çekilir. Çevresindeki erleri kalkan gibi kullanır; kenardan dolaşıp onu açıkta yakalayın.",
+        "en": "A senior seer who has spoken the tongue of flame for years; his shots come thicker and more stubbornly than the common sorcerer’s. He always stays far back, and steps away if you close in. He uses the soldiers around him as shields, so flank around and catch him in the open."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_elite_orc_general",
+      "title": {
+        "tr": "Elit Ork Generali",
+        "en": "Elite Orc General"
+      },
+      "text": {
+        "tr": "Reisin sağ koluydu; ağır zırhının çatlaklarından Metin ışığı yeşilimsi bir alev gibi sızıyor. Emirleri davul gibi çalar, kendisi bir kaya gibi yürür; yavaştır ama neredeyse hiçbir şey onu durduramaz. Yanındaki erlerden koparın, yoksa ordunun geri kalanı onunla birlikte dalga dalga gelir.",
+        "en": "Once the chieftain’s right hand; the Metin light seeps through the cracks in his heavy armour like a greenish flame. His orders ring like drums, and he himself walks like a boulder: slow, but hardly anything can stop him. Cut him off from his escort, or the rest of the host will arrive with him, wave after wave."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_black_orc",
+      "title": {
+        "tr": "Siyah Ork",
+        "en": "Black Orc"
+      },
+      "text": {
+        "tr": "İs kokulu demirhanelerde büyümüş, derisi dumandan kararmış bir klanın savaşçısı; zırhı yarı demir, yarı yara izi. Yavaş yürür, yavaş ama korkunç vurur; hemen yanına girmek pahalıya patlar. Menzil tutup ağır ağır yıpratın, çünkü gücü yakın dövüşte açılır. Çevresinde sürü varsa önce onları temizleyin.",
+        "en": "A warrior of a clan raised in soot-choked forges, his skin blackened by smoke and his armour half iron, half scar. He walks slowly and strikes slowly but terribly, so stepping right next to him is expensive. Keep your range and wear him down bit by bit, for his strength lies in close combat. If a pack surrounds him, clear it first."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_black_orc_giant",
+      "title": {
+        "tr": "Siyah Ork Devi",
+        "en": "Black Orc Giant"
+      },
+      "text": {
+        "tr": "Klanın en iri savaşçısı; koyu zırhlı, boyu bir kapıdan büyük, adımlarını uzaktan duyarsınız. Sıçrayışı ağır ama yıkıcıdır; yere düşen halka ineceği yeri baştan gösterir, tepki vermek için kısa bir vaktiniz var. Onu yalnız yakalarsanız yıpratın, kalabalığın içindeyken ise bir dalga gibi üstünüze çöker.",
+        "en": "The largest fighter of the clan: dark-armoured, taller than a doorway, his footfalls audible from afar. His leap is slow but ruinous; the ring on the ground shows where he will land, and you have only a short window to react. Catch him alone and wear him down; in a crowd he comes down on you like a wave."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_orc",
+      "title": {
+        "tr": "İri Ork",
+        "en": "Hulking Orc"
+      },
+      "text": {
+        "tr": "Metin Yağmuru bu orkun korkusunu alıp götürmüş, yerine övünç ve fazladan bir karış boy bırakmış. Sıranın önüne geçip tek başına hücum eder, kimsenin emrini beklemez.",
+        "en": "The Metin Rain carried off this orc’s fear and left bravado and an extra hand’s breadth of height in its place. He rushes to the front and charges alone, waiting on no one’s orders."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_orc_scout",
+      "title": {
+        "tr": "İri Ork Gözcüsü",
+        "en": "Hulking Orc Scout"
+      },
+      "text": {
+        "tr": "Saklanmayı unutmuş bir gözcü; Metin ışığı onu öyle bir cesaretle doldurdu ki gölgeden değil, doğrudan önünüzden dalıyor. Yine de çevikliğini yitirmedi: tek bir hamle vurur ve geri sıçrar. Yüzüne sürdüğü sarı boya onu uzaktan ele verir.",
+        "en": "A scout who has forgotten how to hide; the Metin light has filled him with such courage that he strikes from the open instead of from the shadows. He has not lost his nimbleness, though: one blow, then a spring away. The yellow paint smeared across his face gives him away from afar."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_orc_fighter",
+      "title": {
+        "tr": "İri Ork Savaşçısı",
+        "en": "Hulking Orc Fighter"
+      },
+      "text": {
+        "tr": "Boyu ötekilerin omzunu aşan, savaş boyasıyla bezeli bir savaşçı; yaralandıkça kahkaha atıyor. Düz bir yürüyüşle üstünüze gelir, hiçbir zaman durup tartmaz. Atılganlığı onu savunmasız bırakır; kalabalığı seyreltirken yanından geçip yandan vurun.",
+        "en": "A fighter whose head clears the shoulders of the others, smeared in war paint; the more he is wounded, the more he laughs. He marches straight at you and never pauses to weigh the odds. His recklessness leaves him open; slip past while thinning the crowd and strike from the side."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_orc_sorcerer",
+      "title": {
+        "tr": "İri Ork Büyücüsü",
+        "en": "Hulking Orc Sorcerer"
+      },
+      "text": {
+        "tr": "Büyülerini ölçmeyi unutmuş bir kâhin; kor ateşi arka saftan değil, ordunun en önünden savuruyor. Gürültülü, gösterişli bir cesaretle sizi yoklar ama menzilini yine de bırakmaz. Atışlarında öfke var, sükûnet yok; durmadan yan yan yürürseniz çoğunu boşa çıkarırsınız.",
+        "en": "A seer who has forgotten how to measure his spells; he flings embers from the very front of the host, not from the rear rank. He probes you with loud, showy courage, yet still holds his range. His shots carry rage and no calm; keep side-stepping and most of them will miss."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_orc_general",
+      "title": {
+        "tr": "İri Ork Generali",
+        "en": "Hulking Orc General"
+      },
+      "text": {
+        "tr": "Ordusunu arkadan değil ön saftan yöneten, bu yüzden en çok yara alan general. Başı da gövdesi de iridir; ağır adımlarla yürür, davul gibi gürleyen bağırışlarla çevresindekilere cesaret verir. Dayanıklıdır ama kendini fazlasıyla ortaya atar; açıkta kalmışken en çok hasarı verin.",
+        "en": "A general who leads his host from the front rather than from behind, and so takes the most wounds. Huge of frame and head, he walks with heavy steps and bellows like drums to hearten those around him. He is durable but exposes himself too much; hit him hardest when he stands out in the open."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_black_orc",
+      "title": {
+        "tr": "İri Siyah Ork",
+        "en": "Hulking Black Orc"
+      },
+      "text": {
+        "tr": "Klanının kasvetli kurallarını çiğneyip savaş boyasını bayrak gibi taşıyan bir Siyah Ork; zırhı daha az, böbürlenmesi daha çok. Yavaş ve ağır yürür, yakınına girene acımadan vurur. Ordudan koparak öne fırladığı için çevresinde destek yoktur; bu fırsatı kullanın.",
+        "en": "A Black Orc who has broken his clan’s grim rules and wears war paint like a banner: less armour, more swagger. He walks slow and heavy and brings the blow down without mercy on anyone who steps close. He has torn ahead of the host and has no support around him; use the opening."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_hulking_black_giant_orc",
+      "title": {
+        "tr": "İri Siyah Ork Devi",
+        "en": "Hulking Black Giant Orc"
+      },
+      "text": {
+        "tr": "Siyah Ork devlerinin en cesur ve en kibirlisi; boyunun yarısını zırh, yarısını övünç dolduruyor. Sıçrayışı yıkıcıdır, yere düşen halka ineceği yeri belli eder; öfkeyle gelir, o yüzden erkenden kaçmak yerine son anda yana atlayın. Büyüklüğü sizi yıldırmasın: devler de düşer.",
+        "en": "The boldest and haughtiest of the Black Orc giants, half his height armour and half bluster. His leap is ruinous and the ring on the ground shows where it will land; he comes in a rage, so leap aside at the last moment rather than fleeing early. Don’t let his size cow you: giants fall too."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_dark_zealot",
+      "title": {
+        "tr": "Karanlık Mürit",
+        "en": "Dark Zealot"
+      },
+      "text": {
+        "tr": "Mor cübbeli, boynunda tespih taşıyan bu mürit, ışığı bırakıp karanlığa yemin etmiş bir tarikatın sıradan neferidir. Vadiyi mırıldanarak sallanan kalabalıklar hâlinde sarar; alan hasarı bu sürüyü eritir.",
+        "en": "Robed in violet with prayer beads at his throat, this disciple is the rank and file of an order that gave up the light and swore itself to the dark. Followers like him wash across the valley in murmuring, swaying crowds; area damage melts them."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_zealot",
+      "title": {
+        "tr": "Büyük Mürit",
+        "en": "High Zealot"
+      },
+      "text": {
+        "tr": "Solgun leylak cübbesi, tarikatta yükselmiş olanların işaretidir; Büyük Mürit aynı kalabalıkta yürür ama sesi daha gür, bakışı daha boştur. Sürüyle gelir; onları bir arada toplayıp tek seferde silin.",
+        "en": "A pale lilac robe marks those who have risen in the order; the High Zealot still walks in the same crowd, but his chant is louder and his stare emptier. He comes with the swarm; gather them together and sweep them away in a single pass."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_dark_ascetic",
+      "title": {
+        "tr": "Karanlık Münzevi",
+        "en": "Dark Ascetic"
+      },
+      "text": {
+        "tr": "Tarikatın savaşçı rahibi; ayakları çıplak, avuçları çelik gibi sert, yemini karanlığa. Üstünüze yürür ve peşinizi bırakmaz; ne bağırır ne durur, korkutan da bu sessizliktir. Müritlerin arasından ayırıp tek başına yakalamak sizin işiniz.",
+        "en": "The warrior-priest of the order: barefoot, palms hard as steel, his oath sworn to the dark. He walks straight at you and will not be shaken off; he neither shouts nor halts, and it is that silence which frightens. Your task is to peel him away from the disciples and catch him alone."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_ascetic",
+      "title": {
+        "tr": "Büyük Münzevi",
+        "en": "High Ascetic"
+      },
+      "text": {
+        "tr": "Leylak cübbeli bir yüksek rahip; Karanlık Münzevi’den biraz daha iri, biraz daha disiplinli yürür. Metin Yağmuru onun duasını bozmadı, yalnızca yönünü değiştirdi: artık hedefi sizsiniz. Peşinizi bırakmaz, bu yüzden yolunuzu kıvırıp onu kalabalıktan koparın.",
+        "en": "A senior priest in a lilac robe, slightly larger and more disciplined in his stride than the Dark Ascetic. The Metin Rain did not break his prayer, only turned its aim: now you are its target. He will not give up the chase, so bend your path to cut him off from the crowd."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_veiled_ascetic_fighter",
+      "title": {
+        "tr": "Örtülü Münzevi Savaşçısı",
+        "en": "Veiled Ascetic Fighter"
+      },
+      "text": {
+        "tr": "Tarikatın dövüş okulunda yetişmiş, omuzları ötekilerin iki katı geniş bir münzevi; menekşe cübbesinin altında kasları gerilmiş bir yay gibi. Yüzünde ne öfke ne acı var, yalnızca dingin bir gaddarlık. Hızlı değildir ama bir kez peşinize düştü mü, ritmini hiç bozmadan sizi kovalar.",
+        "en": "An ascetic trained in the order’s fighting school, his shoulders twice as wide as the rest, his muscles drawn like a bowstring beneath a robe of deep violet. His face shows neither rage nor pain, only a serene cruelty. He is not fast, but once he is on your trail he hounds you without ever breaking his rhythm."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_ascetic_fighter",
+      "title": {
+        "tr": "Büyük Münzevi Savaşçısı",
+        "en": "High Ascetic Fighter"
+      },
+      "text": {
+        "tr": "Tarikatın seçkin dövüşçülerinden biri; açık leylak cübbesi, kalın bilekleri ve hiç değişmeyen bakışıyla bir heykele benziyor. Esrimeyle değil, soğuk bir öfkeyle vurur ve her darbesi ölçülüdür. Büyük Münzevi’den daha az konuşur, daha çok yıkar.",
+        "en": "One of the order’s chosen fighters; in his light lilac robe, with thick wrists and an unchanging stare, he looks like a statue. He strikes with a cold anger, not with ecstasy, and every blow is measured. He speaks less than the High Ascetic and wrecks more."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_veiled_ascetic_chief",
+      "title": {
+        "tr": "Örtülü Münzevi Reisi",
+        "en": "Veiled Ascetic Chief"
+      },
+      "text": {
+        "tr": "Bir manastırın başrahibi gibi dimdik yürüyen, bir kaya ağırlığındaki reis; menekşe cübbesi gece gibi koyu, gözleri dipsizdir. Yavaş adım atar ama bütün müritler onun ritmine göre ilerler. Onu yakından değil uzaktan yıpratın: yanında durmak bu ağırlığın altında ezilmektir.",
+        "en": "A chief who walks as upright as the abbot of a monastery and carries the weight of a boulder; his violet robe is dark as night and his eyes bottomless. He takes slow steps, yet every disciple advances to his rhythm. Wear him down from afar rather than up close: to stand beside him is to be crushed beneath that weight."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_elite_ascetic",
+      "title": {
+        "tr": "Büyük Elit Münzevi",
+        "en": "High Elite Ascetic"
+      },
+      "text": {
+        "tr": "Tarikatın en yaşlı ve en yüksek mertebeli münzevilerinden biri; soluk leylak cübbesi onlarca yıllık duanın ağırlığıyla kararmış, boyu müritlerin başının üstünde yükseliyor. O yürüdüğünde ötekiler yol açar, o durduğunda hepsi susar. Ağırdır ve dayanıklıdır; yakınına girmeden, sabırla biraz biraz tüketin.",
+        "en": "One of the oldest and highest-ranking ascetics of the order; his faded lilac robe has darkened under decades of prayer, and he stands head and shoulders above the disciples. When he walks the others make way, and when he halts they all fall silent. He is heavy and durable; don’t step in close, and wear him down patiently, bit by bit."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_veiled_executioner",
+      "title": {
+        "tr": "Örtülü Cellat",
+        "en": "Veiled Executioner"
+      },
+      "text": {
+        "tr": "Tarikatın infazlarını yerine getiren, yüzünü kapüşonla gizlemiş bir cellat; mor cübbesinin altında demirle bağlanmış ağır bir silah taşır. Hedefini seçer, kısa bir hazırlıktan sonra düz bir çizgide üstünüze atılır. Yerde çizgi belirir belirmez yana kayın; hamle bittiğinde bir an savunmasızdır.",
+        "en": "The hooded headsman who carries out the order’s executions, a heavy iron-bound weapon hidden beneath his violet robe. He picks his target and, after a brief wind-up, hurls himself at you in a straight line. Slide aside the moment the line appears on the ground; when the rush is over he is exposed for a moment."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_headsman",
+      "title": {
+        "tr": "Yüce Cellat",
+        "en": "High Headsman"
+      },
+      "text": {
+        "tr": "Tarikatın yüksek celladı; leylak cübbesi ve lekesiz kapüşonuyla bir ayin görevlisine benziyor, ama ağzından yalnızca ölüm sözü çıkıyor. Düz bir çizgide, hiç sapmadan üstünüze atılır. Çizgiyi erken okuyup yana çekilin, cezayı ona geri ödeyin.",
+        "en": "The order’s high headsman; in his lilac robe and spotless hood he looks like a priest at a rite, yet nothing but sentences of death comes from his mouth. He throws himself at you in a straight line without swerving. Read the line early, step aside and pay the sentence back to him."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_dark_inquisitor",
+      "title": {
+        "tr": "Karanlık Sorgucu",
+        "en": "Dark Inquisitor"
+      },
+      "text": {
+        "tr": "Tarikatın zindanlarında yıllarını geçirmiş, mor tonları iyice koyulaşmış iri bir işkenceci; çevresindeki hava bile acıyla ağırlaşmış gibi. Yavaş yürür ama sıçradığında yeri sarsar; yerdeki halka ineceği yeri önceden bildirir. Acele etmeyin: halkanın dışında kalın, indiği anda vurup yeniden geri çekilin.",
+        "en": "A huge inquisitor who has spent years in the order’s dungeons, his violet tones darkened until the very air around him seems heavy with pain. He walks slowly but shakes the ground when he leaps; the ring on the floor announces where he will land. Don’t rush: stay outside the ring, strike the moment he lands, and fall back again."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_inquisitor",
+      "title": {
+        "tr": "Büyük Sorgucu",
+        "en": "High Inquisitor"
+      },
+      "text": {
+        "tr": "Tarikatın yüksek işkencecisi; açık menekşe cübbesi lekesizdir, çünkü kirli işi hep başkalarına yaptırmıştır, ama şimdi kendi eliyle ezmeye geldi. Karanlık Sorgucu’dan daha iri durur ve sıçrayışı yavaş ama yıkıcıdır. Halka belirir belirmez oradan çekilin, indiği an ona vurun.",
+        "en": "The order’s high inquisitor; his pale violet robe is spotless, because he has always had others do the dirty work, but now he has come to crush with his own hands. He looks bigger than the Dark Inquisitor, and his leap is slow but ruinous. Leave the spot the moment the ring appears, and hit him the moment he lands."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_dark_conjurer",
+      "title": {
+        "tr": "Karanlık Çağıran",
+        "en": "Dark Conjurer"
+      },
+      "text": {
+        "tr": "Karanlığın sözünü taşıyan haberci; ağzından çıkan her kelime gölgeleri çağırır, eli gölgeden bükülmüş mermiler gönderir. Uzakta durur, siz yaklaşınca geri çekilir; çevresindeki müritler onu korur. Onu yalnız bırakırsanız mermi yağmuru ordudan önce sizi tüketir. Müritlerin arasından sıyrılıp ona ulaşın.",
+        "en": "The herald who carries the word of the dark; every syllable calls up shadows, and his hand sends out missiles bent from them. He stays far off and falls back when you close in, while the disciples around him shield him. Leave him alone and the rain of missiles wears you down before the army does. Slip through the disciples and reach him."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_high_conjurer",
+      "title": {
+        "tr": "Büyük Çağıran",
+        "en": "High Conjurer"
+      },
+      "text": {
+        "tr": "Karanlığın yüksek habercisi; solgun leylak cübbesi gölgelerle titreşir, her çağrısı daha sakin ama daha derinden gelir. Atışları sık ve isabetlidir, menzilini her zaman korur. Yanlardan dolaşıp köşeye kıstırdığınızda çağrısı yarım kalır.",
+        "en": "The high herald of the dark; his pale lilac robe shivers with shadows, and each call comes quieter yet from deeper within. His shots are tight and well aimed, and he always holds his range. Circle in from the flanks and corner him, and his chant breaks off half finished."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_king_scorpion",
+      "title": {
+        "tr": "Kral Akrep",
+        "en": "King Scorpion"
+      },
+      "text": {
+        "tr": "Yusa kumlarından vadiye tırmanmış, Metin ışığıyla öküz boyuna ulaşmış dev bir akrep; zırhı güneşte pas rengi parlıyor. Gözünü dikip düz ve telaşsız bir yürüyüşle üstünüze gelir, kıskaçlarını bir an bile indirmez. Kabuğu sağlamdır; kuyruğunun menzilinden uzak durup yıpratın.",
+        "en": "A giant scorpion that has climbed from the sands of Yusa into the valley and swollen to the size of an ox in the Metin light, its carapace glinting rust-red in the sun. It fixes its stare and comes at you in a straight, unhurried march, never lowering its claws. Its shell is thick; keep out of the reach of its tail and wear it down."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_feral_soldier",
+      "title": {
+        "tr": "Yırtıcı Asker",
+        "en": "Feral Soldier"
+      },
+      "text": {
+        "tr": "Dağ kabilelerinden kopup vadinin kuzeyine inmiş bir savaşçı; derisi, postu ve yüzü savaş boyasının altında birbirine karışmış. Adı yırtıcılığından gelir, çünkü konuşmayı çoktan unutmuş. Metin ışığı onu aç bir canavara çevirdi: yakın dövüşe atılır ve peşinizi bırakmaz.",
+        "en": "A warrior who broke away from the mountain tribes and came down into the north of the valley, his skin, pelt and face all blurred together under war paint. His name comes from his savagery, for he has long forgotten how to speak. The Metin light has turned him into a ravening beast: he throws himself into close combat and does not let go of your trail."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_feral_maniac",
+      "title": {
+        "tr": "Yırtıcı Deli",
+        "en": "Feral Maniac"
+      },
+      "text": {
+        "tr": "Savaş çığlıklarıyla kendinden geçen, bakır tenli bir kabile savaşçısı; Metin ışığı delilik sınırını da kaldırmış. Düşünmeden, ritimsiz ve öfkeyle yürür; arkasından gelenleri bile dinlemez. Sırtınızı dönüp koşmak yerine hareket hâlinde kalın: yorulmayı bilmez.",
+        "en": "A copper-skinned tribal warrior, beside himself with war cries; the Metin light has lifted the last limit on his madness. He advances without thought, without rhythm, in a rage, heeding not even those who follow him. Don’t turn your back and run; keep moving, because he does not know how to tire."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_feral_archer",
+      "title": {
+        "tr": "Yırtıcı Okçu",
+        "en": "Feral Archer"
+      },
+      "text": {
+        "tr": "Dağ kabilelerinin gölgede kalan nişancısı; bir avcı kadar sabırlı, ama avının acısını umursamayacak kadar vahşi. Kayalık bir sırttan ya da kendi askerlerinin arkasından atar; siz yaklaşınca yer değiştirir. Hareket hâlinde kalın, nişan almasını zorlaştırın.",
+        "en": "The tribes’ sharpshooter, who keeps to the shadows: as patient as a hunter, yet savage enough to ignore his prey’s pain. He shoots from a rocky ridge or from behind his own soldiers, and shifts position when you close in. Keep moving and make his aim harder."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_enemy_feral_specialist",
+      "title": {
+        "tr": "Yırtıcı Uzman",
+        "en": "Feral Specialist"
+      },
+      "text": {
+        "tr": "Kabilesinin en deneyimli savaşçısı; kalın postu ve ağır adımlarıyla bir kaya gibi dimdik duruyor, kolay devrilmiyor. Hızlı değildir ama ne yaptığını bilir; darbelerini seçer ve her biri ağır iner. Kenardan dolaşarak yıpratın, çünkü yakın dövüşte ona yetişen yoktur.",
+        "en": "The most experienced fighter of his tribe, planted like a rock in his thick pelt and heavy tread, not easily felled. He is not fast, but he knows his craft; he chooses his blows, and each one lands heavily. Circle him from the edge and wear him down, because no one matches him toe to toe."
+      },
+      "unlock": "enter:suryeon"
+    },
+    {
+      "id": "codex_boss_boss_orc_sorcerer",
+      "title": {
+        "tr": "Ork Büyücüsü — Kor Kâhin",
+        "en": "Orc Sorcerer — Cinder Seer"
+      },
+      "text": {
+        "tr": "Kor Kâhin, ordunun ilk büyücüsüydü; Metin ışığı onun çağırdığı ateşi yeniden alevlendirip bedenine yerleştirdi, şimdi kendisi yanan bir kor gibi duruyor. Alev gülleleri savurur, gökten kıvılcım yağdırır ve gözcülerini yanına çağırır. Kıvılcım yağmurunun düştüğü yerden çekilin; ona ulaşmadan önce çağırdığı gözcüleri temizleyin.",
+        "en": "The Cinder Seer was the first sorcerer of the host; the Metin light rekindled the fire he once summoned and lodged it in his body, and now he stands like a burning coal himself. He flings balls of flame, rains sparks from the sky and calls his scouts to his side. Get clear of the ground where the ember-rain falls, and clear away the scouts he calls before you reach him."
+      },
+      "unlock": "boss:boss_orc_sorcerer"
+    },
+    {
+      "id": "codex_boss_boss_feral_maniac",
+      "title": {
+        "tr": "Yırtıcı Deli — Kan Çılgını",
+        "en": "Feral Maniac — Blood-Mad Berserker"
+      },
+      "text": {
+        "tr": "Kan Çılgını, kabilesinin yenilmez ilan ettiği, yaralandıkça kendinden geçen bir savaşçıydı; Metin Yağmuru onu hiç dinmeyen bir öfkeye çevirdi. Savaş çığlığıyla kanını kaynatır, kendini öne atar, geniş yaylarla biçer ve öfkesi arttıkça hızlanır. Atılışının yönünü yerdeki çizgiden okuyup yana kaçın; çılgınlık onu sardığında mesafenizi koruyun ve bir an bile durmayın.",
+        "en": "The Blood-Mad Berserker was a warrior his tribe declared unbeatable, one who grew wilder the more he was wounded; the Metin Rain turned him into a rage that never dies down. His war cry boils his blood, he throws himself forward, cleaves in wide arcs and speeds up as his fury grows. Read the direction of his rush from the line on the ground and dodge sideways; when frenzy takes him, keep your distance and never stand still."
+      },
+      "unlock": "boss:boss_feral_maniac"
+    },
+    {
+      "id": "codex_boss_boss_dark_inquisitor",
+      "title": {
+        "tr": "Karanlık Sorgucu — Cellatların Efendisi",
+        "en": "Dark Inquisitor — Master of the Headsmen"
+      },
+      "text": {
+        "tr": "Cellatların Efendisi, tarikatın zindanlarında yılların sessizliğini taşıyan, yüzünü kimsenin görmediği bir işkenceciydi; karanlığın sözü en çok ona yakışırdı. İdam sehpasının gölgesini yere çizer, karanlık nabız dalgaları yayar, müritleri yanına çağırır ve rüzgâr tırpanıyla alanı biçer. Dalgaların arasındaki boşlukları kollayın; yardımcılarını temizlemeden ona vurmaya kalkmayın.",
+        "en": "The Master of the Headsmen was a inquisitor who carried years of silence in the order’s dungeons, a man whose face no one had seen; the word of the dark suited him best of all. He draws the shadow of a gallows on the ground, sends out pulses of darkness, calls the zealots to his side and mows the field with a scythe of wind. Watch for the gaps between the waves, and don’t try to hit him until you have cleared his helpers."
+      },
+      "unlock": "boss:boss_dark_inquisitor"
+    },
+    {
+      "id": "codex_boss_boss_black_orc_giant",
+      "title": {
+        "tr": "Siyah Ork Devi — Demir Dişli Dev",
+        "en": "Black Orc Giant — Iron-Tusked Giant"
+      },
+      "text": {
+        "tr": "Demir Dişli Dev, azı dişlerine demir halkalar geçirilmiş, boyu ötekilerin iki katı bir Siyah Ork; Metin ışığı kasını taşa çevirdi. Baltasını yere indirir, her şeyi çiğneyip geçer, ayağını vurup toprağı sarsar ve kan öfkesine kapıldığında vuruşları daha da ağırlaşır. Yerdeki halkalara dikkat edin: bu devi durdurmanın yolu, nereye ineceğini okuyup orada olmamaktır.",
+        "en": "The Iron-Tusked Giant is a Black Orc with iron rings through his tusks and twice the height of the others; the Metin light has turned his muscle to stone. He brings his axe down, tramples over everything, stamps and shakes the earth, and his blows grow heavier when blood-rage seizes him. Mind the rings on the ground: the way to stop this giant is to read where he will land and not be there."
+      },
+      "unlock": "boss:boss_black_orc_giant"
+    },
+    {
+      "id": "codex_boss_boss_chief_orc",
+      "title": {
+        "tr": "Ork Reisi — Metin’e Esir Reis",
+        "en": "Chief Orc — Chieftain Enthralled by the Metin"
+      },
+      "text": {
+        "tr": "Ork Reisi bir zamanlar ordusunu bu vadiye kendi iradesiyle getirmişti; Büyük Alacakaranlık Metini düştüğünde gölgesi bedeninden koptu ve onu yürüten şey artık kendisi değil. Savaş boynuzunu çaldığında ordu yeniden toplanır, sopasını indirdiğinde yer yarılır, dişlerini öne verip gözü kara yüklenir. Kana susamışlığı yaralandıkça artar: ne kadar hırpalarsanız o kadar hızlanır. Boynuz öttüğünde yerinizde durmayın; ordu toplanırken reis vuruşunu hazırlıyordur.",
+        "en": "The Chief Orc once brought his host to this valley of his own will; when the Great Dusk Metin fell, his shadow tore loose from his body, and whatever walks him now is no longer himself. When he blows the war-horn the host rallies, when he brings his club down the ground splits, and he lowers his tusks and charges blind. His bloodlust grows with every wound: the more you batter him, the faster he gets. When the horn sounds, don’t stay put; while the host gathers, the chieftain is readying his blow."
+      },
+      "unlock": "boss:boss_chief_orc"
+    },
+    {
+      "id": "codex_metin_metin_murk",
+      "title": {
+        "tr": "Kasvet Metini",
+        "en": "Metin of Murk"
+      },
+      "text": {
+        "tr": "Ay görmemiş bir gecenin renginde olan bu taş, çevresindeki ışığı yavaş yavaş söndürür; yaklaştıkça fenerlerin ışığı kısılır, gölgeler üstünüze kapanır. Çatlaklarından sızan fısıltı orkları da müritleri de aynı anda çağırır. Görüşünüz daraldığında hareket etmeye devam edin: karanlıkta duran ilk ölendir.",
+        "en": "A stone the colour of a moonless night, it slowly snuffs out the light around it; as you draw near your lanterns dim and the shadow closes in. The whisper from its cracks calls orcs and zealots alike. When your sight narrows, keep moving: the first to stand still in the dark is the first to die."
+      },
+      "unlock": "metin:metin_murk"
+    },
+    {
+      "id": "codex_metin_metin_envy",
+      "title": {
+        "tr": "Haset Metini",
+        "en": "Metin of Envy"
+      },
+      "text": {
+        "tr": "Zehirli bir yeşille parlayan bu taş, çevresindeki herkese başkasının elindekini fısıldar; yaklaşan her canlının içine kıskançlığın kemirici ateşi düşer. Çevresinde sürekli dönen yakıcı bir aura vardır ve içinde durmak bile yaralar. Taşı çabuk kırın: geçen her an hem yarayı hem öfkeyi derinleştirir.",
+        "en": "Glowing a poisonous green, this stone whispers to everyone around it that another has what they lack; the gnawing fire of envy falls into all who approach. A scorching aura circles it constantly, and merely standing within wounds. Break it quickly: every passing second deepens both the wound and the rage."
+      },
+      "unlock": "metin:metin_envy"
+    },
+    {
+      "id": "codex_metin_metin_echoes",
+      "title": {
+        "tr": "Yankı Metini",
+        "en": "Metin of Echoes"
+      },
+      "text": {
+        "tr": "Soluk gümüş rengi bir ışık saçan bu taşın içinde vadide ölmüş askerlerin sesleri dolaşır; zaman zaman eski savaşların en büyük savaşçılarını geri çağırır. Çağırdıkları, ölmüş savaşçıların gölgeleridir ve hiçbir savaşı kaybetmemiş gibi dövüşürler. Ruhları susturmak için taşı vaktinde kırın.",
+        "en": "The voices of soldiers who died in this valley drift inside this stone, which gives off a pale silver light; from time to time it calls back the greatest warriors of old battles. What it summons are the shades of dead fighters, and they fight as if they had never lost a battle. Break the stone in time to quiet the souls."
+      },
+      "unlock": "metin:metin_echoes"
+    },
+    {
+      "id": "codex_metin_metin_dusk",
+      "title": {
+        "tr": "Alacakaranlık Metini",
+        "en": "Metin of Dusk"
+      },
+      "text": {
+        "tr": "Bu taş durmadan titreşir; bir an kendi gölgesine karışıp yok olur, bir sonraki an yeniden belirir. Çevresindeki düşmanlar da onunla birlikte görünür ve kaybolur. Ona vurabileceğiniz anlar kısadır: göründüğü anı kollayın.",
+        "en": "This stone never stops flickering; one moment it melts into its own shadow and is gone, the next it is back. The enemies around it fade in and out along with it. Your windows to strike it are brief: watch for the moment it shows itself."
+      },
+      "unlock": "metin:metin_dusk"
+    },
+    {
+      "id": "codex_metin_metin_great_dusk",
+      "title": {
+        "tr": "Büyük Alacakaranlık Metini",
+        "en": "Great Dusk Metin"
+      },
+      "text": {
+        "tr": "Suryeon’a düşen en büyük parça; yanında ışık bile gölgeye döner, çevresindeki her şeyi kasvetli bir ısıyla yakar. Ork Reisi’nin gölgesini bedeninden koparıp onu kendi iradesine bağlayan bu taştır. Reis yere serildiğinde taş çatlar; vadi bir an tamamen susar ve o sessizlikte reis kendi sesine geri döner.",
+        "en": "The greatest shard to fall on Suryeon; light itself turns to shadow beside it, and it scorches everything around it with a gloomy heat. It is this stone that tore the Chief Orc’s shadow from his body and bound him to its will. When the chieftain falls the stone cracks; the valley goes utterly silent for a moment, and in that silence he finds his own voice again."
+      },
+      "unlock": "boss:boss_chief_orc"
+    },
+    {
+      "id": "codex_enemy_shambling_corpse",
+      "title": {
+        "tr": "Yürüyen Ceset",
+        "en": "Shambling Corpse"
+      },
+      "text": {
+        "tr": "Seori geçidinde karın altında yatan ilk ölüler; Metin yağmuru onları yeniden ayağa kaldırdı. Sürü hâlinde, ağır ve sessiz yürürler; çevrelerinde dolaşan mezar soğuğu, yaklaşanın canını yavaş yavaş eritir. Zehir ve karanlık çoğunu geri çevirir, kutsal ışık ise etlerini yakar.",
+        "en": "The first dead of the Seori pass, hauled out of the snow by the Metin rain. They walk in slow, silent packs, and the grave-cold around them eats at anyone who lingers close. Poison and darkness mostly slide off them; holy light burns straight through."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_shambling_corpse",
+      "title": {
+        "tr": "Kızgın Yürüyen Ceset",
+        "en": "Angry Shambling Corpse"
+      },
+      "text": {
+        "tr": "Yağmur bu ölünün yalnızca kemiklerini değil, eski öfkesini de uyandırdı; göz çukurlarında kızıl bir kor yanıyor. Diğerleri gibi sürüyle ve mezar soğuğu aurasıyla gelir, ama adımlarında yas yok, hınç var. Zayıflığı aynı kaldı: zehir işlemez, kutsal güç yakar.",
+        "en": "The rain woke more than this corpse’s bones; it woke an old rage, and a red coal burns in its sockets. It comes in packs with the same grave-cold aura as the rest, but there is no grief left in its steps, only spite. The weakness has not changed: poison fails, holy power burns."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_hound",
+      "title": {
+        "tr": "Vebalı Tazı",
+        "en": "Blighted Hound"
+      },
+      "text": {
+        "tr": "Geçit karakolunun av köpekleri, sahipleri öldükten sonra da nöbeti bırakmadı. Hastalık onları kaburga ve çürük dişe indirdi; yine de sürü hâlinde, yorulmadan avlanıyorlar. Tek köpek tehdit sayılmaz; topuklarınıza yapışan bir sürüyü ise geniş vuruşlarla eritmek gerekir.",
+        "en": "Hounds of the watch-fort on the pass, who kept their post long after their masters died. The plague has stripped them to ribs and rotten fangs, yet they still hunt in packs and never tire. One dog is nothing; a pack at your heels is something to burn down with wide strikes."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_hound",
+      "title": {
+        "tr": "Kızgın Vebalı Tazı",
+        "en": "Angry Blighted Hound"
+      },
+      "text": {
+        "tr": "Hastalığa bir de kuduz öfkesi eklendi; ağzı köpük köpük, gözleri kızıl. Sürüyle koşar, önünüzü kesip iki yandan sarmaya çalışır. Daire kapanmadan, sürü hâlâ yarım çemberken vurun.",
+        "en": "The plague was only the beginning; the Metin rain added a rabid fury on top, and its mouth foams while its eyes burn red. It runs with the pack and loops wide to cut you off from both sides. Hit it while the pack is still a half-circle, before the circle closes."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_villager",
+      "title": {
+        "tr": "Vebalı Köylü",
+        "en": "Blighted Villager"
+      },
+      "text": {
+        "tr": "Dağ yolunun hamalları ve hacıları; yolda tükenmiş, karın altında kalmışlardı. Şimdi kalktılar ve ne olduklarını unutmuş bir inatla yürümeye devam ediyorlar. İzinizi hiç kaybetmezler ama hızlı değillerdir; geri çekilirken vurmak en iyisi.",
+        "en": "Porters and pilgrims of the mountain road, caught by the cold and left in the drifts. They have risen again and walk on with the stubbornness of the forgotten. They never lose your trail, but they are not quick; strike while you back away."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_villager",
+      "title": {
+        "tr": "Kızgın Vebalı Köylü",
+        "en": "Angry Blighted Villager"
+      },
+      "text": {
+        "tr": "Bu adam yolda ölürken kimseye el kaldırmamıştı; yağmur onun yerine kızıl, çarpık bir hınç verdi. Aynı ağır adımlarla gelir, ama gözleri artık yalnızca sizi arıyor. Zehir ona hâlâ işlemez, kutsal ışık hâlâ yarasıdır.",
+        "en": "This man died on the road without raising a hand to anyone; the rain gave him a red, twisted hatred to make up for it. He drags along at the same slow pace, but his eyes have found you and will not let go. Poison still means nothing to him; holy light is still his wound."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_swordsman",
+      "title": {
+        "tr": "Vebalı Kılıç Ustası",
+        "en": "Blighted Swordsman"
+      },
+      "text": {
+        "tr": "Nöbet kalesinin kılıç ustaları, ölümde bile pas tutmuş kılıçlarını bırakmadı. Ölçülü adımlarla yaklaşır, geniş kesiklerle çevresinde yer açar. Eti çürüdü ama talimi unutulmadı; mesafenizi koruyup kendini kovalatın.",
+        "en": "The swordmasters of the watch-fort never let go of their rusted blades, not even in death. They close in with measured strides and wide cuts that clear space around them. The flesh has rotted but the drill remains; keep your distance and let them chase."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_swordsman",
+      "title": {
+        "tr": "Kızgın Vebalı Kılıç Ustası",
+        "en": "Angry Blighted Swordsman"
+      },
+      "text": {
+        "tr": "Kızıl öfke bu savaşçının eski talimini paramparça etti; saf düzeni yok, yalnızca kılıcı var. Her adımı bir saldırı, her bakışı bir meydan okuma. Zehir hâlâ ondan sekiyor; ama kutsal ışığa gelince çürük zırhı eskisi gibi çatlıyor.",
+        "en": "Red fury has torn through this fighter’s old discipline; the formation is gone and only the blade remains. Every step is an attack, every glance a challenge. Poison still bounces off him, but holy light still splits that rotten armour."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_spearman",
+      "title": {
+        "tr": "Vebalı Mızrakçı",
+        "en": "Blighted Spearman"
+      },
+      "text": {
+        "tr": "Kale surlarının mızrakçıları, uzun saplı mızraklarını hâlâ ön safta tutar; uçlarını yeşil bir küf kaplamış. Solgun yeşil bir parıltı eşliğinde ilerler, ileri doğru sert hamleler yapar. Mızrak kılıçtan uzağa erişir; ucunun hizasında durmayın, yan adım atıp sapın yanından sıyrılın.",
+        "en": "Spearmen of the fort walls, still holding their long shafts in the front line, the heads furred with green mould. A pale green glow follows them as they advance and thrust. A spear reaches farther than a sword, so do not stand at its tip; sidestep and slip past the shaft."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_spearman",
+      "title": {
+        "tr": "Kızgın Vebalı Mızrakçı",
+        "en": "Angry Blighted Spearman"
+      },
+      "text": {
+        "tr": "Mızrakçının solgun yeşili öfkeli bir pembeye dönmüş; kızıl hınç, kanı olmayan damarlara renk getirmiş. Mızrağı artık bir silahtan çok bir kin; her hamlede bütün bedenini ileri atar. Kalabalığın içinde ayırt etmek kolay: Seori’nin karında bundan canlı bir renk yok.",
+        "en": "The spearman’s pale green has flushed to an angry pink; rage has put colour into veins that held no blood. The spear is less a weapon now than a grudge, and every thrust throws the whole body behind it. He is easy to pick out of a crowd, because nothing else on Seori’s snow burns that bright."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_archer",
+      "title": {
+        "tr": "Vebalı Okçu",
+        "en": "Blighted Archer"
+      },
+      "text": {
+        "tr": "Surların okçuları; yayları çarpılmış, ok uçları zehirli bir yeşille ıslak. Kılıçların ve mızrakların gerisinde durup uzaktan atış yaparlar. Önce okçuları bulun ve onlara yaklaşırken durmayın.",
+        "en": "Archers from the wall-walks, their bows warped, their arrowheads wet with poisonous green. They hang back behind the blades and spears and shoot from afar. Hunt the archers first, and never stop moving as you close in."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_archer",
+      "title": {
+        "tr": "Kızgın Vebalı Okçu",
+        "en": "Angry Blighted Archer"
+      },
+      "text": {
+        "tr": "Okçunun sabrı öfkeye döndü; artık vurmak için değil, acıtmak için ok atıyor. Kızıl gözleri yamacın öbür ucundan bile sizi bulur, oklar aynı hırsla gelir. Zehir ve karanlık ona az işler; kutsal bir darbe en keskin cevaptır.",
+        "en": "The archer’s patience has curdled into rage; he no longer shoots to hit so much as to hurt. Red eyes find you from across the slope, and the arrows follow with the same temper. Poison and darkness mean little to him; a holy strike is the sharpest answer."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_blighted_marshal",
+      "title": {
+        "tr": "Vebalı Önder",
+        "en": "Blighted Marshal"
+      },
+      "text": {
+        "tr": "Nöbet kalesinin subayı; zırhı yamanın üstüne yama, adımları karı sarsacak kadar ağır. Yavaş ilerler ama durdurması zordur; yanında yürüyen ölüler cesaretlerini onun ayak seslerinden alır. Önce çevresindeki askerleri eritin, sonra mesafeden yıpratın. O koca zırhın altında onu hâlâ yaralayan tek şey var: kutsal ışık.",
+        "en": "An officer of the watch-fort, his plate patched over plate, his stride heavy enough to shake the snow. He advances slowly but is hard to stop, and the dead beside him take their courage from the tramp of his boots. Clear the rank and file first, then wear him down from range. Beneath all that armour one thing still wounds him: holy light."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_angry_blighted_marshal",
+      "title": {
+        "tr": "Kızgın Vebalı Önder",
+        "en": "Angry Blighted Marshal"
+      },
+      "text": {
+        "tr": "Emir veren ses bir çığlığa dönüştü; subay artık komuta etmiyor, önüne çıkan her şeye yürüyor. Yamalı zırhının altından kızıl bir ışık sızıyor. Eskisi kadar ağır, ama çok daha hırçın. Zehir ondan akıp gider, karanlığa kısmen dayanır; kutsal ışık ise zırhının yamalarını söker.",
+        "en": "The voice that gave the orders has become a scream; the officer no longer commands, he only marches at whatever stands before him. A red glow leaks from beneath the patched armour. He is as heavy as ever and far more savage. Poison runs off him and darkness only half-bites, but holy light tears at the patches."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_frost_wisp",
+      "title": {
+        "tr": "Kırağı Ruhu",
+        "en": "Frost Wisp"
+      },
+      "text": {
+        "tr": "Zirvelerin donmuş tılsımlarından biri, Metin’in dokunuşuyla uyanıp ince bir buz ruhuna dönüştü; havada süzülür. Uzakta durur, buz kıymıkları fırlatarak sizi yaklaştırmaz. Buz ona işlemez, ateş ise o kırılgan gövdeyi bir anda dağıtır.",
+        "en": "A frozen charm of the high peaks, woken by the Metin’s touch into a thin spirit of ice that drifts on the air. It keeps its distance and flings shards to hold you off. Ice does nothing to it; fire scatters that brittle body in an instant."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_cruel_frost_wisp",
+      "title": {
+        "tr": "Acımasız Kırağı Ruhu",
+        "en": "Cruel Frost Wisp"
+      },
+      "text": {
+        "tr": "Bu buz ruhu daha koyu, daha sert bir maviye boyanmış; Metin yağmuru ona sessizlik yerine zalimlik fısıldadı. Mesafesini korur ve acımadan ateş eder. Soluk kardeşi gibi ateşten ürker, buza kayıtsızdır; mavisi ne kadar koyuysa hıncı da o kadar soğuktur.",
+        "en": "This spirit has been stained a darker, harder blue; the Metin rain whispered cruelty into it where it should have found silence. It keeps its distance and shoots without mercy. Like its paler kin it fears fire and shrugs off ice, and the darker the blue, the colder the spite."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_glacier_orca",
+      "title": {
+        "tr": "Buzul Orkası",
+        "en": "Glacier Orca"
+      },
+      "text": {
+        "tr": "Buzdan oyulmuş bir katil balina; sanki kar açık denizmiş gibi yığınların arasından kayarak üstünüze gelir. Gövdesini eski bir buzul verdi, açlığını Metin. İzinizi bırakmaz ve doğrudan çarpar; yan tarafına ateş çatlak açar.",
+        "en": "A killer whale carved from glacial ice, gliding through the drifts as though the snow were open sea. An old glacier gave it a body; the Metin gave it hunger. It never loses your trail and rams straight in; fire cracks open that icy flank."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_rime_beetle",
+      "title": {
+        "tr": "Kırağı Böceği",
+        "en": "Rime Beetle"
+      },
+      "text": {
+        "tr": "Buzul çatlaklarından saçılan, ışıltılı kabuklu böcek sürüleri. Hepsinin tek bir niyeti var: size ulaşıp donmuş kabuklarını tek bir patlamayla parçalamak. Yakınınıza gelmelerine izin vermeyin; uzaktan vurulan sürü, ayağınızın dibinde patlayan sürüden çok daha az acıtır.",
+        "en": "Swarms of glittering-shelled insects spilling out of the glacier cracks. Each has one purpose: reach you and burst in a spray of frozen shell. Don’t let them close the gap; a swarm shot down at range stings far less than one that goes off at your feet."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_snow_lion",
+      "title": {
+        "tr": "Kar Aslanı",
+        "en": "Snow Lion"
+      },
+      "text": {
+        "tr": "Karın altında pusuya yatan bir buz arslanı; yelesi kırağı, pençeleri soğuk çelik. Etrafınızda yavaşça döner, sonra tek bir sıçrayışla aradaki mesafeyi yutar. Sıçrayışı okumak zor değil: yana kayıp indiği yeri vurun.",
+        "en": "A lion of ice that lies in ambush under the snow, its mane all hoarfrost, its claws cold steel. It prowls around you in a slow circle and then devours the distance in a single leap. The leap is easy to read: slip aside and strike where it lands."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_frost_revenant",
+      "title": {
+        "tr": "Buz Hortlağı",
+        "en": "Frost Revenant"
+      },
+      "text": {
+        "tr": "İnsan biçiminde bir buz yaratık; eski bir dağ avcısının bedeni gibi, ama içinde ne kan kalmış ne acı. Peşinizden yürür; çevresine yayılan dondurucu aura, yakında durana yavaş yavaş zarar verir. Dibine girmeyin: menzilden vurun, yanınıza ateş alın.",
+        "en": "A shape of ice in the form of a man, like the body of some old mountain trapper, though nothing runs in it now, neither blood nor pain. It walks you down, and the freezing aura around it gnaws at anyone who stays close. Don’t brawl with it; keep your distance and bring fire."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_yeti",
+      "title": {
+        "tr": "Yeti",
+        "en": "Yeti"
+      },
+      "text": {
+        "tr": "Dağın beyaz devi; kalın postu donmuş karla kaplı, kolları bir ağaç gövdesi kadar kalın. Yavaş yürür, ama menzile girince devasa bir sıçrayışla tepenize iner. Buz ona işlemez; ateş postunu yakar. Sıçrayışı görünce gölgesinden çıkın.",
+        "en": "The white giant of the mountain, its thick pelt crusted with frozen snow, its arms as heavy as tree trunks. It lumbers slowly, then crashes down on you in a huge leap once you are in range. Ice does nothing to it; fire singes through the pelt. When you see the jump, get out of its shadow."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_enemy_ice_golem",
+      "title": {
+        "tr": "Buz Golemi",
+        "en": "Ice Golem"
+      },
+      "text": {
+        "tr": "Dağın kendi eliyle yontulmuş buzdan bir dev; içinde ne can var ne düşünce, yalnızca Metin’in verdiği bir emir. Ağır adımlarla gelir ve yumruğu bir çığ gibi iner. Sıçrayarak mesafeyi kapatabilir, bu yüzden yavaşlığına güvenip yakınında oyalanmayın. Ateş o buz kayayı çatlatır; buz ise ona hiçbir şey yapmaz.",
+        "en": "A giant of ice shaped by the mountain’s own hand, with no life in it and no thought, only an order the Metin gave. It lumbers in and its fist lands like an avalanche. It can leap to close the distance, so do not trust its slowness and linger near. Fire cracks that boulder of ice; ice itself does nothing."
+      },
+      "unlock": "enter:seori"
+    },
+    {
+      "id": "codex_boss_boss_blighted_swordsman",
+      "title": {
+        "tr": "Vebalı Kılıç Ustası — Veba Kılıcı",
+        "en": "Blighted Swordsman — Blade of the Plague"
+      },
+      "text": {
+        "tr": "Nöbet kalesinin en usta kılıcı ölmedi, yalnızca pas tuttu. Çürük kesikler savurur, bir atılışta aranızdaki mesafeyi yutar, ardından çevresine bir veba sisi bırakır; o sisin içinde her nefes bir yüktür. Yere serildiğini sandığınız anda ölüler onun çevresinde yeniden doğrulur. Kalenin son kılıcıdır; onu devirmek Seori’nin ölü alayına vurulan ilk gerçek darbedir.",
+        "en": "The finest blade of the watch-fort never died; it only rusted. He throws rotting cuts, swallows the gap between you in a single lunge, then leaves a bank of plague-mist behind, where every breath is a burden. Just when you think he is down, the dead rise again around him. He is the fort’s last sword, and cutting him down is the first real blow against Seori’s dead host."
+      },
+      "unlock": "boss:boss_blighted_swordsman"
+    },
+    {
+      "id": "codex_boss_boss_blighted_archer",
+      "title": {
+        "tr": "Vebalı Okçu — Zehirli Gölge",
+        "en": "Blighted Archer — Venomous Shade"
+      },
+      "text": {
+        "tr": "Surların en keskin gözü, öldükten sonra bir gölgeye dönüştü. Ok sağanağı bırakır, kendi gölgesinden adım atıp başka bir yerde belirir, gökten zehir yağdırır ve sonunda çevresine bir veba halkası yayar. Onu köşeye sıkıştırmaya çalışmak boşuna; gölge nereye düşerse orada bitiverir. Durmayın: yerinde duran hedef onun için yalnızca bir sonraki oktur.",
+        "en": "The sharpest eye on the walls became a shade after death. He looses volleys of arrows, steps through his own shadow to appear elsewhere, calls down a shower of venom, and finally spreads a ring of plague around himself. Trying to corner him is pointless; the shade turns up wherever darkness falls. Keep moving: a still target is only his next arrow."
+      },
+      "unlock": "boss:boss_blighted_archer"
+    },
+    {
+      "id": "codex_boss_boss_blighted_marshal",
+      "title": {
+        "tr": "Vebalı Önder — Veba Alayı’nın Komutanı",
+        "en": "Blighted Marshal — Commander of the Plague Host"
+      },
+      "text": {
+        "tr": "Nöbet kalesinin komutanı, askerlerini ölümden sonra da safta tuttu. Yeri sarsan bir darbeyle mezarları yarar, gövdesindeki hastalık yumrularını patlatır, düşenleri yeniden saflara çağırır ve alana ağır sporlar salar. Alayın yükü onun omuzlarındadır; çevrenizdeki ölüleri çabuk eritin, yoksa her çağrısı sürüyü yeniden doldurur. O düştüğünde Seori’nin ölüleri ilk kez emirsiz kalır.",
+        "en": "The commander of the watch-fort kept his soldiers in rank even after death. A ground-shaking slam splits the graves open, plague blisters burst from his body, he calls the fallen back to the line, and heavy spores drift out over the field. The host’s weight rests on his shoulders, so cut down the dead around you fast, or every call refills the swarm. When he falls, Seori’s dead are left without orders for the first time."
+      },
+      "unlock": "boss:boss_blighted_marshal"
+    },
+    {
+      "id": "codex_boss_boss_ice_golem",
+      "title": {
+        "tr": "Buz Golemi — Donmuş Dağın Kalbi",
+        "en": "Ice Golem — Heart of the Frozen Mountain"
+      },
+      "text": {
+        "tr": "Seori’nin buz devleri bu dağın göğsünden yontuldu; ilki ve en büyüğü hâlâ içinde bir kalp taşır. Buzul yumruğuyla yeri yarar, çevresinden donmuş bir halka yayar, beyaz bir kar fırtınasıyla gözlerinizi alır, tepeden çığ yuvarlar. Canı azaldığında buz öfkesine kapılır ve her darbe daha hızlı, daha sert iner. Kalbi kırıldığında Seori zirvesine giden yol açılır.",
+        "en": "The ice giants of Seori were hewn from the chest of this mountain, and the first and greatest of them still carries its heart. It splits the ground with a glacier fist, sends a frozen ring spreading outward, blinds you in a white squall, and rolls an avalanche down from above. Wounded, it falls into an ice rage, and every blow lands faster and harder. When the heart breaks, the road to the Seori summit opens."
+      },
+      "unlock": "boss:boss_ice_golem"
+    },
+    {
+      "id": "codex_boss_boss_miho",
+      "title": {
+        "tr": "Miho — Seori’nin Dokuz Kuyruklu Ruhu",
+        "en": "Miho — Nine-Tailed Spirit of Seori"
+      },
+      "text": {
+        "tr": "Büyük Ecel Metini zirveye düştüğünde, dağın eski bekçi ruhu onun içinde dokuz kuyruğunun hepsiyle öfkeye kapılarak uyandı. Soğuk mavi tilki ateşleri savurur, gölgeden gölgeye adım atar, kuyruklarını yelpaze gibi açıp bıçak rüzgârı yağdırır; buz nefesi yeri dondurur, çağrısıyla Yetiler dağdan iner. Canı azaldıkça beyaz bir patlama alanı süpürür ve intikam ruhları peşinize düşer. Dindiğinde dağ sessizleşir; uzaklardan gelen kızıl bir ışık kalır geriye.",
+        "en": "When the Great Metin of Demise struck the summit, the mountain’s ancient guardian spirit woke inside it with all nine tails ablaze in rage. It hurls cold blue fox-fire, steps from shadow to shadow, fans its tails open into a storm of blades, freezes the ground with its breath, and calls the yetis down from the heights. As its strength wanes, a white nova sweeps the field and vengeful spirits dog your steps. When it finally quiets, the mountain falls silent and only a red glow from far away remains."
+      },
+      "unlock": "boss:boss_miho"
+    },
+    {
+      "id": "codex_metin_metin_grit",
+      "title": {
+        "tr": "Sebat Metini",
+        "en": "Metin of Grit"
+      },
+      "text": {
+        "tr": "Sebat Metini, bedenin yorulmayı unuttuğu taştır; Seori’nin ölülerini uykularından kaldırır ve bir daha dinlendirmez. Çatlaklarından sızan soluk ışık çevresindeki kalabalığı durmadan çoğaltır: tek bir taş, koca bir alayın işini görür. Yürüyen ölüler yorulmaz, bu yüzden taşın dibinde soluklanacak bir boşluk bulunmaz. Kırmak için kalabalığı yarıp geçin; taş çatlayınca yeni sürülerin akışı da kesilir.",
+        "en": "The Metin of Grit is the stone in which a body forgets how to tire; it drags Seori’s dead out of their sleep and never lets them rest again. Pale light seeps from its cracks and swells the crowd around it without end, so one stone does the work of a whole regiment. The walking dead never weary, so there is no gap beside it to catch your breath. Cut through the crowd to break it; once it cracks, the flow of fresh packs is cut off."
+      },
+      "unlock": "metin:metin_grit"
+    },
+    {
+      "id": "codex_metin_metin_fiend",
+      "title": {
+        "tr": "Cin Metini",
+        "en": "Metin of the Fiend"
+      },
+      "text": {
+        "tr": "Cin Metini, kar fırtınasının ortasında kızıl bir yara gibi yanar. Çevresindeki karı eritip kara toprağı açığa çıkarır, sonra etrafına bir ateş halkası çeker. Halka içinde oyalananı kavurur; taşa ya ateşi hızla aşarak ya da uzaktan ulaşın. Buz yaratıklarının bile ürktüğü bu kızıl ışık, Daeryeol’un habercisidir.",
+        "en": "The Metin of the Fiend burns like a red wound in the middle of the blizzard. It melts the snow around it down to black earth, then draws a ring of fire about itself. The ring scorches whatever lingers inside, so reach the stone by crossing the fire quickly or by striking from range. Even the ice creatures shy from that red light, a herald of Daeryeol."
+      },
+      "unlock": "metin:metin_fiend"
+    },
+    {
+      "id": "codex_metin_metin_demise",
+      "title": {
+        "tr": "Ecel Metini",
+        "en": "Metin of Demise"
+      },
+      "text": {
+        "tr": "Ecel Metini, Seori’nin ölülerini ayağa kaldıran zehrin küçük bir kaynağıdır; yeşilimsi çatlaklarından sızan sıvı yere yavaş yavaş yayılır. Taşın dibindeki kar yeşile boyanır, nefes alınca boğaza yapışan bir buğu yükselir. Zehir alanı büyüdükçe içinde durmak imkânsızlaşır; taşa vururken alanın kenarında kalın. Ölüler zehirden pek etkilenmez, ama siz etkilenirsiniz.",
+        "en": "The Metin of Demise is a lesser well of the poison that raised Seori’s dead, a green liquid seeping slowly from its cracks across the ground. The snow beneath it stains green, and a mist rises that clings to the throat with every breath. As the poison field spreads, standing in it becomes impossible, so strike the stone from the edge. The dead barely feel it; you will."
+      },
+      "unlock": "metin:metin_demise"
+    },
+    {
+      "id": "codex_metin_metin_great_demise",
+      "title": {
+        "tr": "Büyük Ecel Metini",
+        "en": "Great Metin of Demise"
+      },
+      "text": {
+        "tr": "Seori’nin zirvesine düşen Büyük Ecel Metini hastalığın da buzun da ortak kaynağıydı: aşağıdaki ölüleri o kaldırdı, yukarıdaki buzulları o öfkelendirdi. Çevresinde kesintisiz bir hasar aurası dönüp yaklaşan her şeyi içten içe kemirir. Miho bu taşın içinden doğdu ve onu sonuna dek korudu. Ruhu dindiğinde taş çatladı; çatlaktan ufkun ötesinde yanan kızıl bir ışık göründü.",
+        "en": "The Great Metin of Demise fell on Seori’s summit and was the shared source of plague and ice: it raised the dead below and it enraged the glaciers above. A constant damaging aura wheels around it, gnawing at whatever comes near from the inside out. The Nine-Tailed spirit was born from this stone and defended it to the end. When the spirit’s rage died the stone split, and through the crack a red fire could be seen burning far beyond the horizon."
+      },
+      "unlock": "boss:boss_miho"
+    },
+    {
+      "id": "codex_enemy_blaze_cub",
+      "title": {
+        "tr": "Alev Yavrusu",
+        "en": "Blaze Cub"
+      },
+      "text": {
+        "tr": "Alev Kaplanı’nın boyunduruğundaki genç kaplanlar; postları efendisininkinden daha ince ve açık, ama aynı kor ışığıyla parlar. Çevrenizde dolanıp fırsat kollar, sonra bir atılışla pençeleriyle çarpar. Hızlıdırlar; yerinizde durmayın, atılış sırasında yana kayın.",
+        "en": "Young tigers bound in the yoke of the Blaze Tiger, their pelts thinner and paler than their master’s but lit by the same ember glow. They circle you, wait for an opening, then bound in with claws out. They are quick; do not stand still, and slip aside as they come in."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_ash_wisp",
+      "title": {
+        "tr": "Kül Ruhu",
+        "en": "Ash Wisp"
+      },
+      "text": {
+        "tr": "Ateşte can verenlerin geride kalan alevi; havada süzülür, yüzü yok, yalnızca bir parıltısı var. Uzaktan kor oklar fırlatır ve yaklaşmanıza izin vermez. Ateşe dirençlidir, buza zayıf: soğuk onu hemen söndürür.",
+        "en": "The flame left behind by those who died in fire; it drifts through the air with no face, only a glow. It throws embers from a distance and will not let you close. It shrugs off fire but is weak to ice; cold snuffs it out fast."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_greater_ash_wisp",
+      "title": {
+        "tr": "Büyük Kül Ruhu",
+        "en": "Greater Ash Wisp"
+      },
+      "text": {
+        "tr": "Hayaletin daha yoğun, daha öfkeli bir hâli; bir kat iri, rengi turuncuya kaymış. Aynı uzak mesafeden ateş eder ama kor okları daha kalın ve daha sıcaktır; sürünün gerisinde durup sizi köşeye sıkıştırır. Ateşe dayanır, buzda çözülür.",
+        "en": "A denser, angrier ghost, a size larger, its colour shifted toward orange. It shoots from the same long range, but its bolts are thicker and hotter, and it lurks at the back of the pack to pin you into a corner. It endures fire and dissolves in ice."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_blaze_tiger",
+      "title": {
+        "tr": "Alev Kaplanı",
+        "en": "Blaze Tiger"
+      },
+      "text": {
+        "tr": "Daeryeol’un kaplanları kayadan ve yanardağdan doğmuş gibidir; postlarının altında kor akar. Düz bir hat boyunca bütün ağırlığıyla yüklenir; hazırlandığını görünce yana çekilmek yeter. Çarparsa taş gibi vurur, ama buz onu hızla soğutur.",
+        "en": "Daeryeol’s tigers seem born of rock and volcano, with embers running beneath their pelts. It charges in a straight line with its full weight, and sidestepping once you see it set is enough. If it connects it hits like a boulder, but ice cools it fast."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_living_blaze",
+      "title": {
+        "tr": "Canlı Alev",
+        "en": "Living Blaze"
+      },
+      "text": {
+        "tr": "Yürüyen bir ateş sütunu; insan biçimini çoktan unutmuş, yalnızca yanmayı hatırlıyor. Yavaş ve ağırdır, ama çevresindeki sıcak aura yakındakini kavurur. Yakın dövüşe girmeyin; uzaktan, mümkünse buzla vurun.",
+        "en": "A walking pillar of fire that has long forgotten the shape of a man and remembers only how to burn. It is slow and heavy, but the heat around it scorches anything close. Do not trade blows in its face; strike from range, and with ice if you have it."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_blaze_knight",
+      "title": {
+        "tr": "Alev Şövalyesi",
+        "en": "Blaze Knight"
+      },
+      "text": {
+        "tr": "Kor zırhlı bir savaşçı; zırhın altında hâlâ bir ruh var mı belli değil, ama silahı hep kızgın demir gibi parlar. Ağır ve yıkıcıdır; yaklaşınca soluğundan bir alev dalgası yollar. Gövdesi döküm metale benzer: ona yakın durup çarpışmak yerine mesafe alıp buzla soğutun. Köz Kral’ın muhafızlarının en güçlüsü olduğu söylenir.",
+        "en": "A warrior in armour of living coal; whether any spirit remains beneath it is hard to say, but its weapon always glows like hot iron. It is heavy and ruinous, and it breathes out a wave of flame as it closes in. Its body is like poured metal, so trade distance for blows and cool it with ice. They say it is the strongest of the Pyre King’s guard."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_lava_troll",
+      "title": {
+        "tr": "Lav Golemi",
+        "en": "Lava Troll"
+      },
+      "text": {
+        "tr": "Soğumuş lavdan yontulmuş, içi yeniden kızaran kocaman bir golem. Ağır adımlarla gelir; menzile girince sıçrayıp tepenize iner. Gövdesi ateşe dayanıklıdır, buza karşı çatlak; sıçrayışın altından çekilin, gerisini soğuk yapsın.",
+        "en": "A hulking troll of cooled lava, glowing from within again. It lumbers in, then leaps to land on your head once it is in range. Its hide laughs at fire but cracks under frost; get out from under the leap and let the cold do the rest."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_cinderbeard",
+      "title": {
+        "tr": "Kül Sakallı",
+        "en": "Cinderbeard"
+      },
+      "text": {
+        "tr": "Çenesinden canlı bir alev sakal dökülen, golemlerin en küçüğü; yaşlı bir kâhin gibi gerilerde durur. Sakalından kor topları fırlatır ve büyük kardeşlerinin gölgesinden pek çıkmaz. Önce onu bulun: ışığı parlak, gövdesi ince, buza karşı kırılgandır.",
+        "en": "The smallest of the lava giants, with a beard of living flame streaming from its chin; it stands well back, like an old seer. It hurls fireballs from the beard and rarely steps out of its larger kin’s shadow. Find it first: its fire is bright but its body is thin and brittle against ice."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_enemy_basalt_general",
+      "title": {
+        "tr": "Bazalt Generali",
+        "en": "Basalt General"
+      },
+      "text": {
+        "tr": "Kor golemlerinin komutanı; boyu diğerlerinin bir buçuk katı, her adımı yeri çatlatır. Sıçrayarak mesafeyi kapatır ve indiği yeri sarsar. Öbür golemler ona bakarak yürür: o düşünce ordunun dizilişi dağılır. Yakın dövüşe girmeyin; buz ona en çok işleyen şeydir.",
+        "en": "The commander of the lava golems, half again as tall as the rest, each step cracking the ground. It closes the distance with a leap and shakes the earth where it lands. The other golems march with their eyes on it, and when it falls the formation breaks. Do not brawl with it; ice is the one thing that bites into it."
+      },
+      "unlock": "enter:daeryeol"
+    },
+    {
+      "id": "codex_boss_boss_blaze_tiger",
+      "title": {
+        "tr": "Alev Kaplanı — Alevlerin Pençesi",
+        "en": "Blaze Tiger — Claw of Flame"
+      },
+      "text": {
+        "tr": "Daeryeol kaplanlarının en yaşlısı; postunun çatlaklarında kor yanar, pençeleri erimiş kayadan. Alev saçarak üstünüze atılır, pençesiyle yerden magma söker, soluğuyla bir kor bulutu bırakır. Köleleri onun gölgesinde koşar; kendisi de bir sürünün ağırlığıyla vurur. Düştüğünde ateş diyarı sizi ilk kez ciddiye alır.",
+        "en": "The eldest of Daeryeol’s tigers, with embers glowing in the cracks of its hide and claws of molten rock. It pounces in a burst of flame, rips magma from the ground with a swipe, and breathes out a drifting cloud of cinders. Its minions run in its shadow, and it hits with the weight of a whole pack. When it falls, the fireland begins to take you seriously."
+      },
+      "unlock": "boss:boss_blaze_tiger"
+    },
+    {
+      "id": "codex_boss_boss_greater_ash_wisp",
+      "title": {
+        "tr": "Büyük Kül Ruhu — Yanık Ruh",
+        "en": "Greater Ash Wisp — Cinder Wraith"
+      },
+      "text": {
+        "tr": "Daeryeol’da yanıp kül olan her canın parıltısı bu hayalette toplanmış gibi. Alev oklarını art arda gönderir, bir yerde titreşip sönerek başka bir yerde yeniden yanar, gökten kül yağdırır ve ardınıza küçük alevler salar. Gözlerinizi şaşırtır ama hep yerinde duran hedefi seçer; hareket edin. Dağılırken geriye yalnızca soğuk bir kül bırakır.",
+        "en": "Every life that burned to ash in Daeryeol seems to have left its glow in this one wraith. It fires bolts of flame in quick succession, flickers out in one place and flares up in another, rains cinders from above, and sets small wisps on your trail. It plays tricks on your eyes but always picks the target that stands still, so keep moving. When it breaks apart it leaves nothing but cold ash."
+      },
+      "unlock": "boss:boss_greater_ash_wisp"
+    },
+    {
+      "id": "codex_boss_boss_basalt_general",
+      "title": {
+        "tr": "Bazalt Generali — Magma Kumandanı",
+        "en": "Basalt General — Magma Warlord"
+      },
+      "text": {
+        "tr": "Kor golemlerinin başındaki kumandan; gövdesi soğuyan lavdan, kaya zırh gibi örülmüş. Magma yumruğuyla yeri parçalar, çevresine bir lav halkası döker, yerden ateş fışkırtır ve bir kükremeyle golemlerini yardıma çağırır. Yavaş ama yıkıcıdır; ona mesafe verin, halkanın içinde kalmayın. O düştüğünde kor ordusunun dizilişi bozulur, ama ateşin kralı hâlâ tahtındadır.",
+        "en": "The warlord of the ember golems, his body built of cooling lava like rock armour. He shatters the ground with a magma fist, pours a ring of lava around himself, throws fire up out of the earth, and bellows for his trolls. He is slow but ruinous: give him room and never stay inside the ring. When he falls the ember army loses its line, but the fire king still holds his throne."
+      },
+      "unlock": "boss:boss_basalt_general"
+    },
+    {
+      "id": "codex_boss_boss_pyre_king",
+      "title": {
+        "tr": "Köz Kral — Daeryeol’un Ateş Kralı",
+        "en": "Pyre King — Fire King of Daeryeol"
+      },
+      "text": {
+        "tr": "Daeryeol’un tacını alevden döküp kendi başına geçiren kral; sarayı yok, tahtı yok, yalnızca yanan bir ovası var. Soluğuyla ova yalanır, gökten meteorlar iner, tacından patlayan bir nova herkesi geri savurur, asasını yere vurunca yer çatlar. Maiyetini çağırır; hiddeti yükseldikçe vuruşları sıklaşır. Düştüğünde ateş diyarının son bekçisi, yağmurun kaynağı sizi bekler.",
+        "en": "The king who cast Daeryeol’s crown from living flame and set it on his own head; he has no palace and no throne, only a burning plain. His breath scours the land, meteors fall from the sky, a nova bursts from the crown and hurls everyone back, and the sceptre splits the ground when it strikes. He summons his court, and as his wrath rises his blows come faster. When he falls, the last guardian of the fireland waits: the source of the rain."
+      },
+      "unlock": "boss:boss_pyre_king"
+    },
+    {
+      "id": "codex_boss_boss_scarlet_wyrm",
+      "title": {
+        "tr": "Al Ejder — Metin Yağmurunun Kaynağı",
+        "en": "Scarlet Wyrm — Source of the Metin Rain"
+      },
+      "text": {
+        "tr": "Gökyüzü ilk bu kanatların üstünde yarıldı; üç krallığa yağan her Metin onun yanık kokusunu taşıyordu. Soluğu ovayı yalar, gökten meteor sağanağı iner, pullarından alev halkaları yuvarlanır, kor yağmuru yollar ve yavruları her çağrısına gelir. Kuyruğu bir kuşatma balyozu gibi yeri çatlatır; gücü azaldıkça kıyameti toplayıp bütün gazabını salıverir. O düştüğünde yağmur diner, Büyük Kıyamet Ateşi Metini çatlar.",
+        "en": "The sky split open first above these wings, and every Metin that fell on the three kingdoms carried the smell of its burning. Its breath scours the plain, meteors pour from the heavens, rings of flame roll off its scales, embers fall in volleys, and its brood answers every call. Its tail cracks the ground like a siege hammer, and as its strength ebbs it gathers a cataclysm and lets its whole rage loose. When it falls the rain stops, and the Great Doomfire Metin splits."
+      },
+      "unlock": "boss:boss_scarlet_wyrm"
+    },
+    {
+      "id": "codex_metin_metin_slaughter",
+      "title": {
+        "tr": "Mezbaha Metini",
+        "en": "Metin of Slaughter"
+      },
+      "text": {
+        "tr": "Mezbaha Metini ateş diyarının kendi sıcağından bile kızıl parlar; içinde yanan öfke, hiç bitmemiş bir cinayetin hatırası gibidir. Çevresinde sürekli bir hasar aurası döner, yaklaşan her şeyi yavaş yavaş kavurur; kor yaratıkları onun ışığında cüret kazanır. Taşın dibinde oyalanmak kendini harcamaktır: önce vurun, geri çekilin, sonra yine vurun. Ovada yanan bütün öfke bu taşta toplanır; kırdığınız an ateş diyarı bir kez nefes alır.",
+        "en": "The Metin of Slaughter glows redder than the fireland’s own heat, and the rage burning inside it feels like the memory of a killing that never ended. A constant damage aura wheels around it, scorching everything that comes near, and the ember creatures grow bolder in its light. Lingering at its foot is a waste of yourself: strike, withdraw, strike again. All the anger of the burning plain gathers in this stone, and when you break it the fireland draws one breath."
+      },
+      "unlock": "metin:metin_slaughter"
+    },
+    {
+      "id": "codex_metin_metin_great_doomfire",
+      "title": {
+        "tr": "Büyük Kıyamet Ateşi Metini",
+        "en": "Great Doomfire Metin"
+      },
+      "text": {
+        "tr": "Büyük Kıyamet Ateşi Metini, yanardağ ağzının tam ortasına düşen, yağmurun ilk ve en ağır taşıdır; Al Ejder onun içinde uyandı. Çevresinde ağır bir hasar aurası döner; havası nefes değil, alevdir. Gökyüzündeki yarık bu taşın tepesine kadar iner ve diğer bütün Metinler onun yankısı gibi yağmıştır. Ejderha düşünce taş çatlar; yarıktan sızan ışık bu kez kırmızı değil, sabahın rengindedir.",
+        "en": "The Great Doomfire Metin fell into the very heart of the volcano’s crater, the first and heaviest drop of the rain, and the Scarlet Wyrm woke inside it. A heavy damage aura wheels around it, and the air is flame instead of breath. The rift in the sky reaches down to this stone, and every other Metin fell like its echo. When the dragon falls the stone splits, and the light that seeps from the crack is no longer red but the colour of morning."
+      },
+      "unlock": "boss:boss_scarlet_wyrm"
+    }
+  ]
+}

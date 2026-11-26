@@ -1,0 +1,58 @@
+import type { FelineParams } from '../../archetypes/feline/index.ts';
+import { rgb } from '../../core/paint/painter.ts';
+
+
+
+
+
+export const tigerGod: FelineParams = {
+  id: 'tiger_god',
+  kind: 'boss',
+  seed: 194,
+  scale: 1.7,
+  bodyLength: 0.96,
+  chestDepth: 1.18,
+  chestWidth: 1.28,
+  shoulderRise: 1.5,
+  crouch: 0.3,
+  legLength: 1.08,
+  legThick: 1.5,
+  paw: 1.5,
+  claws: 0.9,
+  headScale: 1.85,
+  skullWidth: 1.15,
+  muzzleLength: 0.85,
+  muzzleWidth: 1.15,
+  fangs: 1.4,
+  brow: 1.4,
+  neckThick: 1.5,
+  neckLength: 0.9,
+  earSize: 0.85,
+  tailLength: 0.8,
+  tailThick: 1.15,
+  tailCurl: 0.5,
+  cheekRuff: 1.6,
+  mane: 1.3,
+  maneStyle: 'flame',
+  ridge: 'gilt',
+  horns: 0,
+  regalia: true,
+  pattern: 'celestial',
+  voxel: 0.0115,
+  tris: 13800,
+  palette: {
+    coat: rgb('#f2e4c4'),
+    coatLight: rgb('#fff8e6'),
+    coatDark: rgb('#d6bc84'),
+    light: rgb('#fffaf0'),
+    stripe: rgb('#6e4214'),
+    accent: rgb('#e8a41c'),
+    accentHot: rgb('#ffe58a'),
+    nose: rgb('#b86a58'),
+    eye: rgb('#ffd24a'),
+    mouth: rgb('#b8404a'),
+    inner: rgb('#f0dcc4'),
+    claw: rgb('#f0e6c8'),
+    horn: rgb('#d8b050'),
+  },
+};

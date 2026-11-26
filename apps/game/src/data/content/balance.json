@@ -1,0 +1,194 @@
+{
+  "runLength": 900,
+  "xpCurve": {
+    "base": 26,
+    "growth": 12,
+    "accel": 1.15
+  },
+  "cardsPerLevel": 3,
+  "rerollsPerRun": 3,
+  "banishesPerRun": 1,
+  "skipsPerRun": 1,
+  "maxActiveSkills": 6,
+  "maxPassives": 6,
+  "rarityWeights": {
+    "common": 60,
+    "uncommon": 25,
+    "rare": 10,
+    "epic": 4,
+    "legendary": 1
+  },
+  "chestCost": {
+    "base": 15,
+    "perOpen": 12
+  },
+  "armorK": 100,
+  "caps": {
+    "cooldown": 0.6,
+    "lifesteal": 0.2,
+    "regenPctPerSec": 0.03,
+    "evasion": 0.5,
+    "critChance": 0.9
+  },
+  "enemyHpPerMin": 0.1,
+  "enemyDamagePerMin": 0.09,
+  "hard": {
+    "hp": 1.6,
+    "damage": 1.4,
+    "count": 1.25,
+    "reward": 1.5
+  },
+  "talentXp": {
+    "perMinute": 40,
+    "perKill": 0.5,
+    "perElite": 8,
+    "perBoss": 120,
+    "perMetin": 60,
+    "victory": 600
+  },
+  "runOptions": {
+    "density": {
+      "min": 1.0,
+      "max": 3.0,
+      "step": 0.25,
+      "rewardWeight": 0.25
+    },
+    "health": {
+      "min": 1.0,
+      "max": 3.0,
+      "step": 0.25,
+      "rewardWeight": 0.2
+    },
+    "damage": {
+      "min": 1.0,
+      "max": 3.0,
+      "step": 0.25,
+      "rewardWeight": 0.3
+    },
+    "speed": {
+      "min": 1.0,
+      "max": 3.0,
+      "step": 0.25,
+      "rewardWeight": 0.2
+    },
+    "rewardMax": 2.0
+  },
+  "blacksmith": {
+    "successRate": [
+      1,
+      0.95,
+      0.85,
+      0.7,
+      0.55,
+      0.4,
+      0.3,
+      0.22,
+      0.15
+    ],
+    "yeopCost": [
+      500,
+      1000,
+      2000,
+      3500,
+      5500,
+      8000,
+      12000,
+      18000,
+      26000
+    ],
+    "shardCost": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      12,
+      18,
+      26,
+      40
+    ]
+  },
+  "triggers": {
+    "pinned": {
+      "n": 5,
+      "r": 4
+    },
+    "engaged": {
+      "n": 4,
+      "r": 8
+    },
+    "hurt": {
+      "frac": 0.06,
+      "window": 2
+    },
+    "danger": {
+      "hp": 0.4,
+      "lossFrac": 0.25,
+      "window": 6
+    },
+    "elite": {
+      "r": 10
+    },
+    "boss": {
+      "r": 14
+    },
+    "volley": {
+      "n": 2,
+      "r": 8
+    },
+    "ally": {
+      "r": 12,
+      "hp": 0.55
+    },
+    "patienceMul": 1,
+    "refundCap": 0.1,
+    "extendCap": 0.5,
+    "stackCap": 0.6,
+    "burstCap": 2,
+    "drainCap": 1.5,
+    "veilRepick": 16,
+    "lethalGuard": 2.5,
+    "mimic": {
+      "cap": 3,
+      "window": 0.5
+    },
+    "bait": true
+  },
+  "pacts": {
+    "rank": 4,
+    "readyWeight": 1,
+    "byBehavior": {
+      "meleeArc": "sovereign_wrath",
+      "cone": "sovereign_wrath",
+      "spinAura": "quickening",
+      "orbit": "quickening",
+      "persistentAura": "sovereign_eyes",
+      "skyStrike": "sovereign_eyes",
+      "dash": "saddlecraft",
+      "groundZone": "saddlecraft",
+      "selfBuff": "sovereign_boon",
+      "projectile": "follow_through",
+      "homingProjectile": "true_flight",
+      "beam": "swift_invocation",
+      "chain": "swift_invocation",
+      "leap": "sovereign_blood",
+      "shockwave": "sanctified_mail",
+      "summon": "marshals_voice"
+    }
+  },
+  "overflow": {
+    "shards": true,
+    "boon": true,
+    "shardsByRarity": [
+      1,
+      1,
+      2,
+      3,
+      4
+    ],
+    "skipRefund": 1
+  },
+  "chest": {
+    "bossMilestone": true
+  }
+}

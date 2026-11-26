@@ -1,0 +1,448 @@
+/* Phone-tier specimen (C8, dev only, gallery chunk). Scaffolding drawn with the kit v1 tokens of style/tokens.css
+   (lane B) and the same values as fallbacks: charcoal board, pewter bevel, rust title bar, stone plates. The things
+   under test are the real ones (ScrollFade, .ms-edgefade, the core controls, the C8 rules in style/base.css). */
+
+.ms-ui .kp-host {
+  z-index: 15;
+  pointer-events: auto;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 236, 200, 0.05), transparent 60%),
+    var(--k-grain-dark, none),
+    var(--k-board, #1b1a18);
+  background-size: auto, 180px 180px, auto;
+  color: var(--k-text, #ebe3d2);
+}
+.ms-ui .kp {
+  --edge: max(0.8rem, 10px);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* ---- title bar ---------------------------------------------------------------------------------------------------- */
+.ms-ui .kp-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  padding: 0.4rem 0.9rem 0.45rem;
+  border: 1px solid var(--k-line, #0b0a09);
+  border-radius: var(--k-r, 0.375rem);
+  background:
+    linear-gradient(180deg, rgba(255, 220, 180, 0.1), transparent 45%),
+    linear-gradient(180deg, var(--k-rust-hi, #7a3514), var(--k-rust, #57220d) 50%, var(--k-rust-lo, #361307));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 214, 170, 0.32),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.55),
+    0 0 0 1px var(--k-pewter-lo, #2b2825),
+    0 0.3rem 0.8rem rgba(0, 0, 0, 0.6);
+}
+.ms-ui .kp-title {
+  font-family: var(--f-title);
+  font-weight: 700;
+  font-size: max(1.15rem, 15px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-tb-text, #f3ead7);
+  text-shadow: 0 1px 0 #1d0a03, 0 0 0.6rem rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+.ms-ui .kp-readout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  min-width: 0;
+}
+.ms-ui .kp-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.ms-ui .kp-tier {
+  --c: 0.22rem;
+  padding: 0.1rem 0.45rem;
+  font-family: var(--f-num);
+  font-weight: 600;
+  font-size: max(0.8rem, 11px);
+  letter-spacing: 0.04em;
+  color: var(--k-text-3, #9a9183);
+  background: linear-gradient(180deg, #2e2c28, #1d1c19);
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+}
+.ms-ui .kp-tier.is-on {
+  color: #2a1604;
+  background: linear-gradient(180deg, #f7dc95, #c8913f 60%, #8a5a20);
+}
+.ms-ui .kp-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.9rem;
+}
+.ms-ui .kp-facts span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-size: max(0.82rem, 11px);
+}
+.ms-ui .kp-facts i {
+  font-style: normal;
+  color: rgba(243, 234, 215, 0.62);
+}
+.ms-ui .kp-facts b {
+  color: var(--k-tb-text, #f3ead7);
+  font-weight: 700;
+}
+
+/* ---- page + sections ---------------------------------------------------------------------------------------------- */
+.ms-ui .kp-page {
+  flex: 1 1 auto;
+}
+.ms-ui .kp-page-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-areas: 'fades fades' 'tap hints' 'tap safe';
+  align-content: start;
+  gap: 0.8rem;
+  padding: 0.1rem 0.1rem 0.6rem;
+}
+.ms-ui .kp-sec {
+  min-width: 0;
+  padding: 0.7rem 0.9rem 0.85rem;
+  border: 1px solid var(--k-line, #0b0a09);
+  border-radius: var(--k-r, 0.375rem);
+  background:
+    var(--k-grain-dark, none),
+    linear-gradient(180deg, var(--k-board-hi, #24221f), var(--k-board-lo, #121110));
+  background-size: 180px 180px, auto;
+  box-shadow:
+    inset 1px 1px 0 var(--k-pewter-hi, #8b8378),
+    inset -1px -1px 0 var(--k-pewter-lo, #2b2825),
+    inset 0 0 0 3px var(--k-pewter, #4f4a44),
+    inset 0 0 0 4px var(--k-line-in, #0f0e0c),
+    0 0.25rem 0.7rem rgba(0, 0, 0, 0.5);
+}
+.ms-ui .kp-sec--fades {
+  grid-area: fades;
+}
+.ms-ui .kp-sec--tap {
+  grid-area: tap;
+}
+.ms-ui .kp-sec--hints {
+  grid-area: hints;
+}
+.ms-ui .kp-sec--safe {
+  grid-area: safe;
+}
+.ms-ui .kp-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.8rem;
+  margin: 0.15rem 0.2rem 0.65rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(0.95rem, 13px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-gold, #f0cd78);
+  text-shadow: 0 1px 0 #000;
+}
+.ms-ui .kp-h small {
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: max(0.8rem, 11px);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--k-text-3, #9a9183);
+}
+
+/* ---- scroll fade demos -------------------------------------------------------------------------------------------- */
+.ms-ui .kp-lists {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+.ms-ui .kp-demo {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.ms-ui .kp-demo figcaption {
+  font-size: max(0.78rem, 11px);
+  color: var(--k-text-2, #c4baa6);
+  text-align: center;
+}
+.ms-ui .kp-list {
+  height: 12.5rem;
+  border: 1px solid var(--k-line, #0b0a09);
+  border-radius: 0.25rem;
+  background: var(--k-well, #0d0b09);
+  box-shadow: inset 0 0.12rem 0.35rem rgba(0, 0, 0, 0.85), 0 0 0 1px var(--k-well-rim-lo, #2a2723), 0 1px 0 1px rgba(143, 135, 123, 0.18);
+}
+.ms-ui .kp-list-view {
+  height: 100%;
+  padding: 0.25rem 0.35rem;
+}
+.ms-ui .kp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.28rem 0.25rem;
+  border-bottom: 1px solid rgba(90, 84, 75, 0.25);
+}
+.ms-ui .kp-row:last-child {
+  border-bottom: 0;
+}
+.ms-ui .kp-row-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+.ms-ui .kp-row-text b {
+  font-weight: 700;
+  font-size: max(0.88rem, 12px);
+  color: var(--k-text, #ebe3d2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-ui .kp-row-text i {
+  font-style: normal;
+  font-size: max(0.76rem, 11px);
+  color: var(--k-text-3, #9a9183);
+  white-space: nowrap;
+}
+.ms-ui .kp-demo--x {
+  margin-top: 0.8rem;
+}
+.ms-ui .kp-strip {
+  border: 1px solid var(--k-line, #0b0a09);
+  border-radius: 0.25rem;
+  background: var(--k-well, #0d0b09);
+  box-shadow: inset 0 0.12rem 0.35rem rgba(0, 0, 0, 0.85), 0 0 0 1px var(--k-well-rim-lo, #2a2723);
+}
+.ms-ui .kp-strip-view {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.45rem 0.5rem;
+}
+.ms-ui .kp-chip {
+  --c: 0.3rem;
+  flex: none;
+  padding: 0.3rem 0.8rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(0.8rem, 11px);
+  letter-spacing: 0.06em;
+  color: var(--k-text, #ebe3d2);
+  background: linear-gradient(180deg, var(--k-stone-hi, #5f5d55), var(--k-stone, #3d3c37) 45%, var(--k-stone-lo, #292825));
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+  white-space: nowrap;
+}
+
+/* ---- touch target demos ------------------------------------------------------------------------------------------- */
+.ms-ui .kp-ctls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.8rem 0.9rem;
+  align-items: end;
+}
+.ms-ui .kp-meas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.ms-ui .kp-meas--wide {
+  grid-column: span 2;
+}
+.ms-ui .kp-meas-ctl {
+  display: flex;
+  align-items: center;
+  min-height: 3.4rem;
+  max-width: 100%;
+  padding: 0.3rem 0.6rem;
+}
+.ms-ui .kp-meas-ctl > .ms-slider {
+  width: 9.5rem;
+}
+.ms-ui .kp-meas-tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.1rem 0.45rem;
+  padding-left: 0.6rem;
+  font-size: max(0.78rem, 11px);
+  color: var(--k-text-3, #9a9183);
+}
+.ms-ui .kp-meas-tag b {
+  color: var(--k-text, #ebe3d2);
+}
+.ms-ui .kp-meas-tag em {
+  font-style: normal;
+  color: var(--k-info, #ecdca2);
+}
+.ms-ui .kp-meas-tag.is-ok b::after {
+  content: ' ✓';
+  color: var(--k-good, #8fd694);
+}
+.ms-ui .kp-meas-tag.is-bad b::after {
+  content: ' ✗';
+  color: var(--k-bad, #f08070);
+}
+
+/* ---- hints / pressed ---------------------------------------------------------------------------------------------- */
+.ms-ui .kp-hint {
+  margin: 0 0.2rem 0.55rem;
+  font-size: max(0.95rem, 13px);
+  color: var(--k-text-2, #c4baa6);
+}
+.ms-ui .kp-hint .ms-key {
+  margin: 0 0.15rem;
+  vertical-align: 0.1em;
+}
+.ms-ui .kp-press {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.8rem;
+  margin: 0.4rem 0.2rem 0;
+}
+.ms-ui .kp-press small {
+  font-size: max(0.78rem, 11px);
+  color: var(--k-text-3, #9a9183);
+}
+.ms-ui .kp-press-btn {
+  --c: 0.3rem;
+  display: inline-grid;
+  place-items: center;
+  min-width: 6.5rem;
+  min-height: var(--tap);
+  padding: 0 1rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(0.82rem, 12px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text, #ebe3d2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 40%, rgba(0, 0, 0, 0.32)),
+    var(--k-stone, #3d3c37);
+  clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
+}
+.ms-ui .kp-press-btn.is-pressed {
+  translate: 0 0.06rem;
+  scale: 0.97;
+  color: var(--k-text-2, #c4baa6);
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 50%, rgba(255, 255, 255, 0.06)),
+    var(--k-stone-lo, #292825);
+}
+
+/* ---- safe area demo ----------------------------------------------------------------------------------------------- */
+.ms-ui .kp-device {
+  width: 12rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.45rem;
+  border-radius: 1.3rem;
+  background: linear-gradient(180deg, #2f2d29, #141311);
+  box-shadow: inset 0 0 0 1px #6a655c, 0 0.3rem 0.8rem rgba(0, 0, 0, 0.6);
+}
+.ms-ui .kp-device-screen {
+  --safe-t: 28px;
+  --safe-r: 10px;
+  --safe-b: 22px;
+  --safe-l: 10px;
+  --edge: 6px;
+  position: relative;
+  height: 9.5rem;
+  border-radius: 0.95rem;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(200, 80, 50, 0.32) 0 28px, transparent 28px calc(100% - 22px), rgba(200, 80, 50, 0.32) calc(100% - 22px)),
+    linear-gradient(90deg, rgba(200, 80, 50, 0.22) 0 10px, transparent 10px calc(100% - 10px), rgba(200, 80, 50, 0.22) calc(100% - 10px)),
+    #0b0a09;
+}
+.ms-ui .kp-device-screen::before {
+  /* notch */
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 34%;
+  height: 14px;
+  translate: -50% 0;
+  border-radius: 8px;
+  background: #000;
+}
+.ms-ui .kp-device-ui {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.35rem 0.45rem;
+  border: 1px dashed rgba(240, 205, 120, 0.7);
+  border-radius: 0.3rem;
+  background: rgba(240, 205, 120, 0.08);
+}
+.ms-ui .kp-device-ui span {
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: max(0.8rem, 11px);
+  color: var(--k-gold, #f0cd78);
+}
+.ms-ui .kp-device-ui i {
+  font-style: normal;
+  font-size: max(0.72rem, 11px);
+  color: var(--k-text-2, #c4baa6);
+}
+
+/* ---- tiers -------------------------------------------------------------------------------------------------------- */
+.ms-ui.ms-tier-laptop .kp-lists,
+.ms-ui.ms-tier-tablet .kp-lists {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.ms-ui.ms-tier-phone-l .kp-page-view {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.ms-ui.ms-tier-phone-l .kp-lists {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+.ms-ui.ms-tier-phone-l .kp-list {
+  height: 9.5rem;
+}
+.ms-ui.ms-tier-phone-l .kp-lists > :first-child .kp-list {
+  height: auto;
+}
+.ms-ui.ms-tier-phone-p .kp-page-view {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'fades' 'tap' 'hints' 'safe';
+}
+.ms-ui.ms-tier-phone-p .kp-lists {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.ms-ui.ms-tier-phone-p .kp-lists > :first-child {
+  grid-column: 1 / -1;
+}
+.ms-ui.ms-tier-phone-p .kp-list {
+  height: 11rem;
+}
+.ms-ui.ms-tier-phone-p .kp-lists > :first-child .kp-list {
+  height: auto;
+}
+.ms-ui.ms-compact .kp-bar {
+  gap: 0.35rem 0.8rem;
+  padding: 0.35rem 0.6rem;
+}
+.ms-ui.ms-compact .kp-ctls {
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+}

@@ -1,0 +1,1499 @@
+
+
+.ms-ui .tal {
+  /* text floors: 12 px on laptops / desktops (tokens give 11 px at 14.6 px rem), the 10.5 px phone floor stays */
+  --fs-2xs: max(var(--t-2xs), 12px);
+  --fs-xs: max(var(--t-xs), 12px);
+  container: tal / inline-size;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.tal--empty {
+  display: grid;
+  place-items: center;
+}
+.tal-empty {
+  padding: 2rem 3rem;
+  color: var(--k-text-3);
+  font-style: italic;
+}
+.tal-in {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) clamp(19rem, 22vw, 24rem);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1.15rem;
+  padding: 0.4rem 0.5rem 0.55rem;
+}
+.tal-tabs {
+  display: none;
+}
+.tal-tree-sw {
+  display: none;
+}
+
+
+.tal .ms-sunken,
+.tal-strip {
+  background-image: linear-gradient(rgba(8, 7, 6, 0.42), rgba(8, 7, 6, 0.42)), var(--tex-ag-granite, none);
+  background-size: auto, 12rem;
+}
+.tal .ms-sunken--plain {
+  background-image: linear-gradient(rgba(8, 7, 6, 0.36), rgba(8, 7, 6, 0.36)), var(--tex-ag-granite, none);
+}
+
+.ms-touch .tal-grid {
+  --tn: max(var(--tn0), var(--k-tap));
+}
+.ms-compact .tal {
+  --fs-2xs: var(--t-2xs);
+  --fs-xs: var(--t-xs);
+}
+
+/* small kit parts inside the boards keep the text floor */
+.tal .ms-kchip,
+.tal .ms-kseg-btn {
+  font-size: var(--fs-xs);
+}
+.tal .ms-medal,
+.tal .ms-ktab-badge {
+  font-size: var(--fs-2xs);
+}
+
+/* ---- boards ------------------------------------------------------------------------------------------------------ */
+.tal-tree,
+.tal-side {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  animation: ms-rise-in 0.45s var(--ease-soft) both;
+}
+.tal-tree {
+  container: tt / inline-size;
+}
+.tal-tree:nth-of-type(2) {
+  animation-delay: 0.07s;
+}
+.tal-side {
+  animation-delay: 0.14s;
+}
+/* the tree in use gets a warm rim light, the other one stays plain pewter */
+.tal-tree.is-active {
+  box-shadow:
+    inset 1px 1px 0 var(--k-pewter-hi),
+    inset -1px -1px 0 var(--k-pewter-lo),
+    inset 0 0 0 3px #7b6642,
+    inset 0 0 0 4px var(--k-line-in),
+    inset 0 0 1.4rem rgba(0, 0, 0, 0.5),
+    0 0 1.6rem color-mix(in srgb, var(--tc) 26%, transparent),
+    0 0.45rem 0.75rem rgba(0, 0, 0, 0.55);
+}
+.tal-tree-in {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem 0.85rem;
+}
+
+/* ---- carved strip (group name line of the skill window): use chip, spent, avail, reset ----------------------------- */
+.tal-strip {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 0.7rem;
+  padding: 0.35rem 0.55rem;
+}
+/* the in-use mark: a lit gem + engraved word (no box, no fill) */
+.tal-use {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--k-text-3);
+  text-shadow: 0 1px 0 #000;
+}
+.tal-use.is-on {
+  color: var(--k-gold);
+  filter: drop-shadow(0 0 0.35rem rgba(255, 185, 80, 0.5));
+}
+.tal-gem {
+  --gp: 2px;
+  flex: none;
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  padding: var(--gp);
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+  background:
+    radial-gradient(circle at 36% 30%, #6a6459, #26231f 62%, #0c0b09) content-box,
+    linear-gradient(135deg, #6d6455, #14120f) border-box;
+}
+.tal-use.is-on .tal-gem {
+  background:
+    radial-gradient(circle at 36% 30%, #fff4c4, #f0b43c 42%, #8a4e0c 82%) content-box,
+    linear-gradient(135deg, #e6c070, #3a2608) border-box;
+}
+.tal-strip-l,
+.tal-strip-r {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.tal-spent {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  color: var(--k-text-2);
+  white-space: nowrap;
+}
+.tal-lbl-short {
+  display: none;
+}
+.tal-mode-inline {
+  display: none;
+}
+.tal-mode-inline .ms-kseg-btn {
+  padding-inline: 0.7rem;
+}
+
+/* ---- the field: engraved well that holds rows I-V ---------------------------------------------------------------- */
+.tal-field {
+  /* a size container: the node size is derived from the field's own width AND height (5 rows always fit, no cut row) */
+  container: tf / size;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.5rem 0.75rem 0.7rem;
+  scrollbar-width: thin;
+  scrollbar-color: #6a5a3c rgba(0, 0, 0, 0.4);
+  overscroll-behavior: contain;
+}
+.tal-grid {
+  --rail: clamp(3.3rem, 11cqw, 4.7rem);
+  --tn-h: calc(100cqh / var(--rows, 5) - 1.95rem);
+  --tn0: clamp(2.6rem, min(calc((100cqw - var(--rail)) / 3 * 0.6), var(--tn-h)), 5.4rem);
+  --tn: var(--tn0);
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--rail) repeat(3, minmax(0, 1fr));
+  min-height: 100%;
+}
+/* row bands: engraved horizontal slabs (open = warm slab, locked = dimmed stone) */
+.tal-band {
+  z-index: 0;
+  margin: 0 -0.35rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.78);
+  box-shadow: inset 0 1px 0 rgba(190, 172, 140, 0.1);
+  background: linear-gradient(90deg, rgba(150, 118, 62, 0.13), rgba(150, 118, 62, 0.03) 62%, transparent);
+  transition: background 0.4s;
+}
+.tal-band:first-of-type {
+  border-top-color: transparent;
+  box-shadow: none;
+}
+.tal-band.is-locked {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.3));
+}
+
+/* carved prerequisite lines: a dark groove with a pewter / gold inlay */
+.tal-links {
+  position: absolute;
+  left: var(--rail);
+  top: -0.8rem;
+  width: calc(100% - var(--rail));
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+.tal-links line {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  fill: none;
+}
+.tal-link-groove {
+  stroke: #050403;
+  stroke-width: 6px;
+  filter: drop-shadow(0 1px 0 rgba(200, 185, 150, 0.14));
+}
+.tal-link {
+  stroke: #5b5448;
+  stroke-width: 2px;
+}
+.tal-link.is-on {
+  stroke: #c79a3e;
+  filter: drop-shadow(0 0 3px rgba(255, 190, 90, 0.55));
+}
+.tal-link.is-lit {
+  stroke: #ffe08a;
+  stroke-dasharray: 8 6;
+  animation: tal-flow 1.1s linear infinite;
+}
+.tal-link.is-wait {
+  stroke: #c79a3e;
+  stroke-dasharray: 1 6;
+  stroke-width: 3px;
+}
+@keyframes tal-flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+
+/* ---- row rail (gate): roman plate, state, thin gauge ------------------------------------------------------------- */
+.tal-rail {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding-right: 0.45rem;
+  font-family: var(--f-head);
+}
+.tal-rail::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0.7) 80%, transparent);
+  box-shadow: 1px 0 0 rgba(190, 172, 140, 0.1);
+}
+.tal-rail-num {
+  --pl-c: 0.5rem;
+  --pl-hi: #7d6a45;
+  --pl-mid: #4b4130;
+  --pl-lo: #1c1710;
+  display: grid;
+  place-items: center;
+  width: clamp(2rem, 7cqw, 2.5rem);
+  height: clamp(2rem, 7cqw, 2.5rem);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  color: #d8b866;
+  text-shadow: 0 1px 0 #000;
+}
+.tal-rail.is-locked .tal-rail-num {
+  --pl-hi: #5a554d;
+  --pl-mid: #38342e;
+  /* the locked numeral read 3.5:1 in --k-text-3 */
+  color: #c3b9a6;
+}
+.tal-rail-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+  white-space: nowrap;
+}
+.tal-rail.is-open .tal-rail-state {
+  color: var(--k-gold);
+}
+.tal-rail-state .ms-icon-inline {
+  width: 0.85em;
+  height: 0.85em;
+  color: var(--k-text-3);
+}
+.tal-rail-gauge {
+  width: min(100%, 3.4rem);
+}
+.tal-rail-flash {
+  position: absolute;
+  inset: 0.3rem 0.1rem;
+  pointer-events: none;
+  box-shadow: 0 0 1.4rem 0.1rem rgba(255, 224, 140, 0.9), inset 0 0 1rem rgba(255, 240, 190, 0.7);
+  animation: ms-ready-flash 0.9s ease-out both;
+}
+
+/* ---- node ------------------------------------------------------------------------------------------------------- */
+.tal-cell {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  animation: ms-scale-in 0.38s var(--ease-soft) both;
+  animation-delay: calc(var(--i, 0) * 28ms + 160ms);
+}
+.ms-ui .tal-node {
+  --s: var(--tn);
+  --sl-c: calc(var(--s) * 0.125); /* = the pipeline tile's own octagon bevel (12.5 % of the side), so the art's bronze frame runs unbroken round the diagonals */
+  --sl-bw: max(3px, calc(var(--s) * 0.056));
+  --rc: #5d574e;
+  --rg: transparent;
+  cursor: pointer;
+  transition: translate 0.14s var(--ease-soft);
+}
+/* the medallion fills the octagon rim to rim; the octagon trims its glow haze */
+.tal-node .ms-slot-art > img,
+.tal-node .ms-slot-art > svg {
+  transform: scale(1.16);
+}
+.tal-node.ms-slot--locked .ms-slot-art > img {
+  transform: scale(1.16);
+}
+/* v2 pipeline tiles carry their own bronze rim and chamfer: show them 1:1 (no zoom, no crop of the frame) */
+.tal-node.ms-slot--k .ms-slot-art > img.ms-icon--tile,
+.tal-node.ms-slot--k.ms-slot--locked .ms-slot-art > img.ms-icon--tile {
+  transform: none;
+}
+.tal-node .ms-slot-lock {
+  right: -0.15rem;
+  bottom: -0.15rem;
+}
+
+.ms-ui .tal-g1 {
+  --rc: #b69c48;
+  --rg: rgba(200, 175, 80, 0.4);
+}
+.ms-ui .tal-g2 {
+  --rc: #cc7530;
+  --rg: rgba(225, 125, 45, 0.46);
+}
+.ms-ui .tal-g3 {
+  --rc: #c4382d;
+  --rg: rgba(238, 82, 60, 0.5);
+}
+.tal-node--maxed .ms-slot-frame {
+  --pl-hi: #ffe596;
+  --pl-mid: #d19a35;
+  --pl-lo: #5a3a08;
+}
+.tal-node--maxed .ms-slot-fx {
+  filter: drop-shadow(0 0 0.5rem rgba(255, 190, 90, 0.7));
+}
+.tal-node--noPoints .ms-slot-art > img,
+.tal-node--noPoints .ms-slot-art > svg {
+  filter: saturate(0.82) brightness(0.9);
+}
+.ms-ui .tal-node--available.tal-g0 {
+  --rc: #b68a42;
+}
+.tal-node--available .ms-slot-fx {
+  animation: tal-avail 1.9s ease-in-out infinite;
+}
+@keyframes tal-avail {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0.15rem rgba(236, 176, 80, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.7rem rgba(255, 196, 96, 0.95));
+  }
+}
+@media (hover: hover) {
+  .ms-ui .tal-node:hover {
+    translate: 0 -0.12rem;
+  }
+  .tal-node:hover .ms-slot-fx {
+    animation: none;
+    filter: drop-shadow(0 0 0.06rem #fff0b8) drop-shadow(0 0 0.6rem rgba(255, 224, 140, 0.6));
+  }
+}
+.ms-ui .tal-node:active {
+  translate: 0 0.04rem;
+}
+.tal-node[data-nav]:focus-visible .ms-slot-fx,
+.ms-ui.ms-kbd .tal-node[data-nav]:focus .ms-slot-fx {
+  animation: none;
+  filter: var(--focus-glow);
+}
+.tal-node.is-inert {
+  opacity: 0.5;
+}
+.tal-node.is-refundable .ms-slot-fx {
+  filter: drop-shadow(0 0 0.5rem rgba(240, 120, 90, 0.8));
+}
+
+/* level numeral (bottom-right) */
+.tal-lv {
+  position: absolute;
+  right: calc(var(--s) * 0.1);
+  bottom: calc(var(--s) * 0.02);
+  z-index: 3;
+  font-family: var(--f-num);
+  font-weight: 800;
+  font-size: max(calc(var(--s) * 0.3), 13px);
+  line-height: 1;
+  color: #fffaf0;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 0 0 3px #000;
+  pointer-events: none;
+}
+.tal-lv.is-max {
+  color: #ffe8a0;
+}
+/* spend / refund marks: a small bevelled lacquer plate (kit plate recipe, chamfered) on the node's upper-left corner,
+   outside the art; plus while a point can be spent, minus in refund mode */
+.ms-ui .tal-plus,
+.ms-ui .tal-minus {
+  --pl-c: 0.3rem;
+  position: absolute;
+  left: calc(var(--s) * -0.17);
+  top: calc(var(--s) * -0.17);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: max(calc(var(--s) * 0.34), 1.3rem);
+  height: max(calc(var(--s) * 0.34), 1.3rem);
+  pointer-events: none;
+}
+.ms-ui .tal-plus {
+  --pl-hi: #ffe2b0;
+  --pl-mid: #cf7a2a;
+  --pl-lo: #52200a;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 48%, rgba(0, 0, 0, 0.3)), linear-gradient(180deg, #ee9d4a, #bb5c1a 58%, #7c3512);
+  animation: tal-plus 1.6s ease-in-out infinite;
+}
+.ms-ui .tal-minus {
+  --pl-hi: #f6bcae;
+  --pl-mid: #c4513c;
+  --pl-lo: #4a120a;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0) 48%, rgba(0, 0, 0, 0.3)), linear-gradient(180deg, #d9654f, #9c3022 58%, #5e1a10);
+}
+.tal-plus svg,
+.tal-minus svg {
+  width: 62%;
+  height: 62%;
+  fill: #fff6e0;
+  stroke: #4c1c06;
+  stroke-width: 0.9;
+  paint-order: stroke;
+  filter: drop-shadow(0 1px 0 rgba(50, 16, 2, 0.85));
+}
+@keyframes tal-plus {
+  0%,
+  100% {
+    filter: none;
+  }
+  50% {
+    filter: brightness(1.18) drop-shadow(0 0 0.3rem rgba(255, 170, 70, 0.9));
+  }
+}
+
+/* grade chain: three pips with arrows, straddling the lower edge of the octagon */
+.tal-chain {
+  --pp: clamp(0.82rem, calc(var(--tn) * 0.2), 1.1rem);
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.16rem;
+  padding: 0.2rem 0.45rem 0.22rem;
+  background: linear-gradient(180deg, #2c2824, #12100e);
+  clip-path: polygon(0.28rem 0, calc(100% - 0.28rem) 0, 100% 0.28rem, 100% calc(100% - 0.28rem), calc(100% - 0.28rem) 100%, 0.28rem 100%, 0 calc(100% - 0.28rem), 0 0.28rem);
+  filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+.tal-pip {
+  position: relative;
+  display: block;
+  width: var(--pp);
+  height: var(--pp);
+  background: #060504;
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+}
+.tal-pip::before {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background: linear-gradient(180deg, #34302a, #15130f);
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+}
+.tal-pip.is-on::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 46%), var(--pip, #b69c48);
+}
+.tal-pip--1 {
+  --pip: #b69c48;
+}
+.tal-pip--2 {
+  --pip: #cc7530;
+}
+.tal-pip--3 {
+  --pip: #c4382d;
+}
+.tal-pip.is-next::before {
+  background: linear-gradient(180deg, #5a4a2c, #2c2416);
+  box-shadow: inset 0 0 0 1px rgba(255, 200, 100, 0.55);
+}
+.tal-arr {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 0.4rem solid #4b453b;
+  border-top: 0.26rem solid transparent;
+  border-bottom: 0.26rem solid transparent;
+}
+.tal-arr.is-on {
+  border-left-color: #e0b457;
+}
+.tal-burst {
+  z-index: 5;
+}
+
+/* ---- engraved milestone plates: a granite tablet (plate recipe), an inner groove with four rivets, the skill's octagon socket,
+   "N points" / name / state and a painted tube gauge. Reached = warm gold bevel. ----------------------------------------- */
+.tal-miles {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+.tal-plate {
+  --pl-c: 0.5rem;
+  --pl-bw: 2px;
+  --pl-hi: #7c715e;
+  --pl-mid: #473f33;
+  --pl-lo: #100e0b;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.32)), linear-gradient(rgba(12, 11, 9, 0.52), rgba(12, 11, 9, 0.52)), var(--tex-ag-granite, none) 0 0 / 12rem, #23211d;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  min-height: 5.6rem;
+  padding: 0.6rem 0.8rem 0.65rem 0.7rem;
+  text-align: left;
+  color: var(--k-text-2);
+  cursor: pointer;
+}
+.tal-plate.is-reached {
+  --pl-hi: #f3d684;
+  --pl-mid: #b78c34;
+  --pl-lo: #4a3208;
+  --pl-face: linear-gradient(180deg, rgba(255, 236, 170, 0.16), rgba(255, 220, 140, 0) 42%, rgba(0, 0, 0, 0.34)), linear-gradient(rgba(34, 24, 8, 0.5), rgba(34, 24, 8, 0.5)), var(--tex-ag-granite, none) 0 0 / 12rem, #2a2312;
+  color: var(--k-text);
+  filter: drop-shadow(0 0 0.7rem rgba(255, 190, 90, 0.2));
+}
+/* the engraved inner groove and its rivets */
+.tal-plate-orn {
+  position: absolute;
+  inset: 0.3rem;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.62);
+  box-shadow: 0 0 0 1px rgba(200, 184, 150, 0.1), inset 0 0 0 1px rgba(200, 184, 150, 0.07);
+  background:
+    radial-gradient(circle, #d9cfb4 0 0.07rem, #5a5140 0.12rem, rgba(0, 0, 0, 0.8) 0.17rem, transparent 0.2rem) 0 0 / 0.5rem 0.5rem no-repeat,
+    radial-gradient(circle, #d9cfb4 0 0.07rem, #5a5140 0.12rem, rgba(0, 0, 0, 0.8) 0.17rem, transparent 0.2rem) 100% 0 / 0.5rem 0.5rem no-repeat,
+    radial-gradient(circle, #d9cfb4 0 0.07rem, #5a5140 0.12rem, rgba(0, 0, 0, 0.8) 0.17rem, transparent 0.2rem) 0 100% / 0.5rem 0.5rem no-repeat,
+    radial-gradient(circle, #d9cfb4 0 0.07rem, #5a5140 0.12rem, rgba(0, 0, 0, 0.8) 0.17rem, transparent 0.2rem) 100% 100% / 0.5rem 0.5rem no-repeat;
+}
+.tal-plate.is-reached .tal-plate-orn {
+  border-color: rgba(30, 18, 2, 0.8);
+  box-shadow: 0 0 0 1px rgba(255, 226, 150, 0.2), inset 0 0 0 1px rgba(255, 226, 150, 0.1);
+}
+.tal-plate-slot,
+.tal-plate-txt {
+  position: relative;
+  z-index: 1;
+}
+.tal-plate-slot {
+  --s: 3rem;
+}
+.tal-plate-slot .ms-slot-art > img,
+.tal-plate-slot .ms-slot-art > svg {
+  transform: scale(1.1);
+}
+.tal-plate-txt {
+  display: grid;
+  gap: 0.14rem;
+  min-width: 0;
+}
+.tal-plate-at {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 #000;
+}
+.tal-plate.is-reached .tal-plate-at {
+  color: #e2c274;
+}
+.tal-at-short {
+  display: none;
+}
+.tal-plate-name {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  line-height: 1.12;
+  color: inherit;
+  text-shadow: 0 1px 0 #000;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* gate 3 U4: three lines, not two: a long skill name ('Hükümdarın Öfkesi', 'Sovereign's Ire') on a ~100 px plate lost its last word to the clamp */
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.tal-plate.is-reached .tal-plate-name {
+  color: var(--k-gold);
+}
+.tal-plate-state {
+  font-size: var(--t-xs);
+  line-height: 1.15;
+  color: var(--k-text-2);
+}
+.tal-plate.is-reached .tal-plate-state {
+  color: var(--k-good);
+}
+.tal-plate-gauge {
+  margin-top: 0.3rem;
+  width: calc(100% - 0.2rem);
+  justify-self: center;
+}
+
+/* ---- points board ------------------------------------------------------------------------------------------------ */
+.ms-touch .tal-help {
+  --cb: 1.9rem;
+}
+.tal-help {
+  position: absolute;
+  right: 0.62rem;
+  top: 0.4rem;
+  z-index: 5;
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: var(--t-sm);
+  --cb: 1.35rem;
+}
+.tal-side-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #6a5a3c rgba(0, 0, 0, 0.4);
+  overscroll-behavior: contain;
+}
+.tal-id {
+  display: flex;
+  align-items: stretch;
+  gap: 0.8rem;
+}
+.tal-portrait-box {
+  flex: none;
+  padding: 0.3rem;
+}
+.tal-portrait {
+  display: grid;
+  place-items: center;
+  width: 3.9rem;
+  height: 5rem;
+  background: center top / cover no-repeat #0d0b09;
+}
+.tal-id-t {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.tal-class {
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: var(--t-xl);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--k-gold);
+  text-shadow: 0 0.1rem 0 #3a2208, 0 0.15rem 0.4rem rgba(0, 0, 0, 0.85);
+}
+.tal-doct {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.4rem 0.65rem 0.45rem;
+}
+.tal-doct-l {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+.tal-doct-n {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  color: var(--k-text);
+}
+.tal-avail {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.tal-avail .ms-well--hero {
+  min-width: 4.6rem;
+}
+.tal-avail-t {
+  min-width: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+.tal-avail-l {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--k-text);
+  overflow-wrap: break-word;
+}
+.tal-avail-sub {
+  font-size: var(--t-sm);
+  line-height: 1.25;
+  color: var(--k-text-2);
+}
+.tal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+.tal-stats > * {
+  min-width: 0;
+}
+.tal-stats .ms-statwell {
+  width: 100%;
+  min-width: 0;
+}
+.tal-stats .ms-statwell-label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+}
+/* MT-02: the talent cap plate: "Cap 44 / 48", one diamond per zone cleared on Hard, what raises it next, XP waiting above it */
+.tal-cap {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.45rem 0.65rem 0.5rem;
+}
+.tal-cap-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.tal-cap-n {
+  min-width: 0;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.04em;
+  color: var(--k-text);
+}
+.tal-cap-pips {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-inline: 0.2rem;
+}
+.tal-cap-pip {
+  display: block;
+  width: 0.62rem;
+  height: 0.62rem;
+  transform: rotate(45deg);
+  border: 1px solid rgba(160, 140, 110, 0.55);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0.08rem 0.12rem rgba(0, 0, 0, 0.7);
+}
+.tal-cap-pip.is-on {
+  border-color: #f4d78a;
+  background: linear-gradient(135deg, #ffeab0 0%, #d9a23c 55%, #8f5a16 100%);
+  box-shadow: 0 0 0.45rem rgba(255, 214, 120, 0.6), inset 0 0.06rem 0.1rem rgba(255, 255, 255, 0.55);
+}
+.tal-cap-next,
+.tal-cap-wait {
+  font-size: var(--t-sm);
+  line-height: 1.3;
+  color: var(--k-text-2);
+  overflow-wrap: break-word;
+}
+.tal-cap.is-max .tal-cap-next,
+.tal-cap-wait {
+  color: var(--k-gold);
+}
+.tal-xp {
+  display: grid;
+  gap: 0.3rem;
+}
+.tal-xp-l {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.tal-xp-g {
+  position: relative;
+}
+.tal-xp-flash {
+  position: absolute;
+  inset: 0.1rem 0.7rem;
+  pointer-events: none;
+  box-shadow: 0 0 1.2rem 0.1rem rgba(255, 224, 140, 0.85), inset 0 0 0.8rem rgba(255, 240, 190, 0.6);
+  animation: ms-ready-flash 0.9s ease-out both;
+}
+.tal-xp-s {
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.tal-text {
+  margin: 0;
+  font-size: var(--t-sm);
+  line-height: 1.4;
+  color: var(--k-text-2);
+}
+.tal-text--dim {
+  color: var(--k-text-2);
+  opacity: 0.88;
+}
+.tal-actions .ms-kbtn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.15;
+}
+.tal-mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 0.6rem;
+}
+.tal-mode .ms-kseg-btn {
+  padding-inline: 0.7rem;
+}
+.tal-mode-l {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.tal-mode .ms-kseg {
+  flex: 1 1 auto;
+}
+.tal-block-h {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.tal-block-h::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(180deg, #050403 0 1px, rgba(140, 132, 120, 0.3) 1px 2px);
+}
+.tal-bonus {
+  display: grid;
+  gap: 0.15rem;
+}
+.tal-bonus-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.2rem 0.1rem;
+  font-size: var(--t-md);
+  color: var(--k-text-2);
+  border-bottom: 1px solid rgba(255, 240, 210, 0.05);
+}
+.tal-bonus-row b {
+  font-family: var(--f-num);
+  font-weight: 800;
+  color: var(--k-good);
+}
+.tal-bonus-row b.is-bad {
+  color: var(--k-bad);
+}
+.tal-bonus-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.5rem;
+  margin-top: 0.5rem;
+}
+.tal-bonus-sk-l {
+  width: 100%;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.tal-sk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0.1rem 0.7rem 0.1rem 0.15rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000;
+}
+.tal-sk-slot {
+  --s: 2rem;
+  --sl-c: 0.45rem;
+  --sl-bw: 2px;
+  flex: none;
+}
+.tal-sk-slot .ms-slot-art > img,
+.tal-sk-slot .ms-slot-art > svg {
+  transform: scale(1.12);
+}
+.tal-sk-n {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.tal-hints {
+  margin-top: auto;
+  display: grid;
+  gap: 0.4rem;
+}
+.tal-hint {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.tal-hint-k {
+  display: inline-flex;
+  gap: 0.2rem;
+  min-width: 7.6rem;
+}
+
+/* tooltip pieces (rendered inside the global tooltip) */
+.tal-tip-h {
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.15rem;
+}
+.tal-tip-status {
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+.tal-tip-status.is-good {
+  color: var(--k-good, #8fd694);
+}
+.tal-tip-status.is-bad {
+  color: var(--k-bad, #f08070);
+}
+.tal-tip-status.is-dim {
+  opacity: 0.7;
+  font-weight: 400;
+}
+.tal-tip-dim {
+  opacity: 0.78;
+}
+.tal-tip-hints {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 240, 210, 0.16);
+}
+
+/* =====================================================================================================================
+   Narrow trees (board < 36rem): compact three-up plates (slot over text), short labels
+   ===================================================================================================================== */
+@container tt (max-width: 36rem) {
+  .tal-miles {
+    gap: 0.4rem;
+  }
+  .tal-plate {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-content: start;
+    gap: 0.3rem;
+    min-height: 0;
+    padding: 0.4rem 0.35rem 0.45rem;
+    text-align: center;
+  }
+  .tal-plate-slot {
+    --s: 2.5rem;
+  }
+  .tal-plate-txt {
+    justify-items: center;
+    width: 100%;
+    gap: 0.1rem;
+  }
+  .tal-plate-name {
+    font-size: var(--t-sm);
+    -webkit-line-clamp: 3;
+    overflow-wrap: anywhere;
+  }
+  .tal-plate-state {
+    display: none;
+  }
+  .tal-plate-gauge {
+    width: 100%;
+  }
+  .tal-at-full {
+    display: none;
+  }
+  .tal-at-short {
+    display: inline;
+  }
+  .tal-lbl-full {
+    display: none;
+  }
+  .tal-lbl-short {
+    display: inline;
+  }
+  .tal-spent {
+    display: none;
+  }
+}
+
+/* =====================================================================================================================
+   One tree at a time (pane < 70rem): tree tabs + the points board beside the tree
+   ===================================================================================================================== */
+@container tal (max-width: 69.99rem) {
+  .tal-in {
+    grid-template-columns: minmax(0, 1fr) clamp(18rem, 36%, 22rem);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.6rem 0.9rem;
+  }
+  .tal-tabs {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .tal-tabs .ms-ktabs {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .tal-tabs .ms-ktab {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .tal-tree {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .tal-tree:not(.is-shown) {
+    display: none;
+  }
+  .tal-side {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  .tal-hints,
+  .tal-text--dim {
+    display: none;
+  }
+  /* the points board is only ~18-22rem wide here: earned / spent / cap become caption-left rows (a 3-up row clips
+     longer captions such as TR "Kazanılan" / "Harcanan"), and the "x of y spent" sub line is dropped (the rows say it) */
+  .tal-stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+  .tal-stats .ms-statwell {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+  .tal-stats .ms-statwell-label {
+    flex: 1 1 auto;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .tal-stats .ms-well {
+    flex: none;
+    min-width: 5.2rem;
+  }
+  .tal-avail-sub {
+    display: none;
+  }
+  /* milestone plates stand in a column beside the rows */
+  .tal-tree-in {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 8.6rem;
+    grid-template-rows: auto minmax(0, 1fr);
+    column-gap: 0.6rem;
+    row-gap: 0.6rem;
+  }
+  .tal-strip {
+    grid-column: 1 / -1;
+  }
+  .tal-field {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  /* the tree tabs above are the window header here: the board's own title bar would only repeat the name */
+  .tal-tree > .ms-titlebar {
+    display: none;
+  }
+  .tal-miles {
+    grid-column: 2;
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: minmax(0, 1fr);
+  }
+  .tal-plate {
+    align-content: center;
+  }
+}
+
+/* =====================================================================================================================
+   Phones in portrait (pane < 40rem): one stacked column: tabs, tree, points board; the page (pane) scrolls
+   ===================================================================================================================== */
+@container tal (max-width: 39.99rem) {
+  .tal-in {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    gap: 0.45rem;
+    padding: 0.15rem 0.1rem 0.5rem;
+  }
+  .tal-tabs {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .tal-tree {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .tal-side {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .tal-tree-in {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.55rem 0.65rem;
+  }
+  .tal-field {
+    /* the page scrolls here: width-bound nodes only */
+    container-type: inline-size;
+    overflow: visible;
+    padding: 0.4rem 0.4rem 0.6rem;
+  }
+  .tal-grid {
+    --tn-h: 99rem;
+  }
+  .tal-miles {
+    grid-auto-rows: auto;
+  }
+  .tal-miles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* the strip is one line: lit gem (the word hides, the tooltip and the aria text keep it) | spend / refund | points | reset */
+  .tal-strip {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+  .tal-strip-l,
+  .tal-strip-r {
+    flex: none;
+  }
+  .tal-strip-r {
+    gap: 0.4rem;
+  }
+  .tal-use-w {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .tal-use {
+    position: relative;
+  }
+  .tal-gem {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+  .tal-mode-inline {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .tal-mode-inline .ms-kseg-btn {
+    padding-inline: 0.3rem;
+  }
+  .tal-plate {
+    grid-template-columns: auto minmax(0, 1fr);
+    justify-items: stretch;
+    text-align: left;
+    padding: 0.4rem 0.6rem 0.45rem 0.5rem;
+    gap: 0.55rem;
+  }
+  .tal-plate-txt {
+    justify-items: stretch;
+  }
+  .tal-plate-state {
+    display: block;
+  }
+  .tal-at-full {
+    display: inline;
+  }
+  .tal-at-short {
+    display: none;
+  }
+  .tal-mode-inline {
+    display: block;
+  }
+  .tal-mode-inline .ms-kseg {
+    width: 100%;
+  }
+  .tal-mode-inline .ms-kseg-btn {
+    flex: 1 1 0;
+  }
+  .tal-side-scroll {
+    overflow: visible;
+    padding: 0.7rem 0.8rem 0.9rem;
+  }
+  /* full-width board again: back to the three-up wells and the sub line */
+  .tal-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+  .tal-stats .ms-statwell {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.3rem;
+  }
+  .tal-stats .ms-statwell-label {
+    flex: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tal-stats .ms-well {
+    flex: initial;
+    min-width: 0;
+  }
+  .tal-avail-sub {
+    display: block;
+  }
+  .tal-mode {
+    display: none;
+  }
+  .tal-bonus {
+    order: 5;
+  }
+}
+.ms-portrait .tal {
+  height: auto;
+}
+.ms-portrait .tal-in {
+  height: auto;
+}
+
+/* phones in landscape: the pane is short, so a whole tree board scrolls (strip + rows + plates) beside the points board */
+.ms-compact.ms-landscape .tal-tree-in {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #6a5a3c rgba(0, 0, 0, 0.4);
+}
+/* the board scrolls: its lower node rows fade out instead of being cut at the frame (core's .ms-edgefade recipe, scoped to this tier) */
+@supports (animation-timeline: scroll()) {
+  .ms-ui.ms-compact.ms-landscape .tal-tree-in {
+    /* 2.2 rem (it was 3.2): the long fade dimmed the third node row to about 40 % */
+    --sf-size: 2.2rem;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    animation-name: ms-sf-in, ms-sf-out;
+    animation-duration: auto, auto;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+    animation-timeline: scroll(self block), scroll(self block);
+    animation-range: 0 var(--sf-size, 2.2rem), calc(100% - var(--sf-size, 2.2rem)) 100%;
+    scroll-padding-block: var(--sf-size, 2.2rem);
+  }
+}
+.ms-compact.ms-landscape .tal-tree-in {
+  grid-template-rows: auto auto;
+  align-content: start;
+}
+.ms-compact.ms-landscape .tal-field {
+  flex: none;
+  overflow: visible;
+  container-type: inline-size;
+}
+.ms-compact.ms-landscape .tal-grid {
+  --tn-h: 99rem;
+}
+.ms-compact.ms-landscape .tal-miles {
+  grid-auto-rows: minmax(4.4rem, 1fr);
+}
+.ms-compact.ms-landscape .tal-plate {
+  min-height: 4.4rem;
+}
+.ms-compact.ms-landscape .tal-tree-in,
+.ms-compact.ms-landscape .tal-side-scroll {
+  padding: 0.5rem 0.65rem 0.7rem;
+}
+.ms-compact.ms-landscape .tal-id {
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .tal-portrait {
+  width: 2.9rem;
+  height: 3.6rem;
+}
+.ms-compact.ms-landscape .tal-class {
+  font-size: var(--t-lg);
+}
+.ms-compact.ms-landscape .tal-text {
+  display: none;
+}
+/* the tree tabs move into the strip (one line less above the rows) and the spend / refund switch into the points board */
+.ms-compact.ms-landscape .tal-tabs {
+  display: none;
+}
+.ms-compact.ms-landscape .tal-tree-sw {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.ms-compact.ms-landscape .tal-tree-sw .ms-ktabs {
+  display: flex;
+  gap: 0.3rem;
+}
+.ms-compact.ms-landscape .tal-tree-sw .ms-ktab {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.ms-compact.ms-landscape .tal-mode-inline {
+  display: none;
+}
+.ms-compact.ms-landscape .tal-in {
+  row-gap: 0;
+}
+.ms-compact.ms-landscape .tal-tree {
+  grid-row: 1 / span 2;
+}
+.ms-compact.ms-landscape .tal-tree-in {
+  padding-top: 0.4rem;
+}
+.ms-compact.ms-landscape .tal-spent {
+  display: none;
+}
+/* the strip is one line here as well: the lit gem stands for "in use" (the word stays for screen readers, TR "Kullanimda" would not fit) */
+.ms-compact.ms-landscape .tal-use {
+  position: relative;
+}
+.ms-compact.ms-landscape .tal-use-w {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.ms-compact.ms-landscape .tal-gem {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.ms-compact.ms-landscape .tal-tree > .ms-titlebar {
+  display: none;
+}
+.ms-compact.ms-landscape .tal-strip {
+  padding: 0.25rem 0.45rem;
+  flex-wrap: nowrap;
+}
+
+/* laptops and short windows (<= 880 px high): the points board keeps wells, gauge, reset, mode and bonuses; the long copy and
+   the key list live in the "?" tooltip, so the column never ends in a half-cut row */
+@media (max-height: 880px) {
+  @container tal (max-width: 69.99rem) {
+    /* one tree + the points board (tablet): the three bonus lines sit two across */
+    .ms-ui:not(.ms-compact) .tal-bonus {
+      grid-template-columns: repeat(auto-fit, minmax(6.6rem, 1fr));
+      column-gap: 0.8rem;
+    }
+    .ms-ui:not(.ms-compact) .tal-bonus-skills {
+      flex-wrap: nowrap;
+    }
+    .ms-ui:not(.ms-compact) .tal-bonus-sk-l {
+      width: auto;
+      flex: none;
+    }
+    .ms-ui:not(.ms-compact) .tal-doct-l {
+      display: none;
+    }
+    .ms-ui:not(.ms-compact) .tal-bonus > .tal-block-h,
+    .ms-ui:not(.ms-compact) .tal-bonus > .tal-bonus-skills,
+    .ms-ui:not(.ms-compact) .tal-bonus > .tal-text {
+      grid-column: 1 / -1;
+    }
+  }
+  .ms-ui:not(.ms-compact) .tal-side .tal-text,
+  .ms-ui:not(.ms-compact) .tal-side .tal-hints {
+    display: none;
+  }
+  .ms-ui:not(.ms-compact) .tal-portrait {
+    width: 3.2rem;
+    height: 4.1rem;
+  }
+  .ms-ui:not(.ms-compact) .tal-side-scroll {
+    gap: 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tal-plus,
+  .tal-node--available .ms-slot-fx,
+  .tal-link.is-lit {
+    animation: none;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "chest.treasure": "Treasure!",
+  "chest.name": "Lacquered Hoard",
+  "chest.nameBoss": "Victor's Hoard",
+  "chest.sealed": "Sealed with a dragon lock.",
+  "chest.tapToOpen": "Click or press Enter to open",
+  "chest.tapToOpenTouch": "Tap the chest to open it",
+  "chest.paid": "Paid {n}",
+  "chest.opening": "The lock gives way…",
+  "chest.ledger": "Hoard ledger",
+  "chest.ledgerPaid": "Paid",
+  "chest.ledgerFree": "No charge",
+  "chest.ledgerFloor": "Guaranteed",
+  "chest.sealedNote": "A hoard is a straight pick: no reroll, banish or skip.",
+  "chest.ledgerOffer": "The offer"
+}

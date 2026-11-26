@@ -1,0 +1,1382 @@
+/* Owner: B7 essence-chest (modals/Essence.tsx). Metin Essence on the UI kit (round 1 rebuild 2026-10-19, round 2 the same day:
+   painted spirit crystal + pearl gem, a bronze strap between the weapon and the armor half, a socket-state key made of the
+   states themselves, a stone button shelf under the cards, phone portrait = sockets above the cards, phone landscape =
+   sockets + shelf in one column).
+   Composition: [metin stone | three cards | socket board]. The socket board is a kit board (rust-copper title bar, pewter
+   bevel) holding a bronze medallion: an engraved relief of our own under a ring of six octagon gem sockets (weapon trio
+   above, armor trio below), the stone's spirit crystal at its heart, a row of three trinket sockets and a legend of the
+   three socket states (pearl gem glow = free, ember crack = replaced, gold chevrons = upgrade). Tiers: laptop / desktop /
+   ultra = side board with the ring; tablet and phone landscape = one compact strip; phone portrait = ring + trinket column
+   under the cards. The shared scrim, head and action row live in reward.css. Cascade order of the run-modal sheets is
+   pinned in ui/app.tsx (runend < essence < chest < boss < story < pause). */
+
+.ms-ess {
+  --rune: #ff9a2e;
+  --rune-rot: 0deg;
+  --rune-sat: 1;
+  --on-rune: #1a0a04;
+  --med: 17rem;
+}
+.ms-cardmodal.ms-ess {
+  gap: 1rem;
+}
+
+/* ---- stage: a soft pool of rune light, never a hard ray fan ---------------------------------------------------------- */
+.ms-cardmodal > .ms-ess-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ms-ess-aura {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: 96vmin;
+  height: 96vmin;
+  margin: -48vmin 0 0 -48vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--rune) 34%, transparent) 0%, color-mix(in srgb, var(--rune) 10%, transparent) 44%, transparent 68%);
+  animation: ms-glow-pulse 4.5s ease-in-out infinite;
+}
+.is-awakened .ms-ess-aura {
+  background: radial-gradient(circle, rgba(255, 140, 40, 0.46) 0%, rgba(255, 110, 20, 0.14) 44%, transparent 68%);
+  animation-duration: 2.2s;
+}
+
+/* ---- main row: stone | cards | board -------------------------------------------------------------------------------------- */
+.ms-ess-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas:
+    'left cards board'
+    '. foot .';
+  align-items: stretch;
+  gap: 1.1rem 1.4rem;
+  width: 100%;
+}
+.ms-ess-cards {
+  grid-area: cards;
+}
+.ms-ess-foot {
+  grid-area: foot;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ms-ess-left {
+  grid-area: left;
+  position: relative;
+  justify-self: end;
+  align-self: stretch;
+  width: 15rem;
+  pointer-events: none;
+}
+.ms-ess-stone {
+  position: absolute;
+  left: 50%;
+  bottom: -0.4rem;
+  /* the art is a padded 576 x 864 canvas (the stone is 77-84 % of it): ~17 % larger than the old 94 % box; capped by the viewport width (the painted stone is ~61 % of the box width, the column beside card 1 grows with the screen): the crystal tips keep >= 16 px clear of card 1
+     on a laptop (measured 1366: box 407 px, tip 19 px off; 1920: 584 px, tip 25 px off), where 110 % of the card height reached the card's border */
+  height: min(110%, calc(32vw - 30px));
+  aspect-ratio: 576 / 864;
+  transform: translateX(-50%) scaleX(var(--sv-flip, 1)) rotate(var(--sv-rot, 0deg)) scale(var(--sv-scale, 1));
+  transform-origin: 50% 100%;
+  /* the glow lives on this box, the fade mask on the painting inside it: a mask on the same element clips the drop-shadow to the box edge
+     (a straight glow edge left and right of the stone) */
+  filter: hue-rotate(var(--rune-rot)) saturate(var(--rune-sat)) drop-shadow(0 0 calc(2.2rem * var(--sv-glow, 1)) var(--rune));
+  animation: ms-ess-float 7s ease-in-out infinite;
+}
+.ms-ess-stone-art {
+  position: absolute;
+  inset: 0;
+  background: var(--stone-art, var(--tex-metin, none)) center bottom / contain no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 84%, transparent 100%);
+}
+.ms-ess-pool {
+  position: absolute;
+  left: 50%;
+  bottom: -1.6rem;
+  width: 150%;
+  height: 7rem;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--rune) 52%, transparent), transparent);
+  opacity: 0.8;
+}
+@keyframes ms-ess-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.9rem;
+  }
+}
+
+/* awakened plaque: a gilded plate (gold bevel, dark rust face, a flame at each end), the word shines on its own */
+.ms-ess-awaken.ms-plate {
+  --pl-c: 0.5rem;
+  --pl-bw: 2px;
+  --pl-hi: #f7dd94;
+  --pl-mid: #b88a32;
+  --pl-lo: #3a2608;
+  --pl-face:
+    linear-gradient(180deg, rgba(255, 226, 150, 0.24), rgba(255, 226, 150, 0) 46%, rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(52, 28, 6, 0.74), rgba(52, 28, 6, 0.74)),
+    var(--tex-uk-rust, var(--k-grain-light)) 0 0 / 14rem,
+    #3a2206;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.38rem 1.5rem 0.4rem;
+  filter: drop-shadow(0 0.3rem 0.6rem rgba(0, 0, 0, 0.6)) drop-shadow(0 0 1.1rem rgba(255, 150, 40, 0.38));
+}
+.ms-ess-awaken-t {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+  text-align: left;
+}
+.ms-ess-awaken-t b {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffe9a8;
+  text-shadow: 0 1px 0 rgba(30, 14, 2, 0.95);
+}
+.ms-ess-awaken-t i {
+  font-style: normal;
+  font-size: var(--t-sm);
+  letter-spacing: 0.03em;
+  color: #e0d0a8;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* ---- cards ------------------------------------------------------------------------------------------------------------- */
+.ms-ess .ms-card {
+  --ch: min(30.2rem, calc(100dvh - 25rem));
+  min-height: 20rem;
+}
+/* a wrapped name or a third stat line grows the card (the three stay equal height through the stretch) instead of clipping its stats */
+.ms-ui:not(.ms-compact):not(.ms-portrait) .ms-ess .ms-card {
+  height: auto;
+  min-height: var(--ch);
+}
+.ms-ess .ms-card-name {
+  font-size: 1.28rem;
+  padding-inline: 0.55rem;
+}
+/* upgrade cards: the value the item has now, dim, before the new one: `+4% → +6% crit chance` */
+.ms-card-from {
+  margin-right: 0.35rem;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #a99a7b;
+  white-space: nowrap;
+}
+.ms-card-from i {
+  margin-left: 0.3rem;
+  font-style: normal;
+  color: #8a6a2a;
+}
+/* the footer states the outcome ("6/6 used"): keep it readable */
+.ms-ess .ms-card-foot {
+  font-size: 0.9rem;
+  color: #cdbf9d;
+}
+
+/* ---- the socket board ------------------------------------------------------------------------------------------------- */
+.ms-ess-board {
+  grid-area: board;
+  justify-self: start;
+  width: calc(var(--med) + 4.6rem);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  animation: ms-rise-in 0.6s 0.2s var(--ease-soft) both;
+}
+.ms-ess-bd {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  padding: 0.7rem 0.9rem 0.8rem;
+}
+.ms-ess-medblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.ms-ess-arc {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(12px, var(--t-sm));
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #cfc6b2;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-ess-arc b {
+  font-size: max(12px, var(--t-sm));
+  letter-spacing: 0.02em;
+  color: var(--k-gold);
+}
+
+/* medallion: bronze rim, stone disc, engraved relief, spirit crystal, ring of sockets */
+.ms-ess-med {
+  position: relative;
+  width: var(--med);
+  height: var(--med);
+  /* the same numbers as rewardGeom MED (unit-tested): gems 14 % of the disc, seated on the ring track at 77 % of the radius */
+  --ring-r: calc(var(--med) * 0.385);
+  --sk: calc(var(--med) * 0.14);
+  border-radius: 50%;
+  filter: drop-shadow(0 0.5rem 0.7rem rgba(0, 0, 0, 0.65));
+}
+.ms-ess-disc {
+  position: absolute;
+  inset: 1.1%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 244, 220, 0.07), transparent 58%),
+    linear-gradient(rgba(16, 15, 14, 0.5), rgba(16, 15, 14, 0.5)),
+    var(--tex-uk-stone, var(--k-grain-light)) 0 0 / 14rem,
+    #1b1917;
+  box-shadow: inset 0 0 1.6rem rgba(0, 0, 0, 0.9), inset 0 0 0 2px rgba(0, 0, 0, 0.85);
+}
+.ms-ess-relief {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* the painted relief disc (uk_essence_chest_relief): bronze rim + twin dragons + empty boss, edge to edge in the medallion box */
+.ms-ess-plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.ms-ess.is-awakened .ms-ess-plate {
+  filter: sepia(0.3) saturate(1.45) brightness(1.1);
+}
+.ms-ess-rim {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 205deg, #f0dba8, #9a7743 12%, #3b2814 30%, #7d5f36 48%, #e6cb92 62%, #8d6b3b 78%, #2e1f0e 92%, #f0dba8);
+  -webkit-mask: radial-gradient(closest-side, transparent 92.6%, #000 93.6%);
+  mask: radial-gradient(closest-side, transparent 92.6%, #000 93.6%);
+  pointer-events: none;
+}
+.ms-ess-rim::after {
+  /* a thin dark seam between rim and disc */
+  content: '';
+  position: absolute;
+  inset: 5.2%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8);
+}
+.ms-ess-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--med) * 0.07);
+  translate: -50% -50%;
+  pointer-events: none;
+}
+/* the engraved ring track (SVG, drawn over the painted relief; its numbers are the MED constants) */
+.ms-ess-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* the painted ring track (uk_essence_chest_track: a carved scroll-and-diamond band, our own) laid just inside the bronze rim of the relief;
+   its band (64 - 93 % of the radius) is the track the six gems sit in, its diamonds at 3 and 9 o'clock part weapon from armor */
+.ms-ess-ringimg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 94.5%;
+  aspect-ratio: 1024 / 1017;
+  translate: -50% -50%;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 0.12rem rgba(0, 0, 0, 0.7));
+}
+.ms-ess.is-awakened .ms-ess-ringimg {
+  filter: sepia(0.3) saturate(1.45) brightness(1.1) drop-shadow(0 0 0.12rem rgba(0, 0, 0, 0.7));
+}
+.ms-ess-core svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.8));
+  animation: ms-ess-core 3.2s ease-in-out infinite;
+}
+/* the painted spirit crystal (uk_essence_chest_crystal, orange glass) recoloured to the metin's rune; the pulse brightens the wrapper */
+.ms-ess-core:has(.ms-ess-crystal) {
+  width: calc(var(--med) * 0.07);
+  animation: ms-ess-core 3.2s ease-in-out infinite;
+}
+.ms-ess-core.is-awake:has(.ms-ess-crystal) {
+  animation-duration: 1.4s;
+}
+.ms-ess-crystal {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: hue-rotate(var(--rune-rot, 0deg)) saturate(var(--rune-sat, 1)) drop-shadow(0 0.2rem 0.3rem rgba(0, 0, 0, 0.85));
+  pointer-events: none;
+  user-select: none;
+}
+.ms-ess-core-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 330%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--rune) 62%, transparent), color-mix(in srgb, var(--rune) 18%, transparent) 55%, transparent);
+  animation: ms-glow-pulse 3.2s ease-in-out infinite;
+}
+.ms-ess-core.is-awake svg {
+  animation-duration: 1.4s;
+}
+@keyframes ms-ess-core {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.28);
+  }
+}
+/* sockets on the ring */
+.ms-ess-ring {
+  position: absolute;
+  inset: 0;
+}
+.ms-ess-sock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sk);
+  height: var(--sk);
+  margin: calc(var(--sk) * -0.5) 0 0 calc(var(--sk) * -0.5);
+  transform: rotate(var(--a, 0deg)) translateY(calc(var(--ring-r) * -1)) rotate(calc(var(--a, 0deg) * -1));
+  transition: opacity 0.2s;
+}
+.ms-ess .ms-ess-seat {
+  --pl-c: calc(var(--sk) * 0.22);
+  --pl-bw: max(2px, calc(var(--sk) * 0.05));
+  --pl-line: #050403;
+  --pl-hi: color-mix(in srgb, var(--gem, #9a62d8) 42%, #e9ddc2);
+  --pl-mid: color-mix(in srgb, var(--gem, #9a62d8) 72%, #3a2c1a);
+  --pl-lo: color-mix(in srgb, var(--gem, #9a62d8) 22%, #0c0805);
+  --pl-face: radial-gradient(120% 100% at 50% 30%, #1f1a14, #070605);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.ms-ess .ms-ess-seat .ms-slot {
+  --s: calc(var(--sk) * 0.84);
+}
+
+.ms-ess .ms-ess-seat .ms-slot .ms-slot-rank,
+.ms-ess .ms-ess-seat .ms-slot .ms-medal {
+  right: -0.05rem;
+  bottom: -0.1rem;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  font-family: var(--f-num);
+  font-weight: 800;
+  font-size: max(12px, var(--t-xs));
+  line-height: 1;
+  color: #fff4d2;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  clip-path: none;
+  filter: none;
+  text-shadow: -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000, 0 0 3px #000, 0 0 5px #000;
+}
+.ms-ess .ms-ess-seat .ms-slot .ms-medal::before,
+.ms-ess .ms-ess-seat .ms-slot .ms-medal::after {
+  display: none;
+}
+/* empty sockets: the silhouette of what goes in (sword / shield / jewel) stays readable on the dark well */
+.ms-ess .ms-ess-seat .ms-slot--k.ms-slot--empty .ms-slot-ghost {
+  opacity: 0.7;
+  color: color-mix(in srgb, var(--gem, #9a62d8) 42%, #aaa08c);
+}
+.ms-ess .ms-ess-sock.is-dim {
+  opacity: 0.4;
+}
+.ms-slot.is-preview {
+  opacity: 0.7;
+}
+
+/* card numbers that target a socket: small engraved octagons on the outer upper corner of its pocket (never on the gem itself) */
+.ms-ess-nums {
+  position: absolute;
+  left: -0.62rem;
+  top: -0.68rem;
+  z-index: 5;
+  display: flex;
+  gap: 0.12rem;
+}
+.ms-ess .ms-ess-num.ms-plate {
+  --pl-c: 0.24rem;
+  --pl-bw: 1px;
+  --pl-hi: #e8c36a;
+  --pl-mid: #8a6a2a;
+  --pl-lo: #1a1208;
+  --pl-face: linear-gradient(180deg, #14100b, #070504);
+  display: grid;
+  place-items: center;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  font-size: max(12px, var(--t-xs));
+  line-height: 1;
+  color: var(--k-gold);
+  text-shadow: none;
+}
+
+/* FREE: the socket is lit like a gem: pearl-white heart, rune-coloured bloom */
+.ms-ess .ms-ess-sock.is-free .ms-ess-seat {
+  --pl-hi: #fffbe9;
+  --pl-mid: #e6d09a;
+  --pl-lo: #6d5a38;
+  filter: drop-shadow(0 0 0.1rem #fff6dc) drop-shadow(0 0 0.95rem color-mix(in srgb, var(--rune) 62%, #fff0c8));
+  animation: ms-ess-gem 1.7s ease-in-out infinite;
+}
+.ms-ess .ms-ess-sock.is-free .ms-slot--k.ms-slot--empty .ms-slot-art {
+  background: radial-gradient(circle at 50% 42%, rgba(255, 249, 228, 0.7), rgba(255, 216, 140, 0.22) 55%, #0b0907 100%);
+}
+.ms-ess .ms-ess-sock.is-free .ms-slot--k.ms-slot--empty .ms-slot-ghost {
+  opacity: 0.55;
+  color: #8a7448;
+}
+@keyframes ms-ess-gem {
+  50% {
+    filter: drop-shadow(0 0 0.1rem #fff6dc) drop-shadow(0 0 1.4rem color-mix(in srgb, var(--rune) 70%, #fff0c8)) brightness(1.22);
+  }
+}
+
+/* REPLACED: the old item is charred and cracked, embers glow in the fissures */
+.ms-ess .ms-ess-sock.is-replace .ms-ess-seat {
+  --pl-hi: #ffb27a;
+  --pl-mid: #b8421c;
+  --pl-lo: #2a0a04;
+  filter: drop-shadow(0 0 0.85rem rgba(255, 88, 36, 0.62));
+  animation: ms-ess-ember 1.15s ease-in-out infinite;
+}
+.ms-ess .ms-ess-sock.is-replace .ms-slot .ms-slot-art {
+  filter: saturate(0.5) brightness(0.62) sepia(0.4);
+}
+/* the rank medal of a socket stays above the ember tile (the filter sits on the art, not on the slot, so it makes no stacking context) */
+.ms-ess .ms-ess-seat .ms-slot-rank,
+.ms-ess .ms-ess-seat .ms-slot .ms-medal {
+  z-index: 4;
+}
+.ms-ess-ember {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  mix-blend-mode: hard-light;
+  opacity: 0.7;
+}
+.ms-ess-crack {
+  position: absolute;
+  left: 8%;
+  top: 8%;
+  z-index: 3;
+  width: 84%;
+  height: 84%;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.3rem #ff6a28);
+  animation: ms-ess-flicker 1.6s steps(1, end) infinite;
+}
+@keyframes ms-ess-ember {
+  50% {
+    filter: drop-shadow(0 0 1.25rem rgba(255, 96, 40, 0.9)) brightness(1.15);
+  }
+}
+@keyframes ms-ess-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0.72;
+  }
+  44% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0.84;
+  }
+}
+
+/* UPGRADE: gold rim and rising chevrons */
+.ms-ess .ms-ess-sock.is-upgrade .ms-ess-seat {
+  --pl-hi: #ffeeb0;
+  --pl-mid: #c8932c;
+  --pl-lo: #3a2608;
+  filter: drop-shadow(0 0 0.8rem rgba(246, 207, 98, 0.6));
+}
+.ms-ess-up {
+  position: absolute;
+  right: -0.4rem;
+  top: -0.45rem;
+  z-index: 4;
+  width: calc(var(--sk) * 0.46);
+  height: calc(var(--sk) * 0.46);
+  filter: drop-shadow(0 0 0.3rem rgba(246, 207, 98, 0.8));
+  animation: ms-ess-bob 1.3s ease-in-out infinite;
+}
+.ms-ess-up svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@keyframes ms-ess-bob {
+  50% {
+    translate: 0 -0.22rem;
+  }
+}
+
+/* the pearl gem that lies in a free socket: the painted octagon-cut gem, filling the seat, with a slow glint */
+.ms-ess-gemfill {
+  position: absolute;
+  left: 11%;
+  top: 11%;
+  width: 78%;
+  height: 78%;
+  z-index: 2;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.35rem rgba(255, 246, 220, 0.9));
+  animation: ms-ess-glint 3.4s ease-in-out infinite;
+}
+@keyframes ms-ess-glint {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0.3rem rgba(255, 246, 220, 0.8)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 0.6rem rgba(255, 246, 220, 1)) brightness(1.18);
+  }
+}
+
+/* trinkets */
+.ms-ess-jew {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding-top: 0.65rem;
+}
+.ms-ess-jew::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(180deg, #050403 0 1px, rgba(140, 132, 120, 0.38) 1px 2px);
+}
+.ms-ess-trin {
+  --sk: calc(var(--med) * 0.15);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: calc(var(--med) * 0.07);
+}
+.ms-ess-tslot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ms-ess-sock--trinket {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0;
+  transform: none;
+}
+/* the trinket's name under its socket: lifted above the glow of a free socket and kept readable on the stone */
+.ms-ess-cap {
+  position: relative;
+  z-index: 2;
+  max-width: calc(var(--sk) + 2rem);
+  overflow: hidden;
+  padding: 0.28em 0.1em 0.1em;
+  margin-top: -0.28em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: max(12px, var(--t-sm));
+  letter-spacing: 0.04em;
+  color: #d8cfba;
+  text-shadow: 0 1px 0 #000, 0 0 0.35rem #000, 0 0 0.6rem #000;
+}
+.ms-ess-sock--trinket.is-free .ms-ess-seat {
+  filter: drop-shadow(0 0 0.1rem #fff6dc) drop-shadow(0 0 0.55rem color-mix(in srgb, var(--rune) 55%, #fff0c8));
+}
+
+/* key of the three socket states: a miniature of each state (the pearl gem, the charred tile, the gold chevrons) in a small octagon
+   seat with its word beside it. One quiet row, smaller than a socket, so it never reads as three more sockets */
+.ms-ess-legend {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.9rem;
+  width: 100%;
+  padding: 0.65rem 0.2rem 0;
+}
+.ms-ess-legend::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(180deg, #050403 0 1px, rgba(140, 132, 120, 0.38) 1px 2px);
+}
+.ms-ess-lg {
+  display: inline-flex;
+  flex: 0 1 auto;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(12px, var(--t-xs));
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b3ab99;
+  transition: color 0.2s;
+}
+.ms-ess-lg b {
+  font-weight: 700;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0.3em 0 0.1em;
+  margin: -0.3em 0 -0.1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ms-ess .ms-ess-lgseat.ms-plate {
+  --pl-c: 0.34rem;
+  --pl-bw: 2px;
+  --pl-line: #050403;
+  --pl-hi: #8c8576;
+  --pl-mid: #4a443b;
+  --pl-lo: #14110d;
+  --pl-face: radial-gradient(120% 100% at 50% 30%, #1f1a14, #070605);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  overflow: visible;
+}
+.ms-ess-lgimg {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.2rem rgba(255, 246, 220, 0.7));
+}
+.ms-ess-lgimg.is-ember {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+  mix-blend-mode: hard-light;
+  opacity: 0.7;
+  filter: none;
+}
+.ms-ess-lgseat .ms-ess-mark {
+  position: relative;
+  width: 64%;
+  height: 64%;
+}
+.ms-ess .ms-ess-lg.is-lit {
+  color: #efe5ca;
+}
+.ms-ess .ms-ess-lg.is-free.is-lit .ms-ess-lgseat {
+  --pl-hi: #fff3d0;
+  --pl-mid: #b59d60;
+  filter: drop-shadow(0 0 0.4rem rgba(255, 240, 200, 0.7));
+}
+.ms-ess .ms-ess-lg.is-replace.is-lit {
+  color: #ffa377;
+}
+.ms-ess .ms-ess-lg.is-replace.is-lit .ms-ess-lgseat {
+  --pl-hi: #ffae80;
+  --pl-mid: #a8441e;
+  filter: drop-shadow(0 0 0.4rem rgba(255, 96, 40, 0.7));
+}
+.ms-ess .ms-ess-lg.is-upgrade.is-lit {
+  color: #f6cf62;
+}
+.ms-ess .ms-ess-lg.is-upgrade.is-lit .ms-ess-lgseat {
+  --pl-hi: #ffe9a0;
+  --pl-mid: #b8862a;
+  filter: drop-shadow(0 0 0.4rem rgba(246, 207, 98, 0.6));
+}
+.ms-ess-mark {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* ---- caption + actions ------------------------------------------------------------------------------------------------ */
+.ms-ess-caption {
+  min-height: 1.6rem;
+  max-width: min(60rem, 94vw);
+  font-size: var(--t-lg);
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--k-text-2);
+  text-shadow: 0 0.06rem 0.3rem #000;
+}
+.ms-ess-caption.is-replace {
+  color: #ffb28a;
+}
+
+/* ---- desktop / ultra: the board is wide enough for a second column: the medallion on the left, the three trinket sockets in a column on its
+   right (the way a socket window keeps its side slots), the key of the states under both. Keeps the board as short as the cards ------ */
+.ms-tier-desktop .ms-ess,
+.ms-tier-ultra .ms-ess {
+  --med: 16.4rem;
+}
+.ms-tier-desktop .ms-ess-board,
+.ms-tier-ultra .ms-ess-board {
+  width: calc(var(--med) + 10.4rem);
+}
+.ms-tier-desktop .ms-ess-bd,
+.ms-tier-ultra .ms-ess-bd {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: center;
+  column-gap: 0.9rem;
+  row-gap: 0.6rem;
+  padding-inline: 0.6rem;
+}
+.ms-tier-desktop .ms-ess-medblock,
+.ms-tier-ultra .ms-ess-medblock {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ms-tier-desktop .ms-ess-jew,
+.ms-tier-ultra .ms-ess-jew {
+  grid-column: 2;
+  grid-row: 1;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: auto;
+  padding: 0 0 0 0.7rem;
+}
+.ms-tier-desktop .ms-ess-jew::before,
+.ms-tier-ultra .ms-ess-jew::before {
+  left: 0;
+  right: auto;
+  top: -0.4rem;
+  bottom: -0.4rem;
+  width: 2px;
+  height: auto;
+  background: linear-gradient(90deg, #050403 0 1px, rgba(140, 132, 120, 0.38) 1px 2px);
+}
+.ms-tier-desktop .ms-ess-trin,
+.ms-tier-ultra .ms-ess-trin {
+  --sk: calc(var(--med) * 0.16);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.ms-tier-desktop .ms-ess-tslot,
+.ms-tier-ultra .ms-ess-tslot {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ms-tier-desktop .ms-ess-cap,
+.ms-tier-ultra .ms-ess-cap {
+  max-width: 4.9rem;
+  margin-top: 0;
+  padding: 0.28em 0.1em 0.1em;
+  text-align: left;
+}
+.ms-tier-desktop .ms-ess-legend,
+.ms-tier-ultra .ms-ess-legend {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+/* ---- laptop: the board squeezes beside narrower cards ------------------------------------------------------------------- */
+.ms-tier-laptop .ms-ess {
+  --med: 13.6rem;
+}
+.ms-tier-laptop .ms-ess .ms-card {
+  --cw: 17.2rem;
+}
+.ms-tier-laptop .ms-ess-main {
+  gap: 0.8rem 0.9rem;
+}
+.ms-tier-laptop .ms-ess-left {
+  width: 12rem;
+}
+.ms-tier-laptop .ms-ess-bd {
+  padding-inline: 0.5rem;
+  gap: 0.45rem;
+}
+.ms-tier-laptop .ms-ess-board {
+  width: calc(var(--med) + 3.4rem);
+}
+.ms-tier-laptop .ms-ess-lgseat.ms-plate {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.ms-tier-laptop .ms-ess-legend {
+  gap: 0.3rem 0.5rem;
+  padding-inline: 0;
+}
+.ms-tier-laptop .ms-ess-lg {
+  gap: 0.28rem;
+  letter-spacing: 0.02em;
+}
+.ms-tier-laptop.ms-ui .ms-ess-caption,
+.ms-tier-laptop .ms-ess-caption {
+  font-size: var(--t-md);
+}
+@media (max-height: 820px) {
+  .ms-ess .ms-card {
+    --ch: min(30.2rem, calc(100dvh - 22rem));
+  }
+  .ms-cardmodal.ms-ess {
+    gap: 0.7rem;
+  }
+  /* the plain "press 1-3 to choose" hint is the first thing to go when a tall upgrade card needs the height */
+  .ms-ess-caption.is-hint {
+    display: none;
+  }
+  /* the awakened plaque says what the subtitle would: on a short screen the subtitle line makes room for it */
+  .ms-ess.is-awakened .ms-rw-sub {
+    display: none;
+  }
+}
+
+/* ---- ultra-wide ------------------------------------------------------------------------------------------------------------ */
+.ms-tier-ultra .ms-ess-left {
+  width: 22rem;
+}
+
+/* ---- strip tier: tablet (4:3). One compact row of sockets under the cards ------------------------------------------------ */
+.ms-tier-tablet .ms-ess-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ms-tier-tablet .ms-ess-left {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-board {
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+.ms-tier-tablet .ms-ess-board .ms-titlebar {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-bd {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+  padding: 0.5rem 0.9rem;
+}
+.ms-tier-tablet .ms-ess-medblock {
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.ms-tier-tablet .ms-ess-arc {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-med {
+  width: auto;
+  height: auto;
+  filter: none;
+  border-radius: 0;
+  --sk: 2.9rem;
+}
+.ms-tier-tablet .ms-ess-ringimg,
+.ms-tier-tablet .ms-ess-track,
+.ms-tier-tablet .ms-ess-disc,
+.ms-tier-tablet .ms-ess-plate,
+.ms-tier-tablet .ms-ess-relief,
+.ms-tier-tablet .ms-ess-rim,
+.ms-tier-tablet .ms-ess-band,
+.ms-tier-tablet .ms-ess-core {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-ring {
+  position: static;
+  display: flex;
+  gap: 0.35rem;
+}
+.ms-tier-tablet .ms-ess-ring > .ms-ess-sock:nth-child(3) {
+  margin-right: 0.6rem;
+}
+.ms-tier-tablet .ms-ess-sock--stone {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0;
+  transform: none;
+}
+.ms-tier-tablet .ms-ess-jew {
+  flex-direction: row;
+  width: auto;
+  padding: 0 0 0 0.8rem;
+}
+.ms-tier-tablet .ms-ess-jew::before {
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  height: auto;
+  background: linear-gradient(90deg, #050403 0 1px, rgba(140, 132, 120, 0.38) 1px 2px);
+}
+.ms-tier-tablet .ms-ess-jew .ms-ess-arc {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-trin {
+  --sk: 2.9rem;
+  gap: 0.35rem;
+}
+.ms-tier-tablet .ms-ess-cap {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-legend {
+  width: auto;
+  flex-wrap: nowrap;
+  padding: 0 0 0 0.8rem;
+  gap: 0.7rem;
+}
+.ms-tier-tablet .ms-ess-legend::before {
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  height: auto;
+  background: linear-gradient(90deg, #050403 0 1px, rgba(140, 132, 120, 0.38) 1px 2px);
+}
+.ms-tier-tablet .ms-ess .ms-ess-lgseat.ms-plate {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.ms-tier-tablet .ms-ess .ms-card {
+  --ch: calc(100dvh - 34rem);
+  min-height: 18rem;
+}
+/* 4:3 is short: tighter gaps, a smaller card picture and slimmer number wells, so an awakened upgrade card plus the strip still fit */
+.ms-tier-tablet .ms-cardmodal.ms-ess {
+  gap: 0.5rem;
+  padding-block: calc(0.45rem + var(--safe-t)) calc(0.5rem + var(--safe-b));
+}
+.ms-tier-tablet .ms-ess .ms-card .ms-slot--xxl {
+  --s: 5.2rem;
+}
+.ms-tier-tablet .ms-ess .ms-cm-cards {
+  margin-top: 0.7rem;
+}
+.ms-tier-tablet .ms-ess .ms-card-well {
+  min-height: 2.1rem;
+}
+.ms-tier-tablet .ms-ess .ms-card-well b {
+  font-size: 1.65rem;
+}
+.ms-tier-tablet .ms-ess .ms-card-lico {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+/* the subtitle is flavour: on a 4:3 tablet its line goes so the awakened plaque still fits */
+.ms-tier-tablet .ms-ess .ms-rw-sub {
+  display: none;
+}
+.ms-tier-tablet .ms-ess-foot {
+  gap: 0.35rem;
+}
+.ms-tier-tablet .ms-ess-caption {
+  min-height: 0;
+  font-size: var(--t-md);
+}
+.ms-tier-tablet .ms-ess .ms-rw-shelf.ms-plate {
+  padding-block: 0.4rem;
+}
+.ms-ui:not(.ms-compact):not(.ms-portrait).ms-tier-tablet .ms-ess .ms-card {
+  min-height: var(--ch);
+}
+
+/* ---- phone landscape: the sockets (3 x 3) and the button shelf share one column beside the cards ----------------------------- */
+.ms-compact.ms-landscape .ms-cardmodal.ms-ess {
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-ess .ms-card {
+  --ch: calc(100dvh - 6.8rem);
+  min-height: 0;
+}
+.ms-compact.ms-landscape .ms-ess-main {
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    'cards board'
+    'cards foot';
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  align-items: start;
+  gap: 0.45rem 0.9rem;
+}
+.ms-compact.ms-landscape .ms-ess-left {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess .ms-ess-caption {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess-foot {
+  align-self: start;
+}
+.ms-compact.ms-landscape .ms-ess .ms-card .ms-slot--xxl {
+  --s: 4rem;
+}
+.ms-compact.ms-landscape .ms-ess .ms-card-foot {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess .ms-cm-cards {
+  gap: 1.15rem;
+}
+/* the card width of the shared formula (card.css) reserves 0.6 rem between cards and no room for this modal's own gaps: with a notch on
+   either side (--safe-l / --safe-r) the row ran into the left inset (first card 8-14 px inside it) and the shelf into the right one. The
+   widths now take this row's real gaps (1.15 rem between cards, 0.9 rem to the shelf column, 0.8 rem of modal padding each side, the
+   13.9 rem shelf); with no insets the 14.4 rem cap still wins, so the card is as wide as before. */
+.ms-compact.ms-landscape .ms-ess .ms-card {
+  --cw: min(14.4rem, calc((100vw - var(--safe-l) - var(--safe-r) - 16.8rem - (var(--n, 3) - 1) * 1.15rem) / var(--n, 3)));
+}
+/* a card that REPLACES something and also lists stat rows (its "Replaces ..." line is the point of the card) drops the lore / description
+   slab: slab + two stacked stat rows + that line were 45 px taller than the card body, and the line sat below the card's cut edge
+   (Thunderclap Bracelet: "Replaces Jade Lifebound Bracelet"). The stat rows already say what the slab says. */
+.ms-compact.ms-landscape .ms-ess .ms-card:has(.ms-card-replaces):has(.ms-card-line) :is(.ms-card-flav, .ms-card-desc) {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess .ms-card-replaces {
+  margin-top: 0.1rem;
+  line-height: 1.2;
+}
+.ms-tier-phone-l .ms-ess {
+  --sk: 2.7rem;
+}
+.ms-tier-phone-l .ms-ess-board {
+  width: 12.6rem;
+  justify-self: start;
+}
+.ms-tier-phone-l .ms-ess-board .ms-titlebar,
+.ms-tier-phone-l .ms-ess-arc,
+.ms-tier-phone-l .ms-ess-cap,
+.ms-tier-phone-l .ms-ess-legend,
+.ms-tier-phone-l .ms-ess-ringimg,
+.ms-tier-phone-l .ms-ess-track,
+.ms-tier-phone-l .ms-ess-disc,
+.ms-tier-phone-l .ms-ess-plate,
+.ms-tier-phone-l .ms-ess-relief,
+.ms-tier-phone-l .ms-ess-rim,
+.ms-tier-phone-l .ms-ess-band,
+.ms-tier-phone-l .ms-ess-core {
+  display: none;
+}
+.ms-tier-phone-l .ms-ess-bd {
+  gap: 0.3rem;
+  padding: 0.4rem 0.45rem 0.45rem;
+}
+.ms-tier-phone-l .ms-ess-med {
+  width: auto;
+  height: auto;
+  filter: none;
+  --sk: 2.7rem;
+}
+.ms-tier-phone-l .ms-ess-ring {
+  position: static;
+  display: grid;
+  grid-template-columns: repeat(3, var(--sk));
+  gap: 0.3rem 0.4rem;
+}
+.ms-tier-phone-l .ms-ess-sock--stone {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0;
+  transform: none;
+}
+.ms-tier-phone-l .ms-ess-jew {
+  width: auto;
+  padding-top: 0.3rem;
+}
+.ms-tier-phone-l .ms-ess-trin {
+  --sk: 2.7rem;
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-ess-awaken-t i {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess-awaken.ms-plate {
+  padding: 0.12rem 1rem;
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .ms-ess .ms-ess-num.ms-plate {
+  min-width: 1.1rem;
+  height: 1.1rem;
+}
+/* sockets are packed in the compact tiers: the card number sits in the cut corner of its own socket, never over a neighbour */
+.ms-compact .ms-ess .ms-ess-nums,
+.ms-tier-tablet .ms-ess .ms-ess-nums {
+  left: -0.12rem;
+  top: -0.14rem;
+}
+.ms-compact .ms-ess .ms-ess-num.ms-plate,
+.ms-tier-tablet .ms-ess .ms-ess-num.ms-plate {
+  min-width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* ---- phone portrait: the sockets sit above the cards as one belt (weapon trio | crystal | armor trio) on an engraved rail with studs at
+   both ends; under it the trinkets (heading + names) on the left and the key of the socket states as a plain list on the right ------- */
+.ms-tier-phone-p .ms-ess {
+  --sk: 2.3rem;
+}
+.ms-tier-phone-p .ms-ess-main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+}
+.ms-tier-phone-p .ms-ess-left {
+  display: none;
+}
+.ms-tier-phone-p .ms-ess-board {
+  order: -1;
+  width: 100%;
+  align-self: stretch;
+}
+.ms-tier-phone-p .ms-ess-board .ms-titlebar {
+  display: none;
+}
+.ms-tier-phone-p .ms-ess-bd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  justify-items: center;
+  gap: 0.3rem 0.5rem;
+  padding: 0.55rem 0.5rem 0.65rem;
+}
+.ms-tier-phone-p .ms-ess-medblock {
+  display: contents;
+}
+.ms-tier-phone-p .ms-ess-arc.is-top {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ms-tier-phone-p .ms-ess-arc.is-bottom {
+  grid-column: 2;
+  grid-row: 1;
+}
+.ms-tier-phone-p .ms-ess-med {
+  --sk: 2.3rem;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0.9rem;
+  filter: none;
+  border-radius: 0;
+}
+/* the rail: a chamfered pewter frame round a dark groove with a bronze line through it, the gems sit on that line */
+.ms-tier-phone-p .ms-ess-med::before,
+.ms-tier-phone-p .ms-ess-med::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  clip-path: polygon(0.55rem 0, calc(100% - 0.55rem) 0, 100% 0.55rem, 100% calc(100% - 0.55rem), calc(100% - 0.55rem) 100%, 0.55rem 100%, 0 calc(100% - 0.55rem), 0 0.55rem);
+}
+.ms-tier-phone-p .ms-ess-med::before {
+  inset: 0;
+  background: linear-gradient(180deg, #a09680, #5a5448 45%, #1d1a15);
+}
+.ms-tier-phone-p .ms-ess-med::after {
+  inset: 2px;
+  background:
+    radial-gradient(circle at 0.55rem 50%, #fff1c8 0 0.08rem, #c79a4a 0.12rem, #5b3e18 0.28rem, transparent 0.32rem),
+    radial-gradient(circle at calc(100% - 0.55rem) 50%, #fff1c8 0 0.08rem, #c79a4a 0.12rem, #5b3e18 0.28rem, transparent 0.32rem),
+    linear-gradient(180deg, transparent calc(50% - 1.5px), rgba(0, 0, 0, 0.7) calc(50% - 1.5px) 50%, rgba(206, 156, 72, 0.7) 50% calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.12) 42%, rgba(0, 0, 0, 0.42)),
+    var(--tex-uk-stone, var(--k-grain-light)) 0 0 / 12rem,
+    #14110d;
+}
+.ms-tier-phone-p .ms-ess-ring {
+  display: contents;
+}
+.ms-tier-phone-p .ms-ess-sock--stone {
+  position: relative;
+  z-index: 1;
+  left: auto;
+  top: auto;
+  flex: none;
+  margin: 0;
+  transform: none;
+}
+.ms-tier-phone-p .ms-ess-sock--stone:nth-child(-n + 3) {
+  order: 0;
+}
+.ms-tier-phone-p .ms-ess-sock--stone:nth-child(n + 4) {
+  order: 4;
+}
+.ms-tier-phone-p .ms-ess-ringimg,
+.ms-tier-phone-p .ms-ess-track,
+.ms-tier-phone-p .ms-ess-disc,
+.ms-tier-phone-p .ms-ess-plate,
+.ms-tier-phone-p .ms-ess-relief,
+.ms-tier-phone-p .ms-ess-rim {
+  display: none;
+}
+.ms-tier-phone-p .ms-ess-core {
+  position: relative;
+  z-index: 1;
+  left: auto;
+  top: auto;
+  translate: none;
+  order: 2;
+  flex: none;
+  width: 1.1rem;
+  margin-inline: 0.45rem;
+}
+.ms-tier-phone-p .ms-ess-core:has(.ms-ess-crystal) {
+  width: 1.1rem;
+}
+.ms-tier-phone-p .ms-ess-core-glow {
+  width: 330%;
+}
+/* trinkets: heading, three sockets, their names */
+.ms-tier-phone-p .ms-ess-jew {
+  grid-column: 1;
+  grid-row: 3;
+  gap: 0.3rem;
+  width: auto;
+  padding-top: 0.35rem;
+}
+.ms-tier-phone-p .ms-ess-jew::before {
+  left: -0.2rem;
+  right: -0.2rem;
+  top: 0;
+}
+.ms-tier-phone-p .ms-ess-jew > .ms-ess-arc {
+  font-size: max(12px, var(--t-xs));
+  letter-spacing: 0.1em;
+}
+.ms-tier-phone-p .ms-ess-trin {
+  --sk: 2.3rem;
+  gap: 0.2rem;
+}
+.ms-tier-phone-p .ms-ess-tslot {
+  gap: 0.35rem;
+}
+.ms-tier-phone-p .ms-ess-cap {
+  max-width: 3.9rem;
+  font-size: max(12px, var(--t-xs));
+  letter-spacing: 0.01em;
+}
+/* the key: a plain list, a swatch smaller than a socket and its word, set off from the sockets by a rule */
+.ms-tier-phone-p .ms-ess-legend {
+  grid-column: 2;
+  grid-row: 3;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  gap: 0.4rem;
+  padding: 0.35rem 0 0 0.9rem;
+}
+.ms-tier-phone-p .ms-ess-legend::before {
+  left: -0.2rem;
+  right: -0.2rem;
+}
+.ms-tier-phone-p .ms-ess-lg {
+  font-size: max(12px, var(--t-xs));
+  letter-spacing: 0.04em;
+}
+.ms-tier-phone-p .ms-ess .ms-ess-lgseat.ms-plate {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+.ms-tier-phone-p .ms-ess-foot {
+  display: contents;
+}
+.ms-portrait .ms-ess .ms-card {
+  --ch: auto;
+  min-height: 0;
+}
+.ms-portrait .ms-ess-caption {
+  font-size: var(--t-md);
+}
+.ms-portrait .ms-ess .ms-card > .ms-card-name {
+  padding-right: 3.6rem;
+}

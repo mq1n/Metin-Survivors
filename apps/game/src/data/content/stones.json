@@ -1,0 +1,384 @@
+[
+  {
+    "id": "pearl_piercing",
+    "slot": "weapon",
+    "name": {
+      "tr": "Delici İnci",
+      "en": "Piercing Pearl"
+    },
+    "desc": {
+      "tr": "Mermilerin ve darbelerin düşmanları delip geçer; her seviyede delme artar, mermiler hızlanır.",
+      "en": "Your missiles and strikes tear through enemies; every level adds piercing and a little projectile speed."
+    },
+    "icon": "icon_pearl_piercing",
+    "perLevel": {
+      "pierce": 0.4,
+      "projSpeed": 0.03
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_lethal",
+    "slot": "weapon",
+    "name": {
+      "tr": "Ölümcül İnci",
+      "en": "Deathblow Pearl"
+    },
+    "desc": {
+      "tr": "Darbelerin ölümcül noktaları bulur: kritik şansı ve kritik hasarı artar.",
+      "en": "Your blows find the lethal point: crit chance and crit damage rise."
+    },
+    "icon": "icon_pearl_lethal",
+    "perLevel": {
+      "critChance": 0.02,
+      "critDamage": 0.05
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_swift",
+    "slot": "weapon",
+    "name": {
+      "tr": "Çevik İnci",
+      "en": "Swift Pearl"
+    },
+    "desc": {
+      "tr": "Silahın elinde hafifler: saldırı hızı artar.",
+      "en": "Your weapon lightens in your hand: attack speed rises."
+    },
+    "icon": "icon_pearl_swift",
+    "perLevel": {
+      "attackSpeed": 0.04
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_cooling",
+    "slot": "weapon",
+    "name": {
+      "tr": "Serin İnci",
+      "en": "Coolwater Pearl"
+    },
+    "desc": {
+      "tr": "Yetenekler çabuk soğur: bekleme süreleri kısalır.",
+      "en": "Skills cool down quickly: cooldowns shrink."
+    },
+    "icon": "icon_pearl_cooling",
+    "perLevel": {
+      "cooldown": 0.025
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_magic",
+    "slot": "weapon",
+    "name": {
+      "tr": "Büyü İncisi",
+      "en": "Arcane Pearl"
+    },
+    "desc": {
+      "tr": "İncideki büyü yeteneklerini besler: hasar ve alan artar.",
+      "en": "The magic in the pearl feeds your skills: damage and area grow."
+    },
+    "icon": "icon_pearl_magic",
+    "perLevel": {
+      "damage": 0.03,
+      "area": 0.015
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_animal",
+    "slot": "weapon",
+    "name": {
+      "tr": "Hayvan Belası İncisi",
+      "en": "Beastbane Pearl"
+    },
+    "desc": {
+      "tr": "Kurtlara, ayılara ve kaplanlara karşı çok daha ölümcülsün.",
+      "en": "Far deadlier against wolves, bears, boars and tigers."
+    },
+    "icon": "icon_pearl_vs_animal",
+    "perLevel": {
+      "vsRace": {
+        "animal": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_human",
+    "slot": "weapon",
+    "name": {
+      "tr": "Asker Belası İncisi",
+      "en": "Soldierbane Pearl"
+    },
+    "desc": {
+      "tr": "Askerlere, okçulara ve komutanlara karşı daha sert vurursun.",
+      "en": "You strike harder against soldiers, archers and commanders."
+    },
+    "icon": "icon_pearl_vs_human",
+    "perLevel": {
+      "vsRace": {
+        "human": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_orc",
+    "slot": "weapon",
+    "name": {
+      "tr": "Ork Belası İncisi",
+      "en": "Orcbane Pearl"
+    },
+    "desc": {
+      "tr": "Ork ordularına karşı hasarını artırır.",
+      "en": "Raises your damage against orc armies."
+    },
+    "icon": "icon_pearl_vs_orc",
+    "perLevel": {
+      "vsRace": {
+        "orc": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_esoteric",
+    "slot": "weapon",
+    "name": {
+      "tr": "Mürit Belası İncisi",
+      "en": "Zealotbane Pearl"
+    },
+    "desc": {
+      "tr": "Örtülü Tarikat müritlerine ve münzevilere karşı hasarını artırır.",
+      "en": "Raises your damage against Veiled Order zealots and ascetics."
+    },
+    "icon": "icon_pearl_vs_esoteric",
+    "perLevel": {
+      "vsRace": {
+        "esoteric": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_undead",
+    "slot": "weapon",
+    "name": {
+      "tr": "Ölü Belası İncisi",
+      "en": "Gravebane Pearl"
+    },
+    "desc": {
+      "tr": "Vebalı ölülere karşı hasarını artırır.",
+      "en": "Raises your damage against the blighted dead."
+    },
+    "icon": "icon_pearl_vs_undead",
+    "perLevel": {
+      "vsRace": {
+        "undead": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_ice",
+    "slot": "weapon",
+    "name": {
+      "tr": "Buz Belası İncisi",
+      "en": "Frostbane Pearl"
+    },
+    "desc": {
+      "tr": "Buz yaratıklarını daha kolay parçalar.",
+      "en": "Shatters ice creatures more easily."
+    },
+    "icon": "icon_pearl_vs_ice",
+    "perLevel": {
+      "vsRace": {
+        "ice": 0.07
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vs_devil",
+    "slot": "weapon",
+    "name": {
+      "tr": "Cin Belası İncisi",
+      "en": "Fiendbane Pearl"
+    },
+    "desc": {
+      "tr": "Alev yaratıklarına, ruhlara ve ejderhalara karşı hasarını artırır.",
+      "en": "Raises your damage against flame beasts, spirits and dragons."
+    },
+    "icon": "icon_pearl_vs_devil",
+    "perLevel": {
+      "vsRace": {
+        "devil": 0.08,
+        "fire": 0.06,
+        "dragon": 0.05
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_evasion",
+    "slot": "armor",
+    "name": {
+      "tr": "Sıyrılma İncisi",
+      "en": "Evasion Pearl"
+    },
+    "desc": {
+      "tr": "Zırhın rüzgâr gibi kayar: darbelerden sıyrılma şansı artar.",
+      "en": "Your armour slides like the wind: a higher chance to slip blows."
+    },
+    "icon": "icon_pearl_evasion",
+    "perLevel": {
+      "evasion": 0.03
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_life",
+    "slot": "armor",
+    "name": {
+      "tr": "Can İncisi",
+      "en": "Vital Pearl"
+    },
+    "desc": {
+      "tr": "İnciden bir can akar zırhına: azami can artar.",
+      "en": "Life flows from the pearl into your armour: max HP rises."
+    },
+    "icon": "icon_pearl_life",
+    "perLevel": {
+      "maxHpPct": 0.05
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_bloodthirst",
+    "slot": "weapon",
+    "name": {
+      "tr": "Kan İncisi",
+      "en": "Bloodthirst Pearl"
+    },
+    "desc": {
+      "tr": "Silahın kanla beslenir: verdiğin hasarın bir kısmı can olarak döner.",
+      "en": "Your weapon feeds on blood: part of the damage you deal returns as health."
+    },
+    "icon": "icon_pearl_bloodthirst",
+    "perLevel": {
+      "lifesteal": 0.004
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_defense",
+    "slot": "armor",
+    "name": {
+      "tr": "Siper İncisi",
+      "en": "Bulwark Pearl"
+    },
+    "desc": {
+      "tr": "Zırhın taş gibi sertleşir: zırh değeri artar.",
+      "en": "Your armour hardens like stone: armor rating rises."
+    },
+    "icon": "icon_pearl_defense",
+    "perLevel": {
+      "armor": 6
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_vitality",
+    "slot": "armor",
+    "name": {
+      "tr": "Onarım İncisi",
+      "en": "Mending Pearl"
+    },
+    "desc": {
+      "tr": "Yaraların kendiliğinden kapanır: can yenilenmesi artar.",
+      "en": "Your wounds close on their own: health regeneration rises."
+    },
+    "icon": "icon_pearl_vitality",
+    "perLevel": {
+      "regen": 0.4
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_resist",
+    "slot": "armor",
+    "name": {
+      "tr": "Muhafaza İncisi",
+      "en": "Warding Pearl"
+    },
+    "desc": {
+      "tr": "Ateşe, buza, karanlığa ve zehire karşı direnç kazandırır.",
+      "en": "Grants resistance to fire, ice, darkness and poison."
+    },
+    "icon": "icon_pearl_resist",
+    "perLevel": {
+      "resist": {
+        "fire": 0.04,
+        "ice": 0.04,
+        "dark": 0.04,
+        "poison": 0.04
+      }
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_thorns",
+    "slot": "armor",
+    "name": {
+      "tr": "Dikenli İnci",
+      "en": "Barbed Pearl"
+    },
+    "desc": {
+      "tr": "Aldığın yakın dövüş hasarının bir kısmını saldırgana geri yansıtır.",
+      "en": "Reflects part of the melee damage you take back at the attacker."
+    },
+    "icon": "icon_pearl_thorns",
+    "perLevel": {
+      "thorns": 0.07
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_fortune",
+    "slot": "armor",
+    "name": {
+      "tr": "Talih İncisi",
+      "en": "Windfall Pearl"
+    },
+    "desc": {
+      "tr": "Şansın ve kazandığın Yeop artar.",
+      "en": "Your luck and the Yeop you earn increase."
+    },
+    "icon": "icon_pearl_fortune",
+    "perLevel": {
+      "luck": 0.02,
+      "yeopGain": 0.05
+    },
+    "maxLevel": 4
+  },
+  {
+    "id": "pearl_wind",
+    "slot": "armor",
+    "name": {
+      "tr": "Rüzgâr İncisi",
+      "en": "Zephyr Pearl"
+    },
+    "desc": {
+      "tr": "Adımların rüzgârı geçer: hareket hızı artar.",
+      "en": "Your steps outrun the wind: movement speed rises."
+    },
+    "icon": "icon_pearl_wind",
+    "perLevel": {
+      "moveSpeed": 0.025
+    },
+    "maxLevel": 4
+  }
+]

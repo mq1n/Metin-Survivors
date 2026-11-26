@@ -1,0 +1,57 @@
+[
+  {
+    "id": "saehwa",
+    "name": {
+      "tr": "Saehwa",
+      "en": "Saehwa"
+    },
+    "color": "#d03a3a",
+    "bonus": {
+      "maxHpPct": 0.1
+    },
+    "edict": {
+      "skips": 1
+    },
+    "desc": {
+      "tr": "Kızıl Krallık: sabırlı ve dayanıklı. Azami can %10 artar. Ferman: koşu başına +1 Atla hakkı.",
+      "en": "The Red Kingdom: patient and enduring. Max HP +10%. Edict: +1 Skip per run."
+    }
+  },
+  {
+    "id": "chowon",
+    "name": {
+      "tr": "Chowon",
+      "en": "Chowon"
+    },
+    "color": "#e6c23a",
+    "bonus": {
+      "xpGain": 0.1
+    },
+    "edict": {
+      "rerolls": 1
+    },
+    "desc": {
+      "tr": "Sarı Krallık: bilge ve hızlı öğrenen. Kazanılan deneyim %10 artar. Ferman: koşu başına +1 Yenile hakkı.",
+      "en": "The Yellow Kingdom: wise and quick to learn. XP gained +10%. Edict: +1 Reroll per run."
+    }
+  },
+  {
+    "id": "jihae",
+    "name": {
+      "tr": "Jihae",
+      "en": "Jihae"
+    },
+    "color": "#3a6ad0",
+    "bonus": {
+      "yeopGain": 0.1,
+      "luck": 0.05
+    },
+    "edict": {
+      "banishes": 1
+    },
+    "desc": {
+      "tr": "Mavi Krallık: tüccar ve talihli. Kazanılan Yeop %10, şans 0,05 artar. Ferman: koşu başına +1 Yasakla hakkı.",
+      "en": "The Blue Kingdom: merchants blessed by luck. Yeop gained +10%, luck +0.05. Edict: +1 Banish per run."
+    }
+  }
+]

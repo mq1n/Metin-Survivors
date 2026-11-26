@@ -1,0 +1,215 @@
+{
+  "icon_pearl_piercing": {
+    "subject": "Piercing Pearl, a spirit stone that makes your missiles and blows tear through enemies",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a LANCE HEAD on the diagonal (long axis from lower left to upper right): a long narrow leaf-blade point about 2.2 times longer than wide but thick and solid (as thick as a fist), ONE razor-sharp tip at the upper right, a short square chipped tang at the lower left and a straight central ridge dividing two big planar facets; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "vivid deep-emerald green with bright leaf-green facets",
+      "white-hot specular glint on the top-left facet",
+      "dark green only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_swift": {
+    "subject": "Swift Pearl, a spirit stone that quickens your attack speed",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a sleek DART or arrowhead on the diagonal: a smooth straight-edged kite body about 2 times longer than wide and thick, with ONE sharp tip at the upper right, a clean V-shaped swallow-tail notch cut into the lower-left end and one narrow slanted slit notch cut into each side edge; ONLY straight cut edges: NO flames, NO feathers, NO wavy tongues; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "bright tangerine-orange and golden-amber facets",
+      "pale yellow glint on the top-left",
+      "deep burnt-orange only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_cooling": {
+    "subject": "Coolwater Pearl, a spirit stone that makes your skills cool down quickly",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a short wide chunk like a block of glacier ice slanting toward the upper right, about 1.4 times longer than wide, with one flat slanted top facet, a few big chipped planar facets and a blunt chipped base; a rough natural stone, NOT a cut jewel; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "pale aqua-cyan and ice-blue facets (more cyan than blue)",
+      "white specular glint on the top-left facet",
+      "teal-blue only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_magic": {
+    "subject": "Arcane Pearl, a spirit stone whose magic feeds your skills",
+    "silhouette": "TWO crystals growing from one base (one connected silhouette): a tall double-pointed kite-shaped crystal leaning toward the upper right with a smaller twin crystal leaning against its lower-left side; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, ONE clean white specular glint on the top-left; solid, thick and heavy; smooth clean painted contours, not pixel art",
+    "palette": [
+      "violet and royal-purple facets",
+      "pale lilac specular glint on the top-left facet",
+      "very dark indigo only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_animal": {
+    "subject": "Beastbane Pearl, a spirit stone that makes you deadlier against wolves, bears, boars and tigers",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a stout heavy TOOTH on the diagonal, about 1.6 times longer than wide, a thick chipped rock lower body and a smooth ivory-white blunt tip at the upper right (like a tusk point set into rock); NO horns; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "warm REDDISH chestnut-brown and russet rock facets of mid brightness (clearly redder and darker than bone or sand)",
+      "one smooth ivory-white tip",
+      "pale cream glint on the top-left",
+      "deep umber only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_human": {
+    "subject": "Soldierbane Pearl, a spirit stone that makes you strike harder against soldiers, archers and commanders",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a stout hexagonal PENCIL-TIP on the diagonal, about 1.7 times longer than wide, a thick six-sided body with a short blunt point at the upper right and a flat slanted top facet; a rough natural stone, not a cut jewel; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "light rose-pink and salmon-coral facets (pastel, clearly lighter and less saturated than the red stones)",
+      "white specular glint on the top-left facet",
+      "dusty raspberry only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_orc": {
+    "subject": "Orcbane Pearl, a spirit stone that raises your damage against orc armies",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a heavy blunt AXE-HEAD wedge on the diagonal, about 1.5 times longer than wide, a thick body with a flat diagonal chopped top edge ending in ONE sharp corner at the upper right and a notch bitten out of the lower edge; NO horns, NO tusks, NOT a leaf; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "dusty SAGE grey-green and pale khaki facets of MID-HIGH brightness (low saturation, a dull stone-green, clearly less yellow and less saturated than a lime leaf)",
+      "one light ochre-sand facet",
+      "white glint on the top-left",
+      "dark olive-brown only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_esoteric": {
+    "subject": "Zealotbane Pearl, a spirit stone that raises your damage against Milgyo zealots and arahans",
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): one fat almond-shaped (lens-shaped) crystal pointed at both ends and tilted toward the upper right, with a narrow slit-shaped facet through its middle like a closed eye; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "magenta and fuchsia facets",
+      "pale pink specular glint on the top-left facet",
+      "dark plum only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_undead": {
+    "subject": "Gravebane Pearl, a spirit stone that raises your damage against the plagued dead",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a cracked BONE-LIKE shard on the diagonal, only about 1.8 times longer than wide and thick like a knuckle-bone: a fat rounded knob at each end (like a bone) with ONE deep jagged break notch cut into its middle from the lower side, the upper-right end broken to a ragged point; big flat facets; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "warm bone-ivory and parchment-cream facets (clearly yellowish, NOT white, NOT grey)",
+      "dark brown-black crack lines in the break notch only",
+      "pale white glint on the top-left",
+      "dull brown-umber only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_ice": {
+    "subject": "Frostbane Pearl, a spirit stone that shatters ice creatures more easily",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a tall ICE PRISM on the diagonal: a six-sided column about 2.2 times longer than wide ending in a sharp pyramid tip at the upper right, a broken jagged base at the lower left and ONE small frost spur growing from its lower side; ONE connected silhouette, NOT a cluster of crystals; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "deep cobalt-blue and ultramarine facets",
+      "white frost glint on the top-left facet",
+      "dark navy only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vs_devil": {
+    "subject": "Fiendbane Pearl, a spirit stone that raises your damage against flame beasts, spirits and dragons",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a hooked DEMON CLAW on the diagonal, about 1.9 times longer than wide and thick at the base, its upper tip curling over like a claw, a jagged lower edge with two small spikes; the rock body is split by WIDE molten cracks (about a third of the surface glows); NO horns on a boulder; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "MID-BRIGHT slate-violet and warm grey-mauve rock facets (clearly lighter than charcoal, with strong light facet steps)",
+      "WIDE bright molten yellow-orange glowing cracks and a hot orange-yellow tip",
+      "pale yellow glint on the top-left",
+      "dark plum only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_evasion": {
+    "subject": "Evasion Pearl, a spirit stone that helps your armour slip blows",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a curved BLADE-SHARD on the diagonal, about 2.2 times longer than wide and as thick as a fist, bending gently like a scimitar blade, both ends sharp with the upper-right tip the longer, a central ridge dividing two big planar facets; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "pale lilac-mauve and silver-lavender facets",
+      "white specular glint on the top-left facet",
+      "dark purple-grey only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_life": {
+    "subject": "Vital Pearl, a spirit stone that raises your maximum health",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a LEAF on the diagonal: a plump leaf-shaped body about 1.8 times longer than wide, a pointed tip at the upper right, a rounded belly, a straight central vein ridge dividing the big flat facets and a short chipped stem stub at the lower left; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "VERY bright saturated lime-green and fresh yellow-green facets (the brightest green of the set)",
+      "white glint on the top-left",
+      "mid green only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_bloodthirst": {
+    "subject": "Bloodthirst Pearl, a spirit stone whose weapon feeds on blood and heals you",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a stout shard on the diagonal with a FORKED tip: a body about 1.8 times longer than wide that splits at the upper right into two sharp prongs of unequal length (like a fang pair), a clear V gap between them; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "VERY BRIGHT scarlet-red and vivid orange-red facets (glowing, high value, clearly lighter than a dark garnet)",
+      "white-pink specular glint on the top-left facet",
+      "mid crimson only in the bottom-right facets (never black, never dark maroon)"
+    ]
+  },
+  "icon_pearl_defense": {
+    "subject": "Bulwark Pearl, a spirit stone that hardens your armour",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a broad thick KITE slab on the diagonal, about 1.6 times longer than wide, wide shoulders and a blunt point at the upper right, a raised central ridge dividing two big flat facets and chipped edges; NOT a shield outline; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "mid-tone blued-steel blue-grey facets with bright silver-white edge highlights (like a tempered sword blade, mid brightness)",
+      "white specular glint on the top-left facet",
+      "dark slate-blue only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_vitality": {
+    "subject": "Mending Pearl, a spirit stone that makes your wounds close on their own",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a short stout PRISM on the diagonal: a squat six-sided quartz column about 1.7 times longer than wide with a pyramid tip at the upper right and a rough broken flat base at the lower left, the side faces clearly visible as hard flat facets; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "jade green and teal-green facets",
+      "pale mint specular glint on the top-left facet",
+      "deep teal only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_resist": {
+    "subject": "Warding Pearl, a spirit stone that grants resistance to fire, ice, darkness and poison",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a broad pearly KITE on the diagonal, about 1.4 times longer than wide, its face showing a raised cross-shaped ridge of four big triangular facets meeting in the middle; a natural stone, NOT an octahedron, NOT a cut jewel; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "clear pearl-white and pale silver facets with faint pink and lilac pastel tints",
+      "pure white specular glint on the top-left facet",
+      "cool grey-violet only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_thorns": {
+    "subject": "Barbed Pearl, a spirit stone that reflects melee damage back at the attacker",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a BARBED SPEARHEAD on the diagonal: a thick solid shard about 2 times longer than wide with ONE sharp tip at the upper right and THREE short sharp hooked barbs along each long side (six barbs in all, pointing back toward the lower left like a fishbone or barbed harpoon), a straight central ridge; ONE solid connected silhouette, NOT a ball, NOT a star, NOT a cluster; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "deep INDIGO and midnight-violet-blue facets with bright periwinkle and lilac highlights (mid brightness, rich saturated blue-violet, NOT grey, NOT steel)",
+      "hot orange-red barb tips",
+      "white glint on the top-left facet",
+      "dark navy only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_fortune": {
+    "subject": "Windfall Pearl, a spirit stone that raises your luck and the Yeop you earn",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a squat gold-ore LOZENGE on the diagonal: a plump faceted rhombus about 1.5 times longer than wide with a blunt chipped point at the upper right and a few small round dimples; NOT a coin, NOT a smooth egg, NOT a cut octagonal gem; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "golden-yellow and lemon-gold facets",
+      "white-yellow specular glint on the top-left facet",
+      "dark bronze-brown only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_wind": {
+    "subject": "Zephyr Pearl, a spirit stone that makes your steps outrun the wind",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a twisted RIBBON on the diagonal: a broad band of crystal about 2.2 times longer than wide with one clear half-turn twist in the middle so one end shows its flat face and the other its edge, both ends pointed; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "very pale lemon-cream and soft celadon-mint facets (airy, very light, low saturation, almost white with a warm yellow-green tint; clearly NOT cyan, NOT blue)",
+      "pure white specular glint on the top-left facet",
+      "soft sage-green only in the bottom-right facets"
+    ]
+  },
+  "icon_pearl_lethal": {
+    "subject": "Deathblow Pearl, a spirit stone that sharpens critical strikes",
+    "fill": 0.88,
+    "silhouette": "ONE faceted spirit-stone crystal shard of the shared spirit-stone family (one hand for the whole set): a heavy DAGGER-BLADE wedge on the diagonal, only about 1.8 times longer than wide and as thick as a fist (NOT a thin splinter): ONE sharp tip at the upper right, the lower edge cut with two deep triangular saw notches, a straight central ridge dividing two big flat facets and a broad chipped flat base at the lower left; solid, thick and heavy, never thin; FEW BIG FLAT FACETS (five to eight in all) with calm smooth planes, no fine speckle, no tiny cracks, ONE clean white specular glint on the top-left; smooth clean painted contours, not pixel art",
+    "palette": [
+      "bright scarlet-red with orange-red facets",
+      "white-hot specular glint on the top-left facet",
+      "dark crimson only in the bottom-right facets"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hud.xp": "XP",
+  "hud.build.more": "Soul pearls & trinkets",
+  "hud.hp": "Health",
+  "hud.noShield": "No shield",
+  "hud.dist": "{n} m",
+  "hud.time": "Run time",
+  "hud.map.show": "Show map",
+  "hud.ann.boss": "Boss",
+  "hud.ann.metin": "Metin",
+  "hud.ann.danger": "Warning",
+  "hud.ann.victory": "Victory",
+  "hud.build": "Build",
+  "hud.build.title": "Your build",
+  "hud.build.empty": "Nothing owned yet. Level up to find passives, spirit stones and trinkets.",
+  "hud.bossFight": "Boss fight",
+  "hud.corruption.short": "Corrupt",
+  "hud.shield": "Shield"
+}

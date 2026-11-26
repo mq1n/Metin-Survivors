@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "fromBand": 1,
+  "weights": { "swift": 3, "vampiric": 2, "warded": 2, "splitting": 2 },
+  "params": {
+    "swift": { "speed": 0.35, "attackRate": 0.2 },
+    "vampiric": { "heal": 0.25 },
+    "warded": { "reduction": 0.4, "above": 0.5 },
+    "splitting": { "copies": 2, "hp": 0.3 }
+  },
+  "bossOnHard": false,
+  "bossKinds": ["swift", "warded"]
+}

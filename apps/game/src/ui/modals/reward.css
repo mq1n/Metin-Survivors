@@ -1,0 +1,640 @@
+/* Owner: B7 essence-chest. Shared skin of the three reward modals (Metin essence, treasure chest, boss reward): scrim, head
+   (rust-copper eyebrow plate, title, subtitle on a scrim), action row (Reroll / Banish plates with count wells, a quiet
+   Leave), coin / gem spray layer. Material: stone and pewter with rust-copper plates and gold only as the accent (kit
+   tokens, style/tokens.css). Loaded through rewardKit.tsx; every selector here is `.ms-rw*`, so the per-modal sheets (which
+   come earlier in the cascade) never fight it: they scope their overrides under their own root class. */
+
+/* ---- scrim: dark centre, darker rim, the HUD behind it only a murmur (top and bottom veils hide timers / taskbar) --------- */
+.ms-cardmodal.ms-rw {
+  background:
+    linear-gradient(180deg, rgba(3, 1, 1, 0.9) 0, rgba(3, 1, 1, 0) 20%, rgba(3, 1, 1, 0) 78%, rgba(3, 1, 1, 0.88) 100%),
+    radial-gradient(90% 80% at 50% 46%, rgba(10, 5, 3, 0.8) 0%, rgba(4, 2, 1, 0.97) 100%);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+/* ---- head --------------------------------------------------------------------------------------------------------------- */
+.ms-rw-head {
+  position: relative;
+  gap: 0.45rem;
+}
+.ms-rw-head::before {
+  /* a soft dark pool behind the head text: rays and sparks never swallow the subtitle */
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -1.2rem -7rem -0.6rem;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(4, 2, 1, 0.72), rgba(4, 2, 1, 0.38) 62%, transparent);
+}
+.ms-rw-eyebrow {
+  --pl-c: 0.42rem;
+  --pl-bw: 2px;
+  --pl-hi: #b3a998;
+  --pl-mid: #6a5844;
+  --pl-lo: #1c0a04;
+  --pl-face:
+    var(--k-rivet) 0.55rem 50% / 0.52rem 0.52rem no-repeat,
+    var(--k-rivet) calc(100% - 0.55rem) 50% / 0.52rem 0.52rem no-repeat,
+    linear-gradient(180deg, rgba(255, 196, 150, 0.2) 0%, rgba(255, 196, 150, 0) 40%, rgba(0, 0, 0, 0.34) 100%),
+    linear-gradient(var(--k-rust-veil), var(--k-rust-veil)),
+    var(--tex-uk-rust, var(--k-grain-light)) 0 0 / 14rem,
+    var(--k-rust);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2rem;
+  padding: 0.3rem 2.1rem;
+  color: var(--k-tb-text);
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  line-height: 1.15;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(36, 8, 2, 0.95), 0 0 0.4rem rgba(0, 0, 0, 0.55);
+  filter: drop-shadow(0 0.25rem 0.4rem rgba(0, 0, 0, 0.6));
+}
+.ms-rw-eyebrow-ico {
+  display: inline-grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  color: var(--k-gold);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.8));
+}
+.ms-rw-eyebrow-ico > svg {
+  width: 100%;
+  height: 100%;
+}
+.ms-rw-eyebrow-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 78vw;
+}
+.ms-cm-title.ms-rw-title {
+  text-wrap: balance;
+  max-width: 92vw;
+}
+.ms-rw-sub {
+  max-width: min(60rem, 92vw);
+  color: var(--k-text-2);
+  font-size: var(--t-lg);
+  text-wrap: balance;
+}
+.ms-rw-sub b {
+  color: var(--c-gold-hi);
+}
+
+/* ---- actions: the button shelf -------------------------------------------------------------------------------------------- */
+
+.ms-rw-bottom {
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 3;
+}
+.ms-rw-shelf.ms-plate {
+  --pl-c: 0.6rem;
+  --pl-bw: 2px;
+  --pl-hi: #a49a8a;
+  --pl-mid: #5a5248;
+  --pl-lo: #14110e;
+  --pl-face:
+    var(--k-rivet) 0.75rem 50% / 0.55rem 0.55rem no-repeat,
+    var(--k-rivet) calc(100% - 0.75rem) 50% / 0.55rem 0.55rem no-repeat,
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(16, 14, 12, 0.7), rgba(16, 14, 12, 0.7)),
+    var(--tex-uk-stone, var(--k-grain-light)) 0 0 / 14rem,
+    #191715;
+  display: inline-flex;
+  padding: 0.6rem 2.1rem;
+  filter: drop-shadow(0 0.4rem 0.7rem rgba(0, 0, 0, 0.6));
+}
+.ms-rw-actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.9rem;
+}
+.ms-rw-slot {
+  display: flex;
+  min-width: 0;
+}
+.ms-rw-btn {
+  flex: 1;
+  gap: 0.55rem;
+  --kb-pad-x: 1.05rem;
+  min-width: 10.4rem;
+}
+.ms-rw-ico {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--k-gold);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.9));
+}
+.ms-rw-btn[disabled] .ms-rw-ico,
+.ms-rw-btn[aria-disabled='true'] .ms-rw-ico {
+  color: var(--k-text-off);
+  opacity: 0.7;
+}
+.ms-rw-lbl {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* the remaining charges: a small recessed octagon well, gold numeral */
+.ms-rw-cnt.ms-plate {
+  --pl-c: 0.3rem;
+  --pl-bw: 1px;
+  --pl-hi: #8f877b;
+  --pl-mid: #4a443d;
+  --pl-lo: #1a1714;
+  --pl-face: linear-gradient(180deg, #080706, #15120f);
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  padding: 0 0.3rem;
+  font-size: var(--t-sm);
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--k-gold);
+  text-shadow: none;
+}
+.ms-rw-btn[disabled] .ms-rw-cnt {
+  color: var(--k-text-off);
+}
+/* sealed: the player holds charges, this offer never grants them: stone stays, the lock stands where the key was */
+.ms-rw-slot.is-sealed .ms-rw-btn {
+  opacity: 0.92;
+  color: #aca48f;
+}
+.ms-rw-slot.is-sealed .ms-rw-ico {
+  color: #8f8878;
+  opacity: 0.9;
+}
+.ms-rw-slot.is-sealed .ms-rw-cnt {
+  color: #c2a35e;
+}
+.ms-rw-lock {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.85;
+}
+.ms-rw-note {
+  max-width: min(34rem, 92vw);
+  font-size: var(--t-xs);
+  line-height: 1.3;
+  text-align: center;
+  color: var(--k-text-3);
+  text-shadow: 0 1px 0 #000;
+}
+
+/* ---- coin / gem spray ---------------------------------------------------------------------------------------------------- */
+.ms-cardmodal > .ms-rw-spray {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* the spray is a light show BEHIND the board: it climbs over the stage / the chest picture, but the head, the cards, the ledger and the
+   button shelf (z-index 3) always sit above it, so a coin never lands on a number or a button name */
+.ms-cardmodal.ms-rw > .ms-rw-head,
+.ms-cardmodal.ms-rw > .ms-cm-cards,
+.ms-cardmodal.ms-rw > .ms-cm-hint,
+.ms-cardmodal.ms-rw > .ms-chest-prompt,
+.ms-chest-zone > .ms-chest-cards,
+.ms-chest-zone > .ms-chest-ledger {
+  z-index: 3;
+}
+/* the sealed-plate note under the shelf too (a gem used to fall across its words); the essence keeps it inside its foot box, hence the
+   descendant selector and the explicit position */
+.ms-cardmodal.ms-rw .ms-rw-note {
+  position: relative;
+  z-index: 3;
+}
+
+/* ---- the rarity word under the icon: above the name plaque and clear of the icon's rank medal (it used to be half covered) ---------- */
+.ms-rw .ms-card .ms-card-rarity {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 0.3rem;
+}
+.ms-rw .ms-card .ms-card-art {
+  z-index: 1;
+}
+
+/* ---- cut-out icons (trinkets, hearts, coins) fill their octagon instead of floating in it, lit from below in the rarity colour -------- */
+.ms-rw .ms-card .ms-slot--k .ms-slot-art > img.ms-icon--cutout {
+  padding: 1.5%;
+  filter: drop-shadow(0 0.1rem 0.15rem rgba(0, 0, 0, 0.65)) drop-shadow(0 0 0.4rem color-mix(in srgb, var(--rc) 40%, transparent));
+}
+.ms-rw .ms-card .ms-slot--k.ms-slot--cutout .ms-slot-art {
+  background:
+    radial-gradient(80% 66% at 50% 110%, color-mix(in srgb, var(--rc) 46%, transparent), transparent 74%),
+    radial-gradient(120% 100% at 50% 28%, #2a2319 0%, #0e0c0a 74%);
+}
+.ms-ess-seat .ms-slot--k .ms-slot-art > img.ms-icon--cutout {
+  padding: 4%;
+}
+
+/* ---- short screens (1366 x 768 and below): the clarifying note under the shelf goes and the stack tightens, so tall cards still clear the shelf ---- */
+@media (max-height: 820px) {
+  .ms-cardmodal.ms-chest,
+  .ms-cardmodal.ms-boss {
+    gap: 0.8rem;
+  }
+  .ms-rw-note {
+    display: none;
+  }
+  .ms-rw-shelf.ms-plate {
+    padding-block: 0.45rem;
+  }
+}
+
+/* ---- phones ------------------------------------------------------------------------------------------------------------- */
+.ms-compact.ms-landscape .ms-rw-head {
+  gap: 0.2rem 1.1rem;
+}
+.ms-compact.ms-landscape .ms-rw-head::before {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-rw-eyebrow {
+  min-height: 1.5rem;
+  padding: 0.12rem 1.7rem;
+  letter-spacing: 0.1em;
+}
+/* the lore line is flavour: on a landscape phone the cards are short, so it goes rather than being cut mid-line */
+.ms-compact.ms-landscape .ms-rw .ms-card-flav {
+  display: none;
+}
+/* phone landscape: the shelf stands upright in the right-hand column (the screen is short and wide), three full-height plates */
+.ms-compact.ms-landscape .ms-rw-shelf.ms-plate {
+  --pl-c: 0.45rem;
+  padding: 0.5rem 0.6rem;
+  background-image: none;
+  --pl-face:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(16, 14, 12, 0.7), rgba(16, 14, 12, 0.7)),
+    var(--tex-uk-stone, var(--k-grain-light)) 0 0 / 14rem,
+    #191715;
+}
+.ms-compact.ms-landscape .ms-rw-actions {
+  grid-auto-flow: row;
+  gap: 0.4rem;
+  width: 12.6rem;
+}
+.ms-compact.ms-landscape .ms-rw-btn {
+  --kb-pad-x: 0.6rem;
+  gap: 0.4rem;
+  min-width: 0;
+  justify-content: flex-start;
+}
+.ms-compact.ms-landscape .ms-rw-lbl {
+  flex: 1;
+  text-align: left;
+}
+.ms-compact.ms-landscape .ms-rw-note {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-ess .ms-rw-bottom {
+  position: relative;
+}
+/* gate 2 #6: the reason a plate is sealed ('A hoard is a straight pick: no reroll, banish or skip.') stands under the upright shelf, inside its
+   column (rewardKit.tsx renders it there at this tier). It hangs below the column's box (absolute, the column is the containing block: the chest /
+   boss column is absolute already, the essence's gets position: relative below), so the line wraps to the shelf's width and adds no height
+   (it used to be display: none here, and with it in the flow the essence's whole stack rose 13-17 px). */
+.ms-compact.ms-landscape .ms-rw-note.ms-rw-note--col {
+  display: block;
+  position: absolute;
+  top: calc(100% + 0.1rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  font-size: max(12px, var(--t-xs));
+  line-height: 1.2;
+  text-wrap: balance;
+  /* a dark scrim: the boss / chest backdrop is painted coins and gems, a bare line over them was hard to read */
+  background: rgba(8, 6, 4, 0.7);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+/* gate 3 G1: the essence's column stands at the bottom of the screen; its two-line TR note hung 4 px into the home-indicator band, so it is a line
+   of the column's flow here (the chest / boss columns have room under them and keep the hanging note) */
+.ms-compact.ms-landscape .ms-ess .ms-rw-note.ms-rw-note--col {
+  position: static;
+  margin-top: 0.3rem;
+}
+/* phone portrait: the shelf is the pinned bottom bar, full width and opaque (nothing scrolls through it) */
+.ms-portrait .ms-rw-bottom {
+  /* the modal's own bottom padding insets a sticky bar; the negative offset puts it back on the screen edge */
+  bottom: calc(-1.4rem - var(--safe-b));
+  width: calc(100% + 2rem);
+  margin-inline: -1rem;
+  padding: 0.9rem 0.5rem calc(0.3rem + var(--safe-b));
+  background: linear-gradient(180deg, rgba(5, 3, 2, 0) 0, rgba(5, 3, 2, 0.94) 0.8rem, rgb(5, 3, 2) 100%);
+}
+.ms-portrait .ms-rw-shelf.ms-plate {
+  --pl-c: 0.45rem;
+  display: flex;
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  --pl-face:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(16, 14, 12, 0.7), rgba(16, 14, 12, 0.7)),
+    var(--tex-uk-stone, var(--k-grain-light)) 0 0 / 14rem,
+    #191715;
+}
+.ms-portrait .ms-rw-actions {
+  width: 100%;
+  gap: 0.4rem;
+}
+.ms-portrait .ms-rw-btn {
+  --kb-pad-x: 0.3rem;
+  gap: 0.3rem;
+  min-width: 0;
+  font-size: var(--t-sm);
+  letter-spacing: 0.03em;
+}
+.ms-portrait .ms-rw-ico {
+  display: none;
+}
+/* the lock of a sealed plate is a corner badge here (the plate is too narrow for lock + count + label in a row) */
+.ms-portrait .ms-rw-lock {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.22rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.ms-portrait .ms-rw-bottom {
+  margin-top: auto;
+}
+/* an upgrade line (held value -> new value) keeps its label whole on a phone: the well drops under the label, as on wide screens */
+.ms-portrait .ms-rw .ms-card-line.has-from {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ms-portrait .ms-rw .ms-card-line.has-from.has-ico {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+.ms-portrait .ms-rw .ms-card-line.has-from .ms-card-well {
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+.ms-portrait .ms-rw-eyebrow {
+  padding-inline: 1.9rem;
+  letter-spacing: 0.14em;
+  max-width: 100%;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card .ms-card-rarity {
+  margin-top: 0.7rem;
+  margin-bottom: 0.35rem;
+}
+
+/* =====================================================================================================================
+   Round 3 (2026-10-20)
+   ===================================================================================================================== */
+
+/* ---- Turkish capitals: the dot of İ and the breve of Ğ stand above the cap height, so a box that clips its overflow (an ellipsis
+   label) must own that headroom: padding on top, the same amount taken back with a negative margin ------------------------------ */
+.ms-rw-lbl,
+.ms-rw-eyebrow-text,
+.ms-ess-awaken-t b {
+  padding-top: 0.34em;
+  margin-top: -0.34em;
+}
+
+
+.ms-rw .ms-rw-shelf.ms-plate {
+  --pl-hi: #b8ae9a;
+  --pl-mid: #655d50;
+}
+.ms-rw .ms-rw-btn.ms-plate {
+  --pl-hi: #ddd5c2;
+  --pl-mid: #8c8576;
+  --pl-lo: #1b1916;
+  --pl-veil: rgba(26, 25, 22, 0.04);
+  color: #f1e8d0;
+}
+@media (hover: hover) {
+  .ms-rw .ms-rw-btn.ms-plate:not([disabled]):not([aria-disabled='true']):hover {
+    --pl-veil: rgba(255, 240, 210, 0.07);
+    color: var(--k-gold);
+  }
+}
+/* sealed plates keep the same stone (the offer just never grants them): the lock and the charge count stay legible */
+.ms-rw .ms-rw-slot.is-sealed .ms-rw-btn.ms-plate[disabled] {
+  --pl-hi: #b3ab99;
+  --pl-mid: #686254;
+  --pl-lo: #1b1916;
+  --pl-veil: rgba(22, 21, 18, 0.3);
+  opacity: 1;
+  color: #d6ccb4;
+}
+.ms-rw .ms-rw-slot.is-sealed .ms-rw-ico {
+  color: #cdbf94;
+}
+.ms-rw .ms-rw-slot.is-sealed .ms-rw-cnt {
+  color: #e6c875;
+}
+.ms-rw .ms-rw-lock {
+  opacity: 1;
+}
+/* gate 2 #6: a touch screen shows no tooltip, so a sealed plate has to read as sealed on its own: darker stone, dimmer word / icon / count (the lock
+   stays), clearly not the live plate beside it. Desktop keeps the lit stone and says the reason in its tooltip. */
+.ms-touch .ms-rw .ms-rw-slot.is-sealed .ms-rw-btn.ms-plate[disabled] {
+  --pl-hi: #7a7366;
+  --pl-mid: #433f37;
+  --pl-lo: #0f0d0b;
+  --pl-veil: rgba(8, 7, 6, 0.6);
+  color: #aaa28c;
+}
+.ms-touch .ms-rw .ms-rw-slot.is-sealed .ms-rw-ico {
+  color: #a39870;
+  opacity: 0.8;
+}
+.ms-touch .ms-rw .ms-rw-slot.is-sealed .ms-rw-cnt {
+  color: #c9ad66;
+}
+.ms-rw .ms-rw-note {
+  font-size: max(12px, var(--t-sm));
+  color: #cfc6b0;
+}
+
+/* ---- sparse cards (a new skill, a passive, one stat line): the body sits in the middle of its space over an engraved rosette
+   let into the stone, the way the Level-Up cards do it (card.css scopes that to .ms-lu; same rule, own copy) ------------------------ */
+.ms-rw {
+  --rw-rosette: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22%3E%3Cg fill=%22none%22 stroke=%22%23fff%22 stroke-width=%221.5%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2257%22 /%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2253.5%22 stroke-width=%220.9%22/%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2216%22 /%3E%3Cpath transform=%22rotate(0 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(30 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(60 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(90 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(120 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(150 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(180 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(210 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(240 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(270 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(300 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(330 60 60)%22 d=%22M60 44 C52.5 34 52.5 21 60 9 C67.5 21 67.5 34 60 44 Z%22 /%3E%3Cpath transform=%22rotate(15 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(45 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(75 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(105 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(135 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(165 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(195 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(225 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(255 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(285 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(315 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath transform=%22rotate(345 60 60)%22 d=%22M60 44 C56.5 38 56.5 31 60 25 C63.5 31 63.5 38 60 44 Z%22 stroke-width=%221.1%22/%3E%3Cpath d=%22M60.00 13.00L60.00 9.50%22 stroke-width=%221%22/%3E%3Cpath d=%22M72.16 14.60L73.07 11.22%22 stroke-width=%221%22/%3E%3Cpath d=%22M83.50 19.30L85.25 16.27%22 stroke-width=%221%22/%3E%3Cpath d=%22M93.23 26.77L95.71 24.29%22 stroke-width=%221%22/%3E%3Cpath d=%22M100.70 36.50L103.73 34.75%22 stroke-width=%221%22/%3E%3Cpath d=%22M105.40 47.84L108.78 46.93%22 stroke-width=%221%22/%3E%3Cpath d=%22M107.00 60.00L110.50 60.00%22 stroke-width=%221%22/%3E%3Cpath d=%22M105.40 72.16L108.78 73.07%22 stroke-width=%221%22/%3E%3Cpath d=%22M100.70 83.50L103.73 85.25%22 stroke-width=%221%22/%3E%3Cpath d=%22M93.23 93.23L95.71 95.71%22 stroke-width=%221%22/%3E%3Cpath d=%22M83.50 100.70L85.25 103.73%22 stroke-width=%221%22/%3E%3Cpath d=%22M72.16 105.40L73.07 108.78%22 stroke-width=%221%22/%3E%3Cpath d=%22M60.00 107.00L60.00 110.50%22 stroke-width=%221%22/%3E%3Cpath d=%22M47.84 105.40L46.93 108.78%22 stroke-width=%221%22/%3E%3Cpath d=%22M36.50 100.70L34.75 103.73%22 stroke-width=%221%22/%3E%3Cpath d=%22M26.77 93.23L24.29 95.71%22 stroke-width=%221%22/%3E%3Cpath d=%22M19.30 83.50L16.27 85.25%22 stroke-width=%221%22/%3E%3Cpath d=%22M14.60 72.16L11.22 73.07%22 stroke-width=%221%22/%3E%3Cpath d=%22M13.00 60.00L9.50 60.00%22 stroke-width=%221%22/%3E%3Cpath d=%22M14.60 47.84L11.22 46.93%22 stroke-width=%221%22/%3E%3Cpath d=%22M19.30 36.50L16.27 34.75%22 stroke-width=%221%22/%3E%3Cpath d=%22M26.77 26.77L24.29 24.29%22 stroke-width=%221%22/%3E%3Cpath d=%22M36.50 19.30L34.75 16.27%22 stroke-width=%221%22/%3E%3Cpath d=%22M47.84 14.60L46.93 11.22%22 stroke-width=%221%22/%3E%3Cpath d=%22M60.00 45.00L63.06 52.61L70.61 49.39L67.39 56.94L75.00 60.00L67.39 63.06L70.61 70.61L63.06 67.39L60.00 75.00L56.94 67.39L49.39 70.61L52.61 63.06L45.00 60.00L52.61 56.94L49.39 49.39L56.94 52.61Z%22 stroke-width=%221.1%22/%3E%3C/g%3E%3C/svg%3E");
+}
+.ms-ui:not(.ms-compact) .ms-rw .ms-card--sparse > .ms-card-body {
+  position: relative;
+  isolation: isolate;
+}
+.ms-ui:not(.ms-compact) .ms-rw .ms-card--sparse > .ms-card-body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: min(100%, 12rem);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: color-mix(in srgb, var(--rc, #8a7a5a) 70%, #1a1712);
+  opacity: 0.16;
+  -webkit-mask: var(--rw-rosette) center / contain no-repeat;
+  mask: var(--rw-rosette) center / contain no-repeat;
+}
+.ms-ui:not(.ms-portrait) .ms-rw .ms-card-body.is-desc,
+.ms-ui:not(.ms-portrait) .ms-rw .ms-card--sparse:not(:has(.ms-card-flav)) > .ms-card-body {
+  justify-content: center;
+}
+
+/* ---- phone portrait: a longer soft fade above the pinned bar (a card that runs under it fades out instead of being cut) and a
+   shorter head (the essence's flavour subtitle goes, the banish-mode prompt stays) ------------------------------------------------- */
+.ms-portrait .ms-rw-bottom {
+  /* above the cards (the chest's card column is positioned at z-index 2: the pinned bar used to slide under it) */
+  z-index: 6;
+  padding-top: 1.9rem;
+  background: linear-gradient(180deg, rgba(5, 3, 2, 0) 0, rgba(5, 3, 2, 0.8) 1.1rem, rgb(5, 3, 2) 1.8rem, rgb(5, 3, 2) 100%);
+}
+.ms-portrait .ms-ess .ms-rw-sub:not(:has(b)) {
+  display: none;
+}
+/* gate 3 G1: the sealed-plate note is a line of the pinned bar above the shelf (rewardKit.tsx), clear of the home-indicator band */
+.ms-portrait .ms-rw-note.ms-rw-note--bar {
+  margin: 0 0 0.4rem;
+  padding: 0 0.3rem;
+  max-width: 100%;
+  text-wrap: balance;
+}
+/* gate 3 G7: 'more cards below' docks at the left end of the shelf as a slim chevron plate instead of a tab floating over the card text */
+.ms-portrait .ms-rw-shelf > .ms-rw-more {
+  position: relative;
+  top: auto;
+  left: auto;
+  translate: none;
+  flex: none;
+  align-self: stretch;
+  width: var(--k-tap, 44px);
+  height: auto;
+  min-height: 44px;
+  margin-right: 0.4rem;
+  border: 1px solid #77716a;
+  border-radius: 0.3rem;
+  clip-path: none;
+  animation: none;
+  background: linear-gradient(180deg, #5a554c, #34312b 55%, #24211d);
+  box-shadow: inset 0 1px 0 rgba(255, 240, 210, 0.22), inset 0 -1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 #000;
+}
+.ms-portrait .ms-rw-shelf > .ms-rw-more::before {
+  display: none;
+}
+.ms-portrait .ms-rw-shelf > .ms-rw-more svg {
+  animation: ms-sf-bob 1.7s ease-in-out infinite;
+}
+.ms-portrait .ms-rw-shelf .ms-rw-actions {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+}
+/* the plates give the tab its 44 px: a tighter label, so 'LEAVE IT' / 'YENILE' stay whole */
+.ms-portrait .ms-rw-shelf:has(> .ms-rw-more) .ms-rw-actions {
+  gap: 0.3rem;
+}
+.ms-portrait .ms-rw-shelf:has(> .ms-rw-more) .ms-rw-btn {
+  --kb-pad-x: 0.2rem;
+  gap: 0.2rem;
+  letter-spacing: 0;
+  font-size: var(--t-xs);
+}
+
+/* ---- phone landscape: the stat rows now stack (label over a full-width well, card.css), which costs a card about 3 rem: the
+   reward cards win it back from their padding, picture and rule so the tallest one (an awakening upgrade) is not cut ---------------- */
+.ms-compact.ms-landscape .ms-rw {
+  /* what the phone's insets take from the height (landscape: the home indicator): the medallions of chest / boss / essence cards give a part of it back */
+  --rw-sq: calc(var(--safe-t, 0px) + var(--safe-b, 0px));
+}
+.ms-compact.ms-landscape .ms-rw .ms-card {
+  padding-top: 1.75rem;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card .ms-slot--xxl {
+  /* a ~20 % smaller medallion when the phone has insets (gate 2: the chest / boss card bodies came out 3 px too tall under the 21 px home indicator) */
+  --s: max(2.6rem, calc(3.3rem - var(--rw-sq) * 0.5));
+}
+.ms-compact.ms-landscape .ms-rw .ms-card-rule {
+  margin: 0.3rem 0 0.25rem;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card-well {
+  min-height: 1.75rem;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card-well b {
+  font-size: 1.45rem;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card-desc {
+  padding: 0.4rem 0.55rem;
+}
+/* gate 2 #13: the lore slab above a card's stat rows (the Phoenix Earring's 'The phoenix's flame becomes a shield wrapped around you.' is three lines
+   on a 114 px card, the longest trinket lore four) takes at most three lines here: the stat rows under it, which are the card, stay whole.
+   A description-only body (a new skill) is the card's content and keeps all its lines. */
+.ms-compact.ms-landscape .ms-rw .ms-card-body:not(.is-desc) > .ms-card-desc .ms-card-desc-t {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.ms-compact.ms-landscape .ms-rw .ms-card-body:not(.is-desc) > .ms-card-desc {
+  padding-block: max(0.2rem, calc(0.4rem - var(--rw-sq) * 0.1));
+}
+
+/* ---- OF-05: four cards of a chest / boss reward on a phone in landscape (four 12 rem columns, 291 px of card height) --------------
+   The kinds an essence or a chest deals (stone, trinket: a description slab AND two number rows) are taller than the skill and passive cards the
+   level-up's four columns were tuned for, so the card gives a little back everywhere at once: a smaller plate, a leaner slab, lower number rows. */
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card {
+  --ch: calc(100dvh - 6.2rem - var(--safe-b, 0px));
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card .ms-slot--xxl {
+  --s: 3rem;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-desc {
+  padding-block: 0.2rem;
+  font-size: max(11.5px, var(--t-3xs, 11.5px));
+  line-height: 1.1;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-body {
+  gap: 0.15rem;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-line,
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-line.has-from {
+  padding-block: 0.05rem 0.1rem;
+  gap: 0.1rem 0.4rem;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-well {
+  min-height: 1.35rem;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-well b {
+  font-size: 1.35rem;
+}
+.ms-compact.ms-landscape .ms-rw.ms-lu--n4 .ms-card-lico {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+/* OF-05: the Boon's two upgrade lines have short labels (damage, max HP): on a phone they stay in one row (icon | label | from -> to) instead of dropping
+   the well under the label, which made a four-line stack of the whole card (the general rule above keeps long labels whole) */
+.ms-portrait .ms-rw .ms-card--boon .ms-card-line.has-from,
+.ms-portrait .ms-rw .ms-card--boon .ms-card-line.has-from.has-ico {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+.ms-portrait .ms-rw .ms-card--boon .ms-card-line.has-from .ms-card-well {
+  grid-column: auto;
+  justify-content: flex-end;
+}

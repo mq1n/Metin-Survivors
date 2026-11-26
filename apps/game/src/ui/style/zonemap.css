@@ -1,0 +1,629 @@
+
+
+.ms-zm {
+  --zm: var(--zm-size, 11rem);
+  --zm-edge: #0b0806;
+  --zm-hi: #f1e9d8;
+  position: relative;
+  display: block;
+  margin: 0;
+  color: var(--k-text, #ebe3d2);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.ms-zm i {
+  font-style: normal;
+}
+
+/* ---- shared: the map layer, canvas, pips -------------------------------------------------------------------------- */
+.ms-zm-world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  opacity: 0;
+}
+/* no transform / left / top transitions on purpose: at minimap scale a 10 Hz hero step is <= 1.5 px, and running
+   transitions on a big layer cost more frames than they smooth (measured: 0 long frames without, 2-4 per 5 s with) */
+.ms-zm.is-ready .ms-zm-world {
+  opacity: 1;
+  transition: opacity 380ms ease-out;
+}
+.ms-zm.is-failed .ms-zm-world {
+  display: none;
+}
+.ms-zm-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ms-zm-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-zm-wait {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.ms-zm.is-loading .ms-zm-wait {
+  opacity: 1;
+  background: conic-gradient(from 0deg, transparent 0 72%, rgba(255, 214, 140, 0.16) 100%);
+  animation: ms-zm-sweep 1.7s linear infinite;
+}
+@keyframes ms-zm-sweep {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.ms-zm.is-failed :is(.ms-zm-hero, .ms-zm-pip, .ms-zm-rim, .ms-zm-cam) {
+  display: none;
+}
+.ms-zm-msg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 80%;
+  text-align: center;
+  font: 600 max(var(--t-xs), 12px) / 1.25 var(--f-head);
+  letter-spacing: 0.06em;
+  color: var(--k-text-3, #9a9183);
+  text-shadow: 0 1px 0 #000;
+  pointer-events: none;
+}
+
+.ms-zm-pip {
+  --pip: max(1.1rem, 14px);
+  position: absolute;
+  display: block;
+  width: var(--pip);
+  height: var(--pip);
+  padding: 0;
+  border: 0;
+  background: none;
+  translate: -50% -50%;
+  pointer-events: none;
+  transition: opacity 200ms;
+  filter: drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.75));
+}
+.ms-zm-pip > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.ms-zm-pip.is-dim {
+  opacity: 0.45;
+}
+.ms-zm-pip--metin {
+  --pip: max(1.2rem, 15px);
+}
+.ms-zm-pip--boss {
+  --pip: max(1.45rem, 18px);
+}
+.ms-zm-pip--chest {
+  --pip: max(1.1rem, 14px);
+}
+.ms-zm-pip--ally {
+  --pip: max(0.95rem, 12px);
+}
+.ms-zm-pip--poi {
+  --pip: max(0.8rem, 10px);
+}
+.ms-zm-pip--hero {
+  --pip: max(1.5rem, 18px);
+}
+.ms-zm-pip--arena {
+  --pip: max(1.7rem, 21px);
+}
+.ms-zm-pip--heart {
+  --pip: max(2.7rem, 34px);
+}
+.ms-zm-pip--start {
+  --pip: max(2rem, 25px);
+  translate: -50% -88%;
+}
+/* a metin with an aura colour glows in it */
+.ms-zm-pip--metin[style*='--zm-tint'] {
+  filter: drop-shadow(0 0 0.3rem var(--zm-tint)) drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.75));
+}
+/* awakened metin: a pulsing ember ring */
+.ms-zm-pip.is-awake::after {
+  content: '';
+  position: absolute;
+  inset: -34%;
+  border-radius: 50%;
+  border: 0.14rem solid var(--zm-tint, #ff6a3a);
+  box-shadow:
+    0 0 0.5rem var(--zm-tint, #ff5a1a),
+    inset 0 0 0.35rem color-mix(in srgb, var(--zm-tint, #ff6a3a) 60%, transparent);
+  animation: ms-zm-pulse 1.15s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes ms-zm-pulse {
+  from {
+    transform: scale(0.55);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+/* ---- minimap: the round HUD variant -------------------------------------------------------------------------------- */
+.ms-zm--minimap {
+  width: var(--zm);
+}
+.ms-zm-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+/* the visible map: 156 of the ring's 200 viewBox units (see RING_MAP_R); the rope's inner rail overlaps the rim */
+.ms-zm-disc {
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 40% 34%, #1d1a15, #090807 72%);
+  contain: paint;
+}
+.ms-zm--minimap .ms-zm-shade {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 31% 25%, rgba(255, 246, 225, 0.09), transparent 42%),
+    radial-gradient(circle at 50% 50%, transparent 42%, rgba(4, 5, 2, 0.34) 74%, rgba(0, 0, 0, 0.62) 100%),
+    rgba(9, 10, 5, 0.2);
+  box-shadow:
+    inset 0 0 0 0.1rem rgba(0, 0, 0, 0.8),
+    inset 0 0 1rem 0.15rem rgba(0, 0, 0, 0.85);
+}
+.ms-zm--minimap .ms-zm-wait {
+  border-radius: 50%;
+}
+.ms-zm--minimap .ms-zm-pip,
+.ms-zm--minimap .ms-zm-hero,
+.ms-zm--minimap .ms-zm-rim {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.ms-zm--minimap .ms-zm-rim {
+  z-index: 2;
+}
+.ms-zm-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 0.14rem 0.24rem rgba(0, 0, 0, 0.7));
+}
+/* the hero stays at the centre while the map scrolls under it */
+.ms-zm-hero {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(1.4rem, 17px);
+  height: max(1.4rem, 17px);
+  translate: -50% -50%;
+  rotate: var(--zm-yaw, 0deg);
+  transition: rotate 150ms linear;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.3rem rgba(255, 220, 130, 0.55)) drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.8));
+}
+.ms-zm-hero > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* the screen's world footprint */
+.ms-zm-cam {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border: 1px solid rgba(255, 230, 160, 0.55);
+  border-radius: 0.15rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+/* out-of-view metins and bosses ride the inside of the ring, pointing outwards */
+.ms-zm-rim {
+  position: absolute;
+  width: max(1.15rem, 14px);
+  height: max(1.15rem, 14px);
+  translate: -50% -50%;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.8));
+}
+.ms-zm-rim > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* round copper medallions on the ring (region map, hide, zoom out / in): pewter bezel = the element, copper face = ::before */
+.ms-zm-btn {
+  --zmb: 1.6rem;
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: var(--zmb);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  translate: -50% -50%;
+  isolation: isolate;
+  color: #fff1d6;
+  cursor: pointer;
+  pointer-events: auto;
+  background: conic-gradient(from 200deg, #f4ecda, #a79e8b 18%, #3c372f 46%, #8e8575 74%, #f4ecda);
+  box-shadow:
+    0 0 0 0.1rem var(--zm-edge),
+    0 0.2rem 0.34rem 0.1rem rgba(0, 0, 0, 0.55);
+}
+.ms-zm-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0.19rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 27%, #f6d196 0 7%, #dc9246 27%, #a85a1c 56%, #653309 84%, #432007 100%);
+  box-shadow:
+    0 0 0 0.06rem rgba(18, 8, 2, 0.9),
+    inset 0 0 0 0.06rem rgba(255, 226, 170, 0.5),
+    inset 0 -0.16rem 0.26rem rgba(58, 20, 3, 0.6);
+}
+.ms-zm-btn > svg {
+  width: 58%;
+  height: 58%;
+  filter: drop-shadow(0 1px 0 rgba(48, 16, 2, 0.95));
+}
+@media (hover: hover) {
+  .ms-zm-btn:hover:not(:disabled) {
+    filter: brightness(1.18) saturate(1.12);
+    color: #fff;
+  }
+}
+.ms-zm-btn:active:not(:disabled) {
+  translate: -50% calc(-50% + 1px);
+  filter: brightness(0.84);
+}
+.ms-zm-btn:disabled {
+  filter: grayscale(0.85) brightness(0.62);
+  cursor: default;
+}
+.ms-ui .ms-zm-btn[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-zm-btn[data-nav]:focus {
+  box-shadow: 0 0 0 0.1rem var(--zm-edge);
+  filter: var(--focus-glow);
+}
+.ms-touch .ms-zm-btn {
+  --zmb: 1.9rem;
+}
+
+/* coordinate plate under the ring */
+.ms-zm-coords {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: max-content;
+  min-width: 52%;
+  margin: -0.15rem auto 0;
+  padding: 0.1rem 0.8rem 0.14rem;
+  border-radius: 0.2rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  color: #efe4cc;
+  text-shadow: 0 1px 0 #000;
+  background:
+    linear-gradient(180deg, rgba(9, 8, 6, 0.78), rgba(26, 22, 18, 0.62)),
+    var(--tex-uk-board, none) center / 9rem,
+    #14110e;
+  box-shadow:
+    inset 0 0 0 1px rgba(143, 135, 123, 0.55),
+    0 0 0 1px #0a0806,
+    0 0.16rem 0.3rem rgba(0, 0, 0, 0.5);
+}
+.ms-zm-coords > i {
+  flex: none;
+  width: 0.3rem;
+  height: 0.3rem;
+  rotate: 45deg;
+  background: var(--k-bronze, #6a5134);
+  box-shadow: inset 0 0 0 1px rgba(255, 226, 170, 0.5);
+}
+
+/* ---- atlas: the bordered zone-select variant ----------------------------------------------------------------------- */
+.ms-zm--atlas {
+  width: var(--zm-size, 100%);
+  --zm-corner: 3.2rem;
+  container: ms-zm / inline-size;
+}
+/* small atlases (cards, 512 px previews) print no pin labels: the hover tips carry them */
+@container ms-zm (max-width: 23rem) {
+  .ms-zm-pip > span {
+    display: none;
+  }
+  .ms-zm-scale > b {
+    display: none;
+  }
+}
+.ms-zm-frame {
+  position: relative;
+  padding: 0.42rem;
+  border-radius: 0.35rem;
+  background:
+    linear-gradient(135deg, rgba(214, 205, 188, 0.62) 0%, rgba(120, 112, 100, 0.3) 30%, rgba(30, 27, 24, 0.5) 66%, rgba(8, 7, 6, 0.82) 100%),
+    var(--tex-uk-stone, none) center / 12rem,
+    #3a3631;
+  box-shadow:
+    0 0 0 1px #0b0a09,
+    0 0.5rem 1.3rem rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 246, 225, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+.ms-zm-plate {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 0.12rem;
+  background: radial-gradient(circle at 40% 34%, #1d1a15, #090807 80%);
+  box-shadow:
+    0 0 0 1px #0b0a09,
+    0 0 0 0.12rem rgba(0, 0, 0, 0.5);
+  contain: paint;
+}
+.ms-zm--atlas .ms-zm-shade {
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.8),
+    inset 0 0 1.5rem 0.1rem rgba(0, 0, 0, 0.62);
+  background: radial-gradient(circle at 30% 24%, rgba(255, 246, 225, 0.07), transparent 46%);
+}
+.ms-zm-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* corner caps (uk_corner, mirrored); studs when the asset is missing */
+.ms-zm-orn {
+  position: absolute;
+  width: 0.95rem;
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: var(--k-rivet, radial-gradient(circle, #b3ab9f, #2c2926)) center / contain no-repeat;
+}
+.ms-zm--atlas.has-orn .ms-zm-orn {
+  width: var(--zm-corner);
+  aspect-ratio: 256 / 243;
+  background: var(--zm-orn) center / contain no-repeat;
+  filter: drop-shadow(0 0.1rem 0.14rem rgba(0, 0, 0, 0.65));
+}
+.ms-zm-orn.is-tl {
+  left: -0.5rem;
+  top: -0.5rem;
+}
+.ms-zm-orn.is-tr {
+  right: -0.5rem;
+  top: -0.5rem;
+  scale: -1 1;
+}
+.ms-zm-orn.is-bl {
+  left: -0.5rem;
+  bottom: -0.5rem;
+  scale: 1 -1;
+}
+.ms-zm-orn.is-br {
+  right: -0.5rem;
+  bottom: -0.5rem;
+  scale: -1 -1;
+}
+.ms-zm--atlas:not(.has-orn) .ms-zm-orn.is-tl {
+  left: 0.12rem;
+  top: 0.12rem;
+}
+.ms-zm--atlas:not(.has-orn) .ms-zm-orn.is-tr {
+  right: 0.12rem;
+  top: 0.12rem;
+}
+.ms-zm--atlas:not(.has-orn) .ms-zm-orn.is-bl {
+  left: 0.12rem;
+  bottom: 0.12rem;
+}
+.ms-zm--atlas:not(.has-orn) .ms-zm-orn.is-br {
+  right: 0.12rem;
+  bottom: 0.12rem;
+}
+
+.ms-zm-rose {
+  --rose: clamp(3.2rem, 19%, 6rem);
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+  width: var(--rose);
+  height: var(--rose);
+  pointer-events: none;
+  filter: drop-shadow(0 0.14rem 0.22rem rgba(0, 0, 0, 0.7));
+}
+.ms-zm-rose-n {
+  position: absolute;
+  right: calc(3% + clamp(3.2rem, 19%, 6rem) / 2);
+  bottom: calc(3% + clamp(3.2rem, 19%, 6rem) - 0.12rem);
+  translate: 50% 0;
+  font-family: var(--f-head);
+  font-weight: 800;
+  font-size: var(--t-xs);
+  line-height: 1;
+  color: #ffd9ce;
+  text-shadow:
+    0 1px 0 #000,
+    0 0 0.3rem #000;
+  pointer-events: none;
+}
+.ms-zm-scale {
+  position: absolute;
+  left: 3.2%;
+  bottom: 3.2%;
+  height: 0.42rem;
+  border: 2px solid #e8d6a6;
+  border-top: 0;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+}
+.ms-zm-scale > b {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.08rem);
+  font-size: var(--t-2xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #f5e9c4;
+  text-shadow:
+    0 1px 0 #000,
+    0 0 0.25rem #000;
+  white-space: nowrap;
+}
+
+/* pins on the atlas */
+.ms-zm--atlas .ms-zm-pip.is-live {
+  pointer-events: auto;
+}
+.ms-zm--atlas button.ms-zm-pip.is-live {
+  cursor: pointer;
+}
+.ms-zm--atlas .ms-zm-pip.is-live::before {
+  content: '';
+  position: absolute;
+  inset: -0.35rem;
+}
+@media (hover: hover) {
+  .ms-zm--atlas .ms-zm-pip.is-live:hover {
+    filter: drop-shadow(0 0 0.4rem rgba(255, 220, 130, 0.8)) drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.75));
+    z-index: 3;
+  }
+}
+.ms-zm--atlas .ms-zm-pip.is-selected {
+  filter: drop-shadow(0 0 0.5rem rgba(255, 220, 130, 0.95)) drop-shadow(0 1px 1.2px rgba(0, 0, 0, 0.75));
+  z-index: 3;
+}
+.ms-ui .ms-zm--atlas .ms-zm-pip[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-zm--atlas .ms-zm-pip[data-nav]:focus {
+  filter: var(--focus-glow);
+  outline: none;
+  z-index: 3;
+}
+/* hero on the atlas: a soft halo */
+.ms-zm--atlas .ms-zm-pip--hero::after {
+  content: '';
+  position: absolute;
+  inset: -45%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 224, 140, 0.5), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
+}
+/* printed labels: the final-battle ring prints below, the start banner above its flag */
+.ms-zm--atlas:not(.no-labels) .ms-zm-pip--heart > span,
+.ms-zm--atlas:not(.no-labels) .ms-zm-pip--start > span {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  translate: -50% 0.1rem;
+  font: 700 var(--t-2xs) / 1 var(--f-head);
+  letter-spacing: 0.06em;
+  color: #f7ebc6;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 0 #000,
+    0 0 0.3rem #000,
+    0 0 0.3rem #000;
+  pointer-events: none;
+}
+
+.ms-zm--atlas:not(.no-labels) .ms-zm-pip--start > span {
+  top: auto;
+  bottom: 100%;
+  translate: -50% -0.15rem;
+}
+
+/* atlas with a title bar: the bar sits on the frame like a window's caption, the top corner caps drop below it */
+.ms-zm--atlas.has-title .ms-zm-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -0.05rem;
+}
+.ms-zm--atlas.has-title .ms-zm-frame {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ms-zm--atlas.has-title .ms-zm-orn.is-tl,
+.ms-zm--atlas.has-title .ms-zm-orn.is-tr {
+  top: -0.05rem;
+}
+.ms-zm--atlas.has-title:not(.has-orn) .ms-zm-orn.is-tl,
+.ms-zm--atlas.has-title:not(.has-orn) .ms-zm-orn.is-tr {
+  top: 0.12rem;
+}
+
+/* frameless plate (inside a board / on a card) */
+.ms-zm--atlas.is-bare .ms-zm-frame {
+  padding: 0;
+  border-radius: 0.15rem;
+  background: none;
+  box-shadow:
+    0 0 0 1px #0b0a09,
+    inset 0 0 0 1px rgba(143, 135, 123, 0.28);
+}
+.ms-zm--atlas.is-bare .ms-zm-orn {
+  display: none;
+}
+
+/* plaque under the atlas */
+.ms-zm-caption {
+  width: max-content;
+  max-width: 100%;
+  margin: 0.7rem auto 0;
+  padding: 0.22rem 1.4rem 0.26rem;
+  border-radius: 0.2rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--k-tb-text, #f3ead7);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.85);
+  background:
+    var(--tex-uk-rust, linear-gradient(transparent, transparent)) center / 12rem,
+    linear-gradient(180deg, #7a3514, #57220d 55%, #361307);
+  box-shadow:
+    inset 0 0 0 1px #b3a998,
+    inset 0 0 0 2px #1a0a04,
+    0 0 0 1px #0b0806,
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-zm-world,
+  .ms-zm-pip,
+  .ms-zm-hero {
+    transition: none !important;
+  }
+  .ms-zm.is-loading .ms-zm-wait,
+  .ms-zm-pip.is-awake::after {
+    animation: none;
+  }
+}

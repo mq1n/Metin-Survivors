@@ -1,0 +1,98 @@
+{
+  "icon_passive_sovereign_blood": {
+    "subject": "Blood of the Sky Sovereign, the dragon's blood in your veins raises your maximum health",
+    "fill": 0.9,
+    "glyph": "one eastern dragon coiled into a very thick circle like a heraldic dragon roundel: a horned dragon head in profile at the top with open jaws biting the tail that curls up from the bottom, the body a fat ring with a row of small round dot holes engraved along it and two thick scale-notch gaps, and ONE big solid blood drop (point up) filling the middle of the ring; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_sanctified_mail": {
+    "subject": "Sanctified Mail, a holy light woven into your armour raises your armor rating",
+    "fill": 0.92,
+    "glyph": "one bold broad temple shield filling the cell: the top edge an upswept pagoda-eave curve (both top corners curl upward) with a row of seven tiny round dot holes under the eave, the sides taper down to a point at the bottom, ONE modest five-petal plum blossom with a round dot centre cut out of the middle of the shield as a black gap (the blossom only about a third of the shield's width, so the shield stays a heavy solid mass); one solid silhouette, symmetric; EXTREMELY HEAVY SOLID white shapes: the white must cover about two thirds of the glyph's bounding square, every stroke and band at least as thick as a quarter of the glyph's width, black gaps only as thin cut-lines and tiny round dot holes, no hairlines, no outlines, the glyph filling the cell edge to edge"
+  },
+  "icon_passive_quickening": {
+    "subject": "Acceleration, lighter steps and quicker strikes raise movement and attack speed",
+    "fill": 0.9,
+    "glyph": "one bold heraldic SWALLOW seen from above, flying straight UP, symmetric: a fat solid body with a round head and a short beak, two very broad swept-back wings as solid fat blades spreading to the full width of the cell, each wing's trailing edge cut into THREE big triangular feather points by thin black cut-lines, a deeply forked broad tail at the bottom; solid, no thin wing tips; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge; NO cloud, NO wind swirl, NO spiral, NO speed lines"
+  },
+  "icon_passive_sovereign_wrath": {
+    "subject": "Wrath of the Sky Sovereign, your fury turns to dragonfire and raises critical chance and critical damage",
+    "fill": 0.9,
+    "glyph": "one roaring dragon face seen from the front, symmetric: two very fat curved horns sweeping up and out, a heavy brow with a row of three small round dot holes, two angled eye slits cut out as black gaps, a broad snout with two round nostril holes and two thick downward fangs, a fat solid mane framing the cheeks; one solid silhouette; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_swift_invocation": {
+    "subject": "Swift Invocation, your skills recover faster and cool down sooner",
+    "fill": 0.9,
+    "glyph": "one triple-comma mandala (a tomoe wheel): three FAT comma swirls, each a big round head with a small round eye hole and a thick tapering tail, chasing each other clockwise around one round hole in the centre, narrow black gaps between the commas, a ring of twelve small round dot holes around the wheel; together they fill a circle; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_sovereign_eyes": {
+    "subject": "Sovereign Eyes, the dragon's gaze widens the area of your skills",
+    "fill": 0.9,
+    "glyph": "a big SOLID white round sunburst disc: a fat solid white disc ringed by twelve fat broad triangular rays (each as wide at its base as one sixth of the disc), the disc carrying ONE big black almond-shaped eye cut out of its middle (wide, filling most of the disc), inside the almond a solid white round iris with a fat black vertical slit pupil, and a ring of small round dot holes along the disc rim; symmetric, filling a circle; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_sovereign_boon": {
+    "subject": "Boon of the Sky Sovereign, the blessing closes your wounds over time",
+    "fill": 0.9,
+    "glyph": "one bold lotus in bloom seen from the front: a wide fan of seven fat pointed petals (the middle petal tallest and widest, three smaller on each side) over a pair of curved leaf-bracts at the base, each petal with ONE thin black cut-line as a centre vein and a small round dot hole at its base, the petals separated by thin black gaps; symmetric; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_blood_oath": {
+    "subject": "Blood Oath, every blow mends your wounds and returns part of the damage as health",
+    "fill": 0.86,
+    "glyph": "one big plump symmetric solid HEART in the middle of a thick round seal ring (a plain circular band), the heart joined to the ring by four short thick bars at the top, bottom, left and right like a compass, twelve small round dot holes engraved evenly along the ring band, ONE thin black cut-line curving inside the heart's left lobe as a highlight, clear black gaps between heart and ring; ONE connected silhouette, very heavy solid shapes covering about 40 percent of the cell, filling the cell edge to edge; NO padlock, NO handle, NO knob, NO bottle, NO block"
+  },
+  "icon_passive_marshals_voice": {
+    "subject": "Leadership, armies follow your banner and experience pours in",
+    "fill": 0.9,
+    "glyph": "one broad war standard, symmetric around its pole: a thick pole with a heavy leaf-spearhead finial and a wide crossbar with two round knobs, a VERY WIDE heavy banner hanging from the crossbar as wide as the whole glyph (width about 85 percent of its height) with a swallow-tail bottom edge, a thick chevron cut out of it as a black gap and a row of seven small round dot holes along its top edge, two short thick tassels hanging at its sides; the banner is a big solid mass; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_follow_through": {
+    "subject": "Combo, strikes chase each other and add an extra projectile, strike or summon",
+    "fill": 0.92,
+    "glyph": "three VERY FAT parallel teardrop SLASH blades side by side, running diagonally from the lower left to the upper right, each blade as wide as a third of the glyph with a sharp tip at the upper right and a plump round tail, nearly touching (black gaps only a hair wide), the middle blade the longest; each blade has ONE thin black ridge cut-line along its middle and three tiny round dot holes in its tail; together they fill a square; EXTREMELY HEAVY SOLID white shapes: the white must cover about two thirds of the glyph's bounding square, every stroke and band at least as thick as a quarter of the glyph's width, black gaps only as thin cut-lines and tiny round dot holes, no hairlines, no outlines, the glyph filling the cell edge to edge; NO chain, NO rings, NO links"
+  },
+  "icon_passive_true_flight": {
+    "subject": "Precision, every shot finds its mark and flies faster and pierces more",
+    "fill": 0.92,
+    "glyph": "a MASSIVE round RING (a very fat band as thick as a quarter of the glyph's width, a smaller round hole, outer diameter the full cell) with eight round dot holes engraved along its band, and ONE very fat ARROW running on the DIAGONAL from the lower left to the upper right straight through the ring's hole: a huge broad leaf-shaped solid arrowhead with a thick ridge cut-line sticking out of the ring at the upper right, a very thick shaft and a big fat three-vane fletching sticking out at the lower left, thin black gaps where the arrow crosses the band; EXTREMELY HEAVY SOLID white shapes: the white must cover about two thirds of the glyph's bounding square, every stroke and band at least as thick as a quarter of the glyph's width, black gaps only as thin cut-lines and tiny round dot holes, no hairlines, no outlines, the glyph filling the cell edge to edge; NO crosshair, NO scope, NO concentric circles"
+  },
+  "icon_passive_saddlecraft": {
+    "subject": "Saddlecraft, a cavalryman's endurance lengthens skill durations and raises movement speed",
+    "fill": 0.9,
+    "glyph": "one bold war-horse head in profile facing right: a very thick arched neck, one pricked ear, a flowing mane of three fat swept tufts, one round eye cut out as a black gap, one flared nostril, a bridle strap across the muzzle carrying a row of four small round dot holes; ONE solid silhouette; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_magpie_gloves": {
+    "subject": "Thief's Gloves, your fingers leave no purse empty and you earn more Yeop",
+    "fill": 0.9,
+    "glyph": "ONE chunky clawed GLOVE reaching toward the upper right and pinching ONE big round cash coin: a mitten-like solid glove silhouette with a wide heavy cuff at the lower left (three round dot holes in a row on the cuff), a fat thumb and three fat hooked claw fingers gripping a big round cash coin (a solid disc with a square hole cut out of its middle and a thin black rim cut-line) at the upper right; very few inner lines; ONE connected silhouette; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge; NO stack of coins, NO bag, NO segmented armour plates"
+  },
+  "icon_passive_ghostly_grasp": {
+    "subject": "Ghostly Grasp, an unseen hand reaches for everything on the ground and widens your pickup range",
+    "fill": 0.9,
+    "glyph": "one bold heraldic open PALM seen from the front, fingers up, symmetric, FILLING the cell: four very fat evenly fanned fingers (as thick as the thumb) and a fat thumb, a broad palm with ONE big engraved mandala in its middle (a ring hole with a big solid round dot) and a ring of eight small round dot holes around it, three thin black cut-lines as palm creases; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge; NO ripples, NO fist, NO ring around the hand"
+  },
+  "icon_passive_fortunes_favour": {
+    "subject": "Charisma, fortune smiles on you and rare cards appear more often",
+    "fill": 0.9,
+    "glyph": "one bold endless knot (an East-Asian lucky knot): a very thick flat ribbon woven into a symmetric diamond-shaped knot of four big loops (top, bottom, left, right) interlaced over and under around one small square hole in the middle, with thin black gaps between the strands and one small round dot hole in each loop; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_waters_of_return": {
+    "subject": "Waters of Return, on the brink of death the dragon water calls you back and grants a revive",
+    "fill": 0.9,
+    "glyph": "one bold double-gourd flask (a hulu bottle): two stacked fat round bulbs, the lower bigger, a narrow waist wrapped by a cord (ONE thin black cut-line band around the waist), a short thick neck and a flat stopper with a small tassel loop, ONE big solid water-drop shape cut out of the lower bulb as a black gap and a ring of small round dot holes around it, ONE thin curved black highlight cut-line on the upper bulb; symmetric; VERY HEAVY SOLID white shapes: the white covers well over half of the glyph's bounding square, strokes as thick as a thumb, only thin black cut-lines and tiny round dot holes for detail, no hairlines, no outlines, filling the cell edge to edge"
+  },
+  "icon_passive_thorned_hide": {
+    "subject": "Thorned Hide, whoever strikes you tastes their own pain as melee damage is reflected",
+    "fill": 0.86,
+    "glyph": "one bold round TORTOISE-SHELL shield seen from above: a big solid circle whose face is divided by thin black cut-lines into a honeycomb of one central hexagon plate and six surrounding plates, with EIGHT short sharp triangular thorns jutting outward around its rim, evenly spaced; ONE connected silhouette, NO hole in the middle, NO nut, NO gear; very heavy solid shapes covering about 40 percent of the cell, filling the cell edge to edge",
+    "pairOk": [
+      "icon_passive_sovereign_boon",
+      "icon_passive_fortunes_favour",
+      "icon_passive_saddlecraft",
+      "icon_passive_sovereign_eyes"
+    ]
+  },
+  "icon_passive_slayer_mark": {
+    "subject": "Dragon Slayer's Mark, you see the weak spot of great beasts and deal more damage to bosses",
+    "fill": 0.92,
+    "glyph": "two ENORMOUSLY FAT curved dragon HORNS crossed in an X like crossed trophy horns: each horn as wide at its base as a third of the glyph, tapering in a smooth sweeping arc to a sharp tip, two thick ring bands around each base, the two crossing at the middle where ONE solid round pearl sits inside a thin black ring; symmetric; the whole glyph a heavy solid X; EXTREMELY HEAVY SOLID white shapes: the white must cover about two thirds of the glyph's bounding square, every stroke and band at least as thick as a quarter of the glyph's width, black gaps only as thin cut-lines and tiny round dot holes, no hairlines, no outlines, the glyph filling the cell edge to edge; NO base, NO cylinder, NO ground"
+  }
+}

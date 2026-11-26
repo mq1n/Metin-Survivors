@@ -1,0 +1,107 @@
+// Body proportions of the enemy models (common VFX target `status`; owner: the status builder): model id -> [height m at scale 1, quadruped 1 / biped 0].
+// Generated 2026-10-19 from public/assets/manifest/models.json (`height`, the baked GLB bounds) for every model an enemy def uses; the status feed
+// (vfx/skills/common/statusFeed.ts) places stun rings over the head, gas / flames at the torso and smoke at the feet from them, so the effect sits
+// on a boar as on a yeti (the old constant was a 1.76 m humanoid). Unknown models fall back to a humanoid.
+export const BODIES: Readonly<Record<string, readonly [number, number]>> = {
+  alpha_blue_wolf: [1.29, 1],
+  alpha_grey_wolf: [1.24, 1],
+  alpha_wolf: [1.19, 1],
+  alpha_wolf_hungry: [1.19, 1],
+  angry_shambling_corpse: [1.48, 0],
+  angry_blighted_hound: [0.75, 1],
+  ascetic: [1.85, 0],
+  ascetic_fighter: [1.75, 0],
+  barbarian: [1.92, 0],
+  bear: [1.38, 1],
+  black_orc: [2.61, 0],
+  blue_wolf: [0.91, 1],
+  boar: [0.88, 1],
+  boar_boss: [0.88, 1],
+  boar_cursed: [0.88, 1],
+  boar_hungry: [0.88, 1],
+  boar_hungry_red: [0.88, 1],
+  boar_red: [0.88, 1],
+  boss_inquisitor: [2.4, 0],
+  brown_bear: [1.38, 1],
+  craven_silver_vow_soldier: [1.76, 0],
+  cursed_bear: [1.38, 1],
+  cursed_white_tiger: [1.1, 1],
+  shambling_corpse: [1.48, 0],
+  elder_bear: [1.38, 1],
+  conjurer: [1.93, 0],
+  conjurer_high: [1.93, 0],
+  executioner: [2.31, 0],
+  zealot: [1.75, 0],
+  ash_wisp: [1.94, 0],
+  ash_wisp_boss: [1.94, 0],
+  ash_wisp_strong: [1.94, 0],
+  lava_troll: [2.99, 0],
+  blaze_knight: [2.96, 0],
+  living_blaze: [2.34, 0],
+  blaze_tiger: [1.14, 1],
+  blaze_tiger_armored: [1.37, 1],
+  frost_revenant: [2.21, 0],
+  grey_wolf: [0.94, 1],
+  grizzly_bear: [1.38, 1],
+  high_ascetic_fighter: [1.75, 0],
+  high_executioner: [2.31, 0],
+  high_zealot: [1.75, 0],
+  high_inquisitor: [2.4, 0],
+  hungry_bear: [1.38, 1],
+  hungry_tiger: [1.1, 1],
+  hungry_white_tiger: [1.1, 1],
+  hungry_wild_dog: [0.67, 1],
+  rime_beetle: [1.46, 1],
+  ice_golem: [3.03, 0],
+  ice_golem_heart: [3.03, 0],
+  snow_lion: [1.27, 1],
+  frost_wisp: [2.04, 0],
+  frost_wisp_mean: [2.04, 0],
+  glacier_orca: [1.52, 0],
+  silver_vow_archer: [1.73, 0],
+  silver_vow_captain: [1.85, 0],
+  silver_vow_leader: [1.7, 0],
+  silver_vow_soldier: [1.76, 0],
+  orc_fighter: [2.06, 0],
+  orc_general: [2.31, 0],
+  orc_scout: [1.89, 0],
+  orc_sorcerer: [1.97, 0],
+  orc_sorcerer_bold: [1.97, 0],
+  orc_sorcerer_boss: [1.97, 0],
+  orc_sorcerer_elite: [1.97, 0],
+  blighted_archer: [1.75, 0],
+  blighted_hound: [0.75, 1],
+  blighted_marshal: [2.19, 0],
+  blighted_marshal_boss: [2.19, 0],
+  blighted_villager: [1.68, 0],
+  blighted_spearman: [1.62, 0],
+  blighted_spearman_angry: [1.62, 0],
+  blighted_swordsman: [1.78, 0],
+  blighted_swordsman_angry: [1.78, 0],
+  scorpion: [1.86, 1],
+  tiger: [1.1, 1],
+  inquisitor: [2.4, 0],
+  white_tiger: [1.1, 1],
+  wild_dog: [0.67, 1],
+  wolf: [0.9, 1],
+  yeti: [2.6, 0],
+  // boss-only models
+  tiger_god: [2.23, 1],
+  orc_lord: [3.41, 0],
+  miho: [2.83, 0],
+  pyre_king: [3.42, 0],
+  scarlet_wyrm: [9.06, 1],
+};
+
+/** humanoid fallback for models not in the table */
+const HUMANOID: readonly [number, number] = [1.76, 0];
+
+/** [height m at scale 1, quadruped 1 / biped 0] of a model (no allocation: the status feed calls it every frame) */
+export function bodyOf(model: string | undefined): readonly [number, number] {
+  return (model === undefined ? undefined : BODIES[model]) ?? HUMANOID;
+}
+
+/** attach height of the stun ring (over the head), of gas / flames (torso) and of the slow smoke (feet) for a body of height `h` m */
+export const headY = (h: number, quad: number): number => h * (quad === 1 ? 0.98 : 1) + 0.12;
+export const torsoY = (h: number, quad: number): number => h * (quad === 1 ? 0.56 : 0.58);
+export const FEET_Y = 0.04;

@@ -1,0 +1,3573 @@
+[
+  {
+    "id": "warrior_a",
+    "classId": "warrior",
+    "name": {
+      "tr": "Kuvvet",
+      "en": "Sinew"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Sağlam Yapı",
+          "en": "Sturdy Frame"
+        },
+        "desc": {
+          "tr": "Her puan: +%3 azami can.",
+          "en": "Per point: +3% max HP."
+        },
+        "icon": "icon_talent_warrior_a_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.03
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ağır Darbeler",
+          "en": "Heavy Blows"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 hasar.",
+          "en": "Per point: +2% damage."
+        },
+        "icon": "icon_talent_warrior_a_r0c1",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kalın Deri",
+          "en": "Thick Hide"
+        },
+        "desc": {
+          "tr": "Her puan: +3 zırh.",
+          "en": "Per point: +3 armor."
+        },
+        "icon": "icon_talent_warrior_a_r0c2",
+        "perPoint": {
+          "armor": 3
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Üçlü Talim",
+          "en": "Trio Drill"
+        },
+        "desc": {
+          "tr": "Her puan: Şimşek Üçlüsü +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Lightning Trio +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r1c0",
+        "effect": {
+          "kind": "skillMod:lightning_trio",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c0"
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kavis Ustalığı",
+          "en": "Arc Mastery"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Yayı +%6 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Sword Arc +6% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r1c1",
+        "effect": {
+          "kind": "skillMod:sword_arc",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Çark Talimi",
+          "en": "Wheel Drill"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Çarkı +%5 hasar, +%10 süre.",
+          "en": "Per point: Bladewheel +5% damage, +10% duration."
+        },
+        "icon": "icon_talent_warrior_a_r1c2",
+        "effect": {
+          "kind": "skillMod:bladewheel",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.1
+          }
+        },
+        "requires": "r0c2"
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kan Hırsı",
+          "en": "Bloodlust"
+        },
+        "desc": {
+          "tr": "Her puan: Savaş Humması +%10 süre, %3 daha kısa bekleme.",
+          "en": "Per point: Warfever +10% duration, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r2c0",
+        "effect": {
+          "kind": "skillMod:warfever",
+          "params": {
+            "duration": 0.1,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Işık Halkası",
+          "en": "Radiant Ring"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Işığı +%6 hasar, +%3 alan.",
+          "en": "Per point: Swordlight Ring +6% damage, +3% area."
+        },
+        "icon": "icon_talent_warrior_a_r2c1",
+        "effect": {
+          "kind": "skillMod:swordlight_ring",
+          "params": {
+            "damage": 0.06,
+            "area": 0.03
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Mızrak Hızı",
+          "en": "Spear Speed"
+        },
+        "desc": {
+          "tr": "Her puan: Mızrak Ucu +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Spearhead +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r2c2",
+        "effect": {
+          "kind": "skillMod:spearhead",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Yaşam Pınarı",
+          "en": "Wellspring"
+        },
+        "desc": {
+          "tr": "Her puan: İkinci Nefes +%10 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Second Wind +10% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r3c0",
+        "effect": {
+          "kind": "skillMod:second_wind",
+          "params": {
+            "damage": 0.1,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r2c0"
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Dev Adım",
+          "en": "Giant's Stride"
+        },
+        "desc": {
+          "tr": "Her puan: Dev Sıçrayışı +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Giant's Leap +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r3c1",
+        "effect": {
+          "kind": "skillMod:giant_leap",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kader Zarı",
+          "en": "Loaded Dice"
+        },
+        "desc": {
+          "tr": "Her puan: +1 yeniden çekme hakkı ve +%2 şans.",
+          "en": "Per point: +1 reroll and +2% luck."
+        },
+        "icon": "icon_talent_warrior_a_r3c2",
+        "perPoint": {
+          "luck": 0.02
+        },
+        "effect": {
+          "kind": "rerolls",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Parçalanmaz",
+          "en": "Unbreakable"
+        },
+        "desc": {
+          "tr": "Her puan: +%4 azami can, +3 zırh, +0,15 can/sn yenilenme.",
+          "en": "Per point: +4% max HP, +3 armor, +0.15 HP/s regeneration."
+        },
+        "icon": "icon_talent_warrior_a_r4c0",
+        "perPoint": {
+          "maxHpPct": 0.04,
+          "armor": 3,
+          "regen": 0.15
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Üçlü Ustası",
+          "en": "Master of the Trio"
+        },
+        "desc": {
+          "tr": "Her puan: Şimşek Üçlüsü +%10 hasar, %4 daha kısa bekleme.",
+          "en": "Per point: Lightning Trio +10% damage, 4% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_a_r4c1",
+        "effect": {
+          "kind": "skillMod:lightning_trio",
+          "params": {
+            "damage": 0.1,
+            "cooldown": 0.04
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Gazi",
+          "en": "Veteran"
+        },
+        "desc": {
+          "tr": "Her puan: +1 başlangıç seviyesi ve +%3 Yeop kazancı.",
+          "en": "Per point: +1 starting level and +3% Yeop gained."
+        },
+        "icon": "icon_talent_warrior_a_r4c2",
+        "perPoint": {
+          "yeopGain": 0.03
+        },
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        }
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "war_oath",
+        "effect": {
+          "tr": "Savaş Yemini açılır: ölümcül darbeyi silen ve ardından kükreten bir ant; 80 sn'de bir ölümden dönersin.",
+          "en": "Unlocks War Oath: an oath that cheats death once every 80 s, then roars into a surge of damage, speed and armor."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "mountain_splitter",
+        "effect": {
+          "tr": "Dağ Yaran açılır: savunmaları parçalayan devasa bir kılıç yayı.",
+          "en": "Unlocks Mountain Splitter: a colossal sweep that shatters every guard."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "faultline",
+        "effect": {
+          "tr": "Fay Hattı açılır: tüm sahayı sarsıp düşmanları sersemleten dev bir yarılma.",
+          "en": "Unlocks Faultline: a battlefield-shaking rupture that scatters and stuns."
+        }
+      }
+    ]
+  },
+  {
+    "id": "warrior_b",
+    "classId": "warrior",
+    "name": {
+      "tr": "Ruh",
+      "en": "Spirit"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Direnci",
+          "en": "Spirit Resilience"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 azami can.",
+          "en": "Per point: +2% max HP."
+        },
+        "icon": "icon_talent_warrior_b_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.02,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Keskin Zihin",
+          "en": "Keen Mind"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 hasar.",
+          "en": "Per point: +2% damage."
+        },
+        "icon": "icon_talent_warrior_b_r0c1",
+        "perPoint": {
+          "damage": 0.02,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Odaklanma",
+          "en": "Focus"
+        },
+        "desc": {
+          "tr": "Her puan: +%1 kritik şansı, +%3 kritik hasar.",
+          "en": "Per point: +1% crit chance, +3% crit damage."
+        },
+        "icon": "icon_talent_warrior_b_r0c2",
+        "perPoint": {
+          "critChance": 0.01,
+          "critDamage": 0.03,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Bıçağı Ustalığı",
+          "en": "Edge Mastery"
+        },
+        "desc": {
+          "tr": "Her puan: Ruh Bıçağı +%6 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Spirit Edge +6% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r1c0",
+        "effect": {
+          "kind": "skillMod:spirit_edge",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c0"
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Dalgası",
+          "en": "Spirit Surge"
+        },
+        "desc": {
+          "tr": "Her puan: Ruh Çarpması +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Soul Crash +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r1c1",
+        "effect": {
+          "kind": "skillMod:soul_crash",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ağır El",
+          "en": "Heavy Hand"
+        },
+        "desc": {
+          "tr": "Her puan: Ezici Darbe +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Crushing Blow +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r1c2",
+        "effect": {
+          "kind": "skillMod:crushing_blow",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c2"
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Fırlatma Talimi",
+          "en": "Hurling Drill"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Dalgası +%5 hasar, %3 daha kısa bekleme.",
+          "en": "Per point: Edgewave +5% damage, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r2c0",
+        "effect": {
+          "kind": "skillMod:edgewave",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Çember Ustalığı",
+          "en": "Circle Mastery"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Yörüngesi +%5 hasar ve +%25 kılıç sayısı (yuvarlanır).",
+          "en": "Per point: Blade Orbit +5% damage and +25% sword count (rounded)."
+        },
+        "icon": "icon_talent_warrior_b_r2c1",
+        "effect": {
+          "kind": "skillMod:blade_orbit",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Taş Beden",
+          "en": "Stone Body"
+        },
+        "desc": {
+          "tr": "Her puan: Granit Beden +%10 süre, %3 daha kısa bekleme.",
+          "en": "Per point: Graniteform +10% duration, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r2c2",
+        "effect": {
+          "kind": "skillMod:graniteform",
+          "params": {
+            "duration": 0.1,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Yer Sarsan",
+          "en": "Groundshaker"
+        },
+        "desc": {
+          "tr": "Her puan: Yer Gümbürtüsü +%5 hasar, +%3 alan, %3 daha kısa bekleme.",
+          "en": "Per point: Earthpound +5% damage, +3% area, 3% shorter cooldown."
+        },
+        "icon": "icon_talent_warrior_b_r3c0",
+        "effect": {
+          "kind": "skillMod:earthpound",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r2c0"
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Mühür Ustalığı",
+          "en": "Sealwright"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Mührü +%5 hasar, +%10 süre, +%3 alan.",
+          "en": "Per point: Blade Seal +5% damage, +10% duration, +3% area."
+        },
+        "icon": "icon_talent_warrior_b_r3c1",
+        "effect": {
+          "kind": "skillMod:blade_seal",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.1,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Bilgenin Kararı",
+          "en": "Sage's Veto"
+        },
+        "desc": {
+          "tr": "Her puan: +1 kart eleme hakkı ve +%2 şans.",
+          "en": "Per point: +1 banish and +2% luck."
+        },
+        "icon": "icon_talent_warrior_b_r3c2",
+        "perPoint": {
+          "luck": 0.02
+        },
+        "effect": {
+          "kind": "banishes",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Berrak Zihin",
+          "en": "Perfect Clarity"
+        },
+        "desc": {
+          "tr": "Her puan: %1,5 daha kısa bekleme, +%2 hasar, +%1 kritik şansı.",
+          "en": "Per point: 1.5% shorter cooldowns, +2% damage, +1% crit chance."
+        },
+        "icon": "icon_talent_warrior_b_r4c0",
+        "perPoint": {
+          "cooldown": 0.015,
+          "damage": 0.02,
+          "critChance": 0.01
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Yüce Kılıçlar",
+          "en": "Exalted Blades"
+        },
+        "desc": {
+          "tr": "Her puan: Kılıç Yörüngesi +%10 hasar, +%12 süre, +%4 alan.",
+          "en": "Per point: Blade Orbit +10% damage, +12% duration, +4% area."
+        },
+        "icon": "icon_talent_warrior_b_r4c1",
+        "effect": {
+          "kind": "skillMod:blade_orbit",
+          "params": {
+            "damage": 0.1,
+            "duration": 0.12,
+            "area": 0.04
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kaderin Okuyucusu",
+          "en": "Fate Reader"
+        },
+        "desc": {
+          "tr": "Her puan: +1 kart atlama hakkı ve +%2 XP kazancı.",
+          "en": "Per point: +1 skip and +2% XP gained."
+        },
+        "icon": "icon_talent_warrior_b_r4c2",
+        "perPoint": {
+          "xpGain": 0.02
+        },
+        "effect": {
+          "kind": "skips",
+          "params": {
+            "value": 1
+          }
+        }
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "sword_rain",
+        "effect": {
+          "tr": "Kılıç Yağmuru açılır: gökten düşen ruh kılıçlarından bir sağanak.",
+          "en": "Unlocks Sword Rain: a downpour of spirit swords from the sky."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "dawn_blade",
+        "effect": {
+          "tr": "Şafak Kılıcı açılır: en yakın düşmanı kovalayan sürekli bir ruh ışını.",
+          "en": "Unlocks Dawn Blade: a sustained beam of spirit light that hunts the nearest foe."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "wyrmstrike",
+        "effect": {
+          "tr": "Beyaz Ejder açılır: her şeyi delip geçen beyaz bir ruh ejderhası.",
+          "en": "Unlocks Wyrmstrike: a white spirit dragon that tears through everything."
+        }
+      }
+    ]
+  },
+  {
+    "id": "ninja_a",
+    "classId": "ninja",
+    "name": {
+      "tr": "Sessiz Bıçak",
+      "en": "Silent Edge"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Sağlam Beden",
+          "en": "Hardy Frame"
+        },
+        "desc": {
+          "tr": "Puan başına +%2,5 azami can.",
+          "en": "+2.5% max HP per point."
+        },
+        "icon": "icon_talent_ninja_a_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.025
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Hançer Ustalığı",
+          "en": "Dagger Mastery"
+        },
+        "desc": {
+          "tr": "Puan başına +%2 hasar.",
+          "en": "+2% damage per point."
+        },
+        "icon": "icon_talent_ninja_a_r0c1",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ölümcül Göz",
+          "en": "Lethal Eye"
+        },
+        "desc": {
+          "tr": "Puan başına +%1 kritik şansı ve +%3 kritik hasar.",
+          "en": "+1% crit chance and +3% crit damage per point."
+        },
+        "icon": "icon_talent_ninja_a_r0c2",
+        "perPoint": {
+          "critChance": 0.01,
+          "critDamage": 0.03
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Gölge Ustası",
+          "en": "Shadow Adept"
+        },
+        "desc": {
+          "tr": "Gölge Klon: puan başına +%5 hasar ve +%25 klon sayısı.",
+          "en": "Shadow Clone: +5% damage and +25% clone count per point."
+        },
+        "icon": "icon_talent_ninja_a_r1c0",
+        "effect": {
+          "kind": "skillMod:shadow_clone",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ölümcül Seri",
+          "en": "Lethal Flurry"
+        },
+        "desc": {
+          "tr": "Hançer Seli: puan başına +%5 hasar ve −%2 bekleme süresi.",
+          "en": "Dagger Flurry: +5% damage and −2% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_a_r1c1",
+        "effect": {
+          "kind": "skillMod:dagger_flurry",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.02
+          }
+        },
+        "requires": "r0c1"
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Bıçak Dansı",
+          "en": "Blade Dancer"
+        },
+        "desc": {
+          "tr": "Bıçak Sarmalı: puan başına +%5 hasar ve +%3 alan.",
+          "en": "Spiral of Knives: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_a_r1c2",
+        "effect": {
+          "kind": "skillMod:spiral_of_knives",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Işık Adım",
+          "en": "Flicker Step"
+        },
+        "desc": {
+          "tr": "Kaybolan Sıçrayış: puan başına +%5 hasar ve −%3 bekleme süresi.",
+          "en": "Vanishing Leap: +5% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_a_r2c0",
+        "effect": {
+          "kind": "skillMod:vanishing_leap",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Zehir Ustalığı",
+          "en": "Venomcraft"
+        },
+        "desc": {
+          "tr": "Ağulu Pus: puan başına +%5 hasar ve +%3 alan.",
+          "en": "Noxious Pall: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_a_r2c1",
+        "effect": {
+          "kind": "skillMod:noxious_pall",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Sessiz Yayılma",
+          "en": "Silent Spread"
+        },
+        "desc": {
+          "tr": "Sızan Zehir: puan başına +%5 hasar ve +%25 sıçrama sayısı.",
+          "en": "Creeping Venom: +5% damage and +25% jump count per point."
+        },
+        "icon": "icon_talent_ninja_a_r2c2",
+        "effect": {
+          "kind": "skillMod:creeping_venom",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Gölge Adımı",
+          "en": "Shadow Step"
+        },
+        "desc": {
+          "tr": "Puan başına +%1 kaçınma ve +%1 hareket hızı.",
+          "en": "+1% evasion and +1% move speed per point."
+        },
+        "icon": "icon_talent_ninja_a_r3c0",
+        "perPoint": {
+          "evasion": 0.01,
+          "moveSpeed": 0.01
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Hayalet Perdesi",
+          "en": "Phantom Veil"
+        },
+        "desc": {
+          "tr": "Gece Örtüsü: puan başına +%8 süre ve −%3 bekleme süresi.",
+          "en": "Nightshroud: +8% duration and −3% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_a_r3c1",
+        "effect": {
+          "kind": "skillMod:nightshroud",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Yankesici Elleri",
+          "en": "Cutpurse's Hands"
+        },
+        "desc": {
+          "tr": "Puan başına +%3 Yeop kazancı.",
+          "en": "+3% Yeop gained per point."
+        },
+        "icon": "icon_talent_ninja_a_r3c2",
+        "perPoint": {
+          "yeopGain": 0.03
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Gölge Katili",
+          "en": "Shadow Slayer"
+        },
+        "desc": {
+          "tr": "Aysız Kesik: puan başına +%6 hasar, −%3 bekleme süresi ve +%3 alan.",
+          "en": "Moonless Cut: +6% damage, −3% cooldown and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_a_r4c0",
+        "effect": {
+          "kind": "skillMod:moonless_cut",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03,
+            "area": 0.03
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Dâhi Çırak",
+          "en": "Prodigy"
+        },
+        "desc": {
+          "tr": "Puan başına koşuya +1 seviye ile başlarsın.",
+          "en": "Start the run with +1 level per point."
+        },
+        "icon": "icon_talent_ninja_a_r4c1",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kader Zarı",
+          "en": "Loaded Dice"
+        },
+        "desc": {
+          "tr": "Puan başına +1 yeniden çekme hakkı.",
+          "en": "+1 reroll per point."
+        },
+        "icon": "icon_talent_ninja_a_r4c2",
+        "effect": {
+          "kind": "rerolls",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "requiem_flurry",
+        "effect": {
+          "tr": "Ağıt Kesikleri açılır: çevrendeki herkese beş ölümcül kesik.",
+          "en": "Unlocks Requiem Flurry: five lethal cuts through everything around you."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "night_terror",
+        "effect": {
+          "tr": "Gece Dehşeti açılır: düşmanları savuran ve korkutan karanlık dalga.",
+          "en": "Unlocks Night Terror: a wave of darkness that hurls back and terrifies."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "seeking_stars",
+        "effect": {
+          "tr": "Av Yıldızları açılır: düşmanları arayıp delen ışık yıldızları.",
+          "en": "Unlocks Seeking Stars: stars of light that seek out and pierce enemies."
+        }
+      }
+    ]
+  },
+  {
+    "id": "ninja_b",
+    "classId": "ninja",
+    "name": {
+      "tr": "Sadak",
+      "en": "Quiver"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Avcı Bünyesi",
+          "en": "Hunter's Frame"
+        },
+        "desc": {
+          "tr": "Puan başına +%2,5 azami can.",
+          "en": "+2.5% max HP per point."
+        },
+        "icon": "icon_talent_ninja_b_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.025,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Keskin Nişan",
+          "en": "Keen Aim"
+        },
+        "desc": {
+          "tr": "Puan başına +%2 hasar.",
+          "en": "+2% damage per point."
+        },
+        "icon": "icon_talent_ninja_b_r0c1",
+        "perPoint": {
+          "damage": 0.02,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Şahin Gözü",
+          "en": "Hawk's Eye"
+        },
+        "desc": {
+          "tr": "Puan başına +%1 kritik şansı ve +%3 kritik hasar.",
+          "en": "+1% crit chance and +3% crit damage per point."
+        },
+        "icon": "icon_talent_ninja_b_r0c2",
+        "perPoint": {
+          "critChance": 0.01,
+          "critDamage": 0.03,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Hızlı Çekiş",
+          "en": "Quick Draw"
+        },
+        "desc": {
+          "tr": "Yay Atışı: puan başına +%5 hasar ve −%2 bekleme süresi.",
+          "en": "Bow Shot: +5% damage and −2% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_b_r1c0",
+        "effect": {
+          "kind": "skillMod:bow_shot",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.02
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Tekrar Ustası",
+          "en": "Repeater"
+        },
+        "desc": {
+          "tr": "Ardı Ardına Atış: puan başına +%5 hasar ve +%25 ok sayısı.",
+          "en": "Rapid Barrage: +5% damage and +25% arrow count per point."
+        },
+        "icon": "icon_talent_ninja_b_r1c1",
+        "effect": {
+          "kind": "skillMod:rapid_barrage",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r0c1"
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Yağmur Çağıran",
+          "en": "Rainmaker"
+        },
+        "desc": {
+          "tr": "Gökten Ok: puan başına +%5 hasar ve +%3 alan.",
+          "en": "Arrowfall: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_b_r1c2",
+        "effect": {
+          "kind": "skillMod:arrowfall",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Alev Ucu",
+          "en": "Flame Tip"
+        },
+        "desc": {
+          "tr": "Tutuşan Ok: puan başına +%5 hasar ve −%3 bekleme süresi.",
+          "en": "Kindled Shaft: +5% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_b_r2c0",
+        "effect": {
+          "kind": "skillMod:kindled_shaft",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Zehir Damlası",
+          "en": "Venom Drop"
+        },
+        "desc": {
+          "tr": "Yılan Okları: puan başına +%5 hasar ve +%25 ok sayısı.",
+          "en": "Serpent Shafts: +5% damage and +25% arrow count per point."
+        },
+        "icon": "icon_talent_ninja_b_r2c1",
+        "effect": {
+          "kind": "skillMod:serpent_shafts",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        }
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Parıltı Ustası",
+          "en": "Spark Adept"
+        },
+        "desc": {
+          "tr": "Parlak İplik: puan başına +%5 hasar ve +%5 süre.",
+          "en": "Radiant Thread: +5% damage and +5% duration per point."
+        },
+        "icon": "icon_talent_ninja_b_r2c2",
+        "effect": {
+          "kind": "skillMod:radiant_thread",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.05
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Tüy Ayak",
+          "en": "Light Feet"
+        },
+        "desc": {
+          "tr": "Kırlangıç Adımı: puan başına +%8 süre ve −%3 bekleme süresi.",
+          "en": "Swallow's Gait: +8% duration and −3% cooldown per point."
+        },
+        "icon": "icon_talent_ninja_b_r3c0",
+        "effect": {
+          "kind": "skillMod:swallows_gait",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Duman Perdesi",
+          "en": "Smokescreen"
+        },
+        "desc": {
+          "tr": "Duman Bombası: puan başına +%5 hasar ve +%3 alan.",
+          "en": "Smoke Bomb: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_b_r3c1",
+        "effect": {
+          "kind": "skillMod:smoke_bomb",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Rüzgâr Tüyü",
+          "en": "Windfeather"
+        },
+        "desc": {
+          "tr": "Puan başına +%3 mermi hızı ve +%1 hareket hızı.",
+          "en": "+3% projectile speed and +1% move speed per point."
+        },
+        "icon": "icon_talent_ninja_b_r3c2",
+        "perPoint": {
+          "projSpeed": 0.03,
+          "moveSpeed": 0.01
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Sağanak Efendisi",
+          "en": "Master of the Downpour"
+        },
+        "desc": {
+          "tr": "Gökten Ok: puan başına +%6 hasar, +%25 ok sayısı ve +%3 alan.",
+          "en": "Arrowfall: +6% damage, +25% arrow count and +3% area per point."
+        },
+        "icon": "icon_talent_ninja_b_r4c0",
+        "effect": {
+          "kind": "skillMod:arrowfall",
+          "params": {
+            "damage": 0.06,
+            "count": 0.25,
+            "area": 0.03
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Seçici Av",
+          "en": "Picky Hunter"
+        },
+        "desc": {
+          "tr": "Puan başına +1 yasaklama hakkı.",
+          "en": "+1 banish per point."
+        },
+        "icon": "icon_talent_ninja_b_r4c1",
+        "effect": {
+          "kind": "banishes",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Dâhi Nişancı",
+          "en": "Prodigy Marksman"
+        },
+        "desc": {
+          "tr": "Puan başına koşuya +1 seviye ile başlarsın.",
+          "en": "Start the run with +1 level per point."
+        },
+        "icon": "icon_talent_ninja_b_r4c2",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "plague_rain",
+        "effect": {
+          "tr": "Veba Yağmuru açılır: gökten düşen zehirli ölüm alanları.",
+          "en": "Unlocks Plague Rain: lethal poison fields falling from the sky."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "eagle_eye",
+        "effect": {
+          "tr": "Kartal Gözü açılır: kritik ve atış hızını fırlatan keskin nişan transı.",
+          "en": "Unlocks Eagle Eye: a marksman's trance that sends crits and fire rate soaring."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "arrow_corona",
+        "effect": {
+          "tr": "Ok Tacı açılır: çevreye halka halinde delici ok fırtınası.",
+          "en": "Unlocks Arrow Corona: a ring of piercing arrows in every direction."
+        }
+      }
+    ]
+  },
+  {
+    "id": "yacha_a",
+    "classId": "yacha",
+    "name": {
+      "tr": "Büyü Çeliği",
+      "en": "Spellsteel"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kızgın Kan",
+          "en": "Seething Blood"
+        },
+        "desc": {
+          "tr": "Kanındaki lanet kaynar: her puan +%2 hasar.",
+          "en": "The curse in your blood boils: +2 % damage per point."
+        },
+        "icon": "icon_talent_yacha_a_r0c0",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Dövülmüş Gövde",
+          "en": "Tempered Frame"
+        },
+        "desc": {
+          "tr": "Zırh ve kemik bir olur: her puan +%2,5 azami can.",
+          "en": "Armour and bone become one: +2.5 % max HP per point."
+        },
+        "icon": "icon_talent_yacha_a_r0c1",
+        "perPoint": {
+          "maxHpPct": 0.025
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Karanlık Deri",
+          "en": "Shadow Hide"
+        },
+        "desc": {
+          "tr": "Derin karanlığa bürünürsün: her puan +2,5 zırh.",
+          "en": "Your skin drinks the dark: +2.5 armour per point."
+        },
+        "icon": "icon_talent_yacha_a_r0c2",
+        "perPoint": {
+          "armor": 2.5
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Yakıcı Avuçlar",
+          "en": "Searing Palms"
+        },
+        "desc": {
+          "tr": "Kavurucu Avuç: her puan +%5 hasar ve %2 daha kısa bekleme.",
+          "en": "Scorch Palm: +5 % damage and 2 % shorter cooldown per point."
+        },
+        "icon": "icon_talent_yacha_a_r1c0",
+        "effect": {
+          "kind": "skillMod:scorch_palm",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.02
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kıvrılan Kasırga",
+          "en": "Coiling Gale"
+        },
+        "desc": {
+          "tr": "Alev Kıvrımı: her puan +%5 hasar ve +%3 alan.",
+          "en": "Coil of Flame: +5 % damage and +3 % area per point."
+        },
+        "icon": "icon_talent_yacha_a_r1c1",
+        "effect": {
+          "kind": "skillMod:coil_of_flame",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Zırh Büyüsü",
+          "en": "Armourer's Rite"
+        },
+        "desc": {
+          "tr": "Gölge Zırhı: her puan +%6 süre ve %3 daha kısa bekleme.",
+          "en": "Umbral Plate: +6 % duration and 3 % shorter cooldown per point."
+        },
+        "icon": "icon_talent_yacha_a_r1c2",
+        "effect": {
+          "kind": "skillMod:umbral_plate",
+          "params": {
+            "duration": 0.06,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Gölge Atılışı",
+          "en": "Shadow Rush"
+        },
+        "desc": {
+          "tr": "Hayalet Atılışı: her puan +%5 hasar ve %3 daha kısa bekleme.",
+          "en": "Wraith Lunge: +5 % damage and 3 % shorter cooldown per point."
+        },
+        "icon": "icon_talent_yacha_a_r2c0",
+        "effect": {
+          "kind": "skillMod:wraith_lunge",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Hayalet Bıçaklar",
+          "en": "Phantom Blades"
+        },
+        "desc": {
+          "tr": "Musallat Çelik: her puan +%5 hasar ve +%3 alan.",
+          "en": "Haunted Steel: +5 % damage and +3 % area per point."
+        },
+        "icon": "icon_talent_yacha_a_r2c1",
+        "effect": {
+          "kind": "skillMod:haunted_steel",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Dehşet Çığlığı",
+          "en": "Dread Cry"
+        },
+        "desc": {
+          "tr": "Ürperti: her puan %3 daha kısa bekleme ve +%3 alan.",
+          "en": "Chilling Dread: 3 % shorter cooldown and +3 % area per point."
+        },
+        "icon": "icon_talent_yacha_a_r2c2",
+        "effect": {
+          "kind": "skillMod:chilling_dread",
+          "params": {
+            "cooldown": 0.03,
+            "area": 0.03
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Savaş Tecrübesi",
+          "en": "Battle Lore"
+        },
+        "desc": {
+          "tr": "Her puan +%2 tecrübe ve +%4 toplama alanı.",
+          "en": "+2 % experience and +4 % pickup radius per point."
+        },
+        "icon": "icon_talent_yacha_a_r3c0",
+        "perPoint": {
+          "xpGain": 0.02,
+          "pickupRadius": 0.04
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Yeop Kesesi",
+          "en": "Yeop Purse"
+        },
+        "desc": {
+          "tr": "Her puan +%3 Yeop kazancı.",
+          "en": "+3 % Yeop gained per point."
+        },
+        "icon": "icon_talent_yacha_a_r3c1",
+        "perPoint": {
+          "yeopGain": 0.03
+        }
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Mühür Ustası",
+          "en": "Sigilkeeper"
+        },
+        "desc": {
+          "tr": "Çözücü Mühür: her puan +%4 hasar ve +%5 süre.",
+          "en": "Unbinding Sigil: +4 % damage and +5 % duration per point."
+        },
+        "icon": "icon_talent_yacha_a_r3c2",
+        "effect": {
+          "kind": "skillMod:unbinding_sigil",
+          "params": {
+            "damage": 0.04,
+            "duration": 0.05
+          }
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Cehennem Mührü",
+          "en": "Hellfire Brand"
+        },
+        "desc": {
+          "tr": "Kavurucu Avuç: her puan +%7 hasar ve +%25 patlama sayısı.",
+          "en": "Scorch Palm: +7 % damage and +25 % burst count per point."
+        },
+        "icon": "icon_talent_yacha_a_r4c0",
+        "effect": {
+          "kind": "skillMod:scorch_palm",
+          "params": {
+            "damage": 0.07,
+            "count": 0.25
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kara Bıçak Ustalığı",
+          "en": "Dark Blade Mastery"
+        },
+        "desc": {
+          "tr": "Karanlık Kılıç: her puan +%6 hasar, %3 daha hızlı savuruş ve +%3 menzil.",
+          "en": "Dark Blade: +6 % damage, 3 % faster swings and +3 % reach per point."
+        },
+        "icon": "icon_talent_yacha_a_r4c1",
+        "effect": {
+          "kind": "skillMod:dark_blade",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03,
+            "area": 0.03
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kılıçla Doğmuş",
+          "en": "Born to the Blade"
+        },
+        "desc": {
+          "tr": "Koşuya her puan için 1 seviye fazla başlarsın.",
+          "en": "Start each run with +1 level per point."
+        },
+        "icon": "icon_talent_yacha_a_r4c2",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "cursed_legion",
+        "effect": {
+          "tr": "Lanetli Lejyon açılır: hayalet şövalyeler yanında savaşır.",
+          "en": "Unlocks Cursed Legion: spectral knights fight at your side."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "reaper_plunge",
+        "effect": {
+          "tr": "Azrail'in Dalışı açılır: kalabalığın ortasına kara bir kılıç gibi dalarsın.",
+          "en": "Unlocks Reaper's Plunge: dive onto the crowd like a falling black blade."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "pyrefall",
+        "effect": {
+          "tr": "Kor Düşüşü açılır: gökten alevli kılıçlar yağar.",
+          "en": "Unlocks Pyrefall: flaming blades rain from the sky."
+        }
+      }
+    ]
+  },
+  {
+    "id": "yacha_b",
+    "classId": "yacha",
+    "name": {
+      "tr": "Lanet Sanatı",
+      "en": "Hexcraft"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kara Güç",
+          "en": "Dark Power"
+        },
+        "desc": {
+          "tr": "Karanlık büyü damarlarında çağlar: her puan +%2 hasar.",
+          "en": "Dark magic surges through you: +2 % damage per point."
+        },
+        "icon": "icon_talent_yacha_b_r0c0",
+        "perPoint": {
+          "damage": 0.02,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Hızlı Büyü",
+          "en": "Quickened Casting"
+        },
+        "desc": {
+          "tr": "Her puan %1,2 daha kısa bekleme süresi.",
+          "en": "1.2 % shorter cooldowns per point."
+        },
+        "icon": "icon_talent_yacha_b_r0c1",
+        "perPoint": {
+          "cooldown": 0.012,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Direnci",
+          "en": "Spirit Fortitude"
+        },
+        "desc": {
+          "tr": "Ruhun bedeni taşır: her puan +%2,5 azami can.",
+          "en": "Your spirit carries the body: +2.5 % max HP per point."
+        },
+        "icon": "icon_talent_yacha_b_r0c2",
+        "perPoint": {
+          "maxHpPct": 0.025,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kara Yağmur",
+          "en": "Black Rain"
+        },
+        "desc": {
+          "tr": "Gece Çöküşü: her puan +%5 hasar ve +%25 darbe sayısı.",
+          "en": "Nightfall: +5 % damage and +25 % strike count per point."
+        },
+        "icon": "icon_talent_yacha_b_r1c0",
+        "effect": {
+          "kind": "skillMod:nightfall",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Alev Ruhu Ustalığı",
+          "en": "Spiritfire Mastery"
+        },
+        "desc": {
+          "tr": "Ateş Perileri: her puan +%5 hasar ve +%5 patlama alanı.",
+          "en": "Blaze Familiars: +5 % damage and +5 % burst size per point."
+        },
+        "icon": "icon_talent_yacha_b_r1c1",
+        "effect": {
+          "kind": "skillMod:blaze_familiars",
+          "params": {
+            "damage": 0.05,
+            "area": 0.05
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Gölge Kalkanı",
+          "en": "Umbral Ward"
+        },
+        "desc": {
+          "tr": "Obsidyen Siper: her puan +%6 süre ve %3 daha kısa bekleme.",
+          "en": "Obsidian Bulwark: +6 % duration and 3 % shorter cooldown per point."
+        },
+        "icon": "icon_talent_yacha_b_r1c2",
+        "effect": {
+          "kind": "skillMod:obsidian_bulwark",
+          "params": {
+            "duration": 0.06,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Bağları",
+          "en": "Soulbound Links"
+        },
+        "desc": {
+          "tr": "Ruh Zinciri: her puan +%5 hasar ve +%25 halka sayısı.",
+          "en": "Soul Chain: +5 % damage and +25 % link count per point."
+        },
+        "icon": "icon_talent_yacha_b_r2c0",
+        "effect": {
+          "kind": "skillMod:soul_chain",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Cehennem Sütunu",
+          "en": "Pillar of Hell"
+        },
+        "desc": {
+          "tr": "Alev Direği: her puan +%5 hasar ve +%3 alan.",
+          "en": "Blazing Column: +5 % damage and +3 % area per point."
+        },
+        "icon": "icon_talent_yacha_b_r2c1",
+        "effect": {
+          "kind": "skillMod:blazing_column",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Hayalet Mızrak",
+          "en": "Phantom Lance"
+        },
+        "desc": {
+          "tr": "Hortlak Işını: her puan +%5 hasar ve +%5 süre.",
+          "en": "Specter Beam: +5 % damage and +5 % duration per point."
+        },
+        "icon": "icon_talent_yacha_b_r2c2",
+        "effect": {
+          "kind": "skillMod:specter_beam",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.05
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Yasak Bilgi",
+          "en": "Forbidden Lore"
+        },
+        "desc": {
+          "tr": "Her puan +%2 tecrübe ve +%4 toplama alanı.",
+          "en": "+2 % experience and +4 % pickup radius per point."
+        },
+        "icon": "icon_talent_yacha_b_r3c0",
+        "perPoint": {
+          "xpGain": 0.02,
+          "pickupRadius": 0.04
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Küre Ustalığı",
+          "en": "Orb Mastery"
+        },
+        "desc": {
+          "tr": "Boşluk Küreleri: her puan +%5 hasar ve +%5 süre.",
+          "en": "Void Globes: +5 % damage and +5 % duration per point."
+        },
+        "icon": "icon_talent_yacha_b_r3c1",
+        "effect": {
+          "kind": "skillMod:void_globes",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.05
+          }
+        }
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Lanet Yasası",
+          "en": "Law of Curses"
+        },
+        "desc": {
+          "tr": "Her puan için koşuda 1 kart yasaklama hakkı daha.",
+          "en": "+1 banish per run for each point."
+        },
+        "icon": "icon_talent_yacha_b_r3c2",
+        "effect": {
+          "kind": "banishes",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kıvılcım Fırtınası",
+          "en": "Spark Tempest"
+        },
+        "desc": {
+          "tr": "Karanlık Kıvılcım: her puan +%6 hasar ve %3 daha hızlı atış.",
+          "en": "Dark Spark: +6 % damage and 3 % faster casting per point."
+        },
+        "icon": "icon_talent_yacha_b_r4c0",
+        "effect": {
+          "kind": "skillMod:dark_spark",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ateş Perilerinin Efendisi",
+          "en": "Lord of Blaze Familiars"
+        },
+        "desc": {
+          "tr": "Ateş Perileri: her puan +%7 hasar, +%40 hayalet sayısı ve +%6 patlama alanı.",
+          "en": "Blaze Familiars: +7 % damage, +40 % spirit count and +6 % burst size per point."
+        },
+        "icon": "icon_talent_yacha_b_r4c1",
+        "effect": {
+          "kind": "skillMod:blaze_familiars",
+          "params": {
+            "damage": 0.07,
+            "count": 0.4,
+            "area": 0.06
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kader Zarı",
+          "en": "Fate's Dice"
+        },
+        "desc": {
+          "tr": "Her puan için koşuda 1 yeniden çekme hakkı daha.",
+          "en": "+1 reroll per run for each point."
+        },
+        "icon": "icon_talent_yacha_b_r4c2",
+        "effect": {
+          "kind": "rerolls",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "hellfire_lances",
+        "effect": {
+          "tr": "Cehennem Mızrakları açılır: delici alev mızraklarından bir yelpaze.",
+          "en": "Unlocks Hellfire Lances: a fan of piercing fire lances."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "dark_covenant",
+        "effect": {
+          "tr": "Karanlık Ahit açılır: kısa süreli devasa bir güç artışı.",
+          "en": "Unlocks Dark Covenant: a short burst of tremendous power."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "tide_of_the_slain",
+        "effect": {
+          "tr": "Kıyım Dalgası açılır: intikamcı şeytanlar sahayı süpürür.",
+          "en": "Unlocks Tide of the Slain: vengeful demons sweep the field."
+        }
+      }
+    ]
+  },
+  {
+    "id": "shaman_a",
+    "classId": "shaman",
+    "name": {
+      "tr": "Tılsım",
+      "en": "Talisman"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Ejderha Soyu",
+          "en": "Dragonblood"
+        },
+        "desc": {
+          "tr": "Her puanda azami can %2,5 artar.",
+          "en": "+2.5% max HP per point."
+        },
+        "icon": "icon_talent_shaman_a_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.025
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kutsal Güç",
+          "en": "Sacred Might"
+        },
+        "desc": {
+          "tr": "Her puanda hasar %2 artar.",
+          "en": "+2% damage per point."
+        },
+        "icon": "icon_talent_shaman_a_r0c1",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Tılsım Kuşağı",
+          "en": "Talisman Sash"
+        },
+        "desc": {
+          "tr": "Her puanda zırh +2,5 artar.",
+          "en": "+2.5 armor per point."
+        },
+        "icon": "icon_talent_shaman_a_r0c2",
+        "perPoint": {
+          "armor": 2.5
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Yelpaze Ustası",
+          "en": "Fan Adept"
+        },
+        "desc": {
+          "tr": "Ejderha Yelpazesi: her puanda hasar %5 artar, bekleme %3 kısalır.",
+          "en": "Dragon Fan: +5% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_a_r1c0",
+        "effect": {
+          "kind": "skillMod:dragon_fan",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c0"
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ejder Tırmanışı",
+          "en": "Serpent's Climb"
+        },
+        "desc": {
+          "tr": "Altın Ejder: her puanda hasar %5, boyut %3 artar.",
+          "en": "Gilded Serpent: +5% damage and +3% size per point."
+        },
+        "icon": "icon_talent_shaman_a_r1c1",
+        "effect": {
+          "kind": "skillMod:gilded_serpent",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kükreyen Gök",
+          "en": "Roaring Heavens"
+        },
+        "desc": {
+          "tr": "Ejder Nidası: her puanda hasar %5 artar, bekleme %3 kısalır.",
+          "en": "Resounding Bellow: +5% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_a_r1c2",
+        "effect": {
+          "kind": "skillMod:resounding_bellow",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c2"
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Cennet Nuru",
+          "en": "Heaven's Light"
+        },
+        "desc": {
+          "tr": "Nurlu Rahmet: her puanda süre %8 uzar, bekleme %3 kısalır.",
+          "en": "Radiant Favor: +8% duration and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_a_r2c0",
+        "effect": {
+          "kind": "skillMod:radiant_favor",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Ejderhası",
+          "en": "Spirit Dragon"
+        },
+        "desc": {
+          "tr": "Ejder Maiyeti: her puanda hasar %5, süre %8 artar.",
+          "en": "Wyrm Retinue: +5% damage and +8% duration per point."
+        },
+        "icon": "icon_talent_shaman_a_r2c1",
+        "effect": {
+          "kind": "skillMod:wyrm_retinue",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.08
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Altın Mühür",
+          "en": "Golden Seal"
+        },
+        "desc": {
+          "tr": "Ejderha Mührü: her puanda alan %3, süre %6 artar.",
+          "en": "Dragon Seal: +3% area and +6% duration per point."
+        },
+        "icon": "icon_talent_shaman_a_r2c2",
+        "effect": {
+          "kind": "skillMod:dragon_seal",
+          "params": {
+            "area": 0.03,
+            "duration": 0.06
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kâhin Bakışı",
+          "en": "Seer's Gaze"
+        },
+        "desc": {
+          "tr": "Her puanda XP kazancı %2, toplama menzili %4 artar.",
+          "en": "+2% XP gain and +4% pickup radius per point."
+        },
+        "icon": "icon_talent_shaman_a_r3c0",
+        "perPoint": {
+          "xpGain": 0.02,
+          "pickupRadius": 0.04
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Seçilmiş Çırak",
+          "en": "Chosen Disciple"
+        },
+        "desc": {
+          "tr": "Her puanda koşuya 1 seviye önde başlarsın.",
+          "en": "Start every run 1 level higher per point."
+        },
+        "icon": "icon_talent_shaman_a_r3c1",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ejderha Definesi",
+          "en": "Dragon's Hoard"
+        },
+        "desc": {
+          "tr": "Her puanda Yeop kazancı %3, şans +2 artar.",
+          "en": "+3% Yeop gain and +2 luck per point."
+        },
+        "icon": "icon_talent_shaman_a_r3c2",
+        "perPoint": {
+          "yeopGain": 0.03,
+          "luck": 0.02
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Tılsım Fırtınası",
+          "en": "Talisman Storm"
+        },
+        "desc": {
+          "tr": "Süzülen Tılsımlar: her puanda hasar %6, tılsım sayısı %25 artar, bekleme %3 kısalır.",
+          "en": "Drifting Charms: +6% damage, +25% talisman count and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_a_r4c0",
+        "effect": {
+          "kind": "skillMod:drifting_charms",
+          "params": {
+            "damage": 0.06,
+            "count": 0.25,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kader Çarkı",
+          "en": "Wheel of Fate"
+        },
+        "desc": {
+          "tr": "Her puanda 1 yeniden çekme hakkı kazanırsın.",
+          "en": "Gain 1 reroll per point."
+        },
+        "icon": "icon_talent_shaman_a_r4c1",
+        "effect": {
+          "kind": "rerolls",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Yıldız Çağıran",
+          "en": "Starcaller"
+        },
+        "desc": {
+          "tr": "Kuyruklu Yıldız: her puanda hasar %6, alan %3 artar, bekleme %3 kısalır.",
+          "en": "Cometfall: +6% damage, +3% area and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_a_r4c2",
+        "effect": {
+          "kind": "skillMod:cometfall",
+          "params": {
+            "damage": 0.06,
+            "area": 0.03,
+            "cooldown": 0.03
+          }
+        }
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "nine_dragons",
+        "effect": {
+          "tr": "Dokuz Ejderha: dokuz ruh ejderhası her yöne fırlar.",
+          "en": "Nine Dragons: nine spirit dragons burst outward in every direction."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "sovereigns_ire",
+        "effect": {
+          "tr": "Hükümdarın Öfkesi: hasarını, hızını ve etki alanını uzun süre yükseltir.",
+          "en": "Sovereign's Ire: a long surge of damage, speed and area."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "cometfall",
+        "effect": {
+          "tr": "Kuyruklu Yıldız: gökten alevli yıldızlar yağar.",
+          "en": "Cometfall: flaming stars rain from the sky."
+        }
+      }
+    ]
+  },
+  {
+    "id": "shaman_b",
+    "classId": "shaman",
+    "name": {
+      "tr": "Bora Merhemi",
+      "en": "Stormbalm"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Şifacı Dirayeti",
+          "en": "Healer's Resolve"
+        },
+        "desc": {
+          "tr": "Her puanda azami can %3 artar.",
+          "en": "+3% max HP per point."
+        },
+        "icon": "icon_talent_shaman_b_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.03,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Hayat Pınarı",
+          "en": "Wellspring"
+        },
+        "desc": {
+          "tr": "Her puanda saniyede 0,1 can yenilenir.",
+          "en": "+0.1 HP regenerated per second per point."
+        },
+        "icon": "icon_talent_shaman_b_r0c1",
+        "perPoint": {
+          "regen": 0.1,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Kutsal Cübbe",
+          "en": "Blessed Robes"
+        },
+        "desc": {
+          "tr": "Her puanda zırh +3 artar.",
+          "en": "+3 armor per point."
+        },
+        "icon": "icon_talent_shaman_b_r0c2",
+        "perPoint": {
+          "armor": 3,
+          "lifesteal": 0.003
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Şimşek Ustası",
+          "en": "Lightning Adept"
+        },
+        "desc": {
+          "tr": "Sıçrayan Yıldırım: her puanda hasar %5 artar, bekleme %3 kısalır.",
+          "en": "Arcing Bolt: +5% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_b_r1c0",
+        "effect": {
+          "kind": "skillMod:arcing_bolt",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c0"
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Yıldırım Çağıran",
+          "en": "Thunderbringer"
+        },
+        "desc": {
+          "tr": "Bora Çağrısı: her puanda hasar %5, alan %3 artar.",
+          "en": "Stormcall: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_shaman_b_r1c1",
+        "effect": {
+          "kind": "skillMod:stormcall",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Gök Yumruğu",
+          "en": "Thunder Fist"
+        },
+        "desc": {
+          "tr": "Çıtırdayan Akım: her puanda hasar %5, süre %8 artar.",
+          "en": "Crackling Stream: +5% damage and +8% duration per point."
+        },
+        "icon": "icon_talent_shaman_b_r1c2",
+        "effect": {
+          "kind": "skillMod:crackling_stream",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.08
+          }
+        },
+        "requires": "r0c2"
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Aydınlık Merhem",
+          "en": "Radiant Balm"
+        },
+        "desc": {
+          "tr": "Yara Sarıcı Nur: her puanda bekleme %4 kısalır, süre %8 uzar.",
+          "en": "Mending Light: −4% cooldown and +8% duration per point."
+        },
+        "icon": "icon_talent_shaman_b_r2c0",
+        "effect": {
+          "kind": "skillMod:mending_light",
+          "params": {
+            "cooldown": 0.04,
+            "duration": 0.08
+          }
+        }
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Rüzgâr Ayağı",
+          "en": "Windfoot"
+        },
+        "desc": {
+          "tr": "Poyraz: her puanda bekleme %4 kısalır, süre %8 uzar.",
+          "en": "Tailwind: −4% cooldown and +8% duration per point."
+        },
+        "icon": "icon_talent_shaman_b_r2c1",
+        "effect": {
+          "kind": "skillMod:tailwind",
+          "params": {
+            "cooldown": 0.04,
+            "duration": 0.08
+          }
+        },
+        "requires": "r1c1"
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Çan Ustası",
+          "en": "Bellringer"
+        },
+        "desc": {
+          "tr": "Gök Çanları: her puanda hasar %5, çan sayısı %25 artar.",
+          "en": "Thunder Bells: +5% damage and +25% bell count per point."
+        },
+        "icon": "icon_talent_shaman_b_r2c2",
+        "effect": {
+          "kind": "skillMod:thunder_bells",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Sakin Zihin",
+          "en": "Calm Mind"
+        },
+        "desc": {
+          "tr": "Her puanda XP kazancı %2, şans +2 artar.",
+          "en": "+2% XP gain and +2 luck per point."
+        },
+        "icon": "icon_talent_shaman_b_r3c0",
+        "perPoint": {
+          "xpGain": 0.02,
+          "luck": 0.02
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Arınma Duası",
+          "en": "Prayer of Cleansing"
+        },
+        "desc": {
+          "tr": "Her puanda 1 kartı yasaklama hakkı kazanırsın.",
+          "en": "Gain 1 banish per point."
+        },
+        "icon": "icon_talent_shaman_b_r3c1",
+        "effect": {
+          "kind": "banishes",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Şükran Sunusu",
+          "en": "Offering of Thanks"
+        },
+        "desc": {
+          "tr": "Her puanda Yeop kazancı %3, toplama menzili %4 artar.",
+          "en": "+3% Yeop gain and +4% pickup radius per point."
+        },
+        "icon": "icon_talent_shaman_b_r3c2",
+        "perPoint": {
+          "yeopGain": 0.03,
+          "pickupRadius": 0.04
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Gümüş Çınlama",
+          "en": "Argent Chime"
+        },
+        "desc": {
+          "tr": "Çan Sesi: her puanda hasar %6 artar, bekleme %3 kısalır.",
+          "en": "Bell Chime: +6% damage and −3% cooldown per point."
+        },
+        "icon": "icon_talent_shaman_b_r4c0",
+        "effect": {
+          "kind": "skillMod:bell_chime",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Gök Çırağı",
+          "en": "Sky Acolyte"
+        },
+        "desc": {
+          "tr": "Her puanda koşuya 1 seviye önde başlarsın.",
+          "en": "Start every run 1 level higher per point."
+        },
+        "icon": "icon_talent_shaman_b_r4c1",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r3c1"
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Eter Hâkimi",
+          "en": "Aether Sovereign"
+        },
+        "desc": {
+          "tr": "Fırtına Kabuğu: her puanda süre %8 uzar, bekleme %4 kısalır; ayrıca +0,1 can/sn yenilenme ve %0,4 can çalma.",
+          "en": "Stormglass Shell: +8% duration and −4% cooldown per point; also +0.1 HP/s regeneration and 0.4% lifesteal."
+        },
+        "icon": "icon_talent_shaman_b_r4c2",
+        "perPoint": {
+          "regen": 0.1,
+          "lifesteal": 0.004
+        },
+        "effect": {
+          "kind": "skillMod:stormglass_shell",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.04
+          }
+        }
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "thunderclap",
+        "effect": {
+          "tr": "Gök Patlaması: devasa bir şimşek halkası düşmanları savurur ve sersemletir.",
+          "en": "Thunderclap: a colossal ring of lightning hurls foes back and stuns them."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "thunder_guardians",
+        "effect": {
+          "tr": "Şimşek Muhafızları: iki şimşek putu yanında nöbet tutar.",
+          "en": "Thunder Guardians: two lightning idols stand guard beside you."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "stormglass_shell",
+        "effect": {
+          "tr": "Fırtına Kabuğu: sana ve dostlarına her 12 sn'de yeniden kurulan, biterken şimşek olarak patlayan bir eter bariyeri.",
+          "en": "Stormglass Shell: a recurring aether barrier for you and your allies that bursts as lightning when it ends."
+        }
+      }
+    ]
+  },
+  {
+    "id": "wolfman_a",
+    "classId": "wolfman",
+    "name": {
+      "tr": "Kızıl Yele",
+      "en": "Redmane"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Vahşi Kan",
+          "en": "Wild Blood"
+        },
+        "desc": {
+          "tr": "Her puan: +%2,5 azami can.",
+          "en": "+2.5% max HP per point."
+        },
+        "icon": "icon_talent_wolfman_a_r0c0",
+        "perPoint": {
+          "maxHpPct": 0.025
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Bilenmiş Pençeler",
+          "en": "Honed Claws"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 hasar.",
+          "en": "+2% damage per point."
+        },
+        "icon": "icon_talent_wolfman_a_r0c1",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Yırtıcı Tempo",
+          "en": "Predator's Tempo"
+        },
+        "desc": {
+          "tr": "Her puan: +%1,5 saldırı hızı.",
+          "en": "+1.5% attack speed per point."
+        },
+        "icon": "icon_talent_wolfman_a_r0c2",
+        "perPoint": {
+          "attackSpeed": 0.015
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kanlı Tırmalama",
+          "en": "Bloody Rake"
+        },
+        "desc": {
+          "tr": "Tırmalama: her puan +%5 hasar ve +%3 alan.",
+          "en": "Savage Rake: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_wolfman_a_r1c0",
+        "effect": {
+          "kind": "skillMod:savage_rake",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Av Atlayışı",
+          "en": "Hunter's Leap"
+        },
+        "desc": {
+          "tr": "Çullanış: her puan +%4 hasar ve %3 daha kısa bekleme.",
+          "en": "Lupine Lunge: +4% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_a_r1c1",
+        "effect": {
+          "kind": "skillMod:lupine_lunge",
+          "params": {
+            "damage": 0.04,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r0c1"
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Ustalığı",
+          "en": "Soul Mastery"
+        },
+        "desc": {
+          "tr": "Kızıl Yele Ruhu: her puan +%8 süre ve %3 daha kısa bekleme.",
+          "en": "Redmane Spirit: +8% duration and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_a_r1c2",
+        "effect": {
+          "kind": "skillMod:redmane_spirit",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kanlı Kasırga",
+          "en": "Gore Cyclone"
+        },
+        "desc": {
+          "tr": "Kan Girdabı: her puan +%5 hasar ve +%6 süre.",
+          "en": "Blood Whirl: +5% damage and +6% duration per point."
+        },
+        "icon": "icon_talent_wolfman_a_r2c0",
+        "effect": {
+          "kind": "skillMod:blood_whirl",
+          "params": {
+            "damage": 0.05,
+            "duration": 0.06
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kızıl Pus",
+          "en": "Crimson Haze"
+        },
+        "desc": {
+          "tr": "Kanlı Sis: her puan +%3 alan ve +%6 süre.",
+          "en": "Blood Mist: +3% area and +6% duration per point."
+        },
+        "icon": "icon_talent_wolfman_a_r2c1",
+        "effect": {
+          "kind": "skillMod:blood_mist",
+          "params": {
+            "area": 0.03,
+            "duration": 0.06
+          }
+        }
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Av Hırsı",
+          "en": "Hunger of the Chase"
+        },
+        "desc": {
+          "tr": "Yırtıcı Hücumu: her puan +%5 hasar ve %3 daha kısa bekleme.",
+          "en": "Predator's Rush: +5% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_a_r2c2",
+        "effect": {
+          "kind": "skillMod:predator_rush",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kan Emici",
+          "en": "Bloodsucker"
+        },
+        "desc": {
+          "tr": "Her puan: +%0,4 can çalma ve +0,1 can/sn yenilenme.",
+          "en": "+0.4% lifesteal and +0.1 HP/s regeneration per point."
+        },
+        "icon": "icon_talent_wolfman_a_r3c0",
+        "perPoint": {
+          "lifesteal": 0.004,
+          "regen": 0.1
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Sürü Bilgisi",
+          "en": "Pack Cunning"
+        },
+        "desc": {
+          "tr": "Her puan: koşu başına +1 kart yenileme hakkı.",
+          "en": "+1 card reroll per run for each point."
+        },
+        "icon": "icon_talent_wolfman_a_r3c1",
+        "effect": {
+          "kind": "rerolls",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ganimet Kokusu",
+          "en": "Scent of Spoils"
+        },
+        "desc": {
+          "tr": "Her puan: +%3 Yeop ve +%4 toplama menzili.",
+          "en": "+3% Yeop and +4% pickup radius per point."
+        },
+        "icon": "icon_talent_wolfman_a_r3c2",
+        "perPoint": {
+          "yeopGain": 0.03,
+          "pickupRadius": 0.04
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Kızıl Ziyafet",
+          "en": "Crimson Feast"
+        },
+        "desc": {
+          "tr": "Tırmalama: her puan +%8 hasar ve +%25 pençe sayısı.",
+          "en": "Savage Rake: +8% damage and +25% rake count per point."
+        },
+        "icon": "icon_talent_wolfman_a_r4c0",
+        "effect": {
+          "kind": "skillMod:savage_rake",
+          "params": {
+            "damage": 0.08,
+            "count": 0.25
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "İlk Av",
+          "en": "First Blood"
+        },
+        "desc": {
+          "tr": "Her puan: koşuya +1 seviye ile başla.",
+          "en": "Start each run with +1 level for each point."
+        },
+        "icon": "icon_talent_wolfman_a_r4c1",
+        "effect": {
+          "kind": "startLevel",
+          "params": {
+            "value": 1
+          }
+        }
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Pençe Fırtınası",
+          "en": "Storm of Talons"
+        },
+        "desc": {
+          "tr": "Yırtıcı Fırtına: her puan +%6 hasar ve %3 daha kısa bekleme.",
+          "en": "Rending Gale: +6% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_a_r4c2",
+        "effect": {
+          "kind": "skillMod:rending_gale",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "blood_frenzy",
+        "effect": {
+          "tr": "Nihai yetenek: Kan Çılgınlığı — uzun bir saldırı hızı ve can çalma çılgınlığı.",
+          "en": "Ultimate: Blood Frenzy — a long burst of attack speed and lifesteal."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "crimson_moon",
+        "effect": {
+          "tr": "Nihai yetenek: Kızıl Ay — gökten kanlı ay parçaları yağar.",
+          "en": "Ultimate: Crimson Moon — shards of a blood-red moon rain down on your foes."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "rending_gale",
+        "effect": {
+          "tr": "Nihai yetenek: Yırtıcı Fırtına — öne doğru pençelerden bir girdap.",
+          "en": "Ultimate: Rending Gale — a vortex of claws tears straight ahead."
+        }
+      }
+    ]
+  },
+  {
+    "id": "wolfman_b",
+    "classId": "wolfman",
+    "name": {
+      "tr": "Ay Yelesi",
+      "en": "Moonmane"
+    },
+    "nodes": [
+      {
+        "id": "r0c0",
+        "row": 0,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Hızlı Patiler",
+          "en": "Swift Paws"
+        },
+        "desc": {
+          "tr": "Her puan: +%1,2 hareket hızı.",
+          "en": "+1.2% move speed per point."
+        },
+        "icon": "icon_talent_wolfman_b_r0c0",
+        "perPoint": {
+          "moveSpeed": 0.012
+        }
+      },
+      {
+        "id": "r0c1",
+        "row": 0,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Gücü",
+          "en": "Spirit Might"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 hasar.",
+          "en": "+2% damage per point."
+        },
+        "icon": "icon_talent_wolfman_b_r0c1",
+        "perPoint": {
+          "damage": 0.02
+        }
+      },
+      {
+        "id": "r0c2",
+        "row": 0,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Çivit Post",
+          "en": "Indigo Pelt"
+        },
+        "desc": {
+          "tr": "Her puan: +2 zırh ve +%1 sakınma.",
+          "en": "+2 armor and +1% evasion per point."
+        },
+        "icon": "icon_talent_wolfman_b_r0c2",
+        "perPoint": {
+          "armor": 2,
+          "evasion": 0.01
+        }
+      },
+      {
+        "id": "r1c0",
+        "row": 1,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Buzlu Soluk",
+          "en": "Frostbitten Breath"
+        },
+        "desc": {
+          "tr": "Kırağı Esintisi: her puan +%5 hasar ve %3 daha kısa bekleme.",
+          "en": "Rimewind: +5% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_b_r1c0",
+        "effect": {
+          "kind": "skillMod:rimewind",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r1c1",
+        "row": 1,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Zırh Yırtan Pençe",
+          "en": "Armour-Rending Claw"
+        },
+        "desc": {
+          "tr": "Ay Çeliği Pençeleri: her puan +%5 hasar ve +%3 alan.",
+          "en": "Moonsteel Claws: +5% damage and +3% area per point."
+        },
+        "icon": "icon_talent_wolfman_b_r1c1",
+        "effect": {
+          "kind": "skillMod:moonsteel_claws",
+          "params": {
+            "damage": 0.05,
+            "area": 0.03
+          }
+        },
+        "requires": "r0c1"
+      },
+      {
+        "id": "r1c2",
+        "row": 1,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ruh Birliği",
+          "en": "Spirit Union"
+        },
+        "desc": {
+          "tr": "Ay Yelesi Ruhu: her puan +%8 süre ve %3 daha kısa bekleme.",
+          "en": "Moonmane Spirit: +8% duration and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_b_r1c2",
+        "effect": {
+          "kind": "skillMod:moonmane_spirit",
+          "params": {
+            "duration": 0.08,
+            "cooldown": 0.03
+          }
+        }
+      },
+      {
+        "id": "r2c0",
+        "row": 2,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Sürü Çağrısı",
+          "en": "Pack Call"
+        },
+        "desc": {
+          "tr": "Ruh Kurtları: her puan +%5 hasar ve +%25 kurt sayısı.",
+          "en": "Spirit Wolves: +5% damage and +25% wolf count per point."
+        },
+        "icon": "icon_talent_wolfman_b_r2c0",
+        "effect": {
+          "kind": "skillMod:spirit_wolves",
+          "params": {
+            "damage": 0.05,
+            "count": 0.25
+          }
+        },
+        "requires": "r1c0"
+      },
+      {
+        "id": "r2c1",
+        "row": 2,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Don Çemberi",
+          "en": "Frozen Ring"
+        },
+        "desc": {
+          "tr": "Ayaz Çemberi: her puan +%3 alan ve +%6 süre.",
+          "en": "Rime Circle: +3% area and +6% duration per point."
+        },
+        "icon": "icon_talent_wolfman_b_r2c1",
+        "effect": {
+          "kind": "skillMod:rime_circle",
+          "params": {
+            "area": 0.03,
+            "duration": 0.06
+          }
+        }
+      },
+      {
+        "id": "r2c2",
+        "row": 2,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Sivri Buzlar",
+          "en": "Sharpened Ice"
+        },
+        "desc": {
+          "tr": "Buz Sağanağı: her puan +%5 hasar ve %3 daha kısa bekleme.",
+          "en": "Icefall: +5% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_b_r2c2",
+        "effect": {
+          "kind": "skillMod:icefall",
+          "params": {
+            "damage": 0.05,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r1c2"
+      },
+      {
+        "id": "r3c0",
+        "row": 3,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Ay Ritmi",
+          "en": "Moon Rhythm"
+        },
+        "desc": {
+          "tr": "Her puan: tüm yeteneklerde %1,2 daha kısa bekleme.",
+          "en": "1.2% shorter cooldown on every skill per point."
+        },
+        "icon": "icon_talent_wolfman_b_r3c0",
+        "perPoint": {
+          "cooldown": 0.012
+        }
+      },
+      {
+        "id": "r3c1",
+        "row": 3,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Kovma Sezgisi",
+          "en": "Culling Instinct"
+        },
+        "desc": {
+          "tr": "Her puan: koşu başına +1 kart eleme hakkı.",
+          "en": "+1 card banish per run for each point."
+        },
+        "icon": "icon_talent_wolfman_b_r3c1",
+        "effect": {
+          "kind": "banishes",
+          "params": {
+            "value": 1
+          }
+        },
+        "requires": "r2c1"
+      },
+      {
+        "id": "r3c2",
+        "row": 3,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Ruhların Bilgisi",
+          "en": "Spirit Lore"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 tecrübe.",
+          "en": "+2% experience per point."
+        },
+        "icon": "icon_talent_wolfman_b_r3c2",
+        "perPoint": {
+          "xpGain": 0.02
+        }
+      },
+      {
+        "id": "r4c0",
+        "row": 4,
+        "col": 0,
+        "max": 3,
+        "name": {
+          "tr": "Çivit Ay",
+          "en": "Indigo Moon"
+        },
+        "desc": {
+          "tr": "Kırağı Esintisi: her puan +%8 hasar ve +%25 nefes dalgası.",
+          "en": "Rimewind: +8% damage and +25% pulse count per point."
+        },
+        "icon": "icon_talent_wolfman_b_r4c0",
+        "effect": {
+          "kind": "skillMod:rimewind",
+          "params": {
+            "damage": 0.08,
+            "count": 0.25
+          }
+        },
+        "requires": "r3c0"
+      },
+      {
+        "id": "r4c1",
+        "row": 4,
+        "col": 1,
+        "max": 3,
+        "name": {
+          "tr": "Sürü Ritmi",
+          "en": "Pack Rhythm"
+        },
+        "desc": {
+          "tr": "Her puan: +%2 saldırı hızı, +%1,5 hareket hızı ve +%1 sakınma.",
+          "en": "+2% attack speed, +1.5% move speed and +1% evasion per point."
+        },
+        "icon": "icon_talent_wolfman_b_r4c1",
+        "perPoint": {
+          "attackSpeed": 0.02,
+          "moveSpeed": 0.015,
+          "evasion": 0.01
+        }
+      },
+      {
+        "id": "r4c2",
+        "row": 4,
+        "col": 2,
+        "max": 3,
+        "name": {
+          "tr": "Aya Uluma",
+          "en": "Howl at the Moon"
+        },
+        "desc": {
+          "tr": "Ay Borusu: her puan +%6 hasar ve %3 daha kısa bekleme.",
+          "en": "Lunar Clarion: +6% damage and 3% shorter cooldown per point."
+        },
+        "icon": "icon_talent_wolfman_b_r4c2",
+        "effect": {
+          "kind": "skillMod:lunar_clarion",
+          "params": {
+            "damage": 0.06,
+            "cooldown": 0.03
+          }
+        },
+        "requires": "r3c2"
+      }
+    ],
+    "milestones": [
+      {
+        "at": 10,
+        "skill": "pack_hunt",
+        "effect": {
+          "tr": "Nihai yetenek: Sürü Avı — ruh kurtları ayrı ayrı avlarının peşine düşer.",
+          "en": "Ultimate: Pack Hunt — spirit wolves run down separate prey."
+        }
+      },
+      {
+        "at": 20,
+        "skill": "glacier_maw",
+        "effect": {
+          "tr": "Nihai yetenek: Buzul Çenesi — devasa bir buz ışını.",
+          "en": "Ultimate: Glacier Maw — a colossal freezing beam."
+        }
+      },
+      {
+        "at": 30,
+        "skill": "lunar_clarion",
+        "effect": {
+          "tr": "Nihai yetenek: Ay Borusu — her şeyi savuran, dehşet salan bir uluma.",
+          "en": "Ultimate: Lunar Clarion — a terrifying howl that hurls everything back."
+        }
+      }
+    ]
+  }
+]

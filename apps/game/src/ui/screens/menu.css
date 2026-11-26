@@ -1,0 +1,911 @@
+
+
+/* ---- art space ------------------------------------------------------------------------------------------------- */
+.ms-menu {
+  container-type: size;
+  --zoom: 1;
+  --fx: 0.5;
+  --fy: 0.4;
+  --edge: max(2rem, 5.5vw);
+  background: #070403;
+}
+.ms-menu-art {
+  /* `cover` of a 16:9 painting, expressed in container units so the life layers can use art-space percentages */
+  --aw: calc(max(100cqw, 100cqh * 1.7778) * var(--zoom));
+  --ah: calc(max(100cqh, 100cqw * 0.5625) * var(--zoom));
+  position: absolute;
+  width: var(--aw);
+  height: var(--ah);
+  left: calc((100cqw - var(--aw)) * var(--fx));
+  top: calc((100cqh - var(--ah)) * var(--fy));
+  transform-origin: 24% 56%;
+  animation: ms-menu-drift 52s ease-in-out infinite alternate;
+}
+.ms-menu-art-img {
+  position: absolute;
+  inset: 0;
+  background: #0a0605 var(--tex-keyart, none) center / 100% 100% no-repeat;
+}
+@keyframes ms-menu-drift {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.055;
+  }
+}
+.ms-menu-rays {
+  mix-blend-mode: screen;
+}
+
+/* the falling Metin stone breathes, the warrior's lantern flickers (art-space positions) */
+.ms-menu-glow {
+  position: absolute;
+  pointer-events: none;
+  translate: -50% -50%;
+  mix-blend-mode: screen;
+}
+.ms-menu-glow--metin {
+  left: 46.6%;
+  top: 22.7%;
+  width: 20%;
+  aspect-ratio: 0.8;
+  background: radial-gradient(closest-side, rgba(255, 190, 90, 0.5), rgba(255, 110, 40, 0.26) 46%, transparent 74%);
+  animation: ms-menu-pulse 6s ease-in-out infinite;
+}
+.ms-menu-glow--lantern {
+  left: 6.7%;
+  top: 65.4%;
+  width: 11%;
+  aspect-ratio: 1;
+  background: radial-gradient(closest-side, rgba(255, 176, 80, 0.55), rgba(255, 120, 40, 0.2) 52%, transparent 76%);
+  animation: ms-menu-flicker 3.4s steps(1, end) infinite;
+}
+@keyframes ms-menu-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    scale: 0.94;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.06;
+  }
+}
+@keyframes ms-menu-flicker {
+  0% {
+    opacity: 0.85;
+  }
+  9% {
+    opacity: 0.55;
+  }
+  14% {
+    opacity: 0.95;
+  }
+  31% {
+    opacity: 0.7;
+  }
+  38% {
+    opacity: 1;
+  }
+  57% {
+    opacity: 0.62;
+  }
+  63% {
+    opacity: 0.9;
+  }
+  82% {
+    opacity: 0.74;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+/* two drifting fog banks (a seamless turbulence tile, moved by the compositor only) */
+.ms-menu {
+  --fog: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='400'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0036 .0075' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .84 0 0 0 0 .8 0 0 0 0 .78 3.1 0 0 0 -1.28'/%3E%3C/filter%3E%3Crect width='1200' height='400' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+.ms-menu-fog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 32%, #000 68%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 32%, #000 68%, transparent);
+}
+.ms-menu-fog::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: var(--fog) 0 0 / 50% 100% repeat-x;
+  animation: ms-menu-fogdrift var(--fog-t, 150s) linear infinite;
+}
+.ms-menu-fog--far {
+  top: 46%;
+  height: 34%;
+  opacity: 0.24;
+  --fog-t: 210s;
+}
+.ms-menu-fog--near {
+  top: 70%;
+  height: 34%;
+  opacity: 0.3;
+  --fog-t: 130s;
+}
+.ms-menu-fog--near::before {
+  animation-direction: reverse;
+  background-position: 30% 0;
+}
+@keyframes ms-menu-fogdrift {
+  to {
+    translate: -50% 0;
+  }
+}
+
+/* vignette + the quiet side behind the board + a floor for the footer */
+.ms-menu-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(34% 30% at 16% 20%, rgba(6, 4, 3, 0.55), transparent 100%),
+    linear-gradient(270deg, rgba(6, 4, 3, 0.7) 0%, rgba(6, 4, 3, 0.38) 22%, transparent 42%),
+    linear-gradient(180deg, rgba(6, 4, 3, 0.55) 0%, transparent 20%),
+    linear-gradient(0deg, rgba(5, 3, 2, 0.6) 0%, transparent 15%),
+    radial-gradient(125% 120% at 40% 52%, transparent 58%, rgba(4, 2, 2, 0.6) 100%);
+}
+.ms-menu-motes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ---- brand: logo lock-up + tagline ------------------------------------------------------------------------------ */
+.ms-menu-brand {
+  position: absolute;
+  left: calc(var(--edge) + var(--safe-l, 0px));
+  top: calc(2.6rem + var(--safe-t, 0px));
+  width: 29rem;
+  animation: ms-fade-in 1s 0.1s both;
+}
+.ms-menu-logowrap {
+  position: relative;
+}
+.ms-menu-logowrap .ms-logo {
+  width: 100%;
+}
+/* a one-time-per-cycle glint across the lettering only (the logo's own alpha is the mask) */
+.ms-menu-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask: var(--logo, none) center / contain no-repeat;
+  mask: var(--logo, none) center / contain no-repeat;
+  background: linear-gradient(104deg, transparent 40%, rgba(255, 238, 190, 0.85) 50%, transparent 60%) -120% 0 / 240% 100% no-repeat;
+  mix-blend-mode: screen;
+  animation: ms-menu-sheen 9s 1.6s ease-in-out infinite;
+}
+@keyframes ms-menu-sheen {
+  0% {
+    background-position: -120% 0;
+  }
+  16%,
+  100% {
+    background-position: 220% 0;
+  }
+}
+.ms-menu-tag {
+  margin: 0.1rem 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.ms-menu-tag span {
+  flex: none;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000, 0 0 0.6rem rgba(0, 0, 0, 0.9);
+}
+/* bronze cloud-scroll end (left-hand form, mirrored with .is-r): the tagline's flourish, the profile plate's ends */
+.ms-menu {
+  --menu-orn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%23050403' stroke-width='6.4' opacity='.8'%3E%3Cpath d='M160 27C146 27 140 21 128 21S112 29 100 29S84 19 72 19C62 19 58 25 50 25C42 25 40 15 31 13C22 11 15 20 21 27C26 33 37 31 36 23C35 18 28 18 27 22'/%3E%3Cpath d='M104 15C98 8 88 8 85 13S88 22 93 19'/%3E%3C/g%3E%3Cg stroke='%239a7742' stroke-width='3.8'%3E%3Cpath d='M160 27C146 27 140 21 128 21S112 29 100 29S84 19 72 19C62 19 58 25 50 25C42 25 40 15 31 13C22 11 15 20 21 27C26 33 37 31 36 23C35 18 28 18 27 22'/%3E%3Cpath d='M104 15C98 8 88 8 85 13S88 22 93 19'/%3E%3C/g%3E%3Cg stroke='%23f0d594' stroke-width='1.2' opacity='.85'%3E%3Cpath transform='translate(0 -.9)' d='M160 27C146 27 140 21 128 21S112 29 100 29S84 19 72 19C62 19 58 25 50 25C42 25 40 15 31 13C22 11 15 20 21 27C26 33 37 31 36 23C35 18 28 18 27 22'/%3E%3Cpath transform='translate(0 -.9)' d='M104 15C98 8 88 8 85 13S88 22 93 19'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.ms-menu-orn {
+  flex: 1 1 0;
+  min-width: 1rem;
+  max-width: 7.5rem;
+  height: 1.7rem;
+  background: var(--menu-orn) 0 50% / 100% 100% no-repeat;
+  -webkit-mask: linear-gradient(90deg, #000 55%, transparent 100%);
+  mask: linear-gradient(90deg, #000 55%, transparent 100%);
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.35rem rgba(0, 0, 0, 0.8));
+}
+.ms-menu-orn.is-r {
+  transform: scaleX(-1);
+}
+
+/* ---- top-right controls ------------------------------------------------------------------------------------------- */
+.ms-menu-top {
+  position: absolute;
+  right: calc(var(--edge) + var(--safe-r, 0px));
+  top: calc(1.3rem + var(--safe-t, 0px));
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: ms-fade-in 0.8s 0.3s both;
+}
+/* language plates: three loose stone plates in a row (the core segment's recessed tray is dropped here), size floor +
+   a 44 px touch width (the core kit segment only guarantees the height) */
+.ms-menu-top .ms-kseg {
+  padding: 0;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.ms-menu-top .ms-kseg-btn {
+  font-size: var(--t-sm);
+  color: #d6d1c0;
+}
+.ms-menu-top .ms-kseg-btn.is-active {
+  --pl-hi: #f2d38c;
+  --pl-mid: #9d7536;
+  --pl-lo: #2d1d09;
+  --m-veil: rgba(60, 34, 12, 0.46);
+  color: var(--k-gold);
+}
+.ms-touch .ms-menu-top .ms-kseg-btn {
+  min-width: var(--k-tap);
+}
+.ms-menu-fsmark {
+  width: 1.3rem;
+  height: 1.3rem;
+  filter: drop-shadow(0 1px 0 #000);
+}
+
+/* ---- the board: nav + treasury --------------------------------------------------------------------------------- */
+.ms-menu-dock {
+  position: absolute;
+  right: calc(var(--edge) + var(--safe-r, 0px));
+  top: 3.4rem;
+  bottom: 2.6rem;
+  width: 25.5rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  animation: ms-slide-right 0.7s 0.1s var(--ease-soft) both;
+}
+.ms-menu-board {
+  width: 100%;
+  padding: 1.75rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  pointer-events: auto;
+}
+.ms-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* ---- PLAY: the one lacquer plate, the focal point of the screen -------------------------------------------------------
+   Big (taller than two stone plates), a gel-gloss on the upper half with a crisp lower edge, a lacquer-brush grain, a gold
+   bevel, gold end caps with a ruby each and a gold crest with scroll wings on the top edge. The kit button supplies the
+   chamfered plate + focus glow; everything on it is drawn here. */
+.ms-menu {
+  --m-cap: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 96'%3E%0A%3Cdefs%3E%0A%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='0'%3E%3Cstop offset='0' stop-color='%236b4210'/%3E%3Cstop offset='.22' stop-color='%23d9a950'/%3E%3Cstop offset='.42' stop-color='%23fff1b8'/%3E%3Cstop offset='.62' stop-color='%23d29a3a'/%3E%3Cstop offset='1' stop-color='%236e4513'/%3E%3C/linearGradient%3E%0A%3ClinearGradient id='v' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.38'/%3E%3Cstop offset='.5' stop-color='%23fff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='.35'/%3E%3C/linearGradient%3E%0A%3CradialGradient id='r' cx='.36' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23ffd2c4'/%3E%3Cstop offset='.3' stop-color='%23ec3a26'/%3E%3Cstop offset='.75' stop-color='%238a0c0c'/%3E%3Cstop offset='1' stop-color='%233c0505'/%3E%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Cpath d='M14 3H42L49 10V86L42 93H14L7 86V10Z' fill='%2314090a' stroke='%2314090a' stroke-width='5' stroke-linejoin='round'/%3E%0A%3Cpath d='M14 3H42L49 10V86L42 93H14L7 86V10Z' fill='url(%23g)'/%3E%0A%3Cpath d='M14 3H42L49 10V86L42 93H14L7 86V10Z' fill='url(%23v)'/%3E%0A%3Cpath d='M15.5 6.5H40.5L45.5 11.5V84.5L40.5 89.5H15.5L10.5 84.5V11.5Z' fill='none' stroke='%23fff3c4' stroke-opacity='.62' stroke-width='1.2'/%3E%0A%3Cpath d='M13 6.5H14.5L10.5 10.5V12' fill='none' stroke='%23fff' stroke-opacity='.7' stroke-width='1'/%3E%0A%3Ccircle cx='28' cy='15' r='3' fill='%237a4a12' stroke='%232a1505' stroke-width='1'/%3E%3Ccircle cx='27.2' cy='14.2' r='1' fill='%23ffe9a8'/%3E%0A%3Ccircle cx='28' cy='81' r='3' fill='%237a4a12' stroke='%232a1505' stroke-width='1'/%3E%3Ccircle cx='27.2' cy='80.2' r='1' fill='%23ffe9a8'/%3E%0A%3Ccircle cx='28' cy='48' r='13.5' fill='%232a1505'/%3E%0A%3Ccircle cx='28' cy='48' r='11.5' fill='url(%23r)' stroke='%23f3cf7a' stroke-width='1.6'/%3E%0A%3Cellipse cx='24.5' cy='43.5' rx='4.2' ry='2.6' fill='%23fff' fill-opacity='.55' transform='rotate(-28 24.5 43.5)'/%3E%0A%3C/svg%3E");
+  --m-crest: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 46'%3E%0A%3Cdefs%3E%0A%3ClinearGradient id='g' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff4c4'/%3E%3Cstop offset='.45' stop-color='%23e2b04e'/%3E%3Cstop offset='1' stop-color='%237e5116'/%3E%3C/linearGradient%3E%0A%3CradialGradient id='r' cx='.38' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23ffd0c0'/%3E%3Cstop offset='.32' stop-color='%23ea3824'/%3E%3Cstop offset='.8' stop-color='%2386090a'/%3E%3Cstop offset='1' stop-color='%233a0505'/%3E%3C/radialGradient%3E%0A%3Cg id='w' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%0A%3Cg stroke='%23120804' stroke-width='7' opacity='.85'%3E%3Cpath d='M96 24C86 24 82 16 72 16S58 26 48 26S34 15 26 15C17 15 11 23 17 29C21 33 30 31 29 25C28 21 22 21 22 24'/%3E%3Cpath d='M70 16C66 8 57 8 55 13S58 22 63 19'/%3E%3C/g%3E%0A%3Cg stroke='%23a87a32' stroke-width='4.2'%3E%3Cpath d='M96 24C86 24 82 16 72 16S58 26 48 26S34 15 26 15C17 15 11 23 17 29C21 33 30 31 29 25C28 21 22 21 22 24'/%3E%3Cpath d='M70 16C66 8 57 8 55 13S58 22 63 19'/%3E%3C/g%3E%0A%3Cg stroke='%23ffe7a0' stroke-width='1.3' opacity='.9' transform='translate(0 -1)'%3E%3Cpath d='M96 24C86 24 82 16 72 16S58 26 48 26S34 15 26 15C17 15 11 23 17 29C21 33 30 31 29 25C28 21 22 21 22 24'/%3E%3Cpath d='M70 16C66 8 57 8 55 13S58 22 63 19'/%3E%3C/g%3E%0A%3C/g%3E%0A%3C/defs%3E%0A%3Cuse href='%23w'/%3E%0A%3Cuse href='%23w' transform='translate(240 0) scale(-1 1)'/%3E%0A%3Cpath d='M120 2L140 23L120 44L100 23Z' fill='%23120804' stroke='%23120804' stroke-width='5' stroke-linejoin='round'/%3E%0A%3Cpath d='M120 2L140 23L120 44L100 23Z' fill='url(%23g)'/%3E%0A%3Cpath d='M120 6.5L135.5 23L120 39.5L104.5 23Z' fill='none' stroke='%23fff2bf' stroke-opacity='.6' stroke-width='1.1'/%3E%0A%3Ccircle cx='120' cy='23' r='8.4' fill='%232a1505'/%3E%0A%3Ccircle cx='120' cy='23' r='7' fill='url(%23r)' stroke='%23f3cf7a' stroke-width='1.3'/%3E%0A%3Cellipse cx='117.6' cy='20' rx='2.7' ry='1.7' fill='%23fff' fill-opacity='.6' transform='rotate(-30 117.6 20)'/%3E%0A%3C/svg%3E");
+}
+.ms-menu .ms-menu-play {
+  --bh: 5.3rem;
+  --kb-pad-x: 3.8rem;
+  --pl-c: 0.95rem;
+  --pl-bw: 2.5px;
+  --pl-line: #170504;
+  --pl-hi: #fbe8aa;
+  --pl-mid: #c4913c;
+  --pl-lo: #5f3f12;
+  margin-top: 0.15rem;
+  font-size: var(--t-2xl);
+  letter-spacing: 0.3em;
+  color: #fff0cc;
+  --pl-face:
+    radial-gradient(58% 90% at 50% -14%, rgba(255, 246, 228, 0.92), rgba(255, 222, 190, 0.34) 54%, rgba(255, 222, 190, 0) 76%),
+    linear-gradient(180deg, rgba(255, 232, 204, 0.5) 0, rgba(255, 226, 196, 0.2) 45%, rgba(255, 226, 196, 0) 47%),
+    linear-gradient(0deg, rgba(34, 0, 0, 0.42), rgba(34, 0, 0, 0) 46%),
+    linear-gradient(rgba(190, 24, 12, 0.2), rgba(190, 24, 12, 0.2)),
+    var(--tex-lacquer, var(--k-grain-dark)) 0 0 / 13rem,
+    linear-gradient(180deg, #ff6240, #dc2e1d 52%, #a01a10);
+  text-shadow: 0 2px 0 #4a0905, 0 0 1rem rgba(255, 176, 120, 0.45);
+}
+@media (hover: hover) {
+  .ms-menu .ms-menu-play.ms-plate:not([disabled]):hover {
+    filter: brightness(1.12) saturate(1.06);
+  }
+}
+.ms-menu .ms-menu-play.ms-plate:not([disabled]):active {
+  filter: brightness(0.92);
+}
+/* a slow gleam sweeps the lacquer now and then (clipped to the plate's own chamfered face) */
+.ms-menu-gleam {
+  position: absolute;
+  inset: 3px;
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: polygon(var(--pl-c) 0, calc(100% - var(--pl-c)) 0, 100% var(--pl-c), 100% calc(100% - var(--pl-c)), calc(100% - var(--pl-c)) 100%, var(--pl-c) 100%, 0 calc(100% - var(--pl-c)), 0 var(--pl-c));
+}
+.ms-menu-gleam::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: 0;
+  width: 16%;
+  background: linear-gradient(100deg, transparent, rgba(255, 244, 222, 0.55) 50%, transparent);
+  mix-blend-mode: screen;
+  transform: translateX(-140%) skewX(-20deg);
+  animation: ms-menu-gleam 7s 2.6s ease-in-out infinite;
+}
+@keyframes ms-menu-gleam {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  24%,
+  100% {
+    transform: translateX(760%) skewX(-20deg);
+  }
+}
+.ms-menu-playlabel {
+  position: relative;
+  padding-left: 0.3em; /* balances the trailing letter-space so the word sits optically centred */
+}
+.ms-menu-cap {
+  position: absolute;
+  top: 50%;
+  left: -0.95rem;
+  width: 2.7rem;
+  height: calc(100% + 0.7rem);
+  translate: 0 -50%;
+  background: var(--m-cap) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+.ms-menu-cap.is-r {
+  left: auto;
+  right: -0.95rem;
+  scale: -1 1;
+}
+.ms-menu-crest {
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: 15rem;
+  height: 2.9rem;
+  translate: -50% 0;
+  background: var(--m-crest) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+.ms-menu-groove {
+  margin: 0.6rem 0 0.4rem;
+}
+.ms-menu-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+
+.ms-menu {
+  --m-lite: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.034 .058' numOctaves='3' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .86 0 0 0 0 .84 0 0 0 0 .78 1.1 0 0 0 -.56'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23m)'/%3E%3C/svg%3E");
+  --m-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.04 .03' numOctaves='3' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .02 0 0 0 0 .02 0 0 0 0 .02 -1.6 0 0 0 .88'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23m)'/%3E%3C/svg%3E");
+  --m-stone: var(--m-granite, var(--tex-uk-stone, var(--k-grain-light)));
+}
+.ms-menu :is(.ms-menu-entry, .ms-menu-top .ms-kseg-btn, .ms-menu-top .ms-kbtn) {
+  --pl-bw: 2px;
+  --pl-line: #060504;
+  --pl-hi: #d6d0bd;
+  --pl-mid: #6b685d;
+  --pl-lo: #0b0a09;
+  --m-ox: 0px;
+  --m-veil: rgba(16, 15, 13, 0.52);
+  --m-lift: rgba(255, 249, 232, 0);
+  --pl-face:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 16%, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.3)),
+    linear-gradient(var(--m-lift), var(--m-lift)),
+    var(--m-lite) var(--m-ox) 0 / 13rem,
+    var(--m-dark) calc(100% - var(--m-ox)) 60% / 17rem,
+    linear-gradient(var(--m-veil), var(--m-veil)),
+    var(--m-stone) var(--m-ox) 0 / 15rem,
+    #3d3c37;
+}
+.ms-menu :is(.ms-menu-entry, .ms-menu-top .ms-kseg-btn, .ms-menu-top .ms-kbtn)::before {
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 251, 236, 0.34),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.6),
+    inset 0 -3px 0 rgba(6, 5, 4, 0.4),
+    inset 0 0 0.9rem rgba(0, 0, 0, 0.3);
+}
+.ms-menu .ms-menu-sub > .ms-menu-entry:nth-child(2) {
+  --m-ox: -4rem;
+}
+.ms-menu .ms-menu-sub > .ms-menu-entry:nth-child(3) {
+  --m-ox: -8.5rem;
+}
+.ms-menu .ms-menu-sub > .ms-menu-entry:nth-child(4) {
+  --m-ox: -2.5rem;
+}
+.ms-menu .ms-menu-sub > .ms-menu-entry:nth-child(5) {
+  --m-ox: -6rem;
+}
+.ms-menu-entry {
+  --bh: 2.8rem;
+  --kb-pad-x: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #ddd8c8;
+  transition: color 0.12s, filter 0.12s, translate 0.12s var(--ease-soft);
+}
+.ms-menu-elabel {
+  min-width: 0;
+  text-align: center;
+  text-wrap: balance;
+  padding-left: 0.1em;
+}
+
+.ms-menu .ms-menu-entry:is(:focus-visible, :active),
+.ms-ui.ms-kbd .ms-menu-entry:focus {
+  --pl-hi: #f3eedc;
+  --pl-mid: #aaa596;
+  --pl-lo: #12110e;
+  --m-veil: rgba(16, 15, 13, 0.16);
+  --m-lift: rgba(255, 249, 232, 0.1);
+  color: var(--k-gold);
+  translate: 0 -1px;
+}
+@media (hover: hover) {
+  .ms-menu .ms-menu-entry:not([disabled]):hover {
+    --pl-hi: #f3eedc;
+    --pl-mid: #aaa596;
+    --pl-lo: #12110e;
+    --m-veil: rgba(16, 15, 13, 0.16);
+    --m-lift: rgba(255, 249, 232, 0.1);
+    color: var(--k-gold);
+    translate: 0 -1px;
+  }
+}
+/* pressed: the stone sinks (dark lip, pale step, darker face) */
+.ms-menu .ms-menu-entry.ms-plate:not([disabled]):active {
+  --pl-hi: #0b0a09;
+  --pl-mid: #3a3832;
+  --pl-lo: #8d887b;
+  --m-veil: rgba(8, 7, 6, 0.74);
+  --m-lift: rgba(0, 0, 0, 0);
+  color: #cfc9b6;
+  translate: 0 1px;
+}
+
+
+.ms-menu-purse {
+  padding: 0.75rem 0.9rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+/* the profile plate: the credits' head-plate recipe (leather face, bronze rim, scroll ends), name centred */
+.ms-menu-who {
+  --pl-c: 0.4rem;
+  --pl-bw: 1px;
+  --pl-hi: #b99356;
+  --pl-mid: #6b5230;
+  --pl-lo: #22180b;
+  --pl-line: #070504;
+  --pl-face: linear-gradient(180deg, rgba(255, 224, 160, 0.06), rgba(0, 0, 0, 0.3)), linear-gradient(rgba(8, 6, 4, 0.5), rgba(8, 6, 4, 0.5)), var(--tex-uk-board, none) 0 0 / 12rem, #17130e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 0;
+  min-height: 2.3rem;
+  padding: 0.1rem 0.5rem;
+  overflow: hidden;
+}
+.ms-menu-who .ms-menu-orn {
+  max-width: 3.4rem;
+  opacity: 0.9;
+}
+.ms-menu-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  letter-spacing: 0.05em;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000;
+}
+.ms-menu-bank {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ms-menu-purse-row {
+  width: 100%;
+}
+.ms-menu-purse-row .ms-well {
+  min-width: 9.2rem;
+}
+.ms-menu-purse-row .ms-statwell-label {
+  font-size: var(--t-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-menu-purse-row .ms-well-icon .ms-kicon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ms-menu-cloud {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.02em;
+  color: var(--k-text-2);
+}
+.ms-menu-cloud.is-on {
+  color: var(--k-text-2);
+}
+.ms-menu-led {
+  flex: none;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #77716a, #2c2926 70%);
+  box-shadow: 0 0 0 1px #0b0a09, 0 1px 0 rgba(160, 150, 134, 0.25);
+}
+.ms-menu-cloud.is-on .ms-menu-led {
+  background: radial-gradient(circle at 35% 30%, #fff2c2, #f0b84a 45%, #8c5a12 100%);
+  box-shadow: 0 0 0 1px #0b0a09, 0 0 0.55rem rgba(240, 184, 74, 0.75);
+}
+
+/* ---- footer ----------------------------------------------------------------------------------------------------- */
+.ms-menu-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem 1rem calc(0.85rem + var(--safe-b, 0px));
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  color: #e0d7c2;
+  pointer-events: none;
+  /* no band: the line floats on the painting's own dark foot, held legible by a tight dark halo */
+  text-shadow: 0 1px 0 #000, 0 0 0.45rem rgba(0, 0, 0, 0.95), 0 0 1.3rem rgba(0, 0, 0, 0.85);
+}
+
+/* ---- tiers ------------------------------------------------------------------------------------------------------- */
+/* 21:9 and wider: the board and the brand keep their size, the painting simply gets more room */
+.ms-tier-ultra .ms-menu {
+  --fy: 0.3;
+}
+/* small laptops */
+.ms-tier-laptop .ms-menu-brand,
+.ms-tier-tablet .ms-menu-brand {
+  width: 25rem;
+}
+.ms-tier-tablet .ms-menu {
+  --fx: 0.2;
+}
+.ms-tier-tablet .ms-menu-dock {
+  width: 21rem;
+}
+
+/* phone landscape: logo left, the language / fullscreen plates left of the board (never against its corner caps), a SHORT
+   board on the right (PLAY + the five plates), the treasury docked bottom-left, the warrior between them */
+.ms-tier-phone-l .ms-menu {
+  --fx: 0.3;
+  --fy: 0;
+  --edge: 2.6vw;
+  --dock-w: 21.5rem;
+}
+.ms-tier-phone-l .ms-menu-brand {
+  top: calc(0.9rem + var(--safe-t, 0px));
+  width: 15.5rem;
+}
+.ms-tier-phone-l .ms-menu-tag span {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.3em;
+}
+.ms-tier-phone-l .ms-menu-top {
+  right: calc(var(--edge) + var(--safe-r, 0px) + var(--dock-w) + 0.8rem);
+  top: calc(0.6rem + var(--safe-t, 0px));
+  gap: 0.45rem;
+}
+.ms-tier-phone-l .ms-menu-dock {
+  width: var(--dock-w);
+  top: calc(0.6rem + var(--safe-t, 0px));
+  bottom: calc(1.9rem + var(--safe-b, 0px));
+}
+.ms-tier-phone-l .ms-menu-board {
+  padding: 1.5rem 0.75rem 0.75rem;
+  gap: 0.4rem;
+}
+.ms-tier-phone-l .ms-menu-groove {
+  margin: 0.35rem 0 0.15rem;
+}
+.ms-tier-phone-l .ms-menu .ms-menu-play,
+.ms-tier-phone-l .ms-menu-play {
+  --bh: 3.7rem;
+  --kb-pad-x: 3rem;
+  --pl-c: 0.7rem;
+  --pl-bw: 2px;
+  font-size: var(--t-xl);
+  letter-spacing: 0.26em;
+}
+.ms-tier-phone-l .ms-menu-cap,
+.ms-tier-phone-p .ms-menu-cap {
+  width: 2.2rem;
+  left: -0.8rem;
+  height: calc(100% + 0.5rem);
+}
+.ms-tier-phone-l .ms-menu-cap.is-r,
+.ms-tier-phone-p .ms-menu-cap.is-r {
+  left: auto;
+  right: -0.8rem;
+}
+.ms-tier-phone-l .ms-menu-crest,
+.ms-tier-phone-p .ms-menu-crest {
+  width: 11rem;
+  height: 2.15rem;
+  top: -1rem;
+}
+.ms-tier-phone-l .ms-menu-sub,
+.ms-tier-phone-p .ms-menu-sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+.ms-tier-phone-l .ms-menu-entry:last-child,
+.ms-tier-phone-p .ms-menu-entry:last-child {
+  grid-column: 1 / -1;
+}
+.ms-tier-phone-l .ms-menu-entry,
+.ms-tier-phone-p .ms-menu-entry {
+  --bh: 2.6rem;
+  padding-left: 0.5rem;
+  padding-right: 0.4rem;
+  gap: 0.35rem;
+  letter-spacing: 0.03em;
+  font-size: var(--t-sm);
+}
+.ms-tier-phone-l .ms-menu-elabel,
+.ms-tier-phone-p .ms-menu-elabel {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.08;
+}
+/* the treasury of a landscape phone: its own small board, bottom-left (profile plate, the two wells, the cloud line) */
+.ms-menu-purse-dock {
+  position: absolute;
+  left: calc(var(--edge) + var(--safe-l, 0px));
+  bottom: calc(1.7rem + var(--safe-b, 0px));
+  width: 14.6rem;
+  animation: ms-slide-left 0.7s 0.2s var(--ease-soft) both;
+}
+.ms-menu-purse--aside {
+  padding: 0.45rem 0.5rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ms-menu-purse--aside .ms-menu-bank {
+  flex-direction: row;
+  gap: 0.4rem;
+}
+.ms-menu-purse--aside .ms-menu-bank .ms-statwell {
+  flex: 1;
+  min-width: 0;
+}
+.ms-menu-purse--aside .ms-statwell-label {
+  display: none;
+}
+.ms-menu-purse--aside .ms-menu-purse-row .ms-well {
+  min-width: 0;
+}
+.ms-tier-phone-l .ms-menu-who,
+.ms-tier-phone-p .ms-menu-who {
+  gap: 0.4rem;
+}
+.ms-tier-phone-l .ms-menu-who .ms-menu-orn,
+.ms-tier-phone-p .ms-menu-who .ms-menu-orn {
+  display: none;
+}
+.ms-tier-phone-l .ms-menu-name {
+  font-size: var(--t-md);
+}
+.ms-tier-phone-l .ms-menu-foot {
+  padding-top: 0.2rem;
+  padding-bottom: calc(0.35rem + var(--safe-b, 0px));
+}
+
+/* phone portrait: logo on top, the painting shrunk and lifted so the WHOLE warrior stands between the logo and the board,
+   the board docked at the bottom (the painting fades into the dark below the warrior's feet) */
+.ms-tier-phone-p .ms-menu {
+  --fx: 0.22;
+  --zoom: 0.8;
+  --edge: 0.9rem;
+}
+.ms-tier-phone-p .ms-menu-art {
+  top: -7.5cqh;
+  -webkit-mask-image: linear-gradient(180deg, #000 66%, transparent 98%);
+  mask-image: linear-gradient(180deg, #000 66%, transparent 98%);
+}
+.ms-tier-phone-p .ms-menu-veil {
+  background:
+    linear-gradient(180deg, rgba(6, 4, 3, 0.62) 0%, rgba(6, 4, 3, 0.2) 24%, transparent 36%),
+    linear-gradient(0deg, rgba(5, 3, 2, 0.8) 0%, rgba(5, 3, 2, 0.4) 36%, transparent 58%),
+    radial-gradient(120% 90% at 50% 40%, transparent 60%, rgba(4, 2, 2, 0.55) 100%);
+}
+.ms-tier-phone-p .ms-menu-brand {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: calc(2.9rem + var(--safe-t, 0px));
+  width: min(15.5rem, 64vw);
+}
+.ms-tier-phone-p .ms-menu-tag {
+  margin-top: 0;
+}
+.ms-tier-phone-p .ms-menu-tag span {
+  font-size: var(--t-xs);
+  letter-spacing: 0.3em;
+}
+.ms-tier-phone-p .ms-menu-top {
+  right: calc(0.8rem + var(--safe-r, 0px));
+  top: calc(0.7rem + var(--safe-t, 0px));
+}
+.ms-tier-phone-p .ms-menu-dock {
+  left: calc(0.75rem + var(--safe-l, 0px));
+  right: calc(0.75rem + var(--safe-r, 0px));
+  width: auto;
+  top: auto;
+  bottom: calc(2.4rem + var(--safe-b, 0px));
+}
+.ms-tier-phone-p .ms-menu-board {
+  padding: 1.55rem 0.8rem 0.8rem;
+  gap: 0.5rem;
+}
+.ms-tier-phone-p .ms-menu-play {
+  --bh: 4.2rem;
+  --kb-pad-x: 3rem;
+  --pl-c: 0.75rem;
+  --pl-bw: 2px;
+  font-size: var(--t-xl);
+  letter-spacing: 0.26em;
+}
+.ms-tier-phone-p .ms-menu-groove {
+  margin: 0.4rem 0 0.2rem;
+}
+.ms-tier-phone-p .ms-menu-purse {
+  padding: 0.5rem 0.65rem 0.55rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 0.6rem;
+  align-items: center;
+}
+.ms-tier-phone-p .ms-menu-bank {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.ms-tier-phone-p .ms-menu-bank .ms-statwell {
+  flex: 1;
+  min-width: 0;
+}
+.ms-tier-phone-p .ms-menu-purse-row .ms-statwell-label {
+  display: none;
+}
+.ms-tier-phone-p .ms-menu-cloud {
+  grid-column: 2;
+  grid-row: 1;
+}
+.ms-tier-phone-p .ms-menu-foot {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  padding-top: 0.3rem;
+  padding-bottom: calc(0.45rem + var(--safe-b, 0px));
+}
+
+/* the lantern of the old painting is gone (the glow flickered over the ninja's knee): off */
+.ms-menu-glow--lantern {
+  display: none;
+}
+/* tagline RAIN OF METIN: it was thin, low-contrast and crammed under SURVIVORS: heavier, brighter, black halo, a little air above it */
+.ms-menu-tag {
+  margin-top: 0.5rem;
+}
+.ms-menu-tag span {
+  font-weight: 800;
+  color: #f6dc96;
+  letter-spacing: 0.34em;
+  text-shadow: 0 1px 0 #000, 0 0 2px #000, 0 0 0.5rem #000, 0 0 1rem rgba(0, 0, 0, 0.9);
+}
+
+/* phone portrait: the 9:16 painting (ui_keyart_menu_portrait, 1080x1920) instead of the 16:9 one. Contract of that painting (percent of its height):
+   sky band 0-22 % (logo upper left, nothing bright in the top 8 % where the TR/EN/fullscreen controls sit), the falling Metin stone upper right
+   (centre about 76 % x 22 %, its whole body below the controls and right of the logo), the five heads 28-52 % (all above the board, which starts at 56 %),
+   bodies below (the board covers them). cover in container units, so the life layers keep painting coordinates. */
+.ms-tier-phone-p .ms-menu {
+  --fx: 0.5;
+  --fy: 0;
+  --zoom: 0.95; /* 5 % smaller than cover and top-aligned: the heads sit above the board (it starts at 56 %); the exposed 5 % at the bottom is under the board / footer */
+}
+.ms-tier-phone-p .ms-menu-art {
+  --aw: calc(max(100cqw, 100cqh * 0.5625) * var(--zoom));
+  --ah: calc(max(100cqh, 100cqw * 1.7778) * var(--zoom));
+  transform-origin: 50% 40%;
+}
+.ms-tier-phone-p .ms-menu-art-img {
+  background-image: var(--tex-keyart-portrait, var(--tex-keyart, none));
+}
+/* the glow sits on the painted stone; the god rays belong to the 16:9 painting */
+.ms-tier-phone-p .ms-menu-glow--metin {
+  left: 76%;
+  top: 22%;
+  width: 32%;
+}
+.ms-tier-phone-p .ms-menu-rays {
+  display: none;
+}
+/* the lock-up leaves the upper right to the stone: smaller, left aligned (the tagline stays under SURVIVORS) */
+.ms-tier-phone-p .ms-menu-brand {
+  left: calc(0.9rem + var(--safe-l, 0px));
+  right: auto;
+  margin: 0;
+  top: calc(2.4rem + var(--safe-t, 0px));
+  width: min(15.5rem, 64vw);
+}
+.ms-tier-phone-p .ms-menu-tag span {
+  letter-spacing: 0.26em;
+}
+.ms-tier-phone-p .ms-menu-veil {
+  background:
+    linear-gradient(180deg, rgba(6, 4, 3, 0.28) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(5, 3, 2, 0.9) 0%, rgba(5, 3, 2, 0.5) 38%, transparent 58%),
+    radial-gradient(120% 90% at 50% 40%, transparent 62%, rgba(4, 2, 2, 0.5) 100%);
+}
+
+/* reduced motion: the painting is still, the layers hold a calm state */
+@media (prefers-reduced-motion: reduce) {
+  .ms-menu-art,
+  .ms-menu-glow,
+  .ms-menu-fog::before,
+  .ms-menu-sheen {
+    animation: none;
+  }
+  .ms-menu-sheen,
+  .ms-menu-gleam {
+    display: none;
+  }
+}

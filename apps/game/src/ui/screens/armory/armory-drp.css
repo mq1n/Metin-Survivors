@@ -1,0 +1,610 @@
+/* =====================================================================================================================
+   Armory · Drop Tables (kit v1): the zone list window beside the drop window. Every boss is a crest plate + a row of
+   octagon sockets that fills the width (locked pieces stay readable), the chance sits in a black well.
+   ===================================================================================================================== */
+
+.ms-drp {
+  height: 100%;
+  display: grid;
+  grid-template-columns: clamp(15rem, 21cqw, 19.5rem) minmax(0, 1fr);
+  gap: 0.75rem;
+  min-height: 0;
+}
+.ms-drp-side,
+.ms-drp-main {
+  min-height: 0;
+}
+.ms-drp-side-win {
+  padding: 0.5rem;
+  gap: 0.55rem;
+}
+.ms-drp-main-win {
+  padding: 0.5rem 0.55rem 0.55rem;
+}
+.ms-drp-mode {
+  flex: none;
+  display: flex;
+  gap: 0.4rem;
+}
+.ms-drp-mode .ms-chr-tog {
+  flex: 1 1 0;
+}
+
+.ms-drp-zones {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.25rem 0.15rem 0.3rem;
+}
+
+/* zone plates: a stone plate with the zone painting fading in from the right */
+.ms-drp-zone {
+  --pl-c: 0.4rem;
+  --pl-veil: rgba(12, 11, 10, 0.5);
+  --pl-hi: var(--k-pewter);
+  --pl-mid: var(--k-pewter-lo);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: 4.6rem;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+  color: var(--k-text-2);
+  cursor: pointer;
+  animation: ms-fade-in 0.3s ease-out both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+.ms-drp-zone > * {
+  position: relative;
+  z-index: 1;
+}
+.ms-drp-zone > .ms-drp-zone-art {
+  position: absolute;
+  z-index: 0;
+  inset: 2px;
+  background: var(--art, none) center / cover no-repeat;
+  opacity: 0.5;
+  clip-path: polygon(var(--pl-c) 0, calc(100% - var(--pl-c)) 0, 100% var(--pl-c), 100% calc(100% - var(--pl-c)), calc(100% - var(--pl-c)) 100%, var(--pl-c) 100%, 0 calc(100% - var(--pl-c)), 0 var(--pl-c));
+  -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 8%, #000 100%);
+}
+.ms-drp-zone-name {
+  font-size: var(--t-md);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 #000, 0 0 0.5rem rgba(0, 0, 0, 0.9);
+}
+.ms-drp-zone-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 #000, 0 0 0.4rem rgba(0, 0, 0, 0.9);
+}
+.ms-drp-zone-meta b {
+  font-family: var(--f-head);
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, var(--rc, var(--k-text)) 74%, #fff);
+}
+.ms-drp-zone-meta .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+/* tall plates on tablet / laptop / desktop: the painting shows, the name sits at the foot (the column is filled like the hero rail) */
+.ms-ui:not(.ms-compact) .ms-drp-zone {
+  flex: 1 1 0;
+  min-height: 4.6rem;
+  max-height: 10.5rem;
+  justify-content: flex-end;
+  padding-bottom: 0.65rem;
+}
+.ms-ui:not(.ms-compact) .ms-drp-zone > .ms-drp-zone-art {
+  opacity: 0.78;
+  -webkit-mask-image: linear-gradient(0deg, transparent 4%, #000 60%);
+  mask-image: linear-gradient(0deg, transparent 4%, #000 60%);
+}
+.ms-ui:not(.ms-compact) .ms-drp-zone.is-active > .ms-drp-zone-art {
+  opacity: 1;
+}
+.ms-ui:not(.ms-compact) .ms-drp-zone-name {
+  font-size: var(--t-lg);
+}
+.ms-drp-zone.is-locked .ms-drp-zone-art {
+  filter: grayscale(0.7) brightness(0.7);
+}
+@media (hover: hover) {
+  .ms-drp-zone:not(.is-active):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    --pl-hi: var(--k-stone-edge-hi);
+  }
+}
+.ms-drp-zone.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.22);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+}
+.ms-drp-zone.is-active .ms-drp-zone-art {
+  opacity: 0.72;
+}
+.ms-ui .ms-drp-zone[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-drp-zone[data-nav]:focus {
+  filter: var(--focus-glow);
+}
+
+.ms-drp-pity {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.45rem 0.55rem 0.5rem;
+  border-radius: 3px;
+  background: var(--k-well-2);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.18), inset 0 0.25rem 0.6rem rgba(0, 0, 0, 0.5);
+  cursor: help;
+}
+.ms-drp-pity-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.ms-drp-pity .ms-eyebrow {
+  color: var(--k-text-2);
+  letter-spacing: 0.14em;
+}
+.ms-drp-pity small {
+  font-size: var(--t-sm);
+  color: var(--k-text);
+  white-space: nowrap;
+}
+
+/* main window: banner + drop list */
+.ms-drp-view {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  animation: ms-fade-in 0.3s ease-out both;
+}
+.ms-drp-banner {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 6.4rem;
+  padding: 0.75rem 1rem 0.7rem;
+  overflow: hidden;
+  border-radius: 3px;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.92) 0%, rgba(8, 7, 6, 0.55) 55%, rgba(8, 7, 6, 0.15) 100%),
+    var(--art, none) center 40% / cover no-repeat,
+    var(--k-well);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.22), inset 0 0 1.2rem rgba(0, 0, 0, 0.6), 0 0 0 1px #050404;
+}
+.ms-drp-banner-text {
+  position: relative;
+  min-width: 0;
+}
+.ms-drp-banner-text .ms-eyebrow {
+  color: var(--k-text-2);
+}
+.ms-drp-banner-text h2 {
+  margin: 0.1rem 0 0;
+  font-size: var(--t-2xl);
+  line-height: 1.05;
+}
+.ms-drp-banner-text p {
+  margin: 0.2rem 0 0;
+  font-size: var(--t-md);
+  color: var(--k-text-2);
+  text-shadow: 0 1px 2px #000;
+}
+/* gate 3 G8 (phones): the zone subtitle sits on the tier-tinted banner (3.4-3.7:1) */
+.ms-compact .ms-drp-banner-text p {
+  color: #e4dccb;
+}
+.ms-drp-banner-tags {
+  position: relative;
+  flex: none;
+  align-self: flex-end;
+}
+
+.ms-drp-list {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 33rem), 1fr));
+  align-content: start;
+  gap: 0.6rem;
+  padding: 0.05rem 0.3rem 0.1rem 0.05rem;
+  scrollbar-gutter: stable;
+}
+.ms-drp-intro {
+  grid-column: 1 / -1;
+  margin: 0.1rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.35;
+  color: var(--k-text-2);
+}
+.ms-drp-empty {
+  grid-column: 1 / -1;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* boss card: the steel tray frame (uk_hud_tray) around a granite board. Header = portrait ring, name block, tags to the right;
+   the drops below share the full width equally, each on a painted bronze plate (the tag material) */
+.ms-drp-boss {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.8rem;
+  row-gap: 0.55rem;
+  padding: 0.3rem 0.4rem 0.35rem;
+  isolation: isolate;
+  animation: ms-rise-in 0.35s var(--ease-soft) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+.ms-drp-boss.is-final {
+  filter: drop-shadow(0 0 0.9rem color-mix(in srgb, var(--rc, #d7a64a) 30%, transparent));
+}
+.ms-drp-boss-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+.ms-drp-face {
+  flex: none;
+}
+.ms-drp-boss-id {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'name' 'sub' 'tags';
+  align-items: center;
+}
+.ms-drp-boss-id h3 {
+  grid-area: name;
+  margin: 0;
+  font-size: var(--t-xl);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--k-text);
+}
+.ms-drp-boss-sub {
+  grid-area: sub;
+  margin: 0.15rem 0 0;
+  font-size: var(--t-sm);
+  font-style: italic;
+  color: var(--k-text-2);
+}
+.ms-drp-boss-tags {
+  grid-area: tags;
+  justify-self: start;
+  margin-top: 0.4rem;
+}
+.ms-drp-portrait {
+  flex: none;
+}
+.ms-drp-pieces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 0;
+  padding: 0.3rem 0.35rem;
+  border-radius: 3px;
+  background: var(--k-well-2);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.18), inset 0 0.3rem 0.8rem rgba(0, 0, 0, 0.5);
+}
+.ms-drp {
+  --s-bay: clamp(3.5rem, 6.4vh, 4.5rem);
+}
+.ms-drp .ms-slot--lg {
+  --s: var(--s-bay);
+}
+.ms-drp-piece {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+  color: var(--k-text);
+  cursor: help;
+}
+.ms-drp-piece + .ms-drp-piece {
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.9), inset 2px 0 0 rgba(160, 150, 134, 0.16);
+}
+.ms-drp-piece-cell {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: calc(var(--s-bay, 4.5rem) * 1.3);
+  height: calc(var(--s-bay, 4.5rem) * 1.3);
+}
+/* the octagon bay under the piece (the painted socket where shipped, a CSS rim otherwise): the pieces sit in a rack of cells */
+.ms-drp-piece-cell::before {
+  --bay: polygon(20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 20%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: var(--bay);
+  background: linear-gradient(160deg, #a39a86, #4a453b 45%, #16130f);
+  pointer-events: none;
+}
+.ms-drp-piece.has-sock .ms-drp-piece-cell::before {
+  clip-path: none;
+  background: var(--tex-sock) 50% 50% / 100% 100% no-repeat;
+}
+.ms-drp-piece:not(.is-owned) .ms-drp-piece-cell::before {
+  filter: brightness(0.7) saturate(0.75);
+}
+.ms-drp-piece-cell .ms-slot {
+  position: relative;
+  z-index: 1;
+}
+.ms-drp-piece .ms-slot {
+  flex: none;
+}
+.ms-drp-piece .ms-slot-lock {
+  display: none;
+}
+.ms-drp-tick {
+  position: absolute;
+  z-index: 2;
+  right: 0.05rem;
+  top: 0.05rem;
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #3a2a0c, #0b0805 80%);
+  box-shadow: 0 0 0 1px #c79a45, 0 0 0.4rem rgba(240, 190, 90, 0.5);
+}
+.ms-drp-tick .ms-kicon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+.ms-drp-piece-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.ms-drp-piece-text b {
+  font-family: var(--f-head);
+  font-size: var(--t-md);
+  line-height: 1.15;
+  color: var(--rc, var(--k-text));
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.ms-drp-piece-text small {
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-drp-piece-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.15rem;
+}
+.ms-drp-piece-foot .ms-well {
+  min-width: 3.6rem;
+}
+.ms-drp-owned,
+.ms-drp-notyet {
+  font-size: var(--t-sm);
+}
+.ms-drp-owned {
+  color: var(--k-gold);
+}
+.ms-drp-notyet {
+  color: var(--k-text-2);
+}
+
+/* narrow desktops */
+@container arm (max-width: 84rem) {
+  .ms-drp {
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+  }
+  .ms-drp-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ms-drp-pieces {
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  }
+}
+
+/* phone landscape */
+.ms-compact.ms-landscape .ms-drp {
+  grid-template-columns: 12.6rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .ms-drp-mode {
+  gap: 0.25rem;
+}
+.ms-compact.ms-landscape .ms-drp-mode .ms-chr-tog {
+  --kb-pad-x: 0.25rem;
+  font-size: var(--t-2xs);
+  letter-spacing: 0;
+}
+.ms-compact.ms-landscape .ms-drp-side-win,
+.ms-compact.ms-landscape .ms-drp-main-win {
+  padding: 0.35rem 0.4rem 0.4rem;
+  gap: 0.35rem;
+}
+.ms-compact.ms-landscape .ms-drp-zone {
+  min-height: 3.2rem;
+  padding: 0.3rem 0.55rem;
+}
+.ms-compact.ms-landscape .ms-drp-zone-meta .ms-num {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-drp-banner {
+  min-height: 3.6rem;
+  padding: 0.4rem 0.7rem;
+}
+.ms-compact.ms-landscape .ms-drp-banner-text h2 {
+  font-size: var(--t-xl);
+}
+.ms-compact.ms-landscape .ms-drp-banner-text p,
+.ms-compact.ms-landscape .ms-drp-banner-tags,
+.ms-compact.ms-landscape .ms-drp-intro {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-drp-boss {
+  padding: 0 0.1rem 0.1rem;
+  gap: 0.35rem;
+}
+.ms-compact.ms-landscape .ms-tray {
+  border-width: 0.6rem;
+  border-image-width: 0.6rem;
+}
+.ms-compact.ms-landscape .ms-drp-face {
+  --bf: 3.6rem;
+}
+.ms-compact.ms-landscape .ms-drp-boss-tags {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-drp-boss-id h3 {
+  font-size: var(--t-lg);
+}
+.ms-compact.ms-landscape .ms-drp-piece {
+  padding: 0.2rem 0.5rem 0.2rem 0.2rem;
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-drp {
+  --s-bay: 2.7rem;
+}
+.ms-compact.ms-landscape .ms-drp-piece-text small {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-drp-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ms-compact.ms-landscape .ms-drp-pieces {
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+.ms-compact.ms-landscape .ms-drp-owned {
+  display: none;
+}
+/* the zone window loses its bar (the plates say it) and the bad-luck gauge is one slim row, so three zone plates fit and the fourth is one scroll away */
+.ms-compact.ms-landscape .ms-drp-side > .ms-titlebar {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-drp-pity {
+  padding: 0.3rem 0.45rem 0.35rem;
+  gap: 0.2rem;
+}
+.ms-compact.ms-landscape .ms-drp-pity .ms-eyebrow {
+  letter-spacing: 0.06em;
+}
+.ms-compact.ms-landscape .ms-drp-zones {
+  gap: 0.3rem;
+}
+
+/* phone portrait: zone strip on top (swipe), the drop window below */
+.ms-portrait .ms-drp {
+  height: auto;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.55rem;
+}
+.ms-portrait .ms-drp-side-win,
+.ms-portrait .ms-drp-main-win {
+  padding: 0.4rem;
+}
+.ms-portrait .ms-drp-zones {
+  flex: none;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0.1rem 0.4rem;
+}
+.ms-portrait .ms-drp-zone {
+  flex: 0 0 9.2rem;
+  min-height: 4rem;
+  padding: 0.4rem 0.6rem;
+}
+.ms-portrait .ms-drp-zone-name {
+  font-size: var(--t-sm);
+}
+.ms-portrait .ms-drp-list {
+  overflow: visible;
+}
+.ms-portrait .ms-drp-banner {
+  min-height: 4.8rem;
+  padding: 0.55rem 0.7rem;
+}
+.ms-portrait .ms-drp-banner-text h2 {
+  font-size: var(--t-xl);
+}
+.ms-portrait .ms-drp-banner-tags {
+  display: none;
+}
+.ms-portrait .ms-drp-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ms-portrait .ms-drp-boss {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.55rem;
+}
+.ms-portrait .ms-drp-boss-head {
+  gap: 0.6rem;
+}
+.ms-portrait .ms-drp-boss-id {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'name' 'sub' 'tags';
+}
+.ms-portrait .ms-drp-boss-tags {
+  justify-content: flex-start;
+  margin-top: 0.3rem;
+  max-width: none;
+}
+.ms-portrait .ms-drp-face {
+  --bf: 4.6rem;
+}
+.ms-portrait .ms-drp-pieces {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ms-portrait .ms-drp {
+  --s-bay: 3.4rem;
+}
+
+.ms-touch .ms-drp-zone {
+  min-height: var(--k-tap);
+}
+
+.ms-touch.ms-compact.ms-landscape .ms-drp-zone {
+  min-height: var(--k-tap);
+}
+
+/* phone portrait: the zone window loses its bar (the zone strip says it), the strip drops its closing count (the ticks say it) */
+.ms-portrait .ms-drp-side > .ms-titlebar {
+  display: none;
+}
+.ms-portrait .ms-drp-boss-tags .ms-ds-i:last-child:not(:only-child) {
+  display: none;
+}

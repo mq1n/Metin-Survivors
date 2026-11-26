@@ -1,0 +1,6 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "types": ["bun"], "allowImportingTsExtensions": true },
+  "include": ["src", "viewer/server.ts", "scripts/propTex.ts", "scripts/*.test.ts"],
+  "exclude": ["src/archetypes/dragon/dev/scaleRef.ts"]
+}

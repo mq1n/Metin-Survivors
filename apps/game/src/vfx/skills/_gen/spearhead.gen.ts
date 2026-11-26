@@ -1,0 +1,190 @@
+
+
+
+//   the grade families merged into one family with grade variants by apps/game/src/vfx/spec/gen/gradeMerge.ts (g1 = M1+, g2 = G1+, g3 = P)
+//   STAMP converter ad68859f3301 (mse2spec.py skillscale.py boneframes.py bonetracks.py artmeta.py) · inputs 8376cef9f370 (skills.json artmap.json artmap_meta.json bone_frames.json textures.json)
+import type { FxSpec } from '../../spec/types';
+
+/** dash: the converter family (sk.spearhead); every element has a stable `key` */
+export const GEN: readonly FxSpec[] = [
+  // ---- sk.spearhead: dash body; fire at motion t=0 s
+  {
+    id: 'sk.spearhead',
+    desc: '',
+    behavior: 'dash',
+    ref: {},
+    size: 'radius',
+    base: 1.4,
+    dur: 0.264,
+    explode: 'none',
+    artGain: false,
+    elements: [
+      {
+        kind: 'surface',
+        key: 'tanhwan#0',
+        note: '',
+        t0: 0.049,
+        life: 0.12,
+        shape: { kind: 'cyl', rb: 0.07, rt: 0.07, h: 0.29, span: 308 },
+        at: [-0.006, 1.285, 0.5041],
+        rot: [70, 0, 0],
+        scale: [0, 0.0543, 0.2, 0.109, 0.4, 0.253, 0.6, 0.566, 0.8, 0.889, 1, 1, 1, 1],
+        color: [0, 0xafa886, 1],
+        blend: 'add',
+        square: true,
+        tex: { art: 'vfx_smear_slab_a', fallback: 'smear' },
+        grade: { g1: { color: [0, 0xf9d900, 1] }, g2: { color: [0, 0xfff5c3, 1] }, g3: { color: [0, 0xfdf1c0, 1] } },
+      },
+      {
+        kind: 'surface',
+        key: 'tanhwan#0.1',
+        note: '',
+        t0: 0.049,
+        life: 0.12,
+        shape: { kind: 'cyl', rb: 0.07, rt: 0.07, h: 0.29, span: 308 },
+        at: [-0.006, 1.285, 0.5041],
+        rot: [70, 0, 0],
+        scale: [0, 0.0543, 0.2, 0.109, 0.4, 0.253, 0.6, 0.566, 0.8, 0.889, 1, 1, 1, 1],
+        color: [0, 0xb0a986, 1],
+        blend: 'add',
+        square: true,
+        tex: { art: 'vfx_smear_slab_a', fallback: 'smear' },
+      },
+      {
+        kind: 'particle',
+        key: 'tanhwan#1',
+        note: '',
+        t0: 0.049,
+        cycle: 0.1,
+        max: 30,
+        rate: [0, 20],
+        life: [0, 0.1],
+        at: [0, 1.448, 0.4358],
+        half: [0, 0.64],
+        scale: [0, 3, 1, 4],
+        color: [0, 0xffcf64, 1, 1, 0xeabd59, 0.16, 1, 0xeabd59, 0.15],
+        billboard: 'screen',
+        blend: 'add',
+        tex: { art: 'vfx_ring_corona_soft_a', fallback: 'raysSoft' },
+        grade: {
+          g1: { color: [0, 0xfe9500, 1, 0.4, 0xffffff, 0.66, 1, 0x00fe47, 0.15] },
+          g2: { scale: [0, 2, 1, 5], color: [0, 0xf03214, 1, 0.47, 0xe7312f, 1, 1, 0xa72cec, 0.15] },
+          g3: {
+            half: [0, 0.8],
+            scale: [[0, 3, 1, 4], [0, 3, 1, 4.5]],
+            color: [0, 0x950ab8, 1, 0.53, 0x950ab8, 0.47, 1, 0xe38909, 0],
+          },
+        },
+      },
+      {
+        kind: 'particle',
+        key: 'tanhwan#2',
+        note: '',
+        t0: 0.049,
+        cycle: 0.5,
+        max: 30,
+        rate: [0, 103.1],
+        life: [0.003, 0.1804],
+        shape: { kind: 'ellipse', radius: 0.2, edge: true, size: [0, 0.06, 0.5, 1.5] },
+        at: [0, 0.4307, 0],
+        dir: { y: [0, 30.41] },
+        vel: [0, 0.1753],
+        half: [0, 0.64],
+        scale: [[0, 0.8969, 1, 0.1649], [1, 0.4948]],
+        color: [0.01, 0x6c8dff, 0, 0.22, 0x6c8dff, 0.59, 1, 0x6c8dff, 0],
+        billboard: 'stretch',
+        stretchU: true,
+        swirl: [0, 10.82],
+        attach: true,
+        blend: 'add',
+        tex: { art: 'vfx_smear_comet_bundle_b', fallback: 'smear' },
+        grade: {
+          g1: { color: [0.01, 0x667659, 0, 0.21, 0x5c7857, 0.75, 1, 0x228949, 0] },
+          g2: { color: [0.01, 0x59060a, 0, 0.15, 0x59060a, 0.83, 1, 0x3109ed, 0] },
+          g3: {
+            life: [0.003, 0.25],
+            shape: { kind: 'ellipse', radius: 0.3, edge: true, size: [0, 0.06, 0.5, 1.5] },
+            color: [0.01, 0x350de8, 0, 0.31, 0x3214e8, 1, 1, 0x1859ec, 0],
+          },
+        },
+      },
+      {
+        kind: 'particle',
+        key: 'tanhwan#3',
+        note: '',
+        t0: 0.049,
+        cycle: 0.1,
+        loops: 5,
+        max: 6,
+        rate: [0, 10],
+        life: [0, 0.5155],
+        at: [-0.00789, 0.3857, 0],
+        dir: { y: [0, -0.5155] },
+        vel: [0, 0.06186],
+        half: [0, 5],
+        scale: [[0.011, 0.2784, 1, 1], [0.011, 0.2887, 1, 1]],
+        color: [0, 0x367cff, 0.54, 0.63, 0x70aeff, 0, 1, 0x92ccff, 0],
+        billboard: 'ground',
+        rotation: { spin: 500 },
+        attach: true,
+        blend: 'add',
+        tex: { art: 'vfx_ring_bloomline_a', fallback: 'glow' },
+        grade: {
+          g1: { color: [0, 0x13b403, 0.67, 0.17, 0x13b403, 0.53, 0.7, 0x928200, 0] },
+          g2: {
+            scale: [[0.011, 0.2784, 1, 1.1], [0.011, 0.2887, 1, 1.1]],
+            color: [0, 0x850613, 0, 0.23, 0x850613, 0.93, 0.65, 0x630ee2, 0],
+          },
+          g3: {
+            scale: [[0.011, 0.2784, 1, 1.3], [0.011, 0.2887, 1, 1.3]],
+            color: [0, 0x1677bf, 1, 0.49, 0x601ebf, 0.35, 1, 0x92add9, 0],
+          },
+        },
+      },
+      {
+        kind: 'particle',
+        key: 'tanhwan_4#4',
+        note: '',
+        minRank: 7,
+        t0: 0.049,
+        cycle: 0.1,
+        loops: 5,
+        max: 6,
+        rate: [0, 10],
+        life: [0, 0.5155],
+        at: [-0.00789, 0.3857, 0],
+        dir: { y: [0, -0.5155] },
+        vel: [0, 0.06186],
+        half: [0, 6],
+        scale: [[0.011, 0.2784, 1, 1], [0.011, 0.2887, 1, 1]],
+        color: [0, 0x3f8c21, 0.64, 0.43, 0x0b2be7, 0.19, 0.61, 0x0b2be7, 0],
+        billboard: 'screen',
+        rotation: { spin: 500 },
+        attach: true,
+        blend: 'add',
+        tex: { art: 'vfx_ring_bloomline_a', fallback: 'glow' },
+      },
+    ],
+  },
+];
+
+/** element keys: spec id -> key -> kind (patch typing: `SkillPatch<typeof GEN_KEYS>`) */
+export const GEN_KEYS = {
+  'sk.spearhead': {
+    'tanhwan#0': 'surface',
+    'tanhwan#0.1': 'surface',
+    'tanhwan#1': 'particle',
+    'tanhwan#2': 'particle',
+    'tanhwan#3': 'particle',
+    'tanhwan_4#4': 'particle',
+  },
+} as const;
+
+/** per part: its role and the motion time (s) a replay fires it at, per grade g0..g3 (null = the grade has no such part); `at` = metres ahead */
+export const GEN_META = {
+  skill: 'spearhead',
+  
+  parts: {
+    'sk.spearhead': { role: 'body', fire: [0, 0, 0, 0], at: [null, null, null, null] },
+  },
+} as const;

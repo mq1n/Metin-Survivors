@@ -1,0 +1,2559 @@
+/* =====================================================================================================================
+   Zone select — the campaign atlas (B4 zone-select, kit v1). Two boards: the ATLAS (our zones as islands cut from the live
+   ZoneMap rasters, cloth banner pins, charcoal plates, chain + seal links) and the DOSSIER of the chosen zone. Material
+   discipline (T1-T17): charcoal boards, pewter bevel, rust-copper title bars, stone plates, octagon slots, black wells; gold and
+   lacquer only as accents; no neon, no pills, no hatches. Hard mode turns the dossier trim to ember (.is-hard on the root).
+   ===================================================================================================================== */
+
+.ms-zs {
+  /* label sizes: the kit tokens, never under 12 px on a desktop-class screen (phones keep the 10.5 px token floor) */
+  --zs-xs: max(var(--t-2xs), 12px);
+  --zs-sm: max(var(--t-xs), 12px);
+  --zs-plate-w: 17rem;
+  --zs-plate-h: 4.4rem;
+  --zs-plate-min: 10.5rem;
+  --zs-banner-h: 8.4rem;
+  --zs-gutter: 0.75rem;
+  --zs-pin: 1.5rem;
+  --zs-ember: #ff7a3c;
+  --tl-well: 1.9rem;
+  --tl-node: 2.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: calc(0.9rem + var(--safe-t)) calc(2.4rem + var(--safe-r)) calc(0.7rem + var(--safe-b)) calc(2.4rem + var(--safe-l));
+}
+.ms-compact .ms-zs {
+  --zs-xs: var(--t-2xs);
+  --zs-sm: var(--t-xs);
+}
+.ms-zs .ms-eyebrow,
+.ms-zs .ms-statwell-label {
+  font-size: var(--zs-xs);
+}
+.ms-zs .ms-kkey {
+  font-size: max(0.75rem, 12px);
+}
+.ms-compact .ms-zs .ms-kkey {
+  font-size: max(0.72rem, 10.5px);
+}
+/* on touch the edge fade is the scroll hint; the chevron picture would sit on top of the timeline names / the Enter caption */
+.ms-touch .ms-zs .ms-sf-cue {
+  display: none;
+}
+/* kit chips and the Normal / Hard plates take the screen's label size (12 px floor on laptops) */
+.ms-zs :is(.ms-kchip, .ms-kseg-btn) {
+  font-size: var(--zs-sm);
+}
+@keyframes zs-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes zs-march {
+  to {
+    stroke-dashoffset: -3rem;
+  }
+}
+
+/* ---- backdrop: the chosen zone's painted art, blurred and charcoal-graded (no neon veil) ---------------------------- */
+.ms-zs-bd {
+  overflow: hidden;
+  background: #0a0908;
+}
+.ms-zs-bd-art {
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  filter: blur(1.1rem) saturate(0.6) brightness(0.4);
+  animation: zs-fade 0.8s ease-out both;
+}
+.ms-zs-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(130% 110% at 50% 38%, rgba(10, 9, 8, 0.18), rgba(7, 6, 5, 0.9) 88%),
+    linear-gradient(180deg, rgba(8, 7, 6, 0.5), transparent 26%);
+  transition: background 0.5s;
+}
+.ms-zs.is-hard .ms-zs-veil {
+  background:
+    radial-gradient(70% 55% at 60% 104%, rgba(160, 44, 14, 0.3), transparent 72%),
+    radial-gradient(130% 110% at 50% 38%, rgba(10, 9, 8, 0.18), rgba(7, 6, 5, 0.9) 88%),
+    linear-gradient(180deg, rgba(8, 7, 6, 0.5), transparent 26%);
+}
+.ms-zs-head,
+.ms-zs-mainwrap,
+.ms-zs-hint {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- header ---------------------------------------------------------------------------------------------------- */
+.ms-zs-head {
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  animation: zs-fade 0.45s ease-out both;
+}
+.ms-zs-back {
+  justify-self: start;
+}
+.ms-zs-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-align: center;
+}
+.ms-zs-title h1 {
+  font-size: var(--t-2xl);
+  line-height: 1.1;
+}
+.ms-zs-title::after {
+  content: '';
+  display: block;
+  width: min(24rem, 60vw);
+  height: 1px;
+  margin-top: 0.3rem;
+  background: linear-gradient(90deg, transparent, rgba(214, 176, 98, 0.65) 30%, rgba(214, 176, 98, 0.65) 70%, transparent);
+}
+
+/* ---- main grid -------------------------------------------------------------------------------------------------- */
+.ms-zs-mainwrap {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.ms-zs-main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 47fr) minmax(0, 53fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1.6rem;
+  padding: 0.5rem 0.35rem 0.6rem;
+}
+.ms-zs-main > .ms-board {
+  min-height: 0;
+  min-width: 0;
+}
+
+/* ---- atlas board: ONE landmass, four bordered regions (geometry in zoneContinent.ts, canvas in zoneContinentPaint.ts) ------------ */
+.ms-zs-atlas {
+  display: flex;
+  flex-direction: column;
+  animation: zs-fade 0.4s ease-out both;
+}
+.ms-zs-atlas-in {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.65rem 0.8rem 0.75rem;
+}
+.ms-zs-world {
+  position: relative;
+  isolation: isolate;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #1e3438, #0b1316);
+  border: 1px solid #060505;
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.95),
+    inset -1px -1px 0 rgba(160, 150, 134, 0.2),
+    inset 0 0.3rem 1rem rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 240, 220, 0.06);
+}
+/* sizes of the plate / banner / gutter / marker come from the tier tokens; the script measures this probe in px */
+.ms-zs-probe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: content-box;
+  width: var(--zs-plate-w);
+  height: var(--zs-plate-h);
+  padding: var(--zs-banner-h) var(--zs-pin) var(--zs-plate-min) var(--zs-gutter);
+  visibility: hidden;
+  pointer-events: none;
+}
+.ms-zs-land {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ms-zs-world.is-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(60% 50% at 50% 50%, rgba(255, 214, 140, 0.1), transparent 70%);
+  animation: zs-wait 1.6s ease-in-out infinite alternate;
+}
+@keyframes zs-wait {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.ms-zs-rose {
+  position: absolute;
+  right: 0.45rem;
+  top: 0.4rem;
+  z-index: 6;
+  width: 3.8rem;
+  height: 3.8rem;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0.15rem 0.2rem rgba(0, 0, 0, 0.7));
+}
+.ms-zs-links {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.ms-zs-links--under {
+  z-index: 1;
+}
+.ms-zs-links--over {
+  z-index: 4;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.6));
+}
+.ms-zs-link.is-open {
+  filter: drop-shadow(0 0 0.4rem rgba(240, 190, 96, 0.35));
+}
+.ms-zs-road {
+  animation: zs-march 6s linear infinite;
+}
+.ms-zs-chain {
+  filter: drop-shadow(0 0.15rem 0.1rem rgba(0, 0, 0, 0.7));
+}
+
+/* one region = a clipped hit area + its banner, markers and plate (positioned in px by the script, inside the polygon) */
+.ms-zs-region {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  color: var(--k-text);
+  animation: zs-fade 0.5s ease-out both;
+  animation-delay: calc(0.1s + var(--i, 0) * 0.09s);
+}
+.ms-zs-reg-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.ms-zs-reg-dim {
+  fill: rgba(5, 4, 3, 0.24);
+  transition: fill 0.3s;
+}
+.ms-zs-reg-glow {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 9px;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    stroke 0.3s;
+}
+.ms-zs-reg-edge {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+  transition: stroke 0.3s;
+}
+.ms-zs-region.is-locked .ms-zs-reg-dim {
+  fill: rgba(5, 4, 3, 0.2);
+}
+.ms-zs-region.is-sel .ms-zs-reg-dim {
+  fill: transparent;
+}
+.ms-zs-region.is-sel .ms-zs-reg-edge {
+  stroke: #f4d684;
+}
+.ms-zs-region.is-sel .ms-zs-reg-glow {
+  stroke: rgba(255, 196, 96, 0.5);
+  opacity: 1;
+  filter: blur(4px);
+}
+.ms-zs-region.is-sel.is-locked .ms-zs-reg-edge {
+  stroke: #b9ae97;
+}
+.ms-zs-region.is-sel.is-locked .ms-zs-reg-glow {
+  stroke: rgba(200, 190, 160, 0.3);
+}
+.ms-zs.is-hard .ms-zs-region.is-sel .ms-zs-reg-edge {
+  stroke: var(--zs-ember);
+}
+.ms-zs.is-hard .ms-zs-region.is-sel .ms-zs-reg-glow {
+  stroke: rgba(255, 106, 44, 0.55);
+}
+.ms-zs-hit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.ms-ui .ms-zs-hit:focus,
+.ms-ui .ms-zs-hit:focus-visible,
+.ms-ui.ms-kbd .ms-zs-hit:focus {
+  box-shadow: none;
+  outline: none;
+}
+.ms-ui .ms-zs-region:has(.ms-zs-hit:focus-visible) .ms-zs-reg-edge,
+.ms-ui.ms-kbd .ms-zs-region:has(.ms-zs-hit:focus) .ms-zs-reg-edge {
+  stroke: #fff0b8;
+  stroke-width: 3.2px;
+}
+.ms-ui .ms-zs-region:has(.ms-zs-hit:focus-visible) .ms-zs-reg-glow,
+.ms-ui.ms-kbd .ms-zs-region:has(.ms-zs-hit:focus) .ms-zs-reg-glow {
+  stroke: rgba(255, 224, 150, 0.7);
+  opacity: 1;
+  filter: blur(4px);
+}
+@media (hover: hover) {
+  .ms-zs-region:not(.is-sel):has(.ms-zs-hit:hover) .ms-zs-reg-dim {
+    fill: rgba(5, 4, 3, 0.08);
+  }
+  .ms-zs-region:not(.is-sel):has(.ms-zs-hit:hover) .ms-zs-reg-edge {
+    stroke: rgba(236, 204, 124, 0.7);
+  }
+  .ms-zs-region:not(.is-sel):has(.ms-zs-hit:hover) .ms-zs-plate {
+    --pl-veil: rgba(40, 36, 30, 0.34);
+  }
+}
+
+/* map markers (uk_zone_select_pins) */
+.ms-zs-pinwrap {
+  position: absolute;
+  z-index: 1;
+  translate: -50% -50%;
+  pointer-events: none;
+  filter: drop-shadow(0 0.12rem 0.12rem rgba(0, 0, 0, 0.75));
+}
+.ms-zs-pin {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ms-zs-pin.is-plain {
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #e2b65c, #5a3a10 78%);
+  box-shadow: 0 0 0 1px #0b0705;
+}
+.ms-zs-region.is-locked .ms-zs-pinwrap {
+  filter: grayscale(0.8) brightness(0.7) drop-shadow(0 0.12rem 0.12rem rgba(0, 0, 0, 0.75));
+}
+
+/* cloth banner pin (uk_zone_select_flags) */
+.ms-zs-bannerwrap {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: 50% 12%;
+  filter: drop-shadow(0 0.3rem 0.25rem rgba(0, 0, 0, 0.65));
+}
+.ms-zs-isle-banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* the pole's foot stands on the ground: a small earth mound and a cast shadow */
+.ms-zs-bannerwrap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  width: 190%;
+  height: 0.8rem;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(8, 5, 2, 0.7), rgba(8, 5, 2, 0.32) 55%, transparent 74%);
+  z-index: -1;
+}
+.ms-zs-banner-num {
+  font-family: var(--f-title);
+  font-weight: 900;
+  paint-order: stroke;
+  stroke: #2a1608;
+  stroke-width: 7px;
+  stroke-linejoin: round;
+}
+.ms-zs-banner-img.is-locked,
+.ms-zs-seal-img.is-locked {
+  filter: grayscale(0.85) brightness(0.72);
+}
+.ms-zs-region.is-sel .ms-zs-bannerwrap {
+  animation: zs-sway 5s ease-in-out infinite alternate;
+}
+.ms-zs-region:not(.is-sel) .ms-zs-bannerwrap {
+  opacity: 0.92;
+}
+@keyframes zs-sway {
+  from {
+    rotate: -1.2deg;
+  }
+  to {
+    rotate: 1.5deg;
+  }
+}
+
+/* charcoal name plate: inside its region, away from the gates (script-placed, fixed gutter) */
+.ms-zs-plate {
+  --pl-c: 0.42rem;
+  --pl-veil: rgba(15, 14, 12, 0.7);
+  container: zsplate / inline-size;
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.38rem 0.7rem 0.38rem 0.45rem;
+  text-align: left;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 0.3rem 0.35rem rgba(0, 0, 0, 0.6));
+  transition: filter 0.2s;
+}
+.ms-zs-region.is-sel .ms-zs-plate {
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  --pl-veil: rgba(52, 28, 12, 0.5);
+}
+.ms-zs.is-hard .ms-zs-region.is-sel .ms-zs-plate {
+  --pl-hi: #e9946a;
+  --pl-mid: #9c4a28;
+  --pl-lo: #3a1408;
+  --pl-veil: rgba(70, 20, 10, 0.5);
+}
+.ms-zs-region.is-locked .ms-zs-plate {
+  --pl-veil: rgba(9, 8, 7, 0.8);
+}
+.ms-ui .ms-zs-region:has(.ms-zs-hit:focus-visible) .ms-zs-plate,
+.ms-ui.ms-kbd .ms-zs-region:has(.ms-zs-hit:focus) .ms-zs-plate {
+  filter: var(--focus-glow);
+}
+.ms-zs-plate-art {
+  position: relative;
+  align-self: stretch;
+  width: 2.7rem;
+  min-height: 2.6rem;
+  overflow: hidden;
+  background: #0b0908;
+  box-shadow: inset 0 0 0 1px #050403, 0 0 0 1px rgba(143, 135, 123, 0.42);
+}
+.ms-zs-plate-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+.ms-zs-region.is-locked .ms-zs-plate-img {
+  filter: grayscale(0.9) brightness(0.55);
+}
+.ms-zs-plate-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.ms-zs-plate-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  /* words stay whole (the two lines break at the space): "Seungryo|ng Vadisi" came from overflow-wrap: anywhere on a narrow plate */
+  overflow-wrap: normal;
+  word-break: keep-all;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+/* a plate squeezed to its minimum width that carries a long single word (ZoneAtlas.tsx .is-long): the compact face, so the word fits whole */
+.ms-zs .ms-zs-plate.is-long {
+  padding-inline: 0.2rem;
+}
+.ms-zs .ms-zs-plate.is-long .ms-zs-plate-name {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.ms-zs-region.is-sel .ms-zs-plate-name {
+  color: var(--k-gold);
+}
+.ms-zs-region.is-locked .ms-zs-plate-name {
+  color: var(--k-text-2);
+}
+.ms-zs-plate-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.1rem 0.5rem;
+  min-width: 0;
+  white-space: nowrap;
+}
+.ms-zs-skulls-n {
+  display: none;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: var(--zs-sm);
+  font-weight: 700;
+  color: #ff9a86;
+}
+.ms-zs-skulls-n .ms-zs-skull {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+/* narrow plates (the atlas is measured, the plate takes what its region leaves): one skull + the number, no art, never a wrap */
+@container zsplate (max-width: 168px) {
+  .ms-zs-plate-state {
+    display: none;
+  }
+  .ms-zs-plate-meta .ms-zs-skulls {
+    display: none;
+  }
+  .ms-zs-plate-meta .ms-zs-skulls-n {
+    display: inline-flex;
+  }
+}
+.ms-zs-lv {
+  font-size: var(--zs-sm);
+  color: var(--k-text-2);
+}
+.ms-zs-plate-lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--zs-sm);
+  color: var(--k-text-3);
+}
+.ms-zs-plate-lock .ms-kicon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.ms-zs-skulls {
+  display: inline-flex;
+  gap: 0.04rem;
+}
+.ms-zs-skulls .ms-zs-skull {
+  width: 1rem;
+  height: 1rem;
+}
+.ms-zs-skull.is-dim {
+  opacity: 0.4;
+}
+.ms-zs-plate-state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.ms-zs-plate-state .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* progress plaque under the table */
+.ms-zs-atlas-foot {
+  flex: none;
+  display: flex;
+  justify-content: center;
+}
+.ms-zs-prog {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ms-zs-prog-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-prog-pips {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+.ms-zs-pip {
+  --pl-c: 0.22rem;
+  --pl-veil: rgba(9, 8, 7, 0.78);
+  --pl-hi: var(--k-pewter);
+  --pl-mid: var(--k-pewter-lo);
+  display: inline-block;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.ms-zs-pip.is-open {
+  --pl-veil: rgba(20, 19, 17, 0.4);
+}
+.ms-zs-pip.is-done {
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  --pl-veil: rgba(226, 170, 70, 0.62);
+}
+.ms-zs-pip.is-hard {
+  --pl-hi: #e9946a;
+  --pl-mid: #9c4a28;
+  --pl-lo: #3a1408;
+  --pl-veil: rgba(200, 52, 24, 0.7);
+}
+
+/* ---- dossier board ---------------------------------------------------------------------------------------------- */
+.ms-zs-dossier {
+  display: flex;
+  flex-direction: column;
+  animation: zs-fade 0.4s ease-out both;
+  transition: box-shadow 0.4s;
+}
+.ms-zs.is-hard .ms-zs-dossier {
+  box-shadow:
+    inset 1px 1px 0 #d98a5a,
+    inset -1px -1px 0 #3a1408,
+    inset 0 0 0 3px #6e3a22,
+    inset 0 0 0 4px var(--k-line-in),
+    inset 0 0 0 5px rgba(255, 110, 50, 0.5),
+    inset 0 0 1.6rem rgba(120, 24, 8, 0.45),
+    0 0 1.6rem rgba(255, 96, 40, 0.22),
+    0 0.45rem 0.75rem rgba(0, 0, 0, 0.55);
+}
+.ms-zs.is-hard .ms-zs-dossier > .ms-titlebar {
+  filter: hue-rotate(-8deg) saturate(1.35) brightness(1.08);
+}
+.ms-zs-dscroll {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.ms-zs-dbody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.65rem 1.1rem 0.5rem;
+}
+.ms-zs-dbody > * {
+  flex: none;
+}
+
+/* chips of the dossier: stone and bronze like the rest of the window (the kit's jade and yellow-fill tones stay out) */
+.ms-zs .ms-zs-chip {
+  --pl-hi: #cfc5b0;
+  --pl-mid: #756b5a;
+  --pl-lo: #1d1a16;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 50%), linear-gradient(180deg, #34302a, #171512);
+  color: var(--k-text);
+}
+.ms-zs .ms-zs-chip--gear,
+.ms-zs .ms-zs-chip--done,
+.ms-zs .ms-zs-chip--great {
+  --pl-hi: #e3c585;
+  --pl-mid: #8f6c30;
+  --pl-lo: #33240d;
+  --pl-face: linear-gradient(180deg, rgba(255, 226, 160, 0.12), transparent 50%), linear-gradient(180deg, #3d3224, #1c1710);
+  color: #ecd292;
+}
+.ms-zs .ms-kchip--red.ms-zs-chip {
+  --pl-hi: #e9946a;
+  --pl-mid: #9c4a28;
+  --pl-lo: #3a1408;
+  --pl-face: linear-gradient(180deg, rgba(255, 190, 160, 0.14), transparent 50%), linear-gradient(180deg, #7a2418, #3d0e09);
+  color: #ffd9c2;
+}
+.ms-zs .ms-zs-chip .ms-kchip-icon {
+  flex: none;
+}
+
+/* painted header */
+.ms-zs-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 6.9rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1.1rem 0.65rem;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #0b0908;
+  border: 1px solid #060505;
+  box-shadow: inset 0 0 0 1px rgba(143, 135, 123, 0.3), 0 1px 0 rgba(255, 240, 220, 0.06);
+}
+.ms-zs-hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 34%;
+  filter: saturate(0.85) contrast(1.05);
+}
+/* the dossier strip is a wide window (~9 % of the card height) into a 2:3 card. r9 cards: Yeonmu and Suryeon (the chief's two heads,
+   right of the title since the r9 ship mirrors that card) read best at 34 %; Seori's yeti face + tusks with the rust stone and
+   Daeryeol's dragon head + the face stone's glowing eyes sit at ~36-45 % of the height */
+.ms-zs-hero[data-zone='seori'] .ms-zs-hero-art,
+.ms-zs-hero[data-zone='daeryeol'] .ms-zs-hero-art {
+  object-position: 50% 40%;
+}
+.ms-zs-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.88) 0%, rgba(8, 7, 6, 0.55) 46%, rgba(8, 7, 6, 0.18) 100%),
+    linear-gradient(0deg, rgba(8, 7, 6, 0.75) 0%, transparent 55%);
+}
+.ms-zs.is-hard .ms-zs-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(8, 7, 6, 0.88) 0%, rgba(8, 7, 6, 0.55) 46%, rgba(8, 7, 6, 0.18) 100%),
+    linear-gradient(0deg, rgba(130, 28, 8, 0.55) 0%, transparent 62%);
+}
+.ms-zs-hero-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.ms-zs-name {
+  font-family: var(--f-title);
+  font-weight: 900;
+  font-size: var(--t-2xl);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--c-gold);
+  text-shadow: 0 0.08rem 0 #5a3a10, 0 0.2rem 0.5rem rgba(0, 0, 0, 0.9);
+}
+.ms-zs-sub {
+  font-size: var(--t-md);
+  font-style: italic;
+  color: var(--k-text);
+  text-shadow: 0 1px 0.3rem #000;
+}
+.ms-zs-hero-meta {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  max-width: 48%;
+}
+.ms-zs-metarow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+.ms-zs-metarow .ms-kchip-icon .ms-kicon,
+.ms-zs-metarow .ms-kchip-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+.ms-zs-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 2px;
+  background: rgba(8, 7, 6, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(143, 135, 123, 0.3);
+}
+.ms-zs-danger .ms-zs-skulls .ms-zs-skull {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.ms-zs-danger-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-hero-seal {
+  flex: none;
+  align-self: center;
+  order: -1;
+  width: 3.7rem;
+  height: 3.7rem;
+  filter: drop-shadow(0 0.15rem 0.3rem rgba(0, 0, 0, 0.7)) drop-shadow(0 0 0.6rem rgba(255, 106, 44, 0.45));
+  animation: zs-fade 0.35s ease-out both;
+}
+.ms-zs-hero-seal svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* records + lock bar (sunken wells) */
+.ms-zs-rec {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.2rem;
+  padding: 0.3rem 0.9rem;
+}
+.ms-zs-rec-title {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-rec-wells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  margin-left: auto;
+}
+.ms-zs-rec .ms-statwell-label {
+  font-size: var(--zs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-lockbar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.6rem 0.9rem;
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.95),
+    inset -1px -1px 0 rgba(160, 150, 134, 0.2),
+    inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.55),
+    inset 0 0 1.6rem rgba(110, 24, 14, 0.35);
+}
+.ms-zs-lockbar-seal {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #3b3832, #0d0b09 75%);
+  box-shadow: 0 0 0 2px #6a5134, 0 0 0 3px #050403, 0 0.25rem 0.4rem rgba(0, 0, 0, 0.6);
+}
+.ms-zs-lockbar-seal .ms-kicon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.ms-zs-lockbar b {
+  display: block;
+  font-family: var(--f-head);
+  font-size: var(--t-md);
+  letter-spacing: 0.06em;
+  color: var(--k-gold);
+}
+.ms-zs-lockbar span {
+  font-size: var(--t-md);
+  color: var(--k-text);
+}
+.ms-zs-lockbar-seal {
+  font-size: 0;
+}
+
+/* sections */
+.ms-zs-sec {
+  min-width: 0;
+}
+.ms-zs-sectitle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+.ms-zs-sectitle::after {
+  content: '';
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(180deg, #050403 0 1px, rgba(140, 132, 120, 0.4) 1px 2px, transparent 2px) 0 50% / 100% 3px no-repeat;
+}
+
+/* boss timeline: one black channel with an ember tube behind the octagon medallions (a single rail, no per-node segments) */
+.ms-zs-tl {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0.1rem 0;
+  display: grid;
+  grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr));
+}
+.ms-zs-tl::before,
+.ms-zs-tl::after {
+  content: '';
+  position: absolute;
+  left: calc(50% / var(--n, 5));
+  right: calc(50% / var(--n, 5));
+  top: calc(0.1rem + var(--tl-well) + 0.25rem + var(--tl-node) / 2);
+  translate: 0 -50%;
+  pointer-events: none;
+}
+.ms-zs-tl::before {
+  height: 0.62rem;
+  background: var(--k-ch);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px #000, 0 0 0 1px var(--k-ch-lo), 0 1px 0 rgba(255, 240, 220, 0.12);
+}
+.ms-zs-tl::after {
+  height: 0.3rem;
+  margin-inline: 2px;
+  background: linear-gradient(90deg, #8e1d1a, #c92b27 60%, #e5782f 88%, #f3bd57);
+  box-shadow: 0 0 0.5rem rgba(201, 43, 39, 0.5);
+}
+.ms-zs-tl-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 0 0.15rem;
+  text-align: center;
+  animation: zs-fade 0.5s ease-out both;
+  animation-delay: calc(0.12s + var(--i, 0) * 0.07s);
+}
+.ms-zs-tl-time {
+  min-height: var(--tl-well);
+}
+.ms-zs-tl-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--tl-node);
+}
+.ms-zs-tl-node {
+  --pl-c: 0.78rem;
+  --pl-veil: rgba(70, 12, 10, 0.62);
+  --pl-hi: #c2675b;
+  --pl-mid: #6a2a24;
+  --pl-lo: #230404;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--tl-node);
+  height: var(--tl-node);
+  transition: filter 0.2s;
+}
+.ms-zs-tl-node .ms-kicon {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+.ms-zs-tl-item.is-final .ms-zs-tl-node {
+  --pl-veil: rgba(110, 72, 14, 0.5);
+  --pl-hi: #f0d28a;
+  --pl-mid: #a87a30;
+  --pl-lo: #4a3010;
+  filter: drop-shadow(0 0 0.6rem rgba(255, 200, 100, 0.5));
+}
+@media (hover: hover) {
+  .ms-zs-tl-item:hover .ms-zs-tl-node {
+    filter: brightness(1.25) drop-shadow(0 0 0.5rem rgba(255, 110, 70, 0.55));
+  }
+}
+.ms-zs-tl-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--t-sm);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--k-text);
+}
+.ms-zs-tl-sub {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+}
+.ms-zs-tl-item.is-final .ms-zs-tl-name {
+  color: var(--k-gold);
+}
+
+/* metin stones: stone plates, each with a gem in a bronze socket; rows fill the board width (no empty cell, no flat bar) */
+.ms-zs-metins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.5rem;
+}
+.ms-zs-metin {
+  --pl-c: 0.44rem;
+  --pl-hi: #bdb3a0;
+  --pl-mid: #6e6454;
+  --pl-lo: #1b1814;
+  --pl-veil: rgba(18, 16, 13, 0.5);
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.15rem;
+  padding: 0.16rem 0.9rem 0.16rem 0.5rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-sm);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+  cursor: help;
+}
+.ms-zs-metin.is-great {
+  flex: 0 1 auto;
+  min-width: 46%;
+  margin-inline: auto;
+  --pl-hi: #e3c585;
+  --pl-mid: #8f6c30;
+  --pl-lo: #33240d;
+  --pl-veil: rgba(70, 48, 14, 0.5);
+  color: #ecd292;
+}
+.ms-zs-socket {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, #26211b, #060505 74%);
+  box-shadow:
+    0 0 0 1px #7a5d36,
+    0 0 0 2px #050403,
+    inset 0 1px 3px #000;
+}
+.ms-zs-metin.is-great .ms-zs-socket {
+  box-shadow:
+    0 0 0 1px #d6a850,
+    0 0 0 2px #050403,
+    0 0 0.5rem rgba(255, 196, 96, 0.4),
+    inset 0 1px 3px #000;
+}
+.ms-zs-gem {
+  display: block;
+  width: 0.95rem;
+  height: 0.95rem;
+  clip-path: polygon(50% 0, 100% 36%, 80% 100%, 20% 100%, 0 36%);
+  background: radial-gradient(circle at 35% 30%, #fff 0, var(--dc, #e8c36a) 38%, color-mix(in srgb, var(--dc, #e8c36a) 40%, #000) 100%);
+  filter: drop-shadow(0 0 0.25rem var(--dc, #e8c36a));
+}
+.ms-zs-metin-crown {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.15rem;
+}
+
+/* chronicle + roster */
+.ms-zs-two {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.ms-zs-dbody > .ms-zs-two {
+  flex: 1 1 auto;
+  min-height: 9.5rem;
+}
+.ms-zs-two > .ms-zs-sec {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.ms-zs-chron {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ms-zs-readon {
+  align-self: center;
+}
+.ms-zs-readon .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* parchment scroll: burnt edges, wooden rods with gilt caps */
+.ms-zs-parch {
+  position: relative;
+  margin: 0.45rem 0;
+  padding: 1.15rem 1.15rem 1.1rem;
+  color: #2c1b0d;
+  background-color: #c7a96d;
+  background-image:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 238, 190, 0.38), transparent 62%),
+    linear-gradient(180deg, #d6bc84, #c7a96d 55%, #b99a5c);
+  box-shadow:
+    inset 0 0 1.6rem 0.2rem rgba(70, 34, 8, 0.62),
+    inset 0 0 0.35rem rgba(30, 12, 2, 0.75),
+    0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
+}
+.ms-zs-rod {
+  position: absolute;
+  left: -0.55rem;
+  right: -0.55rem;
+  height: 0.9rem;
+  border-radius: 0.45rem;
+  background: linear-gradient(180deg, #7a5430, #b3834f 26%, #5e3b1a 62%, #2b1808);
+  box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 224, 170, 0.4);
+}
+.ms-zs-rod.is-top {
+  top: -0.45rem;
+}
+.ms-zs-rod.is-bot {
+  bottom: -0.45rem;
+}
+.ms-zs-rod::before,
+.ms-zs-rod::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0.75rem;
+  height: 1.2rem;
+  translate: 0 -50%;
+  border-radius: 0.3rem;
+  background: linear-gradient(180deg, #fff2c6, #e2b65c 40%, #7a4d16);
+  box-shadow: 0 0 0 1px #1a0f04, 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+.ms-zs-rod::before {
+  left: -0.3rem;
+}
+.ms-zs-rod::after {
+  right: -0.3rem;
+}
+/* the painted scroll: rollers with gilt caps, curled paper (uk_zone_select_scroll), 9-sliced so the text area can be any size */
+.ms-zs-parch.has-img {
+  --sc-b: 1.7rem;
+  margin: 0.2rem 0;
+  padding: 0.5rem 1rem 0.45rem;
+  color: #2c1b0d;
+  /* the paper itself is the border-image fill; this flat tone sits only under the text box (it is what a contrast check reads) */
+  background: #d8c08c content-box;
+  box-shadow: none;
+  border-style: solid;
+  border-color: transparent;
+  border-width: var(--sc-b);
+  border-image: var(--zs-scroll) 70 70 70 70 fill / var(--sc-b) var(--sc-b) var(--sc-b) var(--sc-b) stretch;
+  filter: drop-shadow(0 0.35rem 0.45rem rgba(0, 0, 0, 0.55));
+}
+.ms-zs-parch.has-img .ms-zs-rod {
+  display: none;
+}
+.ms-zs-parch--full.has-img {
+  --sc-b: 2.2rem;
+  margin: 0.4rem 0.2rem;
+  padding: 0.7rem 1.6rem 0.6rem;
+}
+.ms-zs-parch-title {
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.35rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: #5a1d10;
+  border-bottom: 1px solid rgba(90, 60, 20, 0.45);
+}
+.ms-zs-parch-p {
+  margin: 0.5rem 0 0;
+  font-size: var(--t-sm);
+  line-height: 1.45;
+}
+.ms-zs-parch-p:first-of-type::first-letter {
+  float: left;
+  padding: 0.05em 0.12em 0 0;
+  font-family: var(--f-title);
+  font-weight: 900;
+  font-size: 2.5em;
+  line-height: 0.82;
+  color: #7a1d12;
+}
+.ms-zs-parch--full .ms-zs-parch-p {
+  font-size: var(--t-md);
+}
+.ms-zs-parch--full {
+  margin: 0.7rem 0.6rem;
+  padding: 1.6rem 1.7rem 1.5rem;
+}
+
+/* roster: octagon slots with rank rims */
+.ms-zs-foes-tray {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  padding: 0.3rem 0.1rem 0.3rem 0.6rem;
+}
+.ms-zs-foes-fade {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+/* gate 3 U3: on the big screens the roster shows five rows and a sliver of the sixth; the 1.6 rem end fade used to dim the whole fifth row (its Lv line
+   read as clipped). A shorter fade leaves that row whole and still cues the scroll with the sliver below it */
+.ms-tier-desktop .ms-zs-foes,
+.ms-tier-ultra .ms-zs-foes {
+  --sf-size: 0.7rem;
+  row-gap: 0.2rem;
+  padding-top: 0.15rem;
+}
+.ms-tier-desktop .ms-zs-foes-tray,
+.ms-tier-ultra .ms-zs-foes-tray {
+  padding-block: 0.15rem;
+}
+.ms-zs-foes {
+  height: 100%;
+  display: grid;
+  align-content: start;
+  grid-template-columns: repeat(auto-fill, minmax(9.2rem, 1fr));
+  gap: 0.3rem 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+}
+.ms-zs-foe {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.ms-zs-foe .ms-slot {
+  --s: var(--zs-foe-s, 2.5rem);
+  flex: none;
+}
+.ms-zs-foe {
+  padding: 0.12rem 0.2rem;
+  border-radius: 3px;
+}
+@media (hover: hover) {
+  .ms-zs-foe:hover {
+    background: rgba(255, 236, 200, 0.06);
+  }
+}
+.ms-zs-foe-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ms-zs-foe-text b {
+  display: -webkit-box;
+  letter-spacing: 0;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--zs-sm);
+  font-weight: 700;
+  color: var(--k-text);
+}
+.ms-zs-foe-text i {
+  font-style: normal;
+  font-size: var(--zs-xs);
+  color: var(--k-text-2);
+}
+
+/* ---- footer: difficulty · modifier wells · custom run, then the Enter plate ----------------------------------------------------------- */
+.ms-zs-dfoot {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0 5px 5px;
+  padding: 0.7rem 1.1rem 0.9rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.14));
+  box-shadow: inset 0 1px 0 #050403, inset 0 2px 0 rgba(140, 132, 120, 0.26);
+}
+.ms-zs-diff {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem 1.1rem;
+}
+.ms-zs-diffbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ms-zs-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--zs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-seg {
+  flex-wrap: nowrap;
+}
+.ms-zs-segbtn {
+  gap: 0.4rem;
+}
+.ms-zs-segbtn .ms-kicon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.ms-zs-segbtn.is-off {
+  --pl-veil: rgba(10, 9, 8, 0.62);
+  --pl-hi: var(--k-pewter-lo);
+  --pl-mid: #1d1b19;
+  color: var(--k-text-off);
+  cursor: not-allowed;
+}
+.ms-zs-segbtn.is-hard.is-active {
+  --pl-hi: #e9946a;
+  --pl-mid: #9c4a28;
+  --pl-lo: #3a1408;
+  --pl-veil: rgba(110, 22, 10, 0.5);
+  color: #ffb08a;
+}
+.ms-zs-mods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+}
+.ms-zs-mod {
+  display: inline-flex;
+}
+.ms-zs-mod .ms-statwell--stack {
+  align-items: center;
+}
+.ms-zs-mod .ms-statwell-label {
+  font-size: var(--zs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-zs-mod .ms-well-icon {
+  display: inline-flex;
+}
+.ms-zs-mod .ms-well-icon .ms-kicon,
+.ms-zs-mod .ms-well-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+.ms-zs-mods.is-on .ms-statwell-label {
+  color: #ffb69a;
+}
+.ms-zs-optbtn {
+  margin-left: auto;
+}
+.ms-zs-optbtn .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.ms-zs-optbadge {
+  margin-left: 0.3rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 2px;
+  font-size: var(--zs-sm);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--k-gold);
+  background: var(--k-well);
+  box-shadow: inset 0 0 0 1px #3a3631, inset 0 1px 2px #000;
+}
+.ms-zs-enter {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+/* the Enter plate sits in a stone frame (octagon, rivets) like the stone tabs around it; the lacquer plate inside has a thick gilt bevel */
+.ms-zs-cta {
+  --pl-c: 0.85rem;
+  --pl-hi: #cfc5b0;
+  --pl-mid: #756b5a;
+  --pl-lo: #1d1a16;
+  --pl-veil: rgba(14, 12, 10, 0.22);
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.42rem 1rem;
+  filter: drop-shadow(0 0.35rem 0.5rem rgba(0, 0, 0, 0.6));
+}
+.ms-zs-cta.is-hard {
+  --pl-hi: #e9946a;
+  --pl-mid: #9c4a28;
+  --pl-lo: #3a1408;
+  --pl-veil: rgba(40, 10, 6, 0.55);
+  filter: drop-shadow(0 0.35rem 0.5rem rgba(0, 0, 0, 0.6)) drop-shadow(0 0 0.7rem rgba(255, 96, 40, 0.3));
+}
+.ms-zs-cta.is-off {
+  filter: none;
+}
+.ms-zs-rivet {
+  position: absolute;
+  width: 0.62rem;
+  height: 0.62rem;
+  background: var(--k-rivet);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+.ms-zs-rivet.is-tl {
+  left: 0.3rem;
+  top: 0.5rem;
+}
+.ms-zs-rivet.is-tr {
+  right: 0.3rem;
+  top: 0.5rem;
+}
+.ms-zs-rivet.is-bl {
+  left: 0.3rem;
+  bottom: 0.5rem;
+}
+.ms-zs-rivet.is-br {
+  right: 0.3rem;
+  bottom: 0.5rem;
+}
+.ms-zs-enter .ms-kbtn {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+}
+.ms-zs-enter .ms-kbtn--primary:not([disabled]):not([aria-disabled='true']) {
+  --pl-line: #1d0705;
+  --pl-hi: #f3d68e;
+  --pl-mid: #b4812f;
+  --pl-lo: #4d2c0a;
+  --pl-bw: 2.5px;
+  --pl-sheen: linear-gradient(180deg, rgba(255, 220, 180, 0.38), rgba(255, 200, 160, 0.06) 42%, rgba(40, 0, 0, 0) 52%, rgba(20, 0, 0, 0.36));
+  --pl-veil: rgba(60, 6, 3, 0.3);
+  --pl-face: var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-lacquer, none) 0 0 / 11rem, linear-gradient(180deg, #c8321f, #8c1a10 54%, #5a0f09);
+  text-shadow: 0 1px 0 #3a0804, 0 2px 0 #280503, 0 0 0.8rem rgba(255, 170, 110, 0.4);
+}
+.ms-zs.is-hard .ms-zs-enter .ms-kbtn--danger:not([disabled]):not([aria-disabled='true']) {
+  --pl-line: #120305;
+  --pl-hi: #ffc29a;
+  --pl-mid: #c4602c;
+  --pl-lo: #56200c;
+  --pl-bw: 2.5px;
+  --pl-sheen: linear-gradient(180deg, rgba(255, 200, 160, 0.34), rgba(255, 170, 130, 0.05) 42%, rgba(40, 0, 0, 0) 52%, rgba(20, 0, 0, 0.4));
+  --pl-veil: rgba(46, 4, 2, 0.22);
+  --pl-face: var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-lacquer, none) 0 0 / 11rem, linear-gradient(180deg, #bb2c1a, #760f08 54%, #430a05);
+  color: #ffe6d6;
+  text-shadow: 0 1px 0 #3a0804, 0 2px 0 #280503, 0 0 0.8rem rgba(255, 140, 80, 0.5);
+}
+.ms-zs-enter .ms-kbtn-sub {
+  font-size: var(--t-sm);
+  color: #f0ddc0;
+}
+.ms-zs-enter .ms-kbtn[disabled] .ms-kbtn-sub,
+.ms-zs-enter .ms-kbtn[aria-disabled='true'] .ms-kbtn-sub {
+  color: var(--k-text-2);
+}
+/* desktop footer: Normal / Hard + the four modifier wells over Custom run + Enter (the Custom run plate keeps its label at every width) */
+.ms-ui:not(.ms-compact) .ms-zs-dfoot {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    'seg mods'
+    'opt enter';
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+}
+.ms-ui:not(.ms-compact) .ms-zs-diff {
+  display: contents;
+}
+.ms-ui:not(.ms-compact) .ms-zs-diffbox {
+  grid-area: seg;
+}
+.ms-ui:not(.ms-compact) .ms-zs-mods {
+  grid-area: mods;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+.ms-ui:not(.ms-compact) .ms-zs-mod {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.ms-ui:not(.ms-compact) .ms-zs-mod {
+  justify-content: center;
+}
+.ms-ui:not(.ms-compact) .ms-zs-optbtn {
+  grid-area: opt;
+  margin-left: 0;
+  align-self: stretch;
+  min-height: 3.2rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  --pl-c: 0.6rem;
+}
+.ms-zs-optrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ms-ui:not(.ms-compact) .ms-zs-optbtn .ms-zs-optbadge {
+  margin: 0;
+}
+.ms-ui:not(.ms-compact) .ms-zs-enter {
+  grid-area: enter;
+}
+
+/* ---- sheets (Custom run, full chronicle) ------------------------------------------------------------------------- */
+.ms-zs-sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  padding: calc(1.5rem + var(--safe-t)) calc(2rem + var(--safe-r)) calc(1.5rem + var(--safe-b)) calc(2rem + var(--safe-l));
+  background: radial-gradient(80% 80% at 50% 50%, rgba(22, 17, 12, 0.55), rgba(4, 3, 2, 0.84));
+  animation: zs-fade 0.25s ease-out both;
+}
+.ms-zs-opts,
+.ms-zs-chsheet {
+  display: flex;
+  flex-direction: column;
+  width: min(46rem, 100%);
+  max-height: 100%;
+  min-height: 0;
+  animation: zs-fade 0.3s ease-out both;
+}
+.ms-zs-chsheet {
+  width: min(44rem, 100%);
+  height: min(40rem, 100%);
+}
+.ms-zs-opts-in,
+.ms-zs-chsheet-in {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.9rem 1.3rem 1.1rem;
+}
+.ms-zs-opts-head {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+.ms-zs-opts-head p {
+  font-size: var(--t-md);
+  color: var(--k-text-2);
+}
+.ms-zs-reward {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  text-align: right;
+}
+.ms-zs-reward small {
+  font-size: var(--zs-sm);
+  color: var(--k-text-2);
+}
+.ms-zs-reward .ms-well--lg .ms-well-value {
+  font-size: var(--t-xl);
+}
+.ms-zs-opts-rows {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.ms-zs-opts-foot {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+.ms-zs-chsheet-fade {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.ms-zs-chsheet-view {
+  height: 100%;
+}
+
+/* ---- hint -------------------------------------------------------------------------------------------------------- */
+.ms-zs-hint {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.7rem;
+  font-size: var(--zs-sm);
+  color: var(--k-text-2);
+}
+.ms-zs-hint span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.ms-zs-hint--touch {
+  display: none;
+}
+.ms-touch .ms-zs-hint {
+  display: none;
+}
+.ms-touch .ms-zs-hint--touch {
+  display: flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-zs-road,
+  .ms-zs-world.is-loading::after,
+  .ms-zs-region.is-sel .ms-zs-bannerwrap {
+    animation: none;
+  }
+}
+
+@media (min-height: 1001px) and (min-width: 900px) {
+  .ms-zs {
+    --zs-plate-w: 18rem;
+    --zs-plate-h: 4.7rem;
+    --zs-banner-h: 9.6rem;
+    --zs-pin: 1.7rem;
+  }
+  .ms-zs-hero {
+    min-height: 7.1rem;
+  }
+  .ms-zs-dbody {
+    gap: 0.7rem;
+  }
+  .ms-zs {
+    --zs-foe-s: 2.1rem;
+  }
+  .ms-zs-enter .ms-kbtn {
+    --bh: 4rem;
+  }
+}
+
+/* ---- laptop-height desktops ---------------------------------------------------------------------------------------------- */
+@media (max-height: 1000px) and (min-width: 900px) {
+  .ms-zs {
+    --zs-plate-w: 16rem;
+    --zs-plate-h: 4.2rem;
+    --zs-banner-h: 7.8rem;
+    --zs-gutter: 0.65rem;
+    --zs-pin: 1.4rem;
+  }
+  .ms-zs-dbody {
+    gap: 0.65rem;
+  }
+  .ms-zs-hero {
+    min-height: 6.4rem;
+  }
+}
+@media (max-height: 800px) and (min-width: 900px) {
+  .ms-zs {
+    --zs-plate-w: 14.5rem;
+    --zs-plate-h: 3.9rem;
+    --zs-banner-h: 6.6rem;
+    --zs-gutter: 0.55rem;
+    --zs-pin: 1.25rem;
+    gap: 0.45rem;
+    padding-top: calc(0.6rem + var(--safe-t));
+  }
+  .ms-zs-head .ms-eyebrow,
+  .ms-zs-hint {
+    display: none;
+  }
+  .ms-zs-title h1 {
+    font-size: var(--t-xl);
+  }
+  .ms-zs-title::after {
+    margin-top: 0.15rem;
+  }
+  .ms-zs-main {
+    gap: 1.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.3rem;
+  }
+  .ms-zs-rose {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .ms-zs-dbody {
+    gap: 0.34rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.3rem;
+  }
+  .ms-zs-hero {
+    min-height: 4.5rem;
+    padding-block: 0.4rem;
+  }
+  .ms-zs {
+    --tl-well: 1.6rem;
+    --tl-node: 2.1rem;
+    --zs-foe-s: 2.15rem;
+  }
+  .ms-zs-metins {
+    gap: 0.3rem 0.4rem;
+  }
+  .ms-zs-metin {
+    min-height: 1.8rem;
+    padding-block: 0.08rem;
+  }
+  .ms-zs-socket {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .ms-zs-gem {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .ms-zs-tl {
+    padding-block: 0;
+  }
+  .ms-zs-tl-item {
+    gap: 0.15rem;
+  }
+  .ms-zs-rec-title {
+    display: none;
+  }
+  .ms-zs-rec {
+    padding-block: 0.22rem;
+  }
+  .ms-zs-rec-wells {
+    margin-left: 0;
+  }
+  .ms-zs-sectitle {
+    margin-bottom: 0.3rem;
+  }
+  .ms-zs-dbody > .ms-zs-two {
+    min-height: 8.2rem;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    gap: 0.7rem;
+  }
+  .ms-zs-parch {
+    margin: 0.35rem 0;
+    padding: 0.7rem 0.8rem 0.65rem;
+  }
+  .ms-zs-parch-p:first-of-type::first-letter {
+    font-size: 2.1em;
+  }
+  .ms-zs-foes {
+    grid-template-columns: repeat(auto-fill, minmax(7.4rem, 1fr));
+  }
+  .ms-zs-dfoot {
+    gap: 0.4rem;
+    padding: 0.45rem 1rem 0.55rem;
+  }
+  .ms-zs-diff {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem 0.8rem;
+  }
+  .ms-zs-label {
+    display: none;
+  }
+  .ms-zs-mods .ms-statwell-label {
+    display: none;
+  }
+  .ms-zs-optbtn {
+    margin-left: auto;
+  }
+  .ms-zs-cta {
+    padding-block: 0.34rem;
+  }
+  .ms-zs-name {
+    font-size: var(--t-lg);
+  }
+  .ms-zs-parch-title {
+    font-size: var(--t-sm);
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.2rem;
+  }
+  .ms-zs-parch-p {
+    margin-top: 0.3rem;
+    font-size: var(--zs-sm);
+    line-height: 1.4;
+  }
+  .ms-zs-parch.has-img {
+    --sc-b: 1.5rem;
+    padding: 0.3rem 0.8rem 0.25rem;
+  }
+  .ms-zs-enter .ms-kbtn {
+    --bh: 2.9rem;
+    --kb-pad-x: 1.2rem;
+    font-size: var(--t-md);
+    letter-spacing: 0.08em;
+  }
+  .ms-zs-enter .ms-kkey {
+    display: none;
+  }
+  .ms-zs-enter .ms-kbtn-sub {
+    font-size: var(--zs-sm);
+  }
+}
+
+/* ---- narrow desktops / tablets (the atlas and dossier stand side by side with less air) ------------------------------------------------- */
+@media (max-width: 1100px) and (min-width: 900px) {
+  .ms-zs {
+    --zs-plate-w: 12.6rem;
+    --zs-plate-min: 7.8rem;
+    --zs-plate-h: 3.9rem;
+    --zs-banner-h: 6rem;
+    padding-inline: calc(1.4rem + var(--safe-l)) calc(1.4rem + var(--safe-r));
+  }
+  .ms-zs-main {
+    grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+    gap: 1rem;
+  }
+  .ms-zs-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.25rem;
+  }
+  .ms-zs-hero-meta {
+    max-width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.6rem;
+  }
+  .ms-zs-metarow {
+    justify-content: flex-start;
+  }
+  .ms-zs-plate-name {
+    font-size: var(--zs-sm);
+    letter-spacing: 0.02em;
+  }
+  .ms-zs-sub,
+  .ms-zs-danger-label,
+  .ms-zs-tl-sub,
+  .ms-zs-mods .ms-statwell-label {
+    display: none;
+  }
+  /* the three record wells share one row (label over value) instead of wrapping */
+  .ms-zs-rec {
+    padding: 0.2rem 0.6rem 0.25rem;
+  }
+  .ms-zs-rec-wells {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.2rem 0.5rem;
+    width: 100%;
+    margin-left: 0;
+  }
+  .ms-zs-rec .ms-statwell--row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+  .ms-zs-rec .ms-statwell--row .ms-well {
+    min-width: 0;
+  }
+  .ms-zs-hero {
+    position: relative;
+  }
+  .ms-zs-hero-seal {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.5rem;
+    order: 0;
+    width: 3rem;
+    height: 3rem;
+  }
+  .ms-zs-dbody > .ms-zs-two {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: 0.6rem;
+  }
+  .ms-zs-foes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* the Normal / Hard plates, the four modifier wells and the gear share one row without leaving the board */
+  .ms-zs-diff {
+    min-width: 0;
+    gap: 0.4rem 0.5rem;
+  }
+  .ms-zs-mods {
+    gap: 0.25rem;
+  }
+  .ms-zs-mod .ms-well {
+    min-width: 0;
+    padding-inline: 0.35rem;
+    gap: 0.25rem;
+  }
+  .ms-zs-seg .ms-zs-segbtn {
+    --kb-pad-x: 0.7rem;
+    padding-inline: 0.7rem;
+  }
+  /* the reward multiplier of a modified run is on the Enter plate ("Rewards x2.21"); the gear keeps its lit state */
+  .ms-zs-optbadge {
+    display: none;
+  }
+}
+
+/* ---- phones, both orientations ------------------------------------------------------------------------------------------------------------ */
+.ms-compact .ms-zs {
+  --zs-pin: 1.05rem;
+  --zs-gutter: 0.4rem;
+  --tl-well: 1.55rem;
+  --tl-node: 2.1rem;
+}
+.ms-compact .ms-zs .ms-board {
+  --k-orn: 2.3rem;
+}
+.ms-compact .ms-zs-atlas-in {
+  padding: 0.4rem 0.45rem 0.45rem;
+  gap: 0.35rem;
+}
+.ms-compact .ms-zs-rose {
+  width: 2.6rem;
+  height: 2.6rem;
+  right: 0.3rem;
+  top: 0.25rem;
+}
+.ms-compact .ms-zs-plate {
+  --pl-c: 0.3rem;
+  gap: 0.35rem;
+  padding: 0.28rem 0.5rem 0.28rem 0.4rem;
+}
+.ms-compact .ms-zs-plate-name {
+  font-size: var(--zs-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+.ms-zs-plate.is-tight .ms-zs-plate-art,
+.ms-compact .ms-zs-plate-art {
+  display: none;
+}
+.ms-zs-plate.is-tight {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.ms-compact .ms-zs-plate {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.ms-compact .ms-zs-skulls .ms-zs-skull {
+  width: 0.78rem;
+  height: 0.78rem;
+}
+.ms-compact .ms-zs-plate-meta {
+  gap: 0.05rem 0.3rem;
+}
+.ms-compact .ms-zs-plate-state {
+  display: none;
+}
+.ms-compact .ms-zs-dbody {
+  padding: 0.4rem 0.6rem 0.4rem;
+  gap: 0.5rem;
+}
+.ms-compact .ms-zs-hero {
+  min-height: 4.6rem;
+  padding: 0.45rem 0.65rem;
+}
+.ms-compact .ms-zs-name {
+  font-size: var(--t-xl);
+}
+.ms-compact .ms-zs-sub,
+.ms-compact .ms-zs-hero-body .ms-eyebrow {
+  display: none;
+}
+.ms-compact .ms-zs-hero-meta {
+  gap: 0.3rem;
+}
+.ms-compact .ms-zs-hero-seal {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+.ms-compact .ms-zs-rec {
+  padding: 0.3rem 0.6rem;
+  gap: 0.25rem 0.8rem;
+}
+.ms-compact .ms-zs-rec-wells {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem 0.5rem;
+  width: 100%;
+  margin-left: 0;
+}
+.ms-compact .ms-zs-rec .ms-statwell--row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.12rem;
+  min-width: 0;
+}
+.ms-compact .ms-zs-rec .ms-statwell--row .ms-well {
+  min-width: 0;
+}
+.ms-compact .ms-zs-rec-title {
+  display: none;
+}
+.ms-compact .ms-zs-rec .ms-statwell-label {
+  letter-spacing: 0.04em;
+}
+.ms-compact .ms-zs-tl-item {
+  padding: 0 0.05rem;
+}
+.ms-compact .ms-zs-tl-name {
+  font-size: var(--zs-sm);
+  line-height: 1.1;
+}
+.ms-compact .ms-zs-tl-node {
+  --pl-c: 0.55rem;
+}
+.ms-compact .ms-zs-tl-node .ms-kicon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.ms-compact .ms-zs-tl-time .ms-well {
+  min-width: 0;
+}
+.ms-compact .ms-zs-metins {
+  gap: 0.35rem;
+}
+.ms-compact .ms-zs-metin {
+  --pl-c: 0.34rem;
+  flex: 1 1 calc(50% - 0.2rem);
+  justify-content: flex-start;
+  min-height: 2rem;
+  padding: 0.14rem 0.5rem 0.14rem 0.4rem;
+  gap: 0.4rem;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+.ms-compact .ms-zs-socket {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.ms-compact .ms-zs-gem {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+.ms-compact .ms-zs-rivet {
+  display: none;
+}
+.ms-compact .ms-zs-cta {
+  --pl-c: 0.6rem;
+  padding: 0.28rem 0.5rem;
+}
+.ms-compact .ms-zs {
+  --zs-foe-s: 2.2rem;
+}
+.ms-compact .ms-zs-dbody > .ms-zs-two {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.6rem;
+  min-height: 0;
+  flex: none;
+}
+.ms-compact .ms-zs-foes {
+  grid-template-columns: repeat(auto-fill, minmax(7.4rem, 1fr));
+}
+/* phone roster: the .ms-zs-two section above is auto-height here (flex none, min-height 0), and the tray's base `flex: 1 1 0; min-height: 0` then
+   resolves to its padding alone (10-11 px: not one of the 29 / 20 / 19 / 7 chips showed). The tray gets a definite height instead; the chips scroll inside it */
+.ms-compact .ms-zs-foes-tray {
+  flex: none;
+  height: 9.5rem;
+}
+.ms-compact .ms-zs-dfoot {
+  gap: 0.45rem;
+  padding: 0.45rem 0.6rem 0.55rem;
+}
+.ms-compact .ms-zs-mods {
+  display: none;
+}
+.ms-compact .ms-zs-optlabel {
+  display: none;
+}
+.ms-compact .ms-zs-optbtn {
+  --kb-pad-x: 0.55rem;
+  min-width: var(--tap, 2.75rem);
+  margin-left: 0;
+}
+.ms-compact .ms-zs-enter .ms-kbtn {
+  --kb-pad-x: 0.5rem;
+  min-width: 0;
+  width: 100%;
+  font-size: var(--t-sm);
+  letter-spacing: 0.05em;
+}
+.ms-compact .ms-zs-sheet {
+  padding: calc(0.5rem + var(--safe-t)) calc(0.6rem + var(--safe-r)) calc(0.5rem + var(--safe-b)) calc(0.6rem + var(--safe-l));
+}
+.ms-compact .ms-zs-opts-in,
+.ms-compact .ms-zs-chsheet-in {
+  padding: 0.6rem 0.8rem 0.7rem;
+  gap: 0.5rem;
+}
+.ms-compact .ms-zs-opts-head p,
+.ms-compact .ms-zs-opts .ms-kfield-hint {
+  display: none;
+}
+.ms-compact .ms-zs-parch--full {
+  padding: 1.3rem 1.2rem 1.2rem;
+}
+
+/* ---- phone landscape: atlas left, dossier right; the footer is one row ---------------------------------------------------------------------- */
+.ms-compact.ms-landscape .ms-zs {
+  --zs-plate-w: 10.6rem;
+  --zs-plate-min: 8.2rem;
+  --zs-plate-h: 2.7rem;
+  --zs-banner-h: 3.7rem;
+  --zs-gutter: 0.3rem;
+  --zs-pin: 0.95rem;
+  gap: 0.3rem;
+  padding: calc(0.4rem + var(--safe-t)) calc(0.9rem + var(--safe-r)) calc(0.35rem + var(--safe-b)) calc(0.9rem + var(--safe-l));
+}
+.ms-compact.ms-landscape .ms-zs-head .ms-eyebrow,
+.ms-compact.ms-landscape .ms-zs-hint,
+.ms-compact.ms-landscape .ms-zs-hint--touch,
+.ms-compact.ms-landscape .ms-zs-title::after {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-title h1 {
+  font-size: var(--t-lg);
+}
+.ms-compact.ms-landscape .ms-zs-main {
+  grid-template-columns: minmax(0, 48fr) minmax(0, 52fr);
+  gap: 0.8rem;
+  padding: 0.35rem 0.3rem 0.4rem;
+}
+.ms-compact.ms-landscape .ms-zs-rose,
+.ms-compact.ms-landscape .ms-zs-plate .ms-zs-skulls {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-plate-name {
+  font-size: var(--t-2xs);
+  letter-spacing: 0;
+}
+.ms-compact.ms-landscape .ms-zs-danger {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-hero {
+  min-height: 3.4rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 0.4rem 0.6rem;
+}
+.ms-compact.ms-landscape .ms-zs-hero-meta {
+  max-width: 100%;
+  align-items: flex-start;
+}
+.ms-compact.ms-landscape .ms-zs-hero {
+  position: relative;
+}
+.ms-compact.ms-landscape .ms-zs-hero-seal {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.35rem;
+  order: 0;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+.ms-compact.ms-landscape .ms-zs-rec.is-empty {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-metarow {
+  justify-content: flex-start;
+}
+.ms-compact.ms-landscape .ms-zs-dbody {
+  gap: 0.35rem;
+}
+.ms-compact.ms-landscape .ms-zs-sectitle {
+  margin-bottom: 0.2rem;
+}
+.ms-compact.ms-landscape .ms-zs {
+  --tl-well: 1.4rem;
+  --tl-node: 1.9rem;
+}
+.ms-compact .ms-zs-optbadge {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-tl-sub {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-dfoot {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .ms-zs-diff {
+  flex: none;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-zs-label {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-enter {
+  flex: 1;
+  min-width: 0;
+}
+.ms-compact.ms-landscape .ms-zs-enter .ms-kbtn {
+  --bh: 2.6rem;
+  font-size: var(--zs-sm);
+  letter-spacing: 0.03em;
+}
+.ms-compact.ms-landscape .ms-zs-enter .ms-kbtn-sub {
+  font-size: var(--t-2xs);
+  line-height: 1.1;
+}
+.ms-compact.ms-landscape .ms-zs-seg .ms-zs-segbtn {
+  --kb-pad-x: 0.45rem;
+  padding-inline: 0.4rem;
+}
+.ms-zs-ent-short {
+  display: none;
+}
+/* landscape phone: the zone is named in the hero already, so the plate says Enter; the freed width gives Custom run its label */
+.ms-compact.ms-landscape .ms-zs-ent-long {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-ent-short {
+  display: inline;
+}
+.ms-compact.ms-landscape .ms-zs-optlabel {
+  display: inline;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.03em;
+}
+.ms-compact.ms-landscape .ms-zs-optbtn {
+  --kb-pad-x: 0.4rem;
+  gap: 0.3rem;
+}
+/* gate 3 settle (G5b): the short Enter line no longer carries the reward multiplier, so a modified run shows it on the Custom run plate: a second line
+   under the label (column, so the plate does not grow wider and squeeze the Enter plate) */
+.ms-compact.ms-landscape .ms-zs-optbtn.is-active {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+}
+.ms-compact.ms-landscape .ms-zs-optbtn.is-active .ms-zs-optbadge {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.4rem;
+  font-size: var(--t-xs);
+  line-height: 1.35;
+}
+.ms-compact.ms-landscape .ms-zs-seg .ms-zs-segbtn {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.02em;
+}
+
+/* landscape: the zone's signature metin stones come right after the hero and the records, ahead of the boss timeline (they started under the footer
+   fade and were only reachable by scrolling the dossier); DOM and focus order are unchanged */
+.ms-compact.ms-landscape .ms-zs-sec-tl {
+  order: 1;
+}
+/* and the dossier's bottom fade is shorter (it is a 217 px window): the last chip row stays clear of it */
+.ms-compact.ms-landscape .ms-zs-dscroll {
+  --zs-fade: 1.2rem;
+}
+/* the metin stones are a 3-column grid of short names here (full name: the tip, and screen-reader-only inside the chip). The six chips of Yeonmu take two rows
+   instead of three, so the boss timeline starts higher and its heading is no longer left alone above the footer fade, with iPhone insets too */
+.ms-zs-mn-short {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-mn-short {
+  display: inline;
+}
+.ms-compact.ms-landscape .ms-zs-mn-full {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.ms-compact.ms-landscape .ms-zs-metins {
+  gap: 0.25rem 0.3rem;
+}
+.ms-compact.ms-landscape .ms-zs-metin,
+.ms-compact.ms-landscape .ms-zs-metin.is-great {
+  flex: 1 1 calc((100% - 0.6rem) / 3);
+  min-width: 0;
+  min-height: 1.6rem;
+  margin-inline: 0;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  padding: 0.06rem 0.25rem 0.06rem 0.3rem;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.ms-compact.ms-landscape .ms-zs-metin .ms-zs-socket {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.ms-compact.ms-landscape .ms-zs-metin .ms-zs-gem {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.ms-compact.ms-landscape .ms-zs-metin-crown {
+  display: none;
+}
+/* the Enter plate's sub line: a short spelling (TR 'Horyeong seni 15:00 anında bekliyor' took three lines in a 170 px plate) */
+.ms-zs-sub-short {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-sub-long {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-sub-short {
+  display: inline;
+}
+.ms-compact.ms-landscape .ms-zs-dbody > .ms-zs-two {
+  order: 2;
+  /* gate 3 G5a: the CHRONICLE / ENEMIES headings used to land right above the fold, cut off from their text; the section starts a line lower */
+  margin-top: 1.6rem;
+}
+/* the gear chip's short spelling ('Tier 2' / 'Kademe 2') on the phone-landscape hero: the row has to leave the corner seal its room */
+.ms-zs-gear-short {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-gear-long {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-zs-gear-short {
+  display: inline;
+}
+/* gate 3 G5c: with the Hard seal in the hero's corner the chips keep clear of it (Cleared / Tamamlandi ran under it) */
+.ms-compact.ms-landscape .ms-zs-hero:has(.ms-zs-hero-seal) .ms-zs-metarow {
+  padding-right: 2.4rem;
+  flex-wrap: wrap;
+}
+
+/* landscape: save height above the fold so a section heading never sits alone at the footer edge */
+.ms-compact.ms-landscape .ms-zs-hero {
+  min-height: 2.5rem;
+  padding: 0.28rem 0.55rem;
+  gap: 0.08rem;
+}
+.ms-compact.ms-landscape .ms-zs-name {
+  font-size: var(--t-lg);
+}
+.ms-compact.ms-landscape .ms-zs-metarow .ms-kchip {
+  min-height: 1.4rem;
+  padding-block: 0;
+}
+.ms-compact.ms-landscape .ms-zs-rec {
+  padding: 0.14rem 0.5rem 0.18rem;
+  gap: 0.1rem 0.5rem;
+}
+.ms-compact.ms-landscape .ms-zs-rec .ms-statwell--row {
+  gap: 0;
+}
+.ms-compact.ms-landscape .ms-zs-cta {
+  --pl-c: 0.45rem;
+  padding: 0.18rem 0.35rem;
+}
+.ms-compact.ms-landscape .ms-zs-dbody {
+  padding-top: 0.3rem;
+  gap: 0.3rem;
+}
+.ms-compact.ms-landscape .ms-zs-lockbar {
+  padding: 0.35rem 0.6rem;
+  gap: 0.6rem;
+}
+.ms-compact.ms-landscape .ms-zs-lockbar-seal {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+/* ---- phone portrait: one scroll column; the stone action bar sticks to the bottom -------------------------------------------------------- */
+.ms-portrait .ms-zs {
+  --zs-plate-w: 9.8rem;
+  --zs-plate-min: 7.4rem;
+  --zs-plate-h: 3.5rem;
+  --zs-banner-h: 4.6rem;
+  --zs-gutter: 0.45rem;
+  gap: 0.45rem;
+  /* the pinned action bar floats 0.55 rem above the home-indicator inset (it ended 5 px above it; the bar's own bottom padding below
+     used to add the inset a second time, a 34 px empty strip under the Enter plate). Without an inset nothing moves (0.3 rem as before) */
+  padding: calc(0.6rem + var(--safe-t)) calc(0.7rem + var(--safe-r)) calc(0.3rem + var(--safe-b) + min(var(--safe-b), 0.25rem)) calc(0.7rem + var(--safe-l));
+}
+.ms-portrait .ms-zs-head {
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+}
+.ms-portrait .ms-zs-head .ms-eyebrow,
+.ms-portrait .ms-zs-head-spacer,
+.ms-portrait .ms-zs-label,
+.ms-portrait .ms-zs-title::after,
+.ms-portrait .ms-zs-hint,
+.ms-portrait .ms-zs-hint--touch {
+  display: none;
+}
+.ms-portrait .ms-zs-title {
+  align-items: flex-start;
+  text-align: left;
+}
+.ms-portrait .ms-zs-title h1 {
+  font-size: var(--t-xl);
+}
+.ms-portrait .ms-zs-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  height: auto;
+  min-height: 100%;
+  padding: 0.3rem 0.15rem 0;
+}
+.ms-portrait .ms-zs-main > .ms-board {
+  flex: none;
+}
+.ms-portrait .ms-zs-atlas-in {
+  flex: none;
+  padding: 0.5rem 0.5rem 0.6rem;
+}
+.ms-portrait .ms-zs-world {
+  flex: none;
+  /* ZoneSelect.tsx sets --zs-world-h so the hero and the record wells end just above the pinned action bar in every language */
+  height: var(--zs-world-h, clamp(16rem, calc(100dvh - 30rem), 22rem));
+}
+.ms-portrait .ms-zs-dossier {
+  flex: 1 0 auto;
+}
+.ms-portrait .ms-zs-dscroll {
+  flex: none;
+}
+.ms-portrait .ms-zs-dscroll,
+.ms-portrait .ms-zs-dscroll > .ms-scroll {
+  height: auto;
+  overflow: visible;
+}
+.ms-portrait .ms-zs-dbody {
+  height: auto;
+  padding: 0.6rem 0.75rem 0.7rem;
+  gap: 0.7rem;
+}
+.ms-portrait .ms-zs-dbody > .ms-zs-two {
+  flex: none;
+}
+.ms-portrait .ms-zs-foes-tray {
+  max-height: 14rem;
+}
+.ms-portrait .ms-zs-hero {
+  min-height: 7rem;
+  padding: 0.6rem 0.8rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.ms-portrait .ms-zs-hero-meta {
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+  align-items: flex-start;
+}
+.ms-portrait .ms-zs-metarow {
+  justify-content: flex-start;
+}
+.ms-portrait .ms-zs-hero {
+  position: relative;
+}
+.ms-portrait .ms-zs-danger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.6rem;
+  padding: 0.12rem 0.4rem;
+}
+.ms-portrait .ms-zs-danger-label {
+  display: none;
+}
+.ms-portrait .ms-zs-hero-seal {
+  width: 2.8rem;
+  height: 2.8rem;
+  align-self: flex-start;
+}
+.ms-portrait .ms-zs-rec-wells {
+  margin-left: 0;
+}
+.ms-portrait .ms-zs-dfoot {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin: 0;
+  padding: 0.5rem 0.7rem 0.55rem;
+  gap: 0.45rem;
+  background-color: #141210;
+  background-image: linear-gradient(180deg, rgba(10, 9, 8, 0.2), rgba(10, 9, 8, 0.42)), var(--tex-uk-stone, none);
+  background-size: auto, 22rem;
+  box-shadow: inset 0 1px 0 #050403, inset 0 2px 0 rgba(160, 150, 134, 0.34), inset 0 3px 0 rgba(0, 0, 0, 0.5), 0 -0.5rem 0.8rem rgba(0, 0, 0, 0.5);
+}
+.ms-portrait .ms-zs-diff {
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+.ms-portrait .ms-zs-diffbox {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.ms-portrait .ms-zs-seg {
+  display: flex;
+  width: 100%;
+}
+.ms-portrait .ms-zs-seg .ms-zs-segbtn {
+  flex: 1 1 0;
+  justify-content: center;
+}
+.ms-portrait .ms-zs-optbtn:not(.is-active) .ms-zs-optbadge {
+  display: none;
+}
+.ms-portrait .ms-zs-sheet {
+  align-items: end;
+  padding: calc(0.5rem + var(--safe-t)) calc(0.5rem + var(--safe-r)) calc(0.5rem + var(--safe-b)) calc(0.5rem + var(--safe-l));
+}
+.ms-portrait .ms-zs-opts-head {
+  flex-direction: column;
+}
+.ms-portrait .ms-zs-reward {
+  align-self: stretch;
+  align-items: flex-start;
+  text-align: left;
+}

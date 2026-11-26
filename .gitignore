@@ -1,0 +1,42 @@
+# internal research / reference renders (never shipped)
+.research/
+.priv/
+
+# clean-room local-only reference tools & historical dumps (kept locally, never tracked or shipped)
+content/server/
+content/assets/
+content/rename_map.json
+tools/gr2gltf/
+tools/reference/
+tools/vfxref/
+tools/rename/
+tools/herotripo/
+tools/pipeline/audit_no_m2.py
+tools/pipeline/trace_check.py
+tools/imagegen/py/m2check.py
+tools/imagegen/jobs/gen/
+tools/forge/src/archetypes/dragon/dev/scaleRef.ts
+tools/forge/scripts/weapons/extractRef.ts
+
+# dependencies & build outputs
+node_modules/
+dist/
+.wrangler/
+.vite/
+target/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+coverage/
+
+# local env
+.env
+.env.*
+.dev.vars
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+NUL

@@ -1,0 +1,5061 @@
+[
+  {
+    "id": "wild_dog",
+    "name": {
+      "tr": "Yabani Köpek",
+      "en": "Wild Dog"
+    },
+    "model": "wild_dog",
+    "scale": 1.05,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 1,
+    "hp": 18.9,
+    "damage": 6.5,
+    "speed": 3.7,
+    "radius": 0.38,
+    "mass": 0.6,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.0,
+        "cooldown": 0.9,
+        "windup": 0.2,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "swarm",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_stray_dog",
+    "name": {
+      "tr": "Aç Yabani Köpek",
+      "en": "Hungry Stray Dog"
+    },
+    "model": "hungry_wild_dog",
+    "scale": 1.0,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 1,
+    "hp": 18.9,
+    "damage": 6.5,
+    "speed": 3.7,
+    "radius": 0.36,
+    "mass": 0.56,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.0,
+        "cooldown": 0.9,
+        "windup": 0.2,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "swarm",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "wolf",
+    "name": {
+      "tr": "Kurt",
+      "en": "Wolf"
+    },
+    "model": "wolf",
+    "scale": 1,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 3,
+    "hp": 20.2,
+    "damage": 5.6,
+    "speed": 3.5,
+    "radius": 0.5,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_wolf",
+    "name": {
+      "tr": "Aç Kurt",
+      "en": "Hungry Wolf"
+    },
+    "model": "wolf",
+    "scale": 0.97,
+    "tint": "#e8b080",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 3,
+    "hp": 18,
+    "damage": 6.1,
+    "speed": 3.5,
+    "radius": 0.48,
+    "mass": 0.76,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "alpha_wolf",
+    "name": {
+      "tr": "Alfa Kurt",
+      "en": "Alpha Wolf"
+    },
+    "model": "alpha_wolf",
+    "scale": 0.98,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 4,
+    "hp": 19.1,
+    "damage": 5.5,
+    "speed": 4.32,
+    "radius": 0.59,
+    "mass": 1.03,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_alpha_wolf",
+    "name": {
+      "tr": "Aç Alfa Kurt",
+      "en": "Hungry Alpha Wolf"
+    },
+    "model": "alpha_wolf_hungry",
+    "scale": 0.95,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 4,
+    "hp": 17.1,
+    "damage": 6,
+    "speed": 4.32,
+    "radius": 0.57,
+    "mass": 0.97,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      1,
+      2
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "blue_wolf",
+    "name": {
+      "tr": "Mavi Kurt",
+      "en": "Blue Wolf"
+    },
+    "model": "blue_wolf",
+    "scale": 1.05,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 6,
+    "hp": 18.8,
+    "damage": 5.6,
+    "speed": 3.5,
+    "radius": 0.53,
+    "mass": 0.86,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_blue_wolf",
+    "name": {
+      "tr": "Aç Mavi Kurt",
+      "en": "Hungry Blue Wolf"
+    },
+    "model": "blue_wolf",
+    "scale": 1.0,
+    "tint": "#a0aec6",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 6,
+    "hp": 16.8,
+    "damage": 6.1,
+    "speed": 3.5,
+    "radius": 0.5,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      1,
+      2
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "alpha_blue_wolf",
+    "name": {
+      "tr": "Alfa Mavi Kurt",
+      "en": "Alpha Blue Wolf"
+    },
+    "model": "alpha_blue_wolf",
+    "scale": 0.92,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 9,
+    "hp": 20.1,
+    "damage": 6,
+    "speed": 3.5,
+    "radius": 0.62,
+    "mass": 1.12,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_alpha_blue_wolf",
+    "name": {
+      "tr": "Aç Alfa Mavi Kurt",
+      "en": "Hungry Alpha Blue Wolf"
+    },
+    "model": "alpha_blue_wolf",
+    "scale": 0.88,
+    "tint": "#c4cad6",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 9,
+    "hp": 18,
+    "damage": 6.5,
+    "speed": 3.5,
+    "radius": 0.6,
+    "mass": 1.05,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "grey_wolf",
+    "name": {
+      "tr": "Gri Kurt",
+      "en": "Grey Wolf"
+    },
+    "model": "grey_wolf",
+    "scale": 1.07,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 13,
+    "hp": 23.7,
+    "damage": 6.7,
+    "speed": 3.5,
+    "radius": 0.56,
+    "mass": 0.95,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_grey_wolf",
+    "name": {
+      "tr": "Aç Gri Kurt",
+      "en": "Hungry Grey Wolf"
+    },
+    "model": "grey_wolf",
+    "scale": 1.03,
+    "tint": "#9aa0a4",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 13,
+    "hp": 21.2,
+    "damage": 7.3,
+    "speed": 3.5,
+    "radius": 0.54,
+    "mass": 0.9,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "alpha_grey_wolf",
+    "name": {
+      "tr": "Alfa Gri Kurt",
+      "en": "Alpha Grey Wolf"
+    },
+    "model": "alpha_grey_wolf",
+    "scale": 1.02,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 16,
+    "hp": 36.7,
+    "damage": 7.5,
+    "speed": 4.32,
+    "radius": 0.68,
+    "mass": 1.25,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "hungry_alpha_grey_wolf",
+    "name": {
+      "tr": "Aç Alfa Gri Kurt",
+      "en": "Hungry Alpha Grey Wolf"
+    },
+    "model": "alpha_grey_wolf",
+    "scale": 0.98,
+    "tint": "#9a9ea4",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 16,
+    "hp": 32.8,
+    "damage": 8.2,
+    "speed": 4.32,
+    "radius": 0.65,
+    "mass": 1.19,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "wild_boar",
+    "name": {
+      "tr": "Yaban Domuzu",
+      "en": "Wild Boar"
+    },
+    "model": "boar",
+    "scale": 1.1,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 7,
+    "hp": 19,
+    "damage": 5.7,
+    "speed": 3.2,
+    "radius": 0.6,
+    "mass": 1.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.4,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.6,
+        "area": 1.5
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_wild_boar",
+    "name": {
+      "tr": "Aç Yaban Domuzu",
+      "en": "Hungry Wild Boar"
+    },
+    "model": "boar_hungry",
+    "scale": 1.05,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 7,
+    "hp": 17,
+    "damage": 6.2,
+    "speed": 3.2,
+    "radius": 0.58,
+    "mass": 1.32,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.4,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.6,
+        "area": 1.5
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      1,
+      2
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "red_boar",
+    "name": {
+      "tr": "Kırmızı Yaban Domuzu",
+      "en": "Red Wild Boar"
+    },
+    "model": "boar_red",
+    "scale": 1.27,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 10,
+    "hp": 27.7,
+    "damage": 6.2,
+    "speed": 3.2,
+    "radius": 0.69,
+    "mass": 1.73,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.4,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.6,
+        "area": 1.5
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_red_boar",
+    "name": {
+      "tr": "Aç Kırmızı Yaban Domuzu",
+      "en": "Hungry Red Boar"
+    },
+    "model": "boar_hungry_red",
+    "scale": 1.21,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 10,
+    "hp": 24.8,
+    "damage": 6.8,
+    "speed": 3.2,
+    "radius": 0.66,
+    "mass": 1.62,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.4,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.6,
+        "area": 1.5
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "bear",
+    "name": {
+      "tr": "Ayı",
+      "en": "Bear"
+    },
+    "model": "bear",
+    "scale": 1,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 12,
+    "hp": 22.6,
+    "damage": 6.5,
+    "speed": 2.03,
+    "radius": 0.85,
+    "mass": 2.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_bear",
+    "name": {
+      "tr": "Aç Ayı",
+      "en": "Hungry Bear"
+    },
+    "model": "hungry_bear",
+    "scale": 0.97,
+    "tint": "#e0a868",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 12,
+    "hp": 20.2,
+    "damage": 7.1,
+    "speed": 2.03,
+    "radius": 0.82,
+    "mass": 2.1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "grizzly_bear",
+    "name": {
+      "tr": "Boz Ayı",
+      "en": "Grizzly Bear"
+    },
+    "model": "grizzly_bear",
+    "scale": 1.15,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 15,
+    "hp": 34.8,
+    "damage": 7.3,
+    "speed": 2.7,
+    "radius": 0.98,
+    "mass": 2.71,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_grizzly",
+    "name": {
+      "tr": "Aç Boz Ayı",
+      "en": "Hungry Grizzly"
+    },
+    "model": "hungry_bear",
+    "scale": 1.1,
+    "tint": "#a89078",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 15,
+    "hp": 31.2,
+    "damage": 8,
+    "speed": 2.7,
+    "radius": 0.94,
+    "mass": 2.54,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "black_bear",
+    "name": {
+      "tr": "Siyah Ayı",
+      "en": "Black Bear"
+    },
+    "model": "grizzly_bear",
+    "scale": 1.2,
+    "tint": "#787888",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 19,
+    "hp": 32.4,
+    "damage": 8.2,
+    "speed": 2.7,
+    "radius": 1.02,
+    "mass": 2.89,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_black_bear",
+    "name": {
+      "tr": "Aç Siyah Ayı",
+      "en": "Hungry Black Bear"
+    },
+    "model": "hungry_bear",
+    "scale": 1.15,
+    "tint": "#6c7084",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 19,
+    "hp": 28.9,
+    "damage": 8.9,
+    "speed": 2.7,
+    "radius": 0.98,
+    "mass": 2.71,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "brown_bear",
+    "name": {
+      "tr": "Kahverengi Ayı",
+      "en": "Brown Bear"
+    },
+    "model": "brown_bear",
+    "scale": 1.3,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 21,
+    "hp": 48.1,
+    "damage": 8.9,
+    "speed": 2.7,
+    "radius": 1.1,
+    "mass": 3.26,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_brown_bear",
+    "name": {
+      "tr": "Aç Kahverengi Ayı",
+      "en": "Hungry Brown Bear"
+    },
+    "model": "hungry_bear",
+    "scale": 1.25,
+    "tint": "#c07048",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 21,
+    "hp": 43,
+    "damage": 9.7,
+    "speed": 2.7,
+    "radius": 1.06,
+    "mass": 3.07,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "tiger",
+    "name": {
+      "tr": "Kaplan",
+      "en": "Tiger"
+    },
+    "model": "tiger",
+    "scale": 1.12,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 18,
+    "hp": 30.6,
+    "damage": 7.9,
+    "speed": 3.6,
+    "radius": 0.7,
+    "mass": 1.3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_tiger",
+    "name": {
+      "tr": "Aç Kaplan",
+      "en": "Hungry Tiger"
+    },
+    "model": "hungry_tiger",
+    "scale": 1.08,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawn",
+    "level": 18,
+    "hp": 27.4,
+    "damage": 8.7,
+    "speed": 3.6,
+    "radius": 0.67,
+    "mass": 1.22,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "white_tiger",
+    "name": {
+      "tr": "Beyaz Kaplan",
+      "en": "White Tiger"
+    },
+    "model": "white_tiger",
+    "scale": 1.34,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 24,
+    "hp": 57.1,
+    "damage": 9.8,
+    "speed": 4.44,
+    "radius": 0.84,
+    "mass": 1.71,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "hungry_white_tiger",
+    "name": {
+      "tr": "Aç Beyaz Kaplan",
+      "en": "Hungry White Tiger"
+    },
+    "model": "hungry_white_tiger",
+    "scale": 1.22,
+    "race": [
+      "animal"
+    ],
+    "rank": "pawnElite",
+    "level": 24,
+    "hp": 51.1,
+    "damage": 10.8,
+    "speed": 4.44,
+    "radius": 0.8,
+    "mass": 1.6,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "silver_vow_soldier",
+    "name": {
+      "tr": "Gümüş Ant Askeri",
+      "en": "Silver Vow Soldier"
+    },
+    "model": "silver_vow_soldier",
+    "scale": 1.15,
+    "race": [
+      "human"
+    ],
+    "rank": "pawn",
+    "level": 18,
+    "hp": 31.4,
+    "damage": 7.9,
+    "speed": 3.59,
+    "radius": 0.45,
+    "mass": 1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "craven_silver_vow_soldier",
+    "name": {
+      "tr": "Korkak Gümüş Ant Askeri",
+      "en": "Craven Silver Vow Soldier"
+    },
+    "model": "craven_silver_vow_soldier",
+    "scale": 1.12,
+    "tint": "#a4b4d4",
+    "race": [
+      "human"
+    ],
+    "rank": "pawnElite",
+    "level": 18,
+    "hp": 34.2,
+    "damage": 8.8,
+    "speed": 3.59,
+    "radius": 0.44,
+    "mass": 0.96,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "silver_vow_archer",
+    "name": {
+      "tr": "Gümüş Ant Okçusu",
+      "en": "Silver Vow Archer"
+    },
+    "model": "silver_vow_archer",
+    "scale": 1,
+    "race": [
+      "human"
+    ],
+    "rank": "pawn",
+    "level": 20,
+    "hp": 29.9,
+    "damage": 8.5,
+    "speed": 2.9,
+    "radius": 0.42,
+    "mass": 0.9,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9.5,
+        "cooldown": 2.4,
+        "windup": 0.5,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 11,
+          "radius": 0.25,
+          "vfx": "proj.arrow.physical"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_bow_shot"
+    }
+  },
+  {
+    "id": "craven_silver_vow_archer",
+    "name": {
+      "tr": "Korkak Gümüş Ant Okçusu",
+      "en": "Craven Silver Vow Archer"
+    },
+    "model": "silver_vow_archer",
+    "scale": 0.97,
+    "tint": "#c8c0b8",
+    "race": [
+      "human"
+    ],
+    "rank": "pawnElite",
+    "level": 20,
+    "hp": 38,
+    "damage": 9.4,
+    "speed": 2.9,
+    "radius": 0.41,
+    "mass": 0.86,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9.5,
+        "cooldown": 2.4,
+        "windup": 0.5,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 11,
+          "radius": 0.25,
+          "vfx": "proj.arrow.physical"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_bow_shot"
+    }
+  },
+  {
+    "id": "silver_vow_commander",
+    "name": {
+      "tr": "Gümüş Ant Komutanı",
+      "en": "Silver Vow Commander"
+    },
+    "model": "silver_vow_captain",
+    "scale": 1,
+    "tint": "#d8b0a0",
+    "race": [
+      "human"
+    ],
+    "rank": "pawnElite",
+    "level": 25,
+    "hp": 62,
+    "damage": 10.2,
+    "speed": 3.59,
+    "radius": 0.5,
+    "mass": 1.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "craven_silver_vow_commander",
+    "name": {
+      "tr": "Korkak Gümüş Ant Komutanı",
+      "en": "Craven Silver Vow Commander"
+    },
+    "model": "silver_vow_captain",
+    "scale": 0.97,
+    "tint": "#c8b8b0",
+    "race": [
+      "human"
+    ],
+    "rank": "knight",
+    "level": 25,
+    "hp": 88.8,
+    "damage": 11.4,
+    "speed": 3.59,
+    "radius": 0.48,
+    "mass": 1.34,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 4,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "silver_vow_general",
+    "name": {
+      "tr": "Gümüş Ant Generali",
+      "en": "Silver Vow General"
+    },
+    "model": "silver_vow_captain",
+    "scale": 1.15,
+    "tint": "#b0b8e0",
+    "race": [
+      "human"
+    ],
+    "rank": "pawnElite",
+    "level": 25,
+    "hp": 62,
+    "damage": 10.2,
+    "speed": 3.59,
+    "radius": 0.57,
+    "mass": 1.73,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 1.5,
+        "windup": 0.4,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "cursed_red_boar",
+    "name": {
+      "tr": "Lanetli Kırmızı Yaban Domuzu",
+      "en": "Cursed Red Wild Boar"
+    },
+    "model": "boar_cursed",
+    "scale": 1.6,
+    "race": [
+      "animal"
+    ],
+    "rank": "knightElite",
+    "level": 15,
+    "hp": 99.4,
+    "damage": 8.3,
+    "speed": 3.7,
+    "radius": 0.87,
+    "mass": 2.44,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.4,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.6,
+        "area": 1.5
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "cursed_alpha_grey_wolf",
+    "name": {
+      "tr": "Lanetli Alfa Gri Kurt",
+      "en": "Cursed Alpha Grey Wolf"
+    },
+    "model": "alpha_grey_wolf",
+    "scale": 1.14,
+    "tint": "#a898c0",
+    "tintMode": "colorize",
+    "race": [
+      "animal"
+    ],
+    "rank": "knightElite",
+    "level": 21,
+    "hp": 137,
+    "damage": 10.1,
+    "speed": 4.05,
+    "radius": 0.75,
+    "mass": 1.47,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      6,
+      13
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "cursed_brown_bear",
+    "name": {
+      "tr": "Lanetli Kahverengi Ayı",
+      "en": "Cursed Brown Bear"
+    },
+    "model": "cursed_bear",
+    "scale": 1.5,
+    "race": [
+      "animal"
+    ],
+    "rank": "knightElite",
+    "level": 26,
+    "hp": 183,
+    "damage": 12,
+    "speed": 3.12,
+    "radius": 1.27,
+    "mass": 4.04,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.7,
+        "cooldown": 1.8,
+        "windup": 0.6,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 8,
+        "windup": 0.9,
+        "damageMul": 1.3,
+        "area": 2.2
+      }
+    ],
+    "xp": 8,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "cursed_white_tiger",
+    "name": {
+      "tr": "Lanetli Beyaz Kaplan",
+      "en": "Cursed White Tiger"
+    },
+    "model": "cursed_white_tiger",
+    "scale": 1.62,
+    "race": [
+      "animal"
+    ],
+    "rank": "knightElite",
+    "level": 29,
+    "hp": 216,
+    "damage": 13.4,
+    "speed": 4.17,
+    "radius": 1.01,
+    "mass": 2.27,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 9,
+    "yeop": [
+      9,
+      20
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_animal",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "ma_sol",
+    "name": {
+      "tr": "Ma-Sol",
+      "en": "Ma-Sol"
+    },
+    "model": "silver_vow_leader",
+    "scale": 1,
+    "tint": "#d0a8b8",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 23,
+    "hp": 158,
+    "damage": 10.8,
+    "speed": 2.9,
+    "radius": 0.45,
+    "mass": 1.1,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 7,
+    "yeop": [
+      7,
+      15
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "ae_rin",
+    "name": {
+      "tr": "Ae-Rin",
+      "en": "Ae-Rin"
+    },
+    "model": "silver_vow_leader",
+    "scale": 1.03,
+    "tint": "#a8b8d0",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 26,
+    "hp": 187,
+    "damage": 12,
+    "speed": 2.9,
+    "radius": 0.46,
+    "mass": 1.15,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 8,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "sa_rim",
+    "name": {
+      "tr": "Sa-Rim",
+      "en": "Sa-Rim"
+    },
+    "model": "silver_vow_leader",
+    "scale": 1.06,
+    "tint": "#b8a8d0",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 28,
+    "hp": 210,
+    "damage": 12.9,
+    "speed": 2.9,
+    "radius": 0.48,
+    "mass": 1.2,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 8,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "dispirited_ma_sol",
+    "name": {
+      "tr": "Moralsiz Ma-Sol",
+      "en": "Dispirited Ma-Sol"
+    },
+    "model": "silver_vow_leader",
+    "scale": 0.95,
+    "tint": "#9a8a94",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 23,
+    "hp": 128,
+    "damage": 12.1,
+    "speed": 2.9,
+    "radius": 0.43,
+    "mass": 1.02,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      6,
+      13
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "dispirited_ae_rin",
+    "name": {
+      "tr": "Moralsiz Ae-Rin",
+      "en": "Dispirited Ae-Rin"
+    },
+    "model": "silver_vow_leader",
+    "scale": 0.98,
+    "tint": "#8a929a",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 26,
+    "hp": 150,
+    "damage": 13.2,
+    "speed": 2.9,
+    "radius": 0.44,
+    "mass": 1.07,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      7,
+      15
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "dispirited_sa_rim",
+    "name": {
+      "tr": "Moralsiz Sa-Rim",
+      "en": "Dispirited Sa-Rim"
+    },
+    "model": "silver_vow_leader",
+    "scale": 1,
+    "tint": "#928a9a",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 28,
+    "hp": 167,
+    "damage": 14.9,
+    "speed": 2.9,
+    "radius": 0.45,
+    "mass": 1.1,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 10,
+          "radius": 0.3,
+          "vfx": "proj.hostile.wind"
+        }
+      }
+    ],
+    "xp": 7,
+    "yeop": [
+      7,
+      15
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_magic_cast"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "orc_scout",
+    "name": {
+      "tr": "Ork Gözcüsü",
+      "en": "Orc Scout"
+    },
+    "model": "orc_scout",
+    "scale": 1,
+    "tint": "#8a9a6a",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 29,
+    "hp": 27.7,
+    "damage": 9.7,
+    "speed": 3.4,
+    "radius": 0.5,
+    "mass": 1.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "orc_fighter",
+    "name": {
+      "tr": "Ork Savaşçısı",
+      "en": "Orc Fighter"
+    },
+    "model": "orc_fighter",
+    "scale": 1,
+    "tint": "#8a9a6a",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 31,
+    "hp": 33,
+    "damage": 10.4,
+    "speed": 2.9,
+    "radius": 0.6,
+    "mass": 1.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "orc_sorcerer",
+    "name": {
+      "tr": "Ork Büyücüsü",
+      "en": "Orc Sorcerer"
+    },
+    "model": "orc_sorcerer",
+    "scale": 1.08,
+    "race": [
+      "orc"
+    ],
+    "rank": "knight",
+    "level": 33,
+    "hp": 56.2,
+    "damage": 11.5,
+    "speed": 2.7,
+    "radius": 0.52,
+    "mass": 1.2,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "elite_orc",
+    "name": {
+      "tr": "Elit Ork",
+      "en": "Elite Orc"
+    },
+    "model": "orc_fighter",
+    "scale": 1,
+    "tint": "#7a8a5a",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawn",
+    "level": 34,
+    "hp": 26.2,
+    "damage": 9,
+    "speed": 4.01,
+    "radius": 0.6,
+    "mass": 1.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "elite_orc_scout",
+    "name": {
+      "tr": "Elit Ork Gözcüsü",
+      "en": "Elite Orc Scout"
+    },
+    "model": "orc_scout",
+    "scale": 1,
+    "tint": "#7a8a5a",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 36,
+    "hp": 42.9,
+    "damage": 12,
+    "speed": 4.7,
+    "radius": 0.5,
+    "mass": 1.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "elite_orc_fighter",
+    "name": {
+      "tr": "Elit Ork Savaşçısı",
+      "en": "Elite Orc Fighter"
+    },
+    "model": "orc_fighter",
+    "scale": 1.1,
+    "tint": "#6a7a4a",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 39,
+    "hp": 58.5,
+    "damage": 12.6,
+    "speed": 2.9,
+    "radius": 0.66,
+    "mass": 2.08,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "elite_orc_sorcerer",
+    "name": {
+      "tr": "Elit Ork Büyücüsü",
+      "en": "Elite Orc Sorcerer"
+    },
+    "model": "orc_sorcerer_elite",
+    "scale": 1.13,
+    "race": [
+      "orc"
+    ],
+    "rank": "knight",
+    "level": 40,
+    "hp": 106,
+    "damage": 13.4,
+    "speed": 2.7,
+    "radius": 0.55,
+    "mass": 1.29,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      7,
+      15
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "elite_orc_general",
+    "name": {
+      "tr": "Elit Ork Generali",
+      "en": "Elite Orc General"
+    },
+    "model": "orc_general",
+    "scale": 1,
+    "tint": "#6a7a4a",
+    "race": [
+      "orc"
+    ],
+    "rank": "knight",
+    "level": 44,
+    "hp": 161,
+    "damage": 16,
+    "speed": 2.8,
+    "radius": 0.7,
+    "mass": 2.6,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      9,
+      20
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "black_orc",
+    "name": {
+      "tr": "Siyah Ork",
+      "en": "Black Orc"
+    },
+    "model": "black_orc",
+    "scale": 1,
+    "race": [
+      "orc"
+    ],
+    "rank": "knightElite",
+    "level": 46,
+    "hp": 344,
+    "damage": 17.6,
+    "speed": 2.7,
+    "radius": 0.8,
+    "mass": 3.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 4,
+    "yeop": [
+      15,
+      33
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "black_orc_giant",
+    "name": {
+      "tr": "Siyah Ork Devi",
+      "en": "Black Orc Giant"
+    },
+    "model": "black_orc",
+    "scale": 1.45,
+    "tint": "#62626c",
+    "race": [
+      "orc"
+    ],
+    "rank": "knightElite",
+    "level": 49,
+    "hp": 469,
+    "damage": 22.4,
+    "speed": 2.7,
+    "radius": 1.16,
+    "mass": 5.59,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      19,
+      42
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "hulking_orc",
+    "name": {
+      "tr": "İri Ork",
+      "en": "Hulking Orc"
+    },
+    "model": "orc_fighter",
+    "scale": 1.18,
+    "tint": "#b0a060",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawn",
+    "level": 34,
+    "hp": 23.5,
+    "damage": 9,
+    "speed": 4.01,
+    "radius": 0.71,
+    "mass": 2.31,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "hulking_orc_scout",
+    "name": {
+      "tr": "İri Ork Gözcüsü",
+      "en": "Hulking Orc Scout"
+    },
+    "model": "orc_scout",
+    "scale": 1.14,
+    "tint": "#b0a060",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 36,
+    "hp": 38.4,
+    "damage": 13.2,
+    "speed": 4.7,
+    "radius": 0.57,
+    "mass": 1.46,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "skirmisher",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "hulking_orc_fighter",
+    "name": {
+      "tr": "İri Ork Savaşçısı",
+      "en": "Hulking Orc Fighter"
+    },
+    "model": "orc_fighter",
+    "scale": 1.25,
+    "tint": "#a89858",
+    "race": [
+      "orc"
+    ],
+    "rank": "pawnElite",
+    "level": 39,
+    "hp": 52.3,
+    "damage": 13.7,
+    "speed": 2.9,
+    "radius": 0.75,
+    "mass": 2.52,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "hulking_orc_sorcerer",
+    "name": {
+      "tr": "İri Ork Büyücüsü",
+      "en": "Hulking Orc Sorcerer"
+    },
+    "model": "orc_sorcerer_bold",
+    "scale": 1.27,
+    "race": [
+      "orc"
+    ],
+    "rank": "knight",
+    "level": 40,
+    "hp": 95.1,
+    "damage": 14.7,
+    "speed": 2.7,
+    "radius": 0.61,
+    "mass": 1.54,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      6,
+      13
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "hulking_orc_general",
+    "name": {
+      "tr": "İri Ork Generali",
+      "en": "Hulking Orc General"
+    },
+    "model": "orc_general",
+    "scale": 1.15,
+    "tint": "#6e6452",
+    "tintMode": "colorize",
+    "race": [
+      "orc"
+    ],
+    "rank": "knight",
+    "level": 44,
+    "hp": 144,
+    "damage": 17.5,
+    "speed": 2.8,
+    "radius": 0.8,
+    "mass": 3.21,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "hulking_black_orc",
+    "name": {
+      "tr": "İri Siyah Ork",
+      "en": "Hulking Black Orc"
+    },
+    "model": "black_orc",
+    "scale": 1.1,
+    "tint": "#84706c",
+    "race": [
+      "orc"
+    ],
+    "rank": "knightElite",
+    "level": 46,
+    "hp": 308,
+    "damage": 18.7,
+    "speed": 2.7,
+    "radius": 0.88,
+    "mass": 3.69,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 4,
+    "yeop": [
+      14,
+      31
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "hulking_black_giant_orc",
+    "name": {
+      "tr": "İri Siyah Ork Devi",
+      "en": "Hulking Black Giant Orc"
+    },
+    "model": "black_orc",
+    "scale": 1.55,
+    "tint": "#7a625e",
+    "race": [
+      "orc"
+    ],
+    "rank": "knightElite",
+    "level": 49,
+    "hp": 420,
+    "damage": 24.6,
+    "speed": 2.7,
+    "radius": 1.24,
+    "mass": 6.18,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      17,
+      37
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_orc",
+      "attack": "sfx_enemy_whoosh_heavy"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "dark_zealot",
+    "name": {
+      "tr": "Karanlık Mürit",
+      "en": "Dark Zealot"
+    },
+    "model": "zealot",
+    "scale": 1.05,
+    "tint": "#d0d8d0",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawn",
+    "level": 35,
+    "hp": 29.1,
+    "damage": 10.5,
+    "speed": 4.05,
+    "radius": 0.45,
+    "mass": 1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "swarm",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "high_zealot",
+    "name": {
+      "tr": "Büyük Mürit",
+      "en": "High Zealot"
+    },
+    "model": "high_zealot",
+    "scale": 1.13,
+    "tint": "#cdc8d2",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawn",
+    "level": 35,
+    "hp": 26,
+    "damage": 11.6,
+    "speed": 4.05,
+    "radius": 0.49,
+    "mass": 1.12,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      2,
+      4
+    ],
+    "ai": "swarm",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "dark_ascetic",
+    "name": {
+      "tr": "Karanlık Münzevi",
+      "en": "Dark Ascetic"
+    },
+    "model": "ascetic",
+    "scale": 1,
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 38,
+    "hp": 52.7,
+    "damage": 12.2,
+    "speed": 3.7,
+    "radius": 0.5,
+    "mass": 1.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "high_ascetic",
+    "name": {
+      "tr": "Büyük Münzevi",
+      "en": "High Ascetic"
+    },
+    "model": "ascetic",
+    "scale": 1.08,
+    "tint": "#c8b0e8",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 38,
+    "hp": 47.2,
+    "damage": 13.4,
+    "speed": 3.7,
+    "radius": 0.54,
+    "mass": 1.57,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "veiled_ascetic_fighter",
+    "name": {
+      "tr": "Örtülü Münzevi Savaşçısı",
+      "en": "Veiled Ascetic Fighter"
+    },
+    "model": "ascetic_fighter",
+    "scale": 1.15,
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 41,
+    "hp": 71.9,
+    "damage": 14.8,
+    "speed": 3.5,
+    "radius": 0.54,
+    "mass": 1.31,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "high_ascetic_fighter",
+    "name": {
+      "tr": "Büyük Münzevi Savaşçısı",
+      "en": "High Ascetic Fighter"
+    },
+    "model": "high_ascetic_fighter",
+    "scale": 1.22,
+    "tint": "#a4b4a0",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 41,
+    "hp": 64.3,
+    "damage": 16.3,
+    "speed": 3.5,
+    "radius": 0.58,
+    "mass": 1.45,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "veiled_ascetic_chief",
+    "name": {
+      "tr": "Örtülü Münzevi Reisi",
+      "en": "Veiled Ascetic Chief"
+    },
+    "model": "ascetic",
+    "scale": 1.35,
+    "tint": "#8a6ab8",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knight",
+    "level": 44,
+    "hp": 161,
+    "damage": 16.4,
+    "speed": 3.7,
+    "radius": 0.68,
+    "mass": 2.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      9,
+      20
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "high_elite_ascetic",
+    "name": {
+      "tr": "Büyük Elit Münzevi",
+      "en": "High Elite Ascetic"
+    },
+    "model": "ascetic",
+    "scale": 1.42,
+    "tint": "#b898d8",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knight",
+    "level": 44,
+    "hp": 144,
+    "damage": 17.9,
+    "speed": 3.7,
+    "radius": 0.71,
+    "mass": 2.37,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "veiled_executioner",
+    "name": {
+      "tr": "Örtülü Cellat",
+      "en": "Veiled Executioner"
+    },
+    "model": "executioner",
+    "scale": 1.2,
+    "tint": "#c8d6c8",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 48,
+    "hp": 148,
+    "damage": 19.1,
+    "speed": 3.47,
+    "radius": 0.7,
+    "mass": 2.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "high_headsman",
+    "name": {
+      "tr": "Yüce Cellat",
+      "en": "High Headsman"
+    },
+    "model": "high_executioner",
+    "scale": 1.3,
+    "tint": "#8c7c96",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "pawnElite",
+    "level": 48,
+    "hp": 133,
+    "damage": 20.9,
+    "speed": 3.47,
+    "radius": 0.7,
+    "mass": 2.69,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "charger",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "dark_inquisitor",
+    "name": {
+      "tr": "Karanlık Sorgucu",
+      "en": "Dark Inquisitor"
+    },
+    "model": "inquisitor",
+    "scale": 1.45,
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knightElite",
+    "level": 49,
+    "hp": 469,
+    "damage": 22.8,
+    "speed": 3,
+    "radius": 0.88,
+    "mass": 3.76,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      19,
+      42
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "high_inquisitor",
+    "name": {
+      "tr": "Büyük Sorgucu",
+      "en": "High Inquisitor"
+    },
+    "model": "high_inquisitor",
+    "scale": 1.52,
+    "tint": "#d4d4d4",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knightElite",
+    "level": 49,
+    "hp": 420,
+    "damage": 24.9,
+    "speed": 3,
+    "radius": 0.92,
+    "mass": 4.06,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      17,
+      37
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "dark_conjurer",
+    "name": {
+      "tr": "Karanlık Çağıran",
+      "en": "Dark Conjurer"
+    },
+    "model": "conjurer",
+    "scale": 1.25,
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knightElite",
+    "level": 51,
+    "hp": 578,
+    "damage": 24.9,
+    "speed": 2.7,
+    "radius": 0.5,
+    "mass": 1.1,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.dark"
+        }
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      21,
+      46
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "high_conjurer",
+    "name": {
+      "tr": "Büyük Çağıran",
+      "en": "High Conjurer"
+    },
+    "model": "conjurer_high",
+    "scale": 1.35,
+    "race": [
+      "esoteric"
+    ],
+    "rank": "knightElite",
+    "level": 51,
+    "hp": 517,
+    "damage": 27.3,
+    "speed": 2.7,
+    "radius": 0.56,
+    "mass": 1.23,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.dark"
+        }
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      20,
+      44
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_mystic",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "king_scorpion",
+    "name": {
+      "tr": "Kral Akrep",
+      "en": "King Scorpion"
+    },
+    "model": "scorpion",
+    "scale": 1.15,
+    "race": [
+      "desert"
+    ],
+    "rank": "pawnElite",
+    "level": 39,
+    "hp": 58.5,
+    "damage": 12.8,
+    "speed": 2.43,
+    "radius": 0.84,
+    "mass": 2.1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "feral_soldier",
+    "name": {
+      "tr": "Yırtıcı Asker",
+      "en": "Feral Soldier"
+    },
+    "model": "barbarian",
+    "scale": 1,
+    "race": [
+      "human"
+    ],
+    "rank": "knight",
+    "level": 35,
+    "hp": 56.8,
+    "damage": 10.9,
+    "speed": 3,
+    "radius": 0.5,
+    "mass": 1.5,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "feral_maniac",
+    "name": {
+      "tr": "Yırtıcı Deli",
+      "en": "Feral Maniac"
+    },
+    "model": "barbarian",
+    "scale": 1.05,
+    "tint": "#b08868",
+    "race": [
+      "human"
+    ],
+    "rank": "knight",
+    "level": 37,
+    "hp": 69.8,
+    "damage": 12,
+    "speed": 3,
+    "radius": 0.53,
+    "mass": 1.61,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "feral_archer",
+    "name": {
+      "tr": "Yırtıcı Okçu",
+      "en": "Feral Archer"
+    },
+    "model": "barbarian",
+    "scale": 1,
+    "tint": "#a89880",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 40,
+    "hp": 165,
+    "damage": 15.3,
+    "speed": 2.9,
+    "radius": 0.5,
+    "mass": 1.5,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9.5,
+        "cooldown": 2.4,
+        "windup": 0.5,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 11,
+          "radius": 0.25,
+          "vfx": "proj.arrow.physical"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      9,
+      20
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "feral_specialist",
+    "name": {
+      "tr": "Yırtıcı Uzman",
+      "en": "Feral Specialist"
+    },
+    "model": "barbarian",
+    "scale": 1.15,
+    "tint": "#c09870",
+    "race": [
+      "human"
+    ],
+    "rank": "knightElite",
+    "level": 42,
+    "hp": 203,
+    "damage": 16.6,
+    "speed": 3,
+    "radius": 0.57,
+    "mass": 1.85,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 1.5,
+        "windup": 0.4,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      10,
+      22
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_generic",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "shambling_corpse",
+    "name": {
+      "tr": "Yürüyen Ceset",
+      "en": "Shambling Corpse"
+    },
+    "model": "shambling_corpse",
+    "scale": 1.08,
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 49,
+    "hp": 28.7,
+    "damage": 11.6,
+    "speed": 2.6,
+    "radius": 0.4,
+    "mass": 0.7,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.2,
+        "cooldown": 1.4,
+        "windup": 0.4,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "aura",
+        "range": 2.2,
+        "cooldown": 2.5,
+        "windup": 0.3,
+        "damageMul": 0.4,
+        "area": 2.2
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "swarm",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "angry_shambling_corpse",
+    "name": {
+      "tr": "Kızgın Yürüyen Ceset",
+      "en": "Angry Shambling Corpse"
+    },
+    "model": "angry_shambling_corpse",
+    "scale": 1.15,
+    "tint": "#8a2c3a",
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 49,
+    "hp": 25.7,
+    "damage": 12.7,
+    "speed": 2.6,
+    "radius": 0.4,
+    "mass": 0.7,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.2,
+        "cooldown": 1.4,
+        "windup": 0.4,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "aura",
+        "range": 2.2,
+        "cooldown": 2.5,
+        "windup": 0.3,
+        "damageMul": 0.4,
+        "area": 2.2
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      3,
+      7
+    ],
+    "ai": "swarm",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "blighted_hound",
+    "name": {
+      "tr": "Vebalı Tazı",
+      "en": "Blighted Hound"
+    },
+    "model": "blighted_hound",
+    "scale": 1.15,
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 51,
+    "hp": 38.2,
+    "damage": 13,
+    "speed": 3,
+    "radius": 0.45,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "swarm",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "angry_blighted_hound",
+    "name": {
+      "tr": "Kızgın Vebalı Tazı",
+      "en": "Angry Blighted Hound"
+    },
+    "model": "angry_blighted_hound",
+    "scale": 1.15,
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 51,
+    "hp": 34.2,
+    "damage": 14.2,
+    "speed": 3,
+    "radius": 0.45,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.1,
+        "cooldown": 1.1,
+        "windup": 0.25,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "swarm",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "blighted_villager",
+    "name": {
+      "tr": "Vebalı Köylü",
+      "en": "Blighted Villager"
+    },
+    "model": "blighted_villager",
+    "scale": 1.1,
+    "tint": "#848a50",
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 53,
+    "hp": 50.8,
+    "damage": 14.4,
+    "speed": 2.7,
+    "radius": 0.45,
+    "mass": 1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "angry_blighted_villager",
+    "name": {
+      "tr": "Kızgın Vebalı Köylü",
+      "en": "Angry Blighted Villager"
+    },
+    "model": "blighted_villager",
+    "scale": 1.12,
+    "tint": "#c8506a",
+    "race": [
+      "undead"
+    ],
+    "rank": "pawnElite",
+    "level": 53,
+    "hp": 45.4,
+    "damage": 15.8,
+    "speed": 2.7,
+    "radius": 0.5,
+    "mass": 1,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.3,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      4,
+      9
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    },
+    "tintMode": "colorize"
+  },
+  {
+    "id": "blighted_swordsman",
+    "name": {
+      "tr": "Vebalı Kılıç Ustası",
+      "en": "Blighted Swordsman"
+    },
+    "model": "blighted_swordsman",
+    "scale": 1.08,
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 55,
+    "hp": 111,
+    "damage": 16.6,
+    "speed": 2.8,
+    "radius": 0.52,
+    "mass": 1.3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      8,
+      18
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "angry_blighted_swordsman",
+    "name": {
+      "tr": "Kızgın Vebalı Kılıç Ustası",
+      "en": "Angry Blighted Swordsman"
+    },
+    "model": "blighted_swordsman_angry",
+    "scale": 1.08,
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 55,
+    "hp": 99.2,
+    "damage": 18.2,
+    "speed": 2.8,
+    "radius": 0.52,
+    "mass": 1.3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      7,
+      15
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "blighted_spearman",
+    "name": {
+      "tr": "Vebalı Mızrakçı",
+      "en": "Blighted Spearman"
+    },
+    "model": "blighted_spearman",
+    "scale": 1.12,
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 58,
+    "hp": 170,
+    "damage": 19.6,
+    "speed": 2.8,
+    "radius": 0.6,
+    "mass": 1.42,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 1.5,
+        "windup": 0.4,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      11,
+      24
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "angry_blighted_spearman",
+    "name": {
+      "tr": "Kızgın Vebalı Mızrakçı",
+      "en": "Angry Blighted Spearman"
+    },
+    "model": "blighted_spearman_angry",
+    "scale": 1.2,
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 58,
+    "hp": 152,
+    "damage": 21.5,
+    "speed": 2.8,
+    "radius": 0.64,
+    "mass": 1.42,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 1.5,
+        "windup": 0.4,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      10,
+      22
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "blighted_archer",
+    "name": {
+      "tr": "Vebalı Okçu",
+      "en": "Blighted Archer"
+    },
+    "model": "blighted_archer",
+    "scale": 1,
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 58,
+    "hp": 145,
+    "damage": 20,
+    "speed": 2.7,
+    "radius": 0.42,
+    "mass": 0.9,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9.5,
+        "cooldown": 2.4,
+        "windup": 0.5,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 11,
+          "radius": 0.25,
+          "vfx": "proj.arrow.poison"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      10,
+      22
+    ],
+    "ai": "ranged",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_bow_shot"
+    }
+  },
+  {
+    "id": "angry_blighted_archer",
+    "name": {
+      "tr": "Kızgın Vebalı Okçu",
+      "en": "Angry Blighted Archer"
+    },
+    "model": "blighted_archer",
+    "scale": 1,
+    "tint": "#8a4cd0",
+    "tintMode": "colorize",
+    "race": [
+      "undead"
+    ],
+    "rank": "knight",
+    "level": 58,
+    "hp": 131,
+    "damage": 21.9,
+    "speed": 2.7,
+    "radius": 0.42,
+    "mass": 0.9,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9.5,
+        "cooldown": 2.4,
+        "windup": 0.5,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 11,
+          "radius": 0.25,
+          "vfx": "proj.arrow.poison"
+        }
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      9,
+      20
+    ],
+    "ai": "ranged",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_undead",
+      "attack": "sfx_bow_shot"
+    }
+  },
+  {
+    "id": "blighted_marshal",
+    "name": {
+      "tr": "Vebalı Önder",
+      "en": "Blighted Marshal"
+    },
+    "model": "blighted_marshal",
+    "scale": 0.95,
+    "race": [
+      "undead"
+    ],
+    "rank": "knightElite",
+    "level": 59,
+    "hp": 342,
+    "damage": 23.8,
+    "speed": 2.9,
+    "radius": 0.65,
+    "mass": 2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      18,
+      40
+    ],
+    "ai": "tank",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "angry_blighted_marshal",
+    "name": {
+      "tr": "Kızgın Vebalı Önder",
+      "en": "Angry Blighted Marshal"
+    },
+    "model": "blighted_marshal",
+    "scale": 1,
+    "tint": "#fad0dc",
+    "race": [
+      "undead"
+    ],
+    "rank": "knightElite",
+    "level": 59,
+    "hp": 306,
+    "damage": 26.1,
+    "speed": 2.9,
+    "radius": 0.65,
+    "mass": 2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 3,
+    "yeop": [
+      16,
+      35
+    ],
+    "ai": "tank",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3,
+      "holy": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_undead",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "frost_wisp",
+    "name": {
+      "tr": "Kırağı Ruhu",
+      "en": "Frost Wisp"
+    },
+    "model": "frost_wisp",
+    "scale": 1,
+    "race": [
+      "ice"
+    ],
+    "rank": "pawnElite",
+    "level": 62,
+    "hp": 192,
+    "damage": 25.5,
+    "speed": 2.6,
+    "radius": 0.45,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9,
+        "cooldown": 2.5,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 9.5,
+          "radius": 0.35,
+          "vfx": "proj.hostile.ice"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      12,
+      26
+    ],
+    "ai": "ranged",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "cruel_frost_wisp",
+    "name": {
+      "tr": "Acımasız Kırağı Ruhu",
+      "en": "Cruel Frost Wisp"
+    },
+    "model": "frost_wisp_mean",
+    "scale": 1.08,
+    "race": [
+      "ice"
+    ],
+    "rank": "pawnElite",
+    "level": 62,
+    "hp": 172,
+    "damage": 27.9,
+    "speed": 2.6,
+    "radius": 0.45,
+    "mass": 0.8,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 9,
+        "cooldown": 2.5,
+        "windup": 0.55,
+        "damageMul": 1.0,
+        "projectile": {
+          "speed": 9.5,
+          "radius": 0.35,
+          "vfx": "proj.hostile.ice"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      11,
+      24
+    ],
+    "ai": "ranged",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "glacier_orca",
+    "name": {
+      "tr": "Buzul Orkası",
+      "en": "Glacier Orca"
+    },
+    "model": "glacier_orca",
+    "scale": 0.95,
+    "race": [
+      "ice"
+    ],
+    "rank": "pawnElite",
+    "level": 63,
+    "hp": 222,
+    "damage": 27,
+    "speed": 2.8,
+    "radius": 0.6,
+    "mass": 2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.9,
+        "cooldown": 2.0,
+        "windup": 0.7,
+        "damageMul": 1.15
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      13,
+      29
+    ],
+    "ai": "chase",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_slam"
+    }
+  },
+  {
+    "id": "rime_beetle",
+    "name": {
+      "tr": "Kırağı Böceği",
+      "en": "Rime Beetle"
+    },
+    "model": "rime_beetle",
+    "scale": 1,
+    "race": [
+      "ice"
+    ],
+    "rank": "pawnElite",
+    "level": 64,
+    "hp": 256,
+    "damage": 28.5,
+    "speed": 3.4,
+    "radius": 0.45,
+    "mass": 0.7,
+    "attacks": [
+      {
+        "kind": "explode",
+        "range": 1.3,
+        "cooldown": 3.2,
+        "windup": 0.7,
+        "damageMul": 2.2,
+        "area": 2.4
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      15,
+      33
+    ],
+    "ai": "swarm",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_bite"
+    }
+  },
+  {
+    "id": "snow_lion",
+    "name": {
+      "tr": "Kar Aslanı",
+      "en": "Snow Lion"
+    },
+    "model": "snow_lion",
+    "scale": 1.5,
+    "tint": "#d4c9b8",
+    "race": [
+      "ice"
+    ],
+    "rank": "knight",
+    "level": 64,
+    "hp": 419,
+    "damage": 29.2,
+    "speed": 3.6,
+    "radius": 0.8,
+    "mass": 1.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "leap",
+        "range": 5.5,
+        "cooldown": 7,
+        "windup": 0.7,
+        "damageMul": 1.4,
+        "area": 1.8
+      }
+    ],
+    "xp": 4,
+    "yeop": [
+      21,
+      46
+    ],
+    "ai": "skirmisher",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "frost_revenant",
+    "name": {
+      "tr": "Buz Hortlağı",
+      "en": "Frost Revenant"
+    },
+    "model": "frost_revenant",
+    "scale": 1,
+    "race": [
+      "ice"
+    ],
+    "rank": "knight",
+    "level": 65,
+    "hp": 484,
+    "damage": 30.9,
+    "speed": 2.8,
+    "radius": 0.55,
+    "mass": 1.5,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.5,
+        "cooldown": 1.5,
+        "windup": 0.4,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "aura",
+        "range": 2.6,
+        "cooldown": 2.0,
+        "windup": 0.3,
+        "damageMul": 0.5,
+        "area": 2.6
+      }
+    ],
+    "xp": 4,
+    "yeop": [
+      23,
+      51
+    ],
+    "ai": "chase",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "yeti",
+    "name": {
+      "tr": "Yeti",
+      "en": "Yeti"
+    },
+    "model": "yeti",
+    "scale": 1,
+    "tint": "#d4c9b8",
+    "race": [
+      "ice"
+    ],
+    "rank": "knight",
+    "level": 66,
+    "hp": 558,
+    "damage": 32.7,
+    "speed": 2.7,
+    "radius": 0.9,
+    "mass": 3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 5,
+    "yeop": [
+      25,
+      55
+    ],
+    "ai": "tank",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_ice",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "ice_golem",
+    "name": {
+      "tr": "Buz Golemi",
+      "en": "Ice Golem"
+    },
+    "model": "ice_golem",
+    "scale": 1.3,
+    "race": [
+      "ice"
+    ],
+    "rank": "knightElite",
+    "level": 66,
+    "hp": 971,
+    "damage": 36.5,
+    "speed": 2.4,
+    "radius": 1.25,
+    "mass": 4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 7,
+    "yeop": [
+      37,
+      81
+    ],
+    "ai": "tank",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_golem",
+      "attack": "sfx_enemy_slam"
+    }
+  },
+  {
+    "id": "blaze_cub",
+    "name": {
+      "tr": "Alev Yavrusu",
+      "en": "Blaze Cub"
+    },
+    "model": "blaze_tiger",
+    "scale": 1.05,
+    "tint": "#e09070",
+    "race": [
+      "fire"
+    ],
+    "rank": "pawnElite",
+    "level": 69,
+    "hp": 49.2,
+    "damage": 22.6,
+    "speed": 4.69,
+    "radius": 0.63,
+    "mass": 1.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 5,
+        "windup": 0.8,
+        "damageMul": 1.5,
+        "area": 1.6
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "skirmisher",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "ash_wisp",
+    "name": {
+      "tr": "Kül Ruhu",
+      "en": "Ash Wisp"
+    },
+    "model": "ash_wisp",
+    "scale": 1.05,
+    "tint": "#ff6a28",
+    "tintMode": "colorize",
+    "race": [
+      "fire"
+    ],
+    "rank": "pawnElite",
+    "level": 69,
+    "hp": 49.2,
+    "damage": 22.8,
+    "speed": 2.9,
+    "radius": 0.45,
+    "mass": 0.6,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "ranged",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "greater_ash_wisp",
+    "name": {
+      "tr": "Büyük Kül Ruhu",
+      "en": "Greater Ash Wisp"
+    },
+    "model": "ash_wisp_strong",
+    "scale": 1.42,
+    "race": [
+      "fire"
+    ],
+    "rank": "pawnElite",
+    "level": 69,
+    "hp": 44,
+    "damage": 24.9,
+    "speed": 2.9,
+    "radius": 0.61,
+    "mass": 0.79,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      5,
+      11
+    ],
+    "ai": "ranged",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_magic_cast"
+    }
+  },
+  {
+    "id": "blaze_tiger",
+    "name": {
+      "tr": "Alev Kaplanı",
+      "en": "Blaze Tiger"
+    },
+    "model": "blaze_tiger_armored",
+    "scale": 1.3,
+    "tint": "#ffc080",
+    "race": [
+      "fire"
+    ],
+    "rank": "knight",
+    "level": 70,
+    "hp": 155,
+    "damage": 29.9,
+    "speed": 4.69,
+    "radius": 0.91,
+    "mass": 2.08,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.2,
+        "windup": 0.3,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "charge",
+        "range": 8,
+        "cooldown": 5,
+        "windup": 0.8,
+        "damageMul": 1.5,
+        "area": 1.6
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      12,
+      26
+    ],
+    "ai": "charger",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "living_blaze",
+    "name": {
+      "tr": "Canlı Alev",
+      "en": "Living Blaze"
+    },
+    "model": "living_blaze",
+    "scale": 1,
+    "race": [
+      "fire"
+    ],
+    "rank": "knight",
+    "level": 71,
+    "hp": 298,
+    "damage": 38.4,
+    "speed": 3.7,
+    "radius": 0.9,
+    "mass": 1.6,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.4,
+        "cooldown": 1.3,
+        "windup": 0.35,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "aura",
+        "range": 2.6,
+        "cooldown": 1.8,
+        "windup": 0.2,
+        "damageMul": 0.55,
+        "area": 2.6
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      19,
+      42
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_swipe"
+    }
+  },
+  {
+    "id": "blaze_knight",
+    "name": {
+      "tr": "Alev Şövalyesi",
+      "en": "Blaze Knight"
+    },
+    "model": "blaze_knight",
+    "scale": 1.15,
+    "race": [
+      "fire"
+    ],
+    "rank": "knightElite",
+    "level": 72,
+    "hp": 993,
+    "damage": 55,
+    "speed": 3.7,
+    "radius": 0.75,
+    "mass": 2.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 1.5,
+        "cooldown": 1.6,
+        "windup": 0.4,
+        "damageMul": 1.0
+      },
+      {
+        "kind": "breath",
+        "range": 5.5,
+        "cooldown": 4.5,
+        "windup": 0.8,
+        "damageMul": 1.1,
+        "area": 2.0
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      44,
+      97
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_death_fire",
+      "attack": "sfx_enemy_whoosh_heavy"
+    }
+  },
+  {
+    "id": "lava_troll",
+    "name": {
+      "tr": "Lav Golemi",
+      "en": "Lava Troll"
+    },
+    "model": "lava_troll",
+    "scale": 0.9,
+    "tint": "#ff9a50",
+    "race": [
+      "fire"
+    ],
+    "rank": "knight",
+    "level": 70,
+    "hp": 155,
+    "damage": 30.5,
+    "speed": 2.81,
+    "radius": 0.81,
+    "mass": 3.5,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 1,
+    "yeop": [
+      12,
+      26
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_golem",
+      "attack": "sfx_enemy_slam"
+    }
+  },
+  {
+    "id": "cinderbeard",
+    "name": {
+      "tr": "Kül Sakallı",
+      "en": "Cinderbeard"
+    },
+    "model": "lava_troll",
+    "scale": 1.1,
+    "tint": "#ffc070",
+    "race": [
+      "fire"
+    ],
+    "rank": "knight",
+    "level": 71,
+    "hp": 296,
+    "damage": 39,
+    "speed": 2.81,
+    "radius": 0.99,
+    "mass": 2.99,
+    "attacks": [
+      {
+        "kind": "ranged",
+        "range": 8.5,
+        "cooldown": 2.6,
+        "windup": 0.55,
+        "damageMul": 1.05,
+        "projectile": {
+          "speed": 9,
+          "radius": 0.35,
+          "vfx": "proj.hostile.fire"
+        }
+      }
+    ],
+    "xp": 2,
+    "yeop": [
+      19,
+      42
+    ],
+    "ai": "ranged",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_golem",
+      "attack": "sfx_enemy_slam"
+    }
+  },
+  {
+    "id": "basalt_general",
+    "name": {
+      "tr": "Bazalt Generali",
+      "en": "Basalt General"
+    },
+    "model": "lava_troll",
+    "scale": 1.45,
+    "tint": "#ff7a30",
+    "race": [
+      "fire"
+    ],
+    "rank": "knightElite",
+    "level": 72,
+    "hp": 904,
+    "damage": 53.7,
+    "speed": 2.81,
+    "radius": 1.3,
+    "mass": 6.11,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.0,
+        "cooldown": 2.2,
+        "windup": 0.8,
+        "damageMul": 1.2
+      },
+      {
+        "kind": "leap",
+        "range": 6,
+        "cooldown": 9,
+        "windup": 1.0,
+        "damageMul": 1.3,
+        "area": 2.6
+      }
+    ],
+    "xp": 6,
+    "yeop": [
+      41,
+      90
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_death_golem",
+      "attack": "sfx_enemy_slam"
+    }
+  }
+]

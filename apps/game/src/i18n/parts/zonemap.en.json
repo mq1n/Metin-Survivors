@@ -1,0 +1,19 @@
+{
+  "zonemap.mapOf": "Map of {zone}",
+  "zonemap.zoomIn": "Zoom in",
+  "zonemap.zoomOut": "Zoom out",
+  "zonemap.openAtlas": "Region map",
+  "zonemap.you": "You",
+  "zonemap.start": "Starting point",
+  "zonemap.heart": "Final battle site",
+  "zonemap.bossArena": "Boss arena",
+  "zonemap.poi": "Landmark",
+  "zonemap.north": "N",
+  "zonemap.coords": "Position {x}, {z}",
+  "zonemap.hide": "Hide map",
+  "zonemap.metin": "Metin stone",
+  "zonemap.boss": "Boss",
+  "zonemap.chest": "Chest",
+  "zonemap.ally": "Ally",
+  "zonemap.failed": "Map unavailable"
+}

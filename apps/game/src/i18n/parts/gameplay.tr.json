@@ -1,0 +1,23 @@
+{
+  "stat.vsRace:animal": "hayvanlara hasar",
+  "stat.vsRace:orc": "orklara hasar",
+  "stat.vsRace:esoteric": "mistiklere hasar",
+  "stat.vsRace:undead": "ölümsüzlere hasar",
+  "stat.vsRace:devil": "şeytanlara hasar",
+  "stat.vsRace:insect": "böceklere hasar",
+  "stat.vsRace:desert": "çöl yaratıklarına hasar",
+  "stat.vsRace:ice": "buz yaratıklarına hasar",
+  "stat.vsRace:fire": "alev yaratıklarına hasar",
+  "stat.vsRace:dragon": "ejderhalara hasar",
+  "stat.vsRace:human": "insanlara hasar",
+  "stat.vsRace:metin": "Metin taşlarına hasar",
+  "stat.resist:physical": "fiziksel direnç",
+  "stat.resist:fire": "ateş direnci",
+  "stat.resist:ice": "buz direnci",
+  "stat.resist:lightning": "şimşek direnci",
+  "stat.resist:dark": "karanlık direnci",
+  "stat.resist:poison": "zehir direnci",
+  "stat.resist:holy": "kutsal direnç",
+  "stat.resist:wind": "rüzgâr direnci",
+  "boot.loadFailed": "Koşu yüklenemedi ({reason}). Bağlantını kontrol et, sonra geri dönüp tekrar dene."
+}

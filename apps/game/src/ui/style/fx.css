@@ -1,0 +1,497 @@
+/* =====================================================================================================================
+   Shared UI effects (core).
+   1. Legacy DOM motes (.ms-motes, the essence/chest/boss modals) — moved out of the former shared run-modal sheet in C0,
+      unchanged; replaced by the canvas <Motes> of components/UiFx.tsx when B7 migrates. Delete in C15.
+   2. C9 UiFx: god-rays, canvas motes, level-up burst, pillar, rings, flash, shine sweep, stamp (components/UiFx.tsx).
+      Every animated part reads --d (own delay) and --bt (freeze time of a frozen <Burst t=…>), so a burst can be
+      captured at an exact time; prefers-reduced-motion (base.css) leaves rays still and bursts invisible.
+   ===================================================================================================================== */
+.ms-motes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ms-cardmodal > .ms-motes {
+  position: absolute;
+}
+.ms-motes i {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, var(--mote, #ffb35a) 42%, transparent 72%);
+  box-shadow: 0 0 0.6rem var(--mote, #ffb35a);
+}
+.ms-motes--rise i {
+  bottom: -2%;
+  animation: ms-ember-drift linear infinite;
+}
+.ms-motes--burst i {
+  left: 50%;
+  top: 46%;
+  opacity: 0;
+  animation: ms-rm-burst ease-out both;
+}
+@keyframes ms-rm-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--bx), var(--by)) scale(1);
+  }
+}
+
+/* ---- C9 · GodRays --------------------------------------------------------------------------------------------------
+   Fills its positioned parent and clips itself (adds no scroll). Two procedural ray canvases (cached sprite, tinted per
+   tone) turn in opposite directions; the layer is screen-blended onto whatever is painted under it. */
+.ms-ui .ms-godrays {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  mix-blend-mode: screen;
+  opacity: var(--gr-i, 1);
+}
+.ms-ui .ms-godrays > canvas {
+  position: absolute;
+  left: var(--gr-x, 50%);
+  top: var(--gr-y, 46%);
+  width: var(--gr-size, 125vmax);
+  height: var(--gr-size, 125vmax);
+  translate: -50% -50%;
+  pointer-events: none;
+  animation: ms-spin var(--gr-spin, 150s) linear infinite;
+}
+.ms-ui .ms-godrays > .ms-godrays-b {
+  opacity: 0.72;
+  animation-duration: calc(var(--gr-spin, 150s) * 1.7);
+  animation-direction: reverse;
+}
+.ms-ui .ms-godrays.is-still > canvas {
+  animation: none;
+}
+.ms-ui .ms-godrays.is-pulse {
+  animation: ms-gr-pulse 6.5s ease-in-out infinite;
+}
+@keyframes ms-gr-pulse {
+  0%,
+  100% {
+    opacity: calc(var(--gr-i, 1) * 0.8);
+  }
+  50% {
+    opacity: var(--gr-i, 1);
+  }
+}
+/* Opt-in on a card modal root that renders <GodRays>: drops the legacy conic ray layer (::before) in every tier. */
+.ms-ui .ms-norays::before {
+  content: none !important;
+}
+
+/* ---- C9 · Motes (canvas) ------------------------------------------------------------------------------------------- */
+.ms-ui .ms-fxmotes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  mix-blend-mode: screen;
+}
+.ms-ui .ms-fxmotes--snow {
+  mix-blend-mode: normal;
+}
+.ms-ui .ms-fxmotes > canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ---- C9 · Burst (level-up read: pillar + ground star flare + rings + sparkles + flash) ----------------------------- */
+.ms-ui .ms-burst {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  mix-blend-mode: screen;
+}
+/* Ground flare of the level-up read: a gold disc lying on the ground and the thorn crown (canvas) flattened on it. */
+.ms-ui .ms-burst-ground {
+  position: absolute;
+  left: var(--fx-x, 50%);
+  top: var(--fx-y, 46%);
+  width: calc(var(--fx-s, 1) * 21rem);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--fx-hot, #fff7e0) 78%, transparent) 0,
+    color-mix(in srgb, var(--fx-c, #ffc65a) 62%, transparent) 30%,
+    color-mix(in srgb, var(--fx-c, #ffc65a) 24%, transparent) 62%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: ms-burst-ground 2s cubic-bezier(0.15, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-burst-ground {
+  0% {
+    opacity: 0;
+    transform: scale(0.3, 0.13);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(0.95, 0.42);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12, 0.5);
+  }
+}
+.ms-ui .ms-burst-star {
+  position: absolute;
+  left: var(--fx-x, 50%);
+  top: var(--fx-y, 46%);
+  width: calc(var(--fx-s, 1) * 27rem);
+  height: calc(var(--fx-s, 1) * 27rem);
+  translate: -50% -50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: ms-burst-star 1.7s cubic-bezier(0.15, 0.75, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-burst-star {
+  0% {
+    opacity: 0;
+    transform: scale(0.2, 0.09) rotate(0deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 1;
+    transform: scale(0.98, 0.45) rotate(8deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2, 0.54) rotate(20deg);
+  }
+}
+
+/* Short flash (inside a burst, or alone as an overlay element: <i class="ms-flash" />). */
+.ms-ui .ms-flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--fx-x, 50%) var(--fx-y, 46%),
+    color-mix(in srgb, var(--fx-hot, #fff7e0) 92%, transparent) 0,
+    color-mix(in srgb, var(--fx-c, #ffc65a) 42%, transparent) calc(var(--fx-s, 1) * 8rem),
+    color-mix(in srgb, var(--fx-c, #ffc65a) 12%, transparent) calc(var(--fx-s, 1) * 18rem),
+    transparent calc(var(--fx-s, 1) * 34rem)
+  );
+  opacity: 0;
+  animation: ms-flash 0.62s ease-out both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-flash {
+  0% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Flash an element itself (stat point gained, talent threshold, value change). */
+.ms-ui .ms-flash-on {
+  animation: ms-flash-el 0.75s ease-out both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-flash-el {
+  0% {
+    filter: brightness(1);
+  }
+  14% {
+    filter: brightness(1.9) drop-shadow(0 0 0.6rem var(--fx-c, #ffc65a));
+  }
+}
+
+/* Light column of streaks from the top of the host down to (--fx-x, --fx-y). <Pillar> fills it with the procedural
+   streak canvas; on its own the class still draws a soft beam. */
+.ms-ui .ms-pillar {
+  position: absolute;
+  left: var(--fx-x, 50%);
+  top: 0;
+  width: var(--pillar-w, calc(var(--fx-s, 1) * 19rem));
+  height: calc(var(--fx-y, 46%) + var(--pillar-foot, calc(var(--fx-s, 1) * 2.4rem)));
+  translate: -50% 0;
+  transform-origin: 50% 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(50% 100% at 50% 100%, color-mix(in srgb, var(--fx-hot, #fff7e0) 70%, transparent), transparent 70%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--fx-c, #ffc65a) 30%, transparent) 30%, color-mix(in srgb, var(--fx-hot, #fff7e0) 55%, transparent) 50%, color-mix(in srgb, var(--fx-c, #ffc65a) 30%, transparent) 70%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 24%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 24%, #000 84%, transparent 100%);
+  opacity: 0;
+  animation: ms-pillar 1.9s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+.ms-ui .ms-pillar:has(> canvas) {
+  background: none;
+}
+.ms-ui .ms-pillar > canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  animation: ms-pillar-scroll 1.9s linear both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-pillar {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.16);
+  }
+  9% {
+    opacity: 1;
+    transform: scaleX(1.12);
+  }
+  24% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  70% {
+    opacity: 0.92;
+    transform: scaleX(0.97);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+}
+@keyframes ms-pillar-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-22%);
+  }
+}
+
+/* Expanding ring (shock ring). --ring-size, --ring-scale, --ring-squash (.42 = lying on the ground plane). */
+.ms-ui .ms-ring-burst {
+  position: absolute;
+  left: var(--fx-x, 50%);
+  top: var(--fx-y, 46%);
+  width: calc(var(--fx-s, 1) * var(--ring-size, 14rem));
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    closest-side,
+    transparent 68%,
+    color-mix(in srgb, var(--fx-c, #ffc65a) 50%, transparent) 81%,
+    color-mix(in srgb, var(--fx-hot, #fff7e0) 95%, transparent) 89%,
+    color-mix(in srgb, var(--fx-c, #ffc65a) 38%, transparent) 94%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: ms-ring-burst 0.95s cubic-bezier(0.12, 0.7, 0.25, 1) both;
+  animation-delay: calc(var(--d, 0s) - var(--bt, 0s));
+}
+.ms-ui .ms-ring-burst--ground {
+  --d: 0.16s;
+  --ring-squash: 0.42;
+  --ring-scale: 3.2;
+}
+/* faint face-on halo over the pillar (chest height), quick and thin so it never reads as a glass sphere */
+.ms-ui .ms-ring-burst--halo {
+  --ring-size: 9rem;
+  --ring-scale: 2.5;
+  --ring-a: 0.5;
+  top: calc(var(--fx-y, 46%) - var(--fx-s, 1) * 5.5rem);
+  animation-duration: 0.8s;
+  animation-delay: calc(0.05s + var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-ring-burst {
+  0% {
+    opacity: var(--ring-a, 1);
+    transform: scale(0.12, calc(0.12 * var(--ring-squash, 1)));
+  }
+  55% {
+    opacity: calc(var(--ring-a, 1) * 0.85);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(var(--ring-scale, 2.6), calc(var(--ring-scale, 2.6) * var(--ring-squash, 1)));
+  }
+}
+
+/* frozen burst (<Burst t={…}>): every part paused at its own (delay - t) */
+.ms-ui .ms-burst.is-frozen > *,
+.ms-ui .ms-burst.is-frozen > * > canvas {
+  animation-play-state: paused;
+}
+
+/* ---- C9 · Shine sweep -------------------------------------------------------------------------------------------------
+   A light band crossing a title (use shineProps(text) from UiFx: the band is clipped to the glyphs through a copy of the
+   text in ::after) or any plate / medal / button without its own ::after (clipped to the box). .is-idle repeats it.
+   Knobs: --shine-delay (.35s), --shine-dur (1.15s), --shine-cycle (6.5s, idle). */
+.ms-ui .ms-shine-sweep {
+  position: relative;
+}
+.ms-ui .ms-shine-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 0 41%, rgba(255, 252, 236, 0.9) 50%, transparent 59% 100%) no-repeat;
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  mix-blend-mode: screen;
+  animation: ms-shine-sweep var(--shine-dur, 1.15s) cubic-bezier(0.4, 0.1, 0.3, 1) var(--shine-delay, 0.35s) both;
+}
+.ms-ui .ms-shine-sweep[data-text]::after {
+  content: attr(data-text);
+  padding: inherit;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.ms-ui .ms-shine-sweep.is-idle::after {
+  animation: ms-shine-idle var(--shine-cycle, 6.5s) ease-in-out var(--shine-delay, 0.35s) infinite both;
+}
+@keyframes ms-shine-sweep {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+@keyframes ms-shine-idle {
+  0% {
+    background-position: 100% 0;
+  }
+  22%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* ---- C9 · Stamp (a seal / medal / badge slamming in; rests on the element's own transform) ------------------------- */
+.ms-ui .ms-stamp {
+  animation: ms-stamp 0.56s cubic-bezier(0.2, 0.9, 0.25, 1.15) both;
+  animation-delay: calc(var(--stamp-delay, 0s) + var(--d, 0s) - var(--bt, 0s));
+}
+@keyframes ms-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(2.3) rotate(-10deg);
+    filter: brightness(2) blur(1.5px);
+  }
+  42% {
+    opacity: 1;
+    transform: scale(0.9) rotate(1.5deg);
+    filter: brightness(1.35) blur(0);
+  }
+  64% {
+    transform: scale(1.05) rotate(-0.5deg);
+    filter: brightness(1);
+  }
+}
+
+/* ---- C11 · kit icons (components/StatIcon.tsx: StatIcon, GradeIcon, CurrencyIcon, UiGlyph, EdgeArrow) -------------
+   Sized in em so they sit in text; a `size` prop (inline style) or a class rule overrides. */
+.ms-ui .ms-kicon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+  line-height: 0;
+  vertical-align: -0.24em;
+}
+.ms-ui .ms-kicon > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.ms-ui .ms-kicon--stat {
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: -0.42em;
+}
+.ms-ui .ms-kicon--grade {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.38em;
+}
+.ms-ui .ms-kicon--cur {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+}
+.ms-ui .ms-kicon--edge {
+  width: 2.6rem;
+  height: 2.6rem;
+  vertical-align: middle;
+}
+.ms-ui .ms-kicon.is-dim {
+  filter: grayscale(0.85) brightness(0.62);
+}
+
+/* Key plate (KeyCap) and glyph cap (GlyphCap): engraved pewter, our own bevel. */
+.ms-ui .ms-keycap {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.9em;
+  height: 1.7em;
+  padding: 0 0.5em;
+  font: 700 0.74em/1 var(--f-head, 'Cinzel', serif);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #efe3c4;
+  text-shadow: 0 1px 0 #15110d;
+  vertical-align: 0.1em;
+  border-radius: 0.28em;
+  background: linear-gradient(180deg, #5f5a52 0%, #3b3833 52%, #2b2925 100%);
+  box-shadow: 0 0 0 1px #0d0b09, inset 0 1px 0 rgba(255, 244, 220, 0.34), inset 0 -0.16em 0 rgba(0, 0, 0, 0.42), inset 0 0 0 2px rgba(0, 0, 0, 0.18), 0 0.14em 0 #0d0b09;
+}
+.ms-ui .ms-glyphcap {
+  --cap: 2.2rem;
+  display: inline-grid;
+  place-items: center;
+  width: var(--cap);
+  height: var(--cap);
+  flex: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, #3a3631 0%, #1b1916 60%, #0e0c0a 100%);
+  box-shadow: 0 0 0 1px #0d0b09, 0 0 0 calc(var(--cap) * 0.055) #6a655c, 0 0 0 calc(var(--cap) * 0.085) #2c2a26, inset 0 calc(var(--cap) * 0.04) 0 rgba(255, 244, 220, 0.16), inset 0 -0.2rem 0.45rem rgba(0, 0, 0, 0.5), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.55);
+}
+.ms-ui .ms-glyphcap > .ms-kicon {
+  width: 56%;
+  height: 56%;
+  vertical-align: 0;
+}

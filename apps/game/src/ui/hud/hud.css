@@ -1,0 +1,2906 @@
+
+.ms-hud {
+  --tb-h: 5rem;
+  /* numerals of the taskbar: a 17 px face has 12 px digits at 1080p */
+  --tb-num: 17px;
+  --hud-edge: 1.2rem;
+  --mm-size: clamp(9rem, 12.6vw, 13.5rem);
+  --hud-gold: #e6c47c;
+  /* smallest text of the HUD: 13 px on desktops (also at 768p), 10.5 px on phones */
+  --hud-min: 13px;
+  
+  --hud-stone-fb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='c' x='0' y='0' width='256' height='256' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.022 0.03' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.62 0 0 0 0 0.57 0 0 0 0 0.5 0.55 0 0 0 -0.26'/%3E%3C/filter%3E%3Cfilter id='v' x='0' y='0' width='256' height='256' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.017 0.021' numOctaves='3' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.6 0 0 0 0 0.52 -7.5 0 0 0 1.1'/%3E%3C/filter%3E%3Cfilter id='g' x='0' y='0' width='256' height='256' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.42' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.7 0 0 0 0 0.65 0 0 0 0 0.58 1.5 0 0 0 -0.62'/%3E%3C/filter%3E%3Crect width='256' height='256' fill='%23100e0b'/%3E%3Crect width='256' height='256' filter='url%28%23c%29'/%3E%3Crect width='256' height='256' filter='url%28%23v%29' opacity='0.2'/%3E%3Crect width='256' height='256' filter='url%28%23g%29' opacity='0.22'/%3E%3C/svg%3E");
+  --hud-stone: var(--tex-hud-bar, var(--hud-stone-fb));
+  --hud-stone-size: 16rem;
+  --hud-sheen: linear-gradient(180deg, rgba(255, 240, 215, 0.05), rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.42));
+  z-index: var(--z-hud);
+  inset: 0;
+}
+.ms-compact .ms-hud {
+  --hud-min: 10.5px;
+}
+.ms-hud .ms-gauge-label {
+  font-size: max(calc(var(--h) * 0.72), var(--t-2xs), var(--hud-min));
+}
+.ms-hud .ms-medal,
+.ms-hud .ms-slot--k .ms-medal.ms-slot-rank,
+.ms-hud .ms-slot--k .ms-slot-key,
+.ms-hud .ms-keycap {
+  font-size: max(var(--t-xs), var(--hud-min));
+}
+.ms-hud .ms-kchip {
+  font-size: max(var(--t-xs), var(--hud-min));
+}
+.ms-hud * {
+  pointer-events: none;
+}
+/* everything that takes the pointer (tooltips, buttons, the map's medallions) opts back in */
+.ms-hud .ms-slot,
+.ms-hud .ms-tb-btn,
+.ms-hud .ms-tb-auto,
+.ms-hud .ms-tb-coin,
+.ms-hud .ms-tb-coin--btn,
+.ms-hud .ms-tb-orb,
+.ms-hud .ms-tb-hp,
+.ms-hud .ms-tb-sp,
+.ms-hud .ms-tb-xp,
+.ms-hud .ms-bs-more,
+.ms-hud .ms-co,
+.ms-hud .ms-co-pop,
+.ms-hud .ms-mm-show,
+.ms-hud .ms-mm-coords,
+.ms-hud .ms-hud-coop-peers,
+.ms-hud .ms-zm-btn,
+.ms-hud .ms-zm-disc,
+.ms-hud .ms-atlas-scrim,
+.ms-hud .ms-atlas-board,
+.ms-hud .ms-atlas-board *,
+.ms-hud .ms-bb,
+.ms-hud .ms-bb * {
+  pointer-events: auto;
+}
+.ms-hud .ms-slot .ms-medal,
+.ms-hud .ms-slot .ms-slot-key {
+  pointer-events: none;
+}
+
+/* ---- full-screen overlays: darkness, low health, hit ------------------------------------------------------------------ */
+.ms-hud .ms-hud-dark,
+.ms-hud .ms-hud-lowhp,
+.ms-hud .ms-hud-hit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-hud-dark {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.1) 14%, #000 62%);
+  transition: opacity 0.6s;
+}
+/* low health: the screen edges go blood red and beat twice a second (a heartbeat, never a greyed-out bar) */
+.ms-hud-lowhp {
+  opacity: 0;
+  background:
+    radial-gradient(118% 112% at 50% 48%, transparent 40%, rgba(168, 12, 8, 0.5) 74%, rgba(110, 4, 3, 0.86) 100%),
+    linear-gradient(180deg, rgba(160, 10, 6, 0.38), transparent 14%, transparent 80%, rgba(160, 10, 6, 0.42));
+  box-shadow: inset 0 0 9rem 1.5rem rgba(190, 16, 8, 0.4);
+  transition: opacity 0.4s;
+}
+.ms-hud-lowhp.is-on {
+  opacity: 1;
+  animation: ms-hud-heart 1.15s ease-in-out infinite;
+}
+@keyframes ms-hud-heart {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: scale(1.015);
+  }
+  14% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  28% {
+    opacity: 0.66;
+    transform: scale(1.01);
+  }
+  42% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+/* hit: a short red edge punch (r1: the old 120 % x 120 % gradient never reached the screen edge, +6 RGB at the corners; this one
+   holds its colour AT the edges and corners, the middle of the screen stays clear) until the post-pass hurt vignette is live */
+.ms-hud-hit {
+  opacity: 0;
+  background: radial-gradient(118% 112% at 50% 48%, transparent 44%, rgba(196, 18, 12, 0.4) 76%, rgba(128, 6, 4, 0.74) 100%);
+  box-shadow: inset 0 0 7rem 0.8rem rgba(210, 24, 14, 0.4);
+}
+.ms-hud-hit.is-on {
+  animation: ms-curtain 0.45s ease-out both;
+}
+
+/* shared plate skin of the HUD's own plates: the near-black mottled stone (zero specificity on the scope so each plate's own
+   --pl-face / tints below still win) */
+:where(.ms-hud) :is(.ms-tc, .ms-tm, .ms-co, .ms-bs-more, .ms-mm-show, .ms-ea-d, .ms-hud-coop-chip, .ms-hud-coop-peers) {
+  --pl-sheen: var(--hud-sheen);
+  --pl-veil: rgba(0, 0, 0, 0);
+  --pl-face: var(--pl-sheen), var(--hud-stone) 0 0 / var(--hud-stone-size), #15120e;
+  --pl-hi: #9a9283;
+  --pl-mid: #544d42;
+  --pl-lo: #14110e;
+}
+
+/* =====================================================================================================================
+   TASKBAR (round 5): ONE continuous stone strip. Every part (gauges, coins, quick slots, sockets, buttons) is seated straight
+   in the stone with its own carved seat; groups are told apart by engraved grooves, never by framed boxes. Numerals and rank
+   medals live INSIDE the slot, nothing hangs off the frame.
+   ===================================================================================================================== */
+.ms-hud {
+  --orb: 7.8rem;
+  /* width of the three-gauge stack */
+  --gw: 18.4rem;
+  /* quick slots: octagon edge, gap between two slot boxes (each sits in a seat 0.2 rem larger on every side), buttons, lens */
+  --slot-s: 3.4rem;
+  --slot-gap: 0.7rem;
+  --eq-s: 2.3rem;
+  --btn-s: 3.9rem;
+  --lens: 2.5rem;
+}
+.ms-tb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--safe-b);
+  height: var(--tb-h);
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  align-items: center;
+  column-gap: 1.2rem;
+  padding: 0 calc(0.9rem + var(--safe-r)) 0 calc(0.7rem + var(--safe-l));
+  color: var(--k-text);
+}
+.ms-hud-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* the strip: near-black stone, a stepped pewter + bronze lip on top, a soft shade climbing above it. It is cut into a few
+   blocks only so no stone pattern repeats; the blocks join without a seam. */
+.ms-tb-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(-1 * var(--safe-b));
+  height: calc(var(--tb-h) + var(--safe-b));
+  display: flex;
+  background: #14110e;
+  border-top: 1px solid #040303;
+  box-shadow: 0 -0.3rem 1.3rem rgba(0, 0, 0, 0.5);
+}
+.ms-tb-blk {
+  position: relative;
+  flex: var(--w) 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.ms-tb-blk > i {
+  position: absolute;
+  inset: 0;
+  background: var(--hud-stone) var(--ox) var(--oy) / var(--hud-stone-size), #14110e;
+  transform: scaleX(var(--fl));
+  filter: brightness(var(--br));
+}
+.ms-tb-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--hud-sheen);
+  box-shadow:
+    inset 0 1px 0 #8a8274,
+    inset 0 2px 0 #3d382f,
+    inset 0 3px 0 #0a0908,
+    inset 0 4px 0 rgba(122, 92, 56, 0.5);
+}
+.ms-tb-strip::before {
+  /* the fade above the strip: the world sinks into it instead of ending on a hard line */
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 1.4rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.26), transparent);
+  pointer-events: none;
+}
+.ms-tb > :where(:not(.ms-tb-strip):not(.ms-hud-defs):not(.ms-tb-auto)) {
+  position: relative;
+}
+
+/* engraved grooves between the groups of the strip (a carved double line, never a frame) */
+.ms-tb-coins::before,
+.ms-tb-center::before,
+.ms-tb-center::after,
+.ms-tb-equip::before,
+.ms-tb-btns::before {
+  content: '';
+  position: absolute;
+  top: 0.95rem;
+  bottom: 0.95rem;
+  width: 3px;
+  pointer-events: none;
+  background: linear-gradient(90deg, #030201 0 1px, rgba(150, 140, 124, 0.34) 1px 2px, #0a0908 2px 3px);
+}
+.ms-tb-coins::before {
+  left: -0.6rem;
+}
+.ms-tb-center::before {
+  left: -0.8rem;
+}
+.ms-tb-center::after {
+  right: -0.8rem;
+}
+.ms-tb-equip::before {
+  left: -0.6rem;
+}
+.ms-tb-btns::before {
+  left: -0.6rem;
+}
+
+/* ---- vitals: orb + gauges -------------------------------------------------------------------------------------------- */
+.ms-tb-left {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  height: var(--tb-h);
+  gap: 1.2rem;
+}
+.ms-tb-vitals {
+  display: flex;
+  align-items: center;
+  height: var(--tb-h);
+  gap: 0.2rem;
+  margin-left: 0.55rem;
+}
+/* the orb straddles the strip: its centre sits on the strip's top edge, so the upper half stands out of the bar */
+.ms-tb-orb {
+  position: relative;
+  z-index: 2;
+  display: block;
+  align-self: flex-end;
+  margin-bottom: calc(var(--tb-h) - var(--orb) * 0.492 - 0.16rem);
+  animation: ms-pop 0.5s var(--ease-out) both;
+}
+.ms-tb-orb .ms-orb {
+  --o: var(--orb);
+  display: block;
+  filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.65));
+}
+.ms-tb-gauges {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.12rem;
+  width: var(--gw);
+  margin-left: 0.2rem;
+}
+.ms-tb-gauges .ms-hg {
+  width: 100%;
+}
+
+/* ---- the HUD's gauge: painted tube (steel spiked caps, gunmetal rim, dark glass) + painted liquid fill ---------------- */
+.ms-hud {
+  --hg-ch-bg: #04060a;
+}
+.ms-hg {
+  /* one unit of the 768 x 128 tube image: the channel is 64 units tall */
+  --k: calc(var(--ch, 1.4rem) / 64);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(84 * var(--k));
+  padding: calc(10 * var(--k)) 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 calc(62 * var(--k));
+  border-image-source: var(--tex-hud-gtube, linear-gradient(90deg, #6a707a, #1b1d22 8%, #1b1d22 92%, #6a707a));
+  border-image-slice: 0 62 0 62 fill;
+  border-image-outset: calc(22 * var(--k)) 0;
+  border-image-repeat: stretch;
+  filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7));
+}
+.ms-hg-ch {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: calc(5 * var(--k));
+  background: var(--hg-tint, none), var(--hg-ch-bg);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.ms-hg--hp {
+  --hg-tint: linear-gradient(180deg, rgba(150, 18, 20, 0.16), rgba(60, 6, 8, 0.1));
+  --hg-paint: var(--tex-hud-gfill-red, linear-gradient(180deg, #7e0e12, #f04a4a 16%, #e02529 40%, #a8121a 74%, #3a0508));
+  --hg-glow: #ff4a38;
+  --hg-body: linear-gradient(180deg, #ff8070 0, #ea2a30 30%, #b3141c 64%, #4d0509 100%);
+}
+.ms-hg--sp {
+  --hg-tint: linear-gradient(180deg, rgba(40, 90, 200, 0.2), rgba(10, 30, 90, 0.12));
+  --hg-paint: var(--tex-hud-gfill-blue, linear-gradient(180deg, #123a96, #6aa2ff 16%, #2b66e6 40%, #1648b8 74%, #07124a));
+  --hg-glow: #4a8cff;
+  --hg-body: linear-gradient(180deg, #9cc8ff 0, #3a78f0 30%, #1b4cc0 64%, #071a62 100%);
+}
+.ms-hg--xp {
+  --hg-tint: linear-gradient(180deg, rgba(170, 100, 20, 0.16), rgba(70, 36, 6, 0.1));
+  --hg-paint: var(--tex-hud-gfill-gold, linear-gradient(180deg, #a85a0c, #ffcf5a 16%, #f5981c 40%, #cf6f0e 74%, #4a2404));
+  --hg-glow: #ffb030;
+  --hg-body: linear-gradient(180deg, #ffe596 0, #f9a822 30%, #d17410 64%, #552a05 100%);
+}
+.ms-hg--boss {
+  --hg-tint: linear-gradient(180deg, rgba(150, 18, 20, 0.2), rgba(60, 6, 8, 0.12));
+  --hg-paint: var(--tex-hud-gfill-red, linear-gradient(180deg, #7e0e12, #f04a4a 16%, #e02529 40%, #a8121a 74%, #3a0508));
+  --hg-glow: #ff5a3c;
+  --hg-body: linear-gradient(180deg, #ff8070 0, #ea2a30 30%, #b3141c 64%, #4d0509 100%);
+}
+.ms-hg--boss .ms-hg-fill {
+  filter: saturate(1.12) brightness(0.93);
+}
+.ms-hg--corr {
+  --hg-tint: linear-gradient(180deg, rgba(170, 90, 20, 0.14), rgba(70, 30, 6, 0.1));
+  --hg-paint: var(--tex-hud-gfill-gold, linear-gradient(180deg, #a85a0c, #ffcf5a 16%, #f5981c 40%, #cf6f0e 74%, #4a2404));
+  --hg-glow: #ff9a3a;
+  --hg-body: linear-gradient(180deg, #ffe596 0, #f9a822 30%, #d17410 64%, #552a05 100%);
+}
+.ms-hg--corr .ms-hg-fill {
+  filter: hue-rotate(-14deg) saturate(1.25);
+}
+.ms-co.is-high .ms-hg--corr .ms-hg-fill {
+  filter: hue-rotate(-34deg) saturate(1.5) brightness(1.05);
+}
+.ms-hg-trail,
+.ms-hg-fill,
+.ms-hg-flash {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.ms-hg-trail {
+  background: rgba(255, 228, 196, 0.5);
+  transition: width 0.7s 0.2s var(--ease-soft);
+}
+.ms-hg-fill {
+  background: var(--hg-paint) 0 0 / calc(100% / max(var(--v), 0.001)) 100% no-repeat;
+  background: var(--hg-paint) 0 0 / 100cqw 100% no-repeat;
+  transition: width 0.16s ease-out;
+}
+/* the lit leading edge of the liquid */
+.ms-hg-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: max(2px, calc(2.4 * var(--k)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 246, 224, 0.95) 24%, rgba(255, 246, 224, 0.9) 76%, rgba(255, 255, 255, 0));
+  box-shadow: 0 0 0.45rem 1px var(--hg-glow);
+}
+.ms-hg.is-empty .ms-hg-fill::after {
+  display: none;
+}
+.ms-hg-flash {
+  right: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 244, 200, 0.95) 50%, transparent 80%) 0 0 / 200% 100%;
+  mix-blend-mode: screen;
+  animation: ms-gauge-flash 0.75s ease-out both;
+}
+/* glass over the liquid: the rim's shadow falling in at the top, the tube's darker underside, a rounded specular strip inset from
+   the caps and a reflected line of light along the bottom: a glossy cylinder, not a flat strip with grain */
+.ms-hg-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 15%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0) 46%);
+  box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.55);
+}
+.ms-hg-glass::before {
+  content: '';
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 12%;
+  height: 30%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.24) 66%, rgba(255, 255, 255, 0));
+  opacity: 0.62;
+}
+.ms-hg-glass::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 9%;
+  height: max(1px, calc(3 * var(--k)));
+  background: linear-gradient(90deg, rgba(190, 215, 255, 0), rgba(190, 215, 255, 0.5) 14%, rgba(190, 215, 255, 0.5) 86%, rgba(190, 215, 255, 0));
+}
+/* the liquid's body colour over its grain: a vertical gradient at half strength calms the glitter and models the cylinder */
+.ms-hg-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hg-body, none);
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* no shield: the tube stays lit but dull and says "Shield 0" - it reads as switched off, not as a broken, empty channel */
+.ms-hg.is-dormant .ms-hg-fill {
+  width: 100% !important;
+  filter: grayscale(0.5) brightness(0.36);
+}
+.ms-hg.is-dormant .ms-hg-fill::after {
+  display: none;
+}
+.ms-hg.is-dormant .ms-hg-glass::before {
+  opacity: 0.28;
+}
+.ms-hg.is-dormant .ms-hg-label {
+  color: #c9d3e6;
+}
+.ms-hg-label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  padding: 0 0.55rem;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: var(--tb-num);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 0 0 0.3rem #000, 0 0 0.12rem #000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ms-hg-label--end {
+  justify-content: flex-end;
+}
+.ms-hg-tag {
+  font-family: var(--f-head);
+  font-size: max(0.82em, var(--hud-min));
+  letter-spacing: 0.1em;
+  color: #ffe2a0;
+}
+.ms-hg.is-low {
+  animation:
+    ms-hg-low 0.9s ease-in-out infinite,
+    ms-hg-shake 2.4s linear infinite;
+}
+@keyframes ms-hg-low {
+  0%,
+  100% {
+    filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.28rem #ff4a36) drop-shadow(0 0 0.8rem rgba(230, 40, 28, 0.85));
+  }
+}
+@keyframes ms-hg-shake {
+  0%,
+  84%,
+  100% {
+    translate: 0 0;
+  }
+  87% {
+    translate: -1.5px 0;
+  }
+  90% {
+    translate: 1.5px 0;
+  }
+  93% {
+    translate: -1px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-hg.is-low {
+    animation: ms-hg-low 1.6s ease-in-out infinite;
+  }
+}
+/* low health: the orb ring beats red too */
+.ms-tb-vitals.is-low .ms-orb-ring {
+  animation: ms-hud-orb-low 0.9s ease-in-out infinite;
+}
+@keyframes ms-hud-orb-low {
+  0%,
+  100% {
+    filter: drop-shadow(0 0.15rem 0.25rem rgba(0, 0, 0, 0.55));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.35rem #ff4a36) drop-shadow(0 0 1.1rem rgba(230, 40, 28, 0.95));
+  }
+}
+
+/* ---- coin sockets: kills / yeop / shards / damage per second (lit lens + number side by side, straight on the stone) ----- */
+.ms-tb-coins {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  height: var(--tb-h);
+}
+.ms-tb-coin {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.3rem 0 0.1rem;
+}
+.ms-tb-coin + .ms-tb-coin {
+  border-left: 1px solid rgba(150, 140, 124, 0.14);
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.7);
+  padding-left: 0.5rem;
+}
+/* the damage coin is a button (it opens the damage table): bare, no button chrome */
+.ms-tb-coin--btn {
+  appearance: none;
+  margin: 0;
+  background: none;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ms-tb-coin--btn.is-open .ms-tb-lens {
+  filter: drop-shadow(0 0 0.45rem rgba(255, 214, 120, 0.7)) drop-shadow(0 0.1rem 0.12rem rgba(0, 0, 0, 0.7));
+}
+@media (hover: hover) {
+  .ms-tb-coin--btn:hover .ms-tb-lens {
+    filter: drop-shadow(0 0 0.4rem rgba(255, 224, 150, 0.55)) drop-shadow(0 0.1rem 0.12rem rgba(0, 0, 0, 0.7));
+  }
+}
+.ms-ui .ms-tb-coin--btn[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-tb-coin--btn[data-nav]:focus {
+  box-shadow: none;
+}
+.ms-ui .ms-tb-coin--btn[data-nav]:focus-visible .ms-tb-lens,
+.ms-ui.ms-kbd .ms-tb-coin--btn[data-nav]:focus .ms-tb-lens {
+  filter: var(--focus-glow);
+}
+.ms-tb-lens {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--lens);
+  height: var(--lens);
+  background:
+    var(--tex-hud-coin, radial-gradient(circle at 50% 50%, #0d0c0b 0 52%, #8a6a3c 54% 62%, #33261a 64% 70%, #a77a35 72% 80%, #1a120a 82% 86%, transparent 88%)) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0.1rem 0.12rem rgba(0, 0, 0, 0.7));
+}
+.ms-tb-lens .ms-tb-ico,
+.ms-tb-lens .ms-tb-img {
+  display: block;
+  width: calc(var(--lens) * 0.69);
+  height: calc(var(--lens) * 0.69);
+  margin-top: -0.04rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0.3rem rgba(255, 214, 120, 0.35)) drop-shadow(0 0.06rem 0 rgba(0, 0, 0, 0.8));
+}
+.ms-tb-coin > b {
+  max-width: 100%;
+  font-size: var(--tb-num);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #fbf3de;
+  text-shadow: 0 1px 0 #000, 0 0 0.35rem rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+}
+
+/* ---- carved seats: every quick slot (filled or empty) sits in an octagon dimple with a lit lower rim, so the row keeps one rhythm
+   and a 4 px stone gutter between two seats -------------------------------------------------------------------------------- */
+.ms-tb-sk,
+.ms-tb-dimple {
+  --dc: calc(var(--seat) * 0.22);
+}
+.ms-tb-sk {
+  --seat: calc(var(--sk-s, var(--slot-s)) + 0.4rem);
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+.ms-tb-sk::before,
+.ms-tb-dimple {
+  background: linear-gradient(135deg, #020201 0 38%, #655d4f 100%);
+  clip-path: polygon(var(--dc) 0, calc(100% - var(--dc)) 0, 100% var(--dc), 100% calc(100% - var(--dc)), calc(100% - var(--dc)) 100%, var(--dc) 100%, 0 calc(100% - var(--dc)), 0 var(--dc));
+}
+.ms-tb-sk::before {
+  content: '';
+  position: absolute;
+  inset: -0.2rem;
+}
+.ms-tb-sk::after {
+  /* the dark floor of the seat, under the slot's own rim */
+  content: '';
+  position: absolute;
+  inset: -0.2rem;
+  margin: 2px;
+  background: radial-gradient(120% 120% at 38% 30%, #15110d, #070605 70%);
+  clip-path: polygon(var(--dc) 0, calc(100% - var(--dc)) 0, 100% var(--dc), 100% calc(100% - var(--dc)), calc(100% - var(--dc)) 100%, var(--dc) 100%, 0 calc(100% - var(--dc)), 0 var(--dc));
+}
+.ms-tb-sk > .ms-slot {
+  position: relative;
+  z-index: 1;
+}
+/* an empty quick slot: the same seat, nothing in it. Sized like a filled seat, margins keep the pitch identical. */
+.ms-tb-dimple {
+  --s: calc(var(--sk-s, var(--slot-s)) + 0.4rem);
+  --seat: var(--s);
+  position: relative;
+  flex: none;
+  display: block;
+  width: var(--s);
+  height: var(--s);
+  margin: -0.2rem;
+}
+.ms-tb-dimple > i {
+  position: absolute;
+  inset: 2px;
+  background: radial-gradient(120% 120% at 38% 30%, #1a1612, #0a0807 62%, #050403);
+  clip-path: polygon(calc(var(--dc) - 1px) 0, calc(100% - var(--dc) + 1px) 0, 100% calc(var(--dc) - 1px), 100% calc(100% - var(--dc) + 1px), calc(100% - var(--dc) + 1px) 100%, calc(var(--dc) - 1px) 100%, 0 calc(100% - var(--dc) + 1px), 0 calc(var(--dc) - 1px));
+}
+
+/* ---- the quick slots (auto-cast skills): real pitch, hotkey numeral + rank medal inside ------------------------------- */
+.ms-tb-center {
+  position: relative;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  height: var(--tb-h);
+}
+.ms-tb-skills {
+  /* the row holds the basic attack, the six actives and any ultimates (Taskbar.tsx sets --sk-n when that is more than six seats): the
+     seats and the gaps (gap = 0.2 seat) shrink together so the row keeps the width of six, which the strip's layout budget allows
+     for: (6 + 5 * 0.2) / (n + (n - 1) * 0.2) */
+  --sk-f: min(1, calc(35 / (6 * var(--sk-n, 6) - 1)));
+  --sk-s: calc(var(--slot-s) * var(--sk-f));
+  position: relative;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--slot-gap) * var(--sk-f));
+  height: var(--tb-h);
+  padding: 0;
+}
+.ms-hud .ms-tb-skills .ms-slot {
+  --s: var(--sk-s);
+}
+.ms-hud .ms-slot--k {
+  --sl-c: calc(var(--s) * 0.22);
+}
+
+.ms-hud .ms-tb .ms-slot--k .ms-slot-key,
+.ms-hud .ms-bs .ms-slot--k .ms-slot-key {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.56rem;
+  right: auto;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  line-height: 1.1;
+  text-align: left;
+  font-family: var(--f-num);
+  font-size: var(--tb-num);
+  font-weight: 800;
+  color: #fff;
+  background: none;
+  clip-path: none;
+  box-shadow: none;
+  filter: none;
+  text-shadow: 0 0 2px #000, 0 0 2px #000, 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0 0 0.45rem #000;
+  z-index: 2;
+}
+.ms-touch .ms-hud .ms-slot--k .ms-slot-key {
+  display: none;
+}
+/* rank medal / tag: inside the frame, on the lower-right corner (it completes the slot's cut corner) */
+.ms-hud .ms-tb .ms-slot--k .ms-medal.ms-slot-rank,
+.ms-hud .ms-bs .ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: 1.5rem;
+  right: 0.18rem;
+  bottom: 0.18rem;
+  font-size: var(--tb-num);
+  font-weight: 800;
+  padding: 0 0.22rem;
+  z-index: 3;
+}
+.ms-hud .ms-medal--m {
+  --pl-hi: #cfd8e6;
+  --pl-mid: #6d7f99;
+  --pl-lo: #1d2634;
+  --pl-face: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 50%), linear-gradient(180deg, #4f6a8c, #2c4160 60%, #1a2a42);
+  color: #f4f8ff;
+}
+/* cooldown: a clock sweep (the dark wedge closes clockwise from 12 o'clock) with a lit leading edge, never a flat wipe */
+.ms-hud .ms-slot--k .ms-slot-cd {
+  background: conic-gradient(from 0deg, transparent 0 calc(var(--cd-a, 360deg) - 2.5deg), rgba(255, 238, 196, 0.95) calc(var(--cd-a, 360deg) - 2.5deg) var(--cd-a, 360deg), rgba(4, 3, 2, 0.8) var(--cd-a, 360deg) 360deg);
+}
+.ms-tb-cdnum {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  font-size: var(--tb-num);
+  font-weight: 800;
+  line-height: 1;
+  color: #fff6dc;
+  text-shadow: 0 0 0.25rem #000, 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  pointer-events: none;
+}
+/* touch: the hotkey numeral is hidden there, so the countdown takes the slot's upper-left corner and never meets the rank medal on
+   the lower-right one (centred, it sat on the medal of the 2.8 rem phone slots: '4.2' over 'M2') */
+.ms-touch .ms-tb-cdnum {
+  place-items: start;
+  padding: 0.28rem 0 0 0.4rem;
+}
+
+/* ---- context-skill ring (skill logic M1): a one-piece octagonal rim just outside the slot's own frame, drawn by a polygon with a hole
+   (evenodd) so it follows the octagon at any slot size (the width is 7.5 % of the slot, never under 2.5 px: readable on a 2.4 rem phone slot).
+   ARMED = the skill is ready and waits for its trigger: an amber rim that breathes.
+   ACTIVE = its window / shell is up: a mint rim that sweeps away clockwise from 12 o'clock as the time runs out (--ring-a = the part left). */
+.ms-tb-ring {
+  --rs: var(--sk-s, var(--slot-s));
+  --rw: max(2.5px, calc(var(--rs) * 0.075));
+  --rc: calc(var(--rs) * 0.22 + 1.2px);
+  --ri: calc(var(--rc) - 0.586 * var(--rw));
+  position: absolute;
+  inset: -2px;
+  z-index: 2;
+  pointer-events: none;
+  clip-path: polygon(
+    evenodd,
+    var(--rc) 0,
+    calc(100% - var(--rc)) 0,
+    100% var(--rc),
+    100% calc(100% - var(--rc)),
+    calc(100% - var(--rc)) 100%,
+    var(--rc) 100%,
+    0 calc(100% - var(--rc)),
+    0 var(--rc),
+    calc(var(--rw) + var(--ri)) var(--rw),
+    calc(100% - var(--rw) - var(--ri)) var(--rw),
+    calc(100% - var(--rw)) calc(var(--rw) + var(--ri)),
+    calc(100% - var(--rw)) calc(100% - var(--rw) - var(--ri)),
+    calc(100% - var(--rw) - var(--ri)) calc(100% - var(--rw)),
+    calc(var(--rw) + var(--ri)) calc(100% - var(--rw)),
+    var(--rw) calc(100% - var(--rw) - var(--ri)),
+    var(--rw) calc(var(--rw) + var(--ri))
+  );
+}
+.ms-tb-sk.is-armed .ms-tb-ring {
+  background: conic-gradient(from 20deg, #fff0b8, #ffb43c 28%, #fff6d0 50%, #ffb43c 72%, #fff0b8);
+  animation: ms-tb-armed 1.5s ease-in-out infinite;
+}
+/* INSURANCE skills (War Oath, Cure: they wait ready for the whole run until the killing blow / the emergency): the same octagon rim, but
+   still, dimmer and a cooler gold, so a slot that is "always armed" is calm and a pulsing one still means "about to fire" */
+.ms-tb-sk.is-armed.is-calm .ms-tb-ring {
+  /* fix round 2 (vfx critic, section 4): the dim cool gold was the same as the pulse's dim phase (.5) and as the frame gold at 390 px: the calm rim is a STATIC cool white-blue
+     (#dfe8ff / #9fc0ff) at .85 - a hue no other state has, so "my cheat-death is armed" reads in a still frame; still no animation (never nags) */
+  background: conic-gradient(from 20deg, #dfe8ff, #9fc0ff 28%, #f0f5ff 50%, #9fc0ff 72%, #dfe8ff);
+  animation: none;
+  opacity: 0.85;
+}
+.ms-tb-sk.is-active .ms-tb-ring {
+  background: conic-gradient(from 0deg, #b6ffd2 0 var(--ring-a, 360deg), rgba(8, 12, 9, 0.62) var(--ring-a, 360deg) 360deg);
+}
+@keyframes ms-tb-armed {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-tb-sk.is-armed .ms-tb-ring {
+    animation: none;
+    opacity: 0.9;
+  }
+  .ms-tb-sk.is-armed.is-calm .ms-tb-ring {
+    opacity: 0.85;
+  }
+}
+
+/* ---- spirit stones + trinkets: the strip's right-hand quick slots (sockets stay visible: they are the build's open slots) --- */
+.ms-tb-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.ms-tb-equip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  height: var(--tb-h);
+}
+.ms-tb-eq-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ms-tb-equip .ms-tb-sk,
+.ms-tb-equip .ms-tb-dimple {
+  --sk-s: var(--eq-s);
+}
+.ms-hud .ms-tb-equip .ms-slot {
+  --s: var(--eq-s);
+}
+.ms-hud .ms-tb-equip .ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: 1.3rem;
+  right: 0.08rem;
+  bottom: 0.08rem;
+  padding: 0 0.16rem;
+}
+.ms-hud .ms-tb .ms-orb-level {
+  --mh: 1.7rem;
+  font-size: var(--tb-num);
+}
+.ms-tb-eq-sep {
+  align-self: stretch;
+  width: 2px;
+  margin: 0.9rem 0.1rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 18%, rgba(150, 140, 124, 0.4) 18.5%, rgba(0, 0, 0, 0.9) 82%, transparent);
+}
+
+
+.ms-tb-btns {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.ms-tb-btn {
+  --pl-c: 0.9rem;
+  --pl-bw: 3px;
+  --pl-hi: #e2cf9f;
+  --pl-mid: #98794a;
+  --pl-lo: #3a2a14;
+  --pl-line: #0a0705;
+  --pl-face: #0e0a07;
+  position: relative;
+  display: block;
+  width: var(--btn-s);
+  height: var(--btn-s);
+  padding: 0;
+  overflow: visible;
+  color: var(--k-text);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+/* the picture sits inside the bevel, cut to the same octagon */
+.ms-tb-art {
+  position: absolute;
+  inset: 4px;
+  overflow: hidden;
+  clip-path: polygon(0.75rem 0, calc(100% - 0.75rem) 0, 100% 0.75rem, 100% calc(100% - 0.75rem), calc(100% - 0.75rem) 100%, 0.75rem 100%, 0 calc(100% - 0.75rem), 0 0.75rem);
+  background: #0e0a07;
+}
+.ms-tb-art::after {
+  /* a lit upper edge and a falling vignette: one light for the pictures */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 236, 190, 0.2), transparent 30%, transparent 62%, rgba(0, 0, 0, 0.5)),
+    radial-gradient(circle at 50% 50%, transparent 52%, rgba(0, 0, 0, 0.55));
+}
+.ms-tb-svg,
+.ms-tb-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ms-tb-btn:active .ms-tb-art {
+  translate: 0 1px;
+  filter: brightness(0.85);
+}
+/* the build button's item count: a round ruby cabochon in a bronze bezel, set in the empty corner of the octagon (round, never a
+   flat square, and off the picture) */
+.ms-tb-badge {
+  position: absolute;
+  right: -0.32rem;
+  top: -0.32rem;
+  z-index: 2;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: var(--tb-num);
+  font-weight: 800;
+  line-height: 1;
+  color: #fff6e6;
+  background: radial-gradient(circle at 36% 28%, #ffb9a0 0, #e0482c 32%, #8e170c 72%, #3d0804 100%);
+  box-shadow:
+    0 0 0 0.14rem #c9a05a,
+    0 0 0 0.22rem #1a0f06,
+    0 0.2rem 0.3rem 0.12rem rgba(0, 0, 0, 0.6),
+    inset 0 0.1rem 0.2rem rgba(255, 220, 190, 0.5);
+  text-shadow: 0 1px 0 #3a0804, 0 0 0.25rem rgba(0, 0, 0, 0.8);
+}
+.ms-tb-btn.is-open {
+  --pl-hi: #fff0b8;
+  --pl-mid: #d6a24a;
+  --pl-lo: #5a3a10;
+  filter: drop-shadow(0 0 0.55rem rgba(255, 214, 120, 0.5));
+}
+@media (hover: hover) {
+  .ms-tb-btn:hover {
+    --pl-hi: #fff0c8;
+    --pl-mid: #b8935a;
+    filter: drop-shadow(0 0 0.4rem rgba(255, 224, 150, 0.4));
+  }
+  .ms-tb-btn:hover .ms-tb-art {
+    filter: brightness(1.18) saturate(1.1);
+  }
+}
+.ms-ui .ms-tb-btn[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-tb-btn[data-nav]:focus {
+  box-shadow: none;
+  filter: var(--focus-glow);
+}
+
+/* =====================================================================================================================
+   TOP LEFT: buff row (passives bare on the world; phones fold stones + trinkets behind a chip)
+   ===================================================================================================================== */
+.ms-hud-tl {
+  position: absolute;
+  left: calc(var(--hud-edge) + var(--safe-l));
+  top: calc(var(--hud-edge) + var(--safe-t));
+}
+.ms-bs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: max-content;
+  max-width: 24rem;
+  filter: drop-shadow(0 0.18rem 0.3rem rgba(0, 0, 0, 0.65));
+}
+.ms-bs-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+.ms-bs-row--misc {
+  gap: 0.3rem;
+}
+.ms-hud .ms-bs .ms-slot--sm {
+  --s: 2.65rem;
+}
+.ms-hud .ms-bs .ms-slot--xs {
+  --s: 2.1rem;
+}
+.ms-bs-sep {
+  align-self: stretch;
+  width: 2px;
+  margin: 0.15rem 0.2rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 20%, rgba(150, 140, 124, 0.4) 20.5%, rgba(0, 0, 0, 0.9) 80%, transparent);
+}
+.ms-bs-more {
+  --pl-c: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  height: 2.1rem;
+  padding: 0 0.65rem;
+  font-size: var(--t-sm);
+  color: var(--k-text);
+  cursor: pointer;
+}
+.ms-bs-more .ms-kicon {
+  width: 1rem;
+  height: 1rem;
+}
+.ms-touch .ms-bs-more .ms-hit {
+  inset: calc((100% - var(--tap) - 2px) / 2);
+}
+.ms-bs-more.is-open {
+  --pl-hi: #f6dc9a;
+  --pl-mid: #b98a3c;
+  --pl-lo: #4a3410;
+}
+
+/* =====================================================================================================================
+   TOP CENTRE (round 5): ONE stone tablet = run clock + (while there is one) the boss row + the event banner row, cut from the
+   same stone with carved dividers; plus the co-op notices under it
+   ===================================================================================================================== */
+.ms-hud-tc {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--hud-edge) + var(--safe-t) - 0.2rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  /* never reaches the build strip (top-left, ~26 rem) nor the minimap column: narrower on 4:3 / small laptop screens */
+  width: max(26rem, min(42rem, calc(100vw - 54rem)));
+}
+/* the tablet's rim takes the state of what it carries: stone (clock only) -> blood (boss) -> gold (final boss) -> the banner's tone */
+.ms-tc,
+.ms-tm {
+  --pl-c: 0.95rem;
+  --pl-bw: 3px;
+  --pl-hi: #b8ad98;
+  --pl-mid: #6a5f4e;
+  --pl-lo: #1c1914;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: stretch;
+  min-width: 15rem;
+  filter: drop-shadow(0 0.25rem 0.5rem rgba(0, 0, 0, 0.55));
+}
+.ms-tc.has-boss,
+.ms-tc.has-an {
+  width: 100%;
+}
+.ms-tc.has-boss {
+  --pl-hi: #c9a58a;
+  --pl-mid: #7a4636;
+  --pl-lo: #2a0d0a;
+}
+.ms-tc.has-boss.is-final {
+  --pl-hi: #ffe9a8;
+  --pl-mid: #c9962e;
+  --pl-lo: #4a3208;
+}
+.ms-tc.has-boss.is-enraged {
+  --pl-hi: #ff9a82;
+  --pl-mid: #c8321f;
+  --pl-lo: #4a0c08;
+}
+.ms-tc.an-boss.has-an,
+.ms-tc.an-danger.has-an {
+  --pl-hi: #ff9a82;
+  --pl-mid: #c8321f;
+  --pl-lo: #4a0c08;
+}
+.ms-tc.an-victory.has-an {
+  --pl-hi: #ffe9a8;
+  --pl-mid: #c9962e;
+  --pl-lo: #4a3208;
+}
+.ms-tc.an-metin.has-an,
+.ms-tc.an-level.has-an {
+  --pl-hi: #f6dba0;
+  --pl-mid: #b98a3c;
+  --pl-lo: #4a3410;
+}
+/* rows of the tablet, divided by a carved line */
+.ms-tc > * + * {
+  position: relative;
+}
+.ms-tc > * + *::before {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(180deg, #050403 0 1px, rgba(150, 140, 124, 0.3) 1px 2px, #0b0a09 2px 3px);
+  pointer-events: none;
+}
+/* the clock row */
+.ms-tc-time,
+.ms-tm {
+  display: grid;
+  justify-items: center;
+  padding: 0.3rem 1.9rem 0.42rem;
+}
+.ms-tm-time {
+  font-family: var(--f-num);
+  font-weight: 800;
+  font-size: 2.7rem;
+  line-height: 1;
+  letter-spacing: 0.07em;
+  color: #f8e9bc;
+  text-shadow: 0 0.1rem 0 #4a2f0c, 0 0 0.9rem rgba(232, 150, 60, 0.45), 0 0.15rem 0.5rem rgba(0, 0, 0, 0.9);
+}
+.ms-tm-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.12rem;
+  font-size: max(var(--t-md), 15px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e2d7c0;
+  text-shadow: 0 1px 0 #000, 0 0 0.4rem rgba(0, 0, 0, 0.7);
+}
+.ms-tm-next .ms-kicon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.ms-tc-time.is-soon .ms-tm-next,
+.ms-tm.is-soon .ms-tm-next {
+  color: #ffb4a2;
+  animation: ms-hud-soon 1s ease-in-out infinite;
+}
+.ms-tc-time.is-fight .ms-tm-next,
+.ms-tm.is-fight .ms-tm-next {
+  color: #ffc9b8;
+}
+.ms-tm.is-soon {
+  --pl-hi: #e69a86;
+  --pl-mid: #a3382a;
+  --pl-lo: #3a0c08;
+}
+@keyframes ms-hud-soon {
+  0%,
+  100% {
+    text-shadow: 0 1px 0 #000;
+  }
+  50% {
+    text-shadow: 0 1px 0 #000, 0 0 0.7rem rgba(255, 90, 60, 0.95);
+  }
+}
+
+/* ---- boss row ------------------------------------------------------------------------------------------------------ */
+.ms-bp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.1rem 0.55rem 0.8rem;
+  background: radial-gradient(120% 160% at 10% 40%, rgba(140, 26, 20, 0.5), transparent 64%);
+  animation: ms-rise-in 0.5s var(--ease-soft) both;
+}
+.ms-bp.is-final {
+  background: radial-gradient(120% 160% at 10% 40%, rgba(150, 110, 24, 0.45), transparent 64%);
+}
+.ms-bp.is-enraged {
+  background: radial-gradient(120% 160% at 10% 40%, rgba(200, 34, 22, 0.62), transparent 66%);
+}
+.ms-bp-seal {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: var(--tex-hud-coin, radial-gradient(circle, #0d0c0b 0 52%, #8a6a3c 54% 62%, #33261a 64% 70%, #a77a35 72% 80%, #1a120a 82% 86%, transparent 88%)) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0.1rem 0.2rem rgba(0, 0, 0, 0.8));
+}
+.ms-bp-seal .ms-kicon {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+/* the boss's monster card instead of the coin + skull: the octagon slot carries the card's own gold rim, no bezel behind it */
+.ms-bp-seal--card {
+  background: none;
+}
+.ms-bp-seal--card .ms-slot {
+  --s: 3.6rem;
+}
+.ms-bp.is-enraged .ms-bp-seal {
+  animation: ms-hud-seal 0.7s ease-in-out infinite;
+}
+@keyframes ms-hud-seal {
+  0%,
+  100% {
+    filter: drop-shadow(0 0.1rem 0.2rem rgba(0, 0, 0, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.4rem #ff5a3c) drop-shadow(0 0 0.9rem rgba(230, 40, 28, 0.9));
+  }
+}
+.ms-bp-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+.ms-bp-name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  padding: 0 0.3rem;
+}
+.ms-bp-title {
+  font-family: var(--f-head);
+  font-weight: 800;
+  font-size: var(--t-lg);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffdccb;
+  text-shadow: 0 1px 0 #000, 0 0 0.9rem rgba(255, 70, 40, 0.55);
+}
+.ms-bp-epithet {
+  font-size: max(var(--t-md), 15px);
+  font-style: italic;
+  color: #e2d7c0;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-bp .ms-kchip {
+  align-self: center;
+}
+.ms-bp.is-enraged .ms-hg-fill {
+  animation: ms-hud-rage 0.7s ease-in-out infinite;
+}
+@keyframes ms-hud-rage {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.35) saturate(1.2);
+  }
+}
+.ms-bp-phases {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: max(var(--t-sm), 14px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e2d7c0;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-bp-phases i {
+  width: 0.85rem;
+  height: 0.85rem;
+  rotate: 45deg;
+  background: linear-gradient(135deg, #2a2420, #0e0c0a);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #6a6054;
+}
+.ms-bp-phases i.is-on {
+  background: linear-gradient(135deg, #ff9a7a, #c0261a 55%, #5a0a06);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #ffd6b8, 0 0 0.55rem rgba(255, 90, 60, 0.85);
+}
+.ms-bp-phases span {
+  margin-left: 0.3rem;
+}
+
+/* ---- event banner row (the last row of the tablet: it opens, holds, and folds shut again inside the card) -------------- */
+.ms-tc-an {
+  --ac: #e8c36a;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  background:
+    radial-gradient(90% 200% at 50% 0%, color-mix(in srgb, var(--ac) 34%, transparent), transparent 72%),
+    linear-gradient(180deg, color-mix(in srgb, var(--ac) 12%, transparent), transparent);
+  animation: ms-tc-an 2.4s var(--ease-soft) both;
+}
+.ms-an--boss,
+.ms-an--danger {
+  --ac: #ff5a3c;
+}
+.ms-an--victory {
+  --ac: #ffd36a;
+}
+.ms-an--level {
+  --ac: #f2b648;
+}
+.ms-an--info {
+  --ac: #b9a98a;
+}
+.ms-tc-an-in {
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.ms-tc-an-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.9rem;
+  padding: 0.45rem 1.4rem 0;
+}
+.ms-an-eyebrow {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(var(--t-sm), 14px);
+  letter-spacing: 0.3em;
+  padding-left: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ac) 72%, #fff);
+  text-shadow: 0 1px 0 #000;
+}
+.ms-an-title {
+  font-family: var(--f-head);
+  font-weight: 800;
+  font-size: var(--t-xl);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ac) 40%, #fff4d6);
+  text-shadow: 0 0.1rem 0 #000, 0 0 1.1rem var(--ac);
+  animation: ms-tc-title 0.55s var(--ease-soft) both;
+}
+.ms-an--info .ms-an-title {
+  font-size: var(--t-lg);
+  letter-spacing: 0.08em;
+}
+.ms-an-sub {
+  padding: 0.05rem 1.4rem 0.45rem;
+  font-size: max(var(--t-md), 15px);
+  font-style: italic;
+  color: #efe6d2;
+  text-shadow: 0 1px 0 #000, 0 0 0.5rem rgba(0, 0, 0, 0.8);
+}
+.ms-tc-an-head:last-child {
+  padding-bottom: 0.45rem;
+}
+/* first-time hints (HD-01, hints.ts): an info banner with a sentence under its topic. It is the last row of the tablet, under the boss
+   row, so it never covers the boss plate or a gauge. It stays up the 6 s hints.ts asks for (HINT_TTL_MS) instead of the 2.4 s of a
+   banner, reads as a tip (calm gold rim, topic line smaller, the sentence in plain type that wraps and balances its lines) and keeps
+   the ordinary banner's open / hold / fold. */
+.ms-tc-an.ms-an--info:has(.ms-an-sub) {
+  --ac: #d8b86a;
+  animation-duration: 6s;
+}
+.ms-tc.an-info.has-an:has(.ms-an-sub) {
+  --pl-hi: #e6cf94;
+  --pl-mid: #9a7b3c;
+  --pl-lo: #3a2a0e;
+}
+.ms-an--info:has(.ms-an-sub) .ms-an-title {
+  font-size: var(--t-md);
+  letter-spacing: 0.14em;
+}
+.ms-an--info .ms-an-sub {
+  max-width: 100%;
+  font-size: var(--t-lg);
+  font-style: normal;
+  line-height: 1.32;
+  text-wrap: balance;
+  color: #f4ecd9;
+}
+.ms-compact .ms-an--info .ms-an-sub {
+  font-size: max(var(--t-md), 13px);
+}
+/* run events (HD-03, announce.ts). A timed event (Champion Hunt = danger, Golden Hour = victory) keeps ONE standing plate for its whole
+   announce + active stretch: the banner row opens once and HOLDS until announce.ts takes the plate away (the event ended), instead of
+   folding shut after 2.4 s. The plate is a danger / victory banner that carries a sub line: no other banner of those two tones has one (the
+   verdict banners "Champion slain" / "The champion escaped" carry none and fold as usual; "Golden Hour is over" is an info banner in gold).
+   Its sub line is the countdown read from HudSnapshot.runEvent, set in tabular figures so the seconds do not jitter. A transient banner
+   (boss, Metin, a hint) takes the row for its own 2.5 s and the plate opens again after it. */
+.ms-tc-an.ms-an--danger:has(.ms-an-sub),
+.ms-tc-an.ms-an--victory:has(.ms-an-sub) {
+  animation: ms-tc-an-stand 0.45s var(--ease-soft) both;
+}
+/* A banner in a bright accent (the rune colour of a Metin banner, the shrine's gold) or on the standing plate reads on any scene and any width:
+   a dark scrim under the tone's glow keeps its text at 4.5:1 or better (the glow alone measured 3.1 to 3.8 on the phone widths). */
+.ms-tc-an.ms-an--danger:has(.ms-an-sub),
+.ms-tc-an.ms-an--victory:has(.ms-an-sub),
+.ms-tc-an.ms-an--metin[style*='--ac'],
+.ms-tc-an.ms-an--info[style*='--ac'] {
+  background:
+    radial-gradient(90% 200% at 50% 0%, color-mix(in srgb, var(--ac) 22%, transparent), transparent 72%),
+    linear-gradient(180deg, rgba(8, 6, 4, 0.46), rgba(8, 6, 4, 0.46));
+}
+/* every danger banner (the plate, the verdicts, the awaken / enrage rows) reads its "Warning" in the light salmon: the tone's own mix measured
+   3.55:1 on the long "The champion escaped" row, whose title wraps the eyebrow onto a line of its own in the middle of the red glow */
+.ms-tc-an.ms-an--danger .ms-an-eyebrow {
+  color: #ffc2b4;
+}
+.ms-an--victory:has(.ms-an-sub) .ms-an-title {
+  color: #fff6da;
+}
+.ms-an--danger:has(.ms-an-sub) .ms-an-title,
+.ms-an--victory:has(.ms-an-sub) .ms-an-title {
+  font-size: var(--t-lg);
+  letter-spacing: 0.08em;
+}
+.ms-an--danger .ms-an-sub,
+.ms-an--victory .ms-an-sub {
+  font-style: normal;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: max(var(--t-lg), 15px);
+  color: #f6eedb;
+}
+/* Golden Hour is not a victory yet: its gold plate keeps the tone's colours, not the word "Victory" in front of the title */
+.ms-an--victory:has(.ms-an-sub) .ms-an-eyebrow {
+  display: none;
+}
+.ms-compact .ms-an--danger .ms-an-sub,
+.ms-compact .ms-an--victory .ms-an-sub {
+  font-size: max(var(--t-md), 13px);
+}
+@keyframes ms-tc-an-stand {
+  0% {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  100% {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}
+/* the final boss's card (A-11, announce.ts `final`): the Great Metin falls and its boss rises. Same row as every banner, but it holds 4.6 s
+   (announce.ts FINAL_CARD_MS) instead of 2.4, its title is the largest type of the HUD with a gold-red glow, and the epithet under it is
+   the large sub size. The tablet's `.is-final` (the boss row is the final boss) is what tells it from a band boss's card. */
+.ms-tc.is-final .ms-tc-an.ms-an--boss.is-big {
+  animation-duration: 4.6s;
+}
+.ms-tc.is-final .ms-tc-an.ms-an--boss.is-big .ms-an-title {
+  max-width: 100%;
+  font-size: var(--t-2xl);
+  line-height: 1.08;
+  letter-spacing: 0.05em;
+  text-wrap: balance;
+  color: #fff0c8;
+  text-shadow:
+    0 0.12rem 0 #000,
+    0 0 1.4rem #ff5a3c,
+    0 0 2.8rem rgba(255, 190, 80, 0.55);
+}
+.ms-tc.is-final .ms-tc-an.ms-an--boss.is-big .ms-an-sub {
+  font-size: max(var(--t-lg), 15px);
+  color: #ffe9bf;
+}
+.ms-compact .ms-tc.is-final .ms-tc-an.ms-an--boss.is-big .ms-an-title {
+  font-size: var(--t-xl);
+}
+/* the portrait card is 19 rem wide: the title would split "CUNG-MOK" at its hyphen at the large size */
+.ms-portrait .ms-tc.is-final .ms-tc-an.ms-an--boss.is-big .ms-an-title {
+  font-size: var(--t-lg);
+}
+.ms-an-fx {
+  position: absolute;
+  inset: -2rem -1rem;
+  z-index: 3;
+  pointer-events: none;
+}
+@keyframes ms-tc-an {
+  0% {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+  8% {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  86% {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  100% {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+}
+@keyframes ms-tc-title {
+  0% {
+    transform: scale(1.22);
+    filter: brightness(2);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+    filter: none;
+  }
+}
+
+/* ---- co-op status ----------------------------------------------------------------------------------------------------- */
+.ms-hud-coop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 3;
+}
+.ms-hud-coop:empty {
+  display: none;
+}
+.ms-hud-coop-chip {
+  --pl-c: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  color: var(--k-text);
+  animation: ms-pop 0.3s var(--ease-soft) both;
+}
+.ms-hud-coop-chip .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.ms-hud-coop-chip.is-warn {
+  --pl-hi: #e69a86;
+  --pl-mid: #a3382a;
+  --pl-lo: #3a0c08;
+  color: #ffc4b4;
+}
+.ms-hud-coop-peers {
+  --pl-c: 0.4rem;
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.18rem 0.8rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.ms-hud-coop-peer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.ms-hud-coop-peer i {
+  width: 0.55rem;
+  height: 0.55rem;
+  rotate: 45deg;
+  background: #6fe2a0;
+  box-shadow: 0 0 0 1px #000, 0 0 0.45rem #6fe2a0;
+}
+.ms-hud-coop-peer.is-off i {
+  background: #ff6a4a;
+  box-shadow: 0 0 0 1px #000, 0 0 0.45rem #ff6a4a;
+}
+
+/* =====================================================================================================================
+   TOP RIGHT: minimap, corruption, damage meter
+   ===================================================================================================================== */
+.ms-hud-tr {
+  position: absolute;
+  right: calc(var(--hud-edge) + var(--safe-r));
+  top: calc(var(--hud-edge) + var(--safe-t) - 0.2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.ms-mm {
+  display: block;
+  filter: drop-shadow(0 0.3rem 0.55rem rgba(0, 0, 0, 0.55));
+}
+/* the painted picture (minimapPaint.ts) replaces the plain raster behind the pips: it fades in when the worker finishes */
+.ms-mm .ms-zm-world::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--mm-paint, none) 0 0 / 100% 100% no-repeat;
+  opacity: 0;
+  transition: opacity 0.7s ease-out;
+  pointer-events: none;
+}
+.ms-mm.has-paint .ms-zm-world::before {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-mm .ms-zm-world::before {
+    transition: none;
+  }
+}
+.ms-mm .ms-zm-pip {
+  z-index: 2;
+}
+
+.ms-mm .ms-zm--minimap .ms-zm-shade {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 238, 200, 0.07), transparent 46%),
+    radial-gradient(circle at 50% 50%, transparent 36%, rgba(5, 5, 2, 0.34) 64%, rgba(0, 0, 0, 0.74) 90%, #000 100%);
+}
+/* fine paper tooth over the picture (screen-fixed film grain; the painted layer carries the world-space mottling) */
+.ms-mm .ms-zm--minimap .ms-zm-disc::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--k-grain-light, none) 0 0 / 7rem;
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+  pointer-events: none;
+}
+/* while the map is still being baked the disc is an earthy wash with the paper tooth, not a black hole */
+.ms-mm .ms-zm-disc {
+  background:
+    radial-gradient(circle at 40% 34%, #4a4a2b, #2a2a1a 56%, #14140c 82%),
+    #1a1a10;
+}
+/* the hero: a small bare gold arrow, no plate behind it */
+.ms-mm .ms-zm-hero {
+  width: max(1.1rem, 14px);
+  height: max(1.1rem, 14px);
+}
+
+.ms-mm-coords {
+  margin-top: -0.2rem;
+  text-align: center;
+  font-size: max(var(--t-sm), var(--hud-min));
+  letter-spacing: 0.04em;
+  color: #f4ecd8;
+  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000, -1px 0 1px #000;
+}
+.ms-mm-show {
+  --pl-c: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: max(2.9rem, var(--tap));
+  height: max(2.9rem, var(--tap));
+  cursor: pointer;
+}
+.ms-mm-show .ms-kicon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ms-co-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+.ms-co {
+  --pl-c: 0.45rem;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.65rem 0.3rem 0.6rem;
+  font-size: var(--t-sm);
+  color: #ffcf9a;
+  cursor: pointer;
+}
+.ms-co:hover {
+  filter: brightness(1.08);
+}
+.ms-co-chev {
+  font-size: 0.85em;
+  opacity: 0.72;
+  transition: transform 0.16s ease;
+}
+.ms-co.is-open .ms-co-chev {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+.ms-co-pop {
+  width: 19.5rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(24, 19, 16, 0.96), rgba(12, 10, 9, 0.98));
+  border: 1px solid rgba(196, 140, 88, 0.45);
+  box-shadow: 0 0.45rem 1.4rem rgba(0, 0, 0, 0.78), inset 0 1px 0 rgba(255, 224, 180, 0.14);
+  z-index: 8;
+}
+.ms-co-pop-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--f-head);
+  font-size: var(--t-sm);
+  color: #f6e6c8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.ms-co-pop-badge {
+  margin-left: auto;
+  padding: 0.08rem 0.42rem;
+  font-family: var(--f-num);
+  font-size: max(11px, var(--t-2xs));
+  font-weight: 700;
+  color: #ffd9a8;
+  background: rgba(160, 100, 48, 0.25);
+  border: 1px solid rgba(214, 150, 84, 0.4);
+}
+.ms-co-pop-badge.is-mid {
+  color: #ffc278;
+  border-color: rgba(235, 134, 52, 0.55);
+}
+.ms-co-pop-badge.is-high {
+  color: #ff9c90;
+  background: rgba(180, 38, 28, 0.34);
+  border-color: rgba(255, 100, 84, 0.6);
+}
+.ms-co-pop-desc {
+  margin: 0;
+  font-size: max(12px, var(--t-xs));
+  line-height: 1.38;
+  color: #cfc3ad;
+}
+.ms-co-pop-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  padding: 0.32rem 0;
+  border-top: 1px solid rgba(255, 228, 186, 0.12);
+  border-bottom: 1px solid rgba(255, 228, 186, 0.12);
+}
+.ms-co-pop-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: max(12px, var(--t-xs));
+  color: #d8ccb4;
+}
+.ms-co-pop-row.is-warn > b {
+  color: #ff9878;
+}
+.ms-co-pop-row.is-good > b {
+  color: #7bf09c;
+}
+.ms-co-pop-tip {
+  font-size: max(11.5px, var(--t-2xs));
+  line-height: 1.32;
+  color: #e6c98e;
+}
+.ms-co .ms-kicon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.ms-co-short {
+  display: none;
+}
+.ms-co-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(var(--t-2xs), var(--hud-min));
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ms-co .ms-gauge {
+  width: 6.2rem;
+}
+.ms-co > b {
+  min-width: 2.4rem;
+  text-align: right;
+  font-size: var(--t-md);
+}
+.ms-co.is-high {
+  --pl-hi: #e69a86;
+  --pl-mid: #a3382a;
+  --pl-lo: #3a0c08;
+  color: #ff9a84;
+  animation: ms-hud-soon 1.2s ease-in-out infinite;
+}
+
+/* damage meter table (the toggle lives in the taskbar) */
+.ms-hud-meter-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.ms-hud-meter {
+  width: 18rem;
+  padding: 0.4rem 0.5rem 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  animation: ms-fade-in 0.2s backwards;
+}
+.ms-hud-meter-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.2rem 0.2rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(var(--t-xs), var(--hud-min));
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+}
+.ms-hud-meter-head .ms-kicon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.ms-hud-meter-head b {
+  margin-left: auto;
+  font-size: var(--t-md);
+  letter-spacing: 0.02em;
+  color: #f7efd9;
+}
+.ms-hud-meter-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto 2.6rem;
+  align-items: center;
+  gap: 0.4rem;
+  height: 1.6rem;
+  padding: 0 0.35rem 0 0.15rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+.ms-hud-meter-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(90deg, rgba(168, 40, 28, 0.85), rgba(232, 150, 60, 0.4));
+  transition: width 0.3s ease-out;
+}
+.ms-hud-meter-row > *:not(.ms-hud-meter-fill) {
+  position: relative;
+}
+.ms-hud-meter-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #000, 0 0 0 2px rgba(150, 140, 124, 0.5);
+}
+.ms-hud-meter-icon > img,
+.ms-hud-meter-icon > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ms-hud-meter-name {
+  font-size: var(--t-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-hud-meter-row b {
+  font-size: var(--t-md);
+  color: #f7efd9;
+}
+.ms-hud-meter-pct {
+  text-align: right;
+  font-size: max(var(--t-xs), var(--hud-min));
+  color: var(--k-text-3);
+}
+.ms-hud-meter-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.4rem 0;
+  margin-top: 0.15rem;
+  font-size: max(var(--t-xs), var(--hud-min));
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+  border-top: 1px solid rgba(150, 140, 124, 0.25);
+}
+.ms-hud-meter-total b {
+  color: var(--k-gold);
+  font-size: var(--t-md);
+}
+.ms-hud-meter-empty {
+  padding: 0.5rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-3);
+  text-align: center;
+}
+
+/* region map: the whole zone in a board over the run */
+.ms-atlas {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.ms-atlas-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 4, 3, 0.5);
+}
+.ms-atlas-board {
+  position: relative;
+  width: min(34rem, 94vw, calc(100dvh - 17rem));
+  min-width: 18rem;
+  animation: ms-scale-in 0.22s var(--ease-soft) both;
+}
+.ms-atlas-body {
+  padding: 0.9rem 0.9rem 1rem;
+}
+/* zonemap.css prints no pin labels / scale number in an atlas under 23 rem ("small atlases, the hover tips carry them"). The region map of a phone is
+   ~22.5 rem wide (337 px of a 390 px screen) and a touch screen has no hover tips, so it keeps its "Final battle site" / "Starting point" labels and
+   the "100 m" scale from 17 rem up (the zone-select cards and the 512 px previews stay under the old cut-off). `revert` = the label's own display. */
+@container ms-zm (min-width: 17rem) {
+  .ms-atlas .ms-zm--atlas .ms-zm-pip > span,
+  .ms-atlas .ms-zm--atlas .ms-zm-scale > b {
+    display: revert;
+  }
+}
+/* phone landscape: the board takes the screen height. (100dvh - 17rem) left the 18 rem minimum = a 234 px board in a 390 px screen,
+   and its title ran out of room ('Map of Yeonmu Pla...'). Margins and the board follow the safe insets. */
+.ms-compact.ms-landscape .ms-atlas {
+  padding: calc(0.6rem + var(--safe-t)) calc(0.6rem + var(--safe-r)) calc(0.6rem + var(--safe-b)) calc(0.6rem + var(--safe-l));
+}
+.ms-compact.ms-landscape .ms-atlas-board {
+  width: min(34rem, calc(100dvh - 3.7rem - var(--safe-t) - var(--safe-b)));
+}
+.ms-compact.ms-landscape .ms-atlas-body {
+  padding: 0.7rem 0.7rem 0.8rem;
+}
+
+/* =====================================================================================================================
+   BUILD BOARD (the taskbar's relic button): a stone board over the bottom-right corner
+   ===================================================================================================================== */
+.ms-bb {
+  position: absolute;
+  right: calc(var(--hud-edge) + var(--safe-r));
+  bottom: calc(var(--tb-h) + var(--safe-b) + 0.9rem);
+  width: min(27rem, 92vw);
+  max-height: calc(100% - var(--tb-h) - 8rem);
+  display: flex;
+  z-index: 5;
+  animation: ms-rise-in 0.22s var(--ease-soft) both;
+}
+.ms-bb-board {
+  width: 100%;
+  min-height: 0;
+  filter: drop-shadow(0 0.4rem 0.9rem rgba(0, 0, 0, 0.65));
+}
+.ms-bb-body {
+  max-height: min(30rem, calc(100vh - var(--tb-h) - 13rem));
+  overflow-y: auto;
+  padding: 0.7rem 0.8rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.ms-bb-head {
+  margin: 0 0 0.35rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(var(--t-xs), var(--hud-min));
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+  border-bottom: 1px solid rgba(150, 140, 124, 0.25);
+  padding-bottom: 0.2rem;
+}
+.ms-bb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.8rem;
+}
+.ms-bb-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+.ms-hud .ms-bb .ms-slot {
+  --s: 2.4rem;
+  flex: none;
+}
+.ms-bb-txt {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+.ms-bb-txt b {
+  font-size: var(--t-sm);
+  font-weight: 700;
+  color: var(--k-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ms-bb-txt em {
+  font-style: normal;
+  font-size: max(var(--t-xs), var(--hud-min));
+  color: var(--k-text-3);
+}
+.ms-bb-empty {
+  margin: 0;
+  padding: 0.6rem 0.2rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+  text-align: center;
+}
+
+/* =====================================================================================================================
+   EDGE ARROWS
+   ===================================================================================================================== */
+.ms-hud-arrows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-ea {
+  position: absolute;
+  translate: -50% -50%;
+  width: 2.7rem;
+  height: 2.7rem;
+  filter: drop-shadow(0 0 0.45rem color-mix(in srgb, var(--ea-c, #fff) 52%, #ffc878)) drop-shadow(0 0.12rem 0.18rem rgba(0, 0, 0, 0.85));
+  animation: ms-ea-breathe 2.4s ease-in-out infinite;
+}
+.ms-ea--boss {
+  width: 3.1rem;
+  height: 3.1rem;
+  animation: ms-ea-breathe 1.8s ease-in-out infinite;
+}
+.ms-ea .ms-kicon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ms-ea-d {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  translate: -50% -0.2rem;
+  padding: 0 0.35rem;
+  font-size: max(var(--t-2xs), var(--hud-min));
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 1px 0 #000, 0 0 0.35rem #000;
+  background: rgba(8, 7, 6, 0.7);
+}
+.ms-ea.is-awake {
+  animation: ms-hud-arrow 0.85s ease-in-out infinite;
+}
+@keyframes ms-ea-breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 0.42rem color-mix(in srgb, var(--ea-c, #fff) 50%, #ffc878)) drop-shadow(0 0.12rem 0.18rem rgba(0, 0, 0, 0.85));
+  }
+  50% {
+    transform: translateY(-3px) scale(1.06);
+    filter: drop-shadow(0 0 0.72rem color-mix(in srgb, var(--ea-c, #fff) 75%, #ffe09a)) drop-shadow(0 0.16rem 0.22rem rgba(0, 0, 0, 0.9));
+  }
+}
+@keyframes ms-hud-arrow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.16);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-ea,
+  .ms-ea--boss,
+  .ms-ea.is-awake {
+    animation: none;
+  }
+}
+
+/* =====================================================================================================================
+   TOUCH JOYSTICK + FPS
+   ===================================================================================================================== */
+.ms-hud-joy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.ms-joy-base,
+.ms-joy-knob {
+  position: absolute;
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+/* the stick: the painted bronze orb ring as its base, a lens socket (uk_hud_coin) as the knob */
+.ms-joy-base,
+.ms-joy-ring {
+  background:
+    var(--tex-uk-orb, radial-gradient(circle, transparent 0 62%, #8b8378 64% 70%, #3a352e 72% 76%, transparent 78%)) center / 100% 100% no-repeat,
+    radial-gradient(circle, rgba(8, 7, 6, 0.46) 0 52%, rgba(8, 7, 6, 0.18) 66%, transparent 67%);
+  filter: drop-shadow(0 0.2rem 0.4rem rgba(0, 0, 0, 0.6));
+}
+.ms-joy-knob,
+.ms-joy-nub {
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255, 226, 160, 0.4), transparent 44%),
+    var(--tex-hud-coin, radial-gradient(circle at 36% 28%, #75705f, #2a2722 58%, #0c0b09)) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0.25rem 0.45rem rgba(0, 0, 0, 0.75));
+}
+.ms-joy-knob {
+  width: 4.1rem;
+  height: 4.1rem;
+}
+.ms-joy-hint {
+  position: absolute;
+  left: calc(2.4rem + var(--safe-l));
+  bottom: calc(var(--tb-h) + 3.6rem + var(--safe-b));
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-items: center;
+  opacity: 0.85;
+}
+.ms-joy-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+.ms-joy-nub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+.ms-joy-hint > span {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 50%;
+  translate: -50% 0;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: max(var(--t-xs), var(--hud-min));
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 #000, 0 0 0.4rem #000;
+}
+.ms-hud-fps {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--tb-h) + var(--safe-b) + 0.7rem);
+  translate: -50% 0;
+  padding: 0.05rem 0.7rem;
+  font-size: var(--t-sm);
+  color: #b8e0a0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================================================================================
+   SHARED CHIPS (hotkey / level / tags: one bronze plate) AND THE OFF-SCREEN POINTERS' TAGS
+   ===================================================================================================================== */
+.ms-hud {
+  --ch-hp: 1.4rem;
+  --ch-sm: 0.95rem;
+  --hud-lvl: var(--tex-hud-lvl, linear-gradient(180deg, #5a3b18, #2a1a0a));
+  --hud-tag: var(--tex-hud-tag, linear-gradient(180deg, #2a2118, #0f0c08));
+}
+.ms-hud .ms-tb .ms-orb-level,
+.ms-hud .ms-orb .ms-orb-level {
+  --pl-line: transparent;
+  --mh: 2.15rem;
+  min-width: var(--mh);
+  height: var(--mh);
+  padding: 0 0.2rem;
+  background: var(--hud-lvl) center / 100% 100% no-repeat;
+  color: #ffe7ac;
+  font-size: var(--tb-num);
+  text-shadow: 0 1px 0 #000, 0 0 0.25rem #000;
+  filter: drop-shadow(0 0.12rem 0.16rem rgba(0, 0, 0, 0.7));
+}
+.ms-hud .ms-medal--tag {
+  --pl-line: transparent;
+  background: var(--hud-lvl) center / 100% 100% no-repeat;
+  color: #f9e3ae;
+  padding: 0 0.3rem;
+  filter: drop-shadow(0 0.08rem 0.1rem rgba(0, 0, 0, 0.7));
+}
+.ms-hud .ms-orb-level::before,
+.ms-hud .ms-orb-level::after,
+.ms-hud .ms-medal--tag::before,
+.ms-hud .ms-medal--tag::after {
+  content: none;
+}
+/* the off-screen pointers' distance tags: the same plaque */
+.ms-hud .ms-ea-d {
+  min-width: 3.2rem;
+  padding: 0.2rem 0.6rem 0.16rem;
+  text-align: center;
+  color: #fbeccb;
+  background: var(--hud-tag) center / 100% 100% no-repeat;
+  clip-path: none;
+  text-shadow: 0 1px 0 #000, 0 0 0.25rem #000;
+  filter: drop-shadow(0 0.1rem 0.12rem rgba(0, 0, 0, 0.7));
+}
+.ms-hud .ms-ea-d::before,
+.ms-hud .ms-ea-d::after {
+  content: none;
+}
+/* corruption plate / row: the painted gauge keeps its own width */
+.ms-co .ms-hg {
+  width: 6.4rem;
+  flex: none;
+}
+.ms-co-full {
+  display: inline;
+}
+.ms-co-short {
+  display: none;
+}
+.ms-compact .ms-co-short {
+  display: none;
+}
+.ms-compact .ms-co-full {
+  display: inline;
+}
+.ms-compact .ms-co .ms-hg {
+  width: 4.6rem;
+}
+
+/* =====================================================================================================================
+   TABLET LANDSCAPE (aspect < 1.5, e.g. 1024 x 768 = 70 rem wide): the same strip with tighter parts
+   ===================================================================================================================== */
+.ms-tier-tablet.ms-landscape .ms-hud {
+  --tb-h: 4.6rem;
+  --tb-num: 15px;
+  --orb: 5.8rem;
+  --gw: 13.4rem;
+  --ch-hp: 1.2rem;
+  --ch-sm: 0.82rem;
+  --slot-s: 2.85rem;
+  --slot-gap: 0.55rem;
+  --eq-s: 2.2rem;
+  --btn-s: 3.3rem;
+  --lens: 2.1rem;
+}
+.ms-tier-tablet.ms-landscape .ms-tb {
+  column-gap: 1.1rem;
+}
+.ms-tier-tablet.ms-landscape .ms-tb-left {
+  gap: 1rem;
+}
+.ms-tier-tablet.ms-landscape .ms-tb-coin {
+  gap: 0.25rem;
+  padding: 0 0.2rem 0 0.1rem;
+}
+/* the damage coin keeps its lens + number from 90 rem; below that it is a lens (the number lives in its tooltip and the table) */
+.ms-tier-tablet.ms-landscape .ms-tb-coin--dps > b {
+  display: none;
+}
+.ms-tier-tablet.ms-landscape .ms-tb-btns {
+  gap: 0.3rem;
+}
+
+/* narrow desktop / laptop windows (e.g. 960 x 640 = 68 rem, aspect >= 1.5): adopt the same compact strip proportions as tablet landscape */
+@media (max-width: 1180px) {
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-hud {
+    --tb-h: 4.6rem;
+    --tb-num: 15px;
+    --orb: 5.8rem;
+    --gw: 13.4rem;
+    --ch-hp: 1.2rem;
+    --ch-sm: 0.82rem;
+    --slot-s: 2.85rem;
+    --slot-gap: 0.55rem;
+    --eq-s: 2.2rem;
+    --btn-s: 3.3rem;
+    --lens: 2.1rem;
+  }
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-tb {
+    column-gap: 1.1rem;
+  }
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-tb-left {
+    gap: 1rem;
+  }
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-tb-coin {
+    gap: 0.25rem;
+    padding: 0 0.2rem 0 0.1rem;
+  }
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-tb-coin--dps > b {
+    display: none;
+  }
+  .ms-landscape:not(.ms-compact):not(.ms-tier-tablet) .ms-tb-btns {
+    gap: 0.3rem;
+  }
+}
+
+/* =====================================================================================================================
+   PHONES: landscape (844 x 390) and portrait (390 x 844). Designed, not scaled: the parts are re-seated and re-sized.
+   ===================================================================================================================== */
+.ms-compact .ms-hud {
+  --hud-edge: 0.7rem;
+  --mm-size: 7rem;
+  --tb-num: 14px;
+  --lens: 2.2rem;
+  --btn-s: max(3.3rem, var(--tap));
+}
+.ms-compact.ms-landscape .ms-hud {
+  --tb-h: 4rem;
+  --mm-size: 7.8rem;
+  --orb: 5.3rem;
+  --ch-hp: 1rem;
+  --ch-sm: 0.84rem;
+  --slot-gap: 0.5rem;
+  /* side insets (notch, home bar) squeeze the strip: --tb-d is how much more room the parts need (vitals + coins 34.4 rem, quick slots
+     19.9, the Pause button, gaps and padding) than is left between the insets; the gauges, the coin lenses and the slots give it up in
+     that order, so the Pause button never ends inside an inset (844 px with 47 px insets was 22 px short) and 667-740 px screens fit */
+  --tb-d: max(0px, calc(57rem + var(--btn-s) + var(--safe-l) + var(--safe-r) - 100vw));
+  --gw: clamp(11.4rem, calc(13.4rem - var(--tb-d)), 13.4rem);
+  --lens: clamp(1.9rem, calc(2.2rem - max(0px, var(--tb-d) - 2rem) / 3), 2.2rem);
+  --slot-s: clamp(2.4rem, calc(2.8rem - max(0px, var(--tb-d) - 2.9rem) / 6), 2.8rem);
+}
+.ms-compact .ms-tb {
+  column-gap: 0.8rem;
+  padding: 0 calc(0.6rem + var(--safe-r)) 0 calc(0.5rem + var(--safe-l));
+}
+.ms-compact .ms-tb-left {
+  gap: 0.6rem;
+}
+.ms-compact .ms-tb-vitals {
+  margin-left: 0;
+}
+.ms-compact .ms-tb-gauges {
+  gap: 0.05rem;
+  margin-left: -0.1rem;
+}
+.ms-compact .ms-hg-label {
+  font-size: max(var(--hud-min), 12px);
+  padding: 0 0.4rem;
+}
+.ms-compact .ms-tb-coin {
+  gap: 0.2rem;
+  padding: 0 0.3rem;
+}
+.ms-compact .ms-tb-coin > b {
+  font-size: max(var(--t-md), 13px);
+}
+.ms-compact .ms-hud .ms-tb .ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: 1.25rem;
+  font-size: max(var(--t-xs), var(--hud-min));
+  right: 0.12rem;
+  bottom: 0.12rem;
+}
+/* a skill row of more than six seats (--sk-f < 1): the rank medals shrink with the seats so they do not cover the icons */
+.ms-hud .ms-tb .ms-tb-skills .ms-slot--k .ms-medal.ms-slot-rank,
+.ms-compact .ms-hud .ms-tb .ms-tb-skills .ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: calc(var(--sk-medal, 1.5rem) * var(--sk-f));
+  font-size: max(9.5px, calc(var(--sk-medal-f, var(--tb-num)) * var(--sk-f)));
+  padding: 0 calc(0.22rem * var(--sk-f));
+}
+/* nine or ten seats (the basic, six actives and 2-3 ultimates): the seats are ~30 px, the (decorative: the skills cast themselves) hotkey numerals would cover the icons */
+.ms-tb-skills[data-dense] .ms-slot-key {
+  display: none;
+}
+.ms-compact .ms-tb-skills {
+  --sk-medal: 1.25rem;
+  --sk-medal-f: max(var(--t-xs), var(--hud-min));
+}
+.ms-compact .ms-tb-btn {
+  --pl-c: 0.7rem;
+  --pl-bw: 2.5px;
+}
+.ms-compact .ms-tb-art {
+  inset: 3px;
+  clip-path: polygon(0.6rem 0, calc(100% - 0.6rem) 0, 100% 0.6rem, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0.6rem 100%, 0 calc(100% - 0.6rem), 0 0.6rem);
+}
+.ms-compact .ms-hud .ms-bs .ms-slot--sm {
+  --s: 2.2rem;
+}
+.ms-compact .ms-hud .ms-bs .ms-slot--xs {
+  --s: 1.7rem;
+}
+.ms-compact .ms-bs {
+  gap: 0.3rem;
+  max-width: 17rem;
+}
+.ms-compact .ms-bs-row {
+  gap: 0.32rem;
+}
+.ms-bs-gem {
+  display: inline-grid;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.ms-bs-gem .ms-tb-ico {
+  width: 100%;
+  height: 100%;
+}
+/* the top-centre tablet on phones */
+.ms-compact .ms-hud-tc {
+  gap: 0.4rem;
+  width: min(32rem, 46vw);
+}
+.ms-compact .ms-tc,
+.ms-compact .ms-tm {
+  --pl-c: 0.65rem;
+  min-width: 11rem;
+}
+.ms-compact .ms-tc-time,
+.ms-compact .ms-tm {
+  grid-auto-flow: column;
+  align-items: center;
+  column-gap: 0.8rem;
+  padding: 0.18rem 1.2rem 0.26rem;
+}
+.ms-compact .ms-tm-time {
+  font-size: 1.9rem;
+}
+.ms-compact .ms-tm-next {
+  margin-top: 0;
+  font-size: max(var(--t-sm), var(--hud-min));
+}
+.ms-compact .ms-bp {
+  gap: 0.55rem;
+  padding: 0.45rem 0.8rem 0.4rem 0.5rem;
+}
+.ms-compact .ms-bp-seal {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+.ms-compact .ms-bp-seal .ms-kicon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.ms-compact .ms-bp-seal--card .ms-slot {
+  --s: 2.8rem;
+}
+.ms-compact .ms-bp-title {
+  font-size: var(--t-md);
+}
+.ms-compact .ms-bp-epithet {
+  display: none;
+}
+.ms-compact .ms-bp-phases span {
+  display: none;
+}
+.ms-compact .ms-tc-an-head {
+  padding: 0.3rem 0.9rem 0;
+  gap: 0 0.6rem;
+}
+.ms-compact .ms-an-eyebrow {
+  font-size: max(var(--t-xs), var(--hud-min));
+  letter-spacing: 0.2em;
+}
+.ms-compact .ms-an-title {
+  font-size: var(--t-lg);
+}
+.ms-compact .is-big .ms-an-title {
+  font-size: var(--t-xl);
+}
+.ms-compact .ms-an-sub {
+  padding: 0 0.9rem 0.35rem;
+  font-size: max(var(--t-sm), var(--hud-min));
+}
+.ms-compact .ms-tc-an-head:last-child {
+  padding-bottom: 0.35rem;
+}
+/* corruption keeps its word on a phone, never a lone flame */
+.ms-compact .ms-co {
+  gap: 0.3rem;
+  padding: 0.28rem 0.6rem 0.28rem 0.5rem;
+}
+.ms-compact .ms-co-label {
+  display: inline;
+  letter-spacing: 0.04em;
+  font-size: var(--hud-min);
+}
+.ms-compact .ms-co > b {
+  min-width: 0;
+}
+.ms-compact .ms-joy-hint {
+  width: 6.4rem;
+  height: 6.4rem;
+  left: calc(1.4rem + var(--safe-l));
+}
+.ms-compact .ms-joy-knob {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+/* landscape phone: the joystick hint stands clear above the orb (and is a no-go zone for the off-screen pointers) */
+.ms-compact.ms-landscape .ms-joy-hint {
+  left: calc(4.2rem + var(--safe-l));
+  bottom: calc(var(--tb-h) + 4.4rem + var(--safe-b));
+}
+.ms-compact .ms-hud .ms-ea-d {
+  --pl-c: 0.3rem;
+}
+/* phones: ONE continuous slab (no blocks repeating behind the slots) */
+.ms-compact .ms-tb-blk:not(:first-child) {
+  display: none;
+}
+.ms-compact .ms-tb-blk > i {
+  filter: none;
+}
+
+/* ---- phone portrait: vitals | minimap on top, then the clock plate with its corruption line; the strip keeps two rows
+   (coins over the quick slots) and the menu button ------------------------------------------------------------------------ */
+.ms-portrait .ms-hud {
+  --tb-h: 7.7rem;
+  --hud-edge: 0.85rem;
+  --mm-size: 8rem;
+  --top-block: 11.6rem;
+  --orb: 4.7rem;
+  --gw: 11.2rem;
+  --ch-hp: 1.05rem;
+  --ch-sm: 0.8rem;
+  --slot-s: 3rem;
+  --slot-gap: 0.42rem;
+}
+.ms-portrait .ms-tb,
+.ms-portrait .ms-tb-left,
+.ms-portrait .ms-tb-center,
+.ms-portrait .ms-tb-right {
+  display: contents;
+}
+/* .ms-tb is display: contents here, so the strip is placed against the HUD (the screen) and not against the bar: the base rule's -safe-b only
+   cancels the bar's own safe-b lift, here it pushed the strip 34 px off the screen on a Face-ID iPhone while the coins, slots and buttons rose. */
+.ms-portrait .ms-tb-strip {
+  bottom: 0;
+}
+.ms-portrait .ms-tb-coins::before,
+.ms-portrait .ms-tb-center::before,
+.ms-portrait .ms-tb-center::after,
+.ms-portrait .ms-tb-skills::before,
+.ms-portrait .ms-tb-skills::after,
+.ms-portrait .ms-tb-btns::before {
+  display: none;
+}
+.ms-portrait .ms-tb-vitals {
+  position: absolute;
+  left: calc(var(--hud-edge) + var(--safe-l));
+  top: calc(var(--hud-edge) + var(--safe-t));
+  height: auto;
+  align-items: center;
+  gap: 0.25rem;
+}
+.ms-portrait .ms-tb-orb {
+  align-self: center;
+  margin: 0;
+}
+.ms-portrait .ms-tb-gauges {
+  margin-left: -0.2rem;
+}
+/* coin ledge: the coins sit straight on the slab above the quick slots, centred */
+.ms-portrait .ms-tb-coins {
+  position: absolute;
+  left: 50%;
+  bottom: calc(4.55rem + var(--safe-b));
+  translate: -50% 0;
+  height: 2.9rem;
+}
+.ms-portrait .ms-tb-coin > b {
+  font-size: max(var(--t-md), 14px);
+}
+.ms-portrait .ms-tb-skills {
+  position: absolute;
+  left: calc(0.75rem + var(--safe-l));
+  bottom: calc(0.95rem + var(--safe-b));
+  justify-self: auto;
+  height: auto;
+  /* reserve left edge (0.75rem) + Pause button (var(--btn-s)) + right edge (0.6rem) + clear gutter including 0.2rem seat bezel (0.8rem) = 2.15rem */
+  --sk-budget: calc(100vw - var(--safe-l) - var(--safe-r) - var(--btn-s) - 2.15rem);
+  --sk-units: calc(1.14 * var(--sk-n, 6) - 0.14);
+  --sk-s: min(calc(var(--slot-s) * var(--sk-f)), calc(var(--sk-budget) / var(--sk-units)));
+  gap: calc(var(--sk-s) * 0.14);
+}
+.ms-portrait .ms-tb-btns {
+  position: absolute;
+  right: calc(0.6rem + var(--safe-r));
+  bottom: calc(1rem + var(--safe-b));
+}
+.ms-portrait .ms-tb-auto {
+  position: absolute;
+  right: calc(0.6rem + var(--safe-r));
+  bottom: calc(var(--tb-h) + 0.55rem + var(--safe-b));
+  margin-left: 0;
+  height: max(2.4rem, var(--tap));
+  padding: 0 0.72rem;
+  max-width: calc(100vw - var(--safe-l) - var(--safe-r) - 1.2rem);
+  z-index: 3;
+}
+.ms-portrait .ms-hud-tc {
+  top: calc(var(--hud-edge) + var(--safe-t) + 10.9rem);
+  width: min(19rem, calc(100% - 7rem));
+}
+.ms-portrait .ms-hud-tr {
+  gap: 0.4rem;
+  top: calc(var(--hud-edge) + var(--safe-t));
+}
+.ms-portrait .is-big .ms-an-title {
+  font-size: var(--t-xl);
+}
+.ms-portrait .ms-ea,
+.ms-portrait .ms-ea--boss {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.ms-portrait .ms-joy-hint {
+  left: 50%;
+  translate: -50% 0;
+  bottom: calc(var(--tb-h) + max(2.4rem, var(--tap)) + 1.2rem + var(--safe-b));
+}
+.ms-portrait .ms-sk-cues {
+  bottom: calc(var(--tb-h) + max(2.4rem, var(--tap)) + 1rem + var(--safe-b));
+}
+.ms-hud-tmp {
+  position: absolute;
+  left: calc(var(--hud-edge) + var(--safe-l));
+  top: calc(var(--hud-edge) + var(--safe-t) + 5.55rem);
+  width: calc(100% - var(--mm-size) - var(--hud-edge) * 2 - var(--safe-l) - var(--safe-r) - 0.55rem);
+}
+.ms-portrait .ms-hud-tmp .ms-tm {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.2rem 0.9rem 0.3rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-auto-flow: row;
+  justify-items: start;
+  column-gap: 0.7rem;
+}
+.ms-portrait .ms-hud-tmp .ms-tm-next {
+  justify-self: end;
+  align-self: center;
+  text-align: right;
+  font-size: max(var(--t-xs), var(--hud-min));
+  min-width: 0;
+}
+.ms-portrait .ms-hud-tmp .ms-tm-next span {
+  overflow-wrap: anywhere;
+}
+.ms-portrait .ms-hud-tmp .ms-tm-time {
+  font-size: 1.75rem;
+}
+.ms-tm-co {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.12rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(150, 140, 124, 0.2);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.6);
+  color: #ffcf9a;
+  pointer-events: auto;
+}
+.ms-tm-co .ms-kicon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+.ms-tm-co .ms-hg {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+}
+.ms-tm-co > b {
+  min-width: 2.2rem;
+  text-align: right;
+  font-size: max(var(--t-sm), var(--hud-min));
+}
+.ms-tm-co.is-high {
+  color: #ff9a84;
+  animation: ms-hud-soon 1.2s ease-in-out infinite;
+}
+/* passives: a bare column down the left edge; the misc column (stones / trinkets) opens beside it */
+.ms-portrait .ms-hud-tl {
+  top: calc(var(--hud-edge) + var(--safe-t) + 10.7rem);
+}
+.ms-portrait .ms-bs {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.45rem;
+  max-width: none;
+}
+.ms-portrait .ms-bs-row {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+.ms-portrait .ms-bs-sep {
+  align-self: auto;
+  width: 1.4rem;
+  height: 2px;
+  margin: 0.1rem 0.1rem;
+}
+/* the centre column (boss row, banners) leaves the left edge to the passive column and starts below the top block */
+.ms-portrait .ms-hud-tc {
+  top: calc(var(--hud-edge) + var(--safe-t) + 10.9rem);
+  width: min(19rem, calc(100% - 7rem));
+}
+.ms-compact.ms-landscape .ms-co {
+  gap: 0.35rem;
+}
+
+/* ---- skill cast feedback (minimal slot burst + subtle floating pill above taskbar) & auto-cast toggle ------------------ */
+.ms-tb-sk {
+  cursor: pointer;
+}
+.ms-tb-fire-host {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+.ms-tb-fire {
+  position: absolute;
+  inset: -3px;
+  pointer-events: none;
+  border: 2px solid #ffe49c;
+  box-shadow: 0 0 0.6rem rgba(255, 214, 118, 0.78), inset 0 0 0.45rem rgba(255, 232, 168, 0.45);
+  animation: ms-tb-fire-pop 0.38s ease-out both;
+}
+.ms-tb-fire.is-basic {
+  border-width: 1.5px;
+  border-color: rgba(255, 236, 186, 0.72);
+  box-shadow: 0 0 0.3rem rgba(255, 224, 148, 0.4);
+  animation-duration: 0.22s;
+}
+@keyframes ms-tb-fire-pop {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.96);
+  }
+  45% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.16);
+  }
+}
+
+.ms-tb-auto {
+  position: absolute;
+  right: calc(0.9rem + var(--safe-r));
+  bottom: calc(var(--tb-h) + 0.5rem);
+  z-index: 3;
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2.35rem;
+  margin-left: 0;
+  padding: 0 0.72rem;
+  font-family: var(--f-head);
+  font-size: max(12px, var(--t-xs));
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #cfe0f2;
+  background: linear-gradient(180deg, #25303c, #121820);
+  border: 1.5px solid #59728b;
+  box-shadow:
+    inset 0 1px 0 rgba(190, 224, 255, 0.22),
+    0 1px 4px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.ms-compact.ms-landscape .ms-tb-auto {
+  right: calc(0.6rem + var(--safe-r));
+  bottom: calc(var(--tb-h) + 0.45rem);
+  height: max(2.2rem, var(--tap));
+}
+.ms-tb-auto:hover {
+  color: #eef6ff;
+  border-color: #88aed4;
+}
+.ms-tb-auto-dot {
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 50%;
+  background: #6fb2f0;
+  box-shadow: 0 0 0.32rem rgba(111, 178, 240, 0.75);
+}
+.ms-tb-auto.is-on {
+  color: #fff3c2;
+  border-color: #f0b840;
+  background: linear-gradient(180deg, #563a14, #281a08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 236, 176, 0.35),
+    0 0 0.75rem rgba(245, 184, 58, 0.52),
+    0 1px 4px rgba(0, 0, 0, 0.85);
+}
+.ms-tb-auto.is-on:hover {
+  color: #fff9e2;
+  border-color: #ffd56b;
+}
+.ms-tb-auto.is-on .ms-tb-auto-dot {
+  background: #5ef28f;
+  box-shadow: 0 0 0.45rem #42e87a, 0 0 0.9rem rgba(66, 232, 122, 0.55);
+  animation: ms-auto-pulse 1.4s ease-in-out infinite;
+}
+@keyframes ms-auto-pulse {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+.ms-sk-cues {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--tb-h) + var(--safe-b) + 0.85rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: none;
+  z-index: 4;
+}
+.ms-sk-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.24rem 0.68rem 0.24rem 0.34rem;
+  background: linear-gradient(180deg, rgba(24, 20, 15, 0.82), rgba(12, 10, 8, 0.88));
+  border: 1px solid color-mix(in srgb, var(--cue-c, #e6c47c) 58%, #3c3428);
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 240, 210, 0.14);
+  animation: ms-sk-cue-rise 1.15s ease-out both;
+}
+.ms-sk-cue-ico {
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 1px solid rgba(255, 234, 184, 0.35);
+  overflow: hidden;
+  background: #0d0b09;
+}
+.ms-sk-cue-ico > img,
+.ms-sk-cue-ico > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ms-sk-cue-name {
+  font-family: var(--f-head);
+  font-size: max(12.5px, var(--t-xs));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f7ebd0;
+  text-shadow: 0 1px 2px #000;
+  white-space: nowrap;
+}
+@keyframes ms-sk-cue-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.95);
+  }
+  14% {
+    opacity: 0.96;
+    transform: translateY(0) scale(1);
+  }
+  74% {
+    opacity: 0.92;
+    transform: translateY(-4px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+}

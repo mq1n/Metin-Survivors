@@ -1,0 +1,655 @@
+
+
+/* ---- Buttons ---------------------------------------------------------------------------------------------------- */
+.ms-kbtn {
+  --bh: 2.75rem;
+  --kb-pad-x: 1.4rem;
+  --kb-pad-y: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--bh);
+  padding: var(--kb-pad-y) var(--kb-pad-x);
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9), 0 0 0.5rem rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: color 0.12s, filter 0.12s;
+}
+.ms-kbtn--small {
+  --bh: 2.15rem;
+  --kb-pad-x: 1rem;
+  --kb-pad-y: 0.2rem;
+  --pl-c: 0.26rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.07em;
+}
+.ms-kbtn--big {
+  --bh: 3.6rem;
+  --kb-pad-x: 2.6rem;
+  --kb-pad-y: 0.5rem;
+  --pl-c: 0.5rem;
+  font-size: var(--t-lg);
+  letter-spacing: 0.12em;
+}
+.ms-kbtn:not(.ms-kbtn--small):not(.ms-kbtn--big) {
+  --pl-c: 0.34rem;
+}
+.ms-kbtn--block {
+  display: flex;
+  width: 100%;
+}
+.ms-kbtn--icon {
+  min-width: var(--bh);
+  --kb-pad-x: 0.4rem;
+}
+.ms-kbtn--left {
+  justify-content: flex-start;
+  text-align: left;
+}
+.ms-kbtn-mark {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  margin-left: -0.15em;
+  opacity: 0.92;
+}
+.ms-kbtn-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+.ms-kbtn-sub {
+  display: block;
+  margin-top: 0.1rem;
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: var(--t-xs);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.85);
+}
+
+/* hover / pressed / disabled: the plate tokens move, nothing else (hover only where a pointer can hover) */
+@media (hover: hover) {
+  .ms-kbtn.ms-plate:not([disabled]):not([aria-disabled='true']):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    color: var(--k-gold);
+  }
+}
+.ms-kbtn.ms-plate:not([disabled]):not([aria-disabled='true']):active {
+  --pl-veil: var(--k-stone-veil-press);
+  --pl-hi: var(--k-stone-shade);
+  --pl-lo: var(--k-stone-edge);
+  padding-top: calc(var(--kb-pad-y) + 1px);
+  padding-bottom: calc(var(--kb-pad-y) - 1px);
+}
+.ms-kbtn[disabled],
+.ms-kbtn[aria-disabled='true'] {
+  cursor: not-allowed;
+  /* a disabled plate stays dim (dark veil, ink well below --k-text) but its label is still readable: #b0a796 is ~4.9:1 on the stone, --k-text-off was 3.3:1 */
+  color: #b0a796;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+}
+.ms-kbtn.ms-plate[disabled],
+.ms-kbtn.ms-plate[aria-disabled='true'] {
+  /* settle: with the label at ~4.9:1 the plate has to say "off" itself (blind critic: SAVE NAME / JOIN ROOM looked nearly enabled): a much darker
+     veil sinks the stone to a recessed slab (the label gains contrast on it, so the ink stays this dim) and the bevel lights go out */
+  --pl-veil: rgba(8, 7, 6, 0.8);
+  --pl-hi: var(--k-pewter-lo);
+  --pl-mid: #1f1d1b;
+  --pl-lo: #141210;
+}
+
+/* primary: matte lacquer plate, gilded edge. One per screen. No brush-streak gloss band: a soft top sheen + grain only */
+.ms-kbtn--primary {
+  --pl-line: #1d0705;
+  --pl-hi: var(--k-lac-rim-hi);
+  --pl-mid: var(--k-lac-rim);
+  --pl-lo: var(--k-lac-rim-lo);
+  --pl-sheen: linear-gradient(180deg, rgba(255, 206, 170, 0.2), rgba(255, 206, 170, 0) 46%, rgba(30, 0, 0, 0.3));
+  --pl-veil: rgba(74, 11, 7, 0.78);
+  --pl-face: var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-lacquer, var(--k-grain-dark)) 0 0 / 11rem, linear-gradient(180deg, #a02416, #62120b);
+  color: #fbeccb;
+  text-shadow: 0 1px 0 rgba(48, 6, 2, 0.95), 0 0 0.6rem rgba(255, 160, 110, 0.2);
+}
+@media (hover: hover) {
+  .ms-kbtn--primary.ms-plate:not([disabled]):not([aria-disabled='true']):hover {
+    --pl-veil: rgba(74, 11, 7, 0.52);
+    color: #fff4d8;
+    filter: brightness(1.1);
+  }
+}
+.ms-kbtn--primary.ms-plate:not([disabled]):not([aria-disabled='true']):active {
+  --pl-veil: rgba(40, 4, 2, 0.74);
+  --pl-hi: var(--k-lac-rim-lo);
+  --pl-lo: var(--k-lac-rim);
+}
+.ms-kbtn--primary[disabled],
+.ms-kbtn--primary[aria-disabled='true'] {
+  filter: saturate(0.2) brightness(0.72);
+  color: #b8a99a;
+}
+
+/* danger: crimson plate with a skull mark */
+.ms-kbtn--danger {
+  --pl-line: #120305;
+  --pl-hi: #b8aaa3;
+  --pl-mid: #6c5855;
+  --pl-lo: #1c0c0d;
+  --pl-veil: rgba(34, 3, 6, 0.8);
+  --pl-face: var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-lacquer, var(--k-grain-dark)) 0 0 / 11rem, linear-gradient(180deg, #5c0f14, #2a0507);
+  color: #ffe0d8;
+  text-shadow: 0 1px 0 rgba(30, 2, 3, 0.95);
+}
+@media (hover: hover) {
+  .ms-kbtn--danger.ms-plate:not([disabled]):not([aria-disabled='true']):hover {
+    --pl-veil: rgba(34, 3, 6, 0.5);
+    color: #fff0ea;
+  }
+}
+
+/* stone + is-active: a lit plate (gilded edge, gold label) for the selected / toggled-on state */
+.ms-kbtn--stone.is-active {
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  --pl-veil: rgba(62, 26, 10, 0.34);
+  color: var(--k-gold);
+}
+
+/* text button (variant ghost): no plate, gold label, a hairline that draws in on hover */
+.ms-kbtn--text {
+  --kb-pad-x: 0.9rem;
+  color: var(--k-gold);
+  border-radius: 0.2rem;
+  background: linear-gradient(currentColor, currentColor) 50% calc(100% - 0.28rem) / 0 1px no-repeat;
+  transition: color 0.12s, background-size 0.2s var(--ease-soft);
+}
+@media (hover: hover) {
+  .ms-kbtn--text:not([disabled]):not([aria-disabled='true']):hover {
+    color: var(--c-gold-hi);
+    background-size: calc(100% - 1.4rem) 1px;
+  }
+}
+.ms-kbtn--text:not([disabled]):not([aria-disabled='true']):active {
+  color: #ffffff;
+  translate: 0 1px;
+}
+.ms-kbtn--text.is-active {
+  color: var(--c-gold-hi);
+  background-size: calc(100% - 1.4rem) 1px;
+}
+
+/* touch: the whole 44 px is the target (small plates grow, the drawn plate stays) */
+.ms-touch .ms-kbtn {
+  min-height: var(--k-tap);
+}
+.ms-touch .ms-kbtn--icon {
+  min-width: var(--k-tap);
+}
+
+/* ---- Tabs ------------------------------------------------------------------------------------------------------- */
+.ms-ktabs {
+  display: flex;
+  gap: 0.4rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.ms-ktab {
+  --pl-c: 0.3rem;
+  --pl-veil: rgba(14, 13, 12, 0.5);
+  --pl-hi: var(--k-pewter);
+  --pl-mid: var(--k-pewter-lo);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.3rem 1.15rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* idle ink: --k-text-2 (#c4baa6), not --k-text-3: the plate's lightest grain read the old ink at 3.2:1 (phone gate 2); the lit tab is gold, a hover is --k-text */
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: color 0.12s;
+}
+@media (hover: hover) {
+  .ms-ktab:not(.is-active):not([disabled]):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    --pl-hi: var(--k-stone-edge-hi);
+    color: var(--k-text);
+  }
+}
+.ms-ktab:not([disabled]):active {
+  --pl-hi: var(--k-stone-shade);
+  --pl-lo: var(--k-stone-edge);
+}
+.ms-ktab.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.3);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  color: var(--k-gold);
+}
+.ms-ktab[disabled] {
+  --pl-veil: rgba(10, 9, 8, 0.62);
+  --pl-hi: var(--k-pewter-lo);
+  --pl-mid: #1d1b19;
+  color: var(--k-text-off);
+  cursor: not-allowed;
+}
+.ms-ktab-badge {
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.3rem;
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: var(--t-2xs);
+  line-height: 1;
+  color: #fff4d8;
+  background: linear-gradient(180deg, #b32a1c, #6c140d);
+  clip-path: polygon(0.18rem 0, calc(100% - 0.18rem) 0, 100% 0.18rem, 100% calc(100% - 0.18rem), calc(100% - 0.18rem) 100%, 0.18rem 100%, 0 calc(100% - 0.18rem), 0 0.18rem);
+}
+.ms-touch .ms-ktab {
+  min-height: var(--k-tap);
+}
+
+/* ---- Slider: engraved groove, bronze knob, ticks, value bubble while dragging ----------------------------------- */
+.ms-kslider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 2.2rem;
+  touch-action: none;
+  cursor: pointer;
+}
+.ms-kslider-rail {
+  position: relative;
+  flex: 1;
+  height: 1.6rem;
+  margin: 0 0.75rem;
+}
+.ms-kslider-groove {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0.7rem;
+  translate: 0 -50%;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #060504;
+  box-shadow:
+    inset 1px 1px 0 #000,
+    inset 0 0.14rem 0.3rem rgba(0, 0, 0, 0.9),
+    inset -1px -1px 0 rgba(150, 140, 124, 0.32),
+    0 0 0 1px #050404,
+    0 2px 0 0 rgba(150, 140, 124, 0.3);
+}
+.ms-kslider-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(180deg, #4d2f0c 0%, #f1c36a 24%, #c58a2c 52%, #7c501a 82%, #3a2208);
+  box-shadow: inset 0 1px 0 rgba(255, 236, 190, 0.5), inset -1px 0 0 rgba(255, 220, 150, 0.6), 0 0 0.5rem rgba(232, 163, 58, 0.5);
+}
+.ms-kslider-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% + 0.52rem);
+  height: 0.3rem;
+  pointer-events: none;
+  opacity: 0.75;
+  background:
+    linear-gradient(90deg, transparent calc(100% - 1px), #b6ab96 0) 0 0 / 100% 100% no-repeat,
+    linear-gradient(90deg, #b6ab96 0 1px, transparent 1px) 0 0 / calc(100% / var(--ticks, 10)) 100% repeat-x;
+}
+.ms-kslider-knob {
+  --pl-c: 0.36rem;
+  --pl-hi: #ecd29a;
+  --pl-mid: #a37c45;
+  --pl-lo: #2d1d0b;
+  --pl-line: #0a0705;
+  --pl-face:
+    radial-gradient(circle at 50% 50%, #14100a 0 0.1rem, rgba(20, 16, 10, 0.55) 0.13rem, transparent 0.2rem),
+    linear-gradient(180deg, rgba(255, 244, 214, 0.3), rgba(255, 244, 214, 0) 48%, rgba(0, 0, 0, 0.32)),
+    linear-gradient(180deg, #a88050, #6e4c26 56%, #43301a);
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  translate: -50% -50%;
+  transition: scale 0.12s;
+}
+@media (hover: hover) {
+  .ms-kslider:hover .ms-kslider-knob {
+    scale: 1.08;
+  }
+}
+.ms-kslider.is-drag .ms-kslider-knob {
+  scale: 1.12;
+  --pl-hi: #fff0c4;
+}
+.ms-kslider-bubble {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  translate: -50% 0;
+  padding: 0.12rem 0.55rem;
+  min-width: 2.4rem;
+  text-align: center;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: var(--t-md);
+  line-height: 1.2;
+  color: var(--k-gold);
+  background: #0b0908;
+  border: 1px solid var(--k-pewter);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px #000, 0 0.25rem 0.5rem rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  scale: 0.9;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  transition: opacity 0.1s, scale 0.1s;
+}
+.ms-kslider-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  translate: -50% 0;
+  border: 0.28rem solid transparent;
+  border-top-color: var(--k-pewter);
+}
+.ms-kslider.is-drag .ms-kslider-bubble,
+.ms-kslider:focus-visible .ms-kslider-bubble {
+  opacity: 1;
+  scale: 1;
+}
+.ms-kslider-value {
+  min-width: 3.4rem;
+  padding: 0.12rem 0.5rem;
+  text-align: right;
+  font-size: var(--t-md);
+  color: var(--k-gold);
+  background: var(--k-well);
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 rgba(150, 140, 124, 0.3), inset 0 0.12rem 0.25rem rgba(0, 0, 0, 0.7);
+}
+.ms-touch .ms-kslider {
+  min-height: var(--k-tap);
+}
+.ms-ui .ms-kslider[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-kslider[data-nav]:focus {
+  box-shadow: none;
+}
+.ms-ui .ms-kslider[data-nav]:focus-visible .ms-kslider-knob,
+.ms-ui.ms-kbd .ms-kslider[data-nav]:focus .ms-kslider-knob {
+  filter: var(--focus-glow);
+}
+
+/* ---- Toggle: stone track (recessed), plate knob, ON / OFF word -------------------------------------------------- */
+.ms-ktoggle {
+  --tg-c: 0.4rem;
+  --tg-knob: 2.15rem;
+  position: relative;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  height: 2.1rem;
+  padding: 0 0.7rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ms-ktoggle-track {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #837b6e, #3d3935 55%, #5a554d);
+  clip-path: polygon(var(--tg-c) 0, calc(100% - var(--tg-c)) 0, 100% var(--tg-c), 100% calc(100% - var(--tg-c)), calc(100% - var(--tg-c)) 100%, var(--tg-c) 100%, 0 calc(100% - var(--tg-c)), 0 var(--tg-c));
+}
+.ms-ktoggle-track::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(180deg, #050404, #11100e);
+  box-shadow: inset 0 0.22rem 0.4rem rgba(0, 0, 0, 0.95);
+  clip-path: polygon(calc(var(--tg-c) - 1px) 0, calc(100% - var(--tg-c) + 1px) 0, 100% calc(var(--tg-c) - 1px), 100% calc(100% - var(--tg-c) + 1px), calc(100% - var(--tg-c) + 1px) 100%, calc(var(--tg-c) - 1px) 100%, 0 calc(100% - var(--tg-c) + 1px), 0 calc(var(--tg-c) - 1px));
+  transition: background 0.18s;
+}
+.ms-ktoggle[aria-checked='true'] .ms-ktoggle-track::before {
+  background: linear-gradient(180deg, #4a0c07, #8a2216 55%, #6a160d);
+  box-shadow: inset 0 0.22rem 0.4rem rgba(20, 0, 0, 0.85), inset 0 0 0.7rem rgba(255, 120, 70, 0.25);
+}
+.ms-ktoggle-knob {
+  --pl-c: 0.34rem;
+  --pl-hi: #d6d0c4;
+  --pl-mid: #8a8579;
+  --pl-lo: #26231f;
+  position: absolute;
+  top: 0.22rem;
+  bottom: 0.22rem;
+  left: 0.22rem;
+  width: var(--tg-knob);
+  transition: left 0.18s var(--ease-out);
+}
+.ms-ktoggle[aria-checked='true'] .ms-ktoggle-knob {
+  left: calc(100% - var(--tg-knob) - 0.22rem);
+  --pl-hi: #ecd29a;
+  --pl-mid: #a37c45;
+  --pl-lo: #2d1d0b;
+  --pl-veil: rgba(62, 26, 10, 0.2);
+}
+/* both words share one grid cell: the wider (any language) sizes the control; the knob's room is reserved on one side */
+.ms-ktoggle-words {
+  position: relative;
+  display: grid;
+  padding-left: calc(var(--tg-knob) + 0.2rem);
+  pointer-events: none;
+}
+.ms-ktoggle[aria-checked='true'] .ms-ktoggle-words {
+  padding-left: 0;
+  padding-right: calc(var(--tg-knob) + 0.2rem);
+}
+.ms-ktoggle-word {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  text-align: center;
+  font-family: var(--f-head);
+  font-weight: 800;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+.ms-ktoggle-word.is-shown {
+  visibility: visible;
+}
+.ms-ktoggle[aria-checked='true'] .ms-ktoggle-word.is-shown {
+  color: #ffe9c8;
+  text-shadow: 0 1px 0 rgba(40, 4, 2, 0.9);
+}
+.ms-ui .ms-ktoggle[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-ktoggle[data-nav]:focus {
+  box-shadow: none;
+  filter: var(--focus-glow);
+}
+
+/* ---- Segmented: bevel plates in a recessed trough ----------------------------------------------------------------- */
+.ms-kseg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 3px;
+  background: var(--k-well-2);
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.2), inset 0 0.25rem 0.7rem rgba(0, 0, 0, 0.55);
+}
+.ms-kseg-btn {
+  --pl-c: 0.26rem;
+  --pl-veil: rgba(14, 13, 12, 0.5);
+  --pl-hi: var(--k-pewter);
+  --pl-mid: var(--k-pewter-lo);
+  min-height: 2.1rem;
+  padding: 0.3rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: color 0.12s;
+}
+@media (hover: hover) {
+  .ms-kseg-btn:not(.is-active):not([disabled]):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    color: var(--k-text);
+  }
+}
+.ms-kseg-btn.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.3);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  color: var(--k-gold);
+}
+.ms-kseg-btn[disabled] {
+  --pl-veil: rgba(10, 9, 8, 0.62);
+  --pl-hi: var(--k-pewter-lo);
+  --pl-mid: #1d1b19;
+  color: var(--k-text-off);
+  cursor: not-allowed;
+}
+.ms-touch .ms-kseg-btn {
+  min-height: var(--k-tap);
+}
+
+/* ---- Text input: recessed well ------------------------------------------------------------------------------------ */
+.ms-kinput {
+  width: 100%;
+  min-height: 2.6rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: var(--t-lg);
+  letter-spacing: 0.04em;
+  color: var(--k-gold);
+  background-color: var(--k-well);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 40%);
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.26), inset 0 0.18rem 0.5rem rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 240, 220, 0.06);
+  outline: none;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.ms-ui .ms-kinput[data-nav]:focus,
+.ms-ui .ms-kinput[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-kinput[data-nav]:focus {
+  border-color: var(--k-lac-rim);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset 0 0.18rem 0.5rem rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(240, 205, 120, 0.55), 0 0 1rem rgba(240, 205, 120, 0.22);
+}
+.ms-kinput::placeholder {
+  color: var(--k-text-off);
+}
+.ms-kinput--code {
+  font-family: var(--f-num);
+  font-size: var(--t-xl);
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ms-touch .ms-kinput {
+  min-height: var(--k-tap);
+}
+
+/* ---- Field row ---------------------------------------------------------------------------------------------------- */
+.ms-kfield {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(10rem, 1.4fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 240, 220, 0.05);
+}
+.ms-kfield-label {
+  font-size: var(--t-md);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--k-text);
+}
+.ms-kfield-hint {
+  display: block;
+  font-size: var(--t-xs);
+  font-weight: 400;
+  color: var(--k-text-3);
+}
+
+/* ---- Key hint plate (KeyHint inside a kit scope) --------------------------------------------------------------------- */
+.ms-kkey {
+  --pl-c: 0.2rem;
+  --pl-bw: 1px;
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.4rem;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+.ms-touch .ms-kkey--kbd {
+  display: none;
+}
+
+/* ---- Scrollbar (kit scope): pewter thumb in a dark groove ------------------------------------------------------------ */
+.ms-kit .ms-scroll,
+.ms-board .ms-scroll,
+.ms-thinboard .ms-scroll {
+  scrollbar-color: #6b655a rgba(0, 0, 0, 0.5);
+}
+.ms-kit .ms-scroll::-webkit-scrollbar-track,
+.ms-board .ms-scroll::-webkit-scrollbar-track,
+.ms-thinboard .ms-scroll::-webkit-scrollbar-track {
+  background: #0a0908;
+  border-radius: 1px;
+  box-shadow: inset 1px 0 0 #000, inset -1px 0 0 rgba(160, 150, 134, 0.2);
+}
+.ms-kit .ms-scroll::-webkit-scrollbar-thumb,
+.ms-board .ms-scroll::-webkit-scrollbar-thumb,
+.ms-thinboard .ms-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #8d867a, #5a554c 55%, #3d3a34);
+  border-radius: 1px;
+  border: 1px solid #0b0a09;
+}

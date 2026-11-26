@@ -1,0 +1,1072 @@
+
+
+.ms-boot {
+  /* gauge frame height; k = one unit of the 1536 x 137 frame image. The glass tube is 54 units (~16 px at 1080p, the frame is 42 px) */
+  --bt-h: 2.6rem;
+  --bt-k: calc(var(--bt-h) / 137);
+  --bt-edge: 1.5rem;
+  --bt-dock-w: min(50rem, calc(100% - 2 * var(--bt-edge)));
+  /* the band: lower edge of the tip plate, gap gauge -> tip, gauge -> tip */
+  --bt-bot: 6.5%;
+  --bt-gap: 0.9rem;
+  /* smallest label size: 12 px on desktop tiers, 10.5 px on phones (G3 floors) */
+  --bt-fmin: 12px;
+  --bt-ink: #f2e8cc;
+  --bt-ink-2: #d9ccaa;
+  isolation: isolate;
+}
+
+/* ---- the plank: every plate of this screen ------------------------------------------------------------------------------
+   Warm pewter stepped bevel (light from the top left), a groove, a 1 unit gold hairline, four gold rivets on the corners, a dark warm
+   body. The frame is a 30 x 30 unit SVG 9-slice (tools/make_plank.py), 10 units = --bt-pw, so it is crisp at every scale. */
+.ms-bt-pl {
+  --bt-pw: 0.72rem;
+  --bt-pl-img: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='30'%20height='30'%20viewBox='0%200%2030%2030'%3E%3Cdefs%3E%3ClinearGradient%20id='g1'%20gradientUnits='userSpaceOnUse'%20x1='0'%20y1='0'%20x2='30'%20y2='30'%3E%3Cstop%20offset='0'%20stop-color='%23b9ad98'/%3E%3Cstop%20offset='0.5'%20stop-color='%236c6455'/%3E%3Cstop%20offset='1'%20stop-color='%234a4338'/%3E%3C/linearGradient%3E%3ClinearGradient%20id='g2'%20gradientUnits='userSpaceOnUse'%20x1='0'%20y1='0'%20x2='30'%20y2='30'%3E%3Cstop%20offset='0'%20stop-color='%23857b69'/%3E%3Cstop%20offset='0.5'%20stop-color='%234d463b'/%3E%3Cstop%20offset='1'%20stop-color='%232c2822'/%3E%3C/linearGradient%3E%3ClinearGradient%20id='g3'%20gradientUnits='userSpaceOnUse'%20x1='0'%20y1='0'%20x2='30'%20y2='30'%3E%3Cstop%20offset='0'%20stop-color='%233e3830'/%3E%3Cstop%20offset='1'%20stop-color='%23171411'/%3E%3C/linearGradient%3E%3ClinearGradient%20id='g5'%20gradientUnits='userSpaceOnUse'%20x1='0'%20y1='0'%20x2='30'%20y2='30'%3E%3Cstop%20offset='0'%20stop-color='%23f6dc92'/%3E%3Cstop%20offset='0.45'%20stop-color='%23c79a43'/%3E%3Cstop%20offset='1'%20stop-color='%237f5a22'/%3E%3C/linearGradient%3E%3CradialGradient%20id='r'%20cx='0.35'%20cy='0.3'%20r='0.8'%3E%3Cstop%20offset='0'%20stop-color='%23fff2bf'/%3E%3Cstop%20offset='0.45'%20stop-color='%23d4a444'/%3E%3Cstop%20offset='1'%20stop-color='%236a4513'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon%20points='4.80,0.00%2025.20,0.00%2030.00,4.80%2030.00,25.20%2025.20,30.00%204.80,30.00%200.00,25.20%200.00,4.80'%20fill='%230b0908'/%3E%3Cpolygon%20points='5.13,0.80%2024.87,0.80%2029.20,5.13%2029.20,24.87%2024.87,29.20%205.13,29.20%200.80,24.87%200.80,5.13'%20fill='url(%23g1)'/%3E%3Cpolygon%20points='5.71,2.20%2024.29,2.20%2027.80,5.71%2027.80,24.29%2024.29,27.80%205.71,27.80%202.20,24.29%202.20,5.71'%20fill='url(%23g2)'/%3E%3Cpolygon%20points='6.37,3.80%2023.63,3.80%2026.20,6.37%2026.20,23.63%2023.63,26.20%206.37,26.20%203.80,23.63%203.80,6.37'%20fill='url(%23g3)'/%3E%3Cpolygon%20points='6.79,4.80%2023.21,4.80%2025.20,6.79%2025.20,23.21%2023.21,25.20%206.79,25.20%204.80,23.21%204.80,6.79'%20fill='%23090705'/%3E%3Cpolygon%20points='7.08,5.50%2022.92,5.50%2024.50,7.08%2024.50,22.92%2022.92,24.50%207.08,24.50%205.50,22.92%205.50,7.08'%20fill='url(%23g5)'/%3E%3Cpolygon%20points='7.45,6.40%2022.55,6.40%2023.60,7.45%2023.60,22.55%2022.55,23.60%207.45,23.60%206.40,22.55%206.40,7.45'%20fill='%2319140f'/%3E%3Ccircle%20cx='6.15'%20cy='6.2'%20r='1.55'%20fill='%2307050a'%20opacity='0.55'/%3E%3Ccircle%20cx='6.0'%20cy='6.0'%20r='1.35'%20fill='url(%23r)'/%3E%3Ccircle%20cx='24.15'%20cy='6.2'%20r='1.55'%20fill='%2307050a'%20opacity='0.55'/%3E%3Ccircle%20cx='24.0'%20cy='6.0'%20r='1.35'%20fill='url(%23r)'/%3E%3Ccircle%20cx='24.15'%20cy='24.2'%20r='1.55'%20fill='%2307050a'%20opacity='0.55'/%3E%3Ccircle%20cx='24.0'%20cy='24.0'%20r='1.35'%20fill='url(%23r)'/%3E%3Ccircle%20cx='6.15'%20cy='24.2'%20r='1.55'%20fill='%2307050a'%20opacity='0.55'/%3E%3Ccircle%20cx='6.0'%20cy='24.0'%20r='1.35'%20fill='url(%23r)'/%3E%3C/svg%3E");
+  position: relative;
+  box-sizing: border-box;
+  border: var(--bt-pw) solid transparent;
+  border-image: var(--bt-pl-img) 10 / var(--bt-pw) stretch;
+  background:
+    linear-gradient(180deg, rgba(255, 226, 170, 0.07), rgba(255, 226, 170, 0) 40%, rgba(0, 0, 0, 0.2)),
+    linear-gradient(rgba(21, 16, 12, 0.88), rgba(21, 16, 12, 0.88)),
+    var(--tex-uk-board, none) 0 0 / 12rem,
+    #17120e;
+  background-clip: padding-box;
+  filter: drop-shadow(0 0.35rem 0.7rem rgba(0, 0, 0, 0.7));
+}
+
+/* ---- bed: what fills the screen behind everything ---------------------------------------------------------------- */
+.ms-bt-bed {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% 40%, rgba(60, 20, 12, 0.35), rgba(8, 4, 3, 0.9) 70%),
+    linear-gradient(180deg, #1c110d, #0a0605);
+}
+.ms-bt-bed::before {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+}
+/* boot: the key art */
+.ms-boot--boot .ms-bt-bed::before {
+  inset: -3%;
+  background-image: var(--tex-keyart, none);
+  background-size: cover;
+  background-position: 36% 40%;
+  animation: ms-kenburns 42s ease-in-out infinite alternate;
+}
+/* loading: the zone painting stretched and blurred into an atmosphere in the zone's own colours (the sharp plate sits on it) */
+.ms-boot--loading .ms-bt-bed::before {
+  inset: -9%;
+  background-image: var(--bt-art, var(--tex-keyart, none));
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: blur(1.6rem) saturate(1.05) contrast(1.1) brightness(0.42);
+}
+/* a wide splash (uk_boot_loading_splash_<zone>) is the whole screen: sharp, slowly drifting, the lower fifth left dark for the band */
+.ms-boot--loading.has-wide .ms-bt-bed::before {
+  inset: -3%;
+  background-image: var(--bt-wide);
+  filter: none;
+  background-position: 50% var(--bt-wy, 30%);
+  animation: ms-kenburns 42s ease-in-out infinite alternate;
+}
+.ms-boot--loading.has-wide .ms-bt-plate {
+  display: none;
+}
+.ms-boot--loading.has-wide .ms-bt-shade {
+  background:
+    linear-gradient(0deg, rgba(4, 3, 2, 1) 0, rgba(5, 3, 2, 0.97) 11%, rgba(6, 4, 3, 0.84) 20%, rgba(6, 4, 3, 0.5) 30%, rgba(6, 4, 3, 0.12) 44%, transparent 56%),
+    linear-gradient(180deg, rgba(6, 4, 3, 0.5) 0, transparent 22%),
+    radial-gradient(130% 110% at 50% 44%, transparent 58%, rgba(4, 2, 2, 0.6) 100%);
+}
+
+/* the sharp plate: the portrait zone art at (nearly) the screen height, feathered into the bed on both sides */
+.ms-bt-plate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  translate: -50% 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.4) 8%, rgba(0, 0, 0, 0.86) 20%, #000 29%, #000 71%, rgba(0, 0, 0, 0.86) 80%, rgba(0, 0, 0, 0.4) 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.4) 8%, rgba(0, 0, 0, 0.86) 20%, #000 29%, #000 71%, rgba(0, 0, 0, 0.86) 80%, rgba(0, 0, 0, 0.4) 92%, transparent 100%);
+}
+.ms-bt-plate > i {
+  position: absolute;
+  inset: -2%;
+  background: var(--bt-art) var(--bt-cx, 50%) var(--bt-fy, 56%) / cover no-repeat;
+  animation: ms-kenburns 46s ease-in-out infinite alternate;
+}
+/* where each painting keeps its subject (the Metin stone), so the cover crop never cuts it. r9 splashes: Yeonmu's boulder crown and
+   Seori's centre yeti horn sit ~70 px under the top of the 3:2 master, so their 16:9 crop starts at the very top (--bt-wy) */
+.ms-boot[data-zone='yeonmu'] {
+  --bt-fy: 58%;
+  --bt-wy: 0%;
+}
+.ms-boot[data-zone='suryeon'] {
+  --bt-fy: 62%;
+  --bt-cx: 34%; /* phone portrait shows the middle ~69 % of the 2:3 card: the r9 card (mirrored) has the blue stone on the left */
+}
+.ms-boot[data-zone='seori'] {
+  --bt-fy: 70%;
+  --bt-cx: 40%; /* ... and the rust stone on the left is not cut */
+  --bt-wy: 0%;
+}
+.ms-boot[data-zone='daeryeol'] {
+  --bt-fy: 66%;
+}
+
+/* scrims: the band reads on dark, the logo on a soft top shade, the edges sink into black */
+.ms-bt-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(0deg, rgba(4, 3, 2, 1) 0, rgba(5, 3, 2, 0.97) 11%, rgba(6, 4, 3, 0.84) 20%, rgba(6, 4, 3, 0.5) 30%, rgba(6, 4, 3, 0.12) 44%, transparent 56%),
+    linear-gradient(180deg, rgba(6, 4, 3, 0.6) 0, transparent 24%),
+    linear-gradient(90deg, rgba(5, 3, 2, 0.6) 0, transparent 26%, transparent 74%, rgba(5, 3, 2, 0.6) 100%),
+    radial-gradient(125% 105% at 50% 42%, transparent 56%, rgba(4, 2, 2, 0.72) 100%);
+}
+.ms-boot--boot .ms-bt-shade {
+  background:
+    linear-gradient(0deg, rgba(4, 3, 2, 1) 0, rgba(5, 3, 2, 0.97) 11%, rgba(6, 4, 3, 0.84) 20%, rgba(6, 4, 3, 0.5) 30%, rgba(6, 4, 3, 0.12) 44%, transparent 56%),
+    radial-gradient(60% 46% at 50% 36%, rgba(8, 4, 3, 0.45), transparent 75%),
+    radial-gradient(125% 105% at 50% 42%, transparent 54%, rgba(4, 2, 2, 0.74) 100%);
+}
+
+/* ---- logo + caption plate ---------------------------------------------------------------------------------------- */
+.ms-bt-top {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+}
+.ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 11%);
+  left: 50%;
+  translate: -50% 0;
+  width: min(35rem, 78%);
+}
+/* the painting's subject sits right of centre, so the logo and the caption plate live in the left corner */
+.ms-boot--loading .ms-bt-top {
+  top: calc(var(--safe-t) + 4.2%);
+  left: calc(var(--safe-l) + 4.5%);
+  width: min(24rem, 32%);
+}
+.ms-boot--loading .ms-bt-top .ms-logo {
+  width: 92%;
+  align-self: center;
+}
+/* over the bright mist of a zone painting the logo sits on a soft neutral shade (no red glow: it read as a smudge on a pale sky) */
+.ms-boot--loading .ms-bt-top::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -14% -22% 30%;
+  background: radial-gradient(closest-side, rgba(5, 3, 2, 0.62), rgba(5, 3, 2, 0.34) 62%, transparent);
+  pointer-events: none;
+}
+.ms-boot--loading .ms-logo-img {
+  filter: drop-shadow(0 0.3rem 0.5rem rgba(0, 0, 0, 0.7)) drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.55));
+}
+/* RAIN OF METIN: a real tagline now, not a whisper: gold caps, a hairline running out on both sides, black halo */
+.ms-boot .ms-logo-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: 0.4rem;
+  font-size: max(var(--t-md), var(--bt-fmin));
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  white-space: nowrap;
+  color: #f9e6ae;
+  text-shadow: 0 0.08rem 0.1rem #000, 0 0 0.45rem #000, 0 0 1rem rgba(0, 0, 0, 0.95);
+}
+.ms-boot--boot .ms-logo-sub {
+  margin-top: 0.6rem;
+  font-size: var(--t-lg);
+}
+.ms-boot .ms-logo-sub::before,
+.ms-boot .ms-logo-sub::after {
+  content: '';
+  flex: 1 1 0;
+  min-width: 0.8rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(236, 200, 112, 0.85));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+}
+.ms-boot .ms-logo-sub::after {
+  background: linear-gradient(270deg, transparent, rgba(236, 200, 112, 0.85));
+}
+
+/* caption plate: medallion left, chapter / zone / lore, a groove, class + difficulty */
+.ms-bt-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0.9rem 0.55rem 0.55rem;
+}
+.ms-bt-medal {
+  position: relative;
+  flex: none;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(0 0.15rem 0.25rem rgba(0, 0, 0, 0.7));
+}
+.ms-bt-medal::before,
+.ms-bt-medal > i {
+  content: '';
+  position: absolute;
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+}
+.ms-bt-medal::before {
+  inset: 0;
+  background: linear-gradient(135deg, #f6e3ad 0%, #b8903f 34%, #5b4119 60%, #d4b266 100%);
+}
+.ms-bt-medal > i {
+  inset: 0.2rem;
+  /* the hero's face is an inline background-image (Boot.tsx) */
+  background-color: #120d0a;
+  background-position: center 14%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.8);
+}
+.ms-bt-captext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 0.1rem;
+}
+.ms-bt-chapter {
+  font-family: var(--f-title);
+  font-weight: 700;
+  font-size: max(var(--t-xs), var(--bt-fmin));
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e8c36a;
+  text-shadow: 0 0.06rem 0 #000;
+}
+.ms-bt-zname {
+  margin: 0;
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: var(--t-xl);
+  line-height: 1.08;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff0c4;
+  text-shadow: 0 0.08rem 0 #4a3010, 0 0.18rem 0.4rem rgba(0, 0, 0, 0.9);
+  overflow-wrap: anywhere;
+}
+.ms-bt-lore {
+  margin: 0.05rem 0 0;
+  font-style: italic;
+  font-size: var(--t-sm);
+  line-height: 1.25;
+  color: var(--bt-ink-2);
+}
+/* class + difficulty: under an engraved groove */
+.ms-bt-hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(201, 162, 74, 0.34);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+}
+.ms-bt-who {
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: var(--t-md);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bt-ink);
+  white-space: nowrap;
+}
+.ms-bt-diff {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding-left: 0.7rem;
+  border-left: 1px solid rgba(201, 168, 92, 0.38);
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.7);
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: max(var(--t-xs), var(--bt-fmin));
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #f0cf7a;
+  text-shadow: 0 0.06rem 0 #000;
+}
+.ms-bt-diff::before {
+  content: '';
+  flex: none;
+  width: 0.62em;
+  height: 0.62em;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(135deg, #fff1b8 0%, #d9a63a 45%, #7a4f12 100%);
+}
+.ms-bt-diff.is-hard {
+  color: #ff9a86;
+  border-left-color: rgba(214, 84, 66, 0.5);
+}
+.ms-bt-diff.is-hard::before {
+  background: linear-gradient(135deg, #ffd0c4 0%, #e0452e 45%, #6a1208 100%);
+}
+
+/* ---- the band: gauge row (caption | gauge | percent) + the tip plate, docked low ------------------------------------------ */
+.ms-bt-band {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--safe-b) + var(--bt-bot));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bt-gap);
+  pointer-events: none;
+}
+.ms-bt-grow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--bt-dock-w) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 1rem;
+  width: 100%;
+}
+.ms-bt-stage {
+  grid-column: 1;
+  justify-self: end;
+  text-align: right;
+  min-width: 0;
+  font-size: var(--t-lg);
+  letter-spacing: 0.05em;
+  color: #eadfc0;
+  text-shadow: 0 0.08rem 0.3rem #000, 0 0 0.8rem #000;
+}
+.ms-bt-gauge {
+  grid-column: 2;
+}
+.ms-bt-pct {
+  grid-column: 3;
+  justify-self: start;
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: var(--t-lg);
+  letter-spacing: 0.04em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: #dff0ff;
+  text-shadow: 0 0.1rem 0 #0b2a5c, 0 0 0.9rem rgba(80, 160, 255, 0.6), 0 0.1rem 0.4rem #000;
+}
+
+/* tip plate: "TIP | one line", the text centred in what the label leaves, so a short tip never leaves one empty half */
+.ms-bt-tipplate {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 1rem;
+  width: var(--bt-dock-w);
+  padding: 0.35rem 1rem 0.35rem 1rem;
+  pointer-events: auto;
+}
+.ms-bt-tiplabel {
+  padding-right: 1rem;
+  border-right: 1px solid rgba(232, 195, 106, 0.34);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.6);
+  font-family: var(--f-title);
+  font-weight: 800;
+  font-size: max(var(--t-xs), var(--bt-fmin));
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #efca72;
+  text-shadow: 0 0.08rem 0.2rem #000;
+}
+.ms-bt-tips {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: var(--bt-tip-h, 1.3em);
+  align-items: center;
+  font-size: var(--t-lg);
+}
+.ms-bt-tip {
+  grid-area: 1 / 1;
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+  font-size: inherit;
+  line-height: 1.28;
+  color: var(--bt-ink);
+  text-shadow: 0 0.06rem 0.2rem rgba(0, 0, 0, 0.9);
+}
+/* a tip is swapped by a short two-step fade (the old one out, then the new one in), never a wipe: no half-faded sentence end */
+.ms-bt-tip.is-in {
+  animation: ms-bt-tip-in 0.3s 0.28s ease-out both;
+}
+.ms-bt-tip.is-out {
+  animation: ms-bt-tip-out 0.26s ease-in both;
+}
+.ms-bt-tip.is-first {
+  animation: none;
+}
+@keyframes ms-bt-tip-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ms-bt-tip-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---- the gauge itself ---------------------------------------------------------------------------------------------
+   Geometry in units of the 1536 x 137 frame image (k = height / 137): spiked caps are the outer 150 units, the glass tube
+   window runs from x = 118 to W - 118 and from y = 40 to 94 (54 units). Frame = 3-slice border-image (caps fixed, middle stretched). */
+.ms-bg {
+  --k: var(--bt-k);
+  --bg-ink: 2, 12, 36;
+  /* liquid palette (blue lacquer; red on failure) */
+  --bg-1: #08224f;
+  --bg-2: #1a5ec6;
+  --bg-3: #3c8cf0;
+  --bg-4: #1a58bd;
+  --bg-5: #0e3a8c;
+  --bg-6: #164aa8;
+  --bg-7: #061a44;
+  --bg-spec: 226, 244, 255;
+  --bg-rim: 120, 190, 255;
+  --bg-glow: #4aa6ff;
+  position: relative;
+  width: 100%;
+  height: var(--bt-h);
+  container-type: inline-size;
+  filter: drop-shadow(0 0.2rem 0.3rem rgba(0, 0, 0, 0.8)) drop-shadow(0 0 0.9rem rgba(70, 150, 255, 0.2));
+}
+.ms-bg-frame,
+.ms-bg-lens {
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 calc(150 * var(--k));
+  border-image-source: var(--bt-gauge, linear-gradient(90deg, #6a707a, #15171b 12%, #15171b 88%, #6a707a));
+  border-image-slice: 0 150 0 150 fill;
+  border-image-repeat: stretch;
+}
+.ms-bg-frame {
+  position: absolute;
+  inset: 0;
+}
+/* the glass tube window */
+.ms-bg-ch {
+  position: absolute;
+  left: calc(118 * var(--k));
+  right: calc(118 * var(--k));
+  top: calc(40 * var(--k));
+  height: calc(54 * var(--k));
+}
+/* everything that moves with the value hangs off this one box: its width IS the value */
+.ms-bg-run {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: width 0.5s var(--ease-soft);
+}
+.ms-bg-liquid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: calc(27 * var(--k)) 0 0 calc(27 * var(--k));
+  background:
+    /* specular band high on the tube, soft below it */
+    linear-gradient(180deg, rgba(var(--bg-spec), 0) 0, rgba(var(--bg-spec), 0) 9%, rgba(var(--bg-spec), 0.8) 17%, rgba(var(--bg-spec), 0.28) 29%, rgba(var(--bg-spec), 0) 42%),
+    /* darker at the start, lit towards the leading edge */
+    linear-gradient(90deg, rgba(var(--bg-ink), 0.38), rgba(var(--bg-ink), 0) 16%, rgba(var(--bg-ink), 0) 84%, rgba(var(--bg-rim), 0.3)),
+    /* the lacquer body: dark rim, bright core, deep underside, a thin lit line at the bottom */
+    linear-gradient(180deg, var(--bg-1) 0, var(--bg-2) 20%, var(--bg-3) 36%, var(--bg-4) 58%, var(--bg-5) 80%, var(--bg-6) 91%, var(--bg-7) 100%);
+  box-shadow: inset 0 -1px 0 rgba(var(--bg-rim), 0.45), inset 0 1px 0 rgba(0, 0, 0, 0.55);
+}
+.ms-bg.is-full .ms-bg-liquid {
+  border-radius: calc(27 * var(--k));
+}
+/* the frame's own glass highlight, screened over the liquid so the glass sits IN FRONT of the fill (only its bright parts survive) */
+.ms-bg-lens {
+  position: absolute;
+  left: calc(-118 * var(--k));
+  top: calc(-40 * var(--k));
+  width: 100cqw;
+  height: var(--bt-h);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: brightness(0.6) contrast(3.2);
+  opacity: 0.85;
+}
+/* a soft band of light travelling along the liquid */
+.ms-bg-sheen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(var(--bg-spec), 0.34) 50%, transparent);
+  mix-blend-mode: screen;
+  animation: ms-bg-sheen 3s linear infinite;
+}
+@keyframes ms-bg-sheen {
+  to {
+    translate: 340% 0;
+  }
+}
+/* leading edge: locked to the right edge of .ms-bg-run. A lit line, a bloom and embers rising off it */
+.ms-bg-tip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+}
+.ms-bg-flare {
+  position: absolute;
+  top: -9%;
+  bottom: -9%;
+  left: 0;
+  width: max(2px, calc(3 * var(--k)));
+  translate: -100% 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(235, 248, 255, 0.98) 22%, rgba(235, 248, 255, 0.92) 78%, rgba(255, 255, 255, 0));
+  box-shadow: 0 0 0.45rem 1px var(--bg-glow);
+}
+.ms-bg-flare::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(60 * var(--k));
+  height: calc(86 * var(--k));
+  translate: -50% -50%;
+  background: radial-gradient(closest-side, rgba(150, 210, 255, 0.75), rgba(70, 150, 255, 0.26) 55%, transparent);
+  mix-blend-mode: screen;
+  animation: ms-bg-pulse 1.8s ease-in-out infinite;
+}
+@keyframes ms-bg-pulse {
+  50% {
+    opacity: 0.55;
+    scale: 0.85;
+  }
+}
+.ms-bg-ember {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: calc(8 * var(--k));
+  height: calc(8 * var(--k));
+  margin: calc(-4 * var(--k)) 0 0 calc(-4 * var(--k));
+  border-radius: 50%;
+  background: #e6f4ff;
+  box-shadow: 0 0 0.4rem 1px var(--bg-glow);
+  opacity: 0;
+  animation: ms-bg-ember 1.7s ease-out infinite;
+}
+.ms-bg-ember:nth-of-type(2) {
+  --dx: -1.1rem;
+  --rise: 0.4rem;
+  animation-delay: 0.55s;
+}
+.ms-bg-ember:nth-of-type(3) {
+  --dx: 0.7rem;
+  --rise: 0.9rem;
+  animation-delay: 1.1s;
+}
+.ms-bg-ember:nth-of-type(4) {
+  --dx: -0.2rem;
+  --rise: 0.1rem;
+  animation-delay: 0.15s;
+}
+@keyframes ms-bg-ember {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  14% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 0.5rem), calc(-1.6rem - var(--rise, 0rem))) scale(0.35);
+  }
+}
+.ms-bg.is-empty .ms-bg-tip {
+  opacity: 0;
+}
+.ms-bg.is-full .ms-bg-ember {
+  animation-play-state: paused;
+  opacity: 0;
+}
+/* failed: red liquid, no sparks, one shiver and a red glow round the tube */
+.ms-bg.is-fail {
+  --bg-1: #4a0a10;
+  --bg-2: #b81f26;
+  --bg-3: #f0524a;
+  --bg-4: #bd2128;
+  --bg-5: #7e1015;
+  --bg-6: #b02a2a;
+  --bg-7: #2a0508;
+  --bg-ink: 30, 2, 4;
+  --bg-spec: 255, 228, 222;
+  --bg-rim: 255, 130, 110;
+  --bg-glow: #ff4a38;
+  filter: drop-shadow(0 0.2rem 0.3rem rgba(0, 0, 0, 0.8)) drop-shadow(0 0 0.9rem rgba(255, 50, 30, 0.5));
+  animation: ms-bg-shiver 0.5s ease-out both;
+}
+.ms-bg.is-fail .ms-bg-ember,
+.ms-bg.is-fail .ms-bg-sheen,
+.ms-bg.is-fail .ms-bg-flare::after {
+  display: none;
+}
+.ms-bg.is-fail .ms-bg-flare {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 232, 226, 0.95) 22%, rgba(255, 232, 226, 0.9) 78%, rgba(255, 255, 255, 0));
+}
+@keyframes ms-bg-shiver {
+  18% {
+    translate: -0.35rem 0;
+  }
+  36% {
+    translate: 0.3rem 0;
+  }
+  54% {
+    translate: -0.2rem 0;
+  }
+  72% {
+    translate: 0.12rem 0;
+  }
+}
+.ms-boot.is-failed .ms-bt-pct {
+  color: #ffb0a0;
+  text-shadow: 0 0.1rem 0 #4a0f08, 0 0 0.9rem rgba(255, 70, 40, 0.5), 0 0.1rem 0.4rem #000;
+}
+
+/* ---- failure dialog: the same plank, a rust title bar, the cause in a sunken well, RETRY + BACK as chamfered plates ------------ */
+.ms-bt-failwrap {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 44%;
+  translate: -50% -50%;
+  width: min(36rem, calc(100% - 2 * var(--bt-edge)));
+}
+.ms-bt-fail {
+  width: 100%;
+  padding: 0.2rem 0.5rem 0.65rem;
+}
+.ms-bt-failin {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.8rem;
+}
+.ms-bt-failbar {
+  --tb-h: 2.6rem;
+  --k-rivet: var(--k-rivet-gold, #c79a43);
+  margin: 0 0.15rem;
+}
+.ms-bt-failbar .ms-titlebar-text {
+  font-size: var(--t-xl);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ms-bt-failmsg.ms-sunken {
+  box-sizing: border-box;
+  margin: 0 0.15rem;
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+.ms-bt-failmsg p {
+  margin: 0;
+  font-size: var(--t-lg);
+  line-height: 1.34;
+  color: #f4d8cc;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.ms-bt-failbtns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0 0.15rem;
+}
+/* chamfer like the spiked gauge caps, a thicker bevel, warm pewter and a pale-gold rim instead of the cold grey stone */
+.ms-bt-fail .ms-bt-btn {
+  --pl-c: 0.8rem;
+  --pl-bw: 2px;
+  --bh: 3.2rem;
+  min-width: 12.5rem;
+  font-size: var(--t-md);
+  letter-spacing: 0.1em;
+  white-space: normal;
+  text-wrap: balance;
+}
+.ms-bt-fail .ms-bt-btn.ms-kbtn--stone {
+  --pl-line: #0b0907;
+  --pl-hi: #e0cf9f;
+  --pl-mid: #8c7b57;
+  --pl-lo: #2b2318;
+  --pl-veil: rgba(27, 20, 13, 0.48);
+  color: #f0e4c6;
+}
+.ms-bt-fail .ms-bt-btn.ms-kbtn--primary {
+  --pl-hi: #f1d594;
+  --pl-mid: #b6893b;
+  --pl-lo: #5a3a12;
+}
+
+/* ---- sizes ------------------------------------------------------------------------------------------------------- */
+/* small laptops: a little wider than the 50 rem dock so a longer tip still fits one line */
+.ms-tier-laptop .ms-boot {
+  --bt-dock-w: min(48rem, calc(100% - 2 * var(--bt-edge)));
+  --bt-bot: 6%;
+}
+/* the caption plate keeps the left column: the dialog steps right of the centre (laptop) or below the plate (tablet) */
+.ms-tier-laptop .ms-bt-failwrap {
+  left: 56%;
+  width: min(33rem, calc(100% - 2 * var(--bt-edge)));
+}
+.ms-tier-tablet .ms-bt-failwrap {
+  top: 61%;
+  width: min(32rem, calc(100% - 2 * var(--bt-edge)));
+}
+/* a 4:3 landscape tablet has no room under the caption plate: the dialog takes the right-hand side beside it (clear of the plate at 1024 x 768) */
+.ms-tier-tablet.ms-landscape .ms-bt-failwrap {
+  left: 63%;
+  top: 52%;
+  width: min(30rem, calc(100% - 2 * var(--bt-edge)));
+}
+.ms-tier-ultra .ms-boot {
+  --bt-h: 2.4rem;
+}
+/* the stacked gauge row: caption left + percent right ABOVE the tube, aligned to the tube's inner edges (tablets and phones) */
+.ms-tier-tablet .ms-bt-grow,
+.ms-compact .ms-bt-grow {
+  grid-template-columns: minmax(0, 1fr) auto;
+  width: var(--bt-dock-w);
+  column-gap: 1rem;
+  row-gap: 0.1rem;
+}
+.ms-tier-tablet .ms-bt-stage,
+.ms-compact .ms-bt-stage {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  text-align: left;
+  padding-left: calc(118 * var(--bt-k));
+  font-size: var(--t-lg);
+}
+.ms-tier-tablet .ms-bt-pct,
+.ms-compact .ms-bt-pct {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  padding-right: calc(118 * var(--bt-k));
+  font-size: var(--t-lg);
+}
+.ms-tier-tablet .ms-bt-gauge,
+.ms-compact .ms-bt-gauge {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+/* 4:3 tablets: shorter caption plate (no lore line), two tip lines reserved */
+.ms-tier-tablet .ms-boot {
+  --bt-dock-w: min(40rem, calc(100% - 2 * var(--bt-edge)));
+  --bt-bot: 5%;
+  --bt-tip-h: 2.6em;
+}
+.ms-tier-tablet .ms-boot--loading .ms-bt-top {
+  width: min(22rem, 38%);
+}
+.ms-tier-tablet .ms-bt-lore {
+  display: none;
+}
+.ms-tier-tablet .ms-bt-medal {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+/* phone, portrait (and a tablet held upright, same composition): the 2:3 zone card full-bleed, logo + caption plate on top, gauge + tip low */
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot {
+  --bt-fmin: 10.5px;
+  --bt-h: 2.4rem;
+  --bt-edge: 1.5rem;
+  --bt-dock-w: calc(100% - 2 * var(--bt-edge) - var(--safe-l) - var(--safe-r));
+  --bt-bot: 1.7rem;
+  --bt-gap: 0.7rem;
+  --bt-tip-h: 2.7em;
+}
+/* a landscape splash would be cropped to its middle on a 1:2 screen: the 2:3 zone card is the sharp plate (over its own blurred copy) */
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading.has-wide .ms-bt-bed::before {
+  inset: -9%;
+  background-image: var(--bt-art, var(--tex-keyart, none));
+  background-position: 50% 50%;
+  filter: blur(1.6rem) saturate(1.05) contrast(1.1) brightness(0.42);
+  animation: none;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading.has-wide .ms-bt-plate {
+  display: block;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-plate {
+  aspect-ratio: auto;
+  width: 100%;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading .ms-bt-shade,
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading.has-wide .ms-bt-shade {
+  background:
+    linear-gradient(0deg, rgba(4, 3, 2, 1) 0, rgba(5, 3, 2, 0.96) 12%, rgba(6, 4, 3, 0.8) 22%, rgba(6, 4, 3, 0.4) 33%, rgba(6, 4, 3, 0.08) 46%, transparent 56%),
+    linear-gradient(180deg, rgba(6, 4, 3, 0.55) 0, rgba(6, 4, 3, 0.2) 22%, transparent 38%),
+    radial-gradient(125% 105% at 50% 42%, transparent 56%, rgba(4, 2, 2, 0.6) 100%);
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading .ms-bt-top {
+  top: calc(var(--safe-t) + 2.2%);
+  left: 50%;
+  translate: -50% 0;
+  width: calc(100% - 2 * var(--bt-edge) - var(--safe-l) - var(--safe-r));
+  max-width: 24rem;
+  gap: 0.5rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading .ms-bt-top .ms-logo {
+  width: min(12rem, 58%);
+  align-self: center;
+}
+/* the soft shade behind the logo must stay inside the screen (it is 22 % wider than the lock-up on the other tiers) */
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading .ms-bt-top::before {
+  inset: -14% -5% 30%;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--loading .ms-logo-sub {
+  margin-top: 0.25rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-chapter {
+  display: none;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 12%);
+  width: min(24rem, 86%);
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot .ms-logo-sub {
+  letter-spacing: 0.26em;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-lore {
+  display: none;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-caption {
+  padding: 0.4rem 0.7rem 0.45rem 0.45rem;
+  gap: 0.7rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-medal {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-zname {
+  font-size: var(--t-xl);
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-tipplate {
+  padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+  column-gap: 0.7rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-tiplabel {
+  padding-right: 0.7rem;
+}
+/* under the caption plate, growing downwards (the dialog is the tall element of a portrait phone) */
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-failwrap {
+  top: calc(var(--safe-t) + 37%);
+  translate: -50% 0;
+}
+.ms-tier-tablet.ms-portrait .ms-bt-failwrap {
+  width: min(28rem, calc(100% - 2 * var(--bt-edge)));
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-failin {
+  gap: 0.6rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-failbar .ms-titlebar-text {
+  font-size: var(--t-lg);
+  letter-spacing: 0.1em;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-failmsg.ms-sunken {
+  padding: 0.6rem 0.8rem;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-failmsg p {
+  font-size: var(--t-md);
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-bt-fail .ms-bt-btn {
+  --bh: 2.9rem;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* phone, landscape: little height. Logo + caption plate left over the splash, the band along the bottom */
+.ms-tier-phone-l .ms-boot {
+  --bt-fmin: 10.5px;
+  --bt-h: 2.3rem;
+  --bt-edge: 1.2rem;
+  --bt-dock-w: min(34rem, 62%);
+  --bt-bot: 1rem;
+  --bt-gap: 0.55rem;
+  --bt-tip-h: 2.6em;
+}
+.ms-tier-phone-l .ms-boot--loading.has-wide .ms-bt-shade {
+  background:
+    linear-gradient(0deg, rgba(4, 3, 2, 1) 0, rgba(5, 3, 2, 0.96) 14%, rgba(6, 4, 3, 0.7) 27%, rgba(6, 4, 3, 0.2) 42%, transparent 54%),
+    linear-gradient(90deg, rgba(6, 4, 3, 0.86) 0, rgba(6, 4, 3, 0.62) 24%, rgba(6, 4, 3, 0.18) 40%, transparent 50%),
+    radial-gradient(130% 110% at 50% 44%, transparent 58%, rgba(4, 2, 2, 0.6) 100%);
+}
+.ms-tier-phone-l .ms-boot--loading .ms-logo-sub {
+  display: none;
+}
+.ms-tier-phone-l .ms-boot--loading .ms-bt-top {
+  top: calc(var(--safe-t) + 0.7rem);
+  left: calc(var(--safe-l) + 1.1rem);
+  width: min(21rem, 40%);
+  gap: 0.45rem;
+}
+.ms-tier-phone-l .ms-boot--loading .ms-bt-top .ms-logo {
+  width: 10rem;
+  align-self: flex-start;
+}
+.ms-tier-phone-l .ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 0.6rem);
+  width: min(17rem, 34%);
+}
+.ms-tier-phone-l .ms-boot--boot .ms-logo-sub {
+  margin-top: 0.3rem;
+  font-size: max(var(--t-sm), var(--bt-fmin));
+  letter-spacing: 0.26em;
+}
+.ms-tier-phone-l .ms-bt-lore {
+  display: none;
+}
+.ms-tier-phone-l .ms-bt-caption {
+  padding: 0.3rem 0.6rem 0.35rem 0.4rem;
+  gap: 0.55rem;
+}
+.ms-tier-phone-l .ms-bt-medal {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+.ms-tier-phone-l .ms-bt-zname {
+  font-size: var(--t-lg);
+}
+.ms-tier-phone-l .ms-bt-who {
+  font-size: var(--t-sm);
+}
+.ms-tier-phone-l .ms-bt-tipplate {
+  padding: 0.25rem 0.8rem;
+  column-gap: 0.6rem;
+}
+.ms-tier-phone-l .ms-bt-tiplabel {
+  padding-right: 0.6rem;
+}
+.ms-tier-phone-l .ms-bt-tips {
+  font-size: var(--t-sm);
+}
+/* the caption plate keeps the left column, the dialog takes the right-hand side beside it */
+.ms-tier-phone-l .ms-bt-failwrap {
+  top: 42%;
+  left: auto;
+  right: calc(var(--safe-r) + 1.1rem);
+  translate: 0 -50%;
+  width: min(35rem, calc(100% - 25rem - var(--safe-l) - var(--safe-r)));
+}
+.ms-tier-phone-l .ms-bt-failin {
+  gap: 0.5rem;
+}
+.ms-tier-phone-l .ms-bt-failbar {
+  --tb-h: 2.1rem;
+}
+.ms-tier-phone-l .ms-bt-failbar .ms-titlebar-text {
+  font-size: var(--t-lg);
+}
+.ms-tier-phone-l .ms-bt-failmsg.ms-sunken {
+  padding: 0.45rem 0.7rem;
+}
+.ms-tier-phone-l .ms-bt-failmsg p {
+  font-size: var(--t-md);
+}
+.ms-tier-phone-l .ms-bt-fail .ms-bt-btn {
+  --bh: 2.75rem;
+  min-width: 0;
+  flex: 1 1 0;
+}
+/* the two plates are not the same size of word: the retry plate ("Yenile ve tekrar dene") takes the larger share, so its label stays on
+   one line and the short BACK plate does not sit in as much empty stone as the long label is cramped in */
+.ms-tier-phone-l .ms-bt-fail .ms-bt-btn.ms-kbtn--primary {
+  flex-grow: 2.5;
+  letter-spacing: 0.07em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-bt-tip.is-in,
+  .ms-bt-tip.is-out {
+    animation: none;
+  }
+  .ms-bt-tip.is-out {
+    display: none;
+  }
+  .ms-bg-sheen,
+  .ms-bg-ember,
+  .ms-bg-flare::after {
+    animation: none;
+  }
+  .ms-bg-ember {
+    display: none;
+  }
+}
+
+/* boot screen, every landscape tier: the lock-up sits in the painting's calm top-left block (as on the menu) instead of centred over the
+   stone, the yacha's raised arm and the wolfman's head */
+.ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 4.5%);
+  left: calc(var(--safe-l) + 4.5%);
+  translate: none;
+  width: min(24rem, 32%);
+}
+.ms-tier-phone-l .ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 0.5rem);
+  left: calc(var(--safe-l) + 1.1rem);
+  width: min(14rem, 30%);
+}
+/* boot screen, phone portrait: the 9:16 painting full-bleed (the desktop painting's centre crop put METIN on a face); the lock-up top left over the
+   sky band, the stone stays visible upper right, the cast fills the middle, the gauge sits on the dark rocks */
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--boot .ms-bt-bed::before {
+  inset: 0;
+  background-image: var(--tex-keyart-portrait, var(--tex-keyart, none));
+  background-position: 50% 40%;
+}
+:is(.ms-tier-phone-p, .ms-tier-tablet.ms-portrait) .ms-boot--boot .ms-bt-top {
+  top: calc(var(--safe-t) + 4.5%);
+  left: calc(var(--bt-edge) + var(--safe-l));
+  width: min(15.5rem, 62%);
+}

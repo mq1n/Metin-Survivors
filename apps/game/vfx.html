@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VFX gallery (dev)</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #07080a; overflow: hidden; font: 12px/1.3 system-ui, Segoe UI, sans-serif; color: #e8dcc4; }
+      #gl { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+      #ui { position: fixed; inset: 0; pointer-events: none; }
+      #bar { position: absolute; left: 0; right: 0; top: 0; padding: 6px 10px; background: linear-gradient(#000c, #0000); pointer-events: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+      #bar button, #bar select { background: #241a10; color: #e8dcc4; border: 1px solid #5a4528; border-radius: 3px; padding: 3px 8px; font: inherit; cursor: pointer; }
+      #bar button.on { background: #7a5a22; color: #fff; }
+      #hud { position: absolute; left: 10px; bottom: 8px; background: #000a; padding: 4px 8px; border-radius: 3px; white-space: pre; font: 12px/1.35 Consolas, monospace; }
+      .label { position: absolute; transform: translate(-50%, 0); background: #000b; padding: 1px 6px; border-radius: 3px; font-size: 11px; white-space: nowrap; border: 1px solid #fff2; }
+      .label small { color: #a99; display: block; font-size: 10px; max-width: 230px; white-space: normal; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <canvas id="gl"></canvas>
+    <div id="ui"></div>
+    <script type="module" src="/src/vfx/gallery/main.ts"></script>
+  </body>
+</html>

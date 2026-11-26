@@ -1,0 +1,313 @@
+
+.ms-kitspec-host {
+  position: absolute;
+  inset: 0;
+  z-index: 200;
+  pointer-events: auto;
+}
+.ms-kitspec {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  padding: calc(0.9rem + var(--safe-t)) calc(1.1rem + var(--safe-r)) calc(1.4rem + var(--safe-b)) calc(1.1rem + var(--safe-l));
+  background:
+    radial-gradient(120% 90% at 30% 20%, rgba(92, 104, 52, 0.55), transparent 60%),
+    radial-gradient(90% 80% at 85% 85%, rgba(70, 64, 38, 0.6), transparent 70%),
+    linear-gradient(160deg, #2e3420, #1c1f14 60%, #15170f);
+  color: var(--k-text);
+  user-select: text;
+}
+.ks-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.ks-brand {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.18em;
+  color: var(--k-gold);
+}
+.ks-page {
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+.ks-sec {
+  margin: 0 0 1.1rem;
+}
+.ks-h {
+  margin: 0 0 0.15rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d8cdb6;
+}
+.ks-note {
+  margin: 0 0 0.55rem;
+  font-size: var(--t-xs);
+  color: var(--k-text-3);
+}
+.ks-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.3rem;
+}
+.ks-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.ks-win {
+  width: min(24rem, 100%);
+}
+.ks-win--bare {
+  width: min(20rem, 100%);
+}
+.ks-thin {
+  width: min(18rem, 100%);
+}
+.ks-tbs {
+  width: min(22rem, 100%);
+}
+.ks-sunk {
+  display: grid;
+  place-items: center;
+  min-height: 4.2rem;
+  margin-top: 0.2rem;
+}
+.ks-sunk--tall {
+  min-height: 7rem;
+  margin-top: 0.7rem;
+}
+.ks-dim {
+  font-size: var(--t-xs);
+  color: var(--k-text-3);
+}
+.ks-p {
+  margin: 0;
+  font-size: var(--t-sm);
+  line-height: 1.4;
+  color: var(--k-text-2);
+}
+.ks-lines {
+  display: grid;
+  gap: 0.3rem;
+}
+.ks-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.ks-line b {
+  color: var(--k-text);
+}
+.ks-capbtns {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.ks-grid {
+  display: grid;
+  gap: 0.8rem 1rem;
+  align-items: center;
+}
+.ks-lbl {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+/* ---- forced states (C3 specimen): copies of the :hover / :focus-visible / :active looks of the kit plates ---------- */
+.ks-wide {
+  width: min(64rem, 100%);
+}
+.ks-matrix {
+  display: grid;
+  grid-template-columns: 9.5rem repeat(5, minmax(0, 1fr));
+  gap: 0.7rem 0.9rem;
+  align-items: center;
+}
+.ks-cell {
+  display: flex;
+}
+.ks-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1rem;
+}
+.ks-ctl {
+  display: grid;
+  margin-top: 0.8rem;
+}
+.ks-ctl-hold {
+  min-width: 14rem;
+  flex: 1;
+}
+.ms-kbtn.ms-plate.ks-hover {
+  --pl-veil: var(--k-stone-veil-hover);
+  color: var(--k-gold);
+}
+.ms-kbtn--primary.ms-plate.ks-hover {
+  --pl-veil: rgba(74, 11, 7, 0.52);
+  color: #fff4d8;
+  filter: brightness(1.1);
+}
+.ms-kbtn--danger.ms-plate.ks-hover {
+  --pl-veil: rgba(34, 3, 6, 0.5);
+  color: #fff0ea;
+}
+.ms-kbtn--text.ks-hover {
+  color: var(--c-gold-hi);
+  background-size: calc(100% - 1.4rem) 1px;
+}
+.ms-kbtn.ms-plate.ks-pressed {
+  --pl-veil: var(--k-stone-veil-press);
+  --pl-hi: var(--k-stone-shade);
+  --pl-lo: var(--k-stone-edge);
+  padding-top: calc(var(--kb-pad-y) + 1px);
+  padding-bottom: calc(var(--kb-pad-y) - 1px);
+}
+.ms-kbtn--primary.ms-plate.ks-pressed {
+  --pl-veil: rgba(40, 4, 2, 0.74);
+  --pl-hi: var(--k-lac-rim-lo);
+  --pl-lo: var(--k-lac-rim);
+}
+.ms-kbtn--text.ks-pressed {
+  color: #fff;
+  translate: 0 1px;
+}
+.ms-kbtn.ms-plate.ks-focus {
+  filter: var(--focus-glow);
+}
+.ks-focus-in .ms-kinput {
+  border-color: var(--k-lac-rim);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset 0 0.18rem 0.5rem rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(240, 205, 120, 0.55), 0 0 1rem rgba(240, 205, 120, 0.22);
+}
+.ks-drag .ms-kslider-bubble {
+  opacity: 1;
+  scale: 1;
+}
+.ks-drag .ms-kslider-knob {
+  scale: 1.12;
+}
+.ks-legacy {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background: #1a1210;
+}
+
+/* ---- slots page (C4 specimen) ------------------------------------------------------------------------------------ */
+.ks-slotmatrix {
+  display: grid;
+  grid-template-columns: 5rem repeat(8, minmax(0, 1fr));
+  gap: 0.5rem 0.7rem;
+  align-items: center;
+}
+.ks-slotpad {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 0;
+}
+.ks-slotcell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.ks-flow--end {
+  align-items: flex-end;
+}
+.ks-wells {
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* ---- gauges page (C5 specimen) ------------------------------------------------------------------------------------ */
+.ks-gmatrix {
+  display: grid;
+  grid-template-columns: 5rem repeat(3, minmax(0, 1fr));
+  gap: 1.2rem 1.6rem;
+  align-items: center;
+}
+.ks-gopts {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 1.2rem 1.6rem;
+  align-items: center;
+}
+
+/* ---- tips page (C6 specimen) -------------------------------------------------------------------------------------- */
+.ks-tipstatic.ms-tip {
+  position: static;
+  animation: none;
+  width: 20rem;
+  max-width: 100%;
+}
+
+/* ---- type page (C7 specimen) -------------------------------------------------------------------------------------- */
+.ks-typescale {
+  display: grid;
+  grid-template-columns: 4rem 16rem minmax(0, 1fr);
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+}
+
+/* ---- phone reflow of the specimen tables (dev scaffolding only) ----------------------------------------------------- */
+@media (max-width: 900px) {
+  .ks-matrix {
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  }
+  .ks-matrix .ks-hdr {
+    display: none;
+  }
+  .ks-matrix .ks-rowlbl {
+    grid-column: 1 / -1;
+    margin-top: 0.4rem;
+  }
+  .ks-cell::before {
+    content: attr(data-st);
+    position: absolute;
+    translate: 0 -0.95rem;
+    font-size: var(--t-2xs);
+    color: var(--k-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .ks-cell {
+    position: relative;
+    margin-top: 0.9rem;
+  }
+  .ks-slotmatrix {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+  }
+  .ks-slotmatrix .ks-hdr {
+    display: none;
+  }
+  .ks-slotmatrix .ks-rowlbl {
+    flex-basis: 100%;
+    margin-top: 0.4rem;
+  }
+  .ks-gmatrix,
+  .ks-gopts,
+  .ks-typescale {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem 1rem;
+  }
+  .ks-rowlbl {
+    margin-top: 0.5rem;
+  }
+}

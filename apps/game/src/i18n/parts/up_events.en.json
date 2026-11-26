@@ -1,0 +1,12 @@
+{
+  "bargain.party": "Affects the whole party",
+  "bargain.fury.name": "Pact of Fury",
+  "bargain.fury.boon": "+25% damage",
+  "bargain.fury.curse": "Monsters move 15% faster",
+  "bargain.cunning.name": "Pact of Cunning",
+  "bargain.cunning.boon": "+1 reroll and +1 banish",
+  "bargain.cunning.curse": "-10% max health",
+  "bargain.fortune.name": "Pact of Fortune",
+  "bargain.fortune.boon": "The next 2 chests you open are free",
+  "bargain.fortune.curse": "Elites appear 25% more often"
+}

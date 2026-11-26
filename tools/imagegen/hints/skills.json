@@ -1,0 +1,1319 @@
+{
+  "icon_skill_dragon_fan": {
+    "grades": [
+      "a second gust crescent, one notch smaller, nests inside the first, so two gusts sweep beyond the rim",
+      "a third gust crescent nests inside the second, three gusts in all, each crescent one notch thicker than before",
+      "a fourth gust crescent nests inside, four gusts in all, and the fan grows two more ribs, seven ribs in all"
+    ],
+    "subject": "Dragon Fan: every sweep of the shaman's fan scatters golden gusts of dragon breath",
+    "glyph": "an open folding fan lying on a diagonal, its pivot and a short thick handle at the lower left and the spread opening toward the upper right: five broad thick ribs fanned over about 90 degrees, joined by one solid scalloped outer rim of five round lobes, the ribs separated by four narrow black cut-lines, a small round pivot hole at the base; beyond the rim ONE thick gust crescent curving across the upper right with both tips pointing back toward the fan; solid flat shapes, no hands, no dragon drawing, no tassel; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r1: original skill (refmap = yongpa dragon head + bipabu talisman as STYLE refs only). Ours: tilted folding fan + nested gust crescents 1 -> 4 (count 3 gusts per sweep). Tilted so it does not read as dawn_blade's half-sun."
+  },
+  "icon_skill_drifting_charms": {
+    "grades": [
+      "a third fat curved streamer trails beside the first two, three streamers in all, and a second ring seal sits under the first",
+      "a fourth fat curved streamer, four streamers in all, and a third ring seal",
+      "a fifth fat curved streamer, five streamers in all, and the slab is one notch thicker"
+    ],
+    "subject": "Drifting Charms: the shaman hurls paper talismans that curve toward different foes and may bind them in place",
+    "glyph": "ONE fat SOLID paper talisman slip flying up and to the right on a 25 degree tilt: a broad tall slab (about 3 to 4, 65 percent of the cell wide and 85 percent tall) that is solid white, NOT an outline frame, with the details cut out of it as thick black gaps: ONE big round ring seal at the top, under it one thick vertical bar flanked by two big diamond holes; the lower end of the slab is a deep V-notched swallow-tail; behind it toward the lower left trail TWO fat curved streamers, each as wide as one tenth of the cell at its root and tapering to a blunt point (never a hairline), side by side; flat solid shapes, no letters, no brush strokes, no hand, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (hairline strokes thinner than the rest of the set: #2 ribbon tails): FAT streamers (>= a tenth of the cell at the root, blunt tips), two at g1 -> five at g4. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_gilded_serpent": {
+    "grades": [
+      "five big triangular spikes along the back instead of three, and the body is one notch thicker",
+      "seven big triangular spikes along the back and a second thick horn beside the first",
+      "nine big triangular spikes along the back and a big solid round pearl touching the snout"
+    ],
+    "subject": "Gilded Serpent: the shaman looses a golden dragon that tears through the enemy line and sets its prey ablaze",
+    "glyph": "ONE eastern dragon in flight as a single bold solid white silhouette on a 40 degree diagonal from the lower left to the upper right, filling the cell corner to corner like a heraldic badge: the head at the upper right is a plain fat wedge (a rounded blunt snout, ONE thick curved horn swept back, the jaws open as ONE black wedge-shaped notch, ONE black slash for the eye); the body is one solid band as thick as a fifth of the cell swinging in one deep S down to a pointed tail at the lower left, with three big triangular spikes along the back; the only black cut-lines inside the shape are the jaw notch, the eye slash and one curved belly line; flat solid shapes: NO mane strands, NO rows of teeth, NO whiskers, NO scales, NO legs, NO flames, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (tattoo-flash head with mane strands + teeth rows, mixed hand next to the flat seal / cauldron / pagoda): FLAT silhouette dragon, head = plain wedge + 2 cut-lines, no mane / teeth / whiskers; spikes 3 -> 9. Own flat glyph stencils (cauldron, pagoda) attached as style refs. Old text in r5/start/hints_shaman.json | SHIPPED = gen v7 = the real codex sheet of v5 with its white stencil dilated by 6 px (r5/ notes: THICKENED, not a fresh codex output): coverage 10.9 -> 13.9 %."
+  },
+  "icon_skill_radiant_favor": {
+    "grades": [
+      "four smaller petals peek out between the five, nine petals in all, in a second row behind the first",
+      "a thick halo ring floats above the middle petal, its lower arc almost touching the petal tip",
+      "a second thin halo ring nests inside the first and every petal is one notch thicker"
+    ],
+    "subject": "Blessing: a halo of dragon light rests on the shaman, raising damage, attack speed and area and closing his wounds",
+    "glyph": "one open lotus flower seen from the front, perfectly symmetric: five broad leaf-shaped petals with sharp tips fanned upward (the middle petal the tallest, the outer two leaning almost horizontal), their bases joined at a small solid round seed disc, one thin black cut-line down the middle of every petal, the whole flower sitting on a short thick flat water band with a gently wavy top edge at the bottom; solid flat shapes, no figure, no hands; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r1: counterpart classic MMORPG hosin (a figure standing in rings). Ours: a layered lotus + halo rings (holy blessing, no figure, not a radial sun-star like dawn_blade/berserk). Petals 5 -> 9, then halo rings 0 -> 1 -> 2."
+  },
+  "icon_skill_cometfall": {
+    "grades": [
+      "a second meteor, two thirds the size, plunges parallel to the first in the empty lower right corner, with its own broad wedge tail",
+      "a third meteor of the same size as the second plunges parallel in the empty upper left corner, three meteors in all",
+      "the crack lines of the main rock double and a thick solid shock ring circles the main rock head"
+    ],
+    "subject": "Meteor: the shaman calls flaming meteors down from the sky, each one blasting a wide area and leaving the ground burning",
+    "glyph": "ONE huge meteor plunging diagonally from the upper right corner to the lower left corner: a big faceted rock head (a rounded hexagon about 42 percent of the cell wide with TWO thick jagged black crack lines cut into it) at the lower left, and behind it toward the upper right ONE broad solid tail shaped like a long tapered wedge (as wide as the rock at the head, narrowing to a sharp point in the upper right corner) with TWO thick straight black cut-lines running along its length (so it reads as three fat blades fused at the rock, never thin streaks); the upper left and the lower right corners of the cell stay empty; solid flat shapes, no round flames, no onion or bulb shapes, no sparks, no embers, no ground line, no hairlines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (hairline strokes thinner than the rest of the set: #11 meteor streaks): ONE broad wedge tail with two thick cut-lines instead of three thin streaks; meteors 1 -> 3, cracks double + shock ring at g4. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_bell_chime": {
+    "grades": [
+      "a third thick black cut-line band round the body, three bands in all, and the bell is one notch wider",
+      "a fourth cut-line band, four bands in all, and a row of five fat round studs sits on the shoulder",
+      "a fifth cut-line band, five bands in all, and a thick striking log lies horizontally in front of the lip"
+    ],
+    "subject": "Bell Chime: the shaman's hand bell tolls, each ring striking a short cone in front of him and nudging foes back",
+    "glyph": "ONE bold solid white squat temple bell seen from the front, like a big cast Korean temple bell, perfectly symmetric about the vertical axis: a big round loop handle (a fat ring) on top, round heavy shoulders, a tall barrel body about 65 percent of the cell wide with a flat flared lip at the bottom, ONE thick black cut-line band running round the body just above the lip, and ONE thick black cut-line band round the shoulder; the whole bell fills about 90 percent of the cell height; flat solid shapes: NO dragon, NO finial figure, NO clapper ball, NO side arcs, NO sound waves, NO ribbon, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (#12 the dragon finial is a few-pixel smudge, the grades add almost nothing: coverage 23 -> 21 %): plain bold temple bell with a ring handle, bands 2 -> 5 + shoulder studs + striking log as COUNTED growth, no dragon, no arcs. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_stormcall": {
+    "grades": [
+      "two more shorter bolts join on the outer sides, one on the left and one on the right, five bolts in all, all converging on the same point",
+      "the impact burst grows into a larger eight-point star with a thin black ring gap around its core",
+      "two more outermost shorter bolts, seven bolts in all, still converging on the same point"
+    ],
+    "subject": "Stormcall: the shaman calls thunderbolts down on random foes, each blast stunning those it hits",
+    "glyph": "THREE fat zig-zag lightning bolts striking down from the top edge and converging at one point at the bottom centre of the cell: the middle bolt vertical and the longest, the left and the right bolt slanting inward from the two top corners, each bolt as thick as a seventh of the cell with two sharp angular bends and a needle point; at the meeting point ONE solid star-shaped impact burst of six short triangular points; the whole an inverted triangle filling the cell, perfectly symmetric left to right; no pedestal, no ground bar, no clouds, no rain, no outline; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 (replaces r3 single bolt on a ground bar = trophy / table lamp, g2-g4 a row of candlesticks). Counterpart classic MMORPG byeorak (one branching bolt). Ours: converging trio of bolts (inverted triangle) striking one point, bolts 3 -> 5 -> 7, bigger impact star at g3. Old text: r3/snapshot/hints_shaman.json"
+  },
+  "icon_skill_mending_light": {
+    "grades": [
+      "two more, smaller pearls rise on the outer sides, five pearls in all",
+      "two more still smaller pearls, seven in all, and a second band cut-line around the belly",
+      "a small solid pearl sits on top of each handle, nine pearls in all, and the pot is one notch thicker"
+    ],
+    "subject": "Cure: the shaman mends his wounds at once and bathes in renewing light, regenerating life and hardening his armour",
+    "glyph": "ONE heavy three-legged ritual cauldron (a Chinese ding) seen from the front: a wide squat round pot body about 60 percent of the cell wide with a thick flat rim, two big solid ring handles standing up at the left and right of the rim, three short thick tapered legs below it, ONE thick black band cut-line around the belly and ONE small diamond hole cut in the belly; from the mouth of the pot three big solid round pearls of different sizes rise in a loose arc above the rim, the biggest in the middle; perfectly symmetric about the vertical axis; flat solid shapes, no fire, no flames, no steam, no lid, no hand, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 (replaces r3 sideways gourd = snowman / rattle / ladle, main ball under the slot numeral). Counterpart classic MMORPG jeongeop (a lantern-like ward) = grammar only. Ours: a three-legged cauldron with rising healing pearls 3 -> 5 -> 7 -> 9. Old text: r4/replaced_hints_w3.json"
+  },
+  "icon_skill_thunder_guardians": {
+    "grades": [
+      "each bulb gains two more prongs, five prongs per bulb, the outline growing a little wider",
+      "a thick ring of six fat petals sits on each side of the central bead, the five prongs staying",
+      "a thick ring circles the central bead and every prong is one notch thicker"
+    ],
+    "subject": "Thunder Guardians: the shaman calls lightning guardians that hunt down enemies and hammer an area with every blow",
+    "glyph": "ONE big vajra (a thunderbolt scepter) lying on a 45 degree diagonal from the lower left to the upper right as a bold solid white silhouette, filling the cell corner to corner (the long side about 95 percent of the cell diagonal): in the middle a fat grip made of a big solid round bead between two thick flat collars, and at each end a bulb of THREE very fat prongs (one straight middle spike and two thick curved prongs that bow outward and then meet it at the tip, leaving narrow black gaps), each bulb as wide as 32 percent of the cell; flat solid shapes: NO lightning bolts, NO zigzags, NO flanking shapes, NO cross, NO figure, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5 round-2 text (the first r5 upright vajra was 0.3 wide at g1 = the critic's 10-px vajra): the vajra on a 45 degree diagonal with 32 % wide fat bulbs so it fills the tile; prongs 3 -> 5, petals, ring kept. Old text in r5/start/hints_shaman.json | SHIPPED = gen v20 = the real codex sheet of v18 (petal vajra) with its white stencil dilated by 5 px (THICKENED, not a fresh codex output): coverage 8.9 -> 12.7 %; the thickened v17 (spiky prongs) closed its prong gaps into a blob and was rejected."
+  },
+  "icon_skill_resounding_bellow": {
+    "grades": [
+      "a second thick horn rises behind the first, two horns in all",
+      "a third thick horn behind the second, three horns in all, and a thick tongue spike lies in the open mouth",
+      "a fourth thick horn, four horns in all, and every horn and fang is one notch thicker"
+    ],
+    "subject": "Resounding Bellow: the dragon's voice rolls out in pulses through a wide cone, shoving foes back and sending some fleeing in terror",
+    "glyph": "ONE dragon head in profile as a single bold solid white silhouette, facing the upper right on a 25 degree tilt, filling the cell like a heraldic crest: a compact blunt wedge with a heavy upper jaw and the lower jaw dropped wide open, the open mouth ONE big black wedge notch; ONE black slash for the eye and ONE small black notch for the nostril; just TWO fangs, ONE big triangular fang on the upper jaw and ONE on the lower jaw; ONE thick curved horn swept back from the brow; a short thick neck cut off straight at the lower left; the only black cut-lines are the mouth notch, the eye slash and the nostril: NO mane strands, NO row of teeth, NO whiskers, NO beard, NO scales, NO flames, NO sound lines, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (tattoo-flash head, mane strands + rows of teeth; #4 growth only by invisible detail): FLAT profile head silhouette, 2 fangs + 1 eye + 1 nostril + the mouth notch, horns 1 -> 4 as the counted growth. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_wyrm_retinue": {
+    "grades": [
+      "a second, smaller pair of the same flat dragons rises outside the first pair, four dragons in all, the pearl staying in the middle",
+      "a thick solid ring circles the pearl",
+      "a third, still smaller pair of the same flat dragons at the outer corners, six dragons in all, the ring around the pearl staying"
+    ],
+    "subject": "Wyrm Retinue: spirit dragons answer the shaman's call and fight at his side, lunging at nearby foes",
+    "glyph": "TWO dragons as one bold solid white symmetric silhouette (perfect mirror images about the vertical axis), a tall lyre shape: each dragon is one thick solid S-shaped neck and body, as thick as a fifth of the cell, rising from a shared base at the bottom centre where the two tails join in a V, swinging out to the sides and back in, and ending at the top in a BIG plain wedge head in profile as large as 28 percent of the cell, the snout pointing to the centre, the jaws closed, ONE thick black slash for the eye and ONE thick curved horn swept back; ONE big solid round pearl floats between the two snouts at the top centre; the only black cut-lines are the two eye slashes and the gap between the two bodies; the whole shape is about 85 percent tall and 75 percent wide; flat solid shapes: no heart outline, NO mane strands, NO rows of teeth, NO whiskers, NO scales, NO legs, NO flames, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5 round-2 text A (the first r5 lyre read as a tulip / lotus: heads were tiny hooks): BIG plain wedge heads (28 % of the cell) with one eye slash and one horn each, closed jaws, still no mane / teeth / whiskers. Old text in r5/start/hints_shaman.json | SHIPPED = gen v8 (text A). Tried and not shipped: v9 (tulip), v10 (claw round a pearl = clam shell), v11/v12 (text C, mirrored flat dragons: heart shape with thin crossing tails, 7-11 % coverage)."
+  },
+  "icon_skill_dragon_seal": {
+    "grades": [
+      "four more slips join on the diagonals between them, eight slips in all, every slip as long as before",
+      "every slip grows a second diamond hole and a sharper V-notch, and a thick second ring is cut INSIDE the main ring around the pearl (the slips stay as long and as separate as before, no outer ring)",
+      "a small solid round pearl sits on the tip of each of the eight slips and every slip is one notch thicker"
+    ],
+    "subject": "Dragon Seal: the shaman pins a seal of golden talismans to the ground that damages and weakens everything inside",
+    "glyph": "a ground seal seen from above, filling the cell: one very thick ring (its band one fifth of its radius) with a big solid round pearl inside it separated by a thin black gap, and four FAT talisman slips (each a broad rectangle about a quarter as wide as the ring, with a V-notched outer end) radiating outward from the ring at the top, bottom, left and right, each slip with ONE diamond hole cut as a black gap and as long as the ring's radius; perfectly symmetric on both axes; no letters, no star, no figures, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 (keeps the r3 glyph; replaces the growth: r3 g3/g4 added an OUTER ring that swallowed the slips = a spoked wheel, the silhouette changed). Ours: ring + pearl + slips stay visible at every grade, growth = slips 4 -> 8, holes 1 -> 2, tip pearls. Old text: r4/replaced_hints_w3.json"
+  },
+  "icon_skill_nine_dragons": {
+    "grades": [
+      "a second ring of nine short spikes fills the gaps between the blades, one short spike between every two blades",
+      "a thin ring circles the pearl and the blades are one notch thicker",
+      "a thin outer ring of nine broken arcs surrounds the blade tips"
+    ],
+    "subject": "Nine Dragons: nine spirit dragons burst outward in a ring, each ripping through enemies and setting them ablaze",
+    "glyph": "a ring of nine BROAD tapered dragon-fang blades radiating from a big solid round pearl at the centre in a full circle, every blade slightly curved the same way (clockwise), separated only by narrow black gaps so the whole is almost a solid pinwheel disc, each tip needle-sharp and each blade carrying one small notch cut into its outer edge as a spine ridge; round overall, filling the cell edge to edge; no heads, no eyes, no figure; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r1 DRAFT (not generated in round 1): style refs paeryong + yongpa. Ours: nine curved fang-blades around a pearl (count 9 = the name). Risk: near bladewheel/blood_whirl pinwheels; fallback = nine straight spear-fangs (no curve) or a nine-pointed crown."
+  },
+  "icon_skill_sovereigns_ire": {
+    "grades": [
+      "a third fat pointed blade-feather is added to each wing, three blades per wing, the outline growing a little wider",
+      "a fourth fat blade-feather is added to each wing, four blades per wing, the wings now clearly wider than at grade 1",
+      "a fifth fat blade-feather is added to each wing, five blades per wing, and a thick solid ring circles the pearl"
+    ],
+    "subject": "Sovereign's Ire: the Sky Sovereign lends the shaman his wrath, surging damage, attack speed, critical chance and area for a time",
+    "glyph": "ONE pair of big dragon-god wings raised high in a wide V, perfect mirror images about the vertical axis, a single bold solid white silhouette filling the cell (95 percent wide, 80 percent tall): each wing is ONE solid sweeping shape, a thick arm rising from the bottom centre up and outward to a sharp tip near the top corner, with exactly TWO fat pointed blade-feathers hanging down and out beneath the arm, separated from each other and from the arm by thick black cut-lines; the lower edge of each wing is a clean zigzag of the blade tips (NO scalloped membrane, NO ribs, NO claws, NO bat look); at the bottom centre, where the two wings meet, ONE big solid round pearl sitting directly between the wing roots (NO stub, NO neck, NO keyhole shape); NO head, NO face, NO flames, NO crown, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5 round-2 text (the first r5 wings were flat and low, 0.35 tall, with a pearl on a stub = KEYHOLE): wings raised in a V (80 % tall), pearl between the wing roots, no stub; counted 2 -> 5 blades per wing + ring kept. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_mirror_shell": {
+    "grades": [
+      "a thick chevron hook sits on each side of the rim pointing up and outward like a rebound arrow, two chevrons in all",
+      "a second thick chevron hook stacks above the first on each side, four chevrons in all",
+      "a thick second ring surrounds the glass inside the rim and every chevron is one notch thicker"
+    ],
+    "subject": "Reflect: a mirror-bright bubble wraps the shaman, raising armour and evasion and rebounding melee blows onto the attacker",
+    "glyph": "ONE huge round bronze mirror seen from the front, perfectly symmetric about the vertical axis, with NO handle: a very thick solid rim ring (one eighth of the cell thick) around a big mirror face that is 62 percent of the cell wide, separated from the rim by a thin black gap; ONE big curved four-point sparkle star (a diamond with concave sides) cut as a black gap in the middle of the glass and nothing else on the glass; on top of the rim a fat solid loop knob (a thick ring) for hanging; flat solid shapes: NO handle, NO stick, NO stem, NO magnifying glass, NO diagonal bars, NO prohibition sign, NO octagon, NO thorns, NO figure, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5 round-2 text (the first r5 text, mirror with a handle + sparkle, read as a MAGNIFYING GLASS at 48 px): no handle, top loop knob, centred sparkle star; rebound chevrons 0 -> 4 and the second ring kept. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_arcing_bolt": {
+    "grades": [
+      "each of the two forks forks again into two short needles, four needle tips on the sides",
+      "two more fat forks jut out of the upper bends, four forks in all, each with its own twin needles",
+      "the bolt and every fork is one notch thicker and the bottom point splits into a fat two-needle tail"
+    ],
+    "subject": "Arcing Bolt: the shaman hurls a ball of lightning that leaps between enemies, a little weaker with every jump",
+    "glyph": "ONE colossal fat lightning bolt filling the cell from the top edge to the bottom edge, drawn like a heavy heraldic thunderbolt, not a thin line: a broad slanted flat top (a third of the cell wide) that steps down through three sharp angular bends to a long needle point at the bottom, the body as thick as one quarter of the cell at its widest; from the two middle bends ONE short fat zig-zag fork juts out to the left and ONE to the right, each as thick as a third of the body and ending in a needle tip, the two forks at different heights; perfectly balanced, flat solid shapes, no orb, no disc, no ring, no cross, no circuit nodes, no clouds, no tree, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 round-6 text (text 1 X = 0.797 correlation with ninja shred; 2 javelin = squid; 3 cross = thin compass; 4 bolt chain = stock emoji; 5 branching bolt = a bare tree / coral at g2-g4 in the HUD). Replaces r3 orb + two horizontal bolts (barbell, 6 % cream). Counterpart classic MMORPG noejeon (starburst) = grammar only. Ours: ONE colossal fat classic bolt with two fat forks 2 -> 4 -> 8. Old texts: r4/replaced_hints_w7.json, briefs_w1/w7/w8/w9/w10.json"
+  },
+  "icon_skill_crackling_stream": {
+    "grades": [
+      "a fourth talon joins below the three, four talons in all, and the arm grows one short side bolt",
+      "a fifth talon, five in all, and a second short side bolt on the arm",
+      "a sixth talon, six in all, three side bolts, and everything is one notch thicker"
+    ],
+    "subject": "Crackling Stream: the shaman channels a crackling stream of lightning from his fist, numbing everything it touches",
+    "glyph": "ONE thunder-claw running on a diagonal from the upper left corner to the lower right corner: a thick jagged lightning arm (a fat zig-zag band as thick as one sixth of the cell with two sharp angular bends) comes in from the upper left corner and ends at the centre in a solid chunky knuckle plate, from which THREE fat curved talons fan out toward the lower right, each talon a thick sickle with a needle-sharp tip, the middle talon the longest, with narrow black gaps between the talons; the whole silhouette is bold and heavy; flat solid shapes, no hand drawing, no fingers, no fist, no orb, no glow, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 (replaces r3 orb + three horizontal strands: 7.4 % cream, 0.33 tall, orb-in-the-middle archetype). Counterpart classic MMORPG pokroe (vertical wavy strands) = grammar only. Ours: a bolt arm ending in a plate with 3 sickle talons, talons 3 -> 6, side bolts 1 -> 3. Old text: r4/replaced_hints_w3.json"
+  },
+  "icon_skill_tailwind": {
+    "grades": [
+      "a fourth fat blade-feather is added to the wing, four feathers, and one fat speed bar trails behind the heel",
+      "a fifth fat blade-feather, five feathers, and two fat speed bars trail behind the heel",
+      "a sixth fat blade-feather, six feathers, three fat speed bars trail behind the heel and the sole is one notch thicker"
+    ],
+    "subject": "Swiftness: the wind answers the shaman's call, so he sprints far faster and slips past more blows",
+    "glyph": "ONE bold solid white winged boot in side view facing right, a single heraldic silhouette filling the cell edge to edge: a chunky ankle boot (a solid boot shape with a thick flat sole bar, a rounded toe and a tall cuff) and ONE big swept-back wing rising from the ankle behind it up and to the left, the wing made of three fat pointed blade-feathers separated by THREE thick black cut-lines, the wing as big as the boot; ONE thick black cut-line separates the sole from the boot; flat solid shapes: NO laces, NO straps, NO buckles, NO tornado, NO cloud, NO wind swirl, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (#17 the tornado reads as a whirlwind attack, not a speed buff): the classic SPEED glyph, a flat winged boot (feathers 3 -> 6, speed bars 1 -> 3); checks to watch: warrior daejin / giant_leap boots (gates). Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_surging_arms": {
+    "grades": [
+      "a third hoop cut-line runs round the barrel and a row of three fat round studs sits along the top rim",
+      "a fourth hoop cut-line and a row of five fat round studs along the top rim",
+      "a fifth hoop cut-line, seven fat round studs along the top rim and both drumsticks one notch thicker"
+    ],
+    "subject": "Surging Arms: lightning courses through the shaman's arms, raising damage and critical chance and returning life with every hit",
+    "glyph": "ONE bold solid white war drum seen from the front, wide and squat, filling the cell: a big round barrel drum body (slightly wider in the middle) standing on a flat base bar with two short feet, TWO thick black cut-line hoops running round the barrel, and TWO fat drumsticks crossed in an X above the drum, each stick ending in a big round knob; the drum is a solid mass; flat solid shapes: NO lightning, NO bolt, NO zigzag rope, NO flames, NO leaves, NO figure, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (#18 flame-tongue leaves cup a zigzag bolt = fire cue on a lightning skill, the 7th zigzag of the doctrine): NO bolt, NO flame - a thunder WAR DRUM (rallying drum = attack buff) with crossed sticks; hoops 2 -> 5 + studs 3 -> 7. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_thunder_bells": {
+    "grades": [
+      "a fourth bell of the same size hangs from the beam, four bells in a row, the beam grows a little longer",
+      "a fifth bell hangs from the beam, five bells in a row, and a thick second beam runs under the first",
+      "the five bells are one notch bigger and a thick ring circles the hanging loop on top"
+    ],
+    "subject": "Thunder Bells: thunder bells circle the shaman and ring against every enemy they brush",
+    "glyph": "ONE bold solid white temple wind-chime rack: a thick straight horizontal beam across the upper part of the cell, 85 percent of the cell wide, with a big round hanging loop ring at its centre on top, and THREE fat bells of equal size hanging from the beam in a straight row on short thick hooks, each bell a plain flared dome (a bell shape with a thick black rim line near its lower edge and a round clapper blob under it), evenly spaced with clear black gaps between the bells; perfectly symmetric about the vertical axis; flat solid shapes: NO lightning, NO bolt, NO zigzag, NO tassel, NO triangle cluster, NO club shape, NO thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r5: critic r4 (#19 three bells in a triangle with a bolt stem read as a club suit at 48 px): a straight RACK of equal bells (no bolt, no triangle) so the silhouette is a comb under a beam; bells 3 -> 5. Old text in r5/start/hints_shaman.json"
+  },
+  "icon_skill_thunderclap": {
+    "grades": [
+      "a second very fat bolt bursts from each end cap outward and diagonally downward, four bolts in all",
+      "a third very fat bolt bursts straight outward from each end cap, six bolts in all",
+      "the handle grows one thick crossguard band and the head and every bolt are one notch thicker"
+    ],
+    "subject": "Thunderclap: the bell tolls thunder and a colossal ring of lightning bursts outward, hurling and stunning foes",
+    "glyph": "ONE colossal thunder-god mallet standing upright, perfectly symmetric left to right and very HEAVY: a massive barrel-shaped hammer head that is 90 percent of the cell wide and one third of the cell tall at the upper part, with ONE thick black band cut-line around its middle and a round cap on each end; a very thick straight handle (one fifth of the cell wide) running down from the middle of the head to a big solid round pommel at the bottom; from each end cap of the head ONE very fat zig-zag lightning bolt (as thick as one eighth of the cell) bursts outward and diagonally upward, with two sharp bends and a needle tip, as long as a third of the cell; flat solid shapes, no figure, no hand, no sun, no ring, no disc, no teeth, no thin lines; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r4 round-2 text (the first r4 mallet had a 0.15 handle and thin bolts: 6.2 % cream at 48 px, the lightest tile of the set; dilating it filled the band cut-lines and turned the head into a T blob). Replaces r3 ring of bolt teeth around a disc = sun / gear. Counterpart classic MMORPG noejeon (starburst) = grammar only. Ours: a very heavy upright thunder mallet with fat bolts bursting from its end caps 2 -> 4 -> 6 (a vertical emblem, no disc). Old text: r4/replaced_hints_w3.json and r4/briefs_w3.json"
+  },
+  "icon_skill_stormglass_shell": {
+    "grades": [
+      "a third tier sits on top of the second, three tiers in all, each tier one notch narrower than the one below and each tier a little lower so the whole pagoda keeps the same overall height",
+      "a fourth tier sits on top of the third, four tiers in all, the same overall height again, every roof one notch thicker",
+      "a wide two-step stone plinth is added under the lowest tier (the pagoda stays the same overall height), and a thin ring floats around the finial pearl"
+    ],
+    "subject": "Stormglass Shell: an aether shell surrounds the shaman, hardening armour, easing damage and hurling melee blows back at the attacker",
+    "glyph": "a heraldic warding pagoda tower seen from the front, perfectly symmetric: TWO stacked tiers, each tier a solid broad roof with upswept pointed eaves (a shallow bowl curve whose corner tips flick up) above a short solid wall block with one tall black door slit; the lower tier the widest, the upper tier one notch narrower, a thick finial spire with a round pearl on top; the whole as tall as the cell and about 0.85 as wide; no figure, no window grid, no stairs, no mountain, no ground line, no parasol, no mushroom; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_shaman r3 rewrite (before generation): the r2 parasol was swapped for a tiered warding PAGODA (tiers 2 -> 4, then a plinth + pearl ring): a parasol is a prop and risks the mushroom misread at 48 px; the pagoda is a heraldic symmetric stack that counts. Previous (r2) text: counterpart classic MMORPG cheonun (parentheses ward around a diamond) = style only. r1 text was a round hex-plate shell: it would be a filled disc like the shipped reflect mirror (octagon disc), so the pair would fail the 0.75 mask-correlation gate. Ours: a parasol canopy (shelter/ward), tiers 1 -> 4. Risk: a mushroom misread at 48 px - the scalloped rim, ribs and J hook are there to prevent it; fallback = three nested arches over a pearl."
+  },
+  "icon_skill_dagger_flurry": {
+    "grades": [
+      "two more daggers join on the outer sides, five daggers in all, each blade one notch narrower so the fan keeps the same size, fanned over a wider arc, all pommels at the same bottom point",
+      "two more daggers join on the outer sides, seven daggers in all, each blade a little narrower, fanned like an open half circle, all pommels at the same bottom point",
+      "the same seven daggers but every blade one notch longer and wider, the fan filling the whole canvas"
+    ],
+    "subject": "Dagger Flurry: the ninja whirls a fan of daggers in a blur and slashes everything within reach",
+    "glyph": "a fan of THREE big solid daggers that meet at one point at the bottom centre: one upright dagger in the middle and one leaning left and one leaning right (about 35 degrees from the upright), every dagger as long as the canvas allows (about 85 percent of the canvas height) built like a stiletto: a straight blade with PARALLEL sides about one ninth of the canvas wide ending in a short sharp triangular point (never a leaf, never a petal, never kite-shaped), a very thick straight crossguard bar clearly twice as wide as the blade, a short grip block and a round pommel ring at the shared bottom point; the three daggers separated by narrow black gaps; symmetric left to right; no cut-lines on the blades, no hands, no figure, no motion lines, no lotus, no feather; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW v3 (wave G v43/v44: fat leaf blades read as a lotus / fleur-de-lis). Ours: stiletto blades with PARALLEL sides, wide crossguards and ring pommels (so they read as daggers), fan 3 -> 5 -> 7. classic MMORPG seomjeon = growth ref."
+  },
+  "icon_skill_moonless_cut": {
+    "grades": [
+      "two more tapered motion bars join, four bars in all (two above and two below its line), the outer pair a little shorter, the kunai unchanged",
+      "six motion bars in all (three above and three below its line), each outer pair a little shorter, the kunai unchanged",
+      "eight motion bars in all (four above and four below its line), every bar one notch narrower so the whole wake keeps the same width, the kunai one notch bigger"
+    ],
+    "subject": "Ambush: the ninja bursts out of the shadows and cuts down everything in a line, untouchable mid-lunge, leaving the survivors marked",
+    "glyph": "ONE big thick kunai lying on the diagonal, its broad double-edged leaf-shaped blade pointing to the upper right corner of the canvas, a short thick crossbar, a short grip block and a round ring pommel (its hole cut out in black) at the lower left; behind the pommel TWO long tapered motion bars streak away to the lower left, parallel to the kunai, one above and one below its line, each separated from the kunai and from the other by a narrow black gap; no ring around it, no circle, no target, no crosshair, no figure, no hands; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: the ring + horizontal kunai read as a euro sign, a D-bow twin of bow_shot, ring overuse). Ours: ring-free kunai on the DIAGONAL with a motion wake 2 -> 8 bars. classic MMORPG amseup = growth ref only."
+  },
+  "icon_skill_vanishing_leap": {
+    "grades": [
+      "two more speed bars join at the outer sides, six in all, each outer pair a little shorter, and the ground bar grows two more impact ticks",
+      "two more speed bars join at the outer sides, eight in all, every outer pair a little shorter, the impact ticks one notch longer",
+      "every stroke one notch thicker and a second thin ground bar nests under the first with a narrow black gap"
+    ],
+    "subject": "Vanishing Leap: the ninja blurs into shadow and leaps onto the thickest knot of enemies, hitting everything where she lands",
+    "glyph": "ONE big kunai plunging straight down with its point at the bottom centre (a leaf-shaped blade, a short crossguard, a small ring pommel at the top), two thick tapered vertical speed bars on each side of it (four bars in all, the inner pair longer), and a wide thick flat ground bar at the bottom that the point touches, with two short thick impact ticks slanting outward on each side of the point like a landing burst; symmetric left to right, as tall and as wide as the canvas; no figure, no hands; flat heraldic pictogram built from HEAVY strokes of ONE common thickness (about one tenth of the canvas): solid masses and thick bars, no hairlines, at most a few thin inner cut-lines, no shading; the base drawing already fills the whole cell",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r2: counterpart gungsin (running figure + speed lines): ours is figure-free: diving kunai + speed bars 4 -> 6 -> 8 landing on a ground bar with impact ticks (no ellipse ring: arrowfall owns the ellipse)."
+  },
+  "icon_skill_spiral_of_knives": {
+    "grades": [
+      "two more blades join so six blades sit evenly around the ring, the ring a little thicker",
+      "eight blades sit evenly around the ring and a small second ring floats inside the middle hole",
+      "ten blades sit evenly around the ring, every blade one notch broader, the inner ring thicker"
+    ],
+    "subject": "Spiral of Knives: a cyclone of daggers whirls around the ninja, shredding and poisoning everything near",
+    "glyph": "a flat thick circular ring (a chakram) with four broad leaf-shaped dagger blades fixed on its outer edge, every blade pointing outward and slanting the same way (clockwise) like the teeth of a saw blade, each blade with a sharp tip; one round hole in the middle; four-fold rotational symmetry, as wide as the canvas; one thin black cut-line along the spine of each blade; no hands, no figure; flat heraldic pictogram built from HEAVY strokes of ONE common thickness (about one tenth of the canvas): solid masses and thick bars, no hairlines, at most a few thin inner cut-lines, no shading; the base drawing already fills the whole cell",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r2: counterpart charyun (S-hook with dots). Own: saw-ring of daggers 4 -> 6 -> 8 -> 10 blades. Watch the correlation with warrior bladewheel (triskelion)."
+  },
+  "icon_skill_nightshroud": {
+    "grades": [
+      "the flat hem of the cloak is cut into three broad pointed tatters hanging down (one in the middle, one at each side) with narrow black gaps between them, the hood and eyes unchanged",
+      "five pointed tatters hang from the hem in all, every tatter a little narrower, the hood and eyes unchanged",
+      "seven pointed tatters hang from the hem in all, every tatter a little narrower, the hood and eyes unchanged"
+    ],
+    "subject": "Stealth: the ninja melts into the shadows, faster, harder to hit and deadlier for a while",
+    "glyph": "ONE bold hooded cloak figure seen from the front, a solid white silhouette with a pure black void for a face: a tall rounded hood (a thick white arch about 45 percent of the canvas wide and 50 percent tall, the arch bar as thick as a thumb) whose inside is an empty black oval void containing ONLY two small almond-shaped white eyes side by side; below the hood the cloak spreads out into wide rounded shoulders (a solid white mass about 90 percent of the canvas wide) whose bottom edge is one straight flat hem; perfectly symmetric left to right; no nose, no mouth, no mask band, no stripes, no dots, no belt, no arms, no hands, no weapon, no pointed hood; flat heraldic pictogram LINE-BUILT from thick bars of ONE common weight (every bar about one ninth of the canvas wide, nothing thinner than one twenty-second): open shapes with plenty of black space between the strokes, never one big solid blob and never a hairline outline drawing, the white covers only about one fifth of the cell, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW v2 (wave C v4/v5: the round-head ninja with striped shirt read as a burglar / prisoner). Ours: hooded cloak with a black void face and two eyes (rogue stealth), hem tatters 0 -> 3 -> 5 -> 7. classic MMORPG eunhyeong (bust) = growth ref."
+  },
+  "icon_skill_noxious_pall": {
+    "grades": [
+      "a fourth venom drip joins under the cloud, four drips in all, and a fourth scroll cut-out opens in the cloud",
+      "five venom drips in all and five scroll cut-outs in all, every drip one notch fatter",
+      "six venom drips in all, the same five scrolls, every drip one notch fatter"
+    ],
+    "subject": "Noxious Pall: toxic clouds settle on the enemy pack, pulsing damage and poisoning everyone who breathes them",
+    "glyph": "ONE big SOLID scroll cloud: a solid white silhouette of five round lobes with a flat underside, with three thick black spiral-scroll cut-outs inside the lobes (the cloud-scroll pattern of East Asian art, drawn as black negative space inside the white mass), and THREE fat venom drips hanging from the flat underside at different heights (each drip a long rounded drop, fatter at its end, with ONE round bubble hole cut out of its fat end); nearly symmetric, as wide as the canvas; no outline-only drawing, no thin lines, no dotted lines, no eye-like holes, no face, no falling rain; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: thin outline cloud, drops read as water). Ours: SOLID scroll cloud (heavy, one hand) with bubble-hole venom drips 3 -> 6 (the bubble-hole drop is the poison mark shared with poison_arrow and plague_rain). classic MMORPG sangong = growth ref."
+  },
+  "icon_skill_creeping_venom": {
+    "grades": [
+      "two more venom drops fall, two on each side of the lower body (four in all), each outer drop a little smaller, the cobra unchanged",
+      "two more drops, three on each side in all (six drops in all), the cobra unchanged",
+      "two more drops, four on each side in all (eight drops in all), every drop one notch fatter, the cobra unchanged"
+    ],
+    "subject": "Creeping Venom: the ninja flicks a poisoned blade and the venom creeps silently from enemy to enemy",
+    "glyph": "ONE bold upright cobra emblem in the style of an Egyptian uraeus: a big flared HOOD like a wide rounded shield about 75 percent of the canvas wide standing in the upper two thirds, a small head with a short snout turned to the left sitting at the top centre of the hood with ONE long sharp curved fang hanging down in front of the hood (separated from the hood by a narrow black gap), one thick black spectacle mark cut into the hood, and below the hood a short thick S-shaped body that ends in a pointed tail curling to the lower right; one fat teardrop of venom (round bottom, pointed top) falls at each side of the lower body; no scales, no tongue, no eye, no coils, no dagger, no figure, no hands; flat heraldic pictogram LINE-BUILT from thick bars of ONE common weight (every bar about one ninth of the canvas wide, nothing thinner than one twenty-second): open shapes with plenty of black space between the strokes, never one big solid blob and never a hairline outline drawing, the white covers only about one fifth of the cell, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: a fat S-wisp (eel or ghost) whose only growth is a chain of dots at the edge, coverage flat at 0.30). Ours: uraeus cobra with a wide flared hood + one big fang, symmetric drops 2 -> 8 each side of the lower body. classic MMORPG seomjeon = growth ref only."
+  },
+  "icon_skill_shadow_clone": {
+    "grades": [
+      "a second outline echo joins behind the first, two echoes in all, each one a little further down and right, the solid dagger unchanged",
+      "three outline echoes in all, every echo a notch narrower so the whole stack keeps the same footprint, the solid dagger unchanged",
+      "four outline echoes in all, every echo a notch narrower so the whole stack keeps the same footprint, the solid dagger unchanged"
+    ],
+    "subject": "Shadow Clone: the ninja splits into shadow doubles that strike at the same time",
+    "glyph": "ONE bold solid dagger lying on the diagonal with its blade pointing to the UPPER LEFT corner of the canvas (a straight narrow double-edged blade with a sharp point, a thick crossguard bar, a short grip block with a round pommel at the lower right), and, offset a little down and to the right behind it, ONE echo of the same dagger drawn as a THICK OUTLINE only (the inside empty black), parallel and the same size, separated from the solid dagger by a narrow black gap; no figure, no hands, no ring pommel, no ring around it, no circle; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: G1 is a lone dagger = item icon, the clone idea only appears from G2). Ours: solid dagger pointing up-LEFT (mirror of ambush) + outline echo from G1, echoes 1 -> 4. classic MMORPG eunhyeong + gungsin = growth refs."
+  },
+  "icon_skill_requiem_flurry": {
+    "grades": [
+      "a second slash joins, two parallel slashes in all on the same diagonal, evenly spaced about one blade width apart, both passing behind the blade, the blade unchanged",
+      "three parallel slashes in all on the same diagonal, evenly spaced, all passing behind the blade, the blade unchanged",
+      "five parallel slashes in all on the same diagonal (the five cuts), evenly spaced, every slash one notch narrower so all fit in the canvas, all passing behind the blade, the blade unchanged"
+    ],
+    "subject": "Requiem Flurry: in the blink of an eye the ninja carves five lethal cuts through everyone around and marks the survivors for death",
+    "glyph": "ONE big straight kunai standing vertically with its point DOWN at the exact centre of the canvas (a broad double-edged leaf-shaped blade in the lower 60 percent of the height, a short thick crossbar, a short grip block and a round ring pommel at the very top with its hole cut out in black) and, behind it, ONE long thick slash bar on the diagonal from the upper left to the lower right at about 45 degrees (tapered to a sharp point at both ends, as long as the canvas allows, passing behind the middle of the blade with a narrow black gap wherever the blade crosses it); no ring around it, no sword with a cross-guard, no second dagger, no skull, no figure, no hands, no radiating rays; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW v2 (wave C v3/v4: the kunai with RADIATING bars reads as a dragonfly / insect at G3/G4). Ours: ONE downward kunai in front of 1 -> 5 PARALLEL diagonal slashes (claw-mark cuts), no radiating rays. classic MMORPG seomjeon = growth ref only."
+  },
+  "icon_skill_night_terror": {
+    "grades": [
+      "a second thick arc nests inside each outer arc on both sides, two arcs per side in all, every arc one notch thinner so both fit between the moon and the canvas edge, the crescent unchanged",
+      "a third arc nests inside on both sides, three arcs per side in all, every arc a little thinner so all fit but none thinner than one twentieth of the canvas, the crescent unchanged",
+      "the same three arcs per side, the crescent one notch thicker and one bold four-pointed star sits inside the mouth of the crescent"
+    ],
+    "subject": "Night Terror: a wave of darkness erupts around the ninja, hurls enemies back and sends them fleeing in terror",
+    "glyph": "ONE fat solid crescent moon at the exact centre (horns pointing up, about 45 percent of the canvas wide and 50 percent tall, a thick C-shaped crescent as fat as a thumb with sharp tips), flanked on its LEFT and RIGHT by ONE thick open shock-wave arc each (an arc concentric with the moon, bulging outwards, spanning about 100 degrees, as thick as one tenth of the canvas, placed at the left and right edge of the canvas, the right arc mirroring the left one); the top and the bottom of the canvas stay open; NO closed ring, no circle around the moon, no stars, no face, no clouds, no rays; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW v2 (r4 wave B night_terror: arcs hairline 1/29, coverage 0.09). Ours: fatter crescent, arcs 1/10 -> 1/20 thick, arcs 1 -> 3 per side then a star. Style refs ilgwangpyo + eunhyeong (growth grammar only)."
+  },
+  "icon_skill_seeking_stars": {
+    "grades": [
+      "two small four-pointed stars sit on the orbit ring at its upper left and lower right diagonals",
+      "four small four-pointed stars sit on the orbit ring, one on each diagonal",
+      "eight small four-pointed stars sit on the orbit ring, one on each diagonal and one between every pair of neighbouring long tips, every stroke one notch thicker"
+    ],
+    "subject": "Seeking Stars: eight stars of pure light hunt down the ninja's enemies and pierce them",
+    "glyph": "a bold four-pointed star with four long tapered points (up, down, left, right) and concave sides, a solid round disc at its centre separated from the star by a thin black ring gap, encircled by one closed orbit ring that the four long tips just touch; perfectly symmetric, as wide as the canvas; no glints, no glow, no rays other than the four points; flat heraldic pictogram built from VERY HEAVY strokes: every stroke and every solid mass about one eighth of the canvas wide (nothing thinner than one twenty-second of the canvas), thick bars and big solid shapes, at most three thin black inner cut-lines, never an outline-only drawing, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r3: counterpart ilgwangpyo (four-point star with a centre ring in a lattice frame). Ours: star in an orbit ring, satellite stars 0 -> 2 -> 4 -> 8 (eight stars hunt). Check the phash distance to ilgwangpyo. Old painted gold orb."
+  },
+  "icon_skill_bow_shot": {
+    "grades": [
+      "four tapered speed bars trail behind the arrow tail in all, two above and two below the shaft, the outer pair a little shorter",
+      "six tapered speed bars trail in all, three above and three below, each outer pair a little shorter, the arrowhead one notch broader",
+      "eight tapered speed bars trail in all, four above and four below, the bow limb one notch thicker"
+    ],
+    "subject": "Bow Shot: the ninja looses a single arrow at the nearest enemy, a steady hand and a certain mark",
+    "glyph": "a bold D-shaped bow standing upright at the left: ONE single thick curved limb bulging to the LEFT like a bracket, drawn as a solid C-curve with sharp tips (never a closed almond or lens), a short thick grip block in the middle of the limb, and a perfectly straight thick bowstring line joining the two tips; ONE big arrow already loosed, lying horizontally across the middle of the bow pointing right: a thick straight shaft crossing the bowstring, a big solid triangular head at the right edge of the canvas and a solid chevron fletching at the left tail inside the curve; symmetric top to bottom, as wide as the canvas; no hand, no figure; flat heraldic pictogram built from VERY HEAVY strokes: every stroke and every solid mass about one eighth of the canvas wide (nothing thinner than one twenty-second of the canvas), thick bars and big solid shapes, at most three thin black inner cut-lines, never an outline-only drawing, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r3 REDRAW (critic r2: the almond bow with a centre line reads as an eye / lens). Ours: ONE C-curve limb + straight string = a D-bow, solid and as thick as the arrow. classic MMORPG yeonsa + gwangyeok = style refs."
+  },
+  "icon_skill_rapid_barrage": {
+    "grades": [
+      "one more arrow joins in the same narrow fan, four arrows in all at four different heights, every fletching a little smaller, the quiver unchanged",
+      "five arrows in all in the same narrow fan, the quiver unchanged",
+      "six arrows in all in the same narrow fan, the quiver one notch bigger"
+    ],
+    "subject": "Rapid Barrage: the ninja packs a burst of arrows into a single unlucky target",
+    "glyph": "ONE bold leather quiver tilted 35 degrees so its mouth points to the upper right: a long TAPERED pouch (a narrow cone: narrow pointed base at the lower left, wide mouth at the upper right) drawn as a solid shape with two thick diagonal strap bands cut out of it in black; out of its mouth THREE heavy arrows rise side by side in a narrow fan (about 25 degrees in all) ending at three different heights like a staircase, of each arrow only a short thick shaft and a big solid notched chevron fletching show (no arrowheads, no feathers drawn as lines); no handle, no loop, no strap hanging off the quiver, no bow, no hand, no figure; flat heraldic pictogram LINE-BUILT from thick bars of ONE common weight (every bar about one ninth of the canvas wide, nothing thinner than one twenty-second): open shapes with plenty of black space between the strokes, never one big solid blob and never a hairline outline drawing, the white covers only about one fifth of the cell, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: the quiver is drawn as a mug with a handle, the symmetric arrow fan reads as a shaving brush in a cup, and at G3/G4 it becomes the same radiating fan as dagger_flurry). Ours: a TILTED tapered quiver pointing up-right, no handle, staggered arrows 3 -> 6. classic MMORPG yeonsa = growth ref only."
+  },
+  "icon_skill_arrowfall": {
+    "grades": [
+      "a fourth arrow falls beside the three, four arrows in all, all slanted the same way, all heads on the ground ellipse",
+      "a fifth arrow falls, five arrows in all, all slanted the same way",
+      "a sixth arrow falls, six arrows in all, and the ground ellipse is one notch thicker"
+    ],
+    "subject": "Arrowfall: the ninja looses arrows into the sky and they rain down on random enemies",
+    "glyph": "three parallel arrows falling at a steep slant from the upper left to the lower right (tips pointing down-right), staggered in height, each with a thick shaft, a big solid triangular head and a big solid chevron fletching at the tail, the heads piercing a wide flat ground ellipse at the bottom (a thick ring seen at a low angle, as wide as the canvas); no bow, no figure, no hand; every arrow shaft about one fifteenth of the canvas wide, the ground ellipse as thick as the heads; flat heraldic pictogram built from VERY HEAVY strokes: every stroke and every solid mass about one eighth of the canvas wide (nothing thinner than one twenty-second of the canvas), thick bars and big solid shapes, at most three thin black inner cut-lines, never an outline-only drawing, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r3: was a painted white light orb. Own: slanted falling arrows 3 -> 6 on a ground ellipse (a rain stands in a ground ellipse, ART s5); the only diagonal-parallel glyph. classic MMORPG gwangyeok (bow + cross arrows) = style ref only."
+  },
+  "icon_skill_kindled_shaft": {
+    "grades": [
+      "two more shorter tongues curl outward at the lower sides of the outline, five tongues in all, the arrow unchanged",
+      "two more small tongues curl outward higher up, seven tongues in all, the arrow unchanged",
+      "two more small tongues, nine tongues in all forming a plume, the arrow one notch thicker"
+    ],
+    "subject": "Kindled Shaft: a single blazing arrow that sets its target alight",
+    "glyph": "ONE bold upright flame drawn as a THICK OUTLINE (a teardrop with a pointed top and ONE curled tongue on each side, the outline bar about one ninth of the canvas wide, its inside empty black) and ONE solid white upward arrow inside the flame (a thick straight shaft, a big solid triangular head near the top almost touching the flame tip, a solid chevron fletching at the bottom), separated from the flame outline by a narrow black gap; symmetric left to right, as tall as the canvas; no bow, no hand, no figure, no ground, no filled flame blob; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: the fire-arrow flame is a solid blob, brightest of its row). Ours: flame as ONE heavy OUTLINE bar with a solid arrow inside (hollowed), tongues 3 -> 9. classic MMORPG hwajo = growth ref."
+  },
+  "icon_skill_swallows_gait": {
+    "grades": [
+      "a second, slightly shorter feather fans out behind the first, rotated about twenty degrees",
+      "a third, still shorter feather fans out behind the second, three feathers in all",
+      "a fourth, shortest feather fans out behind the third, four feathers in all like a wing"
+    ],
+    "subject": "Swallow's Gait: the ninja becomes light as a feather, faster, harder to hit and quicker to shoot",
+    "glyph": "ONE very big bold feather as long as the canvas diagonal, pointing up-right: a long leaf-shaped vane with a thick central spine running to a pointed quill at the lower left, three small notch cuts along each edge of the vane, solid white, symmetric about its spine; no bird, no figure, no hand, no fist; flat heraldic pictogram built from HEAVY strokes of ONE common thickness (about one tenth of the canvas): solid masses and thick bars, no hairlines, at most a few thin inner cut-lines, no shading; the base drawing already fills the whole cell",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r2: first feather fills the diagonal; counterpart gyeonggong (runner with speed lines), ours figure-free, feather(s) 1 -> 4. Old tile = clenched fist (banned)."
+  },
+  "icon_skill_serpent_shafts": {
+    "grades": [
+      "two more venom drops hang from the shaft, four drops in all, every drop a notch smaller, the arrow unchanged",
+      "six venom drops in all in two staggered rows under the shaft, every drop a notch smaller, the arrow unchanged",
+      "eight venom drops in all in two staggered rows, and the arrowhead gets two big fang-shaped barbs, the arrow shaft unchanged"
+    ],
+    "subject": "Serpent Shafts: a venom-tipped arrow that homes in on its target and leaves it poisoned",
+    "glyph": "ONE bold curved homing arrow arcing from the lower left up and over to the right: a single thick solid curved shaft (ONE arc only, never several arcs), a big solid triangular arrowhead pointing right at the upper right, a solid chevron fletching at the lower left tail; from the underside of the shaft hang TWO fat venom drops at different heights (each drop a teardrop with ONE round bubble hole cut out of it); no second arrow, no extra arcs, no rainbow, no ground, no bow, no hand; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: stacked arcs over drops at G3/G4 read as a rainbow with rain). Ours: ONE heavy curved arrow, growth = venom drops 2 -> 8 (bubble-hole drops = poison mark) + fang barbs, no extra arcs. classic MMORPG gigung = growth ref."
+  },
+  "icon_skill_radiant_thread": {
+    "grades": [
+      "TWO bold solid four-pointed star-sparks (concave diamonds with sharp points, each about one fifth of the canvas wide) appear, one on each side of the bolt at mid height, the bolt unchanged",
+      "FOUR star-sparks in all, a second pair lower down at each side, every spark one notch smaller, the bolt unchanged",
+      "SIX star-sparks in all, a third pair higher up at each side, every spark one notch smaller, the bolt one notch thicker"
+    ],
+    "subject": "Spark: a pure beam of light leaps from the bow, tracks the enemy and cuts everything in its path",
+    "glyph": "ONE bold flash of lightning standing upright, built as a thick zig-zag bolt of THREE straight segments (the top segment slanting down to the left, the middle segment slanting down to the right, the bottom segment a long needle point), a flat angular top edge, the bolt as tall as the canvas and as thick as a thumb (about one fourth of the canvas wide at its widest); no branches, no forks, no tree, no ring, no glow, no star; the bolt stands alone at the centre; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: the forks read as claws / roots / a bare tree branch, thin). Ours: ONE fat three-segment bolt, growth = star-sparks 0 -> 2 -> 4 -> 6 beside it (the forks are gone). classic MMORPG seomgwang = growth ref only."
+  },
+  "icon_skill_smoke_bomb": {
+    "grades": [
+      "the bank gains one smaller round hump at each end of the flat bar, five humps in all, the same bank width and the same bar thickness, the bomb unchanged",
+      "seven humps in all along the top of the bank (a smaller hump again at each end), every hump a little smaller but the same bar thickness, the bomb unchanged",
+      "the same seven humps, the bomb one notch bigger and the fuse stub gets a second curl"
+    ],
+    "subject": "a bomb dropped at the ninja's feet bursts in a ring of vapour that hurts, shoves back and slows everyone near",
+    "glyph": "ONE big solid round bomb (a plain disc about 45 percent of the canvas wide, standing in the lower middle of the canvas, one thick curved highlight cut out in black at its upper left, one short fat fuse stub at its top right) in front of a flat-bottomed bank of vapour: the bank is a THICK white outline bar as thick as the fuse stub (about one ninth of the canvas wide, the inside of the bank stays black, empty) made of THREE big round humps along its top (a tall hump in the middle reaching the top edge of the canvas, a lower hump on each side) closed underneath by one thick straight flat bar, the whole bank as wide as the canvas, the bomb overlapping the middle hump with a narrow black gap between the bomb and the bank line; symmetric left to right; no flower, no scalloped ring around the bomb, no flame, no face, no drips, no rain, no swirl; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW v2 (r4 wave B smoke_bomb: bomb small, bank hairline 1/32, coverage 0.07). Ours: bigger bomb, bank outline as thick as the fuse (1/9), humps 3 -> 5 -> 7. Style ref sangong (growth grammar only)."
+  },
+  "icon_skill_plague_rain": {
+    "grades": [
+      "a fourth arrow joins, four arrows in all in a symmetric row, every arrow a notch narrower so the rain keeps the same width, the ground bar unchanged",
+      "five arrows in all, every arrow a notch narrower so the rain keeps the same width, the ground bar unchanged",
+      "six arrows in all, every arrow a notch narrower so the rain keeps the same width, the ground bar a notch thicker"
+    ],
+    "subject": "Plague Rain: a rain of poisoned arrows falls on the pack and leaves a lingering pool of plague",
+    "glyph": "THREE heavy arrows falling straight DOWN side by side (the middle one a little lower than the two outer ones): each arrow is a thick vertical shaft with a solid chevron fletching at the top and a big solid DROP-shaped head at the bottom (a teardrop pointing down with ONE round bubble hole cut out of it); under them ONE thick horizontal ground bar as wide as the canvas; perfectly symmetric left to right; no splash, no crown, no cloud, no spikes, no figure; flat heraldic pictogram LINE-BUILT from HEAVY bars and big solid masses of ONE common weight (every bar about one tenth of the canvas wide, nothing thinner than one twentieth): plenty of black space between the strokes, no hairlines, never an outline-only drawing, at most three thin black inner cut-lines, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r4 REDRAW (critic r3: the splash reads as a crown, drops read as water). Ours: a row of falling arrows with bubble-hole drop heads 3 -> 6 on a ground bar, no splash. classic MMORPG gwangyeok + sangong = growth refs."
+  },
+  "icon_skill_eagle_eye": {
+    "grades": [
+      "a fourth feather joins each wing, four feathers per wing in all, every feather one notch narrower so each wing keeps the same size, the disc unchanged",
+      "five feathers per wing in all, every feather one notch narrower so each wing keeps the same size, the disc unchanged",
+      "six feathers per wing in all, every feather one notch narrower so each wing keeps the same size, and the disc ring is one notch thicker"
+    ],
+    "subject": "Eagle Eye: time slows, crits soar and every shot carries an extra arrow",
+    "glyph": "a solid round disc at the centre (an eye: a thick ring around a solid dot, about a quarter of the canvas wide) between two raised eagle wings, one on each side, each wing built from THREE long separate feathers with rounded tips that fan out from the disc, the feather tips rising in steps toward the outer top corner of the canvas (the top feather the longest, the bottom one the shortest and nearly horizontal), like the wings of a heraldic eagle displayed; perfectly symmetric left to right, as wide as the canvas and reaching its top corners; no cross-hair, no tick bars, no scope ring, no bird body, no head, no beak, no hand, no fist; flat heraldic pictogram built from VERY HEAVY strokes: every stroke and every solid mass about one eighth of the canvas wide (nothing thinner than one twenty-second of the canvas), thick bars and big solid shapes, at most three thin black inner cut-lines, never an outline-only drawing, no shading; the base drawing already fills the whole cell edge to edge",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r3 REDRAW (critic r2: scope cross-hair = off-genre, crescent wings read as horns at g1). Ours: winged eye disc, wings = fans of separate rounded feathers 3 -> 6 per side inside a fixed wing size; no cross-hair. classic MMORPG gigung + gyeonggong = style refs."
+  },
+  "icon_skill_arrow_corona": {
+    "grades": [
+      "two more gale curls join lower on the shaft, four curls in all, two on each side, each lower pair a little smaller",
+      "two more gale curls join, six curls in all, three on each side, evenly spaced along the shaft",
+      "eight curls in all, four on each side, evenly spaced along the shaft, the shaft one notch thicker"
+    ],
+    "subject": "Arrow Corona: the bow becomes a tempest and arrows burst outward, piercing through enemies",
+    "glyph": "ONE big bold arrow pointing straight up through the whole height of the canvas: a thick straight shaft, a large solid triangular head at the top and two solid chevron fletchings at the bottom; and on each side of the shaft one thick hooked gale curl (a bold wind-swirl comma, a single thick stroke curling up and inward toward the shaft), the left and right curls mirror images of each other, placed just below the head; perfectly symmetric left to right; no star, no cross, no rays, no ring, no bow, no hand; flat heraldic pictogram built from bold strokes of ONE common thickness (about one fourteenth of the canvas), at most a few thin inner cut-lines, no shading",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_ninja r2: critic r1: keep ONE arrow as the base and add storm strokes per grade; no move-cross, no star, no sunburst. Counterpart pungloepo (one arrow that multiplies its feathers) = growth grammar ref only; ours multiplies gale curls. Wind element."
+  },
+  "icon_skill_dark_blade": {
+    "grades": [
+      "the back edge has five saw-tooth notches instead of three and the blade is one notch broader",
+      "seven saw-tooth notches and the two crossguard horns grow into longer, more curved horns",
+      "nine saw-tooth notches, a second thin fuller line beside the first, and a second pair of small horns on the crossguard"
+    ],
+    "subject": "Dark Blade: the cursed knight's black blade sweeps a wide arc and cuts everything in front of him",
+    "glyph": "one broad curved sabre on the diagonal, hilt at the lower left and point at the upper right: a thick single-edged blade that bows gently, its back edge cut into three sharp saw-tooth notches (small triangular bites), a short heavy crossguard bent into two small crescent horns, a short grip and a round pommel, and one thin fuller line cut into the blade; the whole sabre as heavy as a club, filling the canvas along its diagonal; no sparks, no crescent trail, no figure, no flames; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_sura r1 (2026-10-19): replaces the OLD 128 px painted tile. classic MMORPG gwigeom/geomaggwi = STYLE refs only (original skill). Single sabre on the LL-UR diagonal; spine notches 3 -> 5 -> 7 -> 9 are the counted growth."
+  },
+  "icon_skill_scorch_palm": {
+    "grades": [
+      "two more shorter blades join, one above and one below, five blades in all",
+      "two more shorter blades, seven blades in all in a wide fan",
+      "the same seven blades and a thick solid ring grows around the hub with a narrow black gap between ring and hub"
+    ],
+    "subject": "Scorch Palm: flame gathered at the fingertips bursts through the cone ahead three times and may set foes alight",
+    "glyph": "a horizontal fan of three VERY THICK flame-blades springing from ONE big solid round hub at the left edge of the canvas and opening toward the right edge: each blade a broad leaf-shaped flame as thick as about 22 percent of the canvas height at its widest, with a short straight outer edge, ONE notch near its tip and a sharp point; the middle blade the longest and level, the other two angled about 30 degrees up and down, all three separated from each other by narrow black gaps; no hand, no fingers, no thin tendrils, no needle tips, no S-curves, no sparks, no ring, no thin lines; one solid heavy mass filling the canvas width; every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20): redone after the r3 critic (thin tendrils, 12 % cream, read as a comet / jellyfish): the beams are now broad leaf-blades (22 % of the height each), no S-curves or needle tips, no hairline cut-lines. Same horizontal fan from a hub, counted growth 3 -> 5 -> 7 blades. || r5 (2026-10-20): tried a detached orb + 3-5 flame-bolts (v5/v6) to remove the shuttlecock reading at g3/g4: it came back as the same orb + curved feather fan, thinner; REJECTED, not shipped; this hint text is the concept of the shipped v4."
+  },
+  "icon_skill_coil_of_flame": {
+    "grades": [
+      "six triangular back-spines along the coil instead of four; the body keeps the same thickness",
+      "eight back-spines and the dragon head gets a second pair of backswept horns; the body keeps the same thickness",
+      "ten back-spines; the body, the head and the whole coil stay exactly the same size and thickness as in the first cell"
+    ],
+    "subject": "Coil of Flame: the blade spins around the knight like a coiling flame dragon, hitting everything near him again and again",
+    "glyph": "a bold coiled dragon: one serpentine body bent into a closed spiral ring around a small round hole, the body as thick as about 14 percent of the canvas width (lean, with clear black gaps between the turns of the coil), the horned dragon head at the top of the ring facing right with an open jaw (one eye gap, two backswept horns), the tail tapering to a point that tucks inside the ring, and a row of four triangular back-spines along the outside of the coil; round overall, as wide as tall, filling the canvas but at most a third of it white; no sword, no flames, no scale pattern, no figure; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20, wave 2): the r4 coil was 32 % of the well at g1 and 40 % at g4 (critic: the dragon blobs at g4; cap near 30-32 %). Same concept (coiled dragon + counted back-spines 4 -> 6 -> 8 -> 10) with a leaner body and growth by spines only (no thicker body, one extra horn pair)."
+  },
+  "icon_skill_haunted_steel": {
+    "grades": [
+      "each of the two crossed blades gains ONE twin blade lying exactly parallel right beside it, shifted sideways by about two thirds of a blade width, the twin a little shorter so its point stops short of the first; the X keeps its footprint and its angles, each arm is now a double blade with a thin black gap between the twins; nothing radiates and no third direction appears",
+      "each arm of the X is now a bundle of THREE parallel blades side by side with thin black gaps (the middle one longest, the outer two shorter), all still on the same two diagonals; the footprint and the angles of the X stay the same",
+      "the same bundles of three parallel blades per arm, and the crossing knot becomes a ring with a small round hole; still only the two diagonal directions, no vertical or horizontal blade"
+    ],
+    "subject": "Haunted Steel: a restless ghost is bound to the steel, phantom blades circle the knight and slow everything they cut",
+    "glyph": "TWO very broad thick straight blades crossed in a big X that fills the whole canvas, perfectly symmetric about the vertical axis: each blade a wide double-edged leaf shape as thick as about 18 percent of the canvas width, ending in a razor point at an upper corner of the canvas, with a short heavy crossguard bar and a stub grip with a round pommel at the lower corner on the opposite side, and ONE solid round knot where the blades cross; the two blades are separated at the crossing by narrow black gaps so one clearly passes over the other; no ghost echoes, no ring, no pinwheel, no crescent, no hand, no figure, no flames, no thin lines, no fuller line; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20): critic: the r4 growth (third upright blade + horizontal pair, five blades radiating) turned the crossed pair into a cannabis-leaf silhouette at g3/g4. New growth: every arm of the X is stacked with parallel twin blades (1 -> 2 -> 3 per arm), never a radial fan; the X footprint is constant.",
+    "fill": 0.9
+  },
+  "icon_skill_chilling_dread": {
+    "grades": [
+      "two more fangs rise from the lower lip, four fangs in all",
+      "a second, smaller pair of horns grows above the first, four horns in all",
+      "all four horns longer and more curved, and a row of short spikes runs along the brow"
+    ],
+    "subject": "Fear: a dread shriek rolls out around the knight, hurling foes back and sending them fleeing",
+    "glyph": "ONE huge front-facing oni (demon) head drawn as a flat heraldic charge and filling the whole canvas: a broad squarish face wider than tall, two thick horns sweeping up and outward from the top corners, two heavy angular brows, two angled slit eyes and ONE wide grimacing mouth with TWO big downward fangs from the upper lip, every feature cut as a black gap out of the one solid face; perfectly symmetric; no body, no neck, no hands, no skull, no rings, no arcs, no flames, no thin lines, no rows of teeth; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_sura r4 (2026-10-20): redone after the r3 critic (a small bull-like mask with shriek arcs: 0.67 of the well wide, clip-art prop): ONE huge oni head fills the well (>= 0.8), no side arcs (they hit the chamfer and shrank the glyph); growth = fangs 2 -> 4, horns 2 -> 4, brow spikes. classic MMORPG gongpo (skull) = idea only."
+  },
+  "icon_skill_umbral_plate": {
+    "grades": [
+      "a fourth chevron plate joins and every pauldron dome carries two horns",
+      "five chevron plates in all and three horns on each pauldron",
+      "six chevron plates in all and four horns on each pauldron"
+    ],
+    "subject": "Umbral Plate: dark plate wraps the knight's body, armour rises, blows are thrown back at the attacker and he mends a little",
+    "glyph": "ONE bold symmetric front-facing lamellar chest-armour emblem filling the canvas: three stacked broad downward-pointing chevron plates (thick V-shaped bands separated by narrow black gaps) that narrow to a point at the bottom, topped by two big solid rounded pauldron domes at the upper left and upper right, each dome carrying ONE sharp horn curving up and outward, and a small round neck gap at the top centre; no figure, no head, no arms, no face, no belt; no thin lines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20, wave 3): the r3 critic: the cuirass is a clip-art prop next to abstract emblems. New: a flat heraldic lamellar chevron-plate bib with horned pauldron domes (a charge, not a drawn armour), counted growth = plates 3 -> 6 and horns 1 -> 4."
+  },
+  "icon_skill_unbinding_sigil": {
+    "grades": [
+      "a second thick nested diamond band grows inside the first, around the star",
+      "the single slash is doubled into two parallel thick slashes",
+      "a short thick spike grows at the middle of each of the four sides, eight spikes in all"
+    ],
+    "subject": "Dispel: an unbinding sigil is carved under the thickest crowd, burns it and strips the foes' defences",
+    "glyph": "ONE solid heavy diamond seal (a square turned 45 degrees) made of ONE very thick solid band outline whose four corners stretch out into short sharp spikes, a big solid four-pointed star filling the middle of the diamond, and ONE very thick straight slash from the lower left to the upper right that cuts the whole seal in two with a narrow black gap through the band and the star; no letters, no characters, no runes, no text-like marks; no thin lines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20, wave 3): the r3 critic: the n tile was a hollow rhombus with hairline marks (mush at 48 px) that became a solid diamond and then an 8-point star = the base identity changed. Now ONE solid thick band + big star + one thick slash at every grade; only strokes are ADDED (nested band, second slash, side spikes).",
+    "fill": 0.9
+  },
+  "icon_skill_wraith_lunge": {
+    "grades": [
+      "two more fat ragged streaks join, five in all",
+      "five fat streaks in all and the skull one notch bigger",
+      "five fat streaks in all and two short horns grow from the skull's brow"
+    ],
+    "subject": "Wraith Lunge: the knight tears forward as a wraith of black steel, untouchable mid-lunge, cutting down everything in his path",
+    "glyph": "ONE huge flying skull lunging toward the upper right: a big solid cranium-and-jaw skull filling about 55 percent of the canvas width, seen from the front but tilted about 30 degrees toward the upper right, with two big black eye-socket gaps, one small nose gap and a row of four vertical tooth gaps in the jaw, and behind it THREE very fat tattered ghost streaks (each as thick as half an eye socket, with a ragged tip) trailing away toward the lower left, the middle streak the longest; the whole glyph on one diagonal and filling the canvas; no sword, no blade, no crescent, no body, no arms, no flames, no horns; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20): critic: the r4 skull is tiny (about 20 % of the tile) with thin streamers that fray at 48 px, and g3/g4 (7-9 streaks) hatch. New: the skull is the subject (55 % of the width), only 3 -> 5 FAT streaks (never more), horns at g4."
+  },
+  "icon_skill_cursed_legion": {
+    "grades": [
+      "a second, smaller crescent rises inside the first crest, nested",
+      "a third nested crescent joins and two upturned wing-flares rise from the corners of the neck-guard",
+      "four nested crescents, the wing-flares longer, and two sharp cheek spikes jut from the lower sides of the neck-guard"
+    ],
+    "subject": "Cursed Legion: the souls of every warrior the blade has felled rise as a spectral knight host that hunts the foe",
+    "glyph": "ONE huge front-facing samurai war-helm (kabuto) drawn as a flat heraldic emblem and filling the whole canvas: a smooth rounded dome with one tall ridge, a wide flared neck-guard (shikoro) that spreads out on both sides under the dome like a fan skirt, a big thick CRESCENT-MOON crest (maedate) rising from the forehead with its two horn tips curving up and outward, and ONE bold T-shaped visor slit cut as a black gap; perfectly symmetric; no Viking horns on the sides of the head, no face, no skull, no body, no row of helmets, no flames, no text, no thin lines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_sura r4 (2026-10-20): redone after the r3 critic: an East-Asian war-helm with a flared neck-guard and ONE big crescent-moon crest; growth = nested crescents 1 -> 4 + wing-flares + cheek spikes."
+  },
+  "icon_skill_reaper_plunge": {
+    "grades": [
+      "four feather-tips per wing and six impact spikes; the wings and the body stay exactly the same size",
+      "four feather-tips per wing and eight impact spikes, nothing else changes, the silhouette stays the same size",
+      "five feather-tips per wing and eight impact spikes, the silhouette and the thickness of every part stay exactly as in the first cell"
+    ],
+    "subject": "Reaper Plunge: the knight dives into the thickest crowd like a falling black blade, smashing the ground on impact and stunning it",
+    "glyph": "ONE raven (a death crow) diving straight down along the vertical centre line, seen from above as a flat heraldic charge: a compact solid body tapering into a long sharp beak pointing DOWN, two wings swept up and back on both sides like a wide V, each wing ending in THREE long sharp feather-tips separated by wide black gaps (the wings are lean, as thick as the body, with plenty of black showing between the feather-tips), a short tail at the top; below the beak ONE jagged impact crack of FOUR sharp wedge-spikes bursting up and outward; perfectly symmetric; the glyph fills the canvas but at most a third of it is white; no eye detail, no feet, no sword, no figure, no plinth, no skull, no flames; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20, wave 2): the r4 raven was 34 % of the well at g1 and 46 % at g4 (nine feather-tips per wing + twelve spikes in two rows = a blob; critic: cap g4 near 30-32 %). New: lean wings with wide gaps, growth only +1 feather-tip and +2 spikes per grade inside ONE footprint, so the cream share stays about a third at g4.",
+    "fill": 0.9
+  },
+  "icon_skill_pyrefall": {
+    "grades": [
+      "a second, slimmer greatsword plunges parallel beside the first, a little lower, the first one a little slimmer so the pair fills the same footprint",
+      "a third slim greatsword, so three parallel flaming swords with the centre one the biggest, all three slim, one shared footprint and wide black gaps between the swords",
+      "the same three slim swords and every blade carries one extra flame tongue; the footprint and the thickness of every part stay as in the third cell"
+    ],
+    "subject": "Pyrefall: demonic forces gather into a mighty stroke and flaming blades crash down from the sky",
+    "glyph": "one colossal broad greatsword plunging point-down on a steep diagonal (hilt at the upper right, point at the lower left): a thick blade with one thin fuller cut-line, a thick crossguard and a short grip, three thick curling flame tongues streaming back from its upper edge toward the upper right, and the point stabbing into a short flat ground bar; no figure, no skull, no rings, no sparks, no burst; filling the canvas along its diagonal; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20, wave 2): the r4 trio of flaming greatswords was 45 % cream at g4 (critic: blob; cap near 30-32 %). Same concept (a flaming greatsword plunging point-down on the anti-diagonal, 1 -> 2 -> 3 swords) but the swords slim down as they multiply so the glyph keeps ONE footprint, and the flame growth is +1 tongue per blade instead of doubling."
+  },
+  "icon_skill_dark_spark": {
+    "grades": [
+      "a second, smaller spark burst rides in the tail behind the first",
+      "a third spark burst in the tail, each one a little smaller than the one before",
+      "four spark bursts in the tail and the lead burst gets a thin ring around its core"
+    ],
+    "subject": "Dark Spark: a black spark slips from the caster's fingers, tracks the nearest foe and strikes it",
+    "glyph": "one bold ragged spark-burst: a solid round core with eight uneven triangular points radiating from it (long and short alternating), trailing behind it a thick tapered curved comet tail that sweeps in from the lower left in a gentle S-curve; the burst at the upper right; one solid mass on the diagonal; no lightning zigzag, no flames, no ring, no scattered dots; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_yacha r1: original skill (homing basic), STYLE refs muyeong g1-g3 (spiky burst that gains spikes; override of the refmap's maryeong wheel). Original: refmap maryeong + geomhwan. A ragged burst (not a 4-point concave star: that is the generic 'sparkle' UI glyph). Counted growth = sparks in the tail (awaken: Twin Spark)."
+  },
+  "icon_skill_nightfall": {
+    "grades": [
+      "five prongs at the top and at the bottom instead of three: two more shorter prongs between the first three",
+      "five prongs at each end and a narrow black ring gap is cut around the inside of the central knob",
+      "five prongs at each end, the ring gap, and four short thick spikes grow around the central knob"
+    ],
+    "subject": "Nightfall: the Dark Force is hurled from above onto several enemies at random, each strike blasting an area",
+    "glyph": "ONE huge vajra (a ritual thunderbolt scepter) standing upright as a flat heraldic charge, perfectly symmetric top to bottom and left to right: a big solid round knob (a filled disc about 26 percent of the canvas wide) in the exact middle, a short thick neck on each side of it, and at the top and at the bottom a crown of THREE very thick prongs that bow outward and curve back inward to meet the central spike, the two outer prongs curved like the ribs of a lotus bud and the middle prong straight and sharp, the prongs separated by wide black gaps; the whole vajra fills the canvas from the top edge to the bottom edge and is about 65 percent as wide as tall; no hand, no fist, no claw, no crab, no talons, no ring, no lotus flower, no lightning bolt, no skull, no figure, no text; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20): critic: the r4 wide claw / arch has no clear subject (jaw, crab or claw-machine) and its g3/g4 horns turn it into a beetle. New concept with a NAMEABLE subject: an upright VAJRA (the thunderbolt scepter of the Yacha's Buddhist-demon armoury), symmetric, no claw; counted growth prongs 3 -> 5 per end + knob ring gap + knob spikes.",
+    "fill": 0.9
+  },
+  "icon_skill_blazing_column": {
+    "grades": [
+      "two more short flame tongues join between the first three, five in all",
+      "seven flame tongues in all, the outer ones curling out further",
+      "seven flame tongues in two staggered rows and a second thick ring grows inside the first"
+    ],
+    "subject": "Blazing Column: a pillar of fire erupts under the densest knot of enemies and scorches a circle around it",
+    "glyph": "ONE pillar of fire erupting from a wide scorch ring, filling the canvas: a thick flat ellipse ring as wide as the canvas lying on the ground at the bottom, and rising from inside it ONE huge central flame tongue (a teardrop-leaf with an S-curled tip, the tallest) flanked by two shorter flame tongues curling outward, all three fused at the base; symmetric; no figure, no sparks, no face; no thin lines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20, wave 3): the r3 critic: blazing_column fills only 0.6-0.7 of the well. New: the fan sits on a wide scorch ring so the glyph is ~0.9 wide and 0.85 tall; counted growth tongues 3 -> 5 -> 7 -> 7 x 2 rows + a second ring.",
+    "fill": 0.9
+  },
+  "icon_skill_blaze_familiars": {
+    "grades": [
+      "four spirits in all in the wheel, each a little smaller",
+      "five spirits in all in the wheel",
+      "six spirits in all in the wheel and a second, tiny round hole in the middle of every fire-bead"
+    ],
+    "subject": "Blaze Familiars: flame spirits are called up and hunt the enemies, each strike kindling a burn",
+    "glyph": "a WHEEL of THREE plump flame spirits chasing each other round a small round hole in the centre: each spirit a fat rounded fire-bead whose one short blunt flame-tail curls in the direction of rotation (clockwise), the three evenly spaced with narrow black gaps between them, the whole glyph round and filling the canvas (about 90 percent wide and tall); a clean wheel of fire, symmetric by rotation; no centre sphere, no long thin tails, no tadpole, no sperm shape, no separate tall flame tongues, no campfire, no eyes, no mouth, no face, no sparks, no ground; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20, wave 1b): the wisp concept (r5 v6-v8: one round head + a long tail) read as a tadpole / sperm cell at 48 px. New: a rotating WHEEL of fat flame spirits round a hole (round silhouette, nothing like the campfire of blazing_column), counted growth = the number of spirits 3 -> 4 -> 5 -> 6 ('calls {count} flame spirits')."
+  },
+  "icon_skill_obsidian_bulwark": {
+    "grades": [
+      "a second thick chevron gap joins below the first, two chevrons in all",
+      "three chevrons in all and a second smaller pair of horns beside the first pair",
+      "three chevrons, four horns, and a row of five short spikes along the top edge of the rim"
+    ],
+    "subject": "Obsidian Bulwark: a bubble of black force shields the caster, raising armour and evasion and turning damage into life",
+    "glyph": "ONE bold heraldic kite shield (a wide flat top, the sides curving down to a point) filling the canvas height, with a thick solid rim band, a narrow black gap inside it, TWO heavy curved horns sweeping up and outward from the top corners of the rim, and in the solid inner field ONE big round boss in the upper middle (a filled disc with a thick ring gap round it) and ONE very thick chevron (an inverted V) cut as a black gap below the boss; perfectly symmetric; no face, no skull, no star, no hexagon, no flames, no letter; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20, wave 6): the wave-4 kite shield shipped as a plain flat white mass with one hairline ridge (stock shield). Same concept, now with a round boss + ring gap and a thick chevron cut in the field from grade 1; counted growth chevrons 1 -> 3 + horns 2 -> 4 + crown spikes."
+  },
+  "icon_skill_specter_beam": {
+    "grades": [
+      "a second pair of backward barbs on the spearhead and the chain gets five smaller links instead of three",
+      "a third pair of barbs and seven links",
+      "a fourth pair of barbs and nine links, the spearhead one notch broader"
+    ],
+    "subject": "Spirit Strike: a lance of dark spirits hunts the nearest foe and drags at everything it pierces",
+    "glyph": "a HEAVY barbed harpoon flying on the diagonal from the LOWER LEFT to the UPPER RIGHT with its point at the upper right corner: a huge broad kite-shaped spearhead as wide as a hand with one pair of big backward-hooked barbs at its base, a short thick straight shaft as heavy as a club with one thin cut-line, and hanging from the shaft's lower-left end a short heavy CHAIN of THREE big oval links curving down and back (each link a thick closed ring, interlocked with the next, as long as the shaft is wide); the whole harpoon one solid heavy mass as big as the canvas allows along its diagonal; no streams, no tails, no thin curls, no wisps, no skull, no flames, no figure, no thin staff; every stroke very thick; bold heavy shapes",
+    "fill": 0.86,
+    "family": "warm",
+    "note": "skills_sura r3 (2026-10-20): critic 'a thin top-left -> bottom-right claw-staff with 7.5-8.5 % cream (the lightest tile) that reads as a wrench; in the HUD the grade badge (lower right) covers its spearhead': redrawn heavy (>= 15 % cream) on the LOWER-LEFT -> UPPER-RIGHT diagonal so the head sits at the upper right, away from the badge. classic MMORPG tusok (boot with chain and ball) = idea + grammar only. A barbed harpoon head, not a sabre, so it does not stack on dark_blade / dark_spark in silhouette. Attempt 1 (lance + 2 curly ghost-tails) came back as a squid / rocket with 7 % cream and attempt 2 (broad ghost-streams) as a broom: attempt 3 = harpoon + a short chain of heavy links (the tusok chain grammar), growth = barb pairs 1 -> 4 and links 3 -> 5 -> 7 -> 9."
+  },
+  "icon_skill_void_globes": {
+    "grades": [
+      "six crescent blades orbit the sphere instead of four, each a little shorter",
+      "eight crescent blades",
+      "ten crescent blades and a second, thin black ring gap is cut inside the sphere"
+    ],
+    "subject": "Void Globes: black orbs circle the caster and strike every foe they touch",
+    "glyph": "ONE big SOLID WHITE FILLED sphere (a filled disc, never an outline ring, about 42 percent of the canvas width) exactly in the centre with ONE narrow curved highlight gap cut into its upper left; around it, separated from it by a clear wide black gap all the way round, FOUR heavy crescent blades orbiting it like a ring: each blade a thick arc of about 55 degrees with its convex side outward and sharp tips, all four tips pointing the same way along the orbit (clockwise), evenly spaced with black gaps between the blades, the blades touching neither the sphere nor each other; the whole glyph round and filling the canvas; no pinwheel, no claw, no beads, no dots, no eye, no flames; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r4 (2026-10-20, wave 5): wave-3 claw = goblet / crystal ball, wave-4 fused blades swallowed the sphere (a sawblade / shuriken). New: a SOLID sphere + a clear black gap + a free ring of 4 orbiting crescent blades (the geomhwan grammar of the original, a new symbol), counted growth blades 4 -> 6 -> 8 -> 10.",
+    "fill": 0.9
+  },
+  "icon_skill_soul_chain": {
+    "grades": [
+      "a second, smaller U-shaped chain of fat links hangs nested INSIDE the first one, hooked onto the same two soul-orbs; the glyph stays open at the top and the two orbs stay at the upper corners",
+      "a third, smallest U-chain nests inside the second, three nested chains in all hooked onto the same two orbs, the top stays open",
+      "the three nested U-chains and each orb gets a narrow black ring gap cut around its core; the chains never close into a ring or a circle and never join at the top"
+    ],
+    "subject": "Soul Chain: a chain of black souls leaps from foe to foe, biting every one and weakening it",
+    "glyph": "TWO big solid round soul-orbs at the upper left and the upper right of the canvas (each about 30 percent of the canvas width, each a FILLED white disc with ONE narrow curved highlight gap cut into its upper left), joined by ONE heavy chain that hangs in a DEEP U-curve (almost a semicircle) down to the bottom of the canvas: SIX very chunky fat oval links (each link a thick solid ring with a small slot hole), interlocked and slightly overlapping; perfectly symmetric about the vertical axis; the whole glyph filling the canvas as wide as tall; no skull, no eyes, no face, no lightning, no flames, no ground, no figure; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20): critic: the r4 chain changed topology across grades (open U with balls, then a closed ring, then a diamond cross medallion). New growth keeps the SAME open U with two orbs at every grade and only adds nested U chains (1 -> 2 -> 3) and orb ring gaps; never closed."
+  },
+  "icon_skill_hellfire_lances": {
+    "grades": [
+      "two more shorter lances join, one above and one below, five lances in all, all separated by clear black gaps",
+      "the five lances and every spearhead grows a pair of small barbs behind its point",
+      "the five barbed lances and every flame tuft grows a fourth and a fifth tongue"
+    ],
+    "subject": "Hellfire Lances: a flight of hellfire lances pierces straight through the ranks, setting its victims ablaze",
+    "glyph": "a FLIGHT of THREE huge war lances racing to the RIGHT, exactly horizontal and exactly parallel and NEVER touching each other: the three are separated by wide black gaps (each gap at least as tall as a lance shaft); the middle lance is the longest and the foremost, the upper and the lower lance are shorter and trail behind it in an arrowhead formation; each lance has a very fat straight shaft (about 9 percent of the canvas height), a big solid broad leaf-shaped spearhead as tall as about 22 percent of the canvas height with a razor point on the right, a thick collar bar behind the head and ONE heavy tuft of three flame tongues streaming back from the collar toward the left; the formation fills the canvas, about 90 percent wide; no arrows, no thin shafts, no claws, no scratch marks, no curved blades, no trident, no fan, no figure, no sparks; no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20, wave 2): round 3 of the horizontal flight. r5 v11/v12 (tight formation) came back with thin shafts that fuse into a fleur-de-lis / trident at g1 when dilated. New: wide black gaps between the lances so they read as three separate lances, growth 3 -> 5 -> 5 barbed -> 5 with bigger flame tufts (no seven-lance hatch)."
+  },
+  "icon_skill_dark_covenant": {
+    "grades": [
+      "five short horns above and five below instead of three",
+      "seven horns above and seven below",
+      "seven horns each side and a thin ring around the iris"
+    ],
+    "subject": "Dark Covenant: a blood pact with the lords of darkness raises damage and casting speed and every spell brings one extra spark, strike or spirit",
+    "glyph": "a bold symmetric demon eye: a wide pointed-oval (almond) eye with a heavy lid, a big round iris and a tall narrow vertical slit pupil cut as a black gap, three short thick horns pointing up from the upper lid (the middle horn the longest) and three pointing down from the lower lid; much wider than tall, centred; no face, no tears, no rays, no flames; bold heavy shapes",
+    "family": "warm",
+    "note": "skills_yacha r1: original skill (self buff), STYLE refs heuksin + jumagap only. The eye is the 'watching lords'; horns are the counted growth."
+  },
+  "icon_skill_tide_of_the_slain": {
+    "grades": [
+      "a fourth, smallest crescent joins at the back on the left, four crescents in all",
+      "five crescents in all, the smallest two tucked behind",
+      "five crescents in all and the front crescent grows three saw-teeth along its outer edge"
+    ],
+    "subject": "Tide of the Slain: vengeful demons are called upon the enemy, a wide death wave crushes everything in it and marks it",
+    "glyph": "THREE nested BLADED crescent shock-waves racing to the RIGHT: each a very thick crescent arc of about 110 degrees whose convex side faces right and whose top end and bottom end are razor-sharp horn points, the three nested one behind the other like the ripples of a wave front (the biggest at the front on the right, the smaller ones behind it on the left), separated by clear black gaps, all centred on the horizontal axis and perfectly symmetric about it, the whole glyph filling the canvas about 90 percent wide and tall; no water, no foam, no curling wave crest, no claw, no skull, no dot, no ring, no flames, no thin lines, no hairlines; one solid heavy mass, every stroke very thick; bold heavy shapes",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_yacha r5 (2026-10-20): critic: the r4 wave crest is a Hokusai water wave (a water cue on a dark skill, stock clip-art). New: nested bladed crescent shock-waves (the wave FRONT as force, not water), counted growth crescents 3 -> 4 -> 5 + saw-teeth."
+  },
+  "icon_skill_claw_combo": {
+    "grades": [
+      "a fourth parallel claw slash joins on the outer side, all four slashes one notch thicker",
+      "a fifth parallel slash joins, the two outermost slashes shorter than the others",
+      "six parallel slashes in two groups of three, separated by one wider black gap, the two middle ones longest"
+    ],
+    "subject": "Claw Combo: the wolf rakes the nearest foe with a rapid chain of claw strikes",
+    "glyph": "three long parallel claw slashes sweeping on the diagonal from the upper left to the lower right, each a thick slightly bowed tapered stroke, broad at the upper end and ending in a needle-sharp point at the lower end, the middle one longest, evenly spaced with narrow black gaps; nothing else in the picture: no ring, no hand, no paw, no drops; symmetric about the diagonal; bold heavy shapes",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5: SHIPPED = v3, a DERIVED variant (no new image): the r2 sheet v1 with every shape grown by 8 raw px (r5/tools/derive.py, fill 0.9); critic: g1 cream coverage 12-15 % (now 18 / 26 %). | previous note: skills_wolfman r3: the shipped sheet is the r2 generation grown +5 px per stroke (r3/tools/derive.py, fill 0.9, no new image). r1: counterpart classic MMORPG split_slash (one diagonal slash through a ring); ours drops the ring and keeps only the claw rake that grows 3 -> 6 slashes."
+  },
+  "icon_skill_savage_rake": {
+    "grades": [
+      "two more hatch cuts on every blade, five in all",
+      "every blade end is split into a two-pronged fork like a claw tip",
+      "seven hatch cuts on every blade and a solid diamond stud at the crossing"
+    ],
+    "subject": "Shred: two savage claw rakes tear into everything in front of the wolf and leave it bleeding",
+    "glyph": "ONE bold heraldic pair of crossed claw-blades forming a big saltire that fills the cell corner to corner: each blade a heavy curved talon, sharp at BOTH ends and thickest in the middle, one bowed like a ( and the other mirrored like a ), crossing at the centre with a black gap cut around the crossing so one blade visibly passes over the other; each blade is scored by three thick short black hatch cuts across it like claw marks; not a plain straight X, not a letter, no ring, no flames; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: typographic letter X reads as close, g1->g3 barely changes, g4 X over a ring = forbidden sign. New: crossed curved claw-blades with counted hatch cuts, no ring. | previous note: skills_wolfman r4: the thick X (r2 generation grown +4 px) correlated 0.807 with the sura haunted_steel (crossed swords, picked later) in the collection gate. A V of two rake bundles (generated v5 v6) read as wings / a sprout and was dropped. SHIPPED = v8, DERIVED from the r2 sheet: the same X squee"
+  },
+  "icon_skill_lupine_lunge": {
+    "grades": [
+      "one thick black chevron (a V pointing down, like a rank mark) is cut into the pad",
+      "a second thick black chevron is cut under the first, two in all",
+      "a third thick black chevron is cut under the second, three in all, and every claw one notch fatter"
+    ],
+    "subject": "Lupine Lunge: the wolf leaps and crashes down on the thickest crowd, hurling the enemies aside",
+    "glyph": "ONE bold heraldic wolf paw print filling the cell: ONE big solid pad (a wide rounded triangle with the point down, its upper edge scalloped) and FOUR fat oval toe pads fanned above it, each toe tipped with a long sharp curved claw pointing up and outward; perfectly symmetric; not a cute pet paw: heavy, wide and menacing; no flames, no star, no ring, no slashes, no letters; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: star inside a toothed ring (a saw blade like blood_whirl), repeats claw_combo's three slashes; the paw of the older state read better. New: a heavy menacing wolf paw with clawed toes, growth = counted chevrons inside the pad (no ring, no slashes). refs = reef_attack. | previous note: skills_wolfman r4 REWRITE (critic: pet-shop paw print). Tried and dropped: three talons plunging from a top bar (read as a cage / jar, v3 v4) and three claws bursting up out of a splash band (read as flames / a crown, v5 v6). SHIPPED = v8: ONE jagged impact star carrying a triple claw-rake cut, points"
+  },
+  "icon_skill_redmane_spirit": {
+    "grades": [
+      "the pupil grows into a bigger solid diamond and the eye one notch wider",
+      "a thick black diamond-shaped notch is cut into the diamond on each side between the corner fangs, four notches in all",
+      "a short fat fang-point also grows on the four edge midpoints of the diamond, eight fangs in all"
+    ],
+    "subject": "Redmane Spirit: the crimson wolf's soul possesses the wolf and surges its power",
+    "glyph": "ONE bold heraldic wolf-eye gem: a heavy solid diamond (a square turned 45 degrees) filling the cell, with ONE big slanted almond wolf-eye cut out of its centre as a black gap and, inside the eye, a solid tall diamond-shaped slit pupil; on each of the four corners of the diamond a short fat fang-point; perfectly symmetric both ways; no face, no eyebrows, no eyelashes, no flames, no ring, no lattice of thin lines; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 B: crimson soul as a wolf-eye gem in a diamond (shape family: diamond) vs the indigo moon-orb. | previous note: skills_wolfman r5 A: critic: nested diamond = road sign, rotated twin of the indigo soul, no cue. New: diamond frame BITING inward (fangs) around a soul gem; refs = wind_death (fangs around a concentric core). | previous note: skills_wolfman r3: the shipped sheet is the r2 generation grown +4 px per str"
+  },
+  "icon_skill_blood_whirl": {
+    "grades": [
+      "a fourth blade joins, four in all, every blade one notch slimmer so the gaps stay open",
+      "a fifth blade joins, five in all, the hub one notch larger with a black round hole in it",
+      "a sixth blade joins, six in all, and a short second hook grows on the tip of every blade"
+    ],
+    "subject": "Blood Whirl: the wolf becomes a whirlwind of claws that opens bleeding gashes around it",
+    "glyph": "a bold OPEN pinwheel of THREE very fat hooked claw blades radiating from a solid round hub, every blade a curved talon thick at the hub and ending in a needle-sharp hooked tip, all bending clockwise and separated by wide black gaps all the way down to the hub; three-fold symmetry; NO outer ring, NO disc, NO circle around it: the blades alone make the shape; no figure, no drops; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: g3/g4 become ring/disc silhouettes; M1 looks like wolf_pounce's saw blade. New: an OPEN pinwheel of fat claw blades 3 -> 4 -> 5 -> 6 with open gaps down to the hub, never a disc or ring. refs = ilipungu. | previous note: skills_wolfman r3: the shipped sheet is the r2 generation grown +2 px per stroke (r3/tools/derive.py, fill 0.9, no new image). r2: style ref classic MMORPG ilipungu (pinwheel of fang blades); ours = FIVE hooked claw blades inside a broken ring (odd count: a 4-blade pinwheel reads as a swastika and clones the "
+  },
+  "icon_skill_predator_rush": {
+    "grades": [
+      "a third speed chevron joins behind the other two, three speed chevrons in all",
+      "a fourth speed chevron joins and every shape is one notch fatter",
+      "a second, smaller claw flies above the big one, pointing the same way, with its own two small chevrons"
+    ],
+    "subject": "Predator's Rush: the wolf bursts forward in a blur and rips through everything in its path",
+    "glyph": "ONE huge fat solid wolf claw pointing right on the horizontal middle line: a thick crescent talon bowed upward, with a wide blunt root at the centre and a needle-sharp tip at the right edge; behind it, on the left, two thick nested speed chevrons pointing right (bold arrow-head brackets lying on their side with blunt ends, the one nearer the claw the smaller), separated from each other and from the claw by narrow black gaps; no streak bars, no fingers, no feathers, no hand, no figure; very fat chunky solid shapes, nothing thinner than a twentieth of the pictogram, no hairlines; a flat heraldic symbol",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5: SHIPPED = v10, a DERIVED variant (no new image): v7 grown by 6 raw px (fill 0.9); critic: g1 cream coverage 12-15 % (now 18 / 22 %). | previous note: skills_wolfman r4 REWRITE (critic: thin sliver, then the fat fang with comb cut-lines v5 v6 read as a feather / wing): SHIPPED = v7, the critic's own candidate 'claw-and-speed-chevron': ONE huge talon + two nested speed chevrons, chevrons 2 -> 4, then a second claw. Old r3 note: the shipped sheet was "
+  },
+  "icon_skill_tremor_claw": {
+    "grades": [
+      "a second concentric shock arc joins on each side, two arcs per side",
+      "three arcs per side and the ground bar cracks into three plates",
+      "a smaller second fang-claw joins on each side of the big one, three claws driven into the bar, and every arc one notch thicker"
+    ],
+    "subject": "Tremor Claw: the wolf drives both claws into the ground and a crimson shockwave rolls outward and hurls everything back",
+    "glyph": "ONE huge solid wolf fang-claw driven straight DOWN into the ground: a thick tapered talon with a very wide flat root at the top and a needle-sharp tip at the bottom with a slight inward hook, standing in the middle of a thick horizontal ground bar that is split into two plates by a narrow black gap exactly under the tip; on each side of the claw, rolling outward along the ground, one bold shock arc bowed outward (a bold '(' on the left and a bold ')' on the right, as tall as the claw); symmetric left to right; the claw is a fang pointing DOWN, never a flame, leaf, petal or letter V; no animal, no paw, no hand; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; a flat heraldic symbol",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r4 REWRITE (critic: V on a baseline reads as a letter V / trophy): ONE fat fang-claw driven into a split ground bar + shock arcs 1 -> 3 per side, then three claws. Old r3 note: the shipped sheet was the r2 v2 generation grown +4 px per stroke. r2 (rewritten after the first sheet): the r1 text came back as two UPWARD curling petals on a base (a lotus / flame read). Now a V of two downward fang-claws on a split ground bar + shock arcs 1 -> 4 per side. Style refs classic MMORPG reef_attack (claw over a ground burst)."
+  },
+  "icon_skill_blood_mist": {
+    "grades": [
+      "a second smaller spiral curl grows on the end of the upper tail",
+      "a second, smaller blood-drop hole joins the first beside it inside the cloud head",
+      "a third tail curls out below the first two, three tails in all"
+    ],
+    "subject": "Blood Mist: the wolf exhales a drifting blood mist that wounds and weakens everything inside it",
+    "glyph": "ONE bold heraldic scroll-cloud (a ruyi / xiangyun auspicious cloud of Asian art): a fat solid round-lobed cloud head on the left that curls into a spiral at its top, and two thick tapering curled tails trailing to the right, the whole cloud lying a little on the diagonal and filling the cell edge to edge, with ONE big solid blood-drop shape (a drop with its point up) cut out of the cloud head as a black hole; no rain, no lightning, no sun, no layers of scallops, no pine-cone; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: the layered upward teardrop reads as a pinecone or flame. New: heraldic scroll cloud with a drop-shaped hole. | previous note: skills_wolfman r4 REWRITE (critic: cream drops in a cloud read as rain/water, and a cloud clashes with the ninja poisonous_cloud/smoke_bomb): ONE tall blood drop sliced into scalloped mist slabs, slabs 3 -> 5, side drops, then an outline drop. Old r2 note: style refs classic MMORPG red_possession + wind_death"
+  },
+  "icon_skill_blood_frenzy": {
+    "grades": [
+      "four fangs instead of two: a pair of shorter fangs joins on the outer sides",
+      "six fangs in all, the outermost pair the shortest, and the arch band one notch thicker",
+      "six fangs and three blood drops hanging between them, the centre drop the largest"
+    ],
+    "subject": "Blood Frenzy: maddened by the scent of blood, the wolf surges in speed, damage and life steal",
+    "glyph": "a pair of bared wolf fangs: one thick wide arch band (the upper lip, a bold upward-bowed arc spanning most of the canvas width) with two big curved fangs hanging from its underside, mirror images, each a thick tapered tooth with a needle-sharp tip curving slightly inward, and ONE big solid blood drop (point up) hanging between the two fang tips, centred; symmetric left to right; no face, no eye, no spike ring, no flames; bold heavy shapes",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r3: the shipped sheet is the r2 generation grown +3 px per stroke (r3/tools/derive.py, fill 0.9, no new image). r1 (rewritten): the old eye in a spike halo collided with the sura dark_covenant eye and the warrior berserk halo; now bared fangs + blood drops, fangs 2 -> 6."
+  },
+  "icon_skill_crimson_moon": {
+    "grades": [
+      "five shards instead of three, in a wider fan",
+      "seven shards, long and short alternating, and a thin second crescent outline inside the crescent",
+      "nine shards in two rows and a small solid round full moon cradled in the bowl of the crescent"
+    ],
+    "subject": "Crimson Moon: shards of the crimson moon rain down on the enemies and explode",
+    "glyph": "one thick bold crescent moon in the upper half of the canvas with its horns pointing up (a deep bowl, convex side down), and under it three long thick faceted shards falling point-down in a tight fan, the middle one vertical and longest, the two others leaning outward; symmetric left to right; no stars, no flames, no drops; bold heavy shapes",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5: SHIPPED = v3, a DERIVED variant (no new image): the r2 sheet v1 grown by 8 raw px (fill 0.9); critic: g1 cream coverage 12-15 % (now 18 / 28 %). | previous note: skills_wolfman r3: the shipped sheet is the r2 generation grown +5 px per stroke (r3/tools/derive.py, fill 0.9, no new image). r1: style refs classic MMORPG red_possession + ilipungu; ours = bowl crescent with falling shards, shards 3 -> 9."
+  },
+  "icon_skill_rending_gale": {
+    "grades": [
+      "two more black cut-lines and two more talon teeth, seven teeth in all",
+      "every black cut-line one notch wider and a second row of small teeth sits under the first row, offset between its teeth",
+      "a second, smaller solid cone sits inside the first with a narrow black gap, its top edge also ending in teeth"
+    ],
+    "subject": "Rending Gale: a tearing vortex of claws erupts straight ahead in a cone",
+    "glyph": "ONE fat solid inverted cone, a triangle with its apex pointing DOWN at the bottom centre and a wide flat top (about 100 degrees at the apex), the wide top edge ending in a row of five sharp talon teeth, the whole cone cut by four thick black claw-slash cut-lines that sweep from the apex up to the gaps between the teeth, all bending slightly the same way like a tearing vortex; symmetric apart from that bend; no hub circle, no rays, no outline, no fan, no shell, no leaf, no petals, no hand; very fat chunky solid strokes, no hairlines; a flat heraldic symbol",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r4 REWRITE (critic: sunburst clip-art, reads as a palm leaf; a scallop-shell read is the cost, accepted: the second try, THREE fat sickle talons fanned from an apex diamond, read as a lily / fleur-de-lis and was dropped, v5 v6). SHIPPED = v3 of ONE fat fan sector with talon points and claw-slash cut-lines, blades 5 -> 7, apex half-ring, second layer. Old r3 note: the shipped sheet was the r2 generation grown +5 px per stroke. r1: counterpart classic MMORPG ilipungu (pinwheel of 4 fang blades); the skill is a CONE so ours is a half fan of talons (the pinwheel idea goes to blood_whirl)."
+  },
+  "icon_skill_spirit_claw": {
+    "grades": [
+      "a second talon of the same curve, one notch smaller, nested inside the hollow of the first with a narrow black gap",
+      "a third talon nested inside the second with a narrow black gap, all talons one notch fatter",
+      "a fourth, smallest talon nested inside the third with a narrow black gap"
+    ],
+    "subject": "Spirit Claw: two spectral claws swing farther than flesh and chill the prey",
+    "glyph": "ONE huge thick sickle-shaped talon sweeping in a deep curve from the upper right down to the lower left: very broad at its upper end and ending in a needle-sharp tip at the lower left, its hollow curved edge facing the lower right; one narrow black cut-line runs along the inside of the blade; nothing else: no hand, no ring, no eye, no second claw, no streaks; very fat chunky solid strokes, every stroke about a tenth of the pictogram's width, no hairlines; a flat heraldic symbol",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5: SHIPPED = v2, a DERIVED variant (no new image): the r3 sheet v1 grown by 7 raw px (fill 0.9); critic: g1 cream coverage 12-15 % (now 19 / 34 %). | previous note: skills_wolfman r3: style refs classic MMORPG wreckage; ours = ONE fat sickle talon (r1/r2 was two mirrored crescents = brackets) that gains a nested echo talon per grade, 1 -> 4 (counted, fat). The flat one-hand brief: 'very fat chunky strokes' because the critic measured 9-18 % cream coverage."
+  },
+  "icon_skill_rimewind": {
+    "grades": [
+      "a fourth gust band joins at the bottom of the fan, shorter than the others",
+      "a fifth gust band joins at the top of the fan, so five bands in all, and every band one notch thicker",
+      "every band ends in a second sharp prong, like a forked frost tip"
+    ],
+    "subject": "Rimewind: the wolf exhales a freezing gust that strikes everything in a cone",
+    "glyph": "ONE bold heraldic wolf head in strict profile facing right, a flat solid silhouette (one pointed ear, a long snout, the jaw open about thirty degrees with ONE big fang) filling the left half of the cell, and out of its open mouth a fan of THREE thick curved frost-gust bands widening to the right edge, each band tapering to a sharp point at its far end, separated by wide black gaps; no eye, no fur lines, no snowflake, no wind lines; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: a stock wind icon. New: a wolf-head silhouette exhaling a fan of frost bands (wolf-specific). refs = wind_death. | previous note: skills_wolfman r5 C: rimewind: snout-only (smaller than the howl head, no ear) exhaling a fan of bands. | previous note: skills_wolfman r5 A: critic: a stock wind icon. New: a wolf-head silhouette exhaling a fan of frost bands (wolf-specific). refs = wind_death. | previous note: skills_wolfman r3: cou"
+  },
+  "icon_skill_moonsteel_claws": {
+    "grades": [
+      "every blade gets ONE thick black piercing slit along its length",
+      "every blade's back edge gets two thick sawtooth notches",
+      "every blade gets a second black piercing slit, two in each"
+    ],
+    "subject": "Moonsteel Claws: the wolf flings claws of spirit-steel that pierce through the pack and shred armour",
+    "glyph": "ONE bold heraldic volley of THREE thrown claw-blades flying up toward the upper right on one diagonal: three solid curved talon blades (a fat sickle: thick convex back, sharp tip, flat wide base), ONE large in front at the upper right and two progressively smaller behind it along the same diagonal, each pointing to the upper right, not touching, with clear black gaps between them; no speed lines, no hand, no crescent pair, nothing that reads as the digit three; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: crescents read as the digit 3 / fish scales, too small (0.55x0.68). New: a diagonal volley of three thrown sickle talons filling the cell; refs = wreckage. | previous note: skills_wolfman r3: counterpart classic MMORPG wreckage (grade grammar); ours = a flying V of FAT crescent claws, claws 3 -> 5 -> 7 then fatter (r1 went to 9 hairline claws)."
+  },
+  "icon_skill_moonmane_spirit": {
+    "grades": [
+      "a thick black round ring is cut inside the orb, leaving a solid round core in its middle",
+      "two thick black curved cut-lines follow the curve inside the crescent body, splitting it into three fat parallel bands",
+      "two smaller solid orbs join the big orb in the bowl, one on each side, so three orbs in a row"
+    ],
+    "subject": "Moonmane Spirit: the indigo wolf's spirit runs beside the wolf and lends it speed and evasion",
+    "glyph": "ONE bold heraldic moon-soul: a huge solid crescent moon (a fat thick body, two sharp horn tips) lying in the lower left and opening toward the upper right, and cradled in its bowl, separated by a wide black gap, ONE solid round soul-orb about a third of the crescent's height; crescent and orb together fill the cell edge to edge on the diagonal; no face, no star, no ring, no wolf head, no flames, no yin-yang; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: indigo = crimson rotated 45 degrees. New: a different silhouette family (moon + orb, round, diagonal) vs the crimson diamond; refs = wreckage (crescent). | previous note: skills_wolfman r3: counterpart classic MMORPG blue_possession (grade grammar only). Ours = a two-comma soul disc in a thick ring; the octagram-sunburst of r1/r2 is dropped (critic: sunburst/sparkle clip-art). Growth = counted cut-lines 0 -> 4 -> 8 in the ring, then a second ring."
+  },
+  "icon_skill_spirit_wolves": {
+    "grades": [
+      "two big pointed cheek spikes grow outward from the two cheek wedges, pointing sideways and down",
+      "two fat fangs hang down from the muzzle slab, side by side with a narrow black gap",
+      "a solid diamond sits on the brow band and a thick black chevron is cut into each cheek wedge"
+    ],
+    "subject": "Spirit Wolves: spectral wolves are summoned and hunt the nearest enemies",
+    "glyph": "ONE bold heraldic wolf-head mask seen from the front, perfectly symmetric, built like a STENCIL of separate fat solid slabs with wide black gaps between them (nothing is one big blob): two tall pointed triangular ears each its own slab, a broad flat brow band as its own slab between the ears, two separate cheek wedges at the left and right of a narrow central muzzle slab that ends in a pointed nose, and the slanted slit eyes as wide black gaps between brow and cheeks; the mask including the ears fills the whole cell from edge to edge; no neck, no body, no fur lines, no teeth rows, no ring, no flames; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 B: spirit_wolves as a stencil of separate slabs (A v2 correlated 0.754 with sura obsidian_bulwark = cluster FAIL). | previous note: skills_wolfman r5 C: spirit_wolves as two facing wolf-head profiles (plural 'wolves', low mass in the middle). | previous note: skills_wolfman r5 B: spirit_wolves as a stencil of separate slabs (A v2 correlated 0.754 with sura obsidian_bulwark = cluster FAIL). | previous note: skills_wolfman r5 A: critic: "
+  },
+  "icon_skill_rime_circle": {
+    "grades": [
+      "two small crystals join at the far ends of the bar, five in all",
+      "every crystal gets a second thick black facet cut-line beside the first",
+      "the ground bar gets two thick black notches and a small solid diamond hangs below its middle"
+    ],
+    "subject": "Rime Circle: the wolf etches a ring of biting frost that slows everything inside it",
+    "glyph": "ONE bold heraldic cluster of THREE huge ice crystals growing upward from a thick short ground bar: a tall central hexagonal crystal with a pointed top and ONE thick black facet cut-line, and on each side a shorter crystal leaning outward; the three crystals fused at their roots on the bar; symmetric left to right; no snowflake, no star, no ring, no branches, no thin lines; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 C: rime_circle: fatter 3-crystal cluster with ONE facet line each (v5 had hairline facets that shimmer at 48 px). | previous note: skills_wolfman r5 B: critic: rime_circle is a stock snowflake; A (hex fang star) read as a ninja star. New: a crystal cluster on a ground bar. refs = blue_possession. | previous note: skills_wolfman r5 A: critic: a stock snowflake, g/p hexagon plate = ring. New: six fat frost fangs from a hex hub (count"
+  },
+  "icon_skill_icefall": {
+    "grades": [
+      "a fourth and a fifth small shard join in the two high corners, five in all",
+      "every shard gets a second thick black facet cut-line beside the first",
+      "a thick short ground bar with a V notch appears under the three big shards, the shards' tips touching its notch"
+    ],
+    "subject": "Icefall: jagged ice spears rain from the sky and shatter on the enemies",
+    "glyph": "ONE bold heraldic hail of THREE fat faceted ice shards falling straight down: each shard a long fat rhombus (kite) crystal, widest in its upper third, with a sharp point at the bottom and a flatter point at the top, and ONE thick black facet cut-line down its middle; the middle shard the largest and the lowest, the two outer shards smaller and higher at both sides, wide black gaps between them; no icicles hanging from a bar, no claws, no leaf shapes, no fan, no snowflake; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 C: icefall: three fat falling kite shards (A read as claw slashes, B as a leaf fan). | previous note: skills_wolfman r5 E: icefall: ONE colossal faceted ice lance (A thin triple = claw slashes, B fan = leaf, C = V of three, D = shell). | previous note: skills_wolfman r5 D: icefall: three FAT kite shards on a diagonal (A thin lances = claw slashes; C = a V of three, rows of teeth). | previous note: skill"
+  },
+  "icon_skill_phantom_fangs": {
+    "grades": [
+      "a thick black crack line is cut across the cranium and a second, smaller canine grows beside the big upper fang",
+      "a second black crack line is cut across the cranium and the lower canine becomes as big as the upper one",
+      "three short fat fangs fill the rest of the upper jaw between the big fang and the nose"
+    ],
+    "subject": "Phantom Fangs: spectral fangs circle the wolf and bite anything that comes close",
+    "glyph": "ONE bold heraldic wolf skull in strict profile facing right, a flat solid silhouette: a rounded cranium at the left with ONE big round black eye socket, a long tapering snout to the right ending in a blunt nose, ONE huge curved canine fang hanging down from the upper jaw and ONE smaller canine rising from the lower jaw, the jaws parted in a wedge-shaped gap; no ear, no neck, no teeth rows, no lower-jaw bone detail, no ring, no flames; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "fill": 0.9,
+    "family": "warm",
+    "note": "skills_wolfman r5 D: phantom_fangs as a spectral wolf skull in profile with a huge canine (real fangs, no ring, no wedge wheel). | previous note: skills_wolfman r5 B: critic: phantom_fangs a 4-wedge cookie / radiation wheel with no fangs; A (hourglass with bars) read as fire. New: two big curved canines closing horizontally, no ring, no bars. | previous note: skills_wolfman r5 A: critic: 4-wedge cookie / radiation wheel with no fangs. New: two bi"
+  },
+  "icon_skill_pack_hunt": {
+    "grades": [
+      "every toe pad gets a short sharp claw",
+      "a thick black chevron is cut into every pad",
+      "a small solid diamond (the prey) appears in the black gap at the centre of the three prints"
+    ],
+    "subject": "Pack Hunt: spirit wolves curve through the pack, each tearing into a different prey",
+    "glyph": "ONE bold heraldic pack of THREE big wolf paw prints in a triangle formation: one big print at the top centre and two big prints at the lower left and lower right, all three the same size and turned a little toward the centre like a pack closing in, each print a solid wide pad (a rounded triangle) with FOUR fat oval toe pads above it, clear black gaps between the prints, no claws; together they fill the cell edge to edge; no bodies, no heads, no comet tail; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 SHIPPED = v6 (brief C: a triangle of three BIG paw prints, counted growth = claws, then a chevron in every pad, then a prey diamond). Tried: A three wolf heads in a chase (mush at 48 px), B a diagonal paw trail (v4, derived thicker v5: tiny prints, 15-20 % cream). Critic: pack_hunt read as a trident or comet."
+  },
+  "icon_skill_glacier_maw": {
+    "grades": [
+      "a fourth tooth grows on each edge of the mouth and the beam becomes one notch thicker",
+      "the beam is cut by two thick black chevron gaps pointing right",
+      "a thick black hexagon-shaped hole opens in the block behind the mouth"
+    ],
+    "subject": "Glacier Maw: a colossal spectral jaw opens and breathes a freezing beam through everything in its path",
+    "glyph": "ONE bold heraldic ice-maw: a solid regular hexagon (a block of glacier ice, point-up orientation turned so two vertical edges are at the left and right) filling the cell, with a big wedge-shaped mouth cut out of its right half opening to the right (about eighty degrees wide), the upper and lower edges of the mouth each carrying three fat triangular teeth pointing into the mouth, and from the middle of the mouth a thick straight beam bar with a pointed tip shooting to the right edge of the cell; no eye, no ear, no face, no disc; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 C: glacier_maw: a hexagonal ice block with a toothed wedge mouth and a beam (reads as a maw, not a comb / trident). | previous note: skills_wolfman r5 B: critic: glacier_maw reads as a comb or euro sign. A read as a trident/anchor. New: V jaws with ONE canine per jaw and three beam bars. | previous note: skills_wolfman r5 A: critic: comb / euro sign. New: a wolf jaw in profile with ONE canine per jaw and a straight beam; refs = wind_"
+  },
+  "icon_skill_lunar_clarion": {
+    "grades": [
+      "a fourth fat sound arc outside the third, all arcs one notch thicker",
+      "a fifth fat sound arc outside the fourth",
+      "a second, smaller fang shows in the open jaw and the ear grows one notch taller"
+    ],
+    "subject": "Lunar Clarion: the wolf throws back its head and howls, rings of sound hurl the enemies back and terrify them",
+    "glyph": "ONE bold heraldic howling wolf head in strict profile facing the upper right, a flat solid silhouette (one pointed ear swept back, the snout raised steeply, the jaw open with ONE fang, a ruffed neck cut off flat at the bottom left) filling the lower left of the cell, and in front of its muzzle THREE very thick concentric curved sound arcs rolling out toward the upper right, separated by narrow black gaps, ends blunt and round; no eye, no moon, no fur lines, no ring; very fat chunky solid strokes, nothing thinner than a twentieth of the pictogram, no hairlines; ONE flat heraldic symbol filling the cell edge to edge (about 85 % of the cell) whose OUTER outline keeps exactly the SAME size and shape in all four cells: the grades add their strokes INSIDE that outline only, never an outer ring, halo, frame or extra layer around it",
+    "family": "warm",
+    "fill": 0.9,
+    "note": "skills_wolfman r5 A: critic: wolfs_howl shares one tusk with spirit_claw. New: a howling wolf-head silhouette with sound arcs. | previous note: skills_wolfman r3: style refs classic MMORPG wind_death + ilipungu (grade grammar only). A fang + fat diagonal sound arcs, arcs 2 -> 4 (counted; r2 went to 5 thin arcs), then a second fang."
+  },
+  "icon_skill_bladewheel": {
+    "grades": [
+      "five broad curved blades around the hub instead of three, all bending the same way",
+      "seven blades, long and short alternating, and the hub grows a thin ring",
+      "nine blades in two layers (a short layer under the long one) and the hub becomes a double ring"
+    ],
+    "subject": "Bladewheel: the warrior whirls his blade in a full circle around himself",
+    "glyph": "a bold triskelion pinwheel of three broad curved sabre blades radiating from a small solid round hub and all bending the same way (clockwise), each blade thick at the hub and tapering to a needle-sharp point near the edge of the canvas, the three blades separated by narrow black gaps; no figure, no upright sword; one bold solid mass filling the canvas; bold heavy shapes",
+    "note": "r2 TODO when codex quota returns (it was exhausted until 2026-10-25): r1 v1 is a 'sword + X' (critic); rewrite as a pure blade-whirl, see .research/rebuild/icons/warrior_a/r2/next_briefs.json | r3 brief applied: critic: sword motif in 5 of 11 glyphs; r1/r2 'sword + whirl arcs' is still a sword + X. classic MMORPG palbang = a radial star of blades that gets denser per grade. | SHIPPED r4 = gen v4, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_sword_arc": {
+    "grades": [
+      "a second thinner crescent sweep-trail nested under the first one, both tapering to needle-sharp tails",
+      "a third thinner crescent sweep-trail nested under the second one, the three trails fanning out behind the blade",
+      "a fourth crescent sweep-trail, the four nested trails together as wide as the blade is long, and the crossguard grows two short wings"
+    ],
+    "subject": "Sword Arc: the warrior's basic wide sweeping sword cut across everything in front of him",
+    "glyph": "a broad straight sword with a wide heavy blade lying on the diagonal, hilt and crossguard at the lower left, point at the upper right, with ONE very thick crescent sweep-trail (as wide as the blade at its middle) curving over the top of the blade from the hilt to past the point and tapering to sharp tails, separated from the blade by a narrow black gap; bold heavy shapes",
+    "note": "SHIPPED r4 = gen v7, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_lightning_trio": {
+    "grades": [
+      "a fourth parallel slash stroke joins on the outer side of the three and the ring is cut into one more arc",
+      "a fifth parallel slash stroke, every slash one notch thicker, and the ring is cut into four arcs",
+      "six parallel slash strokes, the two outermost very short, and a second thinner broken ring inside the first"
+    ],
+    "subject": "Lightning Trio: three lightning-fast sword slashes in a row",
+    "glyph": "three long parallel slash strokes running on the diagonal from the lower left to the upper right, each a thick tapered blade-stroke with needle-sharp ends, the middle one longest, cutting through a thick circular ring that is broken into arcs where the strokes cross it",
+    "note": "SHIPPED r4 = gen v4, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_warfever": {
+    "grades": [
+      "twelve spikes instead of eight, short ones between the long ones",
+      "sixteen spikes, every spike one notch broader at its root, and the two horns grow longer",
+      "twenty spikes in two staggered rows that almost merge into a dense halo around the mask"
+    ],
+    "subject": "Berserk: the warrior falls into a battle rage and his damage and speed surge",
+    "glyph": "a ring of eight big straight triangular spikes radiating from the centre in all directions (a spiky starburst, NOT flame tongues, no curves), and in the middle ONE solid symmetric front-facing horned war helmet: a domed cap, a nose guard running down the middle, two thick curved horns sweeping up and outward from the temples, broad flared cheek guards, and ONE wide horizontal visor slit across the eyes cut as a black gap, nothing else; no face, no skull, no eyes, no teeth, no mouth, no body, no arms, no fists; the helmet at least half the canvas width, solid and heavy; bold heavy shapes",
+    "note": "skills_warrior r1 (2026-10-19): final critic of the pilot: the bodybuilder bust with pecs/abs is clip-art, its 1-px anatomy lines are noise at 48 px and the flame hair reads as a fire skill; redrawn as a solid horned mask inside a halo of straight spikes (jeongwi grammar: figure in spikes, spikes grow into a halo), no anatomy. | OLD r1-r4 notes: r2: the flat X-pose brief above (v7-v9) read as a snowflake/star in the v3 flat-keyline kit; shipped is r1 v4 (roaring torso in a rage burst, an older brief) which reads as a berserker at 48 px in the flat style. Next brief (when codex quota returns): .research/rebuild/icons/warrior_a/r2/next_briefs.json. r3: shipped = gen v10, a 2x2 grade sheet ASSEMBLED from sibling generations v4 (8 spikes), v6 (12), v5 (dense halo) - the spike ring grows per grade like classic MMORPG's jeongwi; not a codex output, replace by a real `grades` sheet | r4: a few thin inner cut-lines allowed (they render as thin brown interior lines in kit v5; the critic found the flat torso plain) | r4 round B: A round: the full-body X figure was tiny and read as a snowflake at 48 px; bust brief | SHIPPED r4 = gen v14, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)",
+    "allowFist": true
+  },
+  "icon_skill_swordlight_ring": {
+    "grades": [
+      "a fourth feather-blade joins each wing (four per side) and the blade grows a thin fuller line down its middle",
+      "five feather-blades per wing, every feather one notch broader, and the crossguard grows two short upturned tips",
+      "six feather-blades per wing, the wings spread wider, and a small solid diamond sits on the crossguard"
+    ],
+    "subject": "Swordlight Ring: a ring of sword-light circles the warrior and cuts every enemy it touches",
+    "glyph": "a heraldic winged sword: ONE broad straight sword standing upright in the centre, point at the top, a plain straight crossguard and a round pommel, a thick blade about one sixth of the canvas wide; from the crossguard two big wings sweep outward and upward, mirror-symmetric, each wing built of three thick curved feather-blades (long, medium, short, the longest on top) that taper to needle-sharp points and are separated by narrow black gaps; the wings reach nearly the full canvas width, the sword the full height; no ring, no circle, no flames, no rays; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): GENERATED r4 from the r3 redraw below (the shipped v10 was still the two-broken-ring medallion / '(!)' dial of the r3 critic). | skills_warrior r3 (2026-10-20): critic: the two-ring concentric aura is a medallion/target (banned subject). Redrawn as a winged sword (heraldic, no ring). | r1 (2026-10-19): final critic of the pilot: the flame lotus / flame-chevron crown reads as a fire-element skill and at g3/g4 a fire wreath; redrawn with element-neutral broken pulse rings (no flames, no rays). | OLD r1-r4 notes: r2: r1 v1 (point-up blade + low crossguard + orbit ring) read as an inverted cross at 48-64 px | r3 brief applied: critic: the feather-sword is narrow (26 % of the tile), reads as a leaf, the sides stay empty. classic MMORPG geomgyeong = a sword with stacked chevrons; jeongwi: rays thickening into a halo. | SHIPPED r4 = gen v7, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_spearhead": {
+    "grades": [
+      "seven speed blades instead of five, every blade one notch thinner",
+      "nine speed blades in all, long and short alternating, and the crossguard grows two short swept-back wings",
+      "eleven speed blades in all, and the blade grows a second thin fuller line"
+    ],
+    "subject": "Dash: the warrior rushes forward at bullet speed and slams through everything in his way",
+    "glyph": "ONE long broad double-edged sword lunging to the right through the middle of the canvas: its needle point at the right edge, a very wide crossguard and a short thick grip just left of the centre, the blade one fifth of the canvas thick with a thin black fuller line down its middle; behind the grip a thick FAN of FIVE flat tapered speed blades flaring out to the left like a comet tail, each about half as thick as the sword blade with a needle-sharp left end and narrow black gaps between them: the middle one level with the sword and the longest, the others splayed upward and downward by about 12 and 24 degrees, so that the whole mark is about 70 % of the canvas tall at its left end; symmetric top to bottom, as wide as the canvas; no figure, no arrowhead, no chevron, no orb, no crescent; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO of the r3 critic's '>>' fast-forward chevrons (the shipped v17 = three nested chevrons): a lunging blade with 3 -> 9 speed bars (critic r3 biggest gap: 'a lunging blade with motion streaks'). OLD r3 note: critic: three nested chevrons read as a '>>>' fast-forward / guillemet mark. Redrawn as a CHEVRON OF TWO SWORDS (martial, directional) with sword-pair growth. | r1 (2026-10-19): the r4 armoured charger was tiny and collapsed into a smudge at 48 px (final critic); redrawn as abstract chevrons per the critic ('paired motion crescents or chevrons'). Round-2 fallback concept if this reads as a stock fast-forward mark: two thick crescents back to back with a solid orb. | OLD r1-r4 notes: r1-r3: sword+chevron arrow (v1-3, thin archer arrow), armoured runner v8 (thin scribble at HUD size), comet wedge v11 (a stock speed arrow, critic). r4: round A = this brief as a 2x2 grade sheet (v13-v15, shipped v13: armoured shoulder-charge, sword thrust, streaks 3->5->7->9). Round B comet orb v16 (orb + nested crescent wake, spiked at P) was generated but reads as a rolling ball; the fist concept (r4/next_briefs_B.json icon_skill_dash__fist) was NOT generated: the codex quota ran out (paused until 08:53). | SHIPPED r4 = gen v13, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)",
+    "fill": 0.86
+  },
+  "icon_skill_second_wind": {
+    "grades": [
+      "four more vein branches inside the heart, two in each lobe",
+      "a thin second heart-shaped outline ring surrounds the heart with a narrow black gap, and every vein end forks once more",
+      "a third heart-shaped outline ring outside the second, and a solid diamond in the centre of the heart where the veins meet"
+    ],
+    "subject": "Second Wind: the warrior gathers his vitality for an instant heal, regeneration and life steal",
+    "glyph": "one big solid heart (two round lobes and a pointed bottom) filling the canvas, perfectly symmetric, with a branching vein network cut through it as thin black gaps: ONE thick vessel running from the centre up to the notch between the lobes and forking there into two, and one more fork on each side lower down; everything stays inside the heart outline: no antlers, no vessels sprouting out of the top, no leaves, no flames, no drops, no ground; bold heavy shapes",
+    "note": "skills_warrior r1 (2026-10-19): final critic of the pilot: the heart with antler-like vessels is an arbitrary motif that reads as nature / deer; redrawn as a plain symmetric heart with veins inside it, growth = veins + outline rings. | OLD r1-r4 notes: r3: the shipped glyph is gen v2 again. The r2 flame heart (v4) read as a fire/sura skill (critic). Proper redraw of grade growth: gen with `grades`, see r3/next_briefs.json | r3 brief applied: critic: the r2 flame heart reads as fire / sura; r1 drop + leaves read as nature. classic MMORPG gihyeol = branching veins. | SHIPPED r4 = gen v7, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_giant_leap": {
+    "grades": [
+      "six shock spikes instead of four and five speed bars instead of three",
+      "eight shock spikes, seven speed bars, and two big rock chunks flung up beside the boot",
+      "ten shock spikes, nine speed bars and four rock chunks, the boot one notch bigger"
+    ],
+    "subject": "Giant's Leap: the warrior vaults high into the air and crashes down onto a crowd of enemies",
+    "glyph": "one huge armoured war-boot seen from the SIDE, tilted about 30 degrees with the heel high at the upper left and the toe low at the lower right, stomping down onto the ground, as ONE solid heavy silhouette (a tall shin guard flaring into a wide cuff at the top, a thick heel block, a thick sole) with only two thin black cut-lines (the cuff edge and the sole edge) and NO straps, NO laces, NO buckles, NO sandal, NO vertical bars above it; three thick tapered DIAGONAL speed streaks trail from the cuff toward the upper left along the boot's path; under the toe a flat wide crater ellipse with four thick jagged shock spikes bursting outward to the left and right; the whole mark filling the canvas; bold heavy shapes",
+    "note": "r3: the shipped glyph is gen v1 again (leap arc + impact). The r2 boot print with 5 star rays read as a beetle/tick at 48-64 px (critic). A better leap pictogram than a UI arrow (e.g. the arc ending in a big boot-sole stamp on a crater ring) is a deferred gen, see r3/next_briefs.json | r3 brief applied: critic: the r2 boot print with 5 star rays reads as a beetle / tick at 48-64 px; the r1 arc reads as a stock UI arrow. Show the crash-down as a side-view boot stamping a crater. | SHIPPED r4 = gen v7, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_war_oath": {
+    "grades": [
+      "a second swallow-tail cloth tongue is added so the flag has four streaming tongues, and the spear head gets a small crossbar",
+      "a second smaller banner hangs below the flag from the same pole and the spear head grows two side barbs",
+      "a third banner and a spear head with three barbs on each side"
+    ],
+    "subject": "War Oath: the warrior swears on his blade and binds his soul to the battle (heal, damage, speed, armour, life steal)",
+    "glyph": "a war banner: one tall vertical spear pole with a broad leaf-shaped spearhead on top, a big swallow-tailed battle flag hanging from the upper half of the pole and streaming to the right in three wavy tongues, one small diamond-shaped hole cut into the middle of the cloth, and the foot of the pole planted in a small round mound; the flag cloth one solid mass; bold heavy shapes",
+    "note": "r2: r1 v2 (crossed swords + spiked halo) was a stock pictogram and a busy mesh at 48 px (critic) | SHIPPED r4 = gen v8, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_mountain_splitter": {
+    "grades": [
+      "a second smaller peak rises behind each half of the mountain and the cleft gets two more cracks",
+      "a third peak rises behind each half, the cleft widens and four more cracks run through the halves",
+      "five peaks in all, the halves lean further apart, the cleft is a wide black wedge and the sword grows a second crossguard"
+    ],
+    "subject": "Mountain Splitter: a colossal two-handed overhead cut that cleaves everything ahead",
+    "glyph": "one solid mountain with a jagged ridge line and a sharp summit seen from the front, split down the middle by a broad black cleft (at least one eighth of the canvas wide at the base, narrowing to the summit) so the left and right halves lean slightly apart with jagged inner edges; ONE big broad sword stands point-down in the cleft with its crossguard and round pommel rising above the summit, the blade filling the cleft; two or three thin black crack-lines in each half; symmetric left to right; heavy solid masses; no pyramid, no tiny sword, no strata lines; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): SHIPPED = gen v11 = RE-PICK of the pilot's single stencil v2 (a sword plunged into a cracked mountain; not a grade sheet: the four bands are the same glyph with the kit's stand-in weight/scale growth, no counted growth) because the grade-sheet v10 read as a plain pyramid with no split (critic r2) and codex was paused. The glyph text above is the planned REDO as a counted grade sheet of the same identity (cleft + sword): see DEFERRED_GEN. | r1 (2026-10-19): DEFERRED_GEN reroll of the pilot: the r4 n-band was lung-like (two lobes + a vertical blade) and the sword changed identity per grade; now ONE peak cut by an asymmetric diagonal sabre slash (no sword), growth = peaks. | OLD r1-r4 notes: r2 TODO when codex quota returns (exhausted until 2026-10-25): bolder cloven massif + wedge instead of a thin sword, see .research/rebuild/icons/warrior_a/r2/next_briefs.json | r3 brief applied: critic: sword motif in 5 of 11. The r2 prepared brief: a bold cloven massif + wedge instead of a thin sword (kept from r2/next_briefs.json). | r4 round B: A round: split mountain with a wedge read as lungs; the sword is the cleaver again but bold | SHIPPED r4 = gen v9, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_faultline": {
+    "grades": [
+      "four rock spikes stand on each half instead of three, and one short side crack branches from the fissure",
+      "five rock spikes on each half, two side cracks branch from the fissure and the two halves heave further apart",
+      "six rock spikes on each half, three side cracks branch from the fissure, the fissure widens and a thick shock wedge points outward from each end of the slab"
+    ],
+    "subject": "Earthquake: the blade is driven into the earth, the ground splits and a mighty tremor rolls outward",
+    "glyph": "the ground splitting, seen from the side: ONE wide thick slab of ground across the lower two thirds of the canvas, broken into a left half and a right half by ONE bold zigzag lightning-shaped black fissure that runs from the top edge of the slab all the way to its bottom edge, the two halves heaved apart and offset (the left half stands higher than the right half); on the top edge of each half stand three big sharp triangular rock spikes of different heights, like broken stone teeth; heavy flat shapes with straight jagged edges, no round shapes, no boulder, no plant, no rings, no lobes, no gem, no slab seen from above; bold heavy shapes",
+    "note": "skills_warrior r1 (2026-10-19): final critic of the pilot: the r4 square slab has 64 % cream coverage at 48 px and turns into cracked paving at g3/g4; redrawn as a split ground line with fissures (critic suggestion), side view, so it cannot read as a slab or a cookie. | OLD r1-r4 notes: r1 first brief (ground slab + 3 shards + tremor arcs) read as a crown at 48 px and correlated 0.68-0.82 with mountain_splitter. r3: shipped = gen v7, a 2x2 grade sheet ASSEMBLED from sibling generations v5 (2 rings), v6, v4 (3 rings) - not a codex output; replace by a real `grades` sheet | r3 brief applied: critic: the r2 ripple rings + two shards read as a sprout growing out of an archery target. classic MMORPG finish = a blade with jagged sides over cracks. A top-down shattered ground is distinct from the mountain. | r4 round B: A round: the round cracked disc read as a cookie; square slab with one zigzag fissure | SHIPPED r4 = gen v13, a real codex 2x2 grade sheet (cell 1-4 = bands n/m/g/p, the symbol grows per grade)"
+  },
+  "icon_skill_spirit_edge": {
+    "grades": [
+      "a third, smaller echo joins behind the second, with a narrow black gap, three echoes in all",
+      "a fourth and a fifth echo join behind, each one smaller than the one before, and the lead blade grows one notch broader",
+      "a pair of short thick tapered side blades flanks the lead blade, one on each side, and every echo grows one notch thicker"
+    ],
+    "subject": "Spirit Edge: a crescent of spirit-light peels off the blade and flies straight at the first enemy",
+    "glyph": "ONE huge broad flying spirit-blade shaped like a fat kite-shaped spearhead (straight sharp edges, a needle point at the upper right corner, widest one third from the point, a squared-off tail with one small V notch, a thin black ridge line down its middle), flying to the upper right on the diagonal, the lead blade as thick as a third of its length and reaching from the centre to the upper right corner; behind its tail two thick echoes of the same shape along the same diagonal, each smaller than the one before, each separated by a narrow black gap, reaching the lower left corner; no crescent, no moon, no orb, no leaf, no curves, no hilt, no crossguard, no thin lines; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO generated r4 (leaf glyph reworded to a spearhead-shaped blade: a hilt-less leaf would read as foliage); the crescent + orb of the r3 critic ('moon and planet', star-and-crescent, clone of power_wave) is replaced. | skills_warrior r3 (2026-10-20): SHIPPED = gen v2 = re-tint of v1 (warm -> COOL, doctrine B family, ART.md s5 / critic r2; no image used) - the crescent + orb is still the OLD glyph (critic: crescent-and-star emblem, clone of power_wave). The glyph text above is the planned REDO (leaf-blade with echoes, no crescent/orb) as a counted grade sheet: see DEFERRED_GEN. | r1 (2026-10-19): doctrine B was still the legacy painted 128 px gold-glow art; classic MMORPG mental skills ALSO use the warm tile family (CORRECTION_READ_FIRST), so family is set to warm explicitly (doctrineFamily() would give cool). Concept: crescent + orb, distinct from sword_arc (sword + trail) and power_wave (upright crescent + speed bars)."
+  },
+  "icon_skill_soul_crash": {
+    "grades": [
+      "two more blades join between the three at about 18 degrees, five blades in all, every blade one notch thinner",
+      "seven blades in all, the outermost pair tilted to about 70 degrees, and the hub grows a thin ring around it",
+      "nine blades in all, long and short alternating, and the hub becomes a double ring"
+    ],
+    "subject": "Spirit Strike: a cone-shaped wave of spirit force hits the enemies ahead several times in a row",
+    "glyph": "three broad double-edged sword blades fanned upward from ONE shared solid round hub at the bottom centre, like a trident of blades: one blade vertical in the middle and one tilted about 35 degrees to each side, every blade as thick as one eighth of the canvas with a needle-sharp point and a short crossguard bar close to the hub, separated by narrow black gaps that widen toward the points; symmetric left to right, filling the canvas; no arcs, no wave bands, no rays, no concentric lines; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): GENERATED r4 as the redo of the r3 Wi-Fi fan sector (critic r3: literally the Wi-Fi symbol + the banned wedge): a fan of 3 -> 9 sword blades from one hub, counted; the strong_body pairOk waiver is dropped. OLD r3 note: SHIPPED = gen v1 = a FAN SECTOR cut into 4 -> 7 curved bands (the brief of this entry before this edit); in the level-up card it reads as a Wi-Fi symbol (viewed in r3/ui_b/levelUp), the weakest of the nine. The glyph/grades above are the REDO brief (a trident of three sword blades from a hub, counted 3 -> 5 -> 7 -> 9), NOT generated yet: see DEFERRED_GEN (priority 3). Old: gates r=0.762 vs strong_body (> 0.75, two solid wedge-like masses; shield with diamond boss vs striped fan sector) - waived through pairOk, to be rerolled when the codex window reopens (the fan reads Wi-Fi-like). cool family (doctrine B default). Rewritten: the r1 cone of free arc-bands + apex dot read like a Wi-Fi / broadcast symbol; now ONE solid fan sector with straight radial edges and curved cuts (a folded war fan / cone of force). | r1: counterpart classic MMORPG gigongcham (4 hooked blades pinwheel); ours is a different shape on purpose: sword_spin already owns the pinwheel."
+  },
+  "icon_skill_crushing_blow": {
+    "grades": [
+      "the burst grows to eight spikes: a second layer of shorter spikes fills the gaps between the long ones",
+      "ten spikes in all and the crossguard grows two short upward horns",
+      "twelve spikes in two staggered rows and a short thick bar crowns the pommel"
+    ],
+    "subject": "Bash: the warrior brings the blade down with everything he has for heavy damage, knockback and a chance to stun",
+    "glyph": "ONE huge broad sword slamming down on the DIAGONAL from the upper left to the lower right, its point driven into a big solid jagged impact burst at the lower right of the canvas: the burst is a bold angular starburst of six big sharp triangular spikes radiating from the sword point in all directions (a spiky explosion, NOT a ring, no round shapes); the sword fills the diagonal, a very wide heavy crossguard, a thick short blade (one fifth of the canvas wide at the crossguard), a round pommel at the upper left corner; no ground slab, no book, no fan, no wedges along a ground line; heavy flat shapes; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): doctrine B = COOL family (mint/periwinkle/lavender, dark ink glyph; ART.md s5, critic r2), no family override. | r1: counterpart classic MMORPG gyeoksan (sword stuck diagonally in a ground triangle with impact ticks); ours is a vertical plunge with shock wedges."
+  },
+  "icon_skill_earthpound": {
+    "grades": [
+      "a second ring joins outside the first, also cut into four heavy segments",
+      "a third ring joins outside, four heavy segments again, and the blade is one notch broader",
+      "four short thick impact spikes point outward from the outer ring on the diagonals and every segment is one notch thicker"
+    ],
+    "subject": "Stump: the warrior slams the blade into the ground in a ring of force that hurls everyone around him back and stuns them",
+    "glyph": "a thick ring of force seen at a low angle as a very wide flat ellipse (as wide as the canvas), broken into FOUR very heavy arc-segments by four narrow black gaps (each segment one eighth of the canvas thick), and in its centre ONE huge broad sword standing point-down and rising the full height of the canvas, its wide crossguard near the top, the blade crossing in front of the ring's front arc and its point reaching the lower edge of the ring; solid and heavy, no thin lines, no dots, no dashes; bold heavy shapes",
+    "fill": 0.86,
+    "note": "skills_warrior r4 (2026-10-20): REDO generated r4 v2 (two variants): sword larger, FOUR heavy ring segments (the r3 six/eight/ten segments dotted out at 48 px); the dawn_blade pairOk waiver is dropped (gates r 0.73 < 0.75 after dawn_blade v4 / sword_orb v3). | skills_warrior r3 (2026-10-20): shipped gen v1; n band small (glyph 0.76 x 0.68, ink coverage 0.13, grows to 0.30 at p); shipped gates r=0.752 vs dawn_blade (flat wide glyph on a bar) waived via pairOk. cool family (doctrine B default), no override. | r1: counterpart classic MMORPG daejin (boot on a ground ring); giant_leap (A) already owns the boot, so Stump is blade + broken force ring. Watch: rings can read as an archery target."
+  },
+  "icon_skill_graniteform": {
+    "grades": [
+      "one broad horizontal band across the upper third of the shield face",
+      "a broad vertical band down the middle of the face as well, and the boss grows a thin ring around it",
+      "two broad diagonal bands cross the face as well, forming eight wedges around the boss, and the rim grows a second thin ring"
+    ],
+    "subject": "Graniteform: the warrior hardens his body like temple granite for more armour and less physical damage",
+    "glyph": "one tall heater shield (flat top edge, curved sides, pointed bottom) seen from the front, a solid heavy plate with a thick rim separated from the face by one narrow black gap, a large solid diamond-shaped boss in the centre with a thin vertical ridge line, symmetric; no sword, no figure, no letters; bold heavy shapes",
+    "note": "skills_warrior r3: cool family (doctrine B default), no override. | r1: counterpart classic MMORPG cheongeun (an eight-pointed lattice mandala); ours is a heraldic shield whose growth is heraldic bands (counted)."
+  },
+  "icon_skill_edgewave": {
+    "grades": [
+      "a third gust crosses the blade near the pommel and every spiral tip is one notch bigger",
+      "four gusts cross the blade in all, and the crossguard grows two short upturned wings",
+      "five gusts cross the blade in all, every gust one notch thicker, and the pommel grows a short thick spike"
+    ],
+    "subject": "Edgewave: the warrior hurls the edge of his sword at the enemy line in a whirling wind of blade that tears through the ranks",
+    "glyph": "ONE very broad heavy straight sword flying on the DIAGONAL toward the upper right, its needle point at the upper right corner of the canvas and its round pommel at the lower left corner, so the sword is as long as the whole diagonal; the blade one sixth of the canvas wide with a thin black fuller line, a wide heavy crossguard; TWO huge thick flat wind gusts sweep ACROSS the blade, each a wide ribbon as thick as the blade that comes in from one side, crosses in FRONT of the blade at a right angle (a narrow black gap where it crosses) and ends on the other side in a big curled spiral tip: the first gust crosses the lower half of the blade and curls up toward the upper left, the second crosses the upper half and curls down toward the lower right (point-symmetric); the gusts do NOT wrap around or coil along the blade, no snake, no helix, no sound waves, no thin lines; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO of the r3 critic's ')))' speaker-wave sword (tiny sword + three thin arcs, ink coverage 0.05): a broad sabre wrapped in a wind ribbon of 2 -> 5 loops. The blade_seal pairOk waiver is dropped. OLD r3 note: SHIPPED = gen v1 from the r1 brief (a thin sword + three thin arcs: ink coverage 0.08-0.16, glyph 0.84 x 0.41 of the well = too small/thin); the glyph text above is the bolder REROLL brief, NOT generated yet (codex paused until 03:19) - see DEFERRED_GEN. Shipped gates r=0.80 vs blade_seal (two thin centred glyphs, different objects) waived via pairOk until the reroll. cool family (doctrine B default), no override. | r1: counterpart classic MMORPG geompung (upright sword with wind ribbons); ours is horizontal with blade-waves ahead of the point so it does not repeat sword_arc (diagonal sword + trail over the blade)."
+  },
+  "icon_skill_blade_orbit": {
+    "grades": [
+      "six orbiting swords instead of four, each one notch smaller",
+      "eight orbiting swords, each one notch smaller again, and the central sword grows a second crossguard",
+      "eight orbiting swords, every one a notch broader, and the central sword grows a thick spike on its pommel and two short wings on its crossguard"
+    ],
+    "subject": "Blade Orbit: spirit swords wheel around the warrior and carve up anything that comes close",
+    "glyph": "ONE big broad sword standing upright in the exact centre, point at the top, a wide crossguard and a round pommel, the blade one seventh of the canvas wide and about 75 % of the canvas tall; around it FOUR smaller broad swords in orbit, one at each diagonal (upper left, upper right, lower right, lower left), each about one third of the central sword's length with its own small crossguard, each tilted so that its point leads clockwise around the centre (the upper-right sword points down-right, the lower-right one down-left, the lower-left one up-left, the upper-left one up-right), wide black gaps between all swords; no ring, no circle line, no connecting arc, no orb, no crosshair, no dots; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO of the r3 critic's 'FPS crosshair' ring-of-swords + orb (a medallion ring, banned subject): one upright sword with 4 -> 6 -> 8 small swords wheeling around it (no ring line). OLD r3 note: cool family (doctrine B default), no override. | r1: counterpart classic MMORPG noegeom (sword + lightning branches); orbit of swords on the circumference (empty ring + orb), unlike the radial sword_spin pinwheel."
+  },
+  "icon_skill_blade_seal": {
+    "grades": [
+      "a second pair of shorter swords crossed behind the first pair at a steeper angle, four swords in all, every sword one notch thinner",
+      "a third pair crossed behind at a shallower angle, six swords in all, and the seal block grows four short corner spikes",
+      "a fourth pair, eight swords in all, and the seal block becomes a double square (a square inside a square) while the ground bar grows a short spike at each end"
+    ],
+    "subject": "Blade Seal: spirit swords drive into the ground and form a seal that slows and damages every enemy inside",
+    "glyph": "TWO broad swords driven point-down into a thick flat ground bar at the bottom of the canvas and crossed in a big X, the points planted at the lower left and lower right, the crossguards and round pommels at the upper left and upper right corners, each blade one eighth of the canvas wide; at the crossing a solid square seal block (a plain square seal stamp as wide as one blade) with one thin cross-shaped black cut-line inside locks the two swords together, a narrow black gap between the seal and each blade; symmetric left to right, filling the canvas; no ring, no circle, no diamond frame, no arrows, no cursor; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO of the r3 critic's 'move-cursor diamond with four arrows' (an abstract emblem, thin, collapsing at 48 px): crossed swords locking a seal block, 2 -> 4 -> 6 -> 8 swords crossed at the seal. OLD r3 note: cool family (doctrine B default), no override. | r1: style refs noegeom + cheongeun; a diamond frame (not a ring) so it does not collide with blade_orbit / aura rings."
+  },
+  "icon_skill_sword_rain": {
+    "grades": [
+      "two more swords join in a second staggered row, five in all",
+      "two more swords, seven in all, and the ground bar grows a notch at each end",
+      "nine swords in three staggered rows and a pair of short impact wedges on the ground bar"
+    ],
+    "subject": "Sword Rain: a downpour of spirit swords falls from the sky and strikes random enemies, each impact bursting in an area",
+    "glyph": "three huge broad swords falling straight down, point-down, vertical and parallel, side by side with narrow black gaps, each blade one sixth of the canvas wide so that together they span the canvas, STAGGERED in height (the left one lowest, the middle one highest, the right one at middle height), each with a heavy crossguard and a thick tapered motion streak above the pommel; under their points one wide thick flat ground bar with a thick triangular impact wedge at each end; symmetric-ish, filling the canvas; no thin daggers, no diagonal; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): re-tinted warm -> COOL (doctrine B family, ART.md s5 / critic r2); glyph unchanged, still to be de-cloned from shaft_deluge: see DEFERRED_GEN. | r1: the probe's fan of five swords shipped as a COOL tile (doctrine b default) - wrong family; redone warm with grade growth. Style refs geomgyeong + noegeom. Slant mirrored (upper right -> lower left) on purpose: ninja arrowfall is three slanted arrows upper left -> lower right (24x24 mask correlation / archetype-stamp risk)."
+  },
+  "icon_skill_dawn_blade": {
+    "grades": [
+      "seven rays instead of five, the two outermost lying almost flat on the horizon",
+      "nine rays, long and short alternating, and the horizon bar grows a notch at each end",
+      "eleven rays, long and short alternating, and the crossguard of the blade grows two short upturned wings"
+    ],
+    "subject": "Dawn Blade: a beam of dawn-bright spirit light erupts from the blade and chases the nearest enemy, slicing everything in its path",
+    "glyph": "ONE huge broad double-edged sword standing upright in the exact centre with its pommel sunk into a thick flat horizon bar at the bottom, the blade one sixth of the canvas wide and rising all the way to the top edge with a thin black fuller line down its middle, a wide crossguard just above the bar; behind the blade a solid half-disc sun sits on the horizon bar, about 70 % of the canvas wide, a narrow black gap on each side of the blade, and standing on the rim of the half-disc five short thick triangular rays, evenly spaced, none touching the blade; the blade is the tallest and boldest element; symmetric left to right, filling the canvas; straight edges, no clouds, no weather symbols, no curves except the disc; bold heavy shapes",
+    "note": "skills_warrior r4 (2026-10-20): REDO of the r3 critic's 'weather-app sunrise with no readable blade' (the blade was one ray among five): now the sword is the dominant element standing in front of the half sun. OLD r3 note: cool family (doctrine B default), no override. | r1: style refs gigongcham + geompung; the dawn is the identity (half sun + blade-ray)."
+  },
+  "icon_skill_wyrmstrike": {
+    "grades": [
+      "a second pair of smaller horns joins below the first pair and the crest gets two more spikes",
+      "the whiskers curl into a spiral at their tips and each cheek grows two spikes",
+      "a third pair of horns, four fangs instead of two, and every spike one notch longer"
+    ],
+    "subject": "Wyrmstrike: as the blade falls the spirit takes the shape of a white dragon that surges forward and tears through everything in its path",
+    "glyph": "ONE bold heraldic dragon face seen from the FRONT, perfectly mirror-symmetric like a temple roof-end ornament: a broad flat snout at the bottom with two round nostrils and two big downward fangs, a heavy brow ridge with two angled slit eyes cut as black gaps, two huge thick horns sweeping up and outward from the top of the head, two long thick whiskers streaming outward and downward from the snout to the left and right, a short crest of three spikes between the horns; one solid heavy mass with at most four thin black cut-lines; no body, no neck, no profile, no S-curve; bold heavy shapes",
+    "note": "skills_warrior r3: cool family (doctrine B default), no override. | r1: style refs gyeoksan + geompung; ART.md s5: dragon head for dragon skills."
+  },
+  "icon_skill_phantom_gallop": {
+    "grades": [
+      "five mane tongues and two more speed streaks",
+      "seven mane tongues, five speed streaks and one thick crescent shock arc ahead of the muzzle",
+      "nine mane tongues, seven speed streaks and two nested shock arcs ahead of the muzzle"
+    ],
+    "subject": "Phantom Gallop: the warrior thunders forward like a phantom rider, hitting everything on the path and stunning some of it",
+    "glyph": "a bold heraldic horse head in profile facing right (arched neck, pricked ear, flared nostril) as one solid silhouette, a flowing mane of three sharp swept-back tongues behind the neck, one eye and one nostril cut as black gaps, and three thick tapered speed streaks trailing behind the mane to the left; at most three thin cut-lines; as wide as the canvas; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): re-tinted guild -> WARM (ART.md s5: class-less skills are warm; the charcoal tiles looked like passive tiles in the level-up bar; critic r2). No family override. | r2 (2026-10-19): critic: the horse skills ignore classic MMORPG's horse grammar. ALL four class-less skills are classic MMORPG HORSE skills (common/horse: wildattack, charge, splash, wildattack) and those tiles are DARK charcoal with a white pictogram (white horse head + motion arcs), so family = guild (charcoal stone, silver-white glyph) instead of the warm ladder. | r1: classic MMORPG's horse tile (horse_wildattack) = horse head + speed arcs, kept as the grammar reference only."
+  },
+  "icon_skill_stallion_stomp": {
+    "grades": [
+      "a second pair of shock arcs outside the first pair",
+      "a third pair of shock arcs and a short impact wedge under each arm of the horseshoe",
+      "a fourth pair of shock arcs and the ground bar grows two short cracks at each end"
+    ],
+    "subject": "Stallion Stomp: the warrior stamps down with the weight of a warhorse, damaging everything around him and hurling it back",
+    "glyph": "one huge horseshoe (a thick U with its opening pointing upward) seen from the front, solid and heavy, with three square nail holes cut as black gaps in each arm, slamming down onto a thick flat ground bar at the bottom; one thick crescent shock arc bursts outward to the left and one to the right of it, mirrored; symmetric; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): re-tinted guild -> WARM (ART.md s5: class-less skills are warm). No family override. | r2: horse skills = classic MMORPG horse grammar, a dark charcoal tile with a white pictogram (family guild). | r1: counterpart classic MMORPG horse charge tile (horse head + curved speed arcs); ours is a horseshoe so it never reads as the same horse head as horse_charge."
+  },
+  "icon_skill_arc_of_might": {
+    "grades": [
+      "seven teeth instead of five along the outer edge and two more speed bars trail behind",
+      "a second thinner toothed crescent joins just ahead of the first, concentric with it and separated by a narrow black gap",
+      "a third toothed crescent joins just ahead of the second and every crescent is one notch thicker"
+    ],
+    "subject": "Arc of Might: the warrior hurls a crescent wave of force that tears through every enemy in its path",
+    "glyph": "one huge thick crescent wave flying to the right, a bold ')' shape with its convex side pointing right and needle-sharp tips at the top and bottom, the crescent as thick at its belly as a quarter of its height, along its convex outer edge a row of five big sharp triangular teeth like a saw blade (a spiked sickle of force, NOT a smooth moon), and behind it three thick horizontal speed bars of staggered lengths trailing to the left from its hollow, the middle one longest; symmetric top to bottom; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): re-tinted guild -> WARM (ART.md s5: class-less skills are warm). No family override. | r2: horse skills = classic MMORPG horse grammar, a dark charcoal tile with a white pictogram (family guild). | r1: counterpart classic MMORPG horse splash (three arrow-bars + horse head); ours drops the horse and keeps the bars + crescent wave."
+  },
+  "icon_skill_shaft_deluge": {
+    "grades": [
+      "two more arrows join along the same arc, five in all, every arrow one notch shorter",
+      "seven arrows along the arc in all, still one notch shorter each time",
+      "the same seven arrows, every arrow one notch thicker, and a second short arc of three arrows flies below the first"
+    ],
+    "subject": "Shaft Deluge: the warrior calls down volleys of arrows from the sky, each volley dealing damage where it lands",
+    "glyph": "a volley of THREE huge arrows flying along ONE big rainbow-shaped arc across the canvas, all pointing along the arc: the left arrow low at the left edge rising steeply toward the upper right, the middle arrow at the top of the arc flying level to the right, the right arrow descending steeply toward the lower right, narrow black gaps between them; each with a bold diamond-shaped arrowhead, a thick straight shaft and a V-shaped fletching at the tail; no ground bar, no bow, no target, no thin lines; symmetric left to right, the whole mark filling the canvas; bold heavy shapes",
+    "note": "skills_warrior r3 (2026-10-20): re-tinted guild -> WARM (ART.md s5: class-less skills are warm). No family override. | r2: horse skills = classic MMORPG horse grammar, a dark charcoal tile with a white pictogram (family guild). | r1: classic MMORPG has no arrow-rain tile for a warrior; ref is the horse tile grammar only. Stepped roof layout (round 1 review): ninja arrow_shower = three slanted arrows UL->LR, plague_rain = three vertical arrows with teardrop heads in a flat row, so the old 'fan of three' would have been the third stamp of the same three-arrows layout; sword_rain (mine) is slanted swords."
+  }
+}

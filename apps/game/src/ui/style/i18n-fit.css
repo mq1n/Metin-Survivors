@@ -1,0 +1,62 @@
+/* Long-name fit (P3-8): labels that clipped or ended in "…" in Turkish (and a few in English) now wrap instead.
+   Layout only, no string was shortened. Imported last by ui/app.tsx; every selector carries the .ms-ui prefix so it
+   outranks the single-class nowrap/ellipsis rules of the screen sheets whatever the import order. A clamp (2-3 lines)
+   stays as the last resort for a name that still does not fit. */
+
+/* Talents: tree title in the tree header (multi-word doctrine titles) */
+.ms-ui .tal-head .tal-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+/* narrow trees (720p): the title column is ~117px beside the points chip + reset button, so a touch smaller keeps
+   "Yakın Dövüş" on one line and "(Bıçak)" on the second */
+@container tt (max-width: 34rem) {
+  .ms-ui .tal-head .tal-name {
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+}
+/* Talents: milestone names sit in a ~45px column at 720p: give the text a few px back from the icon + padding, allow a
+   third line, and hyphenate / break an over-long word rather than clip it */
+@container tt (max-width: 34rem) {
+  .ms-ui .tal-mile {
+    gap: 0.3rem;
+    padding-inline: 0.3rem;
+  }
+  .ms-ui .tal-mile .tal-mile-icon {
+    --s: 1.9rem;
+  }
+}
+.ms-ui .tal-mile .tal-mile-name {
+  -webkit-line-clamp: 3;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+/* Talents: "reset all" button label */
+.ms-ui .tal-actions .ms-btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.15;
+}
+
+/* Collection "still to find" rows and Codex tiles: item / monster name + source line */
+.ms-ui .ms-coll-todo-text b,
+.ms-ui .ms-coll-todo-text small,
+.ms-ui .ms-cdx-tile-text b,
+.ms-ui .ms-cdx-tile-text small {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Character sheet: equipped piece name next to its slot (the meta line is hidden at 720p, so a third line fits) */
+.ms-ui .ms-chr-slot-name {
+  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
+}

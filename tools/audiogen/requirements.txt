@@ -1,0 +1,5 @@
+numpy>=2.0
+scipy>=1.13
+matplotlib>=3.8
+# external: ffmpeg (libmp3lame) on PATH
+# build:  cd tools/audiogen && python -m audiogen.build all && python -m audiogen.qa && python -m audiogen.ids

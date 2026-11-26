@@ -1,0 +1,35 @@
+{
+ "_about": "Icon gate thresholds (py/gates.py; docs/ART.md s5/s10). default applies to every collection; collections override. Values: corner/ring = max alpha 0-255, dup = max 24x24 luma correlation, fill = long side of the alpha box / canvas, lumaFloor / valueFloor = interior mean luma / HSV value 0-255 (fails only when both are below), glyphContrast = |glyph - ground| luma 0-255, huePerBand = max icons per 40 degree hue band (0 = off).",
+ "default": {
+  "corner": 5,
+  "ring": 8,
+  "dup": 0.75,
+  "fillMin": 0.7,
+  "fillMax": 0.93,
+  "lumaFloor": 90,
+  "glyphContrast": 70,
+  "huePerBand": 0,
+  "valueFloor": 150
+ },
+ "collections": {
+  "skills": {
+   "lumaFloor": 0
+  },
+  "talents": {
+   "lumaFloor": 0
+  },
+  "passives": {
+   "lumaFloor": 0,
+   "huePerBand": 0
+  },
+  "stones": {
+   "huePerBand": 2
+  },
+  "trinkets": {
+   "huePerBand": 2
+  },
+  "gear": {
+   "lumaFloor": 90
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "chest.treasure": "Hazine!",
+  "chest.name": "Lake Define",
+  "chest.nameBoss": "Zaferin Definesi",
+  "chest.sealed": "Ejderha kilidiyle mühürlü.",
+  "chest.tapToOpen": "Açmak için tıkla veya Enter'a bas",
+  "chest.tapToOpenTouch": "Açmak için sandığa dokun",
+  "chest.paid": "{n} ödendi",
+  "chest.opening": "Kilit çözülüyor…",
+  "chest.ledger": "Define defteri",
+  "chest.ledgerPaid": "Ödenen",
+  "chest.ledgerFree": "Ücretsiz",
+  "chest.ledgerFloor": "Garanti",
+  "chest.sealedNote": "Define tek seçimliktir: yenileme, yasaklama ya da atlama yok.",
+  "chest.ledgerOffer": "Teklif"
+}

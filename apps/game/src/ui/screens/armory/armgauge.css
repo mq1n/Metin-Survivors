@@ -1,0 +1,133 @@
+/* =====================================================================================================================
+   Armory gauge (B12): painted tube (uk_hud_gtube + uk_hud_gfill_*, the shipped HUD materials) with the liquid fill anchored
+   to the channel. Own copy of the HUD / pause recipe; CSS stand-ins while the art is missing. `.arm-g--thin` = a plain
+   gunmetal channel (row / milestone progress), same liquid.
+   ===================================================================================================================== */
+.arm-g {
+  /* one unit of the 768 x 128 tube image: the channel is 64 units tall, the spiked caps 62 units wide each */
+  --k: calc(var(--ch, 1.3rem) / 64);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(84 * var(--k));
+  padding: calc(10 * var(--k)) 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 calc(62 * var(--k));
+  border-image-source: var(--tex-ag-tube, linear-gradient(90deg, #6a707a, #1b1d22 8%, #1b1d22 92%, #6a707a));
+  border-image-slice: 0 62 0 62 fill;
+  border-image-outset: calc(22 * var(--k)) 0;
+  border-image-repeat: stretch;
+  filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7));
+}
+.arm-g-ch {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: calc(5 * var(--k));
+  background: var(--ag-tint, none);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.arm-g--gold {
+  --ag-tint: linear-gradient(180deg, rgba(170, 100, 20, 0.16), rgba(70, 36, 6, 0.1));
+  --ag-paint: var(--tex-ag-gold, linear-gradient(180deg, #a85a0c, #ffcf5a 16%, #f5981c 40%, #cf6f0e 74%, #4a2404));
+  --ag-glow: #ffb030;
+}
+.arm-g--red {
+  --ag-tint: linear-gradient(180deg, rgba(150, 18, 20, 0.16), rgba(60, 6, 8, 0.1));
+  --ag-paint: var(--tex-ag-red, linear-gradient(180deg, #7e0e12, #f04a4a 16%, #e02529 40%, #a8121a 74%, #3a0508));
+  --ag-glow: #ff4a38;
+}
+.arm-g--blue {
+  --ag-tint: linear-gradient(180deg, rgba(40, 90, 200, 0.2), rgba(10, 30, 90, 0.12));
+  --ag-paint: var(--tex-ag-blue, linear-gradient(180deg, #123a96, #6aa2ff 16%, #2b66e6 40%, #1648b8 74%, #07124a));
+  --ag-glow: #4a8cff;
+}
+.arm-g-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--ag-paint) 0 0 / 100cqw 100% no-repeat;
+  transition: width 0.2s ease-out;
+}
+/* the lit leading edge of the liquid */
+.arm-g-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: max(2px, calc(2.4 * var(--k)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 246, 224, 0.95) 24%, rgba(255, 246, 224, 0.9) 76%, rgba(255, 255, 255, 0));
+  box-shadow: 0 0 0.45rem 1px var(--ag-glow);
+}
+.arm-g.is-empty .arm-g-fill::after,
+.arm-g.is-full .arm-g-fill::after {
+  display: none;
+}
+.arm-g-ticks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.5) 0) 0 0 / calc(100% / var(--seg, 10)) 100%;
+}
+.arm-g-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 20%), linear-gradient(0deg, rgba(150, 190, 255, 0.14), rgba(150, 190, 255, 0) 12%);
+  box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.55);
+}
+.arm-g-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0 0.6rem;
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-size: max(var(--t-sm), 12px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 0 0 0.3rem #000;
+  pointer-events: none;
+}
+.arm-g-l.is-mid {
+  margin: 0 auto;
+}
+.arm-g-l.is-end {
+  margin-left: auto;
+}
+.arm-g-l.is-start {
+  font-family: var(--f-head);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* thin: a plain gunmetal channel, no spiked caps (row gates, milestone plates) */
+.arm-g--thin {
+  --k: calc(var(--ch, 0.62rem) / 64);
+  height: var(--ch, 0.62rem);
+  padding: 0;
+  border: 0;
+  border-image: none;
+  filter: none;
+}
+.arm-g--thin .arm-g-ch {
+  border-radius: 1px;
+  background: linear-gradient(180deg, #050608, #14161b);
+  box-shadow: 0 0 0 1px #2f333b, 0 0 0 2px #050505, 0 1px 0 2px rgba(190, 200, 215, 0.14);
+}
+.arm-g--thin .arm-g-fill::after {
+  width: 2px;
+  box-shadow: 0 0 0.3rem 0 var(--ag-glow);
+}

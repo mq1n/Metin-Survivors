@@ -1,0 +1,107 @@
+{
+  "icon_trinket_bracelet_jade": {
+    "subject": "Jade Lifebound Bracelet, a carved jade bangle that returns a share of every blow you land as health",
+    "silhouette": "one thick bangle bracelet seen from the side as a wide tilted ring of carved pale jade with gold edge bands and THREE raised round emerald gems along its front, a short gold clasp at the lower left",
+    "palette": [
+      "pale jade green band with deeper green carved lines",
+      "brass-gold edge bands and clasp",
+      "three bright emerald-green gems",
+      "white specular glints on the top-left"
+    ]
+  },
+  "icon_trinket_bracelet_thunder": {
+    "subject": "Thunderclap Bracelet, a heavy iron cuff whose hits sometimes leap to another enemy nearby",
+    "silhouette": "one open CUFF bracelet seen from the side as a tilted C-shaped band of BLACKENED DARK IRON (clearly dark charcoal-black, NOT silver) with a gap at the lower left, the band wide and flat like a vambrace, ONE big jagged bright white-blue lightning bolt inlaid along it, a row of three small silver rivets and ONE large bright yellow gem raised on the front; heavy and solid; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "dark blackened iron band with thin silver edge lines",
+      "one big bright yellow-gold gem with a white-yellow glint",
+      "bright electric white-blue lightning inlay",
+      "deep blue-black shadows"
+    ]
+  },
+  "icon_trinket_bracelet_viper": {
+    "subject": "Viper Bracelet, a coiled serpent bracelet whose hits may poison",
+    "fill": 0.88,
+    "silhouette": "one serpent coiled into a bracelet ring seen from the side (two overlapping coils of body), a big broad triangular viper head with an open mouth, two white fangs and ONE big bright yellow slit-pupil eye clearly visible rising at the front of the ring, the head much larger than the band is thick (the head about a third of the ring's width), bold diamond scale pattern; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "BRIGHT jade-green and lime-green scales with gold-yellow diamond markings (light and vivid, NOT dark forest-green, NOT lilac, NOT purple)",
+      "pale cream-yellow belly scales and one big yellow eye",
+      "white fangs",
+      "strong light and dark steps, no muddy greys"
+    ]
+  },
+  "icon_trinket_bracelet_ward": {
+    "subject": "Sealed Ward Bracelet, a silver warding cuff that wraps you in a shield",
+    "silhouette": "one wide BRACER (a broad forearm guard, NOT a ring) seen from the side, much taller than a ring and wider at the front, built of FIVE separate hinged rectangular silver plates side by side with visible gaps between them, a big shield-shaped bezel holding ONE large violet gem on the centre plate and small engraved seal marks on the other plates; heavy and solid; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "bright silver and white-gold plates",
+      "one large violet-purple gem",
+      "pale lilac glints",
+      "dark steel only in the bottom-right"
+    ]
+  },
+  "icon_trinket_necklace_frost": {
+    "subject": "Frostbound Necklace, a silver chain with an ice-crystal pendant whose hits may slow enemies",
+    "fill": 0.9,
+    "silhouette": "a necklace drawn BIG: a short heavy silver chain of very chunky oval links forming a shallow U across the TOP of the icon (the chain only about a quarter of the height) and ONE huge tall pointed ICICLE crystal pendant (about 2.4 times taller than wide, thick as a fist) in a chunky silver cap hanging from the middle of the U and filling the whole lower three quarters of the icon, the pendant at least 40 percent of the icon width; the pendant is the hero; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "thick bright silver chain",
+      "icy cyan and white crystal pendant with three big flat facets",
+      "navy shadow facets",
+      "white specular glint on the top-left"
+    ]
+  },
+  "icon_trinket_necklace_tiger_fang": {
+    "subject": "Tiger Fang Necklace, a cord of beads with a great tiger fang whose critical hits burst outward",
+    "silhouette": "a thick cord of big round brown wooden beads forming a closed loop fully inside the canvas with ONE very large curved tiger fang pointing down at the bottom, capped by a chunky gold ring; the fang is big and bold, about a third of the whole icon height; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "ivory-bone fang with an amber-orange tip",
+      "brown wooden beads",
+      "dull gold cap",
+      "white specular glints"
+    ]
+  },
+  "icon_trinket_necklace_blood": {
+    "subject": "Bloodstone Necklace, a dark chain with a ruby pendant that restores a little health with every hit",
+    "fill": 0.9,
+    "silhouette": "a necklace drawn BIG: a short heavy COLLAR of big triangular spiked links in polished steel forming a shallow V across the top third of the icon, with ONE huge ROUND faceted ruby orb held in four thick claw-like steel prongs hanging from the point of the V and filling the lower two thirds, the orb about 55 percent of the icon width; round and wide where the other necklace is tall and narrow; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "BRIGHT scarlet and ruby-red orb with pale pink and orange-red facets (very bright, glowing)",
+      "polished light steel-silver collar and claw prongs with strong highlights (NOT black, NOT dark iron)",
+      "white-pink glint on the top-left",
+      "deep red shadow facets only in the bottom-right"
+    ]
+  },
+  "icon_trinket_earring_thorn": {
+    "subject": "Thorn Earring, a pair of barbed thorn drops that return melee damage to attackers",
+    "fill": 0.9,
+    "silhouette": "a pair of earrings, FILLING the icon: each ONE very thick, heavy, bone-silver curved THORN as long as the whole icon is tall and as thick at its base as a big jade bead (never a thin twig), with two big curved barbs on its outer edge and a big round dark-green jade bead at its top, hung from a chunky gold ring loop; the two thorns side by side, almost touching, mirror images; solid heavy shapes, no hairlines; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "bright steel-silver and white-gold thorns",
+      "big round dark-green jade beads",
+      "gold ring loops",
+      "white specular glints on the top-left",
+      "dark iron-grey shadows only in the bottom-right"
+    ]
+  },
+  "icon_trinket_earring_thunderclap": {
+    "subject": "Stunning Earring, a pair of sapphire drops whose hits may briefly stun enemies",
+    "silhouette": "a pair of earrings: each a thick round gold hoop from which hangs ONE big chunky sapphire gem cut in the shape of a zig-zag LIGHTNING BOLT, the two earrings side by side, close together, mirror images, each about 50 percent of the whole icon height; solid heavy shapes; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "royal-blue sapphire bolt facets",
+      "gold hoops",
+      "white-blue specular glints",
+      "navy shadow facets"
+    ]
+  },
+  "icon_trinket_earring_phoenix": {
+    "subject": "Phoenix Earring, a pair of flame-gem drops whose fire becomes a shield around you",
+    "silhouette": "a pair of earrings: each a gold hook holding ONE broad FEATHER-shaped fire gem, a phoenix plume of three pointed flame-feather lobes fanning out and curling at the tips, the two plumes tilted outward as mirror images, side by side, each about 50 percent of the whole icon height; solid heavy shapes; smooth clean painted rendering, not pixel art",
+    "palette": [
+      "amber-orange and red-orange fire gem facets",
+      "gold hooks",
+      "pale yellow glints",
+      "dark red-brown shadow facets"
+    ]
+  }
+}

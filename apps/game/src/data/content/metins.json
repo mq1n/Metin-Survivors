@@ -1,0 +1,926 @@
+[
+  {
+    "id": "metin_lament",
+    "name": {
+      "tr": "Yas Metini",
+      "en": "Metin of Lament"
+    },
+    "lore": {
+      "tr": "Gökten düşen bu taş etrafına öyle ağır bir keder yayar ki canlıların adımları ağırlaşır.",
+      "en": "A shard of fallen sky that breathes out a sorrow so heavy it slows every living thing nearby."
+    },
+    "rune": "#5a8cff",
+    "model": "metin_stone",
+    "hp": 900,
+    "modifier": "slowAura",
+    "modParams": {
+      "radius": 13,
+      "slow": 0.25,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "wolf",
+        "alpha_wolf",
+        "blue_wolf",
+        "wild_boar",
+        "alpha_blue_wolf",
+        "red_boar"
+      ],
+      "every": 10,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        60,
+        100
+      ],
+      "shards": 2,
+      "chestChance": 0.18
+    }
+  },
+  {
+    "id": "metin_strife",
+    "name": {
+      "tr": "Çekişme Metini",
+      "en": "Metin of Strife"
+    },
+    "lore": {
+      "tr": "Çatlakları savaş kızgınlığıyla çınlar; yakınındaki canavarlar sürü hâlinde saldırır.",
+      "en": "Its cracks ring with battle-fury; the beasts around it attack in howling swarms."
+    },
+    "rune": "#ff6a3a",
+    "model": "metin_stone",
+    "hp": 1100,
+    "modifier": "extraSwarm",
+    "modParams": {
+      "radius": 13,
+      "swarmMul": 1.6,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "red_boar",
+        "bear",
+        "grey_wolf",
+        "hungry_red_boar"
+      ],
+      "every": 10,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        70,
+        115
+      ],
+      "shards": 2,
+      "chestChance": 0.2
+    }
+  },
+  {
+    "id": "metin_onslaught",
+    "name": {
+      "tr": "Akın Metini",
+      "en": "Metin of Onslaught"
+    },
+    "lore": {
+      "tr": "Akın Metini komutanları uyandırır: sürünün en güçlüleri taşın çağrısıyla öne çıkar.",
+      "en": "The Metin of Onslaught wakes the captains: the strongest of the pack step forward at its call."
+    },
+    "rune": "#e84a4a",
+    "model": "metin_stone",
+    "hp": 1350,
+    "modifier": "summonElite",
+    "modParams": {
+      "radius": 13,
+      "every": 24,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "grizzly_bear",
+        "grey_wolf",
+        "alpha_grey_wolf",
+        "tiger",
+        "black_bear"
+      ],
+      "every": 11,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        80,
+        130
+      ],
+      "shards": 3,
+      "chestChance": 0.22
+    }
+  },
+  {
+    "id": "metin_avarice",
+    "name": {
+      "tr": "Tamah Metini",
+      "en": "Metin of Avarice"
+    },
+    "lore": {
+      "tr": "Altın damarlı bu taşın yakınında Yeop yağar; ama kokuyu alan avcılar da gelir.",
+      "en": "Veined with gold, this stone rains Yeop around it, and draws hungry hunters to the scent."
+    },
+    "rune": "#ffcf4a",
+    "model": "metin_stone",
+    "hp": 1650,
+    "modifier": "yeopRain",
+    "modParams": {
+      "radius": 12,
+      "every": 2.5,
+      "value": 14,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "black_bear",
+        "brown_bear",
+        "white_tiger",
+        "tiger"
+      ],
+      "every": 11,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        110,
+        190
+      ],
+      "shards": 3,
+      "chestChance": 0.22
+    }
+  },
+  {
+    "id": "metin_ebon",
+    "name": {
+      "tr": "Abanoz Metin",
+      "en": "Ebon Metin"
+    },
+    "lore": {
+      "tr": "Abanoz Metin çevresindeki ışığı yutar; karanlığın içinden Gümüş Ant askerleri çıkar.",
+      "en": "The Ebon Metin swallows the light around it, and Silver Vow soldiers step out of the dark."
+    },
+    "rune": "#9a7aff",
+    "model": "metin_stone",
+    "hp": 2000,
+    "modifier": "darkness",
+    "modParams": {
+      "radius": 13,
+      "strength": 0.6,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "silver_vow_soldier",
+        "silver_vow_archer",
+        "silver_vow_commander",
+        "silver_vow_general"
+      ],
+      "every": 11,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        90,
+        150
+      ],
+      "shards": 4,
+      "chestChance": 0.25
+    }
+  },
+  {
+    "id": "metin_murk",
+    "name": {
+      "tr": "Kasvet Metini",
+      "en": "Metin of Murk"
+    },
+    "lore": {
+      "tr": "Gölgesi öyle yoğundur ki görüş daralır; yırtıcı askerler bu gölgeden süzülür.",
+      "en": "Its shadow is so dense that sight narrows, and savage soldiers slip through it."
+    },
+    "rune": "#6a4ac8",
+    "model": "metin_stone",
+    "hp": 1350,
+    "modifier": "darkness",
+    "modParams": {
+      "radius": 13,
+      "strength": 0.7,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "feral_soldier",
+        "feral_maniac",
+        "dark_zealot",
+        "orc_scout",
+        "orc_fighter"
+      ],
+      "every": 11,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        150,
+        250
+      ],
+      "shards": 4,
+      "chestChance": 0.25
+    }
+  },
+  {
+    "id": "metin_envy",
+    "name": {
+      "tr": "Haset Metini",
+      "en": "Metin of Envy"
+    },
+    "lore": {
+      "tr": "Kıskançlığın taşı, yaklaşanın canını kemirir; yeşil ışığı yakar.",
+      "en": "The stone of jealousy gnaws at whoever draws near, and its green glow burns."
+    },
+    "rune": "#3cd08a",
+    "model": "metin_stone",
+    "hp": 1650,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 13,
+      "dps": 8,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "feral_soldier",
+        "feral_maniac",
+        "king_scorpion",
+        "orc_sorcerer",
+        "elite_orc_scout"
+      ],
+      "every": 11,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        160,
+        270
+      ],
+      "shards": 4,
+      "chestChance": 0.25
+    }
+  },
+  {
+    "id": "metin_echoes",
+    "name": {
+      "tr": "Yankı Metini",
+      "en": "Metin of Echoes"
+    },
+    "lore": {
+      "tr": "Yankı Metini orkların ruhlarını çağırır; elit orklar taşın çevresinde saf tutar.",
+      "en": "The Metin of Echoes calls the spirits of the orcs, and elite orcs form ranks around it."
+    },
+    "rune": "#7ae0ff",
+    "model": "metin_stone",
+    "hp": 1950,
+    "modifier": "summonElite",
+    "modParams": {
+      "radius": 13,
+      "every": 24,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "elite_orc",
+        "elite_orc_fighter",
+        "elite_orc_scout",
+        "elite_orc_sorcerer",
+        "orc_fighter"
+      ],
+      "every": 12,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        170,
+        290
+      ],
+      "shards": 5,
+      "chestChance": 0.28
+    }
+  },
+  {
+    "id": "metin_dusk",
+    "name": {
+      "tr": "Alacakaranlık Metini",
+      "en": "Metin of Dusk"
+    },
+    "lore": {
+      "tr": "Alacakaranlık Metini titreşir, görünür ve kaybolur; müritler onun ritmiyle dans eder.",
+      "en": "The Metin of Dusk flickers in and out of sight, and zealots dance to its rhythm."
+    },
+    "rune": "#8a8ab0",
+    "model": "metin_stone",
+    "hp": 2350,
+    "modifier": "flicker",
+    "modParams": {
+      "radius": 13,
+      "period": 2.4,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "king_scorpion",
+        "dark_zealot",
+        "dark_ascetic",
+        "veiled_ascetic_fighter",
+        "orc_scout"
+      ],
+      "every": 12,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        190,
+        320
+      ],
+      "shards": 5,
+      "chestChance": 0.28
+    }
+  },
+  {
+    "id": "metin_grit",
+    "name": {
+      "tr": "Sebat Metini",
+      "en": "Metin of Grit"
+    },
+    "lore": {
+      "tr": "Ölüleri ayağa kalkmaya zorlar; vebalı sürü sarsılmadan ilerler.",
+      "en": "It forces the dead to rise, and the blighted horde presses on without breaking."
+    },
+    "rune": "#8aa07a",
+    "model": "metin_stone",
+    "hp": 1950,
+    "modifier": "extraSwarm",
+    "modParams": {
+      "radius": 13,
+      "swarmMul": 1.5,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "blighted_villager",
+        "blighted_swordsman",
+        "blighted_archer",
+        "angry_blighted_villager",
+        "angry_blighted_swordsman"
+      ],
+      "every": 12,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        240,
+        400
+      ],
+      "shards": 6,
+      "chestChance": 0.28
+    }
+  },
+  {
+    "id": "metin_fiend",
+    "name": {
+      "tr": "Cin Metini",
+      "en": "Metin of the Fiend"
+    },
+    "lore": {
+      "tr": "Etrafında bir alev halkası yakar; içindeki her şey kavrulur.",
+      "en": "It sets a ring of fire around itself, scorching everything inside."
+    },
+    "rune": "#ff3a5a",
+    "model": "metin_stone",
+    "hp": 2350,
+    "modifier": "fireRing",
+    "modParams": {
+      "radius": 13,
+      "ringRadius": 6,
+      "blob": 1.1,
+      "damage": 6,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "angry_blighted_spearman",
+        "angry_blighted_archer",
+        "frost_wisp",
+        "blighted_swordsman",
+        "blighted_villager"
+      ],
+      "every": 12,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        260,
+        430
+      ],
+      "shards": 6,
+      "chestChance": 0.3
+    }
+  },
+  {
+    "id": "metin_demise",
+    "name": {
+      "tr": "Ecel Metini",
+      "en": "Metin of Demise"
+    },
+    "lore": {
+      "tr": "Zehirli bir soğuk soluyan bu taşın çatlaklarından buz yaratıkları akar.",
+      "en": "It exhales a poisoned cold, and ice creatures pour out of its cracks."
+    },
+    "rune": "#b8f0c8",
+    "model": "metin_stone",
+    "hp": 2850,
+    "modifier": "poisonField",
+    "modParams": {
+      "radius": 13,
+      "patches": 3,
+      "patchRadius": 3.2,
+      "damage": 5,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "glacier_orca",
+        "frost_wisp",
+        "rime_beetle",
+        "blighted_villager",
+        "angry_blighted_villager"
+      ],
+      "every": 12,
+      "count": 6
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        280,
+        470
+      ],
+      "shards": 7,
+      "chestChance": 0.3
+    }
+  },
+  {
+    "id": "metin_slaughter",
+    "name": {
+      "tr": "Mezbaha Metini",
+      "en": "Metin of Slaughter"
+    },
+    "lore": {
+      "tr": "Yanında duranı kor gibi yakar; alev savaşçıları taşla birlikte nefes alır.",
+      "en": "It sears everything that stands beside it, and the flame warriors breathe in time with the stone."
+    },
+    "rune": "#ff3a1a",
+    "model": "metin_stone",
+    "hp": 3350,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 13,
+      "dps": 17,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 2,
+      "waveSizeMax": 3,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "blaze_cub",
+        "ash_wisp",
+        "blaze_tiger",
+        "lava_troll"
+      ],
+      "every": 12,
+      "count": 5
+    },
+    "awakenAfter": 90,
+    "rewards": {
+      "essence": 1,
+      "yeop": [
+        380,
+        620
+      ],
+      "shards": 8,
+      "chestChance": 0.3
+    }
+  },
+  {
+    "id": "metin_great_ebon",
+    "name": {
+      "tr": "Büyük Abanoz Metin",
+      "en": "Great Ebon Metin"
+    },
+    "lore": {
+      "tr": "Yeonmu Ovası’na düşen ilk dev taş. Kaplan Tanrısı Horyeong onun karanlığından doğar.",
+      "en": "The first colossal stone to fall on the Yeonmu Plains. Horyeong, the Tiger God, is born from its darkness."
+    },
+    "rune": "#ff4a3a",
+    "model": "metin_great_yeonmu",
+    "hp": 18000,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 16,
+      "dps": 6,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 4,
+      "waveSizeMax": 6,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "tiger",
+        "white_tiger",
+        "silver_vow_commander",
+        "brown_bear",
+        "alpha_grey_wolf"
+      ],
+      "every": 9,
+      "count": 8
+    },
+    "awakenAfter": 9999,
+    "rewards": {
+      "essence": 0,
+      "yeop": [
+        400,
+        600
+      ],
+      "shards": 12,
+      "chestChance": 1
+    },
+    "great": true
+  },
+  {
+    "id": "metin_great_dusk",
+    "name": {
+      "tr": "Büyük Alacakaranlık Metini",
+      "en": "Great Dusk Metin"
+    },
+    "lore": {
+      "tr": "Suryeon’un kalbine saplanan dev taş, Ork Reisi’nin iradesini çalmıştır.",
+      "en": "The giant stone driven into the heart of Suryeon has stolen the Chief Orc’s will."
+    },
+    "rune": "#5a96ff",
+    "model": "metin_great_suryeon",
+    "hp": 45000,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 16,
+      "dps": 9,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 4,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "black_orc",
+        "elite_orc_general",
+        "dark_inquisitor",
+        "hulking_black_orc",
+        "veiled_executioner"
+      ],
+      "every": 9,
+      "count": 8
+    },
+    "awakenAfter": 9999,
+    "rewards": {
+      "essence": 0,
+      "yeop": [
+        700,
+        1000
+      ],
+      "shards": 18,
+      "chestChance": 1
+    },
+    "great": true
+  },
+  {
+    "id": "metin_great_demise",
+    "name": {
+      "tr": "Büyük Ecel Metini",
+      "en": "Great Metin of Demise"
+    },
+    "lore": {
+      "tr": "Seori’nin zirvesinde donmuş devasa bir taş; Miho onun çatlağından süzülür.",
+      "en": "A colossal stone frozen into the summit of Seori; the Nine-Tailed spirit seeps from its crack."
+    },
+    "rune": "#6ac8ff",
+    "model": "metin_great_seori",
+    "hp": 90000,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 16,
+      "dps": 13,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 4,
+      "waveSizeMax": 5,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "yeti",
+        "ice_golem",
+        "frost_revenant",
+        "snow_lion",
+        "blighted_marshal"
+      ],
+      "every": 9,
+      "count": 8
+    },
+    "awakenAfter": 9999,
+    "rewards": {
+      "essence": 0,
+      "yeop": [
+        1100,
+        1600
+      ],
+      "shards": 24,
+      "chestChance": 1
+    },
+    "great": true
+  },
+  {
+    "id": "metin_great_doomfire",
+    "name": {
+      "tr": "Büyük Kıyamet Ateşi Metini",
+      "en": "Great Doomfire Metin"
+    },
+    "lore": {
+      "tr": "Daeryeol’un kalbindeki dev taş; Al Ejder’in uykusunu bu taş bozdu.",
+      "en": "The giant stone in the heart of Daeryeol; it is what broke the Scarlet Wyrm’s sleep."
+    },
+    "rune": "#ff2a10",
+    "model": "metin_great_daeryeol",
+    "hp": 150000,
+    "modifier": "damageAura",
+    "modParams": {
+      "radius": 16,
+      "dps": 19,
+      "wave_99": 1,
+      "wave_90": 1,
+      "wave_80": 2,
+      "wave_70": 2,
+      "wave_60": 2,
+      "wave_50": 2,
+      "wave_40": 3,
+      "wave_30": 3,
+      "wave_20": 3,
+      "wave_10": 3,
+      "waveSizeMin": 3,
+      "waveSizeMax": 4,
+      "waveRingMin": 5,
+      "waveRingMax": 15
+    },
+    "swarm": {
+      "enemies": [
+        "blaze_knight",
+        "lava_troll",
+        "basalt_general",
+        "cinderbeard",
+        "blaze_tiger"
+      ],
+      "every": 9,
+      "count": 7
+    },
+    "awakenAfter": 9999,
+    "rewards": {
+      "essence": 0,
+      "yeop": [
+        1700,
+        2400
+      ],
+      "shards": 30,
+      "chestChance": 1
+    },
+    "great": true
+  }
+]

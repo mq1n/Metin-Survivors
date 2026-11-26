@@ -1,0 +1,3396 @@
+{
+  "version": 1,
+  "note": "Producer roster for the Forge. Heights are in metres at instance scale 1.0 (the game applies EnemyDef.scale on top). Generated from apps/game/src/data/content/*.json.",
+  "conventions": {
+    "forward": "+Z",
+    "up": "+Y",
+    "unit": "metre",
+    "origin": "feet-centre (pickups/props: base-centre)",
+    "heroClips": [
+      "idle",
+      "walk",
+      "run",
+      "attack",
+      "attack2",
+      "cast",
+      "dash",
+      "hit",
+      "death",
+      "spawn",
+      "victory"
+    ],
+    "creatureClips": [
+      "idle",
+      "walk",
+      "run",
+      "attack",
+      "hit",
+      "death",
+      "spawn"
+    ],
+    "bossExtraClips": [
+      "attack2",
+      "special1",
+      "special2",
+      "special3"
+    ],
+    "clipMapping": "special1 = signature attack (breath/charge wind-up), special2 = summon/howl, special3 = enrage/transform; bosses without a clip fall back to attack2."
+  },
+  "counts": {
+    "hero": 36,
+    "weapon": 32,
+    "creature": 43,
+    "boss": 5,
+    "metin": 5,
+    "pickup": 6,
+    "prop": 13
+  },
+  "models": [
+    {
+      "id": "warrior_m_t0",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.8,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Male body.",
+      "armorTier": 0,
+      "classId": "warrior",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_m_t1",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.8,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Male body.",
+      "armorTier": 1,
+      "classId": "warrior",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_m_t2",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.8,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Male body.",
+      "armorTier": 2,
+      "classId": "warrior",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_m_t3",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.8,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Male body.",
+      "armorTier": 3,
+      "classId": "warrior",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_f_t0",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.728,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Female body.",
+      "armorTier": 0,
+      "classId": "warrior",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_f_t1",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.728,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Female body.",
+      "armorTier": 1,
+      "classId": "warrior",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_f_t2",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.728,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Female body.",
+      "armorTier": 2,
+      "classId": "warrior",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_f_t3",
+      "kind": "hero",
+      "archetype": "humanoid_heavy",
+      "heightM": 1.728,
+      "description": "Armoured fighter: broad stance, shoulder guards, heavy sword. Tier 0 = cloth tunic, tier 3 = ornate full plate. Female body.",
+      "armorTier": 3,
+      "classId": "warrior",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_m_t0",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.72,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Male body.",
+      "armorTier": 0,
+      "classId": "ninja",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_m_t1",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.72,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Male body.",
+      "armorTier": 1,
+      "classId": "ninja",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_m_t2",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.72,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Male body.",
+      "armorTier": 2,
+      "classId": "ninja",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_m_t3",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.72,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Male body.",
+      "armorTier": 3,
+      "classId": "ninja",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_f_t0",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.6512,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Female body.",
+      "armorTier": 0,
+      "classId": "ninja",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_f_t1",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.6512,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Female body.",
+      "armorTier": 1,
+      "classId": "ninja",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_f_t2",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.6512,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Female body.",
+      "armorTier": 2,
+      "classId": "ninja",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "ninja_f_t3",
+      "kind": "hero",
+      "archetype": "humanoid_light",
+      "heightM": 1.6512,
+      "description": "Agile assassin: wrapped scarf, light leathers, daggers or bow. Tier 3 = dark lacquered silk mail with a hood. Female body.",
+      "armorTier": 3,
+      "classId": "ninja",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_m_t0",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.76,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Male body.",
+      "armorTier": 0,
+      "classId": "yacha",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_m_t1",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.76,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Male body.",
+      "armorTier": 1,
+      "classId": "yacha",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_m_t2",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.76,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Male body.",
+      "armorTier": 2,
+      "classId": "yacha",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_m_t3",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.76,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Male body.",
+      "armorTier": 3,
+      "classId": "yacha",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_f_t0",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.6896,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Female body.",
+      "armorTier": 0,
+      "classId": "yacha",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_f_t1",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.6896,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Female body.",
+      "armorTier": 1,
+      "classId": "yacha",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_f_t2",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.6896,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Female body.",
+      "armorTier": 2,
+      "classId": "yacha",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "yacha_f_t3",
+      "kind": "hero",
+      "archetype": "humanoid",
+      "heightM": 1.6896,
+      "description": "Dark-magic swordsman: black-and-crimson long coat, glowing rune sleeves, one hand empty for spells. Female body.",
+      "armorTier": 3,
+      "classId": "yacha",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_m_t0",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.68,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Male body.",
+      "armorTier": 0,
+      "classId": "shaman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_m_t1",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.68,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Male body.",
+      "armorTier": 1,
+      "classId": "shaman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_m_t2",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.68,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Male body.",
+      "armorTier": 2,
+      "classId": "shaman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_m_t3",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.68,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Male body.",
+      "armorTier": 3,
+      "classId": "shaman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_f_t0",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.6127999999999998,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Female body.",
+      "armorTier": 0,
+      "classId": "shaman",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_f_t1",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.6127999999999998,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Female body.",
+      "armorTier": 1,
+      "classId": "shaman",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_f_t2",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.6127999999999998,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Female body.",
+      "armorTier": 2,
+      "classId": "shaman",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "shaman_f_t3",
+      "kind": "hero",
+      "archetype": "humanoid_robed",
+      "heightM": 1.6127999999999998,
+      "description": "Spirit priest: layered robe, talisman strips, bell/fan. Tier 3 = gold-trimmed ceremonial vestments. Female body.",
+      "armorTier": 3,
+      "classId": "shaman",
+      "sex": "f",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "wolfman_m_t0",
+      "kind": "hero",
+      "archetype": "humanoid_beast",
+      "heightM": 2.15,
+      "description": "Wolf-blooded brawler: hunched, clawed hands, fur mantle, lupine ears and tail. Male only.",
+      "armorTier": 0,
+      "classId": "wolfman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "wolfman_m_t1",
+      "kind": "hero",
+      "archetype": "humanoid_beast",
+      "heightM": 2.15,
+      "description": "Wolf-blooded brawler: hunched, clawed hands, fur mantle, lupine ears and tail. Male only.",
+      "armorTier": 1,
+      "classId": "wolfman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "wolfman_m_t2",
+      "kind": "hero",
+      "archetype": "humanoid_beast",
+      "heightM": 2.15,
+      "description": "Wolf-blooded brawler: hunched, clawed hands, fur mantle, lupine ears and tail. Male only.",
+      "armorTier": 2,
+      "classId": "wolfman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "wolfman_m_t3",
+      "kind": "hero",
+      "archetype": "humanoid_beast",
+      "heightM": 2.15,
+      "description": "Wolf-blooded brawler: hunched, clawed hands, fur mantle, lupine ears and tail. Male only.",
+      "armorTier": 3,
+      "classId": "wolfman",
+      "sex": "m",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "attack2",
+        "cast",
+        "dash",
+        "hit",
+        "death",
+        "spawn",
+        "victory"
+      ],
+      "notes": "One skeleton per sex shared by every tier; tiers differ in armour geometry + palette. Tier 3 must look clearly endgame."
+    },
+    {
+      "id": "warrior_twohand_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Two-handed greatsword, 1.5 m, wide blade. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "twohand",
+      "grip": "two_hand",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "warrior_twohand_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Two-handed greatsword, 1.5 m, wide blade. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "twohand",
+      "grip": "two_hand",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "warrior_twohand_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Two-handed greatsword, 1.5 m, wide blade. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "twohand",
+      "grip": "two_hand",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "warrior_twohand_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Two-handed greatsword, 1.5 m, wide blade. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "twohand",
+      "grip": "two_hand",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "warrior_sword_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "warrior_sword_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "warrior_sword_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "warrior_sword_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "warrior",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "ninja_dagger_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of curved daggers (model one; the rig mirrors it for the off hand). Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "dagger",
+      "grip": "dual",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "ninja_dagger_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of curved daggers (model one; the rig mirrors it for the off hand). Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "dagger",
+      "grip": "dual",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "ninja_dagger_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of curved daggers (model one; the rig mirrors it for the off hand). Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "dagger",
+      "grip": "dual",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "ninja_dagger_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of curved daggers (model one; the rig mirrors it for the off hand). Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "dagger",
+      "grip": "dual",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "ninja_bow_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Recurve bow, 1.2 m, carried in the left hand. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "bow",
+      "grip": "bow",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "ninja_bow_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Recurve bow, 1.2 m, carried in the left hand. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "bow",
+      "grip": "bow",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "ninja_bow_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Recurve bow, 1.2 m, carried in the left hand. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "bow",
+      "grip": "bow",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "ninja_bow_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Recurve bow, 1.2 m, carried in the left hand. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "ninja",
+      "weaponType": "bow",
+      "grip": "bow",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "yacha_sword_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "yacha",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "yacha_sword_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "yacha",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "yacha_sword_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "yacha",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "yacha_sword_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "One-handed straight sword, 1.0 m. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "yacha",
+      "weaponType": "sword",
+      "grip": "one_hand",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "shaman_fan_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Folding war fan, opens for casting. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "fan",
+      "grip": "fan",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "shaman_fan_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Folding war fan, opens for casting. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "fan",
+      "grip": "fan",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "shaman_fan_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Folding war fan, opens for casting. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "fan",
+      "grip": "fan",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "shaman_fan_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Folding war fan, opens for casting. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "fan",
+      "grip": "fan",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "shaman_bell_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Hand bell on a short staff. Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "bell",
+      "grip": "bell",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "shaman_bell_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Hand bell on a short staff. Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "bell",
+      "grip": "bell",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "shaman_bell_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Hand bell on a short staff. Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "bell",
+      "grip": "bell",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "shaman_bell_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Hand bell on a short staff. Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "shaman",
+      "weaponType": "bell",
+      "grip": "bell",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "wolfman_claw_t0",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of claw gauntlets (one model, mirrored). Tier 0 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "wolfman",
+      "weaponType": "claw",
+      "grip": "claw",
+      "weaponTier": 0,
+      "clips": []
+    },
+    {
+      "id": "wolfman_claw_t1",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of claw gauntlets (one model, mirrored). Tier 1 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "wolfman",
+      "weaponType": "claw",
+      "grip": "claw",
+      "weaponTier": 1,
+      "clips": []
+    },
+    {
+      "id": "wolfman_claw_t2",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of claw gauntlets (one model, mirrored). Tier 2 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "wolfman",
+      "weaponType": "claw",
+      "grip": "claw",
+      "weaponTier": 2,
+      "clips": []
+    },
+    {
+      "id": "wolfman_claw_t3",
+      "kind": "weapon",
+      "archetype": "weapon",
+      "heightM": 1,
+      "description": "Pair of claw gauntlets (one model, mirrored). Tier 3 of 4 (t3 = ornate, glowing inlay).",
+      "classId": "wolfman",
+      "weaponType": "claw",
+      "grip": "claw",
+      "weaponTier": 3,
+      "clips": []
+    },
+    {
+      "id": "alpha_blue_wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 1.16,
+      "description": "Alpha of the blue pack: large blue wolf with a heavy mane ruff and a long scar across the face.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "alpha_blue_wolf",
+          "hungry_alpha_blue_wolf"
+        ],
+        "bosses": [
+          "boss_chan_dae"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.88,
+        1.99
+      ],
+      "tints": [
+        "#c3c6cc"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "alpha_grey_wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 1.12,
+      "description": "Alpha of the grey pack: broad grey wolf with a thick mane and battle scars.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "alpha_grey_wolf",
+          "hungry_alpha_grey_wolf",
+          "cursed_alpha_grey_wolf"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.98,
+        1.14
+      ],
+      "tints": [
+        "#7c7088",
+        "#c3c6cc"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "alpha_wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 1.1,
+      "description": "Pack-leader wolf: bigger and heavier than the wolf, thick ruff, scarred muzzle, stalking posture.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "alpha_wolf",
+          "hungry_alpha_wolf"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.88,
+        1
+      ],
+      "tints": [
+        "#c9b79d"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "bear",
+      "kind": "creature",
+      "archetype": "quadruped_heavy",
+      "heightM": 1.35,
+      "description": "Hulking bear: hump shoulders, wide paws, small head. Black/brown/grizzly = tint + scale.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "bear",
+          "hungry_bear",
+          "grizzly_bear",
+          "hungry_grizzly",
+          "black_bear",
+          "hungry_black_bear",
+          "brown_bear",
+          "hungry_brown_bear",
+          "cursed_brown_bear"
+        ],
+        "bosses": [
+          "boss_ung_jae"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.97,
+        2.5
+      ],
+      "tints": [
+        "#4a4a54",
+        "#5a5a60",
+        "#7c5a48",
+        "#8a6a4c",
+        "#8f7a64",
+        "#a08868",
+        "#b08458",
+        "#c9b79d"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blue_wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 0.85,
+      "description": "Frost-blue wolf: lean build, blue-grey coat with pale underbelly, same silhouette family as the wolf.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blue_wolf",
+          "hungry_blue_wolf"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.05
+      ],
+      "tints": [
+        "#c3c6cc"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "boar",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 0.85,
+      "description": "Barrel-bodied boar: heavy shoulders, tusks, bristle ridge along the spine.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "wild_boar",
+          "hungry_wild_boar",
+          "red_boar",
+          "hungry_red_boar",
+          "cursed_red_boar"
+        ],
+        "bosses": [
+          "boss_dol_gwan"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.96,
+        3
+      ],
+      "tints": [
+        "#b05a58",
+        "#c9937f",
+        "#c9b79d",
+        "#e08a78"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "grey_wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 0.9,
+      "description": "Grey timber wolf: slightly bigger than the wolf, silver-grey coat, darker saddle.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "grey_wolf",
+          "hungry_grey_wolf"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.07
+      ],
+      "tints": [
+        "#c3c6cc"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "silver_vow_archer",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.72,
+      "description": "Same frame as the soldier with a short bow and quiver; ranged attack = draw and loose.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "silver_vow_archer",
+          "craven_silver_vow_archer"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.97,
+        1
+      ],
+      "tints": [
+        "#c8c0b8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "silver_vow_captain",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.85,
+      "description": "Armoured commander: shoulder plates, red sash, heavy blade; commander/general = scale + tint.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "silver_vow_commander",
+          "craven_silver_vow_commander",
+          "silver_vow_general"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.97,
+        1.15
+      ],
+      "tints": [
+        "#b0b8e0",
+        "#c8b8b0",
+        "#d8b0a0"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "silver_vow_leader",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.68,
+      "description": "Slender mage-captain in a long robe with a flowing sash; casts with one open hand.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "ma_sol",
+          "ae_rin",
+          "sa_rim",
+          "dispirited_ma_sol",
+          "dispirited_ae_rin",
+          "dispirited_sa_rim"
+        ],
+        "bosses": [
+          "boss_ji_yul"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.95,
+        1.7
+      ],
+      "tints": [
+        "#8a929a",
+        "#928a9a",
+        "#9a8a94",
+        "#a8b8d0",
+        "#b8a8d0",
+        "#d0a8b8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "silver_vow_soldier",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.75,
+      "description": "Mountain-oath foot soldier: lamellar vest, cloth wrap helm, spear-and-shield pose.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "silver_vow_soldier",
+          "craven_silver_vow_soldier"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.97,
+        1
+      ],
+      "tints": [
+        "#c8c0b8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "tiger",
+      "kind": "creature",
+      "archetype": "quadruped_large",
+      "heightM": 1.1,
+      "description": "Long, low big cat: striped flanks, heavy forepaws, tail held high. White tiger = tint.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "tiger",
+          "hungry_tiger",
+          "white_tiger",
+          "hungry_white_tiger",
+          "cursed_white_tiger"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.96,
+        1.45
+      ],
+      "tints": [
+        "#c9b79d",
+        "#d8d0f0",
+        "#d8d6dc",
+        "#f2f2ff"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "tiger_god",
+      "kind": "boss",
+      "archetype": "quadruped_boss",
+      "heightM": 2.2,
+      "description": "Horyeong, the Tiger God: a colossal white-gold tiger, mane of flame-like fur, 4.5 m long, glowing eyes.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1",
+        "special2",
+        "special3"
+      ],
+      "usedBy": {
+        "enemies": [],
+        "bosses": [
+          "boss_horyeong"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Unique boss model; hero-grade detail. Telegraph/phase VFX are separate presets."
+    },
+    {
+      "id": "wild_dog",
+      "kind": "creature",
+      "archetype": "quadruped_small",
+      "heightM": 0.55,
+      "description": "Scrappy stray dog: low body, thin legs, ragged ears, hungry hunch. Reads as \"trash mob\" at 40 px.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "wild_dog",
+          "hungry_stray_dog"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.95,
+        1
+      ],
+      "tints": [
+        "#c9b79d"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "wolf",
+      "kind": "creature",
+      "archetype": "quadruped",
+      "heightM": 0.85,
+      "description": "Lean wolf: long snout, pointed ears, bushy tail carried low. Blue/grey variants are pure tint swaps.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "wolf",
+          "hungry_wolf"
+        ],
+        "bosses": [],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "instanceScale": [
+        0.97,
+        1
+      ],
+      "tints": [
+        "#c9b79d"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "ascetic",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.85,
+      "description": "Esoteric monk-warrior: bare arms, sash, spear; high/chief variants gain ornaments.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "dark_ascetic",
+          "high_ascetic",
+          "veiled_ascetic_chief",
+          "high_elite_ascetic"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.42
+      ],
+      "tints": [
+        "#8a6ab8",
+        "#b898d8",
+        "#c8b0e8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "barbarian",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.9,
+      "description": "Bestial barbarian: fur loincloth, bone armour, crude weapon. Archer/maniac variants share the frame.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "feral_soldier",
+          "feral_maniac",
+          "feral_archer",
+          "feral_specialist"
+        ],
+        "bosses": [
+          "boss_feral_maniac"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2.3
+      ],
+      "tints": [
+        "#a89880",
+        "#b08868",
+        "#c09870"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "black_orc",
+      "kind": "creature",
+      "archetype": "humanoid_orc_large",
+      "heightM": 2.6,
+      "description": "Towering black-hided orc: slab shoulders, mace, chained belt. The giant variant is 2x scale.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "black_orc",
+          "black_orc_giant",
+          "hulking_black_orc",
+          "hulking_black_giant_orc"
+        ],
+        "bosses": [
+          "boss_black_orc_giant"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2.4
+      ],
+      "tints": [
+        "#3a3a40",
+        "#4a3a38",
+        "#5a4a48"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "conjurer",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.8,
+      "description": "Summoner-priest: floating talisman strips, tall hat, staff; casts and summons.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "dark_conjurer",
+          "high_conjurer"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.08
+      ],
+      "tints": [
+        "#c8b0e8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "executioner",
+      "kind": "creature",
+      "archetype": "humanoid_large",
+      "heightM": 2.3,
+      "description": "Masked executioner: huge cleaver, apron, hood; also the tormentor boss.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "veiled_executioner",
+          "high_headsman",
+          "dark_inquisitor",
+          "high_inquisitor"
+        ],
+        "bosses": [
+          "boss_dark_inquisitor"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2.1
+      ],
+      "tints": [
+        "#6a4a98",
+        "#9a78c8",
+        "#c8b0e8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "zealot",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.75,
+      "description": "Esoteric fanatic: ragged robe, shaved head, prayer beads, clawed hands.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "dark_zealot",
+          "high_zealot",
+          "veiled_ascetic_fighter",
+          "high_ascetic_fighter"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.28
+      ],
+      "tints": [
+        "#9a7ac8",
+        "#c0a0e0",
+        "#c8b0e8"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "orc_fighter",
+      "kind": "creature",
+      "archetype": "humanoid_orc",
+      "heightM": 2.05,
+      "description": "Broad orc warrior: iron pauldrons, big cleaver, fur mantle.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "orc_fighter",
+          "elite_orc",
+          "elite_orc_fighter",
+          "hulking_orc",
+          "hulking_orc_fighter"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.25
+      ],
+      "tints": [
+        "#6a7a4a",
+        "#7a8a5a",
+        "#8a9a6a",
+        "#a89858",
+        "#b0a060"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "orc_general",
+      "kind": "creature",
+      "archetype": "humanoid_orc",
+      "heightM": 2.3,
+      "description": "Orc officer: spiked armour, horned helm, war banner on the back.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "elite_orc_general",
+          "hulking_orc_general"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.15
+      ],
+      "tints": [
+        "#6a7a4a",
+        "#a89858"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "orc_lord",
+      "kind": "boss",
+      "archetype": "humanoid_orc_boss",
+      "heightM": 3.4,
+      "description": "Chief Orc: warlord with a great axe and a trophy back-banner, spiked crown, iron mask.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1",
+        "special2",
+        "special3"
+      ],
+      "usedBy": {
+        "enemies": [],
+        "bosses": [
+          "boss_chief_orc"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Unique boss model; hero-grade detail. Telegraph/phase VFX are separate presets."
+    },
+    {
+      "id": "orc_scout",
+      "kind": "creature",
+      "archetype": "humanoid_orc",
+      "heightM": 1.9,
+      "description": "Lean orc skirmisher: tusked, hunched, fur-trimmed leather, short axe.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "orc_scout",
+          "elite_orc_scout",
+          "hulking_orc_scout"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.14
+      ],
+      "tints": [
+        "#7a8a5a",
+        "#8a9a6a",
+        "#b0a060"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "orc_sorcerer",
+      "kind": "creature",
+      "archetype": "humanoid_orc",
+      "heightM": 1.95,
+      "description": "Shaman-orc: bone totem staff, feathered mantle, glowing eyes.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "orc_sorcerer",
+          "elite_orc_sorcerer",
+          "hulking_orc_sorcerer"
+        ],
+        "bosses": [
+          "boss_orc_sorcerer"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2
+      ],
+      "tints": [
+        "#6a7a4a",
+        "#8a9a6a",
+        "#a89858"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "scorpion",
+      "kind": "creature",
+      "archetype": "arthropod",
+      "heightM": 0.9,
+      "description": "Desert scorpion: raised tail, two big claws, flat body (about 2 m long).",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "king_scorpion"
+        ],
+        "bosses": [],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.2
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "shambling_corpse",
+      "kind": "creature",
+      "archetype": "humanoid_ghost",
+      "heightM": 1.45,
+      "description": "Shambling corpse-ghost: tattered shroud fading into mist at the legs.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "shambling_corpse",
+          "angry_shambling_corpse"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [
+        "#c8506a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "miho",
+      "kind": "boss",
+      "archetype": "quadruped_boss",
+      "heightM": 2,
+      "description": "Nine-Tails: a huge fox spirit, nine fanned tails tipped with cold fire, graceful but predatory.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1",
+        "special2",
+        "special3"
+      ],
+      "usedBy": {
+        "enemies": [],
+        "bosses": [
+          "boss_miho"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Unique boss model; hero-grade detail. Telegraph/phase VFX are separate presets."
+    },
+    {
+      "id": "frost_revenant",
+      "kind": "creature",
+      "archetype": "humanoid_large",
+      "heightM": 2,
+      "description": "Frost giant-man: lumpy ice armour, fur boots, club of frozen wood.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "frost_revenant"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "rime_beetle",
+      "kind": "creature",
+      "archetype": "arthropod",
+      "heightM": 0.9,
+      "description": "Frost beetle: translucent carapace, crystal horns.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "rime_beetle"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "ice_golem",
+      "kind": "creature",
+      "archetype": "golem",
+      "heightM": 3,
+      "description": "Ice golem: stacked glacier slabs with glowing blue core; also the Glacier Golem boss.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1"
+      ],
+      "usedBy": {
+        "enemies": [
+          "ice_golem"
+        ],
+        "bosses": [
+          "boss_ice_golem"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2.1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "snow_lion",
+      "kind": "creature",
+      "archetype": "quadruped_large",
+      "heightM": 1.25,
+      "description": "Snow lion: shaggy white mane of frost, long fangs, powerful forelegs.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "snow_lion"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "frost_wisp",
+      "kind": "creature",
+      "archetype": "spirit",
+      "heightM": 1.6,
+      "description": "Floating ice wraith: glassy robe of snow, hollow glowing face, no legs.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "frost_wisp",
+          "cruel_frost_wisp"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [
+        "#7ab0ff"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "glacier_orca",
+      "kind": "creature",
+      "archetype": "quadruped_aquatic",
+      "heightM": 1.5,
+      "description": "Walking ice-whale: stubby fins used as legs, wide mouth, frosty barnacle crust (about 3 m long).",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "glacier_orca"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blighted_archer",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.75,
+      "description": "Infected archer: bent bow, ragged hood, quiver of black arrows.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blighted_archer",
+          "angry_blighted_archer"
+        ],
+        "bosses": [
+          "boss_blighted_archer"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.9
+      ],
+      "tints": [
+        "#c8506a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blighted_hound",
+      "kind": "creature",
+      "archetype": "quadruped_small",
+      "heightM": 0.7,
+      "description": "Mangy diseased dog: exposed ribs, sickly green sheen, drooling.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blighted_hound",
+          "angry_blighted_hound"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [
+        "#c8506a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blighted_marshal",
+      "kind": "creature",
+      "archetype": "humanoid_large",
+      "heightM": 2.1,
+      "description": "Infected war-chief: bone crown, heavy scarred plate, huge blade.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blighted_marshal",
+          "angry_blighted_marshal"
+        ],
+        "bosses": [
+          "boss_blighted_marshal"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2
+      ],
+      "tints": [
+        "#c8506a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blighted_villager",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.7,
+      "description": "Infected villager: hunched, boils, bandaged face, bare hands.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blighted_villager",
+          "angry_blighted_villager"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [
+        "#c8506a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blighted_swordsman",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 1.8,
+      "description": "Infected soldier: rusted armour scraps, notched sword/spear (variants by weapon prop).",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blighted_swordsman",
+          "angry_blighted_swordsman",
+          "blighted_spearman",
+          "angry_blighted_spearman"
+        ],
+        "bosses": [
+          "boss_blighted_swordsman"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1.9
+      ],
+      "tints": [
+        "#a8c0a0",
+        "#c8506a",
+        "#d8708a"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "yeti",
+      "kind": "creature",
+      "archetype": "humanoid_beast_large",
+      "heightM": 2.6,
+      "description": "Yeti: long arms, matted white fur, tiny eyes, huge fists.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "yeti"
+        ],
+        "bosses": [],
+        "zones": [
+          "seori"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "scarlet_wyrm",
+      "kind": "boss",
+      "archetype": "dragon",
+      "heightM": 6.5,
+      "description": "Scarlet Wyrm: serpentine wyvern with huge wings, horned head, ember-glowing belly; 14 m wingspan, hovers/lands.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1",
+        "special2",
+        "special3",
+        "fly"
+      ],
+      "usedBy": {
+        "enemies": [],
+        "bosses": [
+          "boss_scarlet_wyrm"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Unique boss model; hero-grade detail. Telegraph/phase VFX are separate presets."
+    },
+    {
+      "id": "ash_wisp",
+      "kind": "creature",
+      "archetype": "spirit",
+      "heightM": 1.7,
+      "description": "Flame ghost: wavering torch-like body, empty eyes, no legs; strong variant is larger and brighter.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn"
+      ],
+      "usedBy": {
+        "enemies": [
+          "ash_wisp",
+          "greater_ash_wisp"
+        ],
+        "bosses": [
+          "boss_greater_ash_wisp"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        1,
+        2.4
+      ],
+      "tints": [
+        "#ff7048"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "lava_troll",
+      "kind": "creature",
+      "archetype": "golem",
+      "heightM": 2.8,
+      "description": "Magma golem: basalt plates with lava seams; troll/beard/general variants differ by scale and tint.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1"
+      ],
+      "usedBy": {
+        "enemies": [
+          "lava_troll",
+          "cinderbeard",
+          "basalt_general"
+        ],
+        "bosses": [
+          "boss_basalt_general"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        0.9,
+        2.2
+      ],
+      "tints": [
+        "#ff7a30",
+        "#ff9a50",
+        "#ffc070"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "pyre_king",
+      "kind": "boss",
+      "archetype": "humanoid_boss",
+      "heightM": 3.5,
+      "description": "Pyre King: crowned lava colossus, throne-shard cape, greatsword wreathed in fire.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2",
+        "special1",
+        "special2",
+        "special3"
+      ],
+      "usedBy": {
+        "enemies": [],
+        "bosses": [
+          "boss_pyre_king"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Unique boss model; hero-grade detail. Telegraph/phase VFX are separate presets."
+    },
+    {
+      "id": "blaze_knight",
+      "kind": "creature",
+      "archetype": "humanoid_large",
+      "heightM": 2.3,
+      "description": "Flame warrior: ember-lit plate, burning sword.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blaze_knight"
+        ],
+        "bosses": [],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "living_blaze",
+      "kind": "creature",
+      "archetype": "humanoid",
+      "heightM": 2.1,
+      "description": "Flame man: cracked obsidian body, lava veins, bare fists.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "living_blaze"
+        ],
+        "bosses": [],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        1,
+        1
+      ],
+      "tints": [],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "blaze_tiger",
+      "kind": "creature",
+      "archetype": "quadruped_large",
+      "heightM": 1.15,
+      "description": "Burning tiger: charred stripes, ember glow in the seams, trailing sparks.",
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "hit",
+        "death",
+        "spawn",
+        "attack2"
+      ],
+      "usedBy": {
+        "enemies": [
+          "blaze_cub",
+          "blaze_tiger"
+        ],
+        "bosses": [
+          "boss_blaze_tiger"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "instanceScale": [
+        0.9,
+        2.3
+      ],
+      "tints": [
+        "#ffb070"
+      ],
+      "notes": "Variants share this model: the game applies per-enemy tint + scale. Silhouette must stay readable when scaled 0.9x-2.4x."
+    },
+    {
+      "id": "metin_stone",
+      "kind": "metin",
+      "archetype": "obelisk",
+      "heightM": 3,
+      "description": "Metin stone: a 3 m tall jagged obelisk of dark crystal with a glowing rune carved into the face; the rune colour is set per MetinDef (instance tint) and the stone cracks as HP drops (4 damage stages via emissive).",
+      "usedBy": {
+        "metins": [
+          "metin_lament",
+          "metin_strife",
+          "metin_onslaught",
+          "metin_avarice",
+          "metin_ebon",
+          "metin_murk",
+          "metin_envy",
+          "metin_echoes",
+          "metin_dusk",
+          "metin_grit",
+          "metin_fiend",
+          "metin_demise",
+          "metin_slaughter"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "clips": [
+        "idle",
+        "hit",
+        "break"
+      ],
+      "notes": "Break clip = shatter into debris; idle = slow glow pulse. The game drives HP-stage cracks and the rune tint at runtime."
+    },
+    {
+      "id": "metin_great_yeonmu",
+      "kind": "metin",
+      "archetype": "obelisk",
+      "heightM": 8,
+      "description": "Great Ebon Metin: a 7 m obsidian monolith ringed by floating shards, black-violet glow.",
+      "usedBy": {
+        "metins": [
+          "metin_great_ebon"
+        ],
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "clips": [
+        "idle",
+        "hit",
+        "break"
+      ],
+      "notes": "Break clip = shatter into debris; idle = slow glow pulse. The game drives HP-stage cracks and the rune tint at runtime."
+    },
+    {
+      "id": "metin_great_suryeon",
+      "kind": "metin",
+      "archetype": "obelisk",
+      "heightM": 8,
+      "description": "Great Dusk Metin: a 7 m twisted dark spire with a pulsing purple void core and drifting shards.",
+      "usedBy": {
+        "metins": [
+          "metin_great_dusk"
+        ],
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "clips": [
+        "idle",
+        "hit",
+        "break"
+      ],
+      "notes": "Break clip = shatter into debris; idle = slow glow pulse. The game drives HP-stage cracks and the rune tint at runtime."
+    },
+    {
+      "id": "metin_great_seori",
+      "kind": "metin",
+      "archetype": "obelisk",
+      "heightM": 8,
+      "description": "Great Death Metin: a 8 m skeletal ice-black pillar wrapped in spectral chains, cold teal core.",
+      "usedBy": {
+        "metins": [
+          "metin_great_demise"
+        ],
+        "zones": [
+          "seori"
+        ]
+      },
+      "clips": [
+        "idle",
+        "hit",
+        "break"
+      ],
+      "notes": "Break clip = shatter into debris; idle = slow glow pulse. The game drives HP-stage cracks and the rune tint at runtime."
+    },
+    {
+      "id": "metin_great_daeryeol",
+      "kind": "metin",
+      "archetype": "obelisk",
+      "heightM": 8,
+      "description": "Great Purgatory Metin: a 9 m molten spire floating over a ring of lava rock, red-orange core.",
+      "usedBy": {
+        "metins": [
+          "metin_great_doomfire"
+        ],
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "clips": [
+        "idle",
+        "hit",
+        "break"
+      ],
+      "notes": "Break clip = shatter into debris; idle = slow glow pulse. The game drives HP-stage cracks and the rune tint at runtime."
+    },
+    {
+      "id": "xp_gem",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 0.35,
+      "description": "Faceted spirit gem, 0.35 m, emissive; instanced, 3 tint tiers via instanceColor (blue/violet/gold).",
+      "clips": [],
+      "notes": "Low-poly (<= 300 tris); instanced."
+    },
+    {
+      "id": "yeop_coin",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 0.3,
+      "description": "Gold round coin with a square hole, 0.3 m, thin; spins.",
+      "clips": [],
+      "notes": "Low-poly (<= 300 tris); instanced."
+    },
+    {
+      "id": "potion_hp",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 0.45,
+      "description": "Red health potion flask with cork, 0.45 m.",
+      "clips": [],
+      "notes": "Low-poly (<= 1200 tris)."
+    },
+    {
+      "id": "chest_wood",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 0.8,
+      "description": "Plain wooden chest with iron bands, 0.8 m, lid opens.",
+      "clips": [],
+      "notes": "Low-poly (<= 1200 tris)."
+    },
+    {
+      "id": "chest_gold",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 0.9,
+      "description": "Gold-trimmed lacquered chest, 0.9 m, lid opens, soft glow.",
+      "clips": [],
+      "notes": "Low-poly (<= 1200 tris)."
+    },
+    {
+      "id": "chest_boss",
+      "kind": "pickup",
+      "archetype": "pickup",
+      "heightM": 1.3,
+      "description": "Large ornate boss chest with dragon-head clasp, 1.3 m, glowing seams, lid opens.",
+      "clips": [],
+      "notes": "Low-poly (<= 1200 tris)."
+    },
+    {
+      "id": "prop_stone_lantern",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 1.6,
+      "description": "Tall stone toro lantern, 1.6 m, mossy.",
+      "usedBy": {
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_boulder",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 1.2,
+      "description": "Rough boulder, 1.2 m (one model; terrain recipes tint/scale it per biome).",
+      "usedBy": {
+        "zones": [
+          "yeonmu",
+          "suryeon",
+          "seori",
+          "daeryeol"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_wooden_fence",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 2,
+      "description": "Short wooden fence section, 2 m, weathered.",
+      "usedBy": {
+        "zones": [
+          "yeonmu",
+          "suryeon"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_pagoda_gate",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 5,
+      "description": "Red wooden gate with tiled roof, 5 m tall, 4 m wide.",
+      "usedBy": {
+        "zones": [
+          "yeonmu"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_ruin_pillar",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 3,
+      "description": "Broken stone pillar, 3 m, cracked and overgrown.",
+      "usedBy": {
+        "zones": [
+          "yeonmu",
+          "suryeon",
+          "seori",
+          "daeryeol"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_orc_tent",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 3,
+      "description": "Orc hide tent with bone poles, 3 m.",
+      "usedBy": {
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_war_banner",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 4,
+      "description": "Tattered orc war banner on a pole, 4 m.",
+      "usedBy": {
+        "zones": [
+          "suryeon"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_ice_crystal",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 2,
+      "description": "Cluster of blue ice crystals, 2 m, translucent emissive.",
+      "usedBy": {
+        "zones": [
+          "seori"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_snow_shrine",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 2.5,
+      "description": "Small snow-covered shrine with a roof, 2.5 m.",
+      "usedBy": {
+        "zones": [
+          "seori"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_frozen_tree",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 4,
+      "description": "Dead tree frozen in ice, 4 m.",
+      "usedBy": {
+        "zones": [
+          "seori"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_lava_rock",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 1.5,
+      "description": "Black rock with glowing lava seams, 1.5 m.",
+      "usedBy": {
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_fire_brazier",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 1.2,
+      "description": "Iron brazier with a constant flame, 1.2 m (flame is a VFX preset).",
+      "usedBy": {
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    },
+    {
+      "id": "prop_obsidian_spire",
+      "kind": "prop",
+      "archetype": "prop",
+      "heightM": 4,
+      "description": "Jagged obsidian spire, 4 m, glassy.",
+      "usedBy": {
+        "zones": [
+          "daeryeol"
+        ]
+      },
+      "clips": [],
+      "notes": "Static, <= 1500 tris, one material."
+    }
+  ]
+}

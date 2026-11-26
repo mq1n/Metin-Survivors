@@ -1,0 +1,9 @@
+{
+  "story.next": "Next",
+  "story.skip": "Skip",
+  "story.missing": "The chronicle is silent about this.",
+  "story.hint": "Enter · Space · click to go on — Esc skips",
+  "story.defeatHead": "You Have Fallen",
+  "story.bossLevel": "Level {n}",
+  "story.pages": "Page {n} of {m}"
+}

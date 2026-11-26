@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "note": "SFX group ids the content would like that are missing from the audio catalogue. Empty: every sfx id used by the content resolves.",
+  "requests": []
+}

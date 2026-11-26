@@ -1,0 +1,11 @@
+{
+  "talents.cap.line": "Sınır {cap} / {max}",
+  "talents.cap.next": "{zone} bölgesini Zor modda bitir: +{n}",
+  "talents.cap.full": "Tüm bölgeler Zor modda bitirildi: {max} puanın tamamı açık.",
+  "talents.cap.waiting": "Sınırın üstünde {n} puanlık EXP bekliyor",
+  "talents.cap.pip": "{zone}: Zor modda bitirildi",
+  "talents.cap.pipOpen": "{zone}: Zor modda bitir, +{n} kazan",
+  "talents.cap.tip": "Zor modda bitirdiğin her bölge yetenek sınırını {n} artırır, en çok {max} puana kadar. Sınırın üstünde biriken yetenek EXP'si saklanır ve sınır yükselince hemen ödenir.",
+  "talents.cap.pool": "İki ağaç da en fazla {cap} puanlık ortak bir havuzu paylaşır; tüm bölgeler Zor modda bitirilince sınır {max} olur.",
+  "talents.fail.capped": "{cap} puanlık sınıra ulaştın: {n} puan daha bekliyor. {zone} bölgesini Zor modda bitirirsen {gain} tanesi açılır."
+}

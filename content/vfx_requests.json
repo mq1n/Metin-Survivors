@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "note": "Presets the content would like that do not exist in src/vfx/presets/README.md. Empty: every vfx id used by the content resolves.",
+  "requests": []
+}

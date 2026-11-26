@@ -1,0 +1,73 @@
+# Metin Survivors API — Cloudflare Worker (Hono) + D1 + R2 + Durable Objects (CoopRoom).
+# Production traffic arrives same-origin through the Pages Function proxy (apps/game/functions/api/[[path]].ts, service
+# binding API → this Worker); the workers.dev URL stays reachable for the VITE_API_BASE override and health checks.
+# The D1 database, R2 bucket and Pages project below exist on the account; deploy with `bun run deploy` from the repo
+
+# and records them in migrations/applied.json). One-time setup and recovery: README.md → "Deploy".
+name = "metin-survivors-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[dev]
+# Windows reserves (excludes) rotating port blocks inside its dynamic range (1024–15000 on the dev box): 8686/8787/8788 are
+# excluded there today. Ports above that range are never handed out, so dev servers live at 18xxx.
+ip = "127.0.0.1"
+port = 18686
+
+[vars]
+# Comma separated browser origins allowed by CORS / WebSocket Origin checks: exact origins, `https://*.host` (one
+# subdomain level: preview/branch aliases) and `http://host:*` (any port; dev only). Production allows the Pages project
+# only — add a custom domain here when one is attached. `bun run --cwd workers/api dev` (and the tests/e2e) add localhost.
+ALLOWED_ORIGINS = "https://metin-survivors.pages.dev,https://*.metin-survivors.pages.dev"
+# Client versions accepted by POST /runs (exact, or a trailing `*` wildcard such as 1.*).
+ALLOWED_CLIENT_VERSIONS = "1.1.*"
+# Edge-cache shared leaderboard pages (seconds) to keep D1 reads minimal under traffic spikes.
+LEADERBOARD_EDGE_CACHE_SEC = "30"
+# Emergency Durable Objects kill-switch ("0" pauses co-op without redeploying if DO usage nears the $5 plan cap).
+COOP_ENABLED = "1"
+# Secret (not a var): IP_HASH_SECRET keys the IP hashes of the rate counters — `wrangler secret put IP_HASH_SECRET`.
+
+# Hard CPU safety cap per invocation (normal requests take <5 ms CPU): prevents runaway CPU billing on Workers Paid ($5).
+[limits]
+cpu_ms = 50
+
+[[d1_databases]]
+binding = "DB"
+database_name = "metin-survivors-db"
+database_id = "29c92ecb-48bd-4c41-a641-698af2b67347"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "BLOBS"
+bucket_name = "metin-survivors-blobs"
+
+[[durable_objects.bindings]]
+name = "COOP_ROOM"
+class_name = "CoopRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CoopRoom"]
+
+# Edge rate limiting (cheap, no D1 writes): every request is counted per client IP, authenticated ones also per player.
+# Sensitive endpoints add exact D1 fixed-window counters (see src/limits.ts). namespace_id is account-wide: keep 1001/1002
+# unique among the account's Workers.
+[[ratelimits]]
+name = "RL_IP"
+namespace_id = "1001"
+simple = { limit = 120, period = 60 }
+
+[[ratelimits]]
+name = "RL_PLAYER"
+namespace_id = "1002"
+simple = { limit = 60, period = 60 }
+
+# Daily housekeeping: expired transfer codes, stale rate counters, old weekly boards, old unranked runs.
+[triggers]
+crons = ["17 3 * * *"]
+
+# Sample 5% of invocations so Workers Logs stays well within the included allowance on the $5 Workers Paid plan.
+[observability]
+enabled = true
+head_sampling_rate = 0.05

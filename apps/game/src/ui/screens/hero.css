@@ -1,0 +1,1923 @@
+/* =====================================================================================================================
+   Hero select (kit v1, round 3) - the screen IS the courtyard scene (hero-stage.css); the boards float over it.
+   Wide screens (.ms-hs--w): CLASS board left, DOCTRINE + EMPIRE boards right, the hero's dock (name, base stats, gear) under the dais.
+   Phone portrait (.ms-hs--p): class strip · stage · name plaque · tab sheet · buttons.   Phone landscape (.ms-hs--l): class rail ·
+   stage · tab sheet over a button row.   --cc = class colour.
+   Layout numbers: --edge (screen margin), --gut (board to open scene), --bl / --br (side column widths).
+   ===================================================================================================================== */
+
+.ms-hs {
+  --oct: polygon(22% 0, 78% 0, 100% 22%, 100% 78%, 78% 100%, 22% 100%, 0 78%, 0 22%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: calc(1rem + var(--safe-t, 0px)) calc(2.4rem + var(--safe-r, 0px)) calc(0.9rem + var(--safe-b, 0px)) calc(2.4rem + var(--safe-l, 0px));
+}
+/* desktop / laptop / tablet floors: 12 px minimum for every label (phones keep the kit's 10.5 px floor) */
+.ms-hs--w {
+  --t-2xs: max(0.8rem, 12px);
+  --t-xs: max(0.85rem, 12px);
+  --edge: 1.8rem;
+  --gut: 1.6rem;
+  --bl: 22.5rem;
+  --br: 30rem;
+  padding: calc(0.7rem + var(--safe-t, 0px)) calc(var(--edge) + var(--safe-r, 0px)) calc(0.8rem + var(--safe-b, 0px)) calc(var(--edge) + var(--safe-l, 0px));
+}
+.ms-hs .ms-well-unit {
+  font-size: max(0.8em, 10.5px);
+}
+.ms-hs--w .ms-well-unit {
+  font-size: max(0.8em, 12px);
+}
+.ms-hs-class-pts,
+.ms-hs-link-badge {
+  font-size: var(--t-xs);
+}
+/* vignette over the courtyard (under the hero): dark edges for the boards, a darker top for the title, a dark floor for the dock */
+.ms-hs-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(125% 96% at 50% 54%, transparent 56%, rgba(4, 2, 2, 0.58) 100%),
+    linear-gradient(180deg, rgba(5, 3, 3, 0.55), transparent 22%, transparent 64%, rgba(4, 2, 2, 0.62));
+}
+.ms-hs-head,
+.ms-hs-cols,
+.ms-hs-pcol,
+.ms-hs-lrow {
+  position: relative;
+  z-index: 2;
+}
+/* the open scene stays draggable / clickable: layout wrappers let pointers through, boards and buttons take them back */
+.ms-hs-head,
+.ms-hs-cols,
+.ms-hs-pcol,
+.ms-hs-lrow,
+.ms-hs-mid,
+.ms-hs-right {
+  pointer-events: none;
+}
+.ms-hs-board,
+.ms-hs-dock,
+.ms-hs-fl,
+.ms-hs-fr,
+.ms-hs-fc,
+.ms-hs-strip,
+.ms-hs-rail,
+.ms-hs-plate-wrap,
+.ms-hs-pboard,
+.ms-hs-foot {
+  pointer-events: auto;
+}
+
+/* ---- header ---------------------------------------------------------------------------------------------------- */
+.ms-hs-head {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  animation: ms-fade-in 0.45s ease-out both;
+}
+.ms-hs-title {
+  font-size: var(--t-2xl);
+  line-height: 1.1;
+  color: var(--k-gold);
+  text-shadow: 0 0.12rem 0 #2a1604, 0 0 1.2rem rgba(255, 190, 90, 0.28), 0 0.1rem 0.7rem #000;
+}
+.ms-hs-head .ms-eyebrow {
+  text-shadow: 0 1px 0 #000, 0 0 0.6rem #000;
+}
+.ms-hs-steps {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.15rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a69c88;
+  text-shadow: 0 1px 0 #000, 0 0 0.6rem #000;
+}
+.ms-hs-steps span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ms-hs-steps i {
+  width: 0.62rem;
+  height: 0.62rem;
+  clip-path: var(--oct);
+  background: #3a352f;
+}
+.ms-hs-steps b {
+  width: 3.4rem;
+  height: 2px;
+  background: linear-gradient(90deg, #a77a35, rgba(167, 122, 53, 0.18));
+}
+.ms-hs-steps .is-on {
+  color: var(--k-gold);
+}
+.ms-hs-steps .is-on i {
+  background: radial-gradient(circle at 35% 30%, #fff1c0, #e0a83a 55%, #7a4a10);
+  box-shadow: 0 0 0.6rem #f0cd78;
+}
+
+/* ---- the three columns over the scene ---------------------------------------------------------------------------------- */
+.ms-hs-cols {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: var(--bl) minmax(0, 1fr) var(--br);
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: var(--gut);
+  row-gap: 0.7rem;
+}
+.ms-hs-board--class {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ms-hs-mid {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.ms-hs-right {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 0;
+  min-width: 0;
+}
+.ms-hs-fl {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: flex-end;
+}
+.ms-hs-fr {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  align-items: flex-end;
+}
+.ms-hs-fl,
+.ms-hs-fr {
+  animation: ms-rise-in 0.5s var(--ease-soft) 0.3s both;
+}
+
+/* slim pewter boards: translucent charcoal glass, pewter bevel, rust title bar - the courtyard shows through */
+.ms-hs-board {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  background: linear-gradient(180deg, rgba(24, 21, 18, 0.8), rgba(11, 10, 9, 0.86));
+  box-shadow:
+    inset 1px 1px 0 var(--k-pewter-hi),
+    inset -1px -1px 0 var(--k-pewter-lo),
+    inset 0 0 0 3px var(--k-pewter),
+    inset 0 0 0 4px var(--k-line-in),
+    inset 0 0 1.3rem rgba(0, 0, 0, 0.55),
+    0 0.45rem 0.9rem rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: ms-rise-in 0.55s var(--ease-soft) both;
+}
+.ms-hs-board--doc {
+  animation-delay: 0.18s;
+  flex: 1 1 0;
+}
+.ms-hs-board--emp {
+  animation-delay: 0.26s;
+  flex: none;
+}
+.ms-hs-board > .ms-titlebar {
+  flex: none;
+  margin: 5px 5px 0;
+}
+
+/* ---- class cards: stone slot plates, one material; the class shows in the portrait, the gem and a lit inlay, not in a wash ------ */
+.ms-hs-classes {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.7rem 0.75rem 0.5rem;
+  container-type: inline-size;
+}
+.ms-hs-classhint {
+  flex: none;
+  padding: 0.1rem 0.8rem 0.65rem;
+  text-align: center;
+}
+.ms-hs-classhint .ms-hs-hint {
+  justify-content: center;
+}
+.ms-hs-class {
+  --cl: var(--k-gold);
+  --pl-c: 0.55rem;
+  --face: 5rem;
+  --pl-veil: rgba(12, 11, 10, 0.5);
+  --pl-face:
+    radial-gradient(36% 120% at 14% 50%, color-mix(in srgb, var(--cl) 13%, transparent), transparent 100%),
+    var(--pl-sheen), linear-gradient(var(--pl-veil), var(--pl-veil)), var(--tex-uk-stone, var(--k-grain-light)) 0 0 / var(--k-stone-tile), var(--k-stone);
+  flex: 1 1 0;
+  min-height: 4.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.65rem;
+  text-align: left;
+  color: var(--k-text);
+  cursor: pointer;
+  transition: filter 0.25s, translate 0.2s var(--ease-soft);
+  animation: ms-slide-left 0.45s var(--ease-soft) backwards;
+  animation-delay: calc(0.12s + var(--i, 0) * 0.07s);
+}
+.ms-hs-portrait-wrap {
+  position: relative;
+  flex: none;
+  width: var(--face);
+  height: var(--face);
+}
+.ms-hs-face {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  clip-path: var(--oct);
+  background: linear-gradient(135deg, #cbc3b3, #6a6258 48%, #1f1c18);
+}
+.ms-hs-face-art {
+  position: absolute;
+  inset: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  object-fit: cover;
+  object-position: 50% 10%;
+  transform-origin: 50% 12%;
+  scale: 1.5;
+  clip-path: var(--oct);
+  background: #14100d;
+  filter: brightness(0.9) saturate(0.9);
+  transition: filter 0.25s, scale 0.35s var(--ease-soft);
+}
+/* the 256 px face crop (portrait_face_*: hair top at ~0-6 %, chin at ~55-66 %): shown whole, no zoom, no grade */
+.ms-hs-face-art.is-face {
+  object-position: 50% 50%;
+  transform-origin: 50% 50%;
+  scale: 1.04;
+  filter: none;
+}
+.ms-hs-face-shade {
+  position: absolute;
+  inset: 2px;
+  clip-path: var(--oct);
+  background: radial-gradient(90% 90% at 40% 30%, transparent 55%, rgba(0, 0, 0, 0.5)), linear-gradient(0deg, color-mix(in srgb, var(--cl) 30%, transparent), transparent 46%);
+  pointer-events: none;
+}
+.ms-hs-face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: var(--oct);
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 244, 214, 0.62) 50%, transparent 62%) -120% 0 / 220% 100% no-repeat;
+  pointer-events: none;
+}
+.ms-hs-class-text {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.ms-hs-class-name {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  color: var(--k-text);
+  text-shadow: 0 1px 0 #000;
+}
+.ms-hs-class-role {
+  font-size: var(--t-xs);
+  line-height: 1.28;
+  color: #e2dac7; /* >= 4.5 : 1 on the veiled stone, the class wash and the lighter selected plate (--k-text-2 measured 3.8 - 4.3) */
+  text-shadow: 0 1px 2px #000;
+}
+.ms-hs-class-pts {
+  position: absolute;
+  z-index: 3;
+  right: 0.5rem;
+  top: 0.4rem;
+}
+/* ---- recommended first hero (HD-02): shown only while the profile has no run (heroFirstRun.ts). A gold plate over the class name of
+   the wide card, a star medal on the corner of the phone cards, a gold line on the record plate, a caption line on the phone layouts
+   (the cards there carry no room for words). Plain stone-plate recipe with gold tokens: dark text on gold, no motion. ------------- */
+.ms-hs-reco {
+  --pl-c: 0.3rem;
+  --pl-hi: #fff2c2;
+  --pl-mid: #c8943a;
+  --pl-lo: #6a4510;
+  --pl-face: linear-gradient(180deg, #f9e3a0, #e6bb5c 55%, #cf9d42);
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 100%;
+  margin-bottom: 0.1rem;
+  padding: 0.14rem 0.6rem 0.16rem 0.42rem;
+  font-family: var(--f-body);
+  font-weight: 800;
+  font-size: var(--t-2xs);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+  color: #1d1206;
+  text-shadow: 0 1px 0 rgba(255, 240, 190, 0.45);
+}
+.ms-hs-reco .ms-icon-inline {
+  width: 1em;
+  height: 1em;
+  vertical-align: 0;
+  color: #5c3a07;
+}
+.ms-hs-class .ms-hs-reco--star {
+  --pl-c: 0.25rem;
+  position: absolute;
+  z-index: 4;
+  top: 0.22rem;
+  left: 0.22rem;
+  display: grid;
+  place-items: center;
+  align-self: auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+.ms-hs-reco-line {
+  color: var(--k-gold);
+  font-weight: 600;
+}
+.ms-hs-reco-line .ms-icon-inline {
+  width: 0.95em;
+  height: 0.95em;
+  vertical-align: -0.12em;
+}
+.ms-hs-reco-cap {
+  flex: none;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  padding: 0.14rem 0.7rem 0.16rem 0.55rem;
+  border: 1px solid rgba(240, 205, 120, 0.4);
+  border-radius: 0.35rem;
+  background: rgba(10, 8, 6, 0.88);
+  font-size: var(--t-2xs);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000;
+  pointer-events: none;
+}
+.ms-hs-reco-cap .ms-icon-inline {
+  width: 0.95em;
+  height: 0.95em;
+  vertical-align: -0.12em;
+}
+/* phone layouts: floats at the top of the stage (a raised sword tip passes under it), takes no room from the column */
+.ms-hs-stage .ms-hs-reco-cap {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: max-content;
+  max-width: calc(100% - 0.8rem);
+  text-align: center;
+}
+@media (hover: hover) {
+  .ms-hs-class:not(.is-sel):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    translate: 0.15rem 0;
+  }
+  .ms-hs-class:not(.is-sel):hover .ms-hs-face-art {
+    filter: brightness(1.06) saturate(1);
+  }
+  .ms-hs-class:not(.is-sel):hover .ms-hs-face-art.is-face {
+    filter: brightness(1.08);
+  }
+}
+.ms-hs-class.is-sel {
+  --pl-hi: #f6dc92;
+  --pl-mid: #b88a3a;
+  --pl-lo: #4e3410;
+  --pl-veil: rgba(26, 21, 15, 0.34);
+  translate: 0.3rem 0;
+  filter: drop-shadow(0 0 0.7rem color-mix(in srgb, var(--cl) 55%, transparent));
+}
+.ms-hs-class.is-sel .ms-hs-face {
+  background: linear-gradient(135deg, #fff0bc, #c8943a 48%, #4a300c);
+}
+.ms-hs-class.is-sel .ms-hs-face-art {
+  filter: brightness(1.08) saturate(1.08);
+  scale: 1.58;
+}
+.ms-hs-class.is-sel .ms-hs-face-art.is-face {
+  filter: brightness(1.05);
+  scale: 1.1;
+}
+.ms-hs-class.is-sel .ms-hs-face::after {
+  animation: ms-hs-sheen 0.9s ease-out 0.05s both;
+}
+.ms-hs-class.is-sel .ms-hs-class-name {
+  color: #f6dc92; /* the kit gold, a step lighter: >= 4.5 : 1 on the lighter selected plate (was 4.44 at 1024 x 768) */
+}
+@keyframes ms-hs-sheen {
+  from {
+    background-position: -120% 0;
+  }
+  to {
+    background-position: 160% 0;
+  }
+}
+/* the class gem: a faceted gem set in bronze, sitting on the portrait's lower right corner */
+.ms-hs-class-emblem {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -0.4rem;
+  z-index: 2;
+  filter: drop-shadow(0 0.15rem 0.2rem rgba(0, 0, 0, 0.75));
+}
+.ms-hs-class:not(.is-sel) .ms-hs-gem {
+  filter: saturate(0.7) brightness(0.84);
+}
+.ms-hs-class.is-sel .ms-hs-gem {
+  filter: drop-shadow(0 0 0.5rem color-mix(in srgb, var(--cl) 70%, transparent));
+}
+.ms-hs-gem {
+  display: block;
+  flex: none;
+  transition: filter 0.25s;
+}
+.ms-hs-gem svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* stat pips: lit diamonds with a dark rim, empty ones a visible pewter-rimmed socket (clip-path: the rim is a second shape) */
+.ms-hs-class-pips {
+  display: none;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.2rem 0.3rem;
+  margin-top: 0.2rem;
+}
+@container (min-width: 20rem) {
+  .ms-hs-class-pips {
+    display: grid;
+  }
+}
+.ms-hs-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.ms-hs-mini .ms-kicon {
+  flex: none;
+}
+.ms-hs-mini-pips {
+  display: flex;
+  gap: 0.08rem;
+}
+.ms-hs-mini-pips i,
+.ms-hs-pips i {
+  position: relative;
+  display: block;
+  background: #8a7c66;
+}
+.ms-hs-mini-pips i {
+  width: 0.54rem;
+  height: 0.7rem;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.ms-hs-mini-pips i::after,
+.ms-hs-pips i::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background: #15120e;
+}
+.ms-hs-mini-pips i::after {
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.ms-hs-mini-pips i.on,
+.ms-hs-pips i.on {
+  background: #1e1206;
+}
+.ms-hs-mini-pips i.on::after {
+  background: linear-gradient(180deg, #fff0c4, var(--cl) 45%, color-mix(in srgb, var(--cl) 55%, #000));
+}
+.ms-hs-class:not(.is-sel) .ms-hs-mini-pips i.on::after {
+  background: linear-gradient(180deg, #e8dec6, color-mix(in srgb, var(--cl) 40%, #8a7e6a) 50%, #3a342d);
+}
+@media (min-height: 941px) {
+  .ms-hs--w .ms-hs-class {
+    --face: 5.2rem;
+  }
+  .ms-hs--w .ms-hs-class-name {
+    font-size: var(--t-xl);
+  }
+  .ms-hs--w .ms-hs-class-role {
+    font-size: var(--t-sm);
+  }
+}
+@container (max-width: 17rem) {
+  .ms-hs-class-role {
+    display: none;
+  }
+}
+
+/* ---- the hero's dock under the dais: name plate, base stats, gear shelf, bonus plaques, armory / talents ------------------- */
+.ms-hs-dock {
+  align-self: end;
+  width: min(100%, 56rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  grid-template-areas:
+    'plate links'
+    'stats gear';
+  gap: 0.5rem 0.9rem;
+  padding: 0.55rem 0.9rem 0.65rem;
+  animation: ms-rise-in 0.55s var(--ease-soft) 0.1s both;
+  box-shadow: inset 0 0 0 1px rgba(124, 116, 104, 0.34), inset 0 0 0 3px rgba(12, 11, 10, 0.9), inset 0 0 0 4px rgba(150, 140, 124, 0.22), inset 0 0 1.2rem rgba(0, 0, 0, 0.5), 0 0.35rem 0.9rem rgba(0, 0, 0, 0.55);
+  background: linear-gradient(180deg, rgba(22, 19, 16, 0.84), rgba(10, 9, 8, 0.9));
+}
+.ms-hs-dock-body,
+.ms-hs-dock-foot {
+  display: contents;
+}
+.ms-hs-dock > .ms-hs-plate {
+  grid-area: plate;
+}
+.ms-hs-dock .ms-hs-stats {
+  grid-area: stats;
+}
+.ms-hs-dock .ms-hs-gear {
+  grid-area: gear;
+}
+.ms-hs-dock .ms-hs-extras {
+  grid-area: extras;
+}
+.ms-hs-dock .ms-hs-links {
+  grid-area: links;
+}
+.ms-hs-plate {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.05rem 0.1rem;
+}
+.ms-hs-plate-name {
+  flex: 1;
+  min-width: 0;
+}
+.ms-hs-plate-name h2 {
+  font-size: var(--t-xl);
+  line-height: 1.05;
+  color: var(--k-gold);
+  text-shadow: 0 0.1rem 0 #2a1604, 0 0 0.9rem rgba(255, 190, 90, 0.2);
+  animation: ms-fade-in 0.4s ease-out both;
+}
+.ms-hs-plate-sub {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: var(--t-xs);
+  color: var(--k-text-2);
+}
+.ms-tseg .ms-kseg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.ms-tseg .ms-kseg-btn.is-off {
+  --pl-veil: rgba(8, 7, 6, 0.7);
+  color: #a7a194; /* >= 4.5 : 1 on the veiled plate; the lock glyph + veil carry the disabled read */
+  cursor: not-allowed;
+}
+.ms-tseg .ms-seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.ms-tseg .ms-seg-btn[aria-disabled='true'] {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.ms-hs-info {
+  flex: none;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.ms-hs-desc {
+  font-size: var(--t-sm);
+  line-height: 1.38;
+  color: var(--k-text-2);
+  animation: ms-fade-in 0.45s ease-out both;
+}
+.ms-hs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  container-type: inline-size;
+}
+.ms-hs-stat {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.5rem;
+  border-radius: 3px;
+  background-color: var(--k-well-2);
+  background-image: linear-gradient(rgba(9, 8, 7, 0.5), rgba(9, 8, 7, 0.5)), var(--tex-uk-lattice, none);
+  background-size: auto, 10rem;
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.2), inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 240, 220, 0.06);
+}
+.ms-hs-stat > .ms-kicon {
+  flex: none;
+}
+.ms-hs-stat-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.16rem;
+}
+.ms-hs-stat-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+  line-height: 1.1;
+}
+.ms-hs-stat .ms-well {
+  min-width: 4.4rem;
+  min-height: 1.6rem;
+  --wf: var(--t-md);
+}
+.ms-hs-pips {
+  display: flex;
+  gap: 0.14rem;
+}
+.ms-hs-pips i {
+  width: 0.95rem;
+  height: 0.46rem;
+  clip-path: polygon(0.17rem 0, calc(100% - 0.17rem) 0, 100% 50%, calc(100% - 0.17rem) 100%, 0.17rem 100%, 0 50%);
+}
+.ms-hs-pips i::after {
+  clip-path: polygon(0.17rem 0, calc(100% - 0.17rem) 0, 100% 50%, calc(100% - 0.17rem) 100%, 0.17rem 100%, 0 50%);
+}
+.ms-hs-pips i.on::after {
+  background: linear-gradient(180deg, #fff0c4, var(--cc) 42%, color-mix(in srgb, var(--cc) 60%, #000));
+}
+@container (max-width: 31rem) {
+  .ms-hs-stat {
+    gap: 0.4rem;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+  }
+  .ms-hs-stat > .ms-kicon {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+  .ms-hs-stat .ms-well {
+    min-width: 3.4rem;
+    padding: 0.08rem 0.4rem;
+  }
+}
+
+/* bonus plaques: a gem tile that sits proud of a chamfered stone plaque; the number in its own well, the label in plain body type */
+.ms-hs-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.9rem;
+  padding-left: 0.2rem;
+}
+.ms-hs-bonus {
+  --pl-c: 0.4rem;
+  --pl-veil: rgba(40, 35, 29, 0.42);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 1.9rem;
+  padding: 0.15rem 0.75rem 0.15rem 1.35rem;
+  margin-left: 0.85rem;
+  color: var(--k-text);
+}
+.ms-hs-bonus > .ms-kicon {
+  position: absolute;
+  left: -0.85rem;
+  top: 50%;
+  translate: 0 -50%;
+  filter: drop-shadow(0 0.12rem 0.18rem rgba(0, 0, 0, 0.8));
+}
+.ms-hs-bonus-num {
+  padding: 0.04rem 0.4rem;
+  font-family: var(--f-num);
+  font-size: var(--t-sm);
+  line-height: 1.25;
+  color: #ffe2a0;
+  border-radius: 2px;
+  background: rgba(6, 5, 4, 0.82);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.22);
+}
+.ms-hs-bonus-num.is-bad {
+  color: #ff9a86;
+}
+.ms-hs-bonus-label {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #efe6d2;
+  text-shadow: 0 1px 0 #000;
+}
+
+/* gear shelf: look chip, eight slots, the collection tube */
+.ms-hs-gear {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  padding: 0.5rem 0.65rem 0.45rem;
+  border-radius: 3px;
+  background-color: var(--k-well-2);
+  background-image: linear-gradient(rgba(9, 8, 7, 0.5), rgba(9, 8, 7, 0.5)), var(--tex-uk-lattice, none);
+  background-size: auto, 10rem;
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.2), inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 240, 220, 0.06);
+}
+.ms-hs-look {
+  align-self: flex-start;
+  --pl-hi: #f6dc92;
+  --pl-mid: #b88a3a;
+  --pl-lo: #4a3208;
+  color: var(--k-gold);
+}
+.ms-hs-gear-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.ms-hs-coll {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.ms-hs-coll .ms-statwell {
+  justify-content: space-between;
+}
+.ms-hs-gearhint {
+  font-size: var(--t-2xs);
+  line-height: 1.25;
+  color: var(--k-text-3);
+}
+.ms-hs-dock .ms-hs-gear {
+  gap: 0.4rem;
+  padding: 0.45rem 0.6rem 0.45rem;
+}
+/* bonus plaques stand beside the dais (desktop, tall screens): the buffs of the hero, not another row of the dock */
+.ms-hs-tags {
+  position: absolute;
+  z-index: 6;
+  left: calc(var(--cx) + var(--dw) * 0.5 + 0.4rem);
+  top: calc(var(--fy) - 3cqh);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  pointer-events: none;
+}
+.ms-hs-tags .ms-hs-extras {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+/* the other side of the dais: what the hero wears (look chip) and the drag hint, right-aligned against the plinth */
+.ms-hs-tagsl {
+  position: absolute;
+  z-index: 6;
+  max-width: calc((var(--free) - var(--dw)) / 2 - 0.6rem);
+  right: calc(100cqw - var(--cx) + var(--dw) * 0.5 + 0.4rem);
+  top: calc(var(--fy) - 3cqh);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7rem;
+  pointer-events: none;
+}
+.ms-hs-tagsl .ms-hs-drag {
+  position: static;
+  white-space: normal;
+  text-align: right;
+}
+.ms-hs-tagsl .ms-kchip {
+  white-space: normal;
+  text-align: left;
+  max-width: 100%;
+}
+.ms-hs-lookrow {
+  display: flex;
+}
+@media (max-height: 940px) {
+  .ms-hs-tags {
+    display: none;
+  }
+}
+.ms-hs-dock .ms-hs-gear-row {
+  flex-wrap: nowrap;
+  gap: 0.22rem;
+  order: -1;
+}
+.ms-hs-dock .ms-hs-gearhint {
+  display: none;
+}
+.ms-hs-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+.ms-hs-links .ms-kbtn {
+  position: relative;
+  min-width: 0;
+}
+.ms-hs-link-badge {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.3rem;
+}
+.ms-hs-link .ms-kbtn-body {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* ---- doctrine + empire boards --------------------------------------------------------------------------------------- */
+.ms-hs-docwrap {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.ms-hs-docview {
+  height: 100%;
+  padding: 0.7rem 0.8rem 0.8rem;
+}
+.ms-hs-docs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.ms-hs-doc {
+  position: relative;
+  container-type: inline-size;
+  padding: 0.7rem 0.85rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: var(--k-well-2);
+  background-image: linear-gradient(rgba(9, 8, 7, 0.5), rgba(9, 8, 7, 0.5)), var(--tex-uk-lattice, none);
+  background-size: auto, 10rem;
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.2), inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 240, 220, 0.06);
+  transition: box-shadow 0.25s, background-color 0.25s;
+  animation: ms-slide-right 0.5s var(--ease-soft) backwards;
+  animation-delay: calc(0.3s + var(--i, 0) * 0.09s);
+}
+@media (hover: hover) {
+  .ms-hs-doc:not(.is-sel):hover {
+    background-color: #1b1815;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(200, 188, 166, 0.34), inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 240, 220, 0.06);
+  }
+}
+.ms-hs-doc.is-sel {
+  background-color: #1d1814;
+  box-shadow:
+    inset 0 0 0 1px #f0cd78,
+    inset 0 0 0 2px #0a0806,
+    inset 0 0 0 3px rgba(168, 122, 53, 0.6),
+    inset 0 0.3rem 1rem rgba(0, 0, 0, 0.45),
+    0 0 1.1rem color-mix(in srgb, var(--cc) 30%, transparent);
+}
+.ms-hs-doc--flat {
+  cursor: default;
+  animation: none;
+  container-type: normal;
+}
+.ms-hs-doc-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.ms-hs-doc-mark {
+  position: relative;
+  isolation: isolate;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: var(--t-lg);
+  color: #efe6d2;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-hs-doc-mark::before,
+.ms-hs-doc-mark::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  clip-path: var(--oct);
+}
+.ms-hs-doc-mark::before {
+  inset: 0;
+  background: linear-gradient(135deg, #cbc3b3, #6a6258 48%, #1f1c18);
+}
+.ms-hs-doc-mark::after {
+  inset: 2px;
+  background: radial-gradient(circle at 35% 28%, #6a6256, #2a2622 66%, #141210);
+}
+.ms-hs-doc.is-sel .ms-hs-doc-mark::before,
+.ms-hs-dbtn.is-sel .ms-hs-doc-mark::before {
+  background: linear-gradient(135deg, #fff0bc, #c8943a 48%, #4a300c);
+}
+.ms-hs-doc.is-sel .ms-hs-doc-mark::after,
+.ms-hs-dbtn.is-sel .ms-hs-doc-mark::after {
+  background: radial-gradient(circle at 35% 28%, #ff9a7a, #b42a1c 56%, #52100a);
+}
+.ms-hs-doc-title {
+  flex: 1;
+  min-width: 0;
+}
+.ms-hs-doc-title h3 {
+  font-size: var(--t-lg);
+  line-height: 1.12;
+  color: var(--k-text);
+}
+.ms-hs-doc.is-sel .ms-hs-doc-title h3 {
+  color: var(--k-gold);
+}
+.ms-hs-doc-title .ms-eyebrow {
+  font-size: var(--t-2xs);
+  color: var(--k-text-3);
+}
+.ms-hs-check {
+  --pl-hi: #f6dc92;
+  --pl-mid: #b88a3a;
+  --pl-lo: #4a3208;
+  color: var(--k-gold);
+  opacity: 0;
+  scale: 0.85;
+  transition: opacity 0.2s, scale 0.25s var(--ease-out);
+}
+.ms-hs-doc.is-sel .ms-hs-check {
+  opacity: 1;
+  scale: 1;
+}
+.ms-hs-doc-desc {
+  margin: 0.45rem 0 0.5rem;
+  font-size: var(--t-sm);
+  line-height: 1.35;
+  color: var(--k-text-2);
+}
+.ms-hs-doc-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.7rem;
+}
+.ms-hs-brief {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  min-width: 0;
+}
+.ms-hs-brief > .ms-slot {
+  flex: none;
+}
+.ms-hs-brief-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+.ms-hs-brief-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b88a3a;
+  line-height: 1.15;
+}
+.ms-hs-brief-name {
+  font-size: var(--t-md);
+  line-height: 1.15;
+  color: var(--k-text);
+}
+/* element + behaviour: wraps instead of ellipsising (TR names are longer) */
+.ms-hs-brief-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.3rem;
+  font-size: var(--t-2xs);
+  line-height: 1.3;
+  color: var(--k-text-3);
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+.ms-hs-brief-meta > span {
+  min-width: 0;
+}
+.ms-hs-dot {
+  flex: none;
+  align-self: center;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--dc, var(--c-gold));
+  box-shadow: 0 0 0.5rem var(--dc, var(--c-gold));
+}
+@container (max-width: 25rem) {
+  .ms-hs-doc-skills {
+    grid-template-columns: 1fr;
+  }
+}
+@container (max-width: 27rem) {
+  .ms-hs-doc-title .ms-eyebrow {
+    display: none;
+  }
+}
+.ms-hs-doc-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s var(--ease-soft);
+}
+.ms-hs-doc-more > div {
+  min-height: 0;
+  overflow: hidden;
+}
+.ms-hs-doc.is-sel .ms-hs-doc-more {
+  grid-template-rows: 1fr;
+}
+.ms-hs-doc-starter {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-left: 2px solid #a77a35;
+  background: rgba(0, 0, 0, 0.32);
+  font-size: var(--t-xs);
+  line-height: 1.32;
+  font-style: italic;
+  color: var(--k-text-2);
+}
+.ms-hs-doc-pool {
+  margin-top: 0.55rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ms-hs-doc-pool .ms-hs-brief-label {
+  flex: none;
+  max-width: 5.2rem;
+}
+.ms-hs-doc-poolrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+/* shorter windows: an unselected doctrine shrinks to head + description */
+@media (max-height: 940px) {
+  .ms-hs--w .ms-hs-doc:not(.is-sel) .ms-hs-doc-skills,
+  .ms-hs--w .ms-hs-doc:not(.is-sel) .ms-hs-doc-pool {
+    display: none;
+  }
+}
+
+/* phone doctrine picker */
+.ms-hs-dpick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.ms-hs-dsel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.ms-hs-dbtn {
+  --pl-c: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--k-tap);
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  color: var(--k-text);
+  cursor: pointer;
+}
+.ms-hs-dbtn.is-sel {
+  --pl-hi: #f6dc92;
+  --pl-mid: #b88a3a;
+  --pl-lo: #4e3410;
+  --pl-veil: rgba(24, 20, 14, 0.4);
+}
+.ms-hs-dbtn-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.ms-hs-dbtn-text b {
+  font-family: var(--f-head);
+  font-size: var(--t-md);
+  line-height: 1.12;
+  color: var(--k-text);
+}
+.ms-hs-dbtn.is-sel .ms-hs-dbtn-text b {
+  color: var(--k-gold);
+}
+.ms-hs-dbtn-text i {
+  font-style: normal;
+  font-family: var(--f-head);
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+/* empire */
+.ms-hs-empire {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.7rem 0.8rem 0.8rem;
+}
+.ms-hs-emps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.ms-hs-emp {
+  --ec: var(--k-gold);
+  --flag-w: 5.2rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.5rem 0.25rem 0.5rem;
+  border-radius: 3px;
+  color: var(--k-text);
+  cursor: pointer;
+  background-color: var(--k-well-2);
+  background-image: linear-gradient(rgba(9, 8, 7, 0.55), rgba(9, 8, 7, 0.55)), var(--tex-uk-lattice, none);
+  background-size: auto, 10rem;
+  border: 1px solid #060505;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.95), inset -1px -1px 0 rgba(160, 150, 134, 0.2), inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 240, 220, 0.06);
+  transition: box-shadow 0.25s, background-color 0.25s;
+}
+.ms-hs-emp.is-sel {
+  background-image: radial-gradient(90% 60% at 50% 22%, color-mix(in srgb, var(--ec) 24%, transparent), transparent 70%), linear-gradient(rgba(9, 8, 7, 0.45), rgba(9, 8, 7, 0.45)), var(--tex-uk-lattice, none);
+  background-size: auto, auto, 10rem;
+  box-shadow:
+    inset 0 0 0 1px #f0cd78,
+    inset 0 0 0 2px #0a0806,
+    inset 0 0 0 3px color-mix(in srgb, var(--ec) 70%, #3a2408),
+    0 0 1.1rem color-mix(in srgb, var(--ec) 36%, transparent);
+}
+.ms-hs-emp-name {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.05em;
+  color: var(--k-text-2);
+}
+.ms-hs-emp.is-sel .ms-hs-emp-name {
+  color: var(--k-gold);
+}
+.ms-hs-emp-bonus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  font-size: var(--t-2xs);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--k-text-3);
+}
+.ms-hs-emp-bonus b {
+  font-family: var(--f-num);
+  font-size: var(--t-xs);
+  color: #f0cd78;
+}
+.ms-hs-empire-detail {
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--ec, var(--k-gold));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--ec) 12%, rgba(0, 0, 0, 0.5)), rgba(0, 0, 0, 0.3));
+  animation: ms-fade-in 0.35s ease-out both;
+}
+.ms-hs-empire-detail p {
+  font-size: var(--t-sm);
+  line-height: 1.35;
+  color: var(--k-text);
+}
+
+@media (min-height: 941px) {
+  .ms-hs--w .ms-hs-emp {
+    --flag-w: 5.4rem;
+  }
+}
+
+/* ---- footer ---------------------------------------------------------------------------------------------------------- */
+.ms-hs-back {
+  min-width: 8.5rem;
+}
+.ms-hs-fr .ms-hs-next {
+  width: 100%;
+  min-width: 0;
+}
+.ms-hs-back-t {
+  white-space: nowrap;
+}
+.ms-hs-hint {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.7rem;
+  font-size: var(--t-xs);
+  color: var(--k-text-2);
+}
+.ms-hs-hint span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.ms-hs-hint--touch {
+  display: none;
+}
+.ms-touch .ms-hs-hint {
+  display: none;
+}
+.ms-touch .ms-hs-hint--touch {
+  display: flex;
+}
+.ms-hs-foot {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  animation: ms-rise-in 0.5s var(--ease-soft) 0.3s both;
+}
+.ms-hs-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+/* ---- wide, shorter windows (1366x768, 1440x900, 1024x768): slimmer boards, a compact dock ------------------------------ */
+@media (max-height: 940px) {
+  .ms-hs--w .ms-hs-doc-starter,
+  .ms-hs--w .ms-hs-empire-detail,
+  .ms-hs--w .ms-hs-doc:not(.is-sel) .ms-hs-doc-desc {
+    display: none;
+  }
+}
+@media (max-height: 940px) {
+  .ms-hs--w {
+    --edge: 1.4rem;
+    --gut: 1.3rem;
+    --bl: 19rem;
+    --br: 25rem;
+  }
+  .ms-hs--w .ms-hs-dock {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'plate links'
+      'stats stats'
+      'gear gear';
+    gap: 0.45rem 0.7rem;
+    padding: 0.5rem 0.7rem 0.55rem;
+  }
+  .ms-hs--w .ms-hs-dock .ms-hs-gear {
+    gap: 0.3rem;
+    padding: 0.35rem 0.55rem 0.4rem;
+  }
+  .ms-hs--w .ms-hs-dock .ms-hs-gear-row {
+    order: 0;
+    justify-content: space-between;
+  }
+  /* the collection reads on one line: number well + tube (the word is the tooltip) */
+  .ms-hs--w .ms-hs-dock .ms-hs-coll {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .ms-hs--w .ms-hs-dock .ms-hs-coll .ms-statwell-label {
+    display: none;
+  }
+  .ms-hs--w .ms-hs-dock .ms-hs-coll .ms-hsg {
+    flex: 1 1 0;
+    min-width: 4rem;
+  }
+}
+@media (max-height: 860px) {
+  .ms-hs--w {
+    gap: 0.4rem;
+    padding-top: calc(0.5rem + var(--safe-t, 0px));
+    padding-bottom: calc(0.5rem + var(--safe-b, 0px));
+  }
+  .ms-hs--w .ms-hs-head {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .ms-hs--w .ms-hs-head .ms-eyebrow {
+    display: none;
+  }
+  .ms-hs--w .ms-hs-steps {
+    margin-top: 0;
+  }
+  .ms-hs--w .ms-hs-title {
+    font-size: var(--t-xl);
+  }
+  .ms-hs--w .ms-hs-fr .ms-hs-next {
+    --btn-h: 3.2rem;
+  }
+  .ms-hs--w .ms-hs-fr .ms-kbtn-sub,
+  .ms-hs--w .ms-hs-links .ms-kbtn-sub {
+    display: none;
+  }
+  .ms-hs--w .ms-hs-doc-starter,
+  .ms-hs--w .ms-hs-empire-detail,
+  .ms-hs--w .ms-hs-doc:not(.is-sel) .ms-hs-doc-desc {
+    display: none;
+  }
+  .ms-hs--w .ms-hs-emp {
+    --flag-w: 4.1rem;
+  }
+  .ms-hs--w .ms-hs-doc-desc {
+    margin: 0.3rem 0 0.4rem;
+  }
+}
+/* 1024x768 (narrow + short): the doctrine panel is the tightest box (TR text is the longest) - tighten padding so the collapsed
+   doctrine B card stays whole and the scroll cue has nothing to cover */
+@media (max-width: 1180px) {
+  .ms-hs--w {
+    --edge: 1rem;
+    --gut: 0.9rem;
+    --bl: 14.5rem;
+    --br: 21rem;
+  }
+  .ms-hs--w .ms-hs-stat {
+    padding: 0.3rem 0.35rem;
+    gap: 0.35rem;
+  }
+  .ms-hs--w .ms-hs-tagsl {
+    display: none;
+  }
+  .ms-hs--w .ms-hs-dock > .ms-hs-plate .ms-emblem {
+    display: none;
+  }
+}
+/* the dock decides: with room the buttons read ARMORY / TALENTS, in a narrow dock (laptops, long Turkish words) they are icon buttons
+   (title + aria-label carry the name, the talent badge stays) */
+.ms-hs-dock {
+  container-type: inline-size;
+}
+@container (max-width: 47rem) {
+  .ms-hs-link-t,
+  .ms-hs-link .ms-kbtn-sub {
+    display: none;
+  }
+}
+@media (max-height: 860px) and (max-width: 1180px) {
+  .ms-hs--w .ms-hs-docview {
+    padding: 0.5rem 0.6rem 0.55rem;
+  }
+  .ms-hs--w .ms-hs-docs {
+    gap: 0.4rem;
+  }
+  .ms-hs--w .ms-hs-doc {
+    padding: 0.5rem 0.7rem 0.55rem;
+  }
+  .ms-hs--w .ms-hs-doc-desc {
+    margin: 0.25rem 0 0.3rem;
+    line-height: 1.28;
+  }
+  .ms-hs--w .ms-hs-doc-skills {
+    gap: 0.35rem 0.6rem;
+  }
+  .ms-hs--w .ms-hs-doc-pool {
+    margin-top: 0.3rem;
+  }
+}
+
+/* ---- phones: shared ----------------------------------------------------------------------------------------------------- */
+.ms-hs--p,
+.ms-hs--l {
+  gap: 0.4rem;
+  padding: calc(0.5rem + var(--safe-t, 0px)) calc(0.7rem + var(--safe-r, 0px)) calc(0.55rem + var(--safe-b, 0px)) calc(0.7rem + var(--safe-l, 0px));
+}
+.ms-hs--p .ms-hs-head,
+.ms-hs--l .ms-hs-head {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.1rem 1rem;
+}
+.ms-hs--p .ms-hs-head .ms-eyebrow,
+.ms-hs--l .ms-hs-head .ms-eyebrow {
+  display: none;
+}
+.ms-hs--p .ms-hs-title,
+.ms-hs--l .ms-hs-title {
+  font-size: var(--t-xl);
+}
+.ms-hs--p .ms-hs-steps,
+.ms-hs--l .ms-hs-steps {
+  margin-top: 0;
+}
+.ms-hs--p .ms-hs-steps b,
+.ms-hs--l .ms-hs-steps b {
+  width: 1.6rem;
+}
+.ms-hs--p .ms-hs-actions,
+.ms-hs--l .ms-hs-actions {
+  width: 100%;
+  gap: 0.6rem;
+}
+.ms-hs--p .ms-hs-next,
+.ms-hs--l .ms-hs-next {
+  min-width: 0;
+  flex: 1;
+  --btn-h: 3.3rem;
+}
+.ms-hs--p .ms-hs-actions .ms-kkey,
+.ms-hs--l .ms-hs-actions .ms-kkey,
+.ms-hs--l .ms-hs-fl .ms-kkey,
+.ms-hs--l .ms-hs-fr .ms-kkey {
+  display: none;
+}
+.ms-hs--p .ms-hs-actions .ms-kbtn-sub,
+.ms-hs--l .ms-hs-fr .ms-kbtn-sub {
+  display: none;
+}
+.ms-hs--p .ms-hs-hint--touch {
+  font-size: var(--t-2xs);
+}
+.ms-hs--p .ms-hs-class,
+.ms-hs--l .ms-hs-class {
+  max-height: none;
+  min-height: 0;
+  animation: none;
+  --pl-c: 0.4rem;
+}
+.ms-hs--p .ms-hs-class-text .ms-hs-class-role,
+.ms-hs--l .ms-hs-class-text .ms-hs-class-role,
+.ms-hs--p .ms-hs-class-emblem,
+.ms-hs--l .ms-hs-class-emblem,
+.ms-hs--p .ms-hs-class-pips,
+.ms-hs--l .ms-hs-class-pips {
+  display: none;
+}
+.ms-hs--p .ms-hs-class.is-sel,
+.ms-hs--l .ms-hs-class.is-sel {
+  translate: none;
+}
+.ms-hs--p .ms-hs-plate .ms-emblem,
+.ms-hs--l .ms-hs-plate .ms-emblem {
+  display: none;
+}
+.ms-hs--p .ms-hs-plate-sub,
+.ms-hs--l .ms-hs-plate-sub {
+  font-size: var(--t-2xs);
+}
+.ms-hs--p .ms-hs-plate-name h2,
+.ms-hs--l .ms-hs-plate-name h2 {
+  font-size: var(--t-lg);
+}
+
+/* ---- phone portrait ------------------------------------------------------------------------------------------------------ */
+.ms-hs-pcol {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ms-hs-strip {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+.ms-hs-class--p {
+  --face: 2.8rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.15rem;
+  padding: 0.35rem 0.1rem 0.3rem;
+  text-align: center;
+}
+.ms-hs-class--p .ms-hs-class-text {
+  flex: none;
+  width: 100%;
+  align-items: center;
+}
+.ms-hs-class--p .ms-hs-class-name {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.01em;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.ms-hs-class--p .ms-hs-class-pts {
+  right: 0.15rem;
+  top: 0.1rem;
+}
+.ms-hs-plate-wrap {
+  flex: none;
+  --pl-c: 0.5rem;
+  --pl-veil: rgba(12, 11, 10, 0.55);
+  padding: 0.35rem 0.6rem;
+}
+.ms-hs--p .ms-hs-plate {
+  gap: 0.5rem;
+}
+.ms-hs-pboard {
+  flex: 0 0 auto;
+  height: 21rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.4rem 0.5rem 0.4rem;
+}
+.ms-hs-tabs {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+}
+.ms-hs-tabs .ms-ktab {
+  min-width: 0;
+  justify-content: center;
+  gap: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.03em;
+}
+.ms-hs-pages {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.ms-hs-pages-view {
+  height: 100%;
+  padding: 0.1rem 0.1rem 0.15rem;
+}
+.ms-hs--p .ms-hs-doc--flat,
+.ms-hs--l .ms-hs-doc--flat {
+  padding: 0.4rem 0.6rem 0.45rem;
+  animation: none;
+}
+.ms-hs--p .ms-hs-dpick,
+.ms-hs--l .ms-hs-dpick {
+  gap: 0.35rem;
+}
+.ms-hs--p .ms-hs-doc-pool,
+.ms-hs--l .ms-hs-doc-pool {
+  margin-top: 0.35rem;
+}
+/* phone portrait: the screen is tall, not wide - the step dots go (the NEXT button names the next step) */
+.ms-hs--p .ms-hs-steps {
+  display: none;
+}
+.ms-hs--p .ms-hs-doc--flat .ms-hs-doc-desc,
+.ms-hs--l .ms-hs-doc--flat .ms-hs-doc-desc {
+  margin: 0.15rem 0 0.4rem;
+  font-size: var(--t-xs);
+  line-height: 1.3;
+}
+@media (max-height: 899px) {
+  .ms-hs--p .ms-hs-hint--touch {
+    display: none;
+  }
+}
+.ms-hs--p .ms-hs-head,
+.ms-hs--l .ms-hs-head {
+  z-index: 3;
+}
+/* phones: the two skill rows stack, each is label + name on one line and the element meta under it (a long label never wraps
+   against its neighbour, and a row is only as tall as its icon); the doctrine tag stays readable */
+.ms-hs--p .ms-hs-brief-text,
+.ms-hs--l .ms-hs-brief-text {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.5rem;
+  align-items: baseline;
+}
+.ms-hs--p .ms-hs-brief-label,
+.ms-hs--l .ms-hs-brief-label {
+  grid-column: 1;
+  grid-row: 1;
+}
+.ms-hs--p .ms-hs-brief-name,
+.ms-hs--l .ms-hs-brief-name {
+  grid-column: 2;
+  grid-row: 1;
+}
+.ms-hs--p .ms-hs-brief-meta,
+.ms-hs--l .ms-hs-brief-meta {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+.ms-hs--p .ms-hs-doc-skills,
+.ms-hs--l .ms-hs-doc-skills {
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+}
+.ms-hs--p .ms-hs-brief .ms-hs-brief-label,
+.ms-hs--l .ms-hs-brief .ms-hs-brief-label {
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+}
+.ms-hs--p .ms-hs-doc-pool .ms-hs-brief-label,
+.ms-hs--l .ms-hs-doc-pool .ms-hs-brief-label {
+  max-width: 6.2rem;
+  letter-spacing: 0.04em;
+  white-space: normal;
+}
+.ms-hs--p .ms-hs-dbtn-text i,
+.ms-hs--l .ms-hs-dbtn-text i {
+  color: #cdc4b0;
+}
+.ms-hs--p .ms-hs-stats,
+.ms-hs--l .ms-hs-stats {
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+.ms-hs--p .ms-hs-stat,
+.ms-hs--l .ms-hs-stat {
+  padding: 0.35rem 0.5rem;
+}
+.ms-hs--p .ms-hs-stat-body,
+.ms-hs--l .ms-hs-stat-body {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6rem;
+  width: 100%;
+}
+.ms-hs--p .ms-hs-stat-label,
+.ms-hs--l .ms-hs-stat-label {
+  flex: 1 1 4rem;
+}
+.ms-hs--p .ms-hs-emp,
+.ms-hs--l .ms-hs-emp {
+  --flag-w: 4.2rem;
+}
+.ms-hs--p .ms-hs-empire,
+.ms-hs--l .ms-hs-empire {
+  padding: 0.2rem 0.1rem 0.3rem;
+}
+.ms-hs--p .ms-hs-desc,
+.ms-hs--l .ms-hs-desc {
+  font-size: var(--t-xs);
+}
+.ms-hs--p .ms-hs-links .ms-kbtn-sub,
+.ms-hs--l .ms-hs-links .ms-kbtn-sub {
+  display: none;
+}
+.ms-hs--p .ms-hs-links,
+.ms-hs--l .ms-hs-links {
+  justify-content: stretch;
+}
+.ms-hs--p .ms-hs-links .ms-kbtn,
+.ms-hs--l .ms-hs-links .ms-kbtn {
+  flex: 1;
+}
+
+/* ---- phone landscape ------------------------------------------------------------------------------------------------------- */
+.ms-hs-lrow {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 4.7rem minmax(0, 1fr) minmax(19rem, 0.8fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.4rem 0.6rem;
+}
+.ms-hs-rail {
+  position: relative;
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.28rem;
+}
+.ms-hs-class--l {
+  --face: 3.7rem;
+  flex: none;
+  justify-content: center;
+  padding: 0.22rem;
+}
+.ms-hs-class--l .ms-hs-class-text {
+  display: none;
+}
+.ms-hs-class--l .ms-hs-class-pts {
+  right: 0.05rem;
+  top: 0.02rem;
+}
+.ms-hs--l .ms-hs-pboard {
+  grid-column: 3;
+  grid-row: 1;
+  height: auto;
+  min-height: 0;
+}
+.ms-hs--l .ms-hs-fl {
+  grid-column: 1;
+  grid-row: 2;
+}
+.ms-hs--l .ms-hs-fc {
+  grid-column: 2;
+  grid-row: 2;
+  --pl-c: 0.5rem;
+  --pl-veil: rgba(12, 11, 10, 0.55);
+  padding: 0.25rem 0.7rem;
+  display: flex;
+  align-items: center;
+}
+.ms-hs--l .ms-hs-fc .ms-hs-plate {
+  width: 100%;
+}
+.ms-hs--l .ms-hs-fr {
+  grid-column: 3;
+  grid-row: 2;
+}
+.ms-hs--l .ms-hs-back {
+  min-width: 0;
+  width: 100%;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.ms-hs--l .ms-hs-back-t {
+  display: none;
+}
+.ms-hs--l .ms-hs-back-arrow {
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+/* gem icon inside a stat chip */
+.ms-hs-extras .ms-kchip-icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-left: -0.3rem;
+}
+.ms-hs-extras .ms-kchip-icon > .ms-kicon {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* phones: the kit scroll chevron is not drawn over the skill row (the bottom fade alone says "more"); tab plates keep the touch floor */
+.ms-hs--p .ms-hs-tabs .ms-ktab,
+.ms-hs--l .ms-hs-tabs .ms-ktab {
+  min-height: var(--k-tap);
+}
+.ms-hs--p .ms-hs-actions .ms-kbtn,
+.ms-hs--l .ms-hs-actions .ms-kbtn,
+.ms-hs--l .ms-hs-fl .ms-kbtn,
+.ms-hs--l .ms-hs-fr .ms-kbtn {
+  min-height: var(--k-tap);
+}
+
+/* doctrine panel (short wide windows): the chosen card takes the free height, its sections spread, so the panel never ends in a dead band */
+@media (max-height: 940px) {
+  .ms-hs--w .ms-hs-docview {
+    display: flex;
+    flex-direction: column;
+  }
+  .ms-hs--w .ms-hs-docs {
+    flex: 1 0 auto;
+  }
+  .ms-hs--w .ms-hs-doc.is-sel {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+/* collection: painted glass tube (uk_hud_gtube + uk_hud_gfill_gold); CSS stand-ins while the art is missing */
+.ms-hsg {
+  /* one unit of the 768 x 128 tube image: the channel is 64 units tall, the spiked caps 62 units wide each */
+  --k: calc(var(--ch, 0.8rem) / 64);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(84 * var(--k));
+  margin: calc(8 * var(--k)) 0;
+  padding: calc(10 * var(--k)) 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 calc(62 * var(--k));
+  border-image-source: var(--hsg-tube, linear-gradient(90deg, #6a707a, #1b1d22 8%, #1b1d22 92%, #6a707a));
+  border-image-slice: 0 62 0 62 fill;
+  border-image-outset: calc(22 * var(--k)) 0;
+  border-image-repeat: stretch;
+  filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7));
+}
+.ms-hsg-ch {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: calc(5 * var(--k));
+  background: linear-gradient(180deg, rgba(170, 100, 20, 0.16), rgba(70, 36, 6, 0.1));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.ms-hsg-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* the liquid is anchored to the channel and only clipped by the value (100cqw = the channel width) */
+  background: var(--hsg-fill, linear-gradient(180deg, #a85a0c, #ffcf5a 16%, #f5981c 40%, #cf6f0e 74%, #4a2404)) 0 0 / 100cqw 100% no-repeat;
+  transition: width 0.3s ease-out;
+}
+.ms-hsg-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: max(2px, calc(2.4 * var(--k)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 246, 224, 0.95) 24%, rgba(255, 246, 224, 0.9) 76%, rgba(255, 255, 255, 0));
+  box-shadow: 0 0 0.45rem 1px #ffb030;
+}
+.ms-hsg.is-empty .ms-hsg-fill::after {
+  display: none;
+}
+.ms-hsg-ticks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.5) 0) 0 0 / calc(100% / var(--seg, 10)) 100%;
+}
+.ms-hsg-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 20%), linear-gradient(0deg, rgba(150, 190, 255, 0.14), rgba(150, 190, 255, 0) 12%);
+  box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.55);
+}
+.ms-hs-coll {
+  gap: 0.15rem;
+}
+

@@ -1,0 +1,16 @@
+# Cloudflare Pages project "metin-survivors": the static client (dist/) + the /api/* proxy Function (functions/).
+# Read by `wrangler pages deploy` / `wrangler pages dev` run from apps/game (scripts/deploy.ts does that); it is the
+# source of truth for the project's Functions settings. The API Worker itself is configured in workers/api/wrangler.toml.
+name = "metin-survivors"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-09-01"
+
+# Same-origin API: functions/api/[[path]].ts forwards /api/* to the API Worker through this service binding.
+# Production binds to the production API Worker; preview deployments stay isolated with no production API binding
+# (their /api/* proxy answers 503 unavailable so preview traffic never writes to production D1/R2 or leaderboards).
+[[env.production.services]]
+binding = "API"
+service = "metin-survivors-api"
+
+[env.preview]
+services = []

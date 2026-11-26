@@ -1,0 +1,708 @@
+/* Owner: B9 story (modals/Story.tsx, modals/StoryStage.tsx). Stone-and-pewter family (round 2, 2026-10-19): a charcoal board with a rust-copper
+   title bar, a speaker plate (zone art / the live boss on its dais with a level nameplate / the hero + outcome seal / the metin stone on its
+   sigil) and a warm tan, finely gridded, woven parchment with a faded sepia print in its corner (the only parchment of the UI: story text). The dialog is as tall as its tallest page (every page shares one grid cell), so the parchment is never mostly empty.
+   Stone buttons sit on the board. Cascade order of the run-modal sheets is pinned in ui/app.tsx (runend < essence < chest < boss < story < pause). */
+
+.ms-story {
+  --plate-w: 20rem;
+  --row-min: 14rem;
+  --ink: #2a1c12;
+  --ink-2: #3a2917;
+  --ink-head: #3a1a0a;
+  --ink-accent: #86261a;
+  --pips-on: #e8c36a;
+  /* local fix of the kit rivet: the shared one is a sphere centred off-box and clipped flat (half-domes); this one is whole inside its box */
+  --k-rivet: radial-gradient(circle closest-side at 44% 40%, #efe7d6 0, #b4ac9d 17%, #7b7467 44%, #3a352f 72%, #0c0b0a 91%, rgba(12, 11, 10, 0) 100%);
+  --k-rivet-gold: radial-gradient(circle closest-side at 44% 40%, #fff0c4 0, #dfb862 18%, #98692a 46%, #3d2709 73%, #0c0804 91%, rgba(12, 8, 4, 0) 100%);
+  flex-direction: column;
+  padding: calc(1rem + var(--safe-t)) calc(1rem + var(--safe-r)) calc(1rem + var(--safe-b)) calc(1rem + var(--safe-l));
+  background: radial-gradient(100% 90% at 50% 46%, rgba(8, 4, 3, 0.6), rgba(3, 1, 1, 0.9));
+}
+.ms-story--bossIntro {
+  --row-min: 17rem;
+  --ink-head: #54120a;
+  --pips-on: #e0594a;
+}
+.ms-story--victory {
+  --ink-head: #6d3f06;
+}
+.ms-story--defeat {
+  --ink: #22160e;
+  --ink-2: #2a1c10;
+  --ink-head: #5a1710;
+  --ink-accent: #5e130e;
+  --pips-on: #c85a4a;
+}
+.ms-story--metin {
+  --pips-on: var(--rune, #e8c36a);
+}
+/* the title bar leather follows the tone of the page (kit tokens, local) */
+.ms-story--defeat .ms-titlebar {
+  --k-rust: #3a1b17;
+  --k-rust-hi: #55281f;
+  --k-rust-lo: #230d0a;
+}
+.ms-story--bossIntro .ms-titlebar {
+  --k-rust: #651610;
+  --k-rust-hi: #8c2418;
+  --k-rust-lo: #3a0b08;
+}
+
+/* ---- the board ------------------------------------------------------------------------------------------------- */
+.ms-story-board {
+  display: flex;
+  flex-direction: column;
+  width: min(64rem, 100%);
+  max-height: 100%;
+  animation: ms-scale-in 0.45s var(--ease-soft) both;
+}
+.ms-story-board > .ms-titlebar {
+  flex: none;
+}
+/* the corner studs: only the two lower ones (the upper pair pile up with the title bar's rivet); whole rivets */
+.ms-story .ms-story-board::before {
+  background:
+    var(--k-rivet) 0 100% / var(--rv) var(--rv) no-repeat,
+    var(--k-rivet) 100% 100% / var(--rv) var(--rv) no-repeat;
+}
+/* the title bar's rivet sits inside the bar, not half over the bevel */
+.ms-story .ms-titlebar::before {
+  left: 0.4rem;
+}
+.ms-story-inner {
+  display: grid;
+  grid-template-columns: var(--plate-w) minmax(0, 1fr);
+  grid-template-rows: minmax(var(--row-min), auto) auto;
+  grid-template-areas:
+    'plate sheet'
+    'foot foot';
+  gap: 0.8rem 0.95rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0.8rem 1rem 0.9rem;
+}
+
+/* ---- speaker plate --------------------------------------------------------------------------------------------- */
+.ms-story-plate {
+  grid-area: plate;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-height: 0;
+  padding: 0.3rem;
+  /* pewter rim around the recess, like the slot rims */
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 0, 0, 0.95),
+    inset 0 0.3rem 0.9rem rgba(0, 0, 0, 0.55),
+    0 0 0 1px #1a1815,
+    0 0 0 3px var(--k-pewter, #4f4a44),
+    0 0 0 4px #0b0a09,
+    0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  animation: ms-fade-in 0.5s 0.1s ease-out both;
+}
+.ms-story-art {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 7rem;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0b0705;
+  border-radius: 2px;
+}
+.ms-story-pic {
+  position: absolute;
+  inset: -2%;
+  background: var(--art, linear-gradient(180deg, #2a1810, #0d0705)) center / cover no-repeat;
+  animation: ms-kenburns 30s ease-in-out infinite alternate;
+}
+.ms-story--bossIntro .ms-story-pic {
+  filter: brightness(0.42) saturate(0.75) blur(1.5px);
+}
+.ms-story--metin .ms-story-pic {
+  filter: brightness(0.3) saturate(0.7) blur(1px);
+}
+.ms-story-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 44%, transparent 46%, rgba(4, 2, 2, 0.74) 100%),
+    linear-gradient(0deg, rgba(5, 3, 2, 0.7), transparent 26%);
+}
+.ms-story--bossIntro .ms-story-shade {
+  background:
+    radial-gradient(120% 90% at 50% 44%, transparent 38%, rgba(30, 2, 2, 0.8) 100%),
+    linear-gradient(0deg, rgba(20, 2, 2, 0.5), transparent 24%);
+}
+.ms-story-motes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* the live boss (its dais is part of the 3D scene) */
+.ms-story-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.7s ease-out;
+}
+.ms-story-stage.is-ready {
+  opacity: 1;
+}
+
+/* the nameplate under the picture: the boss' level / the hero's class, with a stone emblem (never across the picture) */
+.ms-story-nameplate {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.28rem 0.8rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-md);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--k-gold, #e6c374);
+  text-shadow: 0 1px 0 #000;
+  background: linear-gradient(180deg, #2c2119, #17110d 60%, #120d0a);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 224, 170, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #0a0706,
+    inset 0 0 0 2px rgba(130, 98, 56, 0.45);
+}
+.ms-story-nameplate > span:not(.ms-story-emblem) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* the emblem: a dark-stone octagon with a thin gold rim and an engraved glyph (the frame's own materials) */
+.ms-story-emblem {
+  --em: 2rem;
+  --oct: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--em);
+  height: var(--em);
+  clip-path: var(--oct);
+  background: linear-gradient(150deg, #f1d58a, #a8762c 40%, #5a3a12 68%, #c79a47);
+}
+.ms-story-emblem::before,
+.ms-story-emblem::after {
+  content: '';
+  position: absolute;
+  clip-path: var(--oct);
+}
+.ms-story-emblem::before {
+  inset: calc(var(--em) * 0.07);
+  background: linear-gradient(160deg, #5d574f, #201d1a 60%, #3a352f);
+}
+.ms-story-emblem::after {
+  inset: calc(var(--em) * 0.15);
+  background: radial-gradient(circle at 42% 34%, #2d2925, #14110f 80%);
+}
+.ms-story-emblem .ms-kicon {
+  position: relative;
+  z-index: 1;
+  width: 62%;
+  height: 62%;
+}
+
+/* the hero (victory / defeat) */
+.ms-story-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 14%;
+  user-select: none;
+}
+.ms-story--victory .ms-story-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(70% 55% at 50% 24%, rgba(255, 214, 120, 0.34), transparent 72%);
+  mix-blend-mode: screen;
+}
+.ms-story--defeat .ms-story-hero {
+  filter: grayscale(0.7) brightness(0.7) contrast(1.06);
+}
+.ms-story--defeat .ms-story-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(60, 52, 58, 0.4), rgba(34, 6, 6, 0.55));
+}
+
+/* the metin stone on its floor sigil */
+.ms-story-sigil {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  z-index: 1;
+  width: 124%;
+  translate: -50% 0;
+  color: var(--rune, #ff9a2e);
+  transform: perspective(30rem) rotateX(60deg);
+  transform-origin: 50% 60%;
+  filter: drop-shadow(0 0 0.45rem var(--rune, #ff9a2e));
+  opacity: 0.95;
+}
+.ms-story-stone {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 1;
+  height: 100%; /* the paintings are padded canvases (the stone is 77-84 % of their height): the box fills the plate */
+  aspect-ratio: 576 / 864;
+  transform: translate(-50%, -50%);
+  background: var(--tex-metin, none) center / contain no-repeat;
+  filter: hue-rotate(var(--rune-rot, 0deg)) saturate(var(--rune-sat, 1)) brightness(var(--rune-bri, 1)) drop-shadow(0 0 1.6rem var(--rune, #ff9a2e));
+  animation: ms-story-float 7s ease-in-out infinite;
+}
+@keyframes ms-story-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.7rem;
+  }
+}
+
+/* the stone emblem in the middle of the plate: only when the boss cannot be drawn (no WebGL / model failed) */
+.ms-story-seal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  translate: -50% -50%;
+  filter: drop-shadow(0 0 1.4rem rgba(255, 60, 30, 0.6)) drop-shadow(0 0.3rem 0.4rem rgba(0, 0, 0, 0.7));
+}
+
+/* ---- the sheet: warm tan woven grid parchment with a faded sepia print in the corner ----------------------------------- */
+.ms-story-sheet {
+  grid-area: sheet;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 1.15rem 1.9rem 1.55rem 2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--ink);
+  /* the paper itself (inline --paper from Story.tsx: the painted uk_story_sheet, or one painted from noise; no tile); a flat tan until it is there */
+  background: var(--paper, linear-gradient(180deg, #e2d2a6, #d3be8c)) center / cover no-repeat #dccb9d;
+  /* dark leather lip, then a scorched, darkened edge that fades into the pale middle */
+  box-shadow:
+    inset 0 0 0 1px #1c130a,
+    inset 0 0 0 0.2rem #4e3920,
+    inset 0 0 0 0.26rem #17100a,
+    inset 0 0 0.55rem 0.3rem rgba(60, 38, 10, 0.78),
+    inset 0 0 2.4rem 0.4rem rgba(110, 72, 26, 0.4),
+    0 0.15rem 0.5rem rgba(0, 0, 0, 0.55);
+  isolation: isolate;
+  animation: ms-rise-in 0.55s 0.12s var(--ease-soft) both;
+}
+/* the painted paper takes the hue + saturation of the page's tone (luminosity blend) and a veil that lightens it (warm / plain) or darkens it
+   (defeat, boss), so one raster serves every kind */
+.ms-story-sheet.has-raster {
+  background:
+    linear-gradient(var(--veil), var(--veil)) center / cover no-repeat,
+    var(--paper) center / cover no-repeat,
+    var(--paper-tone);
+  background-blend-mode: normal, luminosity, normal;
+}
+.ms-story {
+  --paper-tone: #e3cc9a;
+  --veil: rgba(255, 244, 214, 0.27);
+}
+.ms-story--victory {
+  --paper-tone: #e9cd8c;
+  --veil: rgba(255, 236, 182, 0.23);
+}
+.ms-story--defeat {
+  --paper-tone: #b6a283;
+  --veil: rgba(48, 34, 32, 0.26);
+}
+.ms-story--bossIntro {
+  --paper-tone: #e1c49c;
+  --veil: rgba(255, 232, 206, 0.22);
+}
+.ms-story--metin {
+  --paper-tone: color-mix(in srgb, var(--rune, #e3cc9a) 14%, #e3cc9a);
+}
+/* the woven stock: a seamless diagonal thread tile (painted, 2x, shown at half size) laid over the paper, inside the frame lip */
+.ms-story-sheet.has-weave::after {
+  content: '';
+  position: absolute;
+  inset: 0.26rem;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--weave) 0 0 / 40px 40px repeat;
+}
+/* the fine grid of the quest sheet */
+.ms-story-sheet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(rgba(104, 74, 32, 0.22) 1px, transparent 1px) 0 0 / 1.45rem 1.45rem,
+    linear-gradient(90deg, rgba(104, 74, 32, 0.22) 1px, transparent 1px) 0 0 / 1.45rem 1.45rem;
+}
+/* the filigree: a faded sepia print, clipped to the inside of the frame lip so it comes out from under the frame */
+.ms-story-swirlbox {
+  position: absolute;
+  inset: 0.26rem;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 2px;
+}
+.ms-story-swirl {
+  position: absolute;
+  right: -0.1rem;
+  bottom: -0.1rem;
+  width: min(var(--swirl-w, 15rem), 52%);
+  height: auto;
+  aspect-ratio: 260 / 195;
+  /* one flat ink, no highlights: it is printed into the paper, so the grid and the weave run through it */
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+}
+/* the painted uk_story_swirl (640 x 411) only supplies the silhouette */
+.ms-story-swirl.is-print {
+  aspect-ratio: 640 / 411;
+  background: #84601f;
+  -webkit-mask: var(--swirl) right bottom / contain no-repeat;
+  mask: var(--swirl) right bottom / contain no-repeat;
+}
+.ms-story--defeat .ms-story-swirl {
+  opacity: 0.42;
+}
+.ms-story-head,
+.ms-story-bodywrap {
+  position: relative;
+  z-index: 1;
+}
+.ms-story-head {
+  flex: none;
+}
+.ms-story-title {
+  margin: 0;
+  font-family: var(--f-title);
+  font-weight: 700;
+  font-size: var(--t-3xl);
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--ink-head);
+  text-shadow: 0 1px 0 rgba(255, 240, 200, 0.6), 0 0 0.6rem rgba(255, 240, 200, 0.3);
+}
+.ms-story-sub {
+  margin: 0.25rem 0 0;
+  text-align: center;
+  font-style: italic;
+  font-size: var(--t-lg);
+  line-height: 1.2;
+  color: var(--ink-2);
+  text-wrap: balance;
+}
+.ms-story-rule {
+  width: min(100%, 22rem);
+  height: 1.3rem;
+  margin: 0.4rem auto 0;
+  border: 0;
+  background: var(--tex-divider, linear-gradient(90deg, transparent, rgba(120, 70, 20, 0.7), transparent) center / 100% 1px no-repeat) center / contain no-repeat;
+}
+.ms-story-bodywrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 0.3rem;
+  /* the text keeps a little clear of the print in the corner */
+  padding-right: var(--swirl-clear, 2.4rem);
+}
+.ms-story-body {
+  height: 100%;
+  padding: 0.2rem 0.4rem 0.4rem 0;
+}
+/* every page sits in the same cell: the sheet is as tall as its tallest page, and a page change never moves anything */
+.ms-story-pages {
+  display: grid;
+  /* a readable measure on wide sheets (about 55 characters), centred under the headline */
+  max-width: 36rem;
+  margin-inline: auto;
+}
+.ms-story-page {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+.ms-story-page.is-on {
+  visibility: visible;
+}
+.ms-story-p {
+  margin: 0;
+  font-size: var(--t-xl);
+  line-height: 1.46;
+  text-align: left;
+  text-wrap: pretty;
+  color: var(--ink);
+}
+/* the drop cap: a real initial letter sunk over two lines (no float, so its glyph box adds no scroll overflow to the sheet) */
+.ms-story-p::first-letter {
+  font-family: var(--f-title);
+  font-weight: 900;
+  color: var(--ink-accent);
+  text-shadow: 0 1px 0 rgba(255, 240, 200, 0.6);
+  -webkit-initial-letter: 2;
+  initial-letter: 2;
+  margin: 0 0.12em 0 0;
+}
+@supports not (initial-letter: 2) {
+  .ms-story-p::first-letter {
+    float: left;
+    padding: 0.06em 0.08em 0 0;
+    font-size: 3.1em;
+    line-height: 0.82;
+    margin: 0;
+  }
+}
+.ms-ink {
+  animation: ms-story-ink 0.6s var(--ease-soft) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes ms-story-ink {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* ---- the foot: page gems, hint, stone buttons (on the board, not on the parchment) ------------------------------------ */
+.ms-story-foot {
+  grid-area: foot;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+.ms-story-pips {
+  display: flex;
+  flex: none;
+  gap: 0.55rem;
+}
+.ms-story-pips i {
+  width: 0.85rem;
+  height: 0.85rem;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(135deg, #5b564d, #1c1a17 70%);
+  transition: background 0.3s, filter 0.3s;
+}
+.ms-story-pips i.is-on {
+  background: linear-gradient(135deg, #bda573, #7d6130 60%, #3d2c10);
+}
+.ms-story-pips i.is-now {
+  background: linear-gradient(135deg, #fff2c0, var(--pips-on) 45%, #6a3a10);
+  filter: drop-shadow(0 0 0.3rem var(--pips-on));
+}
+.ms-story-hint {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: max(var(--t-md), 12.5px);
+  letter-spacing: 0.02em;
+  color: var(--k-text-2, #c3baa9);
+}
+.ms-story-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-ink,
+  .ms-story-stone,
+  .ms-story-pic {
+    animation: none;
+  }
+}
+
+/* ---- short desktop windows --------------------------------------------------------------------------------------------- */
+@media (max-height: 820px) {
+  .ms-story {
+    --plate-w: 17rem;
+    --row-min: 12.5rem;
+  }
+  .ms-story--bossIntro {
+    --row-min: 15rem;
+  }
+  .ms-story-title {
+    font-size: var(--t-2xl);
+  }
+}
+
+/* ---- phone landscape: plate | sheet over one foot row (the width is spent, not the height) ------------------------------- */
+.ms-tier-phone-l .ms-story {
+  --plate-w: 10.5rem;
+  --row-min: 0rem;
+  /* a real margin on every side (the frame never runs to the edge; the device inset comes on top) */
+  padding: calc(0.7rem + var(--safe-t)) calc(1.6rem + var(--safe-r)) calc(0.7rem + var(--safe-b)) calc(1.6rem + var(--safe-l));
+}
+.ms-tier-phone-l .ms-story-board {
+  width: 100%;
+}
+.ms-tier-phone-l .ms-story-inner {
+  /* the plate runs the full height beside the sheet and the foot (no empty charcoal band under it) */
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'plate sheet'
+    'plate foot';
+  gap: 0.5rem 0.65rem;
+  padding: 0.55rem 0.75rem 0.6rem;
+}
+.ms-tier-phone-l .ms-story-art {
+  min-height: 4rem;
+}
+.ms-tier-phone-l .ms-story-nameplate {
+  gap: 0.4rem;
+  padding: 0.2rem 0.45rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.08em;
+}
+.ms-tier-phone-l .ms-story-emblem {
+  --em: 1.55rem;
+}
+.ms-tier-phone-l .ms-story-sheet {
+  padding: 0.6rem 1.1rem 0.7rem 1.2rem;
+}
+.ms-tier-phone-l .ms-story-title {
+  font-size: var(--t-2xl);
+}
+.ms-tier-phone-l .ms-story-sub {
+  font-size: var(--t-md);
+}
+.ms-tier-phone-l .ms-story-rule {
+  height: 0.8rem;
+  margin-top: 0.15rem;
+}
+.ms-tier-phone-l .ms-story-bodywrap {
+  margin-top: 0.1rem;
+}
+.ms-tier-phone-l .ms-story-pages {
+  max-width: 40rem;
+}
+.ms-tier-phone-l .ms-story-p {
+  font-size: var(--t-xl);
+  line-height: 1.4;
+}
+.ms-tier-phone-l .ms-story-swirl {
+  width: 8.4rem;
+}
+/* the foot row is spent on the buttons: they share the width left of the page gems (no empty charcoal column) */
+.ms-tier-phone-l .ms-story-foot {
+  padding-left: 0;
+  gap: 0.7rem;
+}
+.ms-tier-phone-l .ms-story-actions {
+  flex: 1 1 auto;
+  gap: 0.6rem;
+  margin-left: 0;
+}
+/* the buttons share the whole row: the right edge of Next is the right edge of the parchment */
+.ms-tier-phone-l .ms-story-actions .ms-kbtn {
+  flex: 1 1 0;
+}
+
+/* ---- phone portrait: a wide plate band over the sheet, buttons docked at the foot ------------------------------------------ */
+.ms-tier-phone-p .ms-story {
+  --row-min: 0rem;
+  padding: calc(0.6rem + var(--safe-t)) calc(0.6rem + var(--safe-r)) calc(0.6rem + var(--safe-b)) calc(0.6rem + var(--safe-l));
+}
+.ms-tier-phone-p .ms-story-board {
+  width: 100%;
+}
+.ms-tier-phone-p .ms-story-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.6rem 0.6rem 0.7rem;
+}
+.ms-tier-phone-p .ms-story-plate {
+  flex: none;
+  height: 10.5rem;
+}
+.ms-tier-phone-p .ms-story--bossIntro .ms-story-plate {
+  height: 13.5rem;
+}
+.ms-tier-phone-p .ms-story--victory .ms-story-plate,
+.ms-tier-phone-p .ms-story--defeat .ms-story-plate {
+  height: 12rem;
+}
+.ms-tier-phone-p .ms-story-hero {
+  object-position: 50% 12%;
+}
+.ms-tier-phone-p .ms-story-sheet {
+  flex: 1 1 auto;
+  padding: 0.8rem 1rem 1rem 1.1rem;
+}
+.ms-tier-phone-p .ms-story-sigil {
+  width: 64%;
+  bottom: 6%;
+}
+.ms-tier-phone-p .ms-story-stone {
+  height: 100%;
+}
+.ms-tier-phone-p .ms-story-title {
+  font-size: var(--t-2xl);
+}
+.ms-tier-phone-p .ms-story-sub {
+  font-size: var(--t-md);
+}
+.ms-tier-phone-p .ms-story-rule {
+  height: 1rem;
+}
+.ms-tier-phone-p .ms-story-p {
+  font-size: max(1.1rem, 16px);
+  line-height: 1.42;
+}
+.ms-tier-phone-p .ms-story-swirl {
+  width: 9.4rem;
+}
+.ms-tier-phone-p .ms-story-foot {
+  flex: none;
+  padding-left: 0;
+  gap: 0.6rem;
+}
+.ms-tier-phone-p .ms-story-actions {
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+.ms-tier-phone-p .ms-story-actions .ms-kbtn:last-child {
+  flex: 1 1 auto;
+}

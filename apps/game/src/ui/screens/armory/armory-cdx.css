@@ -1,0 +1,1085 @@
+/* =====================================================================================================================
+   Armory · Codex (kit v1): one window with stone-plate sub-tabs (Bestiary / Metin stones / Story); each page is a recessed
+   list beside a recessed detail sheet. Bestiary rows are stone plates with an octagon socket; the story page keeps the
+   parchment (the one place the kit allows it) on a capped reading measure.
+   ===================================================================================================================== */
+
+.ms-cdx {
+  height: 100%;
+  min-height: 0;
+}
+.ms-cdx-win {
+  padding: 0.5rem 0.55rem 0.55rem;
+  gap: 0.5rem;
+}
+.ms-cdx-subtabs {
+  flex: none;
+  display: flex;
+  padding: 0.1rem 0.1rem 0.15rem;
+}
+.ms-cdx-tabrow {
+  flex-wrap: nowrap;
+}
+.ms-cdx-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  animation: ms-fade-in 0.3s ease-out both;
+}
+.ms-cdx-split {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(24rem, 33cqw, 33rem);
+  gap: 0.6rem;
+}
+.ms-cdx-split--story {
+  grid-template-columns: clamp(18rem, 25cqw, 23rem) minmax(0, 1fr);
+}
+.ms-cdx-listpanel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.ms-cdx-listhead {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.8rem;
+  padding: 0.55rem 0.65rem 0.35rem;
+}
+.ms-cdx-listhead .ms-eyebrow {
+  color: var(--k-text-2);
+}
+/* zone filter: grey stone plates, whole words */
+.ms-cdx-filter {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.ms-cdx-filter .ms-chr-tog {
+  flex: 0 0 auto;
+  --kb-pad-x: 0.85rem;
+  --bh: 2rem;
+}
+.ms-cdx-strip {
+  margin-top: 0.45rem;
+}
+.ms-cdx-strip + .ms-cdx-strip {
+  margin-top: 0.35rem;
+}
+.ms-cdx-count {
+  flex: none;
+  min-width: 0;
+}
+.ms-cdx-count.ms-well {
+  min-width: 0;
+  padding-inline: 0.7rem;
+  color: var(--k-text-2);
+}
+.ms-cdx-list-scroll {
+  flex: 1;
+  min-height: 0;
+  padding: 0.25rem 0.65rem 0.8rem;
+}
+.ms-cdx-zone + .ms-cdx-zone {
+  margin-top: 0.9rem;
+}
+.ms-cdx-zone-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.45rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-cdx-zone-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(180deg, #050504 0 1px, rgba(140, 132, 120, 0.4) 1px 2px);
+}
+.ms-cdx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+  gap: 0.4rem;
+}
+.ms-cdx-grid + .ms-cdx-grid {
+  margin-top: 0.4rem;
+}
+.ms-cdx-cell {
+  min-width: 0;
+  animation: ms-fade-in 0.28s ease-out both;
+  animation-delay: calc(var(--i, 0) * 18ms);
+}
+
+/* bestiary tiles: stone plates with an octagon socket */
+.ms-cdx-tile {
+  --pl-c: 0.34rem;
+  --pl-veil: rgba(10, 9, 8, 0.7);
+  --pl-hi: color-mix(in srgb, var(--rc, #6f6a60) 38%, #7a746a);
+  --pl-mid: color-mix(in srgb, var(--rc, #6f6a60) 55%, #1c1a17);
+  --pl-lo: #14120f;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.3rem 0.6rem 0.3rem 0.4rem;
+  text-align: left;
+  color: var(--k-text);
+  cursor: pointer;
+}
+.ms-cdx-tile.is-boss {
+  min-height: 4.5rem;
+  --pl-veil: rgba(34, 20, 8, 0.4);
+}
+.ms-cdx-tile .ms-slot {
+  flex: none;
+}
+.ms-cdx-tile .ms-slot-lock {
+  display: none;
+}
+@media (hover: hover) {
+  .ms-cdx-tile:not(.is-active):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    --pl-hi: var(--k-stone-edge-hi);
+  }
+}
+.ms-cdx-tile.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.28);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+}
+.ms-ui .ms-cdx-tile[data-nav]:focus-visible,
+.ms-ui.ms-kbd .ms-cdx-tile[data-nav]:focus,
+.ms-ui .ms-cdx-metin[data-nav]:focus-visible,
+.ms-ui .ms-cdx-story[data-nav]:focus-visible {
+  filter: var(--focus-glow);
+}
+.ms-cdx-tile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 0;
+  flex: 1;
+}
+.ms-cdx-tile-text b {
+  font-family: var(--f-head);
+  font-size: var(--t-sm);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--rc, var(--k-text));
+}
+.ms-cdx-tile.is-locked .ms-cdx-tile-text b {
+  color: var(--k-text-3);
+}
+.ms-cdx-tile-text small {
+  font-size: var(--t-xs);
+  color: var(--k-text-2);
+}
+/* gate 3 G8 (phones): the locked '???' and the 'Lv 9 · Animals' line read 3.0 / 4.2:1 on the tile */
+.ms-compact .ms-cdx-tile.is-locked .ms-cdx-tile-text b {
+  color: #a69d8e;
+}
+.ms-compact .ms-cdx-tile-text small {
+  color: color-mix(in srgb, var(--k-text-2) 78%, #fff);
+}
+.ms-cdx-tile-text b,
+.ms-cdx-tile-text small {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.ms-cdx-tile-crown {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* detail sheet */
+.ms-cdx-detail {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.ms-cdx-detail-scroll {
+  flex: 1;
+  min-height: 0;
+  padding: 1rem 1.1rem 1.2rem;
+}
+/* the keyed content of the sheet (Codex.tsx useDetailScroll): it replays the fade-in on every pick while the scroller keeps its edge fade */
+.ms-cdx-detail-in {
+  animation: ms-fade-in 0.3s ease-out both;
+}
+.ms-cdx-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+.ms-cdx-detail-head .ms-slot {
+  flex: none;
+}
+.ms-cdx-detail-id {
+  min-width: 0;
+}
+.ms-cdx-detail-id h3.ms-title {
+  margin: 0;
+  font-size: var(--t-2xl);
+  line-height: 1.1;
+}
+.ms-cdx-boss-title {
+  margin: 0.15rem 0 0;
+  font-size: var(--t-md);
+  font-style: italic;
+  color: var(--k-text-2);
+}
+.ms-cdx-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+.ms-cdx-chips .ms-kicon,
+.ms-cdx-chips .ms-icon-inline {
+  width: 1rem;
+  height: 1rem;
+}
+/* the boss's spoken line: an engraved caption between two carved rules, no side bar */
+.ms-cdx-intro {
+  position: relative;
+  margin: 0.5rem 0 0.9rem;
+  padding: 0.7rem 1.4rem 0.75rem;
+  text-align: center;
+  font-size: var(--t-md);
+  line-height: 1.42;
+  color: var(--k-text);
+  background: radial-gradient(90% 120% at 50% 50%, rgba(255, 224, 150, 0.07), transparent 70%);
+}
+.ms-cdx-intro::before,
+.ms-cdx-intro::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 0.6rem;
+  background: var(--tex-rule, none) 50% 50% / contain no-repeat;
+  opacity: 0.85;
+}
+.ms-cdx-intro::before {
+  top: -0.2rem;
+}
+.ms-cdx-intro::after {
+  bottom: -0.2rem;
+  transform: scaleY(-1);
+}
+.ms-arm:not(.has-art) .ms-cdx-intro::before,
+.ms-arm:not(.has-art) .ms-cdx-intro::after {
+  background: linear-gradient(90deg, transparent, rgba(220, 186, 118, 0.5), transparent) 50% 50% / 100% 1px no-repeat;
+}
+.ms-cdx-statgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 0.4rem 0 0.7rem;
+}
+.ms-cdx-kv .ms-statwell-label::first-letter {
+  text-transform: uppercase;
+}
+.ms-cdx-kv .ms-well {
+  min-width: 5rem;
+}
+.ms-cdx-sec {
+  margin-top: 0.8rem;
+}
+.ms-cdx-sec .ms-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--k-text-2);
+  letter-spacing: 0.2em;
+}
+.ms-cdx-sec .ms-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(180deg, #050504 0 1px, rgba(140, 132, 120, 0.4) 1px 2px);
+}
+.ms-cdx-mod {
+  margin: 0;
+  font-size: var(--t-md);
+  line-height: 1.4;
+  color: var(--k-text-2);
+}
+.ms-cdx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ms-cdx-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.15rem 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  background: var(--k-well);
+  box-shadow: inset 1px 1px 0 #000, inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5), 0 0 0 1px var(--k-well-rim);
+  font-size: var(--t-sm);
+}
+.ms-cdx-list li b {
+  font-family: var(--f-head);
+  letter-spacing: 0.04em;
+  color: var(--k-text);
+}
+.ms-cdx-list li span {
+  color: var(--k-text-2);
+}
+.ms-cdx-escorts {
+  margin: 0.4rem 0 0;
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+}
+.ms-cdx-drops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.ms-cdx-drops .ms-slot-lock {
+  display: none;
+}
+/* the lore plate: the steel tray frame around a granite board, bronze swirls in two corners, a carved rule under the title */
+.ms-cdx-lore {
+  margin: 1.2rem 0.3rem 0.3rem;
+  padding: 0.55rem 1rem 0.7rem;
+  text-align: center;
+}
+.ms-cdx-lore-sw {
+  position: absolute;
+  width: 5.4rem;
+  height: 3.6rem;
+  background: var(--tex-swirl, none) 0 0 / contain no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.ms-cdx-lore-sw.is-tl {
+  top: 0;
+  left: 0;
+}
+.ms-cdx-lore-sw.is-br {
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.ms-cdx-lore-title {
+  position: relative;
+  margin: 0;
+  font-family: var(--f-head);
+  font-size: var(--t-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-gold);
+}
+.ms-cdx-lore-rule {
+  display: block;
+  height: 0.6rem;
+  margin: 0.3rem 15% 0.35rem;
+  background: var(--tex-rule, none) 50% 50% / contain no-repeat;
+}
+.ms-arm:not(.has-art) .ms-cdx-lore-rule {
+  background: linear-gradient(90deg, transparent, rgba(220, 186, 118, 0.5), transparent) 50% 50% / 100% 1px no-repeat;
+}
+.ms-cdx-lore p {
+  position: relative;
+  margin: 0;
+  font-size: var(--t-md);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--k-text);
+}
+.ms-cdx-detail-locked {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.7rem;
+  min-height: 100%;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--k-text-2);
+}
+.ms-cdx-detail-locked h3 {
+  margin: 0;
+  font-size: var(--t-xl);
+  color: var(--k-text);
+}
+.ms-cdx-detail-locked p {
+  margin: 0;
+}
+.ms-cdx-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--t-md);
+  color: var(--k-gold);
+}
+.ms-cdx-hint .ms-kicon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.ms-cdx-pickme {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* metin stones */
+.ms-cdx-metins {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.2rem, 1fr));
+  gap: 0.5rem;
+}
+.ms-cdx-metin {
+  --pl-c: 0.4rem;
+  --pl-veil: rgba(10, 9, 8, 0.7);
+  --pl-hi: color-mix(in srgb, var(--rune, #6f6a60) 28%, #7a746a);
+  --pl-mid: color-mix(in srgb, var(--rune, #6f6a60) 40%, #1c1a17);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0.4rem 0.55rem;
+  text-align: center;
+  color: var(--k-text);
+  cursor: pointer;
+  animation: ms-fade-in 0.28s ease-out both;
+  animation-delay: calc(var(--i, 0) * 25ms);
+}
+.ms-cdx-metin.is-great {
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+}
+@media (hover: hover) {
+  .ms-cdx-metin:not(.is-active):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+  }
+}
+.ms-cdx-metin.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.28);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+}
+.ms-cdx-metin-name {
+  font-family: var(--f-head);
+  font-size: var(--t-sm);
+  line-height: 1.15;
+  /* the rune colour lifted about half way toward white: the raw rune blue / red read 3.2:1 on the brown stone tile */
+  color: color-mix(in srgb, var(--rune, var(--k-text)) 48%, #fff);
+}
+.ms-cdx-metin.is-locked .ms-cdx-metin-name {
+  color: #a69d8e;
+}
+.ms-cdx-metin small {
+  font-size: var(--t-xs);
+  color: var(--k-text-2);
+}
+.ms-cdx-stone {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 4.2rem;
+  height: 5.8rem;
+}
+.ms-cdx-stone.is-xl {
+  width: 8rem;
+  height: 12rem;
+}
+.ms-cdx-stone img,
+.ms-cdx-stone > .ms-icon-inline {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ms-cdx-stone-glow {
+  position: absolute;
+  inset: -12% -28%;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--rune) 50%, transparent), transparent 62%);
+  filter: blur(0.3rem);
+  opacity: 0.8;
+  animation: ms-glow-pulse 3.6s ease-in-out infinite;
+}
+.ms-cdx-stone.is-locked img {
+  filter: grayscale(1) brightness(0.32) !important;
+  opacity: 0.85;
+}
+.ms-cdx-stone.is-locked .ms-cdx-stone-glow {
+  display: none;
+}
+.ms-cdx-detail-head--metin {
+  align-items: center;
+}
+.ms-cdx-rune-dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5rem currentColor;
+}
+
+/* story */
+.ms-cdx-story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ms-cdx-story {
+  --pl-c: 0.3rem;
+  --pl-veil: rgba(10, 9, 8, 0.66);
+  --pl-hi: var(--k-pewter);
+  --pl-mid: var(--k-pewter-lo);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 2.7rem;
+  padding: 0.35rem 0.7rem;
+  text-align: left;
+  font-size: var(--t-md);
+  line-height: 1.2;
+  color: var(--k-text-2);
+  cursor: pointer;
+  animation: ms-fade-in 0.3s ease-out both;
+  animation-delay: calc(var(--i, 0) * 25ms);
+}
+.ms-cdx-story .ms-kicon {
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+@media (hover: hover) {
+  .ms-cdx-story:not(.is-active):hover {
+    --pl-veil: var(--k-stone-veil-hover);
+    --pl-hi: var(--k-stone-edge-hi);
+    color: var(--k-text);
+  }
+}
+.ms-cdx-story.is-active {
+  --pl-veil: rgba(70, 30, 12, 0.28);
+  --pl-hi: #dcba76;
+  --pl-mid: #93703a;
+  --pl-lo: #3a2812;
+  color: var(--k-gold);
+}
+.ms-cdx-story.is-locked {
+  color: var(--k-text-3);
+}
+.ms-cdx-listfoot {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.55rem 0.7rem 0.7rem;
+  border-top: 1px solid rgba(140, 132, 120, 0.2);
+}
+.ms-cdx-listfoot small {
+  font-size: var(--t-sm);
+  color: var(--k-text-2);
+  text-shadow: 0 1px 0 #000;
+}
+.ms-cdx-reading {
+  border-radius: 3px;
+  background:
+    radial-gradient(120% 100% at 50% 40%, rgba(255, 244, 214, 0.1), rgba(60, 36, 12, 0.34)),
+    var(--tex-parchment, linear-gradient(180deg, #d8c79c, #bfa876)) center / cover;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.9), inset -1px -1px 0 rgba(255, 240, 200, 0.2), inset 0 0 1.6rem rgba(60, 30, 8, 0.55), 0 0 0 1px #050404;
+}
+.ms-cdx-reading .ms-cdx-detail-scroll {
+  padding: 1.5rem 2.2rem 2rem;
+}
+.ms-cdx-article {
+  max-width: 41rem;
+  margin: 0 auto;
+}
+.ms-cdx-article-title {
+  margin: 0;
+  font-family: var(--f-title);
+  font-weight: 900;
+  font-size: var(--t-2xl);
+  line-height: 1.15;
+  text-align: center;
+  color: #3a1a0a;
+  text-shadow: 0 0.06rem 0 rgba(255, 244, 214, 0.5);
+}
+.ms-cdx-rule {
+  height: 0.5rem;
+  margin: 0.7rem auto 0.9rem;
+  width: 60%;
+  background:
+    radial-gradient(circle at 50% 50%, #7a4a16 0 0.18rem, transparent 0.2rem),
+    linear-gradient(90deg, transparent, rgba(122, 74, 22, 0.6) 40%, rgba(122, 74, 22, 0.6) 60%, transparent) center / 100% 1px no-repeat;
+}
+.ms-cdx-article p {
+  margin: 0.9rem 0;
+  font-size: var(--t-lg);
+  line-height: 1.6;
+  color: #2b1a0c;
+  animation: ms-fade-in 0.5s ease-out both;
+  animation-delay: calc(var(--i, 0) * 90ms + 150ms);
+}
+.ms-cdx-article p:first-of-type::first-letter {
+  padding-right: 0.08rem;
+  font-family: var(--f-title);
+  font-weight: 900;
+  font-size: 1.9em;
+  line-height: 1;
+  color: #8a1c10;
+}
+.ms-cdx-reading .ms-cdx-detail-locked {
+  color: #3a2410;
+}
+.ms-cdx-reading .ms-cdx-detail-locked h3 {
+  color: #2b1a0c;
+}
+.ms-cdx-reading .ms-cdx-hint {
+  color: #6a2410;
+}
+
+/* narrow desktops */
+/* laptop: tighter zone-filter plates so the five of them share one row with the count */
+@container arm (max-width: 96rem) {
+  .ms-ui:not(.ms-compact) .ms-cdx-filter {
+    display: contents;
+  }
+  .ms-ui:not(.ms-compact) .ms-cdx-listhead {
+    justify-content: flex-start;
+    gap: 0.3rem;
+  }
+  .ms-ui:not(.ms-compact) .ms-cdx-filter .ms-chr-tog {
+    flex: 0 0 auto;
+    --kb-pad-x: 0.55rem;
+    font-size: var(--t-xs);
+    letter-spacing: 0.02em;
+  }
+  .ms-ui:not(.ms-compact) .ms-cdx-count {
+    margin-left: auto;
+  }
+}
+@container arm (max-width: 84rem) {
+  .ms-cdx-split {
+    grid-template-columns: minmax(0, 1fr) 22rem;
+  }
+  .ms-cdx-split--story {
+    grid-template-columns: 17rem minmax(0, 1fr);
+  }
+  .ms-cdx-grid {
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  }
+  .ms-cdx-statgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* phone landscape: the window bar goes (the tab above says Codex) and the three sub tabs stand in a slim column, so the list gets the height */
+.ms-compact.ms-landscape .ms-cdx > .ms-titlebar {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-cdx-win {
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0.35rem 0.4rem 0.4rem;
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-cdx-subtabs {
+  flex: none;
+  width: 6.4rem;
+  padding: 0;
+}
+.ms-compact.ms-landscape .ms-cdx-tabrow {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 0.3rem;
+}
+.ms-compact.ms-landscape .ms-cdx-tabrow .ms-ktab {
+  flex: none;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.15;
+  padding: 0.25rem 0.3rem;
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+}
+.ms-compact.ms-landscape .ms-cdx-split {
+  grid-template-columns: minmax(0, 1fr) 17rem;
+  gap: 0.4rem;
+}
+.ms-compact.ms-landscape .ms-cdx-split--story {
+  grid-template-columns: 14rem minmax(0, 1fr);
+}
+.ms-compact.ms-landscape .ms-cdx-listhead {
+  padding: 0.35rem 0.45rem 0.2rem;
+  gap: 0.3rem 0.6rem;
+}
+.ms-compact.ms-landscape .ms-cdx-listhead .ms-eyebrow {
+  letter-spacing: 0.1em;
+}
+.ms-compact.ms-landscape .ms-cdx-list-scroll {
+  padding: 0.2rem 0.45rem 0.5rem;
+}
+.ms-compact.ms-landscape .ms-cdx-grid {
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+.ms-compact.ms-landscape .ms-cdx-tile {
+  min-height: 2.9rem;
+}
+/* the narrow phone-landscape tiles let a long creature name take three lines instead of cutting it */
+.ms-compact.ms-landscape .ms-cdx-tile-text b {
+  -webkit-line-clamp: 3;
+}
+.ms-compact.ms-landscape .ms-cdx-detail-scroll {
+  padding: 0.6rem 0.7rem 0.8rem;
+}
+.ms-compact.ms-landscape .ms-cdx-detail-id h3.ms-title {
+  font-size: var(--t-xl);
+}
+.ms-compact.ms-landscape .ms-cdx-detail-head {
+  gap: 0.6rem;
+}
+.ms-compact.ms-landscape .ms-cdx-detail-head .ms-slot--xl {
+  --s: 4.6rem;
+}
+.ms-compact.ms-landscape .ms-cdx-detail-head .ms-bf--xl {
+  --bf: 5.4rem;
+}
+.ms-compact.ms-landscape .ms-cdx-lore {
+  margin-inline: 0;
+}
+.ms-compact.ms-landscape .ms-cdx-reading .ms-cdx-detail-scroll {
+  padding: 0.8rem 1.1rem 1.2rem;
+}
+.ms-compact.ms-landscape .ms-cdx-stone.is-xl {
+  width: 5rem;
+  height: 7.5rem;
+}
+.ms-compact.ms-landscape .ms-cdx-metins {
+  grid-template-columns: repeat(auto-fill, minmax(7.6rem, 1fr));
+}
+
+/* phone portrait */
+.ms-portrait .ms-cdx-body {
+  flex-direction: column;
+}
+.ms-portrait .ms-cdx-win {
+  padding: 0.4rem;
+}
+.ms-portrait .ms-cdx-split,
+.ms-portrait .ms-cdx-split--story {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ms-portrait .ms-cdx-listpanel {
+  flex: none;
+  height: 27rem;
+}
+.ms-portrait .ms-cdx-split--story .ms-cdx-listpanel {
+  height: 21rem;
+}
+.ms-portrait .ms-cdx-detail {
+  flex: none;
+  min-height: 18rem;
+}
+.ms-portrait .ms-cdx-detail-scroll {
+  overflow: visible;
+  padding: 0.8rem 0.8rem 1rem;
+}
+.ms-portrait .ms-cdx-reading .ms-cdx-detail-scroll {
+  padding: 1rem 1.1rem 1.4rem;
+}
+.ms-portrait .ms-cdx-listhead {
+  flex-wrap: wrap;
+  padding: 0.45rem 0.5rem 0.25rem;
+}
+.ms-portrait .ms-cdx-listhead .ms-kseg {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  scrollbar-width: none;
+}
+.ms-portrait .ms-cdx-listhead .ms-kseg-btn {
+  flex: none;
+  padding-inline: 0.55rem;
+}
+.ms-portrait .ms-cdx-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ms-portrait .ms-cdx-statgrid {
+  grid-template-columns: 1fr;
+}
+.ms-portrait .ms-cdx-tabrow {
+  width: 100%;
+}
+.ms-portrait .ms-cdx-tabrow .ms-ktab {
+  flex: 1;
+  padding-inline: 0.5rem;
+}
+/* three plates share ~340 px: a long label (TR 'Yaratık rehberi' / 'Hikâye') wraps inside its plate instead of pushing the third plate out of the
+   frame; labels that fit keep their single line (flex-basis stays the text width, only the overflow is shared) */
+.ms-tier-phone-p .ms-cdx-tabrow .ms-ktab {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-inline: 0.3rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.12;
+  letter-spacing: 0.05em;
+}
+.ms-portrait .ms-cdx-detail-head .ms-slot--xl {
+  --s: 5rem;
+}
+.ms-portrait .ms-cdx-detail-head .ms-bf--xl {
+  --bf: 6rem;
+}
+.ms-portrait .ms-cdx-stone.is-xl {
+  width: 6rem;
+  height: 9rem;
+}
+
+.ms-touch .ms-cdx-tile,
+.ms-touch .ms-cdx-story,
+.ms-touch.ms-compact.ms-landscape .ms-cdx-tile {
+  min-height: var(--k-tap);
+}
+
+.ms-touch .ms-cdx-listhead .ms-kseg-btn {
+  min-width: var(--k-tap);
+}
+
+/* wide desktops: taller stone tiles (same six columns) so three rows do not leave half the page empty */
+@container arm (min-width: 100rem) {
+  .ms-cdx-metins {
+    gap: 0.6rem;
+  }
+  .ms-cdx-metin {
+    padding: 1.35rem 0.5rem 1.1rem;
+    gap: 0.4rem;
+  }
+  .ms-cdx-metin .ms-cdx-stone:not(.is-xl) {
+    width: 6.2rem;
+    height: 8.7rem;
+  }
+}
+
+/* touch: the bestiary / metin stones / story tabs keep the full tap height */
+.ms-touch .ms-cdx-tabrow .ms-ktab {
+  min-height: var(--k-tap);
+}
+
+/* phone: the zone filter is one swipeable row (it used to wrap into two tall rows and push the creatures off screen) */
+.ms-compact .ms-cdx-filter {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.ms-compact .ms-cdx-filter::-webkit-scrollbar {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-cdx-count {
+  display: none;
+}
+
+/* =====================================================================================================================
+   Pacts page (CX-01): the awakening pact table of the viewed class. The list is the bestiary's stone tiles with a gold pact line under
+   the name (skills: "Awakens with <Passive> (rank N)" and the partner icon at the end; passives: "Pact: awakens <skills>"); the detail
+   sheet draws the pact as a chain between the two icons.
+   ===================================================================================================================== */
+.ms-cdx-pgrid {
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+}
+.ms-cdx-pactnote {
+  margin: 0 0 0.8rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  background: var(--k-well);
+  box-shadow: inset 1px 1px 0 #000, inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5), 0 0 0 1px var(--k-well-rim);
+  font-size: var(--t-sm);
+  line-height: 1.42;
+  color: var(--k-text-2);
+}
+.ms-cdx-ptile .ms-cdx-tile-text b {
+  color: var(--k-text);
+}
+.ms-cdx-ptile .ms-cdx-tile-text small {
+  line-height: 1.25;
+  /* the grey "No pact" line read 4.2:1 on the stone tile (probe contrast, AA = 4.5) */
+  color: color-mix(in srgb, var(--k-text-2) 78%, #fff);
+}
+/* the pact line is the point of the page: gold against the stone (a free passive's "No pact" line stays grey) */
+.ms-cdx-tile-text small.ms-cdx-pactline {
+  color: color-mix(in srgb, var(--k-gold) 80%, #fff);
+}
+.ms-cdx-ptile.is-active .ms-cdx-tile-text small.ms-cdx-pactline {
+  color: #f0d79a;
+}
+.ms-cdx-ptile-end {
+  flex: none;
+  margin-left: auto;
+}
+.ms-cdx-ptile-end .ms-slot-lock {
+  display: none;
+}
+/* detail: [skill] ==chain== [passive] and the sentence beside it */
+.ms-cdx-plink {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+.ms-cdx-plink-icons {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+.ms-cdx-plink-icons .ms-slot {
+  flex: none;
+}
+.ms-cdx-chain {
+  display: flex;
+  align-items: center;
+  flex: 0 0 3.6rem;
+  padding-inline: 0.25rem;
+}
+.ms-cdx-chain i {
+  flex: 1 1 0;
+  height: 0.62rem;
+  margin-inline: -0.14rem;
+  border: 2px solid #c9a24f;
+  border-radius: 0.32rem;
+  box-shadow: 0 0 0.35rem rgba(220, 186, 118, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.ms-cdx-chain i:nth-child(even) {
+  height: 0.46rem;
+  border-color: #9c7a38;
+}
+.ms-cdx-plink-text {
+  flex: 1 1 11rem;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: var(--t-sm);
+  line-height: 1.35;
+  color: var(--k-text-2);
+}
+.ms-cdx-plink-text b {
+  font-family: var(--f-head);
+  font-size: var(--t-md);
+  letter-spacing: 0.02em;
+  color: var(--k-gold);
+}
+.ms-cdx-pactfull {
+  color: var(--k-gold);
+}
+.ms-cdx-pchips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ms-cdx-pchips .ms-cdx-tile {
+  min-height: 3.2rem;
+}
+/* the skills list: the basic attack, the skills and the milestone skills of a doctrine stand in runs of their own, each under a small heading
+   (a milestone skill is always there once its talent points are spent and has a slot of its own: it is not a level-up pick) */
+.ms-cdx-kindrun + .ms-cdx-kindrun {
+  margin-top: 0.65rem;
+}
+.ms-cdx-kindtitle,
+.ms-cdx-pgroup-name {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.35rem;
+  font-family: var(--f-head);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--k-gold) 72%, var(--k-text-2));
+}
+.ms-cdx-kindtitle::before,
+.ms-cdx-pgroup-name::before {
+  content: '';
+  flex: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  transform: rotate(45deg);
+  background: currentColor;
+  opacity: 0.75;
+}
+/* the passive sheet: the skills it awakens stand under the doctrine they belong to (a run holds one doctrine) */
+.ms-cdx-pgroup + .ms-cdx-pgroup {
+  margin-top: 0.8rem;
+}
+.ms-cdx-detail-body > .ms-cdx-mod {
+  margin-top: 0.1rem;
+}
+
+@container arm (max-width: 84rem) {
+  .ms-cdx-pgrid {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+}
+/* phone landscape: two narrow columns, the partner icon goes (the pact line gets its width) and may take three lines */
+.ms-compact.ms-landscape .ms-cdx-pgrid {
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+}
+.ms-compact.ms-landscape .ms-cdx-ptile-end {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-cdx-ptile .ms-cdx-tile-text small {
+  -webkit-line-clamp: 3;
+}
+.ms-compact.ms-landscape .ms-cdx-pactnote {
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.55rem;
+}
+.ms-compact.ms-landscape .ms-cdx-chain {
+  flex-basis: 2.6rem;
+}
+/* phone portrait: one column */
+.ms-portrait .ms-cdx-pgrid {
+  grid-template-columns: minmax(0, 1fr);
+}
+/* phone portrait: four sub tabs do not fit one row of ~340 px (TR "Yaratık rehberi" / "Ahitler"): they stand two by two */
+.ms-portrait .ms-cdx-tabrow--4 {
+  flex-wrap: wrap;
+}
+.ms-portrait .ms-cdx-tabrow--4 .ms-ktab {
+  flex: 1 1 40%;
+}

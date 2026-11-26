@@ -1,0 +1,41 @@
+{
+  "credits.title": "Credits",
+  "credits.disclaimer.title": "Original content notice",
+  "credits.disclaimer.more": "Metin Survivors is an independent, original roguelite game. Every piece of art, 3D model, icon, typeface, sound effect, music track, and line of code shipped here is original or properly licensed under open-source terms.",
+
+  "credits.section.make": "The making of",
+  "credits.section.fonts": "Typefaces",
+  "credits.section.tech": "Built with",
+  "credits.section.thanks": "Thanks",
+
+  "credits.role.design": "Game design & direction",
+  "credits.role.code": "Programming & systems",
+  "credits.role.art": "Painted art",
+  "credits.role.models": "Heroes, creatures & landscapes",
+  "credits.role.audio": "Music & sound",
+  "credits.role.writing": "Story & localisation",
+  "credits.who.team": "The Metin Survivors team",
+  "credits.who.art": "Original paintings made with an image model, art-directed by the team",
+  "credits.who.models": "Original models from our procedural and image-to-3D pipelines",
+  "credits.who.audio": "Original music and sound effects, synthesized with our own audio tools",
+  "credits.who.writing": "Original lore, codex and Turkish / English text",
+
+  "credits.fonts.license": "Licensed under the SIL Open Font License 1.1.",
+  "credits.font.cinzel": "Natanael Gama",
+  "credits.font.alegreya": "Juan Pablo del Peral",
+  "credits.font.barlow": "Jeremy Tribby",
+
+  "credits.tech.three": "3D rendering",
+  "credits.tech.preact": "Interface",
+  "credits.tech.vite": "Tooling",
+  "credits.tech.cloudflare": "Hosting & online services",
+  "credits.tech.hono": "API router",
+  "credits.tech.elemental": "Procedural VFX primitives (MIT)",
+
+  "credits.thanks.players": "Everyone who plays and tests",
+  "credits.thanks.playersText": "Every bug report and every high score made this game better.",
+  "credits.thanks.community": "The Metin hunters of old",
+  "credits.thanks.communityText": "For the memories that inspired this homage — a reference only.",
+
+  "credits.outro": "Thank you for playing. May your stones always fall in your favour."
+}

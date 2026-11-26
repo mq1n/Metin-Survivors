@@ -1,0 +1,966 @@
+{
+  "icon_gear_warrior_weapon_sword_t1": {
+    "subject": "Bronze Jian, a plain tier-1 warrior one-handed sword: a broad straight double-edged blade of bright steel with a bold centre groove, a heavy bronze cross-guard, a leather-wrapped grip and a round brass pommel",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a broad thick blade as wide as one fifth of the cell that stays wide at 32 px with one bold centre groove, a heavy straight bronze cross-guard, a leather grip, a round brass pommel, a short crimson cloth wrap. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright steel blade",
+      "worn bronze guard and pommel",
+      "warm brown leather grip",
+      "short crimson cloth wrap"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_armor_t1": {
+    "subject": "Bronze Lamellar, a plain tier-1 warrior iron and leather cuirass: a riveted iron breastplate crossed by two bold orange-and-charcoal tiger-stripe bands, big round iron shoulder guards, a wide leather belt with a crimson sash and short leather tassets",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a riveted iron breastplate with two horizontal orange-and-charcoal tiger-stripe bands, two big round iron shoulder guards with rows of rivets, a wide brown leather belt with a crimson sash knot, four short hanging tassets of brown leather straps with iron studs. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn riveted steel plates",
+      "warm tan-brown leather",
+      "orange-and-charcoal tiger stripe bands",
+      "crimson sash"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_helmet_t1": {
+    "subject": "Bronze Warhelm, a plain tier-1 warrior iron cap helm with a short nose guard, a riveted brow band and a small crimson tuft",
+    "silhouette": "a helmet in 3/4 view facing left: a bright steel rounded dome with one bold centre ridge, a short nose guard, a wide riveted brass brow band, cheek plates with a leather chin strap, a small crimson cloth tuft on top; a plain heavy helm. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright worn riveted steel",
+      "warm brown leather strap",
+      "small crimson cloth tuft",
+      "worn brass rivets and brow band"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_warrior_weapon_twohand_t1": {
+    "subject": "Iron Glaive, a tier-1 stubby war glaive: a huge broad curved single-edged blade with a hook spike on its back on a short very thick iron-banded wooden pole, an iron ring collar and a red cord",
+    "silhouette": "a single heavy two-handed polearm on the diagonal, head at the upper right, long thick haft down to the lower left: a SHORT stout glaive: the wooden pole is only about as long as the blade and as thick as one fifth of the cell (a heavy club-like pole with two iron bands), at the upper right a HUGE broad curved single-edged guandao-style blade as long as the pole and as wide as a third of the cell with a big hook spike on its back, a thick iron ring collar, an iron butt cap at the lower left, a short red cord; the whole weapon is a wide stout shape, NOT a long thin pole, NOT a scythe, NOT a spear; big solid masses that fill the cell; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "plain iron blade",
+      "brown wooden pole with iron bands",
+      "dull red cord wrap",
+      "tarnished brass collar"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_ninja_armor_t1": {
+    "subject": "Hide Garb, a tier-1 ninja crimson cloth jacket with two crossed dark leather chest straps, padded round leather shoulder guards with brass studs and a short skirt of cloth flaps",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a crimson cloth jacket with two crossed dark brown leather straps over the chest, padded round leather shoulder guards with brass studs (the widest part), a wide dark leather belt with a brass buckle, four short hanging crimson cloth flaps. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "crimson cloth",
+      "dark brown leather straps and pads",
+      "brass studs"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_ninja_helmet_t1": {
+    "subject": "Hempen Cowl, a tier-1 pointed hood of bright silvery chain mail that drapes onto the shoulders, with a bold crimson cloth brow band and an open face",
+    "silhouette": "a helmet in 3/4 view facing left: a big pointed chain-mail hood (a clear tall tip leaning back) draping down onto the shoulders, an open dark face opening, a wide crimson cloth brow band across the front, a few brass rivets; the mail is LIGHT silvery value so it stands out from a dark brown background. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright light silvery chain mail",
+      "crimson cloth brow band",
+      "worn brass rivets"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_weapon_dagger_t1": {
+    "subject": "Kunai, a tier-1 ninja throwing knife: a broad flat leaf-shaped iron blade, a thick cord-wrapped grip and a big round ring at the pommel",
+    "silhouette": "a single dagger on the diagonal, tip at the upper right, hilt at the lower left: a broad flat leaf-shaped blade a fifth of the cell wide with a sharp point, a short thick grip wrapped in cord, a big round ring pommel at the lower left; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull iron blade",
+      "dark brown cord wrap",
+      "tarnished brass ring"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_ninja_weapon_bow_t1": {
+    "subject": "Bamboo Bow, a tier-1 short very thick recurve composite bow with big curling horn tips, a leather-wrapped grip and a pale string",
+    "silhouette": "a single very thick recurve bow set on the diagonal from the lower left to the upper right, limbs as thick as one sixth of the cell, the string a plain pale cord: a short deeply double-curved bow with big outward-curling pale horn tips, a thick leather-wrapped grip as wide as one fifth of the cell, a short red cord at the grip. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "warm mid-brown wood",
+      "pale bone-horn tips",
+      "brown leather grip",
+      "dull red cord"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_yacha_armor_t1": {
+    "subject": "Grim Plate, a tier-1 slate-grey iron lamellar cuirass with big round shoulder guards of stacked lamellar strips, ember-orange rivets and a dull violet cloth belt",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a slate-grey iron lamellar cuirass of horizontal laced plate rows, two big round shoulder guards made of three stacked curved lamellar strips with ember-orange rivets, a wide dull violet cloth belt, short hanging iron lamellar tassets. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron lamellar plates",
+      "dull violet cloth belt",
+      "ember-orange rivets"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_yacha_helmet_t1": {
+    "subject": "Grim Visage, a tier-1 slate-grey iron helm with a mask visor carved into a wide curved mocking grin and a short violet plume",
+    "silhouette": "a helmet in 3/4 view facing left: a round slate-grey iron helm with a bold pale-cream mask visor carved into a wide curved mocking grin with narrow slanted eye slits, a short violet plume, a worn brass rim. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron (mid value)",
+      "pale cream mask visor",
+      "violet plume",
+      "worn brass rim"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_yacha_weapon_sword_t1": {
+    "subject": "Gloaming Blade, a tier-1 broad curved slate-grey iron sabre shaped like a crescent moon with a large round pale-silver disc guard like a full moon",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a broad crescent-curved single-edged sabre, the blade as wide as a quarter of the cell with a rounded belly, a large round disc guard, a short thick grip with a violet cord; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron blade",
+      "pale silver disc guard",
+      "dull violet cord grip"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_armor_t1": {
+    "subject": "Hempen Vestments, a tier-1 shaman robe: a dusty rose cross-collar robe with a rose shoulder mantle, long wide sleeves, an ivory sash with blue ties and a skirt",
+    "silhouette": "a ceremonial shaman robe, an empty garment with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: a crossover collar, a wide stiff shoulder mantle of layered silk, the near wide bell sleeve swung forward across the front and the far sleeve partly behind it, big cuffs, a knee-length skirt whose hem swings out to one side; thick layered folds, a bulky compact shape about as wide as it is tall (NOT a long slim front-facing gown, NOT ankle-length): a dusty rose cross-collar robe with a plain rose shoulder mantle, wide sleeves with ivory cuffs, a broad ivory sash tied with two faded blue ties, a rose skirt with a swinging hem. Heavy chunky forms, thick layered silk folds, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every fold edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dusty rose cloth",
+      "ivory sash and collar",
+      "faded storm-blue ties"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_shaman_helmet_t1": {
+    "subject": "Crane Hat, a tier-1 shaman court hat of pale ivory silk with a wide bright gold rim band, two long flat gold wing plates sticking out to the sides and a small red phoenix emblem on the front",
+    "silhouette": "a helmet in 3/4 view facing left: a tall rounded court hat with a pale ivory silk crown, a wide raised bright gold rim band around the base, two long flat wing plates with gold edging sticking out horizontally on both sides, a small red phoenix emblem on the front band; NOT a chef hat, NOT a party hat. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "pale ivory silk crown",
+      "bright gold rim band and wing plates",
+      "dusty red phoenix emblem",
+      "teal ribbon ties"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_weapon_fan_t1": {
+    "subject": "Plain Silk Fan, a tier-1 simple folding fan: a half circle of separate bamboo ribs with teal silk panels and a plain wooden handle",
+    "silhouette": "a single folding war-fan, opened like a half circle of separate ribs, upright in 3/4 view: a half circle of seven or eight clearly separate ribs with silk between them, the straight rib edges meeting at the handle at the bottom, bamboo handle; NOT a round disc and NOT a hand mirror. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "muted teal silk panels",
+      "tan bamboo ribs and handle",
+      "faded red cord"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_bell_t1": {
+    "subject": "Bronze Handbell, a tier-1 aged green-bronze hand bell: a small flared cup bell on a thick wooden handle wrapped in brown leather, no tassel",
+    "silhouette": "a single handled ritual bell weapon lying on the diagonal, the bell head at the upper right, the handle running down to the lower left (like every weapon icon): a plain flared cup-shaped bell with two engraved rings as the head (the head is half of the weapon's length), the open mouth facing down-right, a thick straight wooden handle as wide as one seventh of the cell with two leather wraps, a bronze pommel cap at the lower left; NO tassel, NO ribbon. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "aged green-bronze bell",
+      "warm mid-brown wood handle",
+      "dark leather wraps",
+      "brass pommel"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_armor_t1": {
+    "subject": "Wolfhide Cuirass, a tier-1 crimson-brown hide vest with a huge round shaggy grey fur collar around the neck and shoulders, curved bone plates on the chest and a ragged hide kilt",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a crimson-brown hide vest closed with bone toggles, a huge round shaggy grey fur collar-mantle around the neck and shoulders (the widest part, a round soft silhouette), two curved bone plates on the chest, a studded belt, a ragged kilt of hanging hide strips with indigo cloth trim. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "crimson-brown hide",
+      "bone-white plates",
+      "grey fur mantle",
+      "indigo cloth trim"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_wolfman_helmet_t1": {
+    "subject": "Fanged Helm, a tier-1 wolf-pelt hood: a grey wolf-fur cowl with two pointed fur ears on top, a crimson-brown hide brow band with bone studs and two small bone fangs, a shaggy fur fringe at the neck",
+    "silhouette": "a helmet in 3/4 view facing left: a hood made from a grey wolf's pelt pulled over the head with two upright pointed fur ears on top, a broad crimson-brown hide brow band with bone studs across the front with two curved bone fangs hanging from it, a shaggy fur fringe around the neck; a hood OBJECT: NO face, NO eyes, NO muzzle, NO tusks, NO horns. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "grey wolf fur (mid value)",
+      "crimson-brown hide band",
+      "bone-white fangs and studs"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_weapon_claw_t1": {
+    "subject": "Bronze Rake, a tier-1 claw gauntlet: a brown hide glove whose central talon is one long thick lance spike with a small red feather fin, flanked by two short talons",
+    "silhouette": "a single claw gauntlet in 3/4 view with long curved talons pointing to the upper right: a hide gauntlet at the lower left, one long thick central lance spike and two short side talons pointing to the upper right. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "crimson-brown hide",
+      "dull iron spikes",
+      "dusty red feather fin",
+      "bone studs"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shield_t1": {
+    "subject": "Bronze Roundshield, a tier-1 plain iron shield shaped like a regular five-sided pentagon with a riveted rim and a round iron boss",
+    "silhouette": "a shield seen from the front, slightly turned: a regular pentagon, one point up, a riveted rim and a round central boss. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull iron",
+      "warm brown leather rim",
+      "dull brass rivets"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shoes_t1": {
+    "subject": "Hempen Sandals, a tier-1 pair of brown leather boots with a pointed upturned toe and a gold-thread stitched cuff",
+    "silhouette": "a pair of boots in 3/4 side view, one slightly behind the other: a pair of calf-high boots with a pointed upturned toe and a gold cuff band. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "warm brown leather",
+      "worn gold thread cuff",
+      "dull brass buckle"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_bracelet_t1": {
+    "subject": "Celadon Bangle, a tier-1 wide bright mint-green jade cuff bangle with a brass hinge clasp and one round jade bead stud",
+    "silhouette": "a single wide cuff bracelet seen at a 3/4 angle so the oval opening shows, a band as wide as one third of the cell (NOT a thin finger ring): a thick bright mint-jade cuff bangle, a brass hinge block on one side carrying one round jade bead, a thin brass rim line around the outer edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets and ONE hard pale-cream highlight facet in the upper left of every jade surface; the jade is BRIGHT fresh mint green (light to mid value, translucent, clean, NOT dark, NOT olive, NOT muddy); small brass accents; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright fresh mint-green translucent jade",
+      "warm brass hinge and rim"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_necklace_t1": {
+    "subject": "Celadon Pendant, a tier-1 big loop of fat bright mint-green jade beads with a brass clasp bead and one carved round jade disc (a bi disc with a hole) hanging at the bottom",
+    "silhouette": "a necklace whose chain forms a closed loop fully inside the canvas with one pendant hanging at the bottom: a BIG loop that spans almost the whole width of the cell, made of fat round bright mint-jade beads (every bead clearly visible, each one tenth of the loop's width), a small brass clasp bead at the top, one big flat round jade disc with a round hole in the middle hanging at the bottom with a thin brass rim. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets and ONE hard pale-cream highlight facet in the upper left of every jade surface; the jade is BRIGHT fresh mint green (light to mid value, translucent, clean, NOT dark, NOT olive, NOT muddy); small brass accents; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright fresh mint-green translucent jade beads and disc",
+      "warm brass clasp bead and disc rim"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_earrings_t1": {
+    "subject": "Celadon Drops, a tier-1 pair of fat round bright mint-green jade bead drops, each capped with a small brass cup and hung from a brass hook",
+    "silhouette": "a pair of earrings, two drops hanging from small hooks, side by side: two big fat round jade beads (each a ball as big as one third of the cell), each with a small brass cap cup on top and a brass hook above it, mirrored, side by side. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets and ONE hard pale-cream highlight facet in the upper left of every jade surface; the jade is BRIGHT fresh mint green (light to mid value, translucent, clean, NOT dark, NOT olive, NOT muddy); small brass accents; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright fresh mint-green translucent jade",
+      "warm brass caps and hooks"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_warrior_armor_t2": {
+    "subject": "Blackiron Lamellar, a tier-2 warrior cuirass of blue-steel fish scales with broad scaled shoulder guards whose tips curl up like dragon horns, bronze edging and short crimson lacquered tassets",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a cuirass of small overlapping blue-steel fish scales, two broad scaled shoulder guards whose tips curl upward like dragon horns, bronze edging on every rim, a bronze belt plate, four short hanging tassets of crimson-lacquered plates. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "blue-steel scales",
+      "worn bronze edging",
+      "dull crimson lacquer"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_helmet_t2": {
+    "subject": "Blackiron Warhelm, a tier-2 polished steel sallet helm with a pale ghost-face mask as visor: hollow eye slits and a wide carved grin, bronze rim",
+    "silhouette": "a helmet in 3/4 view facing left: a swept-back sallet dome with the pale ghost-mask visor in front, a bronze rim and a short neck guard, a crimson cloth lining at the neck. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "weathered steel",
+      "pale bone-white ghost mask visor with dark eye slits",
+      "bronze rim",
+      "crimson cloth neck lining"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_warrior_weapon_twohand_t2": {
+    "subject": "Blackiron Cleaver, a tier-2 two-handed double-bladed battle axe: a huge crescent double axe head on a long haft with bronze collars",
+    "silhouette": "a single heavy two-handed polearm on the diagonal, head at the upper right, long thick haft down to the lower left: a very large double-bit crescent axe head with two big curved blades (the head as wide as one third of the cell and as long as one third of the weapon), a thick haft as wide as one ninth of the cell with two bronze collars, a bronze butt cap at the lower left; stout and compact; NO tassel, NO ribbon. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright weathered steel axe head",
+      "worn bronze collars",
+      "warm mid-brown wood haft"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_warrior_weapon_sword_t2": {
+    "subject": "Blackiron Saber, a tier-2 steel sword with a blood-red groove along the whole blade, a bronze guard with swept-back quillons and a crimson-wrapped grip",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a thick blade with a wide red groove, swept-back quillons, a round bronze pommel; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright steel blade",
+      "dull blood-red groove",
+      "worn bronze guard and pommel",
+      "crimson grip wrap"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_armor_t2": {
+    "subject": "Shadowleather Garb, a tier-2 ninja slate-grey padded jacket with a jade-green stand collar, dark leather shoulder guards and a jade sash",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a slate-grey quilted jacket with a tall jade-green stand collar and jade piping, two rounded dark leather shoulder guards with a ridge of studs, a jade-green sash tied at the waist with a knot, four short hanging slate-grey cloth flaps. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey quilted cloth",
+      "jade-green collar sash and piping",
+      "dark brown leather shoulder guards"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_ninja_helmet_t2": {
+    "subject": "Shadow Cowl, a tier-2 charcoal-blue cloth cowl with a big bright steel forehead plate, a steel cheek guard and jade cord ties hanging at the side",
+    "silhouette": "a helmet in 3/4 view facing left: a rounded charcoal-blue cloth cowl covering the whole head and neck with a pulled-up scarf over the lower face, a big bright steel forehead plate with a raised rim and a centre ridge, a steel cheek guard, a jade cord with a bead hanging at the side; NOT a pointed chain hood. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright weathered steel plates",
+      "charcoal-blue cloth cowl",
+      "jade green cord and bead"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_weapon_dagger_t2": {
+    "subject": "Blackiron Kris, a tier-2 punch dagger: a very broad triangular steel blade thrusting from a plain gunmetal push-grip with a spiked knuckle bar and a violet cord wrap",
+    "silhouette": "a single dagger on the diagonal, tip at the upper right, hilt at the lower left: a very broad triangular steel blade as wide as one quarter of the cell with a bold centre ridge thrusting to the upper right out of a plain gunmetal H-shaped push-grip with a rounded knuckle bar carrying three short blunt spikes, a violet cord wrap on the grip, two bronze rivets; stout and chunky, a simple clean shape: NO face, NO skull, NO horns, NO fine ornament. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright weathered steel blade",
+      "plain gunmetal iron grip with three short spikes",
+      "violet cord wrap",
+      "bronze rivets"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_weapon_bow_t2": {
+    "subject": "Blackwood Bow, a tier-2 very thick bow whose limbs are carved like a thorny branch: three bold thorns along each limb and two big green leaves at the grip",
+    "silhouette": "a single very thick recurve bow set on the diagonal from the lower left to the upper right, limbs as thick as one sixth of the cell, the string a plain pale cord: limbs shaped like a thick thorny branch with three big triangular thorns on each limb, two big broad leaves at the grip, a thick wrapped grip; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "warm light-tan bark wood",
+      "muted jade leaves",
+      "bright steel thorn tips",
+      "pale string"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_yacha_armor_t2": {
+    "subject": "Gravesteel Plate, a tier-2 gunmetal plate cuirass with three violet bars across the chest, wide shoulder guards with curved horn spikes and a tall flared collar",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a gunmetal plate cuirass with three plain violet bars across the chest (no letters), a tall flared bronze-edged collar, two wide shoulder guards each with a curved horn spike pointing outward and up, an ember-orange cloth apron hanging in the middle below a bronze belt, short plate tassets at the sides. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "weathered gunmetal plate",
+      "violet bars",
+      "bronze trim",
+      "ember-orange cloth apron"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_yacha_helmet_t2": {
+    "subject": "Gravesteel Helm, a tier-2 dark iron helm topped with a two-tier pagoda roof with upswept eaves, a bronze band and a violet cloth tail",
+    "silhouette": "a helmet in 3/4 view facing left: a snug iron helm crowned by a small two-tier pagoda roof with curved upswept eaves, a bronze band, narrow eye slit, a violet cloth tail trailing behind; NOT a chess rook, NOT crenellated. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "gunmetal iron",
+      "worn bronze band and roof edges",
+      "dusty violet cloth tail"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_yacha_weapon_sword_t2": {
+    "subject": "Banishing Blade, a tier-2 straight bronze-gunmetal coin sword: the grip is a stack of round bronze coins with square holes and a thick yellow paper charm strip with three red bars is wrapped on the blade base",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a broad straight blade with a flat chisel tip, a thick yellow paper charm strip with three plain red bars wrapped on the blade base, a grip made of stacked round bronze coins, a plain round bronze pommel; NO tassel, NO ribbon, no letters. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "gunmetal steel blade",
+      "worn bronze coins",
+      "yellow paper charm with three red bars"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_armor_t2": {
+    "subject": "Sunsilk Vestments, a tier-2 shaman robe of ochre-gold silk with a round bronze sun disc with short rays on the chest, ivory sleeves with blue borders and a scalloped shoulder mantle",
+    "silhouette": "a ceremonial shaman robe, an empty garment with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: a crossover collar, a wide stiff shoulder mantle of layered silk, the near wide bell sleeve swung forward across the front and the far sleeve partly behind it, big cuffs, a knee-length skirt whose hem swings out to one side; thick layered folds, a bulky compact shape about as wide as it is tall (NOT a long slim front-facing gown, NOT ankle-length): an ochre-gold silk robe with a round bronze sun disc with short rays in the centre of the chest, a scalloped ochre shoulder mantle, wide ivory sleeves with dusty blue borders, a blue sash, an ochre skirt with a swinging hem. Heavy chunky forms, thick layered silk folds, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every fold edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "muted ochre-gold silk",
+      "worn bronze sun disc",
+      "ivory sleeves",
+      "dusty storm-blue borders"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_shaman_helmet_t2": {
+    "subject": "Sunray Hat, a tier-2 wide conical straw hat with a round gold sun disc on the front and two storm-blue cords hanging",
+    "silhouette": "a helmet in 3/4 view facing left: a wide shallow cone hat seen at 3/4 with a rounded top knob, woven straw ribs, a round gold sun disc with short rays on the front, two long storm-blue cords with small gold beads hanging from the brim. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "pale straw ivory",
+      "bright gold sun disc",
+      "storm-blue cords"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_weapon_fan_t2": {
+    "subject": "Crane-Feather Fan, a tier-2 fan whose leaves are red-and-gold phoenix tail feathers spreading like a peacock tail, bronze ribs",
+    "silhouette": "a single folding war-fan, opened, upright in 3/4 view: a half-circle of long thick feathers, each tipped with a gold eye, a bronze handle. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull red and ochre feathers",
+      "worn bronze ribs",
+      "dusty storm-blue accents"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_bell_t2": {
+    "subject": "Chiming Bell, a tier-2 worn bronze globe bell: a round ball bell with a bold slit and a blue gem on top of a thick bronze handle, an ivory ribbon tied below it",
+    "silhouette": "a single handled ritual bell weapon lying on the diagonal, the bell head at the upper right, the handle running down to the lower left (like every weapon icon): a big round globe-shaped bell (a ball as wide as one third of the cell, a horizontal slit across its lower half, a bold storm-blue gem set above the slit) as the head, a thick bronze handle with a ring collar, an ivory ribbon tied at the collar and trailing, a bronze pommel at the lower left; the head is a perfect sphere. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn bronze globe",
+      "dusty storm-blue gem",
+      "ivory ribbon",
+      "bronze handle"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_armor_t2": {
+    "subject": "Stormhide Cuirass, a tier-2 hide cuirass with a row of overlapping curved bone rib plates, one giant shoulder guard of layered bone fangs and an indigo cloth strap",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a chestnut hide cuirass with a row of overlapping curved bone rib plates across the chest, ONE giant near-side shoulder guard made of three layered curved bone fangs like claws (much bigger than the plain leather pad on the far shoulder, an asymmetric silhouette), an indigo cloth strap across the chest, a belt with a bone skull buckle, short hide tassets with fur trim. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "chestnut hide",
+      "bone rib plates and fangs",
+      "indigo cloth strap",
+      "pale fur trim"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_wolfman_helmet_t2": {
+    "subject": "Stormcrest Helm, a tier-2 steel helm with a bold bone-white zigzag lightning fin as crest and indigo cheek plates",
+    "silhouette": "a helmet in 3/4 view facing left: a steel dome with a tall zigzag fin crest, indigo cheek plates. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull polished steel",
+      "bone-white crest fin",
+      "dusty indigo cheek plates"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_wolfman_weapon_claw_t2": {
+    "subject": "Blackiron Claws, a tier-2 hide gauntlet with three thick curved polished iron talons",
+    "silhouette": "a single claw gauntlet in 3/4 view with long curved talons pointing to the upper right: a chunky crimson-brown hide gauntlet with two buckled indigo straps, three thick curved bright iron talons (each as wide as one tenth of the cell) fanning to the upper right. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "crimson-brown hide",
+      "bright weathered iron talons",
+      "indigo straps"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shield_t2": {
+    "subject": "Blackiron Bulwark, a tier-2 charcoal-lacquered round shield with a big bronze boss, a bold bronze rim and three bronze studs",
+    "silhouette": "a round shield seen from the front, slightly turned: a big round slate-grey lacquered face (mid value, clearly lighter than black), a thick bold bronze rim ring, a large bronze boss in the centre ringed by three bronze studs, two pale-cream painted highlight facets on the rim. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey lacquer (mid value)",
+      "worn bronze rim and boss",
+      "warm brown leather grip"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shoes_t2": {
+    "subject": "Rustleather Boots, a tier-2 pair of calf-high boots of muted jade-green lacquered leather with rounded bronze toe caps, a bronze cuff band and a thick pale sole",
+    "silhouette": "a pair of boots in 3/4 side view, one slightly behind the other: a pair of calf-high boots with rounded blunt bronze toe caps (NOT pointed, NOT upturned), a wide bronze cuff band at the top, a thick pale leather sole. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "muted jade-green lacquered leather",
+      "worn bronze toe caps and cuff",
+      "pale tan sole"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_bracelet_t2": {
+    "subject": "Moonstone Bangle, a tier-2 wide silver cuff set with three big faceted pale-blue crystal stones in a row",
+    "silhouette": "a single wide cuff bracelet seen at a 3/4 angle so the oval opening shows, a band as wide as one third of the cell (NOT a thin finger ring): a wide silver cuff with three big faceted crystal stones in a row on top, thick silver claws around each stone, a hinge block. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull silver cuff",
+      "pale-blue crystal stones"
+    ],
+    "fill": 0.88
+  },
+  "icon_gear_necklace_t2": {
+    "subject": "Moonstone Pendant, a tier-2 thick silver rope-chain loop with a big pale-blue hexagonal crystal pendant in a silver claw setting",
+    "silhouette": "a necklace whose chain forms a closed loop fully inside the canvas with one pendant hanging at the bottom: a closed loop of thick chunky silver links (each link clearly visible, chain as thick as one thirtieth of the cell), a big hexagonal crystal pendant in a claw setting. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull silver links",
+      "pale-blue crystal"
+    ],
+    "fill": 0.88
+  },
+  "icon_gear_earrings_t2": {
+    "subject": "Moonstone Drops, a tier-2 pair of long clear pale-blue crystal teardrops capped and hooked in bright silver",
+    "silhouette": "a pair of earrings, two drops hanging from small hooks, side by side: two long clear faceted pale-blue crystal teardrops (each as long as half of the cell and as wide as one fifth), each in a chunky silver cap with a silver hook, mirrored, side by side. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "clear pale-blue faceted crystal",
+      "bright polished silver caps and hooks"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_warrior_armor_t3": {
+    "subject": "Frostsilver Lamellar, a tier-3 warrior armour of crimson lacquered plates with two huge dragon-head shoulder guards and one round jade disc on the chest",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): crimson lacquered chest plates, two huge shoulder guards shaped like dragon heads with open jaws facing outward (the widest parts), one round jade disc in the centre of the chest, a plain bronze belt, short hanging tassets of lacquered plates; bronze edge lines only, no other gold ornament. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull crimson lacquered plates",
+      "muted jade disc",
+      "gunmetal steel under-layer",
+      "worn bronze edge lines"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_helmet_t3": {
+    "subject": "Frostsilver Warhelm, a tier-3 crimson-lacquered helm shaped like a fierce demon face: bared fangs, flared brow, two short horns and a jade brow gem",
+    "silhouette": "a helmet in 3/4 view facing left: a heavy demon-face helm with two short upswept horns, bared bone fangs, a flared brow and one small jade gem in the brow. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull crimson lacquer",
+      "bone-white fangs",
+      "muted jade brow gem",
+      "gunmetal steel rim"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_warrior_weapon_twohand_t3": {
+    "subject": "Partisan, a tier-3 polearm: a huge broad leaf-shaped spear blade with two big upswept crescent side wings on a thick dark-red lacquered haft, a jade collar ring and a bronze butt cap",
+    "silhouette": "a single heavy two-handed polearm on the diagonal, head at the upper right, long thick haft down to the lower left: a very large broad leaf-shaped spearhead with two big upswept crescent wings, the head a third of the weapon's length and as wide as a quarter of the cell, a thick lacquered haft as wide as one ninth of the cell, a big jade collar ring, a bronze butt cap at the lower left; stout and compact so it fills the cell with big solid masses; NO tassel, NO cloth. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "steel blade",
+      "dark red lacquered haft",
+      "muted jade collar",
+      "worn bronze butt cap"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_warrior_weapon_sword_t3": {
+    "subject": "Frostsilver Longsword, a tier-3 broad single-edged steel dao sabre with a straight spine and a belly curving to a wide clipped point, a rounded-square bronze guard inlaid with jade, a red lacquered grip and a jade pommel",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a very broad single-edged dao blade a quarter of the cell wide, straight spine and a curving belly to a clipped point, a rounded-square bronze guard plate with a jade inlay, a thick red lacquered grip, a jade pommel stone; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "steel blade",
+      "worn bronze guard plate",
+      "muted jade inlay and pommel",
+      "dull red lacquer grip"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_armor_t3": {
+    "subject": "Frostscale Garb, a tier-3 ninja fuchsia lacquered silk jacket with rows of overlapping rose leather plates on the chest, curved shoulder plates and an indigo sash",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a deep fuchsia silk jacket with rows of small overlapping dusty-rose leather plates across the chest, two curved lacquered shoulder plates edged in pale cream, an indigo cloth sash with a hanging end, short hanging fuchsia cloth flaps over leather tassets. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "deep fuchsia silk",
+      "dusty-rose leather plates",
+      "indigo sash",
+      "pale cream trim"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_ninja_helmet_t3": {
+    "subject": "Frostfur Cowl, a tier-3 olive orc-hide hood with two thick curved white tusks flanking the face opening and a dull red brow band",
+    "silhouette": "a helmet in 3/4 view facing left: a heavy hide hood with two thick curved white tusks pointing up on either side of the face opening, a red brow band. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "olive-grey orc hide",
+      "bone-white tusks",
+      "dull red brow band",
+      "warm brown leather"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_ninja_weapon_dagger_t3": {
+    "subject": "Frostsilver Sai, a tier-3 curved dagger whose crossguard is a dragon head with its jaws clamping the blade root, jade eye, red-wrapped grip",
+    "silhouette": "a single dagger on the diagonal, tip at the upper right, hilt at the lower left: a broad curved blade as wide as a quarter of the cell, a chunky dragon-head crossguard with open jaws, a thick wrapped grip. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "steel blade",
+      "mid bronze dragon head with a muted jade eye",
+      "dull red grip wrap"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_ninja_weapon_bow_t3": {
+    "subject": "Frostbirch Bow, a tier-3 massive ochre-lacquered recurve bow with a big bronze dragon head at each tip, a jade grip bead and a red tassel",
+    "silhouette": "a single very thick recurve bow set on the diagonal from the lower left to the upper right, limbs as thick as one sixth of the cell, the string a plain pale cord: a massive double-curved bow, a big bronze dragon head at each tip (each head one fifth of the bow's length), a thick wrapped grip with a jade bead, a thick red tassel hanging from the grip. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "ochre-yellow lacquered wood",
+      "worn bronze dragon heads",
+      "muted jade bead",
+      "dull red tassel"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_yacha_armor_t3": {
+    "subject": "Wraithbone Plate, a tier-3 slate-violet lacquered armour with two jade discs on the chest and huge layered shoulder guards topped by tall bone-white horn spikes",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): broad slate-violet lacquered chest plates with two round jade discs, two huge layered shoulder guards each topped by one tall bone-white horn spike pointing up, ember-orange edge trim, thick lacquered plate hip guards. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-violet lacquered plates",
+      "muted jade discs",
+      "bone-white horns",
+      "dull ember-orange trim"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_yacha_helmet_t3": {
+    "subject": "Antlered Helm, a tier-3 slate-grey helm with two big upswept curved bone-white horns and a jade brow gem",
+    "silhouette": "a helmet in 3/4 view facing left: a heavy slate-grey helm with two large upswept curved horns, thick cheek guards, a jade gem on the brow. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron",
+      "bone-white horns",
+      "muted jade gem",
+      "dull ember-orange rim"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_yacha_weapon_sword_t3": {
+    "subject": "Revenant Edge, a tier-3 sword whose blade is a long curved bone-white fang with ridges, a heavy slate-grey iron guard and a jade eye gem",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a broad curved fang-shaped blade as wide as a quarter of the cell with two ridges, a heavy slate-grey guard with a small jade gem, a thick short grip. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bone-white fang blade",
+      "slate-grey iron guard",
+      "muted jade gem",
+      "faded violet cord"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_armor_t3": {
+    "subject": "Moonsilk Vestments, a tier-3 ceremonial shaman robe of ivory silk with crimson edging, blue cloud-scroll embroidery, a round jade disc brooch at the chest and two hanging red tassels at the sash",
+    "silhouette": "a ceremonial shaman robe, an empty garment with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: a crossover collar, a wide stiff shoulder mantle of layered silk, the near wide bell sleeve swung forward across the front and the far sleeve partly behind it, big cuffs, a knee-length skirt whose hem swings out to one side; thick layered folds, a bulky compact shape about as wide as it is tall (NOT a long slim front-facing gown, NOT ankle-length): an ivory silk robe with crimson edging on the collar mantle and cuffs, bold dusty-blue cloud-scroll motifs on the wide sleeves, a round jade disc brooch at the chest, a sash with two hanging dull red tassels, an ivory skirt with a swinging hem (no ruffles, no flounces). Heavy chunky forms, thick layered silk folds, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every fold edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "ivory silk",
+      "crimson edging",
+      "dusty blue cloud-scroll embroidery",
+      "muted jade disc",
+      "dull red tassels"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_shaman_helmet_t3": {
+    "subject": "Cardinal's Hat, a tier-3 shaman lotus crown: overlapping red-lacquer lotus petals rising from a bronze band, a round jade disc at the brow and two short tassels hanging at the sides",
+    "silhouette": "a helmet in 3/4 view facing left: a crown of five thick overlapping red lacquer lotus petals rising from a bronze band, a round jade disc on the front, two short thick tassels hanging at the sides; NOT a brimmed sun hat, NOT a wide hat. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "deep red lacquer petals",
+      "worn bronze band",
+      "muted jade disc",
+      "dull red tassels"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_fan_t3": {
+    "subject": "Stormwing Fan, a tier-3 folding fan of teal and cream bird plumes with bronze tips and a jade pivot",
+    "silhouette": "a single folding war-fan, opened like a half circle of separate ribs, upright in 3/4 view: five wide curved plume-ribs fanning out from the pivot at the bottom, bronze tips, a jade bead at the pivot, a thick ivory handle. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "muted teal and cream feathers",
+      "bronze tips",
+      "muted jade bead",
+      "ivory handle"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_bell_t3": {
+    "subject": "Stormtoll Bell, a tier-3 bronze bell staff: two big round bronze bells hanging side by side from a curved crossbar at the top of a lacquered staff, lightning zigzags engraved on the bells, a jade bead",
+    "silhouette": "a single handled ritual bell weapon lying on the diagonal, the bell head at the upper right, the handle running down to the lower left (like every weapon icon): the head is a curved bronze crossbar from which TWO big round bronze bells hang side by side (each bell as wide as a quarter of the cell, together they are the biggest part of the object, a flared lip and a small clapper ball under each), bold zigzag lightning engraved on each bell, a thick dark red lacquered staff as wide as one seventh of the cell with a muted jade bead, a bronze butt cap at the lower left; NO ring, NO bird, NO tassel. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn bronze bells and crossbar",
+      "muted jade bead",
+      "dark red lacquered staff"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_armor_t3": {
+    "subject": "Frostfur Cuirass, a tier-3 hunter armour with a thick pale grey wolf-pelt cloak over both shoulders, a snarling wolf-head shoulder guard, bright bone ribcage plates and crossed indigo straps",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a thick pale-grey wolf-pelt mantle draped over both shoulders (shaggy, the widest part), a snarling wolf head as the near-side shoulder guard, bright bone-white rib plates across a chestnut hide chest, crossed indigo cloth straps, thick hide tassets edged with fur. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "warm chestnut hide",
+      "pale grey wolf fur",
+      "bright bone-white plates and fangs",
+      "dusty indigo cloth"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_wolfman_helmet_t3": {
+    "subject": "Frostcrown Helm, a tier-3 iron wolf-head helm: a steel helmet forged like a snarling wolf head with pointed ears, a snout visor with bared bone fangs, a pale-grey fur ruff and an indigo band",
+    "silhouette": "a helmet in 3/4 view facing left: a steel helmet forged in the shape of a wolf's head, a rounded iron skull dome with two upright pointed ears, a long snout-shaped visor with a row of bone-white fangs and a narrow slanted eye slit, a ruff of pale-grey wolf fur around the neck, an indigo cloth band over the dome; it is a hard metal HELMET (an armour piece, not a living animal). Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn iron",
+      "warm chestnut hide",
+      "pale grey fur",
+      "bone-white fangs",
+      "dusty indigo band"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_weapon_claw_t3": {
+    "subject": "Frostsilver Talons, a tier-3 hide gauntlet with four long curved bone-bronze talons and a feathered cuff",
+    "silhouette": "a single claw gauntlet in 3/4 view with long curved talons pointing to the upper right: a thick hide gauntlet with a feathered cuff and four long thick curved talons to the upper right. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "crimson-brown hide",
+      "bone-bronze talons",
+      "cream and indigo feathers",
+      "dull red straps"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shield_t3": {
+    "subject": "Frostsilver Aegis, a tier-3 crimson-lacquered kite shield covered by overlapping dragon-scale rows with a jade boss and a bronze edge",
+    "silhouette": "a shield seen from the front, slightly turned: a broad kite-shaped shield, overlapping scale rows, a round jade boss in the middle, a thick bronze edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull crimson lacquer scales",
+      "muted jade boss",
+      "worn bronze edge",
+      "gunmetal steel rim"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shoes_t3": {
+    "subject": "Snowstep Boots, a tier-3 pair of oxblood leather boots with a bronze phoenix wing flaring up at each ankle",
+    "silhouette": "a pair of boots in 3/4 side view, one slightly behind the other: chunky boots with a small curved wing flaring up at the ankle of each boot, thick soles. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "oxblood red leather",
+      "worn bronze feather wings",
+      "muted jade toe stud"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_bracelet_t3": {
+    "subject": "Heaven's Tear Bracelet, a tier-3 chunky polished-gold bracelet of linked oval cartouches, each set with a faceted royal-blue sapphire",
+    "silhouette": "a single bracelet seen at a 3/4 angle as a closed ring so the oval opening shows, a chunky band as wide as one third of the cell made of five linked oval gold cartouches, each with a raised rim and ONE big faceted royal-blue sapphire set in the middle (NOT a thin finger ring, NOT a plain band). Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets: polished warm yellow gold (light to mid value) with a hard pale-cream highlight facet on each raised edge, and faceted royal-blue sapphire stones with a hard white highlight facet; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright polished yellow gold links",
+      "faceted royal-blue sapphires"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_necklace_t3": {
+    "subject": "Heaven's Tear Necklace, a tier-3 closed loop of round polished-gold beads alternating with royal-blue sapphire beads, with a faceted sapphire teardrop pendant in a gold frame",
+    "silhouette": "a necklace whose chain forms a closed loop fully inside the canvas with one pendant hanging at the bottom: a BIG closed loop that spans most of the width of the cell, fat round gold beads alternating with fat round royal-blue sapphire beads (every bead clearly visible), a gold clasp bead at the top, a large faceted sapphire teardrop in a gold claw frame hanging at the bottom. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets: polished warm yellow gold (light to mid value) with a hard pale-cream highlight facet on each raised edge, and faceted royal-blue sapphire stones with a hard white highlight facet; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright polished yellow gold beads and frame",
+      "faceted royal-blue sapphire beads and drop"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_earrings_t3": {
+    "subject": "Heaven's Tear Earrings, a tier-3 pair of polished-gold discs with cloud-scroll relief, each hung from a gold hook and carrying a faceted royal-blue sapphire teardrop below",
+    "silhouette": "a pair of earrings, two drops hanging from small hooks, side by side: two big round polished-gold discs (each with a round hole in the middle and cloud-scroll relief), each on a thick gold hook, a large faceted royal-blue sapphire teardrop in a gold claw frame hanging below each disc, mirrored, side by side. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Clean hand-painted game bitmap with flat painted facets: polished warm yellow gold (light to mid value) with a hard pale-cream highlight facet on each raised edge, and faceted royal-blue sapphire stones with a hard white highlight facet; no smooth gradients, no glow, no star glints; a thick hard near-black outline",
+    "palette": [
+      "bright polished yellow gold discs and hooks",
+      "faceted royal-blue sapphire teardrops"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_warrior_armor_t4": {
+    "subject": "Crimsongold Lamellar, a tier-4 warrior full plate armour of polished blue steel with broad layered shoulder guards, a tall flared collar and ONE faceted sapphire on the breastplate",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): polished blue-steel plates, very broad flaring layered shoulder guards edged with one thin worn-gold line, a tall flared collar, ONE faceted sapphire in the centre of the breastplate, a plate belt and thick plate thigh guards hanging as tassets, a crimson cloth lining showing at the neck and under the plates. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "polished blue steel plate",
+      "thin worn-gold edge lines",
+      "ONE faceted sapphire",
+      "crimson cloth lining"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_helmet_t4": {
+    "subject": "Crimsongold Warhelm, a tier-4 commander helm: steel dome with a tall worn-gilded crescent crest, gilded cheek wings and ONE faceted crimson gem on the brow",
+    "silhouette": "a helmet in 3/4 view facing left: a tall crescent crest over a steel dome, two swept cheek wings, one large gem on the brow. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "steel dome",
+      "worn gilded gold crest and cheek wings",
+      "ONE faceted crimson gem",
+      "warm brown leather lining"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_warrior_weapon_twohand_t4": {
+    "subject": "Grudge Halberd, a tier-4 long-hafted war halberd: a tall straight dark-steel spear blade with one huge crescent-moon blade bulging out on one side and a notched hook spike on the other, a worn-gilded socket collar with ONE faceted crimson gem, on a long very thick gilded-banded haft",
+    "silhouette": "a single heavy two-handed polearm on the diagonal, head at the upper right, long thick haft down to the lower left: a long haft as wide as one sixth of the cell with two wide gilded bands, a gilded gem collar, then a tall straight spear blade with ONE HUGE crescent-moon blade bulging out on one side (as wide as a third of the cell) and a short notched hook spike on the other, a gilded butt cap at the lower left; NOT a sword, NOT serrated, NOT a thin spear; big solid masses that fill the cell; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bright blue-grey steel blades",
+      "worn gilded gold collar, bands and butt cap",
+      "ONE faceted crimson gem",
+      "warm mid-brown lacquered haft"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_warrior_weapon_sword_t4": {
+    "subject": "Crimsongold Hwando, a tier-4 sword with a green-tinted steel blade, a worn-gilded fang-shaped guard and ONE faceted poison-green gem",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a broad CURVED single-edged sabre blade with a wide belly (a quarter of the cell wide, clearly bent like a falchion, not straight) with a green central groove, a gilded guard curving up like two fangs, one big gem in the guard, a thick grip; drawn LARGE and BOLD: the broad part (blade / head / limbs) is at least one quarter of the cell wide, the guard, collar and pommel are big and heavy, the whole weapon is a stout bold silhouette that still reads at 32 px, with a bright pale-cream edge highlight facet along the cutting edge. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "green-tinted steel blade",
+      "worn gilded gold fang guard and pommel",
+      "ONE faceted poison-green gem",
+      "warm brown leather grip"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_ninja_armor_t4": {
+    "subject": "Ashscale Garb, a tier-4 ninja dark-brown leather jacket covered in overlapping jade dragon scales on the chest and shoulders, a crossed violet sash with ONE violet gem",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a dark brown leather jacket whose chest and two big rounded shoulder guards are covered in overlapping jade-green dragon scales, a violet sash crossed over the chest and tied with ONE faceted violet gem at the knot, a dark leather belt, short hanging leather tassets. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dark brown leather",
+      "jade dragon scales",
+      "violet sash",
+      "ONE faceted violet gem"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_ninja_helmet_t4": {
+    "subject": "Ashen Cowl, a tier-4 charcoal-grey hood crowned by a fan of worn-gilded spider-leg spikes with ONE faceted violet gem on the brow",
+    "silhouette": "a helmet in 3/4 view facing left: a charcoal-grey hood with a fan of thick gilded curved spikes over the crown like spider legs, one gem on the brow. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "mid charcoal-grey cloth hood",
+      "worn gilded gold spider-leg spikes",
+      "ONE faceted violet gem",
+      "warm brown leather"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_ninja_weapon_dagger_t4": {
+    "subject": "Crimsongold Karambit, a tier-4 throwing ring: a flat round dark-steel ring blade with a sharp outer edge and two bat-wing spikes sweeping out from opposite sides, a gilded crossbar grip with ONE faceted violet gem",
+    "silhouette": "NOT on a diagonal: a thick round ring blade seen from the front, centred, a gilded crossbar across the middle with a gem, two big curved bat-wing spikes at the upper right and lower left. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "gunmetal steel ring",
+      "mid charcoal and violet wing spikes",
+      "worn gilded gold crossbar",
+      "ONE faceted violet gem"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_ninja_weapon_bow_t4": {
+    "subject": "Ashhorn Bow, a tier-4 massive light brushed-steel recurve bow whose tips are big crow heads with gilded beaks, three black feathers hanging at the grip and ONE faceted violet gem on a gilded grip",
+    "silhouette": "a single very thick recurve bow set on the diagonal from the lower left to the upper right, limbs as thick as one sixth of the cell, the string a plain pale cord: a massive double-curved bow with LIGHT pale brushed-steel limbs (a light value, clearly lighter than a dark background), a big crow head at each tip with a gilded beak, a thick gilded grip with one gem, three feathers hanging from the grip. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "pale brushed steel limbs",
+      "worn gilded gold beaks and grip",
+      "ONE faceted violet gem",
+      "charcoal-black feathers"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_yacha_armor_t4": {
+    "subject": "Abyssal Plate, a tier-4 black-iron armour with worn gold edging, a gilded ring emblem on the chest with ONE faceted ember-orange gem and very broad sweeping layered shoulder guards",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): black-iron plates edged in worn gold, a gilded ring emblem with short rays on the chest with ONE faceted ember-orange gem at its centre, very broad shoulder guards of layered plates that sweep outward and upward like wings, a dull violet cloth lining at the neck, thick plate hip guards. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "black-iron plates",
+      "worn gilded gold ring and edging",
+      "ONE faceted ember-orange gem",
+      "dull violet cloth lining"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_yacha_helmet_t4": {
+    "subject": "Abyssal Crown, a tier-4 slate-grey helm with a tall pointed worn-gilded crown, three gilded bars as rune marks and ONE large faceted violet gem at the front",
+    "silhouette": "a helmet in 3/4 view facing left: a tall pointed crown, three vertical gilded bars, one large gem at the front, thick cheek guards. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron",
+      "worn gilded gold crown and bars",
+      "ONE faceted violet gem"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_yacha_weapon_sword_t4": {
+    "subject": "Hellforged Blade, a tier-4 long slate-grey blade whose two edges ripple in smooth flame-shaped S-waves like a kris, a worn-gilded guard of two curved demon horns and ONE faceted ember-orange gem",
+    "silhouette": "a single one-handed sword on the diagonal, blade tip at the upper right, hilt and pommel at the lower left: a long broad rippled kris-style blade a quarter of the cell wide, both edges forming four smooth S-shaped waves, ending in a sharp point, a gilded guard with two curved horns, one gem, a thick grip; the edges are smooth waves, NOT serrated teeth. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "slate-grey iron blade",
+      "worn gilded gold horn guard",
+      "ONE faceted ember-orange gem",
+      "dull violet grip"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shaman_armor_t4": {
+    "subject": "Goldthread Vestments, a tier-4 storm-blue silk robe with a gilded dragon coiling across the chest, a gilt-edged shoulder mantle, an ivory collar and ONE faceted gem at the clasp",
+    "silhouette": "a ceremonial shaman robe, an empty garment with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: a crossover collar, a wide stiff shoulder mantle of layered silk, the near wide bell sleeve swung forward across the front and the far sleeve partly behind it, big cuffs, a knee-length skirt whose hem swings out to one side; thick layered folds, a bulky compact shape about as wide as it is tall (NOT a long slim front-facing gown, NOT ankle-length): a dusty storm-blue silk robe with a worn-gilded dragon coiling across the chest, a shoulder mantle edged with one thin worn-gold line, an ivory collar with ONE faceted sky-blue gem at the clasp, wide sleeves with ivory cuffs, a blue skirt with a swinging hem. Heavy chunky forms, thick layered silk folds, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every fold edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dusty storm-blue silk",
+      "worn gilded gold dragon",
+      "ivory collar",
+      "ONE faceted sky-blue gem"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_shaman_helmet_t4": {
+    "subject": "Talisman Crown, a tier-4 crown-hat made of pale-blue crystal shards fanning upward from a worn-gilded band with ONE large faceted gem",
+    "silhouette": "a helmet in 3/4 view facing left: five thick pale crystal shards of different heights fanning upward from a gilded band, one gem in the band. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dusty pale-blue crystal",
+      "worn gilded gold band",
+      "ONE faceted storm-blue gem",
+      "ivory lining"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_fan_t4": {
+    "subject": "Gilded Talon Fan, a tier-4 dark crimson folding fan with spiky bat-wing ribs, worn-gilded edges and ONE faceted gem at the pivot",
+    "silhouette": "a single folding war-fan, opened like a half circle of separate ribs, upright in 3/4 view: four pointed bat-wing leaves fanning out from the pivot, thick gilded ribs, one gem at the pivot. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dull crimson fabric",
+      "worn gilded gold ribs",
+      "ONE faceted violet gem",
+      "mid charcoal-grey handle"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_shaman_weapon_bell_t4": {
+    "subject": "Sovereign's Bell, a tier-4 worn-gilded bell staff: one huge gilded bell with a flared mouth under a small dragon-head crest, ONE faceted gem on the bell, on a long gilded-banded handle",
+    "silhouette": "a single handled ritual bell weapon lying on the diagonal, the bell head at the upper right, the handle running down to the lower left (like every weapon icon): ONE huge gilded bell with a wide flared mouth as the head, as wide as two fifths of the cell, it is by far the biggest part of the object; a small gilded dragon head only as a crest on top of the bell with ivory teeth, one big faceted gem on the bell body, a thick handle with two wide gilded bands running down to a gilded pommel at the lower left. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn gilded gold bell and dragon crest",
+      "ivory dragon teeth",
+      "ONE faceted storm-blue gem",
+      "dark red lacquered handle"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_wolfman_armor_t4": {
+    "subject": "Flamefur Cuirass, a tier-4 heavy plate-and-hide armour of dark iron and chestnut hide with thin worn-gilded rims, two wolf-head shoulder guards and ONE faceted sapphire",
+    "silhouette": "a compact bulky body armour, an empty suit with no body, no head and no legs, drawn in a three-quarter view as if worn by an invisible torso turned about 35 degrees to the left: the near (right-hand) shoulder guard is the biggest shape and overlaps the chest, the far shoulder guard is smaller and partly hidden behind it, the chest plate shows its side curve, a dark open neck hole at the top; the whole piece is about as wide as it is tall (a squat, nearly square silhouette) and ends at the hips with a short row of hanging tassets (NOT a long skirt, NOT a coat, NOT ankle-length, NO legs): a heavy chestnut-hide and dark-iron plate chest with thin worn-gilded rims, two big snarling iron wolf-head shoulder guards with ears up and bone fangs (ONE faceted sapphire in the brow of the near one), a fur-lined collar, a plate belt, thick plate tassets. Heavy chunky forms, thick overlapping plates, nothing thin or spindly, the piece fills its cell from edge to edge. Painted like a worn game bitmap: matte hand-painted surfaces with flat painted facets, NOT airbrushed, no smooth gradients, no plastic shine, no glints, no light effects; a pale-cream painted highlight facet on every plate edge. At most two trim colours and no fine filigree: bold simple plates and straps. Clear light and dark value steps between the materials, medium-saturation weathered colours, every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "dark iron plates",
+      "chestnut hide",
+      "thin worn gilded rims",
+      "pale fur lining",
+      "ONE faceted sapphire"
+    ],
+    "fill": 0.94
+  },
+  "icon_gear_wolfman_helmet_t4": {
+    "subject": "Moltenmane Helm, a tier-4 helm shaped like a wolf skull: bone-white plates with a long snarling muzzle and two pointed ears, worn-gilded rim and fang tips, ONE faceted indigo gem on the brow and a hide mane behind",
+    "silhouette": "a helmet in 3/4 view facing left: a helm in the shape of a wolf skull with a long muzzle jutting forward and bared fangs, two pointed ears, a gilded rim, one gem on the brow, a hide mane trailing behind; NO antlers, NO wings. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "bone-white skull plates",
+      "worn gilded gold rim and fang tips",
+      "ONE faceted indigo gem",
+      "grey-brown hide mane"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_wolfman_weapon_claw_t4": {
+    "subject": "Crimsongold Fangblades, a tier-4 worn-gilded dragon-claw gauntlet with a dragon-head knuckle guard, four gilded talons and ONE faceted crimson gem",
+    "silhouette": "a single claw gauntlet in 3/4 view with long curved talons pointing to the upper right: a gilded gauntlet with a dragon-head knuckle guard, four long thick curved talons, one gem on the back of the hand. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn gilded gold",
+      "crimson-brown hide",
+      "ONE faceted crimson gem",
+      "bone white teeth"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shield_t4": {
+    "subject": "Crimsongold Towershield, a tier-4 huge arch-topped tower shield with a deep red lacquered face, a worn-gilded cloud-scroll border, a big round gilded boss with ONE large faceted sapphire and a studded steel rim",
+    "silhouette": "a shield seen from the front, slightly turned: a tall tower shield shaped like a rounded-top rectangle with a flat bottom (NOT pointed at the bottom, NOT a heater shield), a gilded cloud-scroll border, a big round gilded boss in the centre with one gem, a studded steel rim. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects; worn metal edges carry a few small pale-cream painted highlight facets. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "deep red lacquer face",
+      "worn gilded gold border and boss",
+      "ONE faceted sapphire gem",
+      "steel rim studs"
+    ],
+    "fill": 0.92
+  },
+  "icon_gear_shoes_t4": {
+    "subject": "Cinder Treads, a tier-4 pair of worn-gilded boots with overlapping scale rows, a hoof-shaped toe cap and ONE faceted gem at each cuff",
+    "silhouette": "a pair of boots in 3/4 side view, one slightly behind the other: chunky boots with scale rows and a hoof-shaped toe cap, a gem on each cuff, thick soles. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn gilded gold scales",
+      "warm tan-brown leather",
+      "ONE faceted emerald gem"
+    ],
+    "fill": 0.9
+  },
+  "icon_gear_bracelet_t4": {
+    "subject": "Garnet Bangle, a tier-4 worn-gilded thick band set with ONE large faceted ruby and two studs",
+    "silhouette": "a single bracelet seen from the side as a thick band with raised gems: a thick gilded band in side view with one large faceted ruby, two round studs, seen slightly from above so the opening shows. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn gilded gold band",
+      "ONE large faceted ruby"
+    ],
+    "fill": 0.88
+  },
+  "icon_gear_necklace_t4": {
+    "subject": "Garnet Pendant, a tier-4 worn-gilded chunky chain loop with a large faceted ruby pendant in a gilded frame at the bottom",
+    "silhouette": "a necklace whose chain forms a closed loop fully inside the canvas with one pendant hanging at the bottom: a closed loop of thick chunky links (each link clearly visible) with a large oval ruby pendant in a frame. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "worn gilded gold thick chain",
+      "ONE large faceted ruby"
+    ],
+    "fill": 0.88
+  },
+  "icon_gear_earrings_t4": {
+    "subject": "Garnet Drops, a tier-4 pair of faceted ruby drops on thick worn-gilded hooks with a small gilded cap each",
+    "silhouette": "a pair of earrings, two drops hanging from small hooks, side by side: two big faceted ruby drops with thick gilded caps on hooks, mirrored, side by side. Heavy chunky forms with thick parts, nothing thin or spindly, the object fills its cell. Painted like a worn game bitmap: matte hand-painted surfaces with visible brush grain and flat painted facets, NOT airbrushed: no smooth gradients, no plastic or shiny highlights (the upper-left light is only a lighter paint facet), no star glints, no light effects. Muted weathered low-saturation colours: mostly mid-value steel, bronze, hide and cloth with ONE or TWO accent colours only; every material mid-value or lighter (no black masses); a thick hard near-black outline",
+    "palette": [
+      "ruby red gems",
+      "worn gilded gold caps and hooks"
+    ],
+    "fill": 0.86
+  }
+}

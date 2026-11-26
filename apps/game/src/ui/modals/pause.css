@@ -1,0 +1,880 @@
+/* Owner: B8 pause-settings (modals/Pause.tsx). Split out of the former shared run-modal sheet (C0, 2026-10-13); cascade order of the run-modal sheets is
+   pinned in ui/app.tsx (runend < essence < chest < boss < story < pause).
+
+   Kit v1 "Stone & Pewter": the pause window is a Panel variant="board" (charcoal board, pewter bevel, rust-copper title bar,
+   boxed close = resume). Two recessed trays sit on it: YOUR BUILD (octagon slots with rank medals, one engraved row per group)
+   and RUN STATISTICS (HP / XP gauges, number-well tiles, top damage). The action row follows the kit rules: Resume is the one
+   lacquer plate, Settings a stone plate, Abandon run a crimson plate set apart on the left. */
+
+.ms-pause {
+  /* C1: safe-area insets on top of the layout padding */
+  padding: calc(1rem + var(--safe-t)) calc(1rem + var(--safe-r)) calc(1rem + var(--safe-b)) calc(1rem + var(--safe-l));
+  background: radial-gradient(100% 90% at 50% 45%, rgba(8, 6, 4, 0.5), rgba(3, 2, 1, 0.86));
+  backdrop-filter: blur(7px) saturate(0.7);
+  -webkit-backdrop-filter: blur(7px) saturate(0.7);
+}
+.ms-pause-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(72rem, 100%);
+  max-height: 100%;
+  animation: ms-scale-in 0.35s var(--ease-soft) both;
+}
+/* the settings sub-view is the same board at the same size as the Settings screen */
+.ms-pause-panel.is-sub {
+  height: fit-content;
+  min-height: min(32rem, 100%);
+  max-height: min(44rem, 100%);
+}
+.ms-pause-settings {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.ms-pause-settings .ms-set {
+  flex: 1 1 auto;
+}
+
+/* ---- who strip: emblem + class / doctrine + zone + difficulty chip, the run clock in a gold number well ------------------ */
+.ms-pause-who {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.4rem 0.35rem;
+}
+.ms-pause-whotxt {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.ms-pause-class {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000, 0 0 0.6rem rgba(0, 0, 0, 0.6);
+}
+.ms-pause-doc {
+  font-size: 0.85em;
+  letter-spacing: 0.06em;
+  color: var(--k-text-2);
+}
+.ms-pause-zone {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  font-size: var(--t-md);
+  color: var(--k-text-2);
+}
+.ms-pause-time {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ms-pause-time .ms-well {
+  min-width: 7.5rem;
+  justify-content: center;
+}
+
+/* ---- the two trays ------------------------------------------------------------------------------------------------------------ */
+.ms-ui .ms-pause-bodybox {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.ms-ui .ms-pause-bodywrap {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+/* the scroll track sits in the board's right margin (only drawn while the body overflows) */
+.ms-ui .ms-wtrack--pause {
+  top: 0.6rem;
+  right: 0.3rem;
+  bottom: 0.9rem;
+  width: 0.8rem;
+}
+.ms-pause-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: stretch;
+  padding: 0.35rem 1.3rem 0.85rem;
+}
+.ms-pause-card {
+  min-width: 0;
+  padding: 0.75rem 1rem 1rem;
+  /* the slot size follows the card width (a 6-slot row always fits, label column included) */
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  /* opacity only: a translate would inflate the scroller's scrollHeight for a moment and leave a stale fade / cue behind */
+  animation: ms-fade-in 0.45s var(--ease-soft) both;
+}
+.ms-pause-statsec {
+  animation-delay: 0.1s;
+}
+.ms-pause-ct {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.45rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--k-gold);
+  text-shadow: 0 1px 0 #000, 0 0 0.5rem rgba(0, 0, 0, 0.6);
+}
+.ms-pause-ct .ms-kicon {
+  flex: none;
+  width: 1.45rem;
+  height: 1.45rem;
+}
+.ms-pause-ct::after {
+  content: '';
+  flex: 1;
+  height: 0;
+  margin-left: 0.35rem;
+  border-top: 1px solid #050403;
+  box-shadow: 0 1px 0 rgba(160, 150, 134, 0.32);
+}
+.ms-pause-subct {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.3rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-text-2);
+}
+.ms-pause-subct::after {
+  content: '';
+  flex: 1;
+  height: 0;
+  border-top: 1px solid #050403;
+  box-shadow: 0 1px 0 rgba(160, 150, 134, 0.22);
+}
+
+/* ---- build rows: an engraved name + count well, the octagon slots below, spread over the tray's height ---------------------- */
+.ms-pause-row {
+  --pr-gap: 0.55rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 240, 220, 0.05);
+}
+.ms-pause-row:last-child {
+  border-bottom: 0;
+  box-shadow: none;
+  padding-bottom: 0.1rem;
+}
+.ms-pause-rlabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.ms-pause-rname {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--k-text-2);
+}
+.ms-pause-rname .ms-kicon {
+  flex: none;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.ms-pause-slots {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--pr-gap);
+  /* --pn slots + (--pn - 1) gaps fill the tray (six: the usual row; the skills row holds more with the basic attack and ultimates):
+     100cqw is the card's content width */
+  --pn: 6;
+  --ps: clamp(calc(2.6rem - (var(--pn) - 6) * 0.2rem), calc((100cqw - (var(--pn) - 1) * var(--pr-gap)) / var(--pn)), 4.8rem);
+}
+.ms-pause-slots .ms-slot {
+  --s: var(--ps);
+  flex: none;
+}
+/* R2: the rank medals read at half size too: a bigger plate, a 15 px bold glyph with a dark outline (G2 / M1 no longer smear) */
+.ms-pause-slots .ms-slot.ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: clamp(1.45rem, calc(var(--s) * 0.42), 2rem);
+  right: -0.5rem;
+  bottom: -0.5rem;
+  padding: 0 0.32rem;
+  font-size: max(0.95rem, 13px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-shadow: 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+}
+.ms-pause-slots .ms-slot.ms-slot--k .ms-medal--tag.ms-slot-rank {
+  padding: 0 0.36rem;
+}
+/* the octagon is the only frame: the icon tile's own square bronze rim is zoomed past the octagon's cut and clipped by it */
+.ms-pause-slots .ms-slot.ms-slot--k .ms-slot-art > img.ms-icon--tile {
+  scale: 1.13;
+}
+
+/* ---- statistics --------------------------------------------------------------------------------------------------------------- */
+.ms-pause-vitals {
+  display: grid;
+  /* the painted tubes poke their spikes out above and below the channel: leave room for them */
+  gap: 1.1rem;
+  margin: 0.8rem 0 1.1rem;
+}
+.ms-pause-vital {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+}
+.ms-pause-vico .ms-kicon {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ---- painted tube gauge (uk_hud_gtube + uk_hud_gfill_*, the shipped HUD materials; --tex-ps-* come from screens/psTex.ts) --------- */
+.ms-pg {
+  /* one unit of the 768 x 128 tube image: the channel is 64 units tall, the spiked caps 62 units wide each */
+  --k: calc(var(--ch, 1.3rem) / 64);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(84 * var(--k));
+  padding: calc(10 * var(--k)) 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 calc(62 * var(--k));
+  border-image-source: var(--tex-ps-gtube, linear-gradient(90deg, #6a707a, #1b1d22 8%, #1b1d22 92%, #6a707a));
+  border-image-slice: 0 62 0 62 fill;
+  border-image-outset: calc(22 * var(--k)) 0;
+  border-image-repeat: stretch;
+  filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7));
+}
+.ms-pg-ch {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: calc(5 * var(--k));
+  /* the painted tube (border-image fill) carries its own dark glass; its CSS stand-in is the dark gradient above */
+  background: var(--pg-tint, none);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.ms-pg--gold {
+  --pg-tint: linear-gradient(180deg, rgba(170, 100, 20, 0.16), rgba(70, 36, 6, 0.1));
+  --pg-paint: var(--tex-ps-gfill-gold, linear-gradient(180deg, #a85a0c, #ffcf5a 16%, #f5981c 40%, #cf6f0e 74%, #4a2404));
+  --pg-glow: #ffb030;
+}
+.ms-pg--red {
+  --pg-tint: linear-gradient(180deg, rgba(150, 18, 20, 0.16), rgba(60, 6, 8, 0.1));
+  --pg-paint: var(--tex-ps-gfill-red, linear-gradient(180deg, #7e0e12, #f04a4a 16%, #e02529 40%, #a8121a 74%, #3a0508));
+  --pg-glow: #ff4a38;
+}
+.ms-pg--blue {
+  --pg-tint: linear-gradient(180deg, rgba(40, 90, 200, 0.2), rgba(10, 30, 90, 0.12));
+  --pg-paint: var(--tex-ps-gfill-blue, linear-gradient(180deg, #123a96, #6aa2ff 16%, #2b66e6 40%, #1648b8 74%, #07124a));
+  --pg-glow: #4a8cff;
+}
+.ms-pg-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* the liquid is anchored to the channel and only clipped by the value (100cqw = the channel width) */
+  background: var(--pg-paint) 0 0 / 100cqw 100% no-repeat;
+  transition: width 0.16s ease-out;
+}
+/* the lit leading edge of the liquid */
+.ms-pg-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: max(2px, calc(2.4 * var(--k)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 246, 224, 0.95) 24%, rgba(255, 246, 224, 0.9) 76%, rgba(255, 255, 255, 0));
+  box-shadow: 0 0 0.45rem 1px var(--pg-glow);
+}
+.ms-pg.is-empty .ms-pg-fill::after {
+  display: none;
+}
+.ms-pg-ticks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 0, 0, 0.5) 0) 0 0 / calc(100% / var(--seg, 10)) 100%;
+}
+.ms-pg-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 20%), linear-gradient(0deg, rgba(150, 190, 255, 0.14), rgba(150, 190, 255, 0) 12%);
+  box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.55);
+}
+.ms-pg-label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.55rem;
+  font-family: var(--f-num);
+  font-weight: 800;
+  /* the label is as tall as the channel allows: 18 px+ on the big gauges, never under the 12 px floor */
+  font-size: max(var(--t-md), calc(var(--ch, 1.3rem) * 0.74));
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 0 0 0.4rem #000, 0 0 0.25rem #000;
+  pointer-events: none;
+}
+/* low health: a red edge heartbeat on the tube (never an opacity pulse) */
+.ms-pg.is-low {
+  animation: ms-pg-low 1.1s ease-in-out infinite;
+}
+@keyframes ms-pg-low {
+  50% {
+    filter: drop-shadow(0 0.12rem 0.14rem rgba(0, 0, 0, 0.7)) drop-shadow(0 0 0.5rem rgba(255, 60, 40, 0.75));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-pg.is-low {
+    animation: none;
+  }
+}
+.ms-pause-stats {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 0 1.2rem;
+}
+.ms-pstat {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 0.65rem;
+  min-width: 0;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 240, 220, 0.05);
+}
+.ms-pstat-ico .ms-kicon {
+  width: 2.65rem;
+  height: 2.65rem;
+}
+.ms-pstat-label {
+  min-width: 0;
+  /* a long caption ("Damage dealt", "Verilen hasar") wraps to a second line (at spaces) instead of ending in an ellipsis */
+  overflow-wrap: break-word;
+  line-height: 1.12;
+  text-wrap: balance;
+  font-size: var(--t-lg);
+  color: var(--k-text);
+}
+.ms-pstat .ms-well {
+  --wf: var(--t-2xl);
+  min-width: 5.4rem;
+  min-height: 3.1rem;
+  justify-content: center;
+}
+/* narrow card (phone portrait): three compact tiles per row: gem + number well on one line, the caption under it */
+@container (max-width: 27rem) {
+  .ms-pause-stats {
+    flex: none;
+    align-content: start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 0.25rem 0.5rem;
+  }
+  .ms-pstat {
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+    grid-template-areas:
+      'ico well'
+      'lab lab';
+    row-gap: 0.15rem;
+    column-gap: 0.35rem;
+    padding: 0.45rem 0 0.4rem;
+  }
+  .ms-pstat-ico {
+    grid-area: ico;
+  }
+  .ms-pstat .ms-well {
+    grid-area: well;
+    --wf: var(--t-lg);
+    min-width: 0;
+    min-height: 2.2rem;
+  }
+  .ms-pstat-label {
+    grid-area: lab;
+    text-align: center;
+    font-size: var(--t-xs);
+    letter-spacing: 0.02em;
+  }
+  .ms-pstat-ico .ms-kicon {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+.ms-pause-top {
+  flex: none;
+  padding-top: 0.85rem;
+}
+.ms-pause-top-row {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 8.5rem) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.2rem 0;
+}
+.ms-pause-top-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--t-lg);
+  font-weight: 600;
+  color: var(--k-text);
+}
+.ms-pause-top-row .ms-well {
+  min-width: 4.4rem;
+  min-height: 1.9rem;
+  --wf: var(--t-lg);
+}
+.ms-pause-empty {
+  margin: 0.8rem 0.2rem;
+  font-size: var(--t-md);
+  color: var(--k-text-3);
+}
+
+/* ---- actions ------------------------------------------------------------------------------------------------------------------ */
+.ms-pause-actions {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem 1.2rem;
+  padding: 0.85rem 1.4rem 1.15rem;
+}
+.ms-pause-actions::before {
+  content: '';
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  top: 0;
+  border-top: 1px solid #050403;
+  box-shadow: 0 1px 0 rgba(160, 150, 134, 0.3);
+}
+.ms-pause-act-l {
+  flex: none;
+}
+.ms-pause-act-r {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-left: auto;
+}
+.ms-pause-hint {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: var(--t-md);
+  letter-spacing: 0.04em;
+  color: var(--k-text-2);
+}
+
+/* ---- narrow desktop windows (1100 px and below): the stat tile gives its caption the room */
+@media (max-width: 1100px) {
+  .ms-ui:not(.ms-compact) .ms-pstat {
+    grid-template-columns: 2.3rem minmax(0, 1fr) auto;
+    gap: 0 0.5rem;
+  }
+  .ms-ui:not(.ms-compact) .ms-pstat-ico .ms-kicon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .ms-ui:not(.ms-compact) .ms-pstat-label {
+    font-size: var(--t-md);
+  }
+  .ms-ui:not(.ms-compact) .ms-pstat .ms-well {
+    min-width: 4.8rem;
+    --wf: var(--t-xl);
+  }
+}
+
+/* ---- short desktop windows (1366x768 and below) -------------------------------------------------------------------------------- */
+@media (max-height: 820px) {
+  .ms-pause-who {
+    padding-top: 0.6rem;
+  }
+  .ms-pause-card {
+    padding: 0.6rem 0.9rem 0.8rem;
+  }
+  .ms-pause-row {
+    padding: 0.35rem 0;
+  }
+  .ms-pause-vitals {
+    margin-bottom: 0.6rem;
+  }
+  .ms-pause-top {
+    margin-top: 0.7rem;
+  }
+  .ms-pause-top-row:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* =====================================================================================================================
+   PHONE LANDSCAPE (844x390): board fills the screen, the build tray left, statistics right, one slim action row
+   ===================================================================================================================== */
+.ms-compact.ms-landscape .ms-pause {
+  /* the bottom gutter keeps the action row 8 px clear of the home-indicator inset (it ended 5 px above it) */
+  padding: calc(0.3rem + var(--safe-t)) calc(0.3rem + var(--safe-r)) calc(0.55rem + var(--safe-b)) calc(0.3rem + var(--safe-l));
+}
+.ms-compact.ms-landscape .ms-pause-panel {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+}
+.ms-compact.ms-landscape .ms-pause-who {
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem 0.2rem;
+}
+.ms-compact.ms-landscape .ms-pause-who .ms-emblem {
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+}
+.ms-compact.ms-landscape .ms-pause-class {
+  font-size: var(--t-md);
+}
+.ms-compact.ms-landscape .ms-pause-time .ms-kicon {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+}
+.ms-compact.ms-landscape .ms-pause-body {
+  gap: 0.5rem;
+  padding: 0.25rem 0.8rem 0.6rem;
+}
+.ms-compact.ms-landscape .ms-pause-card {
+  padding: 0.45rem 0.7rem 0.6rem;
+}
+/* the row labels / gauges say what each tray is: the two caption strips give their height to the content (the 4th build row fits) */
+.ms-compact.ms-landscape .ms-pause-ct {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-pause-row {
+  --pr-lab: 7.2rem;
+  --pr-gap: 0.35rem;
+  display: grid;
+  grid-template-columns: var(--pr-lab) minmax(0, 1fr);
+  align-items: center;
+  gap: 0 0.7rem;
+  padding: 0.28rem 0;
+}
+.ms-compact.ms-landscape .ms-pause-rlabel {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+.ms-compact.ms-landscape .ms-pause-rname {
+  font-size: var(--t-2xs);
+  letter-spacing: 0.08em;
+}
+.ms-compact.ms-landscape .ms-pause-rname .ms-kicon {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-pause-slots {
+  --ps: clamp(calc(2.3rem - (var(--pn) - 6) * 0.2rem), calc((100cqw - var(--pr-lab) - 0.7rem - (var(--pn) - 1) * var(--pr-gap)) / var(--pn)), 3.1rem);
+}
+.ms-compact.ms-landscape .ms-pause-row:last-child {
+  padding-bottom: 0.28rem;
+}
+.ms-compact.ms-landscape .ms-pause-top-row {
+  padding: 0.05rem 0;
+}
+/* two rows of top damage on a landscape phone (the third is on the desktop / portrait sheets) */
+.ms-compact.ms-landscape .ms-pause-top-row:nth-child(n + 4) {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-pause-vitals {
+  margin: 0.5rem 0 0.4rem;
+  gap: 0.7rem;
+}
+.ms-compact.ms-landscape .ms-pstat {
+  padding: 0.1rem 0.1rem;
+  grid-template-columns: 1.7rem minmax(0, 1fr) auto;
+}
+.ms-compact.ms-landscape .ms-pstat .ms-well {
+  --wf: var(--t-lg);
+  min-width: 3.9rem;
+  min-height: 1.9rem;
+}
+.ms-compact.ms-landscape .ms-pause-rname {
+  white-space: nowrap;
+}
+.ms-compact.ms-landscape .ms-pstat-ico .ms-kicon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.ms-compact.ms-landscape .ms-pause-top {
+  margin-top: 0.45rem;
+}
+.ms-compact.ms-landscape .ms-pause-actions {
+  gap: 0.5rem 0.9rem;
+  padding: 0.5rem 0.9rem 0.6rem;
+}
+.ms-compact.ms-landscape .ms-pause-hint {
+  display: none;
+}
+.ms-compact.ms-landscape .ms-pause-act-r {
+  gap: 0.6rem;
+}
+
+/* =====================================================================================================================
+   PHONE PORTRAIT (390x844): a full-screen sheet with a small gutter; the actions pin to the bottom (Resume full width,
+   Settings and Abandon below it side by side)
+   ===================================================================================================================== */
+.ms-portrait .ms-pause {
+  padding: calc(0.4rem + var(--safe-t)) calc(0.4rem + var(--safe-r)) calc(0.55rem + var(--safe-b)) calc(0.4rem + var(--safe-l));
+}
+.ms-portrait .ms-pause-panel {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+}
+.ms-portrait .ms-pause-who {
+  gap: 0.65rem;
+  padding: 0.7rem 0.9rem 0.3rem;
+}
+.ms-portrait .ms-pause-who .ms-emblem {
+  width: 2.3rem !important;
+  height: 2.3rem !important;
+}
+.ms-portrait .ms-pause-time .ms-kicon {
+  display: none;
+}
+.ms-portrait .ms-pause-time .ms-well {
+  min-width: 5.6rem;
+}
+.ms-portrait .ms-pause-body {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 0.3rem 0.65rem 0.7rem;
+}
+.ms-portrait .ms-pause-card {
+  padding: 0.5rem 0.7rem 0.65rem;
+}
+.ms-portrait .ms-pause-row {
+  gap: 0.3rem;
+  padding: 0.35rem 0 0.4rem;
+}
+.ms-portrait .ms-pause-ct {
+  margin-bottom: 0.2rem;
+}
+.ms-portrait .ms-pause-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0.7rem 0.75rem 0.8rem;
+}
+.ms-portrait .ms-pause-act-l,
+.ms-portrait .ms-pause-act-r {
+  display: contents;
+}
+.ms-portrait .ms-pause-actions .ms-kbtn {
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.ms-portrait .ms-pause-actions .ms-kbtn--primary {
+  grid-column: 1 / -1;
+  order: -1;
+}
+.ms-portrait .ms-pause-actions .ms-kbtn--stone {
+  order: 1;
+}
+.ms-portrait .ms-pause-actions .ms-kbtn--danger {
+  order: 2;
+}
+.ms-portrait .ms-pause-hint {
+  display: none;
+}
+/* phone portrait: HP / XP stay in view under the who strip; Build | Stats are two panes of the body (only one tray at a time) */
+.ms-pause-card.is-off {
+  display: none;
+}
+.ms-pause-tabs {
+  display: none;
+}
+.ms-compact.ms-portrait .ms-pause-tabs {
+  display: flex;
+  flex: none;
+  gap: 0.4rem;
+  padding: 0.15rem 0.65rem 0.4rem;
+}
+.ms-compact.ms-portrait .ms-pause-tabs .ms-ktab {
+  flex: 1 1 0;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: max(2.7rem, var(--k-tap));
+  font-size: var(--t-sm);
+  letter-spacing: 0.1em;
+}
+.ms-compact.ms-portrait .ms-pause-panel > .ms-pause-vitals {
+  flex: none;
+  margin: 0.85rem 1.15rem 0.95rem;
+  gap: 0.85rem;
+}
+.ms-compact.ms-portrait .ms-pause-ct {
+  display: none;
+}
+
+/* ---- R2: count plaques + difficulty plate (stone faces come from settings.css), vital rows on the phone sheets ------------------- */
+.ms-pause-count {
+  font-family: var(--f-num);
+  font-size: var(--t-md);
+  letter-spacing: 0.04em;
+  min-height: 1.75rem;
+  padding: 0.05rem 0.7rem;
+}
+.ms-pause-zone .ms-kchip {
+  min-height: 1.6rem;
+  padding: 0.08rem 0.75rem;
+  font-size: var(--t-sm);
+}
+.ms-compact.ms-landscape .ms-pause-vital {
+  grid-template-columns: 1.8rem minmax(0, 1fr);
+  gap: 0.45rem;
+}
+.ms-compact.ms-landscape .ms-pause-vico .ms-kicon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.ms-compact.ms-portrait .ms-pause-vital {
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.ms-compact.ms-portrait .ms-pause-vico .ms-kicon {
+  width: 1.95rem;
+  height: 1.95rem;
+}
+.ms-compact .ms-pause-count {
+  min-height: 1.5rem;
+  padding: 0.04rem 0.55rem;
+}
+
+/* R2 landscape phone: everything of the build, vitals, tiles and two top-damage rows still fits the 390 px height */
+.ms-compact.ms-landscape .ms-pause-who {
+  padding: 0.3rem 0.9rem 0.15rem;
+}
+.ms-compact.ms-landscape .ms-pause-zone .ms-kchip {
+  min-height: 1.3rem;
+  padding: 0.04rem 0.55rem;
+  font-size: var(--t-xs);
+}
+.ms-compact.ms-landscape .ms-pause-card {
+  padding: 0.35rem 0.7rem 0.45rem;
+}
+.ms-compact.ms-landscape .ms-pause-vitals {
+  margin: 0.35rem 0 0.3rem;
+  gap: 0.6rem;
+}
+.ms-compact.ms-landscape .ms-pstat {
+  padding: 0.05rem 0.1rem;
+}
+.ms-compact.ms-landscape .ms-pstat .ms-well {
+  --wf: var(--t-lg);
+  min-width: 3.9rem;
+  min-height: 1.7rem;
+}
+.ms-compact.ms-landscape .ms-pause-top {
+  padding-top: 0.25rem;
+  margin-top: 0.2rem;
+}
+.ms-compact.ms-landscape .ms-pause-top-row {
+  grid-template-columns: 1.7rem minmax(0, 7rem) minmax(0, 1fr) auto;
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .ms-pause-top-row .ms-well {
+  min-height: 1.6rem;
+  --wf: var(--t-md);
+}
+.ms-compact.ms-landscape .ms-pause-top-name {
+  font-size: var(--t-md);
+}
+.ms-compact.ms-landscape .ms-pause-slots .ms-slot.ms-slot--k .ms-medal.ms-slot-rank {
+  --mh: 1.3rem;
+  right: -0.35rem;
+  bottom: -0.35rem;
+  padding: 0 0.22rem;
+  font-size: max(0.82rem, 11px);
+}
+.ms-compact.ms-landscape .ms-pause-count {
+  min-height: 1.35rem;
+  padding: 0.02rem 0.5rem;
+  font-size: var(--t-sm);
+}
+
+.ms-compact.ms-landscape .ms-pstat-label {
+  font-size: var(--t-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-compact.ms-landscape .ms-pause-vitals {
+  margin: 0.3rem 0 0.2rem;
+  gap: 0.5rem;
+}
+.ms-compact.ms-landscape .ms-pause-top-row {
+  padding: 0;
+}
+.ms-compact.ms-landscape .ms-pause-subct {
+  margin-bottom: 0.15rem;
+}
+
+/* Chest prompt placeholder (the Chest modal, B7, still reads this one; it only lived in this sheet from the C0 split) */
+.ms-chest-prompt.is-hidden {
+  visibility: hidden;
+  min-height: 1.5rem;
+  animation: none;
+}

@@ -1,0 +1,3038 @@
+[
+  {
+    "id": "boss_chan_dae",
+    "name": {
+      "tr": "Chan-Dae",
+      "en": "Chan-Dae"
+    },
+    "model": "alpha_blue_wolf",
+    "scale": 1.99,
+    "tint": "#8e98ac",
+    "race": [
+      "animal"
+    ],
+    "rank": "boss",
+    "level": 9,
+    "hp": 1000,
+    "damage": 7.8,
+    "speed": 3.9,
+    "radius": 1.35,
+    "mass": 3.5,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.2,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 160,
+    "yeop": [
+      251,
+      402
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Mavi Sürünün Alfası",
+      "en": "Alpha of the Blue Pack"
+    },
+    "intro": {
+      "tr": "Mavi kürklü bir kurt, sürüsünün önüne çıkıyor; Metin yağmuru gözlerini kana boyamış.",
+      "en": "A blue-furred wolf steps out before its pack, its eyes stained red by the Metin rain."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "lunge",
+          "maul"
+        ]
+      },
+      {
+        "hpPct": 0.5,
+        "patterns": [
+          "lunge",
+          "maul",
+          "howl"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "lunge",
+        "kind": "charge",
+        "cooldown": 7,
+        "windup": 1.0,
+        "params": {
+          "length": 10,
+          "width": 2.0,
+          "speed": 19,
+          "damage": 1.8
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "maul",
+        "kind": "slam",
+        "cooldown": 5,
+        "windup": 0.9,
+        "params": {
+          "radius": 3.4,
+          "damage": 1.4,
+          "knockback": 2.0,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "howl",
+        "kind": "summon",
+        "cooldown": 16,
+        "windup": 1.2,
+        "params": {
+          "count": 6
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 80,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 1,
+      "chest": true
+    },
+    "escorts": [
+      "hungry_alpha_wolf",
+      "hungry_wolf",
+      "wild_dog"
+    ]
+  },
+  {
+    "id": "boss_dol_gwan",
+    "name": {
+      "tr": "Dol-Gwan",
+      "en": "Dol-Gwan"
+    },
+    "model": "boar_boss",
+    "scale": 3.3,
+    "race": [
+      "animal"
+    ],
+    "rank": "boss",
+    "level": 10,
+    "hp": 1654,
+    "damage": 11.6,
+    "speed": 3.3,
+    "radius": 1.8,
+    "mass": 7.3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.5,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 430,
+    "yeop": [
+      376,
+      602
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Ovanın Dişli Bekçisi",
+      "en": "Tusked Warden of the Plain"
+    },
+    "intro": {
+      "tr": "Toprak titriyor; dev bir yaban domuzu dişlerini yere sürterek hücuma hazırlanıyor.",
+      "en": "The ground shudders as a colossal boar rakes its tusks across the earth, ready to charge."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "rampage",
+          "stomp"
+        ]
+      },
+      {
+        "hpPct": 0.55,
+        "patterns": [
+          "rampage",
+          "stomp",
+          "quake",
+          "rage"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "rampage",
+        "kind": "charge",
+        "cooldown": 8,
+        "windup": 1.0,
+        "params": {
+          "length": 16,
+          "width": 2.6,
+          "speed": 21,
+          "damage": 2.0
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "stomp",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.2,
+          "damage": 1.5,
+          "knockback": 2.8,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "quake",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 14,
+          "speed": 7,
+          "radius": 0.45,
+          "damage": 0.7,
+          "waves": 2
+        },
+        "vfx": "proj.blade.physical",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "rage",
+        "kind": "enrage",
+        "cooldown": 40,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.25,
+          "damageMul": 1.2,
+          "cooldownMul": 0.8
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 95,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 1,
+      "chest": true
+    },
+    "escorts": [
+      "hungry_blue_wolf",
+      "hungry_wild_boar",
+      "hungry_alpha_wolf"
+    ]
+  },
+  {
+    "id": "boss_ung_jae",
+    "name": {
+      "tr": "Ung-Jae",
+      "en": "Ung-Jae"
+    },
+    "model": "elder_bear",
+    "scale": 2.5,
+    "race": [
+      "animal"
+    ],
+    "rank": "boss",
+    "level": 21,
+    "hp": 4053,
+    "damage": 15.7,
+    "speed": 2.9,
+    "radius": 2.12,
+    "mass": 8.7,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.7,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 840,
+    "yeop": [
+      769,
+      1230
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Yaşlı Ayı Beyi",
+      "en": "Elder Bear Lord"
+    },
+    "intro": {
+      "tr": "Gümüş Ant, kahverengi ayıyı bayrağının altına bağlamış; yanında askerleriyle ağır adımlarla geliyor.",
+      "en": "The Silver Vow has bound the brown bear to its banner; it lumbers in with soldiers at its flanks."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "swat",
+          "charge"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "swat",
+          "roar",
+          "banner"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "swat",
+          "roar",
+          "banner",
+          "charge"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "swat",
+        "kind": "slam",
+        "cooldown": 5.5,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.6,
+          "damage": 1.5,
+          "knockback": 3.0,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "roar",
+        "kind": "nova",
+        "cooldown": 12,
+        "windup": 1.2,
+        "params": {
+          "radius": 7,
+          "inner": 2.5,
+          "damage": 1.2,
+          "knockback": 3.5
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "banner",
+        "kind": "summon",
+        "cooldown": 18,
+        "windup": 1.2,
+        "params": {
+          "count": 7
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "charge",
+        "kind": "charge",
+        "cooldown": 9,
+        "windup": 1.0,
+        "params": {
+          "length": 12,
+          "width": 2.8,
+          "speed": 17,
+          "damage": 1.9
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      }
+    ],
+    "enrageAfter": 110,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 1,
+      "chest": true
+    },
+    "escorts": [
+      "hungry_blue_wolf",
+      "hungry_wild_boar",
+      "hungry_alpha_blue_wolf"
+    ]
+  },
+  {
+    "id": "boss_ji_yul",
+    "name": {
+      "tr": "Ji-Yul",
+      "en": "Ji-Yul"
+    },
+    "model": "silver_vow_leader",
+    "scale": 1.7,
+    "tint": "#e8b8d0",
+    "race": [
+      "human"
+    ],
+    "rank": "boss",
+    "level": 31,
+    "hp": 6000,
+    "damage": 20.2,
+    "speed": 3.3,
+    "radius": 0.77,
+    "mass": 2.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 8.0,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1250,
+    "yeop": [
+      1053,
+      1685
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Gümüş Ant’ın Büyücüsü",
+      "en": "Sorceress of the Silver Vow"
+    },
+    "intro": {
+      "tr": "Ji-Yul rüzgârları çağırıyor; Metin’in parıltısı gözlerinde dans ediyor.",
+      "en": "Ji-Yul calls down the wind, the glare of the Metin dancing in her eyes."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "wind_blades",
+          "blink"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "wind_blades",
+          "blink",
+          "gale"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "wind_blades",
+          "gale",
+          "oath_call",
+          "blink"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "wind_blades",
+        "kind": "volley",
+        "cooldown": 8,
+        "windup": 0.8,
+        "params": {
+          "count": 7,
+          "speed": 13,
+          "spread": 1.3,
+          "radius": 0.45,
+          "damage": 0.7,
+          "waves": 2,
+          "interval": 0.35
+        },
+        "vfx": "proj.blade.wind",
+        "sfx": "sfx_wind_gust"
+      },
+      {
+        "id": "blink",
+        "kind": "teleport",
+        "cooldown": 11,
+        "windup": 0.8,
+        "params": {
+          "range": 11,
+          "radius": 3.5,
+          "damage": 1.2
+        },
+        "vfx": "boss.teleport.in",
+        "sfx": "sfx_dark_cast"
+      },
+      {
+        "id": "gale",
+        "kind": "ring",
+        "cooldown": 12,
+        "windup": 1.0,
+        "params": {
+          "count": 18,
+          "speed": 8.5,
+          "radius": 0.4,
+          "damage": 0.65,
+          "waves": 2
+        },
+        "vfx": "proj.blade.wind",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "oath_call",
+        "kind": "summon",
+        "cooldown": 20,
+        "windup": 1.2,
+        "params": {
+          "count": 6
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 120,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 1,
+      "chest": true
+    },
+    "tintMode": "colorize",
+    "escorts": [
+      "hungry_blue_wolf",
+      "blue_wolf",
+      "alpha_blue_wolf"
+    ]
+  },
+  {
+    "id": "boss_horyeong",
+    "name": {
+      "tr": "Horyeong",
+      "en": "Horyeong"
+    },
+    "model": "tiger_god",
+    "scale": 1,
+    "race": [
+      "animal"
+    ],
+    "rank": "boss",
+    "level": 35,
+    "hp": 23400,
+    "damage": 25,
+    "speed": 3.6,
+    "radius": 1.5,
+    "mass": 12,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.0,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2200,
+    "yeop": [
+      3129,
+      5006
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Yeonmu’nun Kaplan Tanrısı",
+      "en": "Tiger God of Yeonmu"
+    },
+    "intro": {
+      "tr": "Büyük Metin çatladı ve Horyeong, açlığın ve öfkenin kaplanı, gün ışığına çıktı.",
+      "en": "The Great Metin cracks, and Horyeong — the tiger of hunger and rage — steps into the light."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "rend",
+          "pounce",
+          "claw_wave"
+        ]
+      },
+      {
+        "hpPct": 0.65,
+        "patterns": [
+          "rend",
+          "pounce",
+          "claw_wave",
+          "pack_call",
+          "roar_ring"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "bloodlust",
+          "rend",
+          "pounce",
+          "claw_wave",
+          "roar_ring"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "rend",
+        "kind": "slam",
+        "cooldown": 5.5,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.8,
+          "damage": 1.6,
+          "knockback": 2.8,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "pounce",
+        "kind": "charge",
+        "cooldown": 8,
+        "windup": 1.0,
+        "params": {
+          "length": 15,
+          "width": 2.6,
+          "speed": 22,
+          "damage": 2.0
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "claw_wave",
+        "kind": "volley",
+        "cooldown": 8,
+        "windup": 0.8,
+        "params": {
+          "count": 5,
+          "speed": 13,
+          "spread": 0.8,
+          "radius": 0.55,
+          "damage": 0.8,
+          "waves": 3,
+          "interval": 0.4
+        },
+        "vfx": "proj.blade.physical",
+        "sfx": "sfx_bow_shot"
+      },
+      {
+        "id": "pack_call",
+        "kind": "summon",
+        "cooldown": 20,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "roar_ring",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 20,
+          "speed": 8,
+          "radius": 0.45,
+          "damage": 0.7,
+          "waves": 3
+        },
+        "vfx": "proj.blade.physical",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "bloodlust",
+        "kind": "enrage",
+        "cooldown": 45,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.3,
+          "damageMul": 1.3,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 150,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 1,
+      "chest": true
+    },
+    "escorts": [
+      "hungry_tiger",
+      "hungry_black_bear",
+      "silver_vow_archer"
+    ]
+  },
+  {
+    "id": "boss_orc_sorcerer",
+    "name": {
+      "tr": "Ork Büyücüsü",
+      "en": "Orc Sorcerer"
+    },
+    "model": "orc_sorcerer_boss",
+    "scale": 2.16,
+    "race": [
+      "orc"
+    ],
+    "rank": "boss",
+    "level": 33,
+    "hp": 845,
+    "damage": 13,
+    "speed": 2.8,
+    "radius": 1.04,
+    "mass": 3.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 8.0,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 160,
+    "yeop": [
+      220,
+      352
+    ],
+    "ai": "ranged",
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Kor Kâhin",
+      "en": "Cinder Seer"
+    },
+    "intro": {
+      "tr": "Ork büyücüsü asasını kaldırıyor; havada kükürt kokusu ve yanık bir uğultu var.",
+      "en": "The orc sorcerer lifts his staff; the air reeks of sulphur and hums with scorched magic."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "fire_bolts",
+          "ember_rain"
+        ]
+      },
+      {
+        "hpPct": 0.5,
+        "patterns": [
+          "fire_bolts",
+          "ember_rain",
+          "scout_call"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "fire_bolts",
+        "kind": "volley",
+        "cooldown": 7,
+        "windup": 0.8,
+        "params": {
+          "count": 5,
+          "speed": 11,
+          "spread": 1.0,
+          "radius": 0.5,
+          "damage": 0.8,
+          "waves": 2,
+          "interval": 0.4
+        },
+        "vfx": "proj.hostile.fire",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "ember_rain",
+        "kind": "meteor",
+        "cooldown": 12,
+        "windup": 1.4,
+        "params": {
+          "count": 7,
+          "radius": 2.4,
+          "spread": 8,
+          "delay": 1.2,
+          "interval": 0.25,
+          "damage": 1.4
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "scout_call",
+        "kind": "summon",
+        "cooldown": 18,
+        "windup": 1.2,
+        "params": {
+          "count": 6
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 90,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 2,
+      "chest": true
+    },
+    "escorts": [
+      "hulking_orc",
+      "high_zealot",
+      "elite_orc"
+    ]
+  },
+  {
+    "id": "boss_feral_maniac",
+    "name": {
+      "tr": "Yırtıcı Deli",
+      "en": "Feral Maniac"
+    },
+    "model": "barbarian",
+    "scale": 2.3,
+    "tint": "#c07a58",
+    "race": [
+      "human"
+    ],
+    "rank": "boss",
+    "level": 37,
+    "hp": 2150,
+    "damage": 20.2,
+    "speed": 3.4,
+    "radius": 1.15,
+    "mass": 5.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.4,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 430,
+    "yeop": [
+      463,
+      741
+    ],
+    "ai": "chase",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Kan Çılgını",
+      "en": "Blood-Mad Berserker"
+    },
+    "intro": {
+      "tr": "Yırtıcı askerlerin en delisi zincirlerini koparıp sana doğru koşuyor.",
+      "en": "The maddest of the savage soldiers snaps his chains and charges straight at you."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "frenzy_rush",
+          "cleave"
+        ]
+      },
+      {
+        "hpPct": 0.5,
+        "patterns": [
+          "berserk",
+          "frenzy_rush",
+          "cleave",
+          "war_cry"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "frenzy_rush",
+        "kind": "charge",
+        "cooldown": 7,
+        "windup": 1.0,
+        "params": {
+          "length": 13,
+          "width": 2.3,
+          "speed": 20,
+          "damage": 1.9
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "cleave",
+        "kind": "slam",
+        "cooldown": 5,
+        "windup": 0.9,
+        "params": {
+          "radius": 3.8,
+          "damage": 1.5,
+          "knockback": 2.4,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "berserk",
+        "kind": "enrage",
+        "cooldown": 35,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.35,
+          "damageMul": 1.25,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      },
+      {
+        "id": "war_cry",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 14,
+          "speed": 8,
+          "radius": 0.4,
+          "damage": 0.65,
+          "waves": 2
+        },
+        "vfx": "proj.blade.physical",
+        "sfx": "sfx_shockwave"
+      }
+    ],
+    "enrageAfter": 100,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 2,
+      "chest": true
+    },
+    "escorts": [
+      "high_zealot",
+      "elite_orc",
+      "dark_zealot"
+    ]
+  },
+  {
+    "id": "boss_dark_inquisitor",
+    "name": {
+      "tr": "Karanlık Sorgucu",
+      "en": "Dark Inquisitor"
+    },
+    "model": "boss_inquisitor",
+    "scale": 2.55,
+    "tint": "#9a8aba",
+    "race": [
+      "esoteric"
+    ],
+    "rank": "boss",
+    "level": 49,
+    "hp": 5268,
+    "damage": 27.3,
+    "speed": 3,
+    "radius": 1.65,
+    "mass": 7.3,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.8,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 840,
+    "yeop": [
+      949,
+      1518
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Cellatların Efendisi",
+      "en": "Master of the Headsmen"
+    },
+    "intro": {
+      "tr": "Örtülü Tarikat’ın karanlık işkencecisi gölgelerden çıkıyor; ardında müritler mırıldanıyor.",
+      "en": "The Veiled Order inquisitor strides out of the shadows, zealots chanting in his wake."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "gallows",
+          "dark_pulse"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "gallows",
+          "dark_pulse",
+          "zealots"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "gallows",
+          "wind_scythe",
+          "dark_pulse",
+          "zealots"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "gallows",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.6,
+          "damage": 1.6,
+          "knockback": 2.8,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "dark_pulse",
+        "kind": "nova",
+        "cooldown": 12,
+        "windup": 1.2,
+        "params": {
+          "radius": 8,
+          "inner": 3,
+          "damage": 1.3,
+          "knockback": 3
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "zealots",
+        "kind": "summon",
+        "cooldown": 18,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "wind_scythe",
+        "kind": "breath",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "length": 9,
+          "angle": 1.0,
+          "duration": 2,
+          "tick": 0.25,
+          "damage": 0.35
+        },
+        "vfx": "cone.breath.wind",
+        "sfx": "sfx_wind_gust"
+      }
+    ],
+    "enrageAfter": 115,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 2,
+      "chest": true
+    },
+    "escorts": [
+      "elite_orc",
+      "dark_zealot",
+      "elite_orc_scout"
+    ]
+  },
+  {
+    "id": "boss_black_orc_giant",
+    "name": {
+      "tr": "Siyah Ork Devi",
+      "en": "Black Orc Giant"
+    },
+    "model": "black_orc",
+    "scale": 2.4,
+    "tint": "#5a5a66",
+    "race": [
+      "orc"
+    ],
+    "rank": "boss",
+    "level": 49,
+    "hp": 8580,
+    "damage": 35,
+    "speed": 2.7,
+    "radius": 1.92,
+    "mass": 11.9,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.0,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1250,
+    "yeop": [
+      1402,
+      2243
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Demir Dişli Dev",
+      "en": "Iron-Tusked Giant"
+    },
+    "intro": {
+      "tr": "Yer sarsılıyor; Siyah Ork Devi baltasını toza sürükleyerek geliyor.",
+      "en": "The ground quakes as the Black Orc Giant drags his axe through the dust."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "axe_fall",
+          "trample"
+        ]
+      },
+      {
+        "hpPct": 0.55,
+        "patterns": [
+          "axe_fall",
+          "trample",
+          "war_stomp",
+          "bloodrage"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "axe_fall",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 5.2,
+          "damage": 1.7,
+          "knockback": 3.2,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "trample",
+        "kind": "charge",
+        "cooldown": 9,
+        "windup": 1.0,
+        "params": {
+          "length": 13,
+          "width": 3.2,
+          "speed": 17,
+          "damage": 2.0
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "war_stomp",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 18,
+          "speed": 7.5,
+          "radius": 0.5,
+          "damage": 0.75,
+          "waves": 3
+        },
+        "vfx": "proj.blade.physical",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "bloodrage",
+        "kind": "enrage",
+        "cooldown": 40,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.25,
+          "damageMul": 1.25,
+          "cooldownMul": 0.75
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 125,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 2,
+      "chest": true
+    },
+    "tintMode": "colorize",
+    "escorts": [
+      "dark_zealot",
+      "dark_ascetic",
+      "elite_orc_fighter"
+    ]
+  },
+  {
+    "id": "boss_chief_orc",
+    "name": {
+      "tr": "Ork Reisi",
+      "en": "Chief Orc"
+    },
+    "model": "orc_lord",
+    "scale": 1.3,
+    "race": [
+      "orc"
+    ],
+    "rank": "boss",
+    "level": 50,
+    "hp": 30420,
+    "damage": 43.2,
+    "speed": 3,
+    "radius": 1.75,
+    "mass": 14,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.2,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2200,
+    "yeop": [
+      3859,
+      6174
+    ],
+    "ai": "tank",
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Metin’e Esir Reis",
+      "en": "Chieftain Enthralled by the Metin"
+    },
+    "intro": {
+      "tr": "Ork Reisi savaş borusunu çalıyor; Büyük Alacakaranlık Metini’nin ışığı sopasında parlıyor.",
+      "en": "The Chief Orc sounds the war horn, the light of the Great Dusk Metin gleaming on his club."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "shock_blow",
+          "war_leap",
+          "axe_slam"
+        ]
+      },
+      {
+        "hpPct": 0.65,
+        "patterns": [
+          "shock_blow",
+          "war_leap",
+          "horn_blast",
+          "warhorn",
+          "axe_slam"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "bloodlust",
+          "shock_blow",
+          "tusk_rush",
+          "horn_blast",
+          "axe_slam"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "shock_blow",
+        "kind": "nova",
+        "cooldown": 10,
+        "windup": 1.2,
+        "params": {
+          "radius": 8,
+          "inner": 3,
+          "damage": 1.4,
+          "knockback": 3
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "war_leap",
+        "kind": "teleport",
+        "cooldown": 12,
+        "windup": 0.8,
+        "params": {
+          "range": 12,
+          "radius": 3.5,
+          "damage": 1.3
+        },
+        "vfx": "boss.teleport.in",
+        "sfx": "sfx_dark_cast"
+      },
+      {
+        "id": "horn_blast",
+        "kind": "breath",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "length": 9,
+          "angle": 1.0,
+          "duration": 2,
+          "tick": 0.25,
+          "damage": 0.35
+        },
+        "vfx": "cone.breath.physical",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "warhorn",
+        "kind": "summon",
+        "cooldown": 20,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "axe_slam",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.6,
+          "damage": 1.7,
+          "knockback": 2.4,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "tusk_rush",
+        "kind": "charge",
+        "cooldown": 9,
+        "windup": 1.0,
+        "params": {
+          "length": 13,
+          "width": 2.6,
+          "speed": 18,
+          "damage": 1.9
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "bloodlust",
+        "kind": "enrage",
+        "cooldown": 45,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.3,
+          "damageMul": 1.3,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 160,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 2,
+      "chest": true
+    },
+    "escorts": [
+      "veiled_ascetic_fighter",
+      "high_headsman",
+      "hulking_orc_general"
+    ]
+  },
+  {
+    "id": "boss_blighted_swordsman",
+    "name": {
+      "tr": "Vebalı Kılıç Ustası",
+      "en": "Blighted Swordsman"
+    },
+    "model": "blighted_swordsman",
+    "scale": 1.9,
+    "tint": "#b8aac4",
+    "race": [
+      "undead"
+    ],
+    "rank": "boss",
+    "level": 55,
+    "hp": 1700,
+    "damage": 19,
+    "speed": 2.9,
+    "radius": 0.95,
+    "mass": 3.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.4,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 160,
+    "yeop": [
+      384,
+      614
+    ],
+    "ai": "chase",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Veba Kılıcı",
+      "en": "Blade of the Plague"
+    },
+    "intro": {
+      "tr": "Çürümüş zırhının altından hastalık sızıyor; ama kılıcı hâlâ keskin.",
+      "en": "Sickness seeps from beneath his rotted armour, but his blade is still sharp."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "rot_cut",
+          "lunge"
+        ]
+      },
+      {
+        "hpPct": 0.5,
+        "patterns": [
+          "rot_cut",
+          "lunge",
+          "miasma",
+          "rise"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "rot_cut",
+        "kind": "slam",
+        "cooldown": 5,
+        "windup": 0.9,
+        "params": {
+          "radius": 3.8,
+          "damage": 1.5,
+          "knockback": 2.2,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "lunge",
+        "kind": "charge",
+        "cooldown": 8,
+        "windup": 1.0,
+        "params": {
+          "length": 12,
+          "width": 2.2,
+          "speed": 19,
+          "damage": 1.8
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "miasma",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 14,
+          "speed": 7,
+          "radius": 0.45,
+          "damage": 0.65,
+          "waves": 2
+        },
+        "vfx": "proj.blade.poison",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "rise",
+        "kind": "summon",
+        "cooldown": 17,
+        "windup": 1.2,
+        "params": {
+          "count": 7
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 95,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 3,
+      "chest": true
+    },
+    "escorts": [
+      "angry_shambling_corpse",
+      "shambling_corpse",
+      "angry_blighted_hound"
+    ]
+  },
+  {
+    "id": "boss_blighted_archer",
+    "name": {
+      "tr": "Vebalı Okçu",
+      "en": "Blighted Archer"
+    },
+    "model": "blighted_archer",
+    "scale": 1.9,
+    "tint": "#b4c088",
+    "tintMode": "colorize",
+    "race": [
+      "undead"
+    ],
+    "rank": "boss",
+    "level": 58,
+    "hp": 2678,
+    "damage": 28.2,
+    "speed": 3,
+    "radius": 0.8,
+    "mass": 2.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 8.5,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 430,
+    "yeop": [
+      552,
+      883
+    ],
+    "ai": "ranged",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Zehirli Gölge",
+      "en": "Venomous Shade"
+    },
+    "intro": {
+      "tr": "Karların ötesinden bir ok vızıldıyor; okçu kayboluyor ve bir başka yerde beliriyor.",
+      "en": "An arrow hums across the snow; the archer vanishes and reappears somewhere else."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "plague_arrows",
+          "shade_step"
+        ]
+      },
+      {
+        "hpPct": 0.55,
+        "patterns": [
+          "plague_arrows",
+          "shade_step",
+          "venom_rain",
+          "plague_ring"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "plague_arrows",
+        "kind": "volley",
+        "cooldown": 7,
+        "windup": 0.8,
+        "params": {
+          "count": 7,
+          "speed": 14,
+          "spread": 1.2,
+          "radius": 0.4,
+          "damage": 0.75,
+          "waves": 3,
+          "interval": 0.3
+        },
+        "vfx": "proj.arrow.poison",
+        "sfx": "sfx_poison_hiss"
+      },
+      {
+        "id": "shade_step",
+        "kind": "teleport",
+        "cooldown": 10,
+        "windup": 0.8,
+        "params": {
+          "range": 12,
+          "radius": 3.0,
+          "damage": 1.1
+        },
+        "vfx": "boss.teleport.in",
+        "sfx": "sfx_dark_cast"
+      },
+      {
+        "id": "venom_rain",
+        "kind": "meteor",
+        "cooldown": 12,
+        "windup": 1.4,
+        "params": {
+          "count": 8,
+          "radius": 2.2,
+          "spread": 9,
+          "delay": 1.1,
+          "interval": 0.22,
+          "damage": 1.3
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "plague_ring",
+        "kind": "ring",
+        "cooldown": 12,
+        "windup": 1.0,
+        "params": {
+          "count": 18,
+          "speed": 8,
+          "radius": 0.4,
+          "damage": 0.6,
+          "waves": 2
+        },
+        "vfx": "proj.blade.poison",
+        "sfx": "sfx_shockwave"
+      }
+    ],
+    "enrageAfter": 105,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 3,
+      "chest": true
+    },
+    "escorts": [
+      "shambling_corpse",
+      "angry_blighted_hound",
+      "blighted_hound"
+    ]
+  },
+  {
+    "id": "boss_blighted_marshal",
+    "name": {
+      "tr": "Vebalı Önder",
+      "en": "Blighted Marshal"
+    },
+    "model": "blighted_marshal_boss",
+    "scale": 2.3,
+    "race": [
+      "undead"
+    ],
+    "rank": "boss",
+    "level": 59,
+    "hp": 6889,
+    "damage": 38.2,
+    "speed": 2.9,
+    "radius": 1.3,
+    "mass": 5.7,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.8,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 840,
+    "yeop": [
+      1176,
+      1882
+    ],
+    "ai": "tank",
+    "resist": {
+      "poison": 0.6,
+      "dark": 0.3
+    },
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Veba Alayı’nın Komutanı",
+      "en": "Commander of the Plague Host"
+    },
+    "intro": {
+      "tr": "Vebalı Önder elini kaldırıyor ve ölüler karın altından doğruluyor.",
+      "en": "The Blighted Marshal raises a hand, and the dead rise from beneath the snow."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "grave_slam",
+          "plague_burst"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "grave_slam",
+          "plague_burst",
+          "raise_dead"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "grave_slam",
+          "spore_cloud",
+          "raise_dead",
+          "plague_burst"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "grave_slam",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.8,
+          "damage": 1.6,
+          "knockback": 2.6,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "plague_burst",
+        "kind": "nova",
+        "cooldown": 12,
+        "windup": 1.2,
+        "params": {
+          "radius": 8.5,
+          "inner": 3,
+          "damage": 1.3,
+          "knockback": 3
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "raise_dead",
+        "kind": "summon",
+        "cooldown": 16,
+        "windup": 1.2,
+        "params": {
+          "count": 9
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "spore_cloud",
+        "kind": "breath",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "length": 10,
+          "angle": 1.1,
+          "duration": 2.4,
+          "tick": 0.25,
+          "damage": 0.38
+        },
+        "vfx": "cone.breath.poison",
+        "sfx": "sfx_poison_hiss"
+      }
+    ],
+    "enrageAfter": 120,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 3,
+      "chest": true
+    },
+    "escorts": [
+      "shambling_corpse",
+      "blighted_hound",
+      "angry_blighted_villager"
+    ]
+  },
+  {
+    "id": "boss_ice_golem",
+    "name": {
+      "tr": "Buz Golemi",
+      "en": "Ice Golem"
+    },
+    "model": "ice_golem_heart",
+    "scale": 2.7,
+    "race": [
+      "ice"
+    ],
+    "rank": "boss",
+    "level": 66,
+    "hp": 11220,
+    "damage": 48.9,
+    "speed": 2.5,
+    "radius": 2.6,
+    "mass": 12.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.2,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1250,
+    "yeop": [
+      1738,
+      2781
+    ],
+    "ai": "tank",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Donmuş Dağın Kalbi",
+      "en": "Heart of the Frozen Mountain"
+    },
+    "intro": {
+      "tr": "Dağın kendisi yerinden kalkıyor: Buz Golemi uyandı.",
+      "en": "The mountain itself rises — the Ice Golem has awoken."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "glacier_fist",
+          "frost_ring"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "glacier_fist",
+          "frost_ring",
+          "whiteout",
+          "avalanche"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "ice_rage",
+          "glacier_fist",
+          "whiteout",
+          "avalanche"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "glacier_fist",
+        "kind": "slam",
+        "cooldown": 6.5,
+        "windup": 0.9,
+        "params": {
+          "radius": 5.4,
+          "damage": 1.8,
+          "knockback": 3.4,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "frost_ring",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 20,
+          "speed": 7.5,
+          "radius": 0.5,
+          "damage": 0.75,
+          "waves": 3
+        },
+        "vfx": "proj.blade.ice",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "whiteout",
+        "kind": "nova",
+        "cooldown": 13,
+        "windup": 1.2,
+        "params": {
+          "radius": 9,
+          "inner": 3.5,
+          "damage": 1.4,
+          "knockback": 3.5
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "avalanche",
+        "kind": "charge",
+        "cooldown": 10,
+        "windup": 1.0,
+        "params": {
+          "length": 13,
+          "width": 3.4,
+          "speed": 15,
+          "damage": 2.1
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "ice_rage",
+        "kind": "enrage",
+        "cooldown": 40,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.25,
+          "damageMul": 1.25,
+          "cooldownMul": 0.75
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 130,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 3,
+      "chest": true
+    },
+    "escorts": [
+      "blighted_villager",
+      "blighted_swordsman",
+      "angry_blighted_archer"
+    ]
+  },
+  {
+    "id": "boss_miho",
+    "name": {
+      "tr": "Miho",
+      "en": "Miho"
+    },
+    "model": "miho",
+    "scale": 1.15,
+    "race": [
+      "ice",
+      "devil"
+    ],
+    "rank": "boss",
+    "level": 72,
+    "hp": 39780,
+    "damage": 62.8,
+    "speed": 3.5,
+    "radius": 1.4,
+    "mass": 14,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.4,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2200,
+    "yeop": [
+      4783,
+      7653
+    ],
+    "ai": "chase",
+    "resist": {
+      "ice": 0.5,
+      "fire": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Seori’nin Dokuz Kuyruklu Ruhu",
+      "en": "Nine-Tailed Spirit of Seori"
+    },
+    "intro": {
+      "tr": "Büyük Ecel Metini çatlıyor; dokuz kuyruğun gölgesi karın üzerinde dans ediyor.",
+      "en": "The Great Metin of Demise splits; the shadows of nine tails dance across the snow."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "fox_fire",
+          "fox_step",
+          "frost_breath"
+        ]
+      },
+      {
+        "hpPct": 0.7,
+        "patterns": [
+          "fox_fire",
+          "fox_step",
+          "miho_fan",
+          "yeti_call"
+        ]
+      },
+      {
+        "hpPct": 0.4,
+        "patterns": [
+          "fox_fire",
+          "spirit_rain",
+          "miho_fan",
+          "white_nova",
+          "frost_breath"
+        ]
+      },
+      {
+        "hpPct": 0.15,
+        "patterns": [
+          "vengeful_spirit",
+          "fox_fire",
+          "spirit_rain",
+          "white_nova",
+          "fox_step"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "fox_fire",
+        "kind": "volley",
+        "cooldown": 8,
+        "windup": 0.8,
+        "params": {
+          "count": 9,
+          "speed": 12,
+          "spread": 1.6,
+          "radius": 0.5,
+          "damage": 0.75,
+          "waves": 3,
+          "interval": 0.35
+        },
+        "vfx": "proj.hostile.ice",
+        "sfx": "sfx_ice_cast"
+      },
+      {
+        "id": "fox_step",
+        "kind": "teleport",
+        "cooldown": 10,
+        "windup": 0.8,
+        "params": {
+          "range": 13,
+          "radius": 3.5,
+          "damage": 1.2
+        },
+        "vfx": "boss.teleport.in",
+        "sfx": "sfx_dark_cast"
+      },
+      {
+        "id": "miho_fan",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 27,
+          "speed": 8.5,
+          "radius": 0.45,
+          "damage": 0.65,
+          "waves": 3
+        },
+        "vfx": "proj.blade.ice",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "spirit_rain",
+        "kind": "meteor",
+        "cooldown": 14,
+        "windup": 1.4,
+        "params": {
+          "count": 12,
+          "radius": 2.6,
+          "spread": 11,
+          "delay": 1.3,
+          "interval": 0.2,
+          "damage": 1.5
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "frost_breath",
+        "kind": "breath",
+        "cooldown": 10,
+        "windup": 1.0,
+        "params": {
+          "length": 12,
+          "angle": 1.1,
+          "duration": 2.5,
+          "tick": 0.25,
+          "damage": 0.42
+        },
+        "vfx": "cone.breath.ice",
+        "sfx": "sfx_ice_cast"
+      },
+      {
+        "id": "yeti_call",
+        "kind": "summon",
+        "cooldown": 22,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "white_nova",
+        "kind": "nova",
+        "cooldown": 13,
+        "windup": 1.2,
+        "params": {
+          "radius": 10,
+          "inner": 4,
+          "damage": 1.5,
+          "knockback": 4
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "vengeful_spirit",
+        "kind": "enrage",
+        "cooldown": 45,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.3,
+          "damageMul": 1.3,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 170,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 3,
+      "chest": true
+    },
+    "escorts": [
+      "blighted_archer",
+      "blighted_spearman",
+      "cruel_frost_wisp"
+    ]
+  },
+  {
+    "id": "boss_blaze_tiger",
+    "name": {
+      "tr": "Alev Kaplanı",
+      "en": "Blaze Tiger"
+    },
+    "model": "blaze_tiger_armored",
+    "scale": 2.3,
+    "tint": "#ffc080",
+    "race": [
+      "fire"
+    ],
+    "rank": "boss",
+    "level": 70,
+    "hp": 2400,
+    "damage": 35,
+    "speed": 3.9,
+    "radius": 1.61,
+    "mass": 4.9,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 2.6,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 160,
+    "yeop": [
+      506,
+      810
+    ],
+    "ai": "chase",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Alevlerin Pençesi",
+      "en": "Claw of Flame"
+    },
+    "intro": {
+      "tr": "Kor kaplan kükrüyor; attığı her adım arkasında lav izi bırakıyor.",
+      "en": "The ember tiger roars, a trail of lava burning behind every stride."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "flame_pounce",
+          "magma_swipe"
+        ]
+      },
+      {
+        "hpPct": 0.5,
+        "patterns": [
+          "flame_pounce",
+          "magma_swipe",
+          "ember_breath"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "flame_pounce",
+        "kind": "charge",
+        "cooldown": 7,
+        "windup": 1.0,
+        "params": {
+          "length": 14,
+          "width": 2.4,
+          "speed": 22,
+          "damage": 1.9
+        },
+        "vfx": "boss.charge.trail",
+        "sfx": "sfx_enemy_whoosh_heavy"
+      },
+      {
+        "id": "magma_swipe",
+        "kind": "slam",
+        "cooldown": 5,
+        "windup": 0.9,
+        "params": {
+          "radius": 4.0,
+          "damage": 1.5,
+          "knockback": 2.4,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "ember_breath",
+        "kind": "breath",
+        "cooldown": 10,
+        "windup": 1.0,
+        "params": {
+          "length": 8,
+          "angle": 0.9,
+          "duration": 1.8,
+          "tick": 0.25,
+          "damage": 0.35
+        },
+        "vfx": "cone.breath.fire",
+        "sfx": "sfx_fire_cast"
+      }
+    ],
+    "enrageAfter": 90,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 4,
+      "chest": true
+    },
+    "escorts": [
+      "ash_wisp",
+      "blaze_cub"
+    ]
+  },
+  {
+    "id": "boss_greater_ash_wisp",
+    "name": {
+      "tr": "Büyük Kül Ruhu",
+      "en": "Greater Ash Wisp"
+    },
+    "model": "ash_wisp_boss",
+    "scale": 2.52,
+    "race": [
+      "fire"
+    ],
+    "rank": "boss",
+    "level": 69,
+    "hp": 3780,
+    "damage": 54.5,
+    "speed": 3.2,
+    "radius": 1.08,
+    "mass": 2.2,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 8.0,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 430,
+    "yeop": [
+      728,
+      1165
+    ],
+    "ai": "ranged",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_flesh",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Yanık Ruh",
+      "en": "Cinder Wraith"
+    },
+    "intro": {
+      "tr": "Bir alev hayaleti parlıyor, bir an görünüp kayboluyor ve arkanda yeniden yanıyor.",
+      "en": "A flame wraith flares, flickers out of sight, and burns in again right behind you."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "fire_bolts",
+          "flicker"
+        ]
+      },
+      {
+        "hpPct": 0.55,
+        "patterns": [
+          "fire_bolts",
+          "flicker",
+          "cinder_rain",
+          "wisps"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "fire_bolts",
+        "kind": "volley",
+        "cooldown": 7,
+        "windup": 0.8,
+        "params": {
+          "count": 8,
+          "speed": 13,
+          "spread": 1.5,
+          "radius": 0.5,
+          "damage": 0.7,
+          "waves": 3,
+          "interval": 0.3
+        },
+        "vfx": "proj.hostile.fire",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "flicker",
+        "kind": "teleport",
+        "cooldown": 9,
+        "windup": 0.8,
+        "params": {
+          "range": 12,
+          "radius": 3.2,
+          "damage": 1.2
+        },
+        "vfx": "boss.teleport.in",
+        "sfx": "sfx_dark_cast"
+      },
+      {
+        "id": "cinder_rain",
+        "kind": "meteor",
+        "cooldown": 12,
+        "windup": 1.4,
+        "params": {
+          "count": 10,
+          "radius": 2.4,
+          "spread": 10,
+          "delay": 1.2,
+          "interval": 0.2,
+          "damage": 1.4
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "wisps",
+        "kind": "summon",
+        "cooldown": 18,
+        "windup": 1.2,
+        "params": {
+          "count": 7
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 100,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 4,
+      "chest": true
+    },
+    "escorts": [
+      "greater_ash_wisp",
+      "ash_wisp",
+      "blaze_cub"
+    ]
+  },
+  {
+    "id": "boss_basalt_general",
+    "name": {
+      "tr": "Bazalt Generali",
+      "en": "Basalt General"
+    },
+    "model": "lava_troll",
+    "scale": 2.2,
+    "tint": "#ff7a30",
+    "race": [
+      "fire"
+    ],
+    "rank": "boss",
+    "level": 105,
+    "hp": 9726,
+    "damage": 73.7,
+    "speed": 2.7,
+    "radius": 1.98,
+    "mass": 11.4,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.2,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 840,
+    "yeop": [
+      1550,
+      2480
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Magma Kumandanı",
+      "en": "Magma Warlord"
+    },
+    "intro": {
+      "tr": "Bazalt Generali yumruklarını yere vuruyor; çatlaklardan magma fışkırıyor.",
+      "en": "The Basalt General drives his fists into the ground, and magma bursts through the cracks."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "magma_fist",
+          "lava_ring"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "magma_fist",
+          "lava_ring",
+          "eruption"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "magma_fist",
+          "eruption",
+          "troll_call",
+          "lava_ring"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "magma_fist",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 5.2,
+          "damage": 1.8,
+          "knockback": 3.2,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "lava_ring",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 20,
+          "speed": 7.5,
+          "radius": 0.5,
+          "damage": 0.75,
+          "waves": 3
+        },
+        "vfx": "proj.blade.fire",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "eruption",
+        "kind": "nova",
+        "cooldown": 12,
+        "windup": 1.2,
+        "params": {
+          "radius": 9,
+          "inner": 3.5,
+          "damage": 1.4,
+          "knockback": 3.5
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "troll_call",
+        "kind": "summon",
+        "cooldown": 19,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      }
+    ],
+    "enrageAfter": 120,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 4,
+      "chest": true
+    },
+    "escorts": [
+      "greater_ash_wisp",
+      "ash_wisp",
+      "blaze_cub"
+    ]
+  },
+  {
+    "id": "boss_pyre_king",
+    "name": {
+      "tr": "Köz Kral",
+      "en": "Pyre King"
+    },
+    "model": "pyre_king",
+    "scale": 1.2,
+    "race": [
+      "fire"
+    ],
+    "rank": "boss",
+    "level": 73,
+    "hp": 14400,
+    "damage": 98.4,
+    "speed": 3.2,
+    "radius": 1.8,
+    "mass": 16,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.4,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 1250,
+    "yeop": [
+      2122,
+      3395
+    ],
+    "ai": "tank",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_armor",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Daeryeol’un Ateş Kralı",
+      "en": "Fire King of Daeryeol"
+    },
+    "intro": {
+      "tr": "Köz Kral tahtından doğruluyor; sıcaktan her nefes bir azaba dönüşüyor.",
+      "en": "The Pyre King rises from his throne, and the heat turns every breath into a labour."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "inferno_breath",
+          "scepter_slam",
+          "crown_nova"
+        ]
+      },
+      {
+        "hpPct": 0.6,
+        "patterns": [
+          "inferno_breath",
+          "meteor_fall",
+          "crown_nova",
+          "court_call",
+          "scepter_slam"
+        ]
+      },
+      {
+        "hpPct": 0.3,
+        "patterns": [
+          "wrath",
+          "inferno_breath",
+          "meteor_fall",
+          "crown_nova",
+          "scepter_slam"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "inferno_breath",
+        "kind": "breath",
+        "cooldown": 9,
+        "windup": 1.0,
+        "params": {
+          "length": 11,
+          "angle": 1.0,
+          "duration": 2.4,
+          "tick": 0.25,
+          "damage": 0.4
+        },
+        "vfx": "cone.breath.fire",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "meteor_fall",
+        "kind": "meteor",
+        "cooldown": 13,
+        "windup": 1.4,
+        "params": {
+          "count": 10,
+          "radius": 2.6,
+          "spread": 10,
+          "delay": 1.3,
+          "interval": 0.2,
+          "damage": 1.6
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "crown_nova",
+        "kind": "nova",
+        "cooldown": 12,
+        "windup": 1.2,
+        "params": {
+          "radius": 9.5,
+          "inner": 3.5,
+          "damage": 1.5,
+          "knockback": 3.5
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "scepter_slam",
+        "kind": "slam",
+        "cooldown": 6,
+        "windup": 0.9,
+        "params": {
+          "radius": 5.0,
+          "damage": 1.8,
+          "knockback": 2.8,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "court_call",
+        "kind": "summon",
+        "cooldown": 20,
+        "windup": 1.2,
+        "params": {
+          "count": 8
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "wrath",
+        "kind": "enrage",
+        "cooldown": 45,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.25,
+          "damageMul": 1.3,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 150,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 4,
+      "chest": true
+    },
+    "escorts": [
+      "greater_ash_wisp",
+      "ash_wisp",
+      "blaze_cub"
+    ]
+  },
+  {
+    "id": "boss_scarlet_wyrm",
+    "name": {
+      "tr": "Al Ejder",
+      "en": "Scarlet Wyrm"
+    },
+    "model": "scarlet_wyrm",
+    "scale": 1,
+    "race": [
+      "dragon",
+      "fire"
+    ],
+    "rank": "king",
+    "level": 75,
+    "hp": 56160,
+    "damage": 125.9,
+    "speed": 3,
+    "radius": 2.6,
+    "mass": 40,
+    "attacks": [
+      {
+        "kind": "melee",
+        "range": 3.6,
+        "cooldown": 1.6,
+        "windup": 0.6,
+        "damageMul": 1.0
+      }
+    ],
+    "xp": 2200,
+    "yeop": [
+      6303,
+      10085
+    ],
+    "ai": "chase",
+    "resist": {
+      "fire": 0.5,
+      "ice": -0.25
+    },
+    "sfx": {
+      "hit": "sfx_hit_stone",
+      "death": "sfx_boss_death",
+      "attack": "sfx_boss_roar"
+    },
+    "title": {
+      "tr": "Metin Yağmurunun Kaynağı",
+      "en": "Source of the Metin Rain"
+    },
+    "intro": {
+      "tr": "Büyük Metin parçalanıyor ve gökyüzü kızıla boyanıyor: Al Ejder uyandı. Yağmurun kaynağı bu.",
+      "en": "The Great Metin shatters and the sky bleeds red: the Scarlet Wyrm awakens — the source of the rain."
+    },
+    "phases": [
+      {
+        "hpPct": 1,
+        "patterns": [
+          "dragon_breath",
+          "tail_slam",
+          "ember_volley"
+        ]
+      },
+      {
+        "hpPct": 0.7,
+        "patterns": [
+          "dragon_breath",
+          "meteor_storm",
+          "scale_ring",
+          "brood_call",
+          "tail_slam"
+        ]
+      },
+      {
+        "hpPct": 0.4,
+        "patterns": [
+          "dragon_breath",
+          "meteor_storm",
+          "scale_ring",
+          "ember_volley",
+          "cataclysm"
+        ]
+      },
+      {
+        "hpPct": 0.15,
+        "patterns": [
+          "dragon_rage",
+          "dragon_breath",
+          "meteor_storm",
+          "cataclysm",
+          "ember_volley",
+          "tail_slam"
+        ]
+      }
+    ],
+    "patterns": [
+      {
+        "id": "dragon_breath",
+        "kind": "breath",
+        "cooldown": 9,
+        "windup": 1.0,
+        "params": {
+          "length": 13,
+          "angle": 1.1,
+          "duration": 2.8,
+          "tick": 0.25,
+          "damage": 0.45
+        },
+        "vfx": "cone.breath.fire",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "meteor_storm",
+        "kind": "meteor",
+        "cooldown": 14,
+        "windup": 1.4,
+        "params": {
+          "count": 14,
+          "radius": 3.0,
+          "spread": 12,
+          "delay": 1.3,
+          "interval": 0.18,
+          "damage": 1.7
+        },
+        "vfx": "sky.meteor.fire",
+        "sfx": "sfx_explosion_large"
+      },
+      {
+        "id": "scale_ring",
+        "kind": "ring",
+        "cooldown": 11,
+        "windup": 1.0,
+        "params": {
+          "count": 26,
+          "speed": 9,
+          "radius": 0.45,
+          "damage": 0.75,
+          "waves": 3
+        },
+        "vfx": "proj.blade.fire",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "ember_volley",
+        "kind": "volley",
+        "cooldown": 8,
+        "windup": 0.8,
+        "params": {
+          "count": 9,
+          "speed": 14,
+          "spread": 1.4,
+          "radius": 0.55,
+          "damage": 0.8,
+          "waves": 3,
+          "interval": 0.3
+        },
+        "vfx": "proj.arrow.fire",
+        "sfx": "sfx_fire_cast"
+      },
+      {
+        "id": "brood_call",
+        "kind": "summon",
+        "cooldown": 22,
+        "windup": 1.2,
+        "params": {
+          "count": 9
+        },
+        "vfx": "boss.summon",
+        "sfx": "sfx_summon_cast"
+      },
+      {
+        "id": "tail_slam",
+        "kind": "slam",
+        "cooldown": 7,
+        "windup": 0.9,
+        "params": {
+          "radius": 6.0,
+          "damage": 1.9,
+          "knockback": 3.2,
+          "atPlayer": 1
+        },
+        "vfx": "boss.slam",
+        "sfx": "sfx_ground_slam"
+      },
+      {
+        "id": "cataclysm",
+        "kind": "nova",
+        "cooldown": 13,
+        "windup": 1.2,
+        "params": {
+          "radius": 11.5,
+          "inner": 4.5,
+          "damage": 1.6,
+          "knockback": 4
+        },
+        "vfx": "boss.nova",
+        "sfx": "sfx_shockwave"
+      },
+      {
+        "id": "dragon_rage",
+        "kind": "enrage",
+        "cooldown": 45,
+        "windup": 1.2,
+        "params": {
+          "speedMul": 1.25,
+          "damageMul": 1.3,
+          "cooldownMul": 0.7
+        },
+        "vfx": "boss.enrage.burst",
+        "sfx": "sfx_boss_roar"
+      }
+    ],
+    "enrageAfter": 180,
+    "music": "mus_boss",
+    "loot": {
+      "gearTier": 4,
+      "chest": true
+    },
+    "escorts": [
+      "greater_ash_wisp",
+      "ash_wisp",
+      "blaze_cub"
+    ]
+  }
+]

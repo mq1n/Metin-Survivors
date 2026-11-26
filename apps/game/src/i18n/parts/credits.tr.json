@@ -1,0 +1,41 @@
+{
+  "credits.title": "Emeği Geçenler",
+  "credits.disclaimer.title": "Özgün içerik bildirimi",
+  "credits.disclaimer.more": "Metin Yağmuru bağımsız ve özgün bir roguelite oyundur. Burada yayımlanan tüm görseller, 3B modeller, simgeler, yazı tipleri, ses efektleri, müzikler ve kaynak kodları özgündür ya da açık kaynak lisansları kapsamında kullanılmıştır.",
+
+  "credits.section.make": "Yapım",
+  "credits.section.fonts": "Yazı tipleri",
+  "credits.section.tech": "Kullanılan teknolojiler",
+  "credits.section.thanks": "Teşekkürler",
+
+  "credits.role.design": "Oyun tasarımı ve yönetim",
+  "credits.role.code": "Programlama ve sistemler",
+  "credits.role.art": "Resim sanatı",
+  "credits.role.models": "Kahramanlar, yaratıklar ve manzaralar",
+  "credits.role.audio": "Müzik ve ses",
+  "credits.role.writing": "Hikâye ve yerelleştirme",
+  "credits.who.team": "Metin Yağmuru ekibi",
+  "credits.who.art": "Bir görüntü modeliyle yapılmış özgün resimler, sanat yönetimi ekibe ait",
+  "credits.who.models": "Prosedürel ve görselden 3B hatlarımızla üretilen özgün modeller",
+  "credits.who.audio": "Kendi ses araçlarımızla sentezlenen özgün müzik ve ses efektleri",
+  "credits.who.writing": "Özgün hikâye, kodeks ve Türkçe / İngilizce metinler",
+
+  "credits.fonts.license": "SIL Open Font License 1.1 ile lisanslıdır.",
+  "credits.font.cinzel": "Natanael Gama",
+  "credits.font.alegreya": "Juan Pablo del Peral",
+  "credits.font.barlow": "Jeremy Tribby",
+
+  "credits.tech.three": "3B görüntüleme",
+  "credits.tech.preact": "Arayüz",
+  "credits.tech.vite": "Geliştirme araçları",
+  "credits.tech.cloudflare": "Barındırma ve çevrimiçi hizmetler",
+  "credits.tech.hono": "API yönlendirici",
+  "credits.tech.elemental": "Prosedürel VFX temelleri (MIT)",
+
+  "credits.thanks.players": "Oynayan ve test eden herkes",
+  "credits.thanks.playersText": "Her hata raporu ve her yüksek skor bu oyunu daha iyi yaptı.",
+  "credits.thanks.community": "Eski Metin avcıları",
+  "credits.thanks.communityText": "Bu saygı duruşuna ilham veren anılar için — yalnızca bir referans.",
+
+  "credits.outro": "Oynadığın için teşekkürler. Taşların hep lehine düşsün."
+}

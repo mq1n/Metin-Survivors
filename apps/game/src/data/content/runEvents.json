@@ -1,0 +1,11 @@
+{
+  "window": [380, 620],
+  "bossGap": 30,
+  "zones": {},
+  "kinds": {
+    "metinRain": { "count": 3, "ringRadius": 14, "within": 6, "corruption": 0.15 },
+    "championHunt": { "hpMul": 5, "dmgMul": 1.3, "escorts": 4, "timeLimit": 60, "chestTier": 1 },
+    "goldenHour": { "duration": 45, "eliteEveryMul": 0.5, "yeopMul": 2 },
+    "bargain": { "radius": 2.5, "channel": 2, "offers": 3 }
+  }
+}

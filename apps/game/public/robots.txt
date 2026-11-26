@@ -1,0 +1,4 @@
+# Metin Survivors is a public static site; the game API is not meant for crawlers (it also answers no-store, see the Worker).
+User-agent: *
+Allow: /
+Disallow: /api/

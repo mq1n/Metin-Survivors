@@ -1,0 +1,482 @@
+[
+  {
+    "id": "warrior",
+    "name": {
+      "tr": "Savaşçı",
+      "en": "Warrior"
+    },
+    "desc": {
+      "tr": "Cephenin en önünde yürüyen kılıç ustası: ağır vurur, ağır darbe yer ve yine de ayakta kalır. Bedeniyle de ruhuyla da savaşır; kılıç ışığı altın ya da beyaz parlar.",
+      "en": "The swordmaster who walks at the very front of the line: hits like a landslide, takes landslides in return and still stands. Fights with body or with spirit — the blade-light burns gold or white."
+    },
+    "sexes": [
+      "m",
+      "f"
+    ],
+    "doctrines": [
+      {
+        "id": "a",
+        "name": {
+          "tr": "Kuvvet",
+          "en": "Sinew"
+        },
+        "desc": {
+          "tr": "Kas, kemik ve çelik. Yakın dövüşte durmadan kesen, öfkeyle kızışan ve her yarayı yaşama isteğine çeviren cephe savaşçısı; kılıç ışığı altın renginde yanar.",
+          "en": "Muscle, bone and steel. A brawler who cuts without pause, rages hot and turns every wound into will to live — the blade-light burns gold."
+        },
+        "basic": "sword_arc",
+        "starter": "lightning_trio",
+        "skills": [
+          "lightning_trio",
+          "bladewheel",
+          "warfever",
+          "swordlight_ring",
+          "spearhead",
+          "second_wind",
+          "giant_leap"
+        ]
+      },
+      {
+        "id": "b",
+        "name": {
+          "tr": "Ruh",
+          "en": "Spirit"
+        },
+        "desc": {
+          "tr": "Kılıç yalnızca elde değil, ruhta da yaşar. Hilal biçimli ruh kılıçları fırlatır, çevresinde kılıçlar döndürür, bedenini taş gibi sertleştirir; ışığı beyaz yanar.",
+          "en": "The blade lives in the spirit as much as in the hand: hurl crescents of spirit steel, wheel swords around you and harden your body to stone. Its light burns white."
+        },
+        "basic": "spirit_edge",
+        "starter": "soul_crash",
+        "skills": [
+          "soul_crash",
+          "crushing_blow",
+          "earthpound",
+          "graniteform",
+          "edgewave",
+          "blade_orbit",
+          "blade_seal"
+        ]
+      }
+    ],
+    "base": {
+      "maxHp": 320,
+      "armor": 16,
+      "moveSpeed": 5.4,
+      "regen": 1.2,
+      "lifesteal": 0.018,
+      "critChance": 0.05
+    },
+    "models": {
+      "m": [
+        "warrior_m_t0",
+        "warrior_m_t1",
+        "warrior_m_t2",
+        "warrior_m_t3"
+      ],
+      "f": [
+        "warrior_f_t0",
+        "warrior_f_t1",
+        "warrior_f_t2",
+        "warrior_f_t3"
+      ]
+    },
+    "weapons": [
+      "warrior_twohand_t0",
+      "warrior_twohand_t1",
+      "warrior_twohand_t2",
+      "warrior_twohand_t3"
+    ],
+    "weaponsB": [
+      "warrior_sword_t0",
+      "warrior_sword_t1",
+      "warrior_sword_t2",
+      "warrior_sword_t3"
+    ],
+    "portrait": {
+      "m": "portrait_warrior_m",
+      "f": "portrait_warrior_f"
+    }
+  },
+  {
+    "id": "ninja",
+    "name": {
+      "tr": "Ninja",
+      "en": "Ninja"
+    },
+    "desc": {
+      "tr": "Gölgelerde yetişmiş çevik bir avcı: kritik vuruşlar, zehir ve kaçınmayla dövüşür. Zırhı ince, ayakları hızlıdır — yakalanmadığı sürece ölümcüldür.",
+      "en": "A hunter raised in the shadows who fights with crits, poison and evasion. Light on armour, quick on the feet — deadly exactly as long as nobody catches them."
+    },
+    "sexes": [
+      "m",
+      "f"
+    ],
+    "doctrines": [
+      {
+        "id": "a",
+        "name": {
+          "tr": "Sessiz Bıçak",
+          "en": "Silent Edge"
+        },
+        "desc": {
+          "tr": "Hançerle gölgeden fırlar, ardında zehirli bulutlar bırakır ve iz bırakmadan kaybolursun. Suikastçının yolu: patlayıcı hasar, kaçınma ve gizlilik.",
+          "en": "Strike from the shadows with twin daggers, leave poison clouds in your wake and vanish without a trace. The assassin's path: burst damage, evasion and stealth."
+        },
+        "basic": "dagger_flurry",
+        "starter": "moonless_cut",
+        "skills": [
+          "moonless_cut",
+          "vanishing_leap",
+          "spiral_of_knives",
+          "nightshroud",
+          "noxious_pall",
+          "creeping_venom",
+          "shadow_clone"
+        ]
+      },
+      {
+        "id": "b",
+        "name": {
+          "tr": "Sadak",
+          "en": "Quiver"
+        },
+        "desc": {
+          "tr": "Mesafeni koru, yayını çek: ok sağanakları, ateşli ve zehirli oklar — koşarken bile ölüm yağdıran bir avcı.",
+          "en": "Keep your distance and draw: arrow volleys, fire and poison shafts — a hunter who rains death even while running."
+        },
+        "basic": "bow_shot",
+        "starter": "arrowfall",
+        "skills": [
+          "rapid_barrage",
+          "arrowfall",
+          "kindled_shaft",
+          "swallows_gait",
+          "serpent_shafts",
+          "radiant_thread",
+          "smoke_bomb"
+        ]
+      }
+    ],
+    "base": {
+      "maxHp": 280,
+      "armor": 12,
+      "moveSpeed": 6.2,
+      "regen": 1.2,
+      "lifesteal": 0.02,
+      "critChance": 0.1,
+      "critDamage": 0.1,
+      "evasion": 0.12
+    },
+    "models": {
+      "m": [
+        "ninja_m_t0",
+        "ninja_m_t1",
+        "ninja_m_t2",
+        "ninja_m_t3"
+      ],
+      "f": [
+        "ninja_f_t0",
+        "ninja_f_t1",
+        "ninja_f_t2",
+        "ninja_f_t3"
+      ]
+    },
+    "weapons": [
+      "ninja_dagger_t0",
+      "ninja_dagger_t1",
+      "ninja_dagger_t2",
+      "ninja_dagger_t3"
+    ],
+    "weaponsB": [
+      "ninja_bow_t0",
+      "ninja_bow_t1",
+      "ninja_bow_t2",
+      "ninja_bow_t3"
+    ],
+    "portrait": {
+      "m": "portrait_ninja_m",
+      "f": "portrait_ninja_f"
+    }
+  },
+  {
+    "id": "yacha",
+    "name": {
+      "tr": "Yacha",
+      "en": "Yacha"
+    },
+    "desc": {
+      "tr": "Karanlığın lanetlediği bir şövalye, alevin dövdüğü bir büyücü: Yacha, kılıcına hayalet, yumruğuna ateş bağlayan merhametsiz bir savaşçıdır.",
+      "en": "A knight cursed by the dark and a mage forged in flame: the Yacha binds ghosts to his blade and fire to his fist, and asks no mercy of anyone."
+    },
+    "sexes": [
+      "m",
+      "f"
+    ],
+    "doctrines": [
+      {
+        "id": "a",
+        "name": {
+          "tr": "Büyü Çeliği",
+          "en": "Spellsteel"
+        },
+        "desc": {
+          "tr": "Kılıcına hayalet bağla, zırhına karanlık giy: dönen çelik, sinirleri koparan bir çığlık ve parmaklarında patlayan alevle göğüs göğüse savaşırsın.",
+          "en": "Bind a ghost to your blade and clothe yourself in darkness: whirling steel, a scream that snaps nerves and flame bursting from your fingers, all fought at arm's length."
+        },
+        "basic": "dark_blade",
+        "starter": "scorch_palm",
+        "skills": [
+          "scorch_palm",
+          "coil_of_flame",
+          "haunted_steel",
+          "chilling_dread",
+          "umbral_plate",
+          "unbinding_sigil",
+          "wraith_lunge"
+        ]
+      },
+      {
+        "id": "b",
+        "name": {
+          "tr": "Lanet Sanatı",
+          "en": "Hexcraft"
+        },
+        "desc": {
+          "tr": "Uzaktan yağan kara büyü: çağırdığın alev ruhları, etrafında dönen kara küreler ve gökten inen lanet, düşman sana ulaşmadan onu eritir.",
+          "en": "Sorcery from a safe distance: summoned flame spirits, black orbs circling you and curses falling from the sky melt the enemy before it ever reaches you."
+        },
+        "basic": "dark_spark",
+        "starter": "blaze_familiars",
+        "skills": [
+          "nightfall",
+          "blazing_column",
+          "blaze_familiars",
+          "obsidian_bulwark",
+          "specter_beam",
+          "void_globes",
+          "soul_chain"
+        ]
+      }
+    ],
+    "base": {
+      "maxHp": 270,
+      "armor": 12,
+      "moveSpeed": 5.6,
+      "regen": 1.0,
+      "lifesteal": 0.022,
+      "critChance": 0.05,
+      "damage": 0.05
+    },
+    "models": {
+      "m": [
+        "yacha_m_t0",
+        "yacha_m_t1",
+        "yacha_m_t2",
+        "yacha_m_t3"
+      ],
+      "f": [
+        "yacha_f_t0",
+        "yacha_f_t1",
+        "yacha_f_t2",
+        "yacha_f_t3"
+      ]
+    },
+    "weapons": [
+      "yacha_sword_t0",
+      "yacha_sword_t1",
+      "yacha_sword_t2",
+      "yacha_sword_t3"
+    ],
+    "portrait": {
+      "m": "portrait_yacha_m",
+      "f": "portrait_yacha_f"
+    }
+  },
+  {
+    "id": "shaman",
+    "name": {
+      "tr": "Şaman",
+      "en": "Shaman"
+    },
+    "desc": {
+      "tr": "İnce yapılı ama korkutucu bir ruh çağırıcı: yelpazesi ve tılsımlarıyla altın ejderhaları yönlendirir, gökten mavi şimşekler indirir. Zırhı hafif, desteği ise çok güçlüdür.",
+      "en": "A frail but formidable spirit-caller: with fan and talismans the Shaman steers golden dragons and calls blue lightning down from the sky. Light on armor, mighty in support."
+    },
+    "sexes": [
+      "m",
+      "f"
+    ],
+    "doctrines": [
+      {
+        "id": "a",
+        "name": {
+          "tr": "Tılsım",
+          "en": "Talisman"
+        },
+        "desc": {
+          "tr": "Tılsımlar ve altın ejderhalar: düşmanı menzilden vurur, kutsamalarla hasarını, hızını ve etki alanını büyütürsün.",
+          "en": "Talismans and golden dragons: strike from range and swell your damage, speed and reach with blessings."
+        },
+        "basic": "dragon_fan",
+        "starter": "drifting_charms",
+        "skills": [
+          "drifting_charms",
+          "gilded_serpent",
+          "resounding_bellow",
+          "radiant_favor",
+          "mirror_shell",
+          "wyrm_retinue",
+          "dragon_seal"
+        ]
+      },
+      {
+        "id": "b",
+        "name": {
+          "tr": "Bora Merhemi",
+          "en": "Stormbalm"
+        },
+        "desc": {
+          "tr": "Şimşekle savaşan bir şifacı: en güçlü iyileşme, can yenileme, zırh ve hız desteği sende; çanların sesi düşmanı uzak tutar.",
+          "en": "A lightning-wielding healer: the strongest recovery, regeneration, armor and speed buffs, with tolling bells to keep foes at bay."
+        },
+        "basic": "bell_chime",
+        "starter": "arcing_bolt",
+        "skills": [
+          "arcing_bolt",
+          "stormcall",
+          "crackling_stream",
+          "mending_light",
+          "tailwind",
+          "surging_arms",
+          "thunder_bells"
+        ]
+      }
+    ],
+    "base": {
+      "maxHp": 265,
+      "armor": 10,
+      "moveSpeed": 5.5,
+      "cooldown": 0.05,
+      "regen": 1.4,
+      "lifesteal": 0.024,
+      "critChance": 0.03
+    },
+    "models": {
+      "m": [
+        "shaman_m_t0",
+        "shaman_m_t1",
+        "shaman_m_t2",
+        "shaman_m_t3"
+      ],
+      "f": [
+        "shaman_f_t0",
+        "shaman_f_t1",
+        "shaman_f_t2",
+        "shaman_f_t3"
+      ]
+    },
+    "weapons": [
+      "shaman_fan_t0",
+      "shaman_fan_t1",
+      "shaman_fan_t2",
+      "shaman_fan_t3"
+    ],
+    "weaponsB": [
+      "shaman_bell_t0",
+      "shaman_bell_t1",
+      "shaman_bell_t2",
+      "shaman_bell_t3"
+    ],
+    "portrait": {
+      "m": "portrait_shaman_m",
+      "f": "portrait_shaman_f"
+    }
+  },
+  {
+    "id": "wolfman",
+    "name": {
+      "tr": "Wolfman",
+      "en": "Wolfman"
+    },
+    "desc": {
+      "tr": "Dolunayda uyanan yarı insan, yarı kurt avcılar: pençeleri hızlı, açlıkları dinmez. Kızıl yolda kanla beslenen bir çılgınlığa, çivit yolda ruhlardan oluşan bir sürüye önderlik ederler.",
+      "en": "Half-man, half-wolf hunters who wake under the full moon: swift of claw and never sated. The crimson path feeds a frenzy on blood; the indigo path leads a pack of spirits."
+    },
+    "sexes": [
+      "m"
+    ],
+    "doctrines": [
+      {
+        "id": "a",
+        "name": {
+          "tr": "Kızıl Yele",
+          "en": "Redmane"
+        },
+        "desc": {
+          "tr": "Kan kokusuyla çılgına dönen yırtıcı: pençelerini durmadan savurur, avını kanatır, can çalar ve her yarayla biraz daha hızlanır.",
+          "en": "The predator maddened by the scent of blood: it never stops raking, bleeds its prey, steals life and grows faster with every wound."
+        },
+        "basic": "claw_combo",
+        "starter": "savage_rake",
+        "skills": [
+          "savage_rake",
+          "lupine_lunge",
+          "redmane_spirit",
+          "blood_whirl",
+          "predator_rush",
+          "tremor_claw",
+          "blood_mist"
+        ]
+      },
+      {
+        "id": "b",
+        "name": {
+          "tr": "Ay Yelesi",
+          "en": "Moonmane"
+        },
+        "desc": {
+          "tr": "Ay ışığında koşan ruh sürüsünün öncüsü: hayalet kurtlar çağırır, buz gibi nefesiyle düşmanları yavaşlatır ve ulumasıyla sahaya hükmeder.",
+          "en": "Leader of the spirit pack that runs by moonlight: it calls spectral wolves, chills foes with icy breath and rules the field with a howl."
+        },
+        "basic": "spirit_claw",
+        "starter": "rimewind",
+        "skills": [
+          "rimewind",
+          "moonsteel_claws",
+          "moonmane_spirit",
+          "spirit_wolves",
+          "rime_circle",
+          "icefall",
+          "phantom_fangs"
+        ]
+      }
+    ],
+    "base": {
+      "maxHp": 290,
+      "armor": 12,
+      "moveSpeed": 6.0,
+      "regen": 0.8,
+      "attackSpeed": 0.08,
+      "lifesteal": 0.02,
+      "critChance": 0.05
+    },
+    "models": {
+      "m": [
+        "wolfman_m_t0",
+        "wolfman_m_t1",
+        "wolfman_m_t2",
+        "wolfman_m_t3"
+      ]
+    },
+    "weapons": [
+      "wolfman_claw_t0",
+      "wolfman_claw_t1",
+      "wolfman_claw_t2",
+      "wolfman_claw_t3"
+    ],
+    "portrait": {
+      "m": "portrait_wolfman_m"
+    }
+  }
+]

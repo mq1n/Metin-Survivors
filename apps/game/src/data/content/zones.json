@@ -1,0 +1,2255 @@
+[
+  {
+    "id": "yeonmu",
+    "order": 1,
+    "name": {
+      "tr": "Yeonmu Ovası",
+      "en": "Yeonmu Plains"
+    },
+    "subtitle": {
+      "tr": "Metin taşlarının ilk düştüğü topraklar",
+      "en": "Where the first Metin stones fell"
+    },
+    "levelRange": [
+      1,
+      31
+    ],
+    "story": {
+      "intro": [
+        {
+          "tr": "Yeonmu’nun otları rüzgârda hâlâ yeşil; ama köpekler artık havlamıyor, yalnızca bakıyor.",
+          "en": "Yeonmu’s grass is still green in the wind, but the dogs no longer bark — they only watch."
+        },
+        {
+          "tr": "İlk Metin taşları bu ovaya düştü; her biri çevresindeki yaratıkları biraz daha aç, biraz daha vahşi bıraktı.",
+          "en": "The first Metin stones fell on this plain, and each left the creatures around it a little hungrier, a little wilder."
+        },
+        {
+          "tr": "Sürüleri geç, taşları kır; ovanın öbür ucunda Kaplan Tanrısı seni bekliyor.",
+          "en": "Cut through the packs, break the stones; at the far end of the plain the Tiger God is waiting."
+        }
+      ],
+      "bossIntro": {
+        "tr": "Otlar yere yatıyor, kuşlar susuyor — ovanın eski sahiplerinden biri kokunu aldı.",
+        "en": "The grass lies flat and the birds fall silent — one of the plain’s old rulers has caught your scent."
+      },
+      "victory": [
+        {
+          "tr": "Horyeong son kez kükredi; ses ovanın ucuna kadar koştu ve orada söndü.",
+          "en": "Horyeong roared one last time; the sound ran to the edge of the plain and died there."
+        },
+        {
+          "tr": "Büyük Abanoz Metin içeriden çatladı, rünleri bir bir karardı.",
+          "en": "The Great Ebon Metin cracked from within, its runes going dark one by one."
+        },
+        {
+          "tr": "Yol açıldı: ileride, üç sınırın birleştiği vadi seni bekliyor.",
+          "en": "The road is open. Ahead, the valley where the three borders meet is waiting."
+        }
+      ],
+      "defeat": [
+        {
+          "tr": "Otlar üstüne kapanıyor; yağmur, sen yokken de yağmaya devam edecek.",
+          "en": "The grass closes over you; the rain will keep falling without you."
+        },
+        {
+          "tr": "Ama avucundaki iz sönmedi — kalk, Gök Hükümdarı seni henüz bırakmadı.",
+          "en": "But the mark in your palm has not faded. Rise — the Sky Sovereign has not let go of you yet."
+        }
+      ]
+    },
+    "biome": {
+      "id": "yeonmu",
+      "seed": 7101,
+      "ground": [
+        "tex_grass_a",
+        "tex_meadow",
+        "tex_grass_b",
+        "tex_dirt_path",
+        "tex_rock_mossy"
+      ],
+      "trees": [
+        "pine",
+        "broadleaf",
+        "autumn"
+      ],
+      "props": [
+        "prop_stone_lantern",
+        "prop_wooden_fence",
+        "prop_pagoda_gate",
+        "prop_ruin_pillar"
+      ],
+      "fog": {
+        "color": "#b0bdd6",
+        "near": 70,
+        "far": 190
+      },
+      "sky": {
+        "top": "#1849a8",
+        "horizon": "#d9e6ff",
+        "bottom": "#efe9d6"
+      },
+      "sun": {
+        "color": "#fff1d6",
+        "intensity": 2.6,
+        "dir": [
+          0.5,
+          0.78,
+          0.36
+        ]
+      },
+      "ambient": {
+        "sky": "#a9c7ee",
+        "ground": "#6b5a3a",
+        "intensity": 0.75
+      },
+      "water": {
+        "level": 0,
+        "color": "#3e7fa8",
+        "kind": "water"
+      },
+      "relief": {
+        "height": 6,
+        "roughness": 0.45,
+        "features": [
+          "hills",
+          "road",
+          "river"
+        ]
+      },
+      "particles": "leaves"
+    },
+    "music": {
+      "calm": "mus_yeonmu_calm",
+      "combat": "mus_yeonmu_combat",
+      "boss": "mus_yeonmu_boss"
+    },
+    "bands": [
+      {
+        "from": 0,
+        "to": 180,
+        "rate": 1.3,
+        "maxAlive": 59,
+        "spawns": [
+          {
+            "enemy": "wild_dog",
+            "weight": 14
+          },
+          {
+            "enemy": "wild_dog",
+            "weight": 8,
+            "group": {
+              "members": [
+                "wild_dog",
+                "hungry_stray_dog"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          },
+          {
+            "enemy": "hungry_stray_dog",
+            "weight": 14
+          },
+          {
+            "enemy": "wolf",
+            "weight": 14
+          },
+          {
+            "enemy": "hungry_wolf",
+            "weight": 8
+          },
+          {
+            "enemy": "wolf",
+            "weight": 5,
+            "group": {
+              "members": [
+                "wolf",
+                "hungry_wolf"
+              ],
+              "size": [
+                3,
+                5
+              ],
+              "leader": "alpha_wolf"
+            }
+          },
+          {
+            "enemy": "hungry_alpha_wolf",
+            "weight": 7
+          },
+          {
+            "enemy": "alpha_wolf",
+            "weight": 3
+          }
+        ]
+      },
+      {
+        "from": 180,
+        "to": 360,
+        "rate": 3.06,
+        "maxAlive": 140,
+        "spawns": [
+          {
+            "enemy": "blue_wolf",
+            "weight": 14
+          },
+          {
+            "enemy": "hungry_blue_wolf",
+            "weight": 12
+          },
+          {
+            "enemy": "alpha_blue_wolf",
+            "weight": 6
+          },
+          {
+            "enemy": "blue_wolf",
+            "weight": 4,
+            "group": {
+              "members": [
+                "blue_wolf",
+                "hungry_blue_wolf"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "alpha_blue_wolf"
+            }
+          },
+          {
+            "enemy": "hungry_wild_boar",
+            "weight": 8
+          },
+          {
+            "enemy": "hungry_red_boar",
+            "weight": 7
+          },
+          {
+            "enemy": "wild_boar",
+            "weight": 6
+          },
+          {
+            "enemy": "red_boar",
+            "weight": 5
+          },
+          {
+            "enemy": "wild_boar",
+            "weight": 3,
+            "group": {
+              "members": [
+                "wild_boar",
+                "hungry_wild_boar"
+              ],
+              "size": [
+                3,
+                5
+              ],
+              "leader": "red_boar"
+            }
+          },
+          {
+            "enemy": "hungry_alpha_wolf",
+            "weight": 6
+          },
+          {
+            "enemy": "wild_dog",
+            "weight": 5
+          },
+          {
+            "enemy": "hungry_stray_dog",
+            "weight": 4
+          },
+          {
+            "enemy": "wolf",
+            "weight": 4
+          }
+        ],
+        "elites": {
+          "every": 70,
+          "pool": [
+            "cursed_red_boar"
+          ]
+        }
+      },
+      {
+        "from": 360,
+        "to": 540,
+        "rate": 5.5,
+        "maxAlive": 276,
+        "spawns": [
+          {
+            "enemy": "grey_wolf",
+            "weight": 9
+          },
+          {
+            "enemy": "hungry_grey_wolf",
+            "weight": 5
+          },
+          {
+            "enemy": "hungry_bear",
+            "weight": 9
+          },
+          {
+            "enemy": "hungry_grizzly",
+            "weight": 9
+          },
+          {
+            "enemy": "bear",
+            "weight": 7
+          },
+          {
+            "enemy": "grizzly_bear",
+            "weight": 6
+          },
+          {
+            "enemy": "blue_wolf",
+            "weight": 8
+          },
+          {
+            "enemy": "hungry_blue_wolf",
+            "weight": 7
+          },
+          {
+            "enemy": "alpha_blue_wolf",
+            "weight": 5
+          },
+          {
+            "enemy": "hungry_alpha_blue_wolf",
+            "weight": 4
+          },
+          {
+            "enemy": "grey_wolf",
+            "weight": 4,
+            "group": {
+              "members": [
+                "grey_wolf",
+                "hungry_grey_wolf",
+                "blue_wolf"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "alpha_grey_wolf"
+            }
+          },
+          {
+            "enemy": "wild_boar",
+            "weight": 4
+          },
+          {
+            "enemy": "red_boar",
+            "weight": 4
+          },
+          {
+            "enemy": "hungry_wild_boar",
+            "weight": 4
+          },
+          {
+            "enemy": "hungry_red_boar",
+            "weight": 4
+          },
+          {
+            "enemy": "wild_dog",
+            "weight": 3,
+            "group": {
+              "members": [
+                "wild_dog",
+                "hungry_stray_dog"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          }
+        ],
+        "elites": {
+          "every": 45,
+          "pool": [
+            "cursed_red_boar",
+            "cursed_alpha_grey_wolf"
+          ]
+        }
+      },
+      {
+        "from": 540,
+        "to": 720,
+        "rate": 7.5,
+        "maxAlive": 391,
+        "spawns": [
+          {
+            "enemy": "silver_vow_soldier",
+            "weight": 11
+          },
+          {
+            "enemy": "tiger",
+            "weight": 8
+          },
+          {
+            "enemy": "silver_vow_archer",
+            "weight": 8
+          },
+          {
+            "enemy": "alpha_grey_wolf",
+            "weight": 7
+          },
+          {
+            "enemy": "black_bear",
+            "weight": 6
+          },
+          {
+            "enemy": "hungry_tiger",
+            "weight": 5
+          },
+          {
+            "enemy": "hungry_alpha_grey_wolf",
+            "weight": 4
+          },
+          {
+            "enemy": "craven_silver_vow_soldier",
+            "weight": 3
+          },
+          {
+            "enemy": "craven_silver_vow_archer",
+            "weight": 3
+          },
+          {
+            "enemy": "silver_vow_soldier",
+            "weight": 4,
+            "group": {
+              "members": [
+                "silver_vow_soldier",
+                "silver_vow_archer",
+                "craven_silver_vow_soldier"
+              ],
+              "size": [
+                4,
+                7
+              ],
+              "leader": "silver_vow_commander"
+            }
+          },
+          {
+            "enemy": "blue_wolf",
+            "weight": 5
+          },
+          {
+            "enemy": "hungry_blue_wolf",
+            "weight": 4
+          },
+          {
+            "enemy": "grey_wolf",
+            "weight": 4
+          },
+          {
+            "enemy": "hungry_bear",
+            "weight": 4
+          },
+          {
+            "enemy": "hungry_grizzly",
+            "weight": 4
+          },
+          {
+            "enemy": "bear",
+            "weight": 3
+          },
+          {
+            "enemy": "grizzly_bear",
+            "weight": 3
+          },
+          {
+            "enemy": "alpha_blue_wolf",
+            "weight": 2
+          }
+        ],
+        "elites": {
+          "every": 38,
+          "pool": [
+            "cursed_alpha_grey_wolf",
+            "cursed_brown_bear",
+            "cursed_red_boar"
+          ]
+        }
+      },
+      {
+        "from": 720,
+        "to": 900,
+        "rate": 9.5,
+        "maxAlive": 506,
+        "spawns": [
+          {
+            "enemy": "brown_bear",
+            "weight": 10
+          },
+          {
+            "enemy": "white_tiger",
+            "weight": 8
+          },
+          {
+            "enemy": "hungry_white_tiger",
+            "weight": 6
+          },
+          {
+            "enemy": "silver_vow_commander",
+            "weight": 6
+          },
+          {
+            "enemy": "hungry_brown_bear",
+            "weight": 6
+          },
+          {
+            "enemy": "silver_vow_general",
+            "weight": 4
+          },
+          {
+            "enemy": "silver_vow_soldier",
+            "weight": 5,
+            "group": {
+              "members": [
+                "silver_vow_soldier",
+                "silver_vow_archer",
+                "craven_silver_vow_soldier",
+                "craven_silver_vow_archer"
+              ],
+              "size": [
+                5,
+                8
+              ],
+              "leader": "silver_vow_general"
+            }
+          },
+          {
+            "enemy": "silver_vow_soldier",
+            "weight": 7
+          },
+          {
+            "enemy": "tiger",
+            "weight": 6
+          },
+          {
+            "enemy": "silver_vow_archer",
+            "weight": 5
+          },
+          {
+            "enemy": "alpha_grey_wolf",
+            "weight": 5
+          },
+          {
+            "enemy": "black_bear",
+            "weight": 4
+          },
+          {
+            "enemy": "hungry_tiger",
+            "weight": 3
+          },
+          {
+            "enemy": "hungry_black_bear",
+            "weight": 3
+          },
+          {
+            "enemy": "craven_silver_vow_commander",
+            "weight": 3
+          }
+        ],
+        "elites": {
+          "every": 26,
+          "pool": [
+            "cursed_white_tiger",
+            "cursed_brown_bear",
+            "ma_sol",
+            "ae_rin",
+            "sa_rim",
+            "dispirited_ma_sol",
+            "dispirited_ae_rin",
+            "dispirited_sa_rim"
+          ]
+        }
+      }
+    ],
+    "bosses": [
+      {
+        "at": 180,
+        "boss": "boss_chan_dae"
+      },
+      {
+        "at": 360,
+        "boss": "boss_dol_gwan"
+      },
+      {
+        "at": 540,
+        "boss": "boss_ung_jae"
+      },
+      {
+        "at": 720,
+        "boss": "boss_ji_yul"
+      }
+    ],
+    "final": {
+      "at": 900,
+      "boss": "boss_horyeong",
+      "greatMetin": "metin_great_ebon",
+      "hpMul": 0.85
+    },
+    "metins": {
+      "types": [
+        "metin_lament",
+        "metin_strife",
+        "metin_onslaught",
+        "metin_avarice",
+        "metin_ebon"
+      ],
+      "firstAt": 50,
+      "interval": [
+        60,
+        75
+      ]
+    },
+    "gearTier": 1,
+    "art": "art_zone_yeonmu"
+  },
+  {
+    "id": "suryeon",
+    "order": 2,
+    "name": {
+      "tr": "Suryeon Vadisi",
+      "en": "Suryeon Valley"
+    },
+    "subtitle": {
+      "tr": "Orkların ve Örtülü Tarikat müritlerinin sonbahar vadisi",
+      "en": "The autumn valley of orcs and Veiled Order zealots"
+    },
+    "levelRange": [
+      29,
+      51
+    ],
+    "story": {
+      "intro": [
+        {
+          "tr": "Üç krallığın sınırları bu vadide birleşir; hiçbir bayrak burada uzun süre dalgalanamadı.",
+          "en": "The borders of the three kingdoms meet in this valley, and no banner has ever flown here for long."
+        },
+        {
+          "tr": "Metin’lerin gölgesinde orklar çılgına döndü, mistikler kehanet gördü, yırtıcı askerler kan kokusuna kapıldı.",
+          "en": "Under the shadow of the Metin the orcs went mad, the mystics saw prophecy and the feral soldiers caught the scent of blood."
+        },
+        {
+          "tr": "Kurumuş nehir yataklarında yürü; vadinin sonunda Metin’e esir düşmüş bir reis seni bekliyor.",
+          "en": "Walk the dry riverbeds. At the end of the valley a chieftain enthralled by the Metin is waiting."
+        }
+      ],
+      "bossIntro": {
+        "tr": "Savaş davulları bir anda susuyor — vadinin efendilerinden biri yola çıktı.",
+        "en": "The war drums stop all at once — one of the valley’s lords has taken the road."
+      },
+      "victory": [
+        {
+          "tr": "Ork Reisi dizlerinin üstüne çöktü; gözlerindeki kızıl ışık sönünce bir an yalnızca yorgun, yaşlı bir savaşçıydı.",
+          "en": "The Chief Orc sank to his knees; when the crimson light left his eyes he was, for a moment, only a tired old warrior."
+        },
+        {
+          "tr": "Büyük Alacakaranlık Metini çatladı ve vadinin gölgeleri geri çekildi.",
+          "en": "The Great Dusk Metin cracked, and the valley’s shadows drew back."
+        },
+        {
+          "tr": "Kuzeyde, ufukta beyaz bir çizgi uzanıyor: Seori Dağı.",
+          "en": "In the north, a white line lies along the horizon: Mount Seori."
+        }
+      ],
+      "defeat": [
+        {
+          "tr": "Vadinin tozu üstünü örtüyor; davullar yeniden çalmaya başladı.",
+          "en": "The valley’s dust settles over you; the drums have begun again."
+        },
+        {
+          "tr": "Avucundaki iz soluk ama sönmedi: bu vadi arkanda kalmadan yağmur da dinmeyecek.",
+          "en": "The mark in your palm is pale, but not out: the rain will not end until this valley is behind you."
+        }
+      ]
+    },
+    "biome": {
+      "id": "suryeon",
+      "seed": 7202,
+      "ground": [
+        "tex_dry_grass",
+        "tex_ochre_dirt",
+        "tex_mud",
+        "tex_dirt_path",
+        "tex_rock_canyon"
+      ],
+      "trees": [
+        "autumn",
+        "pine",
+        "bare"
+      ],
+      "props": [
+        "prop_orc_tent",
+        "prop_war_banner",
+        "prop_ruin_pillar",
+        "prop_wooden_fence"
+      ],
+      "fog": {
+        "color": "#8a9a88",
+        "near": 55,
+        "far": 185
+      },
+      "sky": {
+        "top": "#2a5a5e",
+        "horizon": "#9ab6a7",
+        "bottom": "#c9b998"
+      },
+      "sun": {
+        "color": "#ffd8a0",
+        "intensity": 2.3,
+        "dir": [
+          0.42,
+          0.72,
+          -0.34
+        ]
+      },
+      "ambient": {
+        "sky": "#98b0a0",
+        "ground": "#6a5240",
+        "intensity": 0.72
+      },
+      "water": {
+        "level": 0,
+        "color": "#4a7a78",
+        "kind": "water"
+      },
+      "relief": {
+        "height": 9,
+        "roughness": 0.55,
+        "features": [
+          "plateaus",
+          "river",
+          "canyon"
+        ]
+      },
+      "particles": "dust"
+    },
+    "music": {
+      "calm": "mus_suryeon_calm",
+      "combat": "mus_suryeon_combat",
+      "boss": "mus_suryeon_boss"
+    },
+    "bands": [
+      {
+        "from": 0,
+        "to": 180,
+        "rate": 1.35,
+        "maxAlive": 55,
+        "spawns": [
+          {
+            "enemy": "elite_orc_scout",
+            "weight": 22
+          },
+          {
+            "enemy": "elite_orc",
+            "weight": 18
+          },
+          {
+            "enemy": "dark_zealot",
+            "weight": 12
+          },
+          {
+            "enemy": "high_zealot",
+            "weight": 6
+          },
+          {
+            "enemy": "hulking_orc",
+            "weight": 6
+          },
+          {
+            "enemy": "hulking_orc_scout",
+            "weight": 6
+          },
+          {
+            "enemy": "orc_scout",
+            "weight": 3
+          },
+          {
+            "enemy": "orc_fighter",
+            "weight": 3
+          },
+          {
+            "enemy": "dark_zealot",
+            "weight": 5,
+            "group": {
+              "members": [
+                "dark_zealot",
+                "high_zealot"
+              ],
+              "size": [
+                7,
+                10
+              ]
+            }
+          },
+          {
+            "enemy": "elite_orc",
+            "weight": 4,
+            "group": {
+              "members": [
+                "elite_orc",
+                "hulking_orc",
+                "elite_orc_scout"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "orc_sorcerer"
+            }
+          }
+        ]
+      },
+      {
+        "from": 180,
+        "to": 360,
+        "rate": 2.72,
+        "maxAlive": 130,
+        "spawns": [
+          {
+            "enemy": "elite_orc_fighter",
+            "weight": 14
+          },
+          {
+            "enemy": "dark_ascetic",
+            "weight": 12
+          },
+          {
+            "enemy": "elite_orc_sorcerer",
+            "weight": 10
+          },
+          {
+            "enemy": "hulking_orc_sorcerer",
+            "weight": 5
+          },
+          {
+            "enemy": "hulking_orc_fighter",
+            "weight": 4
+          },
+          {
+            "enemy": "king_scorpion",
+            "weight": 5
+          },
+          {
+            "enemy": "high_ascetic",
+            "weight": 3
+          },
+          {
+            "enemy": "elite_orc_scout",
+            "weight": 10
+          },
+          {
+            "enemy": "elite_orc",
+            "weight": 7
+          },
+          {
+            "enemy": "dark_zealot",
+            "weight": 5
+          },
+          {
+            "enemy": "high_zealot",
+            "weight": 3
+          },
+          {
+            "enemy": "elite_orc_fighter",
+            "weight": 4,
+            "group": {
+              "members": [
+                "elite_orc_fighter",
+                "elite_orc",
+                "hulking_orc_fighter"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "elite_orc_sorcerer"
+            }
+          },
+          {
+            "enemy": "dark_ascetic",
+            "weight": 3,
+            "group": {
+              "members": [
+                "dark_zealot",
+                "high_zealot",
+                "dark_ascetic"
+              ],
+              "size": [
+                6,
+                9
+              ],
+              "leader": "veiled_ascetic_fighter"
+            }
+          }
+        ],
+        "elites": {
+          "every": 65,
+          "pool": [
+            "elite_orc_sorcerer",
+            "feral_soldier"
+          ]
+        }
+      },
+      {
+        "from": 360,
+        "to": 540,
+        "rate": 5.0,
+        "maxAlive": 220,
+        "spawns": [
+          {
+            "enemy": "veiled_ascetic_fighter",
+            "weight": 10
+          },
+          {
+            "enemy": "high_ascetic_fighter",
+            "weight": 3
+          },
+          {
+            "enemy": "elite_orc_fighter",
+            "weight": 14
+          },
+          {
+            "enemy": "dark_ascetic",
+            "weight": 11
+          },
+          {
+            "enemy": "elite_orc_sorcerer",
+            "weight": 9
+          },
+          {
+            "enemy": "elite_orc_scout",
+            "weight": 8
+          },
+          {
+            "enemy": "elite_orc",
+            "weight": 6
+          },
+          {
+            "enemy": "hulking_orc_sorcerer",
+            "weight": 4
+          },
+          {
+            "enemy": "hulking_orc_fighter",
+            "weight": 4
+          },
+          {
+            "enemy": "king_scorpion",
+            "weight": 5
+          },
+          {
+            "enemy": "high_ascetic",
+            "weight": 2
+          },
+          {
+            "enemy": "elite_orc_general",
+            "weight": 4,
+            "group": {
+              "members": [
+                "elite_orc_fighter",
+                "elite_orc_scout",
+                "hulking_orc_fighter"
+              ],
+              "size": [
+                5,
+                7
+              ],
+              "leader": "elite_orc_general"
+            }
+          },
+          {
+            "enemy": "dark_zealot",
+            "weight": 3,
+            "group": {
+              "members": [
+                "dark_zealot",
+                "high_zealot"
+              ],
+              "size": [
+                8,
+                11
+              ]
+            }
+          }
+        ],
+        "elites": {
+          "every": 50,
+          "pool": [
+            "elite_orc_sorcerer",
+            "feral_maniac",
+            "elite_orc_general"
+          ]
+        }
+      },
+      {
+        "from": 540,
+        "to": 720,
+        "rate": 6.8,
+        "maxAlive": 320,
+        "spawns": [
+          {
+            "enemy": "veiled_ascetic_chief",
+            "weight": 12
+          },
+          {
+            "enemy": "black_orc",
+            "weight": 12
+          },
+          {
+            "enemy": "hulking_black_orc",
+            "weight": 11
+          },
+          {
+            "enemy": "elite_orc_general",
+            "weight": 10
+          },
+          {
+            "enemy": "hulking_orc_general",
+            "weight": 6
+          },
+          {
+            "enemy": "high_elite_ascetic",
+            "weight": 2
+          },
+          {
+            "enemy": "elite_orc_fighter",
+            "weight": 8
+          },
+          {
+            "enemy": "dark_ascetic",
+            "weight": 6
+          },
+          {
+            "enemy": "elite_orc_sorcerer",
+            "weight": 6
+          },
+          {
+            "enemy": "veiled_ascetic_fighter",
+            "weight": 4
+          },
+          {
+            "enemy": "king_scorpion",
+            "weight": 3
+          },
+          {
+            "enemy": "feral_archer",
+            "weight": 4
+          },
+          {
+            "enemy": "black_orc",
+            "weight": 3,
+            "group": {
+              "members": [
+                "elite_orc_fighter",
+                "elite_orc_sorcerer",
+                "hulking_orc_fighter"
+              ],
+              "size": [
+                5,
+                7
+              ],
+              "leader": "black_orc"
+            }
+          },
+          {
+            "enemy": "dark_zealot",
+            "weight": 3,
+            "group": {
+              "members": [
+                "dark_zealot",
+                "high_zealot",
+                "dark_ascetic"
+              ],
+              "size": [
+                8,
+                11
+              ]
+            }
+          }
+        ],
+        "elites": {
+          "every": 40,
+          "pool": [
+            "black_orc",
+            "feral_specialist",
+            "elite_orc_general",
+            "veiled_ascetic_chief"
+          ]
+        }
+      },
+      {
+        "from": 720,
+        "to": 900,
+        "rate": 8.6,
+        "maxAlive": 420,
+        "spawns": [
+          {
+            "enemy": "veiled_executioner",
+            "weight": 14
+          },
+          {
+            "enemy": "hulking_black_giant_orc",
+            "weight": 8
+          },
+          {
+            "enemy": "dark_inquisitor",
+            "weight": 6
+          },
+          {
+            "enemy": "black_orc_giant",
+            "weight": 6
+          },
+          {
+            "enemy": "high_headsman",
+            "weight": 3
+          },
+          {
+            "enemy": "high_inquisitor",
+            "weight": 2
+          },
+          {
+            "enemy": "dark_conjurer",
+            "weight": 3
+          },
+          {
+            "enemy": "high_conjurer",
+            "weight": 2
+          },
+          {
+            "enemy": "veiled_ascetic_chief",
+            "weight": 9
+          },
+          {
+            "enemy": "black_orc",
+            "weight": 9
+          },
+          {
+            "enemy": "hulking_black_orc",
+            "weight": 9
+          },
+          {
+            "enemy": "elite_orc_general",
+            "weight": 7
+          },
+          {
+            "enemy": "hulking_orc_general",
+            "weight": 4
+          },
+          {
+            "enemy": "veiled_ascetic_fighter",
+            "weight": 3
+          },
+          {
+            "enemy": "feral_archer",
+            "weight": 3
+          },
+          {
+            "enemy": "veiled_executioner",
+            "weight": 3,
+            "group": {
+              "members": [
+                "dark_ascetic",
+                "veiled_ascetic_fighter",
+                "dark_zealot"
+              ],
+              "size": [
+                6,
+                9
+              ],
+              "leader": "dark_inquisitor"
+            }
+          }
+        ],
+        "elites": {
+          "every": 30,
+          "pool": [
+            "black_orc_giant",
+            "dark_inquisitor",
+            "dark_conjurer",
+            "feral_specialist"
+          ]
+        }
+      }
+    ],
+    "bosses": [
+      {
+        "at": 180,
+        "boss": "boss_orc_sorcerer"
+      },
+      {
+        "at": 360,
+        "boss": "boss_feral_maniac"
+      },
+      {
+        "at": 540,
+        "boss": "boss_dark_inquisitor"
+      },
+      {
+        "at": 720,
+        "boss": "boss_black_orc_giant"
+      }
+    ],
+    "final": {
+      "at": 900,
+      "boss": "boss_chief_orc",
+      "greatMetin": "metin_great_dusk",
+      "hpMul": 0.75
+    },
+    "metins": {
+      "types": [
+        "metin_murk",
+        "metin_envy",
+        "metin_echoes",
+        "metin_dusk"
+      ],
+      "firstAt": 70,
+      "interval": [
+        45,
+        55
+      ]
+    },
+    "gearTier": 2,
+    "art": "art_zone_suryeon",
+    "unlock": {
+      "zone": "yeonmu"
+    },
+    "xpMul": 1.25
+  },
+  {
+    "id": "seori",
+    "order": 3,
+    "name": {
+      "tr": "Seori Dağı",
+      "en": "Mount Seori"
+    },
+    "subtitle": {
+      "tr": "Hastalığın ve buzun kar altındaki zirvesi",
+      "en": "A snow-bound peak of plague and ice"
+    },
+    "levelRange": [
+      49,
+      66
+    ],
+    "story": {
+      "intro": [
+        {
+          "tr": "Seori’de kar sesi yutar; yürüyen ölüler bile sessiz yürür.",
+          "en": "On Seori the snow swallows sound; even the walking dead walk quietly."
+        },
+        {
+          "tr": "Ecel Metini garnizonu uyandırdı, Cin Metini buzulları öfkelendirdi — dağ seni içine çekmek istiyor.",
+          "en": "The Metin of Demise woke the garrison and the Metin of the Fiend enraged the glaciers — the mountain wants to draw you in."
+        },
+        {
+          "tr": "Buz ateşten, ölüler kutsallıktan ürker. Zirvede Miho bekliyor.",
+          "en": "Ice flinches from fire, and the dead flinch from what is holy. At the summit, Miho waits."
+        }
+      ],
+      "bossIntro": {
+        "tr": "Kar havada asılı kalıyor; dağın içinden eski bir şey sana doğru tırmanıyor.",
+        "en": "The snow hangs frozen in the air; something ancient is climbing toward you from inside the mountain."
+      },
+      "victory": [
+        {
+          "tr": "Miho’nun son alevi karın üstünde söndü; ardında yalnızca bir hıçkırığa benzeyen rüzgâr kaldı.",
+          "en": "Miho’s last flame went out on the snow, leaving behind only a wind that sounded like a sob."
+        },
+        {
+          "tr": "Büyük Ecel Metini buzla dolu bir sesle çatladı; Veba Alayı’nın ölüleri sonunda yattı.",
+          "en": "The Great Metin of Demise cracked with a voice full of ice; the dead of the Plague Host finally lay down."
+        },
+        {
+          "tr": "Güneyde gökyüzü kızıl yanıyor — yağmurun başladığı yer, Daeryeol.",
+          "en": "To the south the sky burns red — Daeryeol, where the rain began."
+        }
+      ],
+      "defeat": [
+        {
+          "tr": "Kar yine sessizce üstünü örtüyor; dağ çok az kişiyi geri verir.",
+          "en": "The snow covers you quietly, as it covers everything; the mountain gives back very few."
+        },
+        {
+          "tr": "Ama avucundaki iz soğukta bile ılık — Gök Hükümdarı seni bırakmadı.",
+          "en": "But the mark in your palm is warm even in the cold. The Sky Sovereign has not let go."
+        }
+      ]
+    },
+    "biome": {
+      "id": "seori",
+      "seed": 7303,
+      "ground": [
+        "tex_snow_fresh",
+        "tex_snow_packed",
+        "tex_ice_blue",
+        "tex_rock_frozen",
+        "tex_mud"
+      ],
+      "trees": [
+        "snowpine",
+        "bare"
+      ],
+      "props": [
+        "prop_ice_crystal",
+        "prop_snow_shrine",
+        "prop_ruin_pillar",
+        "prop_frozen_tree"
+      ],
+      "fog": {
+        "color": "#aeb0ba",
+        "near": 60,
+        "far": 235
+      },
+      "sky": {
+        "top": "#0a2d5a",
+        "horizon": "#aeb0ba",
+        "bottom": "#dfe3ec"
+      },
+      "sun": {
+        "color": "#e8f0ff",
+        "intensity": 2.4,
+        "dir": [
+          0.3,
+          0.66,
+          0.5
+        ]
+      },
+      "ambient": {
+        "sky": "#b8c8e8",
+        "ground": "#7a8296",
+        "intensity": 0.82
+      },
+      "water": {
+        "level": 0,
+        "color": "#a8d8f0",
+        "kind": "ice"
+      },
+      "relief": {
+        "height": 10,
+        "roughness": 0.6,
+        "features": [
+          "peaks",
+          "frozen_lake",
+          "ridges"
+        ]
+      },
+      "particles": "snow"
+    },
+    "music": {
+      "calm": "mus_seori_calm",
+      "combat": "mus_seori_combat",
+      "boss": "mus_seori_boss"
+    },
+    "bands": [
+      {
+        "from": 0,
+        "to": 180,
+        "rate": 1.2,
+        "maxAlive": 51,
+        "spawns": [
+          {
+            "enemy": "blighted_hound",
+            "weight": 30
+          },
+          {
+            "enemy": "shambling_corpse",
+            "weight": 24
+          },
+          {
+            "enemy": "angry_shambling_corpse",
+            "weight": 6
+          },
+          {
+            "enemy": "angry_blighted_hound",
+            "weight": 6
+          },
+          {
+            "enemy": "blighted_hound",
+            "weight": 8,
+            "group": {
+              "members": [
+                "blighted_hound",
+                "angry_blighted_hound"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          },
+          {
+            "enemy": "shambling_corpse",
+            "weight": 5,
+            "group": {
+              "members": [
+                "shambling_corpse",
+                "angry_shambling_corpse"
+              ],
+              "size": [
+                7,
+                10
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "from": 180,
+        "to": 360,
+        "rate": 2.46,
+        "maxAlive": 120,
+        "spawns": [
+          {
+            "enemy": "blighted_villager",
+            "weight": 20
+          },
+          {
+            "enemy": "blighted_swordsman",
+            "weight": 18
+          },
+          {
+            "enemy": "angry_blighted_villager",
+            "weight": 12
+          },
+          {
+            "enemy": "angry_blighted_swordsman",
+            "weight": 4
+          },
+          {
+            "enemy": "blighted_hound",
+            "weight": 14
+          },
+          {
+            "enemy": "shambling_corpse",
+            "weight": 9
+          },
+          {
+            "enemy": "angry_blighted_hound",
+            "weight": 3
+          },
+          {
+            "enemy": "blighted_villager",
+            "weight": 4,
+            "group": {
+              "members": [
+                "blighted_villager",
+                "angry_blighted_villager",
+                "blighted_hound"
+              ],
+              "size": [
+                5,
+                8
+              ],
+              "leader": "blighted_swordsman"
+            }
+          },
+          {
+            "enemy": "blighted_hound",
+            "weight": 4,
+            "group": {
+              "members": [
+                "blighted_hound",
+                "angry_blighted_hound"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          }
+        ],
+        "elites": {
+          "every": 70,
+          "pool": [
+            "blighted_swordsman"
+          ]
+        }
+      },
+      {
+        "from": 360,
+        "to": 540,
+        "rate": 4.5,
+        "maxAlive": 210,
+        "spawns": [
+          {
+            "enemy": "blighted_spearman",
+            "weight": 16
+          },
+          {
+            "enemy": "blighted_archer",
+            "weight": 15
+          },
+          {
+            "enemy": "blighted_marshal",
+            "weight": 5
+          },
+          {
+            "enemy": "angry_blighted_archer",
+            "weight": 6
+          },
+          {
+            "enemy": "angry_blighted_spearman",
+            "weight": 4
+          },
+          {
+            "enemy": "angry_blighted_marshal",
+            "weight": 3
+          },
+          {
+            "enemy": "blighted_villager",
+            "weight": 8
+          },
+          {
+            "enemy": "blighted_swordsman",
+            "weight": 8
+          },
+          {
+            "enemy": "blighted_hound",
+            "weight": 6
+          },
+          {
+            "enemy": "angry_blighted_villager",
+            "weight": 5
+          },
+          {
+            "enemy": "shambling_corpse",
+            "weight": 4
+          },
+          {
+            "enemy": "blighted_spearman",
+            "weight": 4,
+            "group": {
+              "members": [
+                "blighted_swordsman",
+                "blighted_archer",
+                "blighted_villager"
+              ],
+              "size": [
+                5,
+                8
+              ],
+              "leader": "blighted_marshal"
+            }
+          }
+        ],
+        "elites": {
+          "every": 55,
+          "pool": [
+            "blighted_swordsman",
+            "blighted_spearman",
+            "blighted_archer",
+            "blighted_marshal"
+          ]
+        }
+      },
+      {
+        "from": 540,
+        "to": 720,
+        "rate": 6.2,
+        "maxAlive": 300,
+        "spawns": [
+          {
+            "enemy": "cruel_frost_wisp",
+            "weight": 20
+          },
+          {
+            "enemy": "frost_wisp",
+            "weight": 15
+          },
+          {
+            "enemy": "glacier_orca",
+            "weight": 14
+          },
+          {
+            "enemy": "blighted_spearman",
+            "weight": 8
+          },
+          {
+            "enemy": "blighted_archer",
+            "weight": 7
+          },
+          {
+            "enemy": "blighted_villager",
+            "weight": 4
+          },
+          {
+            "enemy": "blighted_marshal",
+            "weight": 4
+          },
+          {
+            "enemy": "blighted_swordsman",
+            "weight": 4
+          },
+          {
+            "enemy": "angry_blighted_archer",
+            "weight": 3
+          },
+          {
+            "enemy": "glacier_orca",
+            "weight": 4,
+            "group": {
+              "members": [
+                "frost_wisp",
+                "cruel_frost_wisp",
+                "glacier_orca"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "blighted_marshal"
+            }
+          },
+          {
+            "enemy": "blighted_archer",
+            "weight": 3,
+            "group": {
+              "members": [
+                "blighted_spearman",
+                "blighted_archer"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          }
+        ],
+        "elites": {
+          "every": 45,
+          "pool": [
+            "blighted_marshal",
+            "glacier_orca",
+            "snow_lion"
+          ]
+        }
+      },
+      {
+        "from": 720,
+        "to": 900,
+        "rate": 8.0,
+        "maxAlive": 400,
+        "spawns": [
+          {
+            "enemy": "yeti",
+            "weight": 14
+          },
+          {
+            "enemy": "frost_revenant",
+            "weight": 14
+          },
+          {
+            "enemy": "snow_lion",
+            "weight": 9
+          },
+          {
+            "enemy": "rime_beetle",
+            "weight": 10
+          },
+          {
+            "enemy": "ice_golem",
+            "weight": 5
+          },
+          {
+            "enemy": "cruel_frost_wisp",
+            "weight": 7
+          },
+          {
+            "enemy": "frost_wisp",
+            "weight": 5
+          },
+          {
+            "enemy": "glacier_orca",
+            "weight": 5
+          },
+          {
+            "enemy": "blighted_spearman",
+            "weight": 3
+          },
+          {
+            "enemy": "blighted_archer",
+            "weight": 3
+          },
+          {
+            "enemy": "rime_beetle",
+            "weight": 4,
+            "group": {
+              "members": [
+                "rime_beetle",
+                "snow_lion"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          },
+          {
+            "enemy": "yeti",
+            "weight": 3,
+            "group": {
+              "members": [
+                "frost_revenant",
+                "snow_lion",
+                "frost_wisp"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "ice_golem"
+            }
+          }
+        ],
+        "elites": {
+          "every": 30,
+          "pool": [
+            "ice_golem",
+            "yeti",
+            "snow_lion",
+            "frost_revenant"
+          ]
+        }
+      }
+    ],
+    "bosses": [
+      {
+        "at": 180,
+        "boss": "boss_blighted_swordsman"
+      },
+      {
+        "at": 360,
+        "boss": "boss_blighted_archer"
+      },
+      {
+        "at": 540,
+        "boss": "boss_blighted_marshal"
+      },
+      {
+        "at": 720,
+        "boss": "boss_ice_golem"
+      }
+    ],
+    "final": {
+      "at": 900,
+      "boss": "boss_miho",
+      "greatMetin": "metin_great_demise",
+      "hpMul": 0.92
+    },
+    "metins": {
+      "types": [
+        "metin_grit",
+        "metin_fiend",
+        "metin_demise"
+      ],
+      "firstAt": 70,
+      "interval": [
+        45,
+        55
+      ]
+    },
+    "gearTier": 3,
+    "art": "art_zone_seori",
+    "unlock": {
+      "zone": "suryeon"
+    },
+    "xpMul": 1.3
+  },
+  {
+    "id": "daeryeol",
+    "order": 4,
+    "name": {
+      "tr": "Daeryeol",
+      "en": "Daeryeol"
+    },
+    "subtitle": {
+      "tr": "Yağmurun doğduğu ateş diyarı",
+      "en": "The fireland where the rain is born"
+    },
+    "levelRange": [
+      69,
+      73
+    ],
+    "story": {
+      "intro": [
+        {
+          "tr": "Daeryeol’da taş kara, nehir turuncudur; zemin ayaklarının altında nefes alıyor.",
+          "en": "In Daeryeol the stone is black and the rivers run orange; the ground breathes beneath your feet."
+        },
+        {
+          "tr": "Mezbaha Metini ateşi cehenneme çevirdi; Köz Kral tahtında, Ejderha’nın gölgesinde bekliyor.",
+          "en": "The Metin of Slaughter turned the fire into hell; the Pyre King waits on his throne in the Dragon’s shadow."
+        },
+        {
+          "tr": "Yağmur burada başlıyor. Burada bitmesi için son bir yürüyüş kaldı.",
+          "en": "The rain begins here. One last march remains to end it here."
+        }
+      ],
+      "bossIntro": {
+        "tr": "Zemin kızarıyor, hava titreşiyor — ateşin soyundan biri kapıyı çalıyor.",
+        "en": "The ground reddens, the air shivers — one of the fire’s own kin is knocking at the door."
+      },
+      "victory": [
+        {
+          "tr": "Al Ejder son kez kükredi; ses gökyüzündeki çatlağa ulaştı ve onu içeriden kapattı.",
+          "en": "The Scarlet Wyrm roared one last time; the sound reached the crack in the sky and sealed it from within."
+        },
+        {
+          "tr": "Büyük Kıyamet Ateşi Metini bir kor gibi dağıldı; gökten düşen son taş yere değmeden küle döndü.",
+          "en": "The Great Doomfire Metin scattered like an ember; the last stone falling from the sky turned to ash before it touched the ground."
+        },
+        {
+          "tr": "Yağmur dindi. Üç krallıkta fenerler tek tek yeniden yanıyor; ufukta altın bir gölge eğildi — bir selam, bir veda.",
+          "en": "The rain stopped. Across the three kingdoms the lanterns are being lit again, one by one; a golden shadow bowed on the horizon — a greeting, and a farewell."
+        }
+      ],
+      "defeat": [
+        {
+          "tr": "Ateş, ejderhanın nefesi gibi yavaşça üstüne kapanıyor.",
+          "en": "The fire closes over you slowly, like the Dragon’s breath."
+        },
+        {
+          "tr": "Gökyüzündeki çatlak hâlâ açık, ama avucundaki iz hâlâ sıcak. Bir kez daha.",
+          "en": "The crack in the sky is still open, but the mark in your palm is still warm. Once more."
+        }
+      ]
+    },
+    "biome": {
+      "id": "daeryeol",
+      "seed": 7404,
+      "ground": [
+        "tex_basalt",
+        "tex_ash",
+        "tex_scorched",
+        "tex_lava_crust"
+      ],
+      "trees": [
+        "charred",
+        "bare"
+      ],
+      "props": [
+        "prop_lava_rock",
+        "prop_fire_brazier",
+        "prop_obsidian_spire",
+        "prop_ruin_pillar"
+      ],
+      "fog": {
+        "color": "#85361c",
+        "near": 14,
+        "far": 120
+      },
+      "sky": {
+        "top": "#1f0000",
+        "horizon": "#a8431f",
+        "bottom": "#4a1a0c"
+      },
+      "sun": {
+        "color": "#b8dccf",
+        "intensity": 2.3,
+        "dir": [
+          0.2,
+          0.7,
+          0.42
+        ]
+      },
+      "ambient": {
+        "sky": "#8a5a40",
+        "ground": "#7a3d1c",
+        "intensity": 1.35
+      },
+      "water": {
+        "level": 0,
+        "color": "#ff5a14",
+        "kind": "lava"
+      },
+      "relief": {
+        "height": 8,
+        "roughness": 0.7,
+        "features": [
+          "basalt",
+          "lava_rivers",
+          "calderas"
+        ]
+      },
+      "particles": "embers"
+    },
+    "music": {
+      "calm": "mus_daeryeol_calm",
+      "combat": "mus_daeryeol_combat",
+      "boss": "mus_daeryeol_boss"
+    },
+    "bands": [
+      {
+        "from": 0,
+        "to": 180,
+        "rate": 0.99,
+        "maxAlive": 46,
+        "spawns": [
+          {
+            "enemy": "blaze_cub",
+            "weight": 34
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 18
+          },
+          {
+            "enemy": "blaze_cub",
+            "weight": 8,
+            "group": {
+              "members": [
+                "blaze_cub"
+              ],
+              "size": [
+                5,
+                8
+              ]
+            }
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 3,
+            "group": {
+              "members": [
+                "ash_wisp",
+                "blaze_cub"
+              ],
+              "size": [
+                4,
+                6
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "from": 180,
+        "to": 360,
+        "rate": 2.13,
+        "maxAlive": 110,
+        "spawns": [
+          {
+            "enemy": "blaze_cub",
+            "weight": 24
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 22
+          },
+          {
+            "enemy": "greater_ash_wisp",
+            "weight": 12
+          },
+          {
+            "enemy": "living_blaze",
+            "weight": 8
+          },
+          {
+            "enemy": "blaze_cub",
+            "weight": 6,
+            "group": {
+              "members": [
+                "blaze_cub"
+              ],
+              "size": [
+                6,
+                9
+              ]
+            }
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 4,
+            "group": {
+              "members": [
+                "ash_wisp",
+                "greater_ash_wisp",
+                "blaze_cub"
+              ],
+              "size": [
+                4,
+                6
+              ],
+              "leader": "living_blaze"
+            }
+          }
+        ],
+        "elites": {
+          "every": 70,
+          "pool": [
+            "living_blaze"
+          ]
+        }
+      },
+      {
+        "from": 360,
+        "to": 540,
+        "rate": 4.2,
+        "maxAlive": 190,
+        "spawns": [
+          {
+            "enemy": "blaze_cub",
+            "weight": 16
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 14
+          },
+          {
+            "enemy": "greater_ash_wisp",
+            "weight": 10
+          },
+          {
+            "enemy": "living_blaze",
+            "weight": 10
+          },
+          {
+            "enemy": "blaze_tiger",
+            "weight": 20
+          },
+          {
+            "enemy": "blaze_tiger",
+            "weight": 5,
+            "group": {
+              "members": [
+                "blaze_cub",
+                "ash_wisp"
+              ],
+              "size": [
+                4,
+                6
+              ]
+            }
+          },
+          {
+            "enemy": "living_blaze",
+            "weight": 3,
+            "group": {
+              "members": [
+                "ash_wisp",
+                "greater_ash_wisp",
+                "blaze_cub"
+              ],
+              "size": [
+                5,
+                7
+              ],
+              "leader": "blaze_tiger"
+            }
+          }
+        ],
+        "elites": {
+          "every": 55,
+          "pool": [
+            "living_blaze",
+            "blaze_tiger"
+          ]
+        }
+      },
+      {
+        "from": 540,
+        "to": 720,
+        "rate": 5.8,
+        "maxAlive": 280,
+        "spawns": [
+          {
+            "enemy": "blaze_cub",
+            "weight": 10
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 10
+          },
+          {
+            "enemy": "greater_ash_wisp",
+            "weight": 8
+          },
+          {
+            "enemy": "living_blaze",
+            "weight": 14
+          },
+          {
+            "enemy": "blaze_tiger",
+            "weight": 14
+          },
+          {
+            "enemy": "lava_troll",
+            "weight": 12
+          },
+          {
+            "enemy": "blaze_knight",
+            "weight": 8
+          },
+          {
+            "enemy": "blaze_knight",
+            "weight": 4,
+            "group": {
+              "members": [
+                "living_blaze",
+                "blaze_cub",
+                "ash_wisp"
+              ],
+              "size": [
+                5,
+                7
+              ],
+              "leader": "blaze_knight"
+            }
+          },
+          {
+            "enemy": "lava_troll",
+            "weight": 3,
+            "group": {
+              "members": [
+                "blaze_cub",
+                "greater_ash_wisp"
+              ],
+              "size": [
+                5,
+                8
+              ],
+              "leader": "lava_troll"
+            }
+          }
+        ],
+        "elites": {
+          "every": 45,
+          "pool": [
+            "blaze_knight",
+            "blaze_tiger",
+            "lava_troll"
+          ]
+        }
+      },
+      {
+        "from": 720,
+        "to": 900,
+        "rate": 7.4,
+        "maxAlive": 370,
+        "spawns": [
+          {
+            "enemy": "living_blaze",
+            "weight": 12
+          },
+          {
+            "enemy": "blaze_tiger",
+            "weight": 12
+          },
+          {
+            "enemy": "lava_troll",
+            "weight": 12
+          },
+          {
+            "enemy": "blaze_knight",
+            "weight": 12
+          },
+          {
+            "enemy": "cinderbeard",
+            "weight": 9
+          },
+          {
+            "enemy": "greater_ash_wisp",
+            "weight": 8
+          },
+          {
+            "enemy": "ash_wisp",
+            "weight": 8
+          },
+          {
+            "enemy": "blaze_cub",
+            "weight": 8
+          },
+          {
+            "enemy": "cinderbeard",
+            "weight": 4,
+            "group": {
+              "members": [
+                "lava_troll",
+                "living_blaze",
+                "ash_wisp"
+              ],
+              "size": [
+                5,
+                7
+              ],
+              "leader": "basalt_general"
+            }
+          },
+          {
+            "enemy": "blaze_knight",
+            "weight": 3,
+            "group": {
+              "members": [
+                "living_blaze",
+                "blaze_tiger",
+                "blaze_cub"
+              ],
+              "size": [
+                6,
+                9
+              ],
+              "leader": "blaze_knight"
+            }
+          }
+        ],
+        "elites": {
+          "every": 30,
+          "pool": [
+            "blaze_knight",
+            "basalt_general",
+            "cinderbeard",
+            "lava_troll"
+          ]
+        }
+      }
+    ],
+    "bosses": [
+      {
+        "at": 180,
+        "boss": "boss_blaze_tiger"
+      },
+      {
+        "at": 360,
+        "boss": "boss_greater_ash_wisp"
+      },
+      {
+        "at": 540,
+        "boss": "boss_basalt_general"
+      },
+      {
+        "at": 720,
+        "boss": "boss_pyre_king"
+      }
+    ],
+    "final": {
+      "at": 900,
+      "boss": "boss_scarlet_wyrm",
+      "greatMetin": "metin_great_doomfire",
+      "hpMul": 0.85
+    },
+    "metins": {
+      "types": [
+        "metin_slaughter",
+        "metin_fiend",
+        "metin_dusk"
+      ],
+      "firstAt": 70,
+      "interval": [
+        45,
+        55
+      ]
+    },
+    "gearTier": 4,
+    "art": "art_zone_daeryeol",
+    "unlock": {
+      "zone": "seori"
+    },
+    "xpMul": 1.55
+  }
+]

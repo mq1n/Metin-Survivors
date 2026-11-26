@@ -1,0 +1,191 @@
+[
+  {
+    "id": "bracelet_jade",
+    "slot": "bracelet",
+    "name": {
+      "tr": "Yeşim Can Bileziği",
+      "en": "Jade Lifebound Bracelet"
+    },
+    "desc": {
+      "tr": "Vurduğun her darbenin bir kısmı canına döner.",
+      "en": "A share of every blow you land flows back as health."
+    },
+    "icon": "icon_trinket_bracelet_jade",
+    "effect": "lifesteal",
+    "perRank": {
+      "pct": 0.006
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "bracelet_thunder",
+    "slot": "bracelet",
+    "name": {
+      "tr": "Gök Gürültüsü Bileziği",
+      "en": "Thunderclap Bracelet"
+    },
+    "desc": {
+      "tr": "Vuruşların bazen yakındaki başka bir düşmana sıçrar.",
+      "en": "Your hits sometimes leap to another enemy nearby."
+    },
+    "icon": "icon_trinket_bracelet_thunder",
+    "effect": "chainHit",
+    "perRank": {
+      "chance": 0.06,
+      "damage": 0.4
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "bracelet_viper",
+    "slot": "bracelet",
+    "name": {
+      "tr": "Engerek Bileziği",
+      "en": "Viper Bracelet"
+    },
+    "desc": {
+      "tr": "Vuruşların zehirleyebilir; zehir zamanla yakar.",
+      "en": "Your hits may poison; the venom burns over time."
+    },
+    "icon": "icon_trinket_bracelet_viper",
+    "effect": "poisonChance",
+    "perRank": {
+      "chance": 0.06,
+      "power": 0.3,
+      "duration": 3.5
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "bracelet_ward",
+    "slot": "bracelet",
+    "name": {
+      "tr": "Koruyucu Mühür Bileziği",
+      "en": "Sealed Ward Bracelet"
+    },
+    "desc": {
+      "tr": "Seni saran bir kalkan darbeleri emer ve zamanla yenilenir.",
+      "en": "A shield around you absorbs blows and slowly regenerates."
+    },
+    "icon": "icon_trinket_bracelet_ward",
+    "effect": "shield",
+    "perRank": {
+      "amount": 12,
+      "regen": 0.6
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "necklace_frost",
+    "slot": "necklace",
+    "name": {
+      "tr": "Buz Kolyesi",
+      "en": "Frostbound Necklace"
+    },
+    "desc": {
+      "tr": "Vuruşların düşmanları yavaşlatabilir.",
+      "en": "Your hits may slow enemies."
+    },
+    "icon": "icon_trinket_necklace_frost",
+    "effect": "slowChance",
+    "perRank": {
+      "chance": 0.1,
+      "power": 0.25,
+      "duration": 2
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "necklace_tiger_fang",
+    "slot": "necklace",
+    "name": {
+      "tr": "Kaplan Dişi Kolyesi",
+      "en": "Tiger Fang Necklace"
+    },
+    "desc": {
+      "tr": "Kritik vuruşların çevreye bir patlama saçar.",
+      "en": "Critical hits burst outward and hurt enemies around the target."
+    },
+    "icon": "icon_trinket_necklace_tiger_fang",
+    "effect": "critBurst",
+    "perRank": {
+      "radius": 3.2,
+      "damage": 0.18
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "necklace_blood",
+    "slot": "necklace",
+    "name": {
+      "tr": "Kan Kolyesi",
+      "en": "Bloodstone Necklace"
+    },
+    "desc": {
+      "tr": "Her vuruş canına biraz can ekler.",
+      "en": "Every hit restores a little of your health."
+    },
+    "icon": "icon_trinket_necklace_blood",
+    "effect": "lifesteal",
+    "perRank": {
+      "pct": 0.007
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "earring_thorn",
+    "slot": "earring",
+    "name": {
+      "tr": "Diken Küpesi",
+      "en": "Thorn Earring"
+    },
+    "desc": {
+      "tr": "Sana yakın dövüşte vuranlar hasarın bir kısmını geri alır.",
+      "en": "Enemies that strike you in melee take part of the damage back."
+    },
+    "icon": "icon_trinket_earring_thorn",
+    "effect": "thorns",
+    "perRank": {
+      "pct": 0.1
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "earring_thunderclap",
+    "slot": "earring",
+    "name": {
+      "tr": "Sersemletici Küpe",
+      "en": "Stunning Earring"
+    },
+    "desc": {
+      "tr": "Vuruşların düşmanları kısa süreliğine sersemletebilir.",
+      "en": "Your hits may briefly stun enemies."
+    },
+    "icon": "icon_trinket_earring_thunderclap",
+    "effect": "stunChance",
+    "perRank": {
+      "chance": 0.03,
+      "duration": 0.6
+    },
+    "maxRank": 5
+  },
+  {
+    "id": "earring_phoenix",
+    "slot": "earring",
+    "name": {
+      "tr": "Anka Küpesi",
+      "en": "Phoenix Earring"
+    },
+    "desc": {
+      "tr": "Anka’nın alevi seni saran bir kalkana dönüşür.",
+      "en": "The phoenix’s flame becomes a shield wrapped around you."
+    },
+    "icon": "icon_trinket_earring_phoenix",
+    "effect": "shield",
+    "perRank": {
+      "amount": 9,
+      "regen": 0.9
+    },
+    "maxRank": 5
+  }
+]

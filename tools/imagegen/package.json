@@ -1,0 +1,13 @@
+{
+  "name": "@ms/imagegen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "bun test src"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.3",
+    "typescript": "6.0.3"
+  }
+}

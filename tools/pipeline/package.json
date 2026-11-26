@@ -1,0 +1,13 @@
+{
+  "name": "@ms/pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.3",
+    "typescript": "6.0.3"
+  }
+}

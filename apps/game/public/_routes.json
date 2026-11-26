@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "description": "Only /api/* runs the Pages Function (same-origin proxy to the API Worker, functions/api/[[path]].ts); every other path is a free static asset request.",
+  "include": ["/api/*"],
+  "exclude": []
+}

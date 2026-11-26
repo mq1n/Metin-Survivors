@@ -1,0 +1,226 @@
+/* =====================================================================================================================
+   Armory art kit (armory-a r2): painted tags (uk_hud_tag), creature portraits in an octagon bay with the painted ring
+   (uk_online_octring + the baked atlas), tray-framed cards (uk_hud_tray). Materials arrive as custom properties on the armory
+   root (Art.tsx artVars); every rule has a CSS fallback.
+   ===================================================================================================================== */
+
+/* ---- tags: the small bronze plate for counts, times and states --------------------------------------------------------- */
+.ms-tag {
+  --tag-f: none;
+  --tag-c: var(--k-text);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  min-height: 1.75rem;
+  padding: 0.12rem 0.8rem;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--tag-c);
+  text-shadow: 0 1px 0 #000;
+  isolation: isolate;
+}
+.ms-tag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0.5rem;
+  border-image: var(--tex-tag, linear-gradient(#1b1713, #0d0b09)) 22 fill / 0.5rem stretch;
+  filter: var(--tag-f);
+}
+.ms-tag-ico {
+  display: inline-flex;
+  flex: none;
+}
+.ms-tag-ico .ms-kicon,
+.ms-tag-ico svg {
+  width: 1rem;
+  height: 1rem;
+}
+.ms-tag-text {
+  min-width: 0;
+}
+.ms-tag--gold {
+  --tag-c: #f4d994;
+  --tag-f: saturate(1.25) brightness(1.18);
+}
+.ms-tag--red {
+  --tag-c: #ffb4a0;
+  --tag-f: hue-rotate(-32deg) saturate(1.9) brightness(0.95);
+}
+.ms-tag--blue {
+  --tag-c: #b8d4ff;
+  --tag-f: hue-rotate(168deg) saturate(1.2) brightness(0.95);
+}
+.ms-tag--dim {
+  --tag-c: var(--k-text-2);
+  --tag-f: saturate(0.5) brightness(0.8);
+}
+/* numerals inside a tag are lining and tabular */
+.ms-tag.ms-num {
+  font-family: var(--f-num);
+  letter-spacing: 0.03em;
+}
+
+/* ---- creature portrait stand-in: octagon bay + glyph + painted ring ---------------------------------------------------------- */
+.ms-bf {
+  --bf: 4.1rem;
+  --oct: polygon(21% 0, 79% 0, 100% 21%, 100% 79%, 79% 100%, 21% 100%, 0 79%, 0 21%);
+  position: relative;
+  flex: none;
+  display: block;
+  width: var(--bf);
+  height: var(--bf);
+  filter: drop-shadow(0 0 0.35rem color-mix(in srgb, var(--rc, transparent) 50%, transparent));
+}
+.ms-bf--sm {
+  --bf: 3.2rem;
+}
+.ms-bf--md {
+  --bf: 4.1rem;
+}
+.ms-bf--lg {
+  --bf: 5.6rem;
+}
+.ms-bf--xl {
+  --bf: 7.8rem;
+}
+.ms-bf-bay {
+  position: absolute;
+  inset: 6.5%;
+  clip-path: var(--oct);
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--rc, #6a5a40) 34%, #1c1814), #0b0a08 78%);
+}
+.ms-bf-fb {
+  display: grid;
+  place-items: center;
+  width: 62%;
+  height: 62%;
+  color: var(--k-text-3);
+}
+.ms-bf-ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--tex-octring, none) 50% 50% / 100% 100% no-repeat;
+}
+/* ring fallback */
+.ms-arm:not(.has-art) .ms-bf-ring {
+  clip-path: var(--oct);
+  background: linear-gradient(150deg, #8f8676, #3b362e 50%, #12100d);
+  -webkit-mask: radial-gradient(closest-side, transparent 80%, #000 82%);
+  mask: radial-gradient(closest-side, transparent 80%, #000 82%);
+}
+.ms-bf.is-locked .ms-bf-bay {
+  background: radial-gradient(circle at 50% 40%, #1a1713, #080706 80%);
+}
+.ms-bf.is-locked {
+  filter: none;
+}
+
+/* ---- tray card: the steel tray frame (uk_hud_tray) around a granite board, for boss cards and lore plates -------------------- */
+.ms-tray {
+  position: relative;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0.8rem;
+  border-image: var(--tex-tray, none) 36 fill / 0.8rem stretch;
+  background: none;
+}
+.ms-tray::before {
+  content: '';
+  position: absolute;
+  inset: -0.45rem;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(10, 9, 8, 0.45), rgba(10, 9, 8, 0.45)),
+    var(--tex-granite, none) 0 0 / 9rem,
+    #14110f;
+  pointer-events: none;
+}
+.ms-arm:not(.has-art) .ms-tray {
+  border-width: 1px;
+  border-image: none;
+  border-color: #3a362f;
+  background: #14110f;
+}
+
+/* ---- data strip: one recessed well, facts split by engraved dividers ------------------------------------------------------------ */
+.ms-ds {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 2px;
+  background-color: var(--k-well);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 55%);
+  box-shadow: inset 1px 1px 0 #000, inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.75), 0 0 0 1px var(--k-well-rim), 0 0 0 2px #050404;
+}
+.ms-ds-i {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 1.85rem;
+  padding: 0.15rem 0.75rem;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  line-height: 1.1;
+  color: var(--k-text);
+  white-space: nowrap;
+  text-shadow: 0 1px 0 #000;
+}
+.ms-ds-i + .ms-ds-i {
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.9), inset 2px 0 0 rgba(160, 150, 134, 0.2);
+}
+.ms-ds-i--gold {
+  color: var(--k-gold);
+}
+.ms-ds-i--red {
+  color: #ff9d86;
+}
+.ms-ds-i--dim {
+  color: var(--k-text-2);
+}
+.ms-ds-ico {
+  display: inline-flex;
+  flex: none;
+}
+.ms-ds-ico .ms-kicon,
+.ms-ds-ico svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.ms-ds-t.ms-num {
+  font-family: var(--f-num);
+}
+
+/* ---- stone radio plates (Plate): the kit's bevelled button, light label; the chosen plate is lit gold -------------------------------- */
+.ms-chr-tog {
+  flex: 1 1 0;
+  min-width: 0;
+  --kb-pad-x: 0.5rem;
+  --bh: 2.3rem;
+  font-size: var(--t-sm);
+  letter-spacing: 0.05em;
+  color: var(--k-text);
+}
+.ms-chr-tog.is-active {
+  --pl-veil: rgba(88, 42, 12, 0.42);
+  box-shadow: 0 0 0.7rem rgba(240, 190, 90, 0.18);
+}

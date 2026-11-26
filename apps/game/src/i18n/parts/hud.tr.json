@@ -1,0 +1,19 @@
+{
+  "hud.xp": "EXP",
+  "hud.build.more": "Ruh incileri ve takılar",
+  "hud.hp": "Can",
+  "hud.noShield": "Kalkan yok",
+  "hud.dist": "{n} m",
+  "hud.time": "Koşu süresi",
+  "hud.map.show": "Haritayı göster",
+  "hud.ann.boss": "Boss",
+  "hud.ann.metin": "Metin",
+  "hud.ann.danger": "Uyarı",
+  "hud.ann.victory": "Zafer",
+  "hud.build": "Donanım",
+  "hud.build.title": "Donanımın",
+  "hud.build.empty": "Henüz bir şeyin yok. Seviye atladıkça pasifler, ruh taşları ve takılar bulacaksın.",
+  "hud.bossFight": "Boss savaşı",
+  "hud.corruption.short": "Bozulma",
+  "hud.shield": "Kalkan"
+}

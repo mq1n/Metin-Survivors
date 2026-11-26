@@ -1,0 +1,978 @@
+{
+  "icon_talent_ninja_a_r0c0": {
+    "subject": "ninja blade tree, passive: tougher body, more maximum HP",
+    "glyph": "a square key-fret frame filling the cell edge to edge: a thick square ring built of stepped right-angle meander turns (a Chinese key-fret band, strictly rectilinear, one even HEAVY stroke weight of about 1/10 of the cell, only two big stepped turns along each side and one at each corner, the black gaps between turns as wide as the strokes, no thin lines, no tiny details), and in its centre one solid round disc about 44 % of the cell wide cut into four equal quarters by a black cross (one vertical and one horizontal gap, each about 1/24 of the cell wide); perfectly symmetric; no sword, no shield outline, no text, no letters",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r0c1": {
+    "subject": "ninja blade tree, passive: dagger mastery, more damage",
+    "glyph": "one bold dagger standing upright, point up, in the centre: a very broad leaf-shaped solid blade (about 1/5 of the cell wide) with a thin black centre-line gap along its whole length, a short thick crossguard, a short grip and a round pommel; behind the blade a fan of five bold straight rays radiating up and outward from the crossguard (fat tapering wedges, each about 1/12 of the cell wide at its base, separated by black gaps as wide as a ray, the outer ones reaching toward the cell's upper corners), like a blade flashing; symmetric, tall, the dagger about 3/4 of the cell high; nothing thin",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r0c2": {
+    "subject": "ninja blade tree, passive: lethal precision, more critical hits and critical damage",
+    "glyph": "one long diagonal slash: an extremely thick crescent blade arc (a curved cutting sweep) from the lower left to the upper right, about 90 % of the cell long, pointed at both ends, widest in the middle (about 3/10 of the cell thick, a fat solid sickle shape, not a thin stroke), its hollow side facing the lower right, with NO inner line; and in the hollow of the crescent at its middle one big solid four-pointed star (four fat straight points with concave edges, about 2/5 of the cell across, a small round black hole at its centre) separated from the arc by a thin black gap; flat bold shapes, no eye, no figure, no dagger, no feather",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r1c0": {
+    "subject": "ninja blade tree, upgrade of the Shadow Clone skill: more clones, more damage",
+    "glyph": "one very big solid four-pointed ninja shuriken at the lower right (four fat straight points with concave straight edges, a small round black hole at its centre, about 60 % of the cell wide), and behind it, stepped toward the upper left along the diagonal, two afterimage copies of the same star drawn ONLY as hollow outlines with a very thick outline stroke (about 1/8 of the cell, empty inside, the stroke as thick as a point's width at its tip), the middle one about 50 % of the cell wide and the farthest one about 40 %, each overlapping its neighbour's corner slightly with a thin black gap between them; clearly a ninja throwing star leaving two ghost outlines; the whole group fills the cell diagonally; no checkerboard, no dots, no fill pattern",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r1c1": {
+    "subject": "ninja blade tree, upgrade of the Dagger Flurry skill: faster, harder volley of daggers",
+    "glyph": "three kunai throwing knives thrown in a fan from one point at the lower left toward the upper right: one flying straight up-right at 45 degrees, one rotated 22 degrees steeper and one rotated 22 degrees flatter, each a short FAT solid leaf-shaped blade like a broad spearhead (about 1/4 of the cell wide at its widest and about 45 % of the cell long, never a thin needle) with one thin black centre-line gap, a short very thick grip and a big ring pommel (ring stroke about 1/14 of the cell) at its lower-left end, all three the same size, the black gaps between them about 1/16 of the cell wide so the fan is one dense heavy mass; the fan fills the cell; no hatching, no trail lines, nothing thin",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r1c2": {
+    "subject": "ninja blade tree, upgrade of the Spiral of Knives skill: bigger whirling blade",
+    "glyph": "one dagger lying on the diagonal, tip at the upper right and pommel at the lower left (a solid leaf-shaped blade with a thin black centre-line gap, a short crossguard, a round pommel), surrounded by a broken whirl ring made of two very thick crescent arcs that together form a circle about 90 % of the cell wide: one arc is the upper-left half of the circle and the other the lower-right half, each pointed at both ends and as thick as the blade at its widest, the two black gaps of the ring sitting on the diagonal exactly where the dagger's tip and pommel pass through; the whole symbol round and symmetric by half-turn; no parentheses, no spiral, no flame",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r2c0": {
+    "subject": "ninja blade tree, upgrade of the Vanishing Leap skill: quicker strikes",
+    "glyph": "one bold kunai throwing knife pointing right, horizontal: a broad leaf-shaped solid blade with a sharp point at the right, a short thick grip and a thick ring pommel at the left end; behind it trailing to the left a hatch of horizontal speed lines: two bold bars above and two below the kunai's axis, each tapered to a point at its right end, decreasing in length away from the axis, each ending at its left in a short row of small square dither dots; symmetric top to bottom; the kunai blade very broad (about 1/3 of the cell tall) and the bars very thick (as thick as the grip, about 1/10 of the cell tall) with only a thin black gap between a bar and the kunai",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r2c1": {
+    "subject": "ninja blade tree, upgrade of the Noxious Pall skill: bigger, deadlier poison cloud",
+    "glyph": "a bold flat-bottomed cloud scroll of three round lobes with a thick inner spiral (volute) curl cut as a black line into each of the two side lobes and a curled spiral tail at each lower corner, and above it three solid round toxic bubbles of different sizes (small, large, medium) rising from the centre lobe; symmetric cloud, no drops, no rain",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r2c2": {
+    "subject": "ninja blade tree, upgrade of the Creeping Venom skill: the poison spreads to more enemies",
+    "glyph": "three big solid poison drops (teardrops, each with its point up) hopping along one wide high arch from the lower left over the top to the lower right: the left drop the largest (about 1/2 of the cell tall) with one small round black bubble gap in it, the middle drop at the top of the arch about 2/5 of the cell tall, the right drop about 1/3; between neighbouring drops one very thick tapering curved comet stroke (about 1/7 of the cell thick at its thick end) following the arch and showing the jump path, separated from each drop by a thin black gap; the whole arch fills the cell; bold heavy even weight, nothing thin, clearly drops and not a snake, no eyes, no creature, no cloud",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r3c0": {
+    "subject": "ninja blade tree, passive: shadow step, more evasion and move speed",
+    "glyph": "one very thick crescent moon opening to the right (about 70 % of the cell tall, its horns pointing right), with a dotted motion trail streaming from its left: three solid round dots of decreasing size in one horizontal row on the crescent's axis (the nearest dot about 1/6 of the cell across, the next 1/8, the last 1/11), separated by black gaps about as wide as the dots; solid white, flat, bold, no bars, no lines, no stars",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r3c1": {
+    "subject": "ninja blade tree, upgrade of the Stealth skill: longer, more often available invisibility",
+    "glyph": "the silhouette of a hooded cloak seen from the front: a tall pointed hood above broad sloping shoulders that widen to a flat bottom edge; drawn as one solid outline (about 1/10 of the cell thick) whose whole inside is filled with a bold COARSE checkerboard dither (alternating solid and black square cells, each cell about 1/8 of the cloak's width so only about 8 squares fit across the widest row and the squares stay clearly visible when the picture is tiny, clipped by the outline), like a fading ghost; no face, no eyes, no features inside, symmetric, nothing else",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r3c2": {
+    "subject": "ninja blade tree, passive: nimble pickpocket hands, more Yeop gained",
+    "glyph": "two ancient cash coins overlapping on a diagonal: the front coin at the lower left and the back coin peeking out behind it at the upper right (only its uncovered part visible, separated from the front coin by a black gap as wide as a stroke); each coin is line-built: one thick circular ring (stroke about 1/10 of the coin's width) with one thick square ring at its centre (the square hole), black ground between the circle and the square; no solid fill, no ticks, no text, no letters",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r4c0": {
+    "subject": "ninja blade tree, upgrade of the Ambush skill: deadlier assassination strike over a wider area",
+    "glyph": "one bold dagger pointing straight DOWN, a broad leaf-shaped solid blade with its point at the lower centre, the crossguard and a round pommel at the top, standing in front of a large thick DIAMOND outline (a rhombus frame with its corners at top, bottom, left and right) whose top two edges are broken by the dagger; inside the diamond, left and right of the blade, one small solid square each as lattice accents; vertical, symmetric, no ring",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r4c1": {
+    "subject": "ninja blade tree, passive: a prodigy apprentice starts the run with extra levels",
+    "glyph": "a three-tier pagoda tower seen from the front, perfectly symmetric: three stacked solid roofs, each a wide trapezoid whose lower corners curl up into sharp upturned eave points, the bottom roof the widest and the top roof the narrowest (about 90 %, 65 % and 40 % of the cell wide), separated by short narrow solid wall bands (about 1/3 of the roof's width) each with one thin black vertical slit cut-line, and on top a slim spire of one small diamond and a thin needle; strictly bold, one weight; no windows, no door, no ground line, no text",
+    "family": "warm"
+  },
+  "icon_talent_ninja_a_r4c2": {
+    "subject": "ninja blade tree, passive: loaded dice give extra card rerolls",
+    "glyph": "one die drawn as an isometric cube (a hexagon silhouette) in thick outline strokes: the outer hexagon outline and the three inner edges meeting at its centre are line strokes about 1/12 of the cube's width thick, black inside the faces; the top face holds one big solid round pip, the left face two pips on its diagonal and the right face three pips on its diagonal, every pip a solid disc about 1/7 of the cube's width; the faces are line-built, not solid slabs; nothing else, no text",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r0c0": {
+    "subject": "ninja archery tree, passive: hunter's body, more maximum HP and a little lifesteal",
+    "glyph": "a bold calabash healing gourd standing upright: two stacked round lobes joined at a narrow waist, the lower lobe about 55 % of the cell wide and the upper lobe about 35 %, a short stem with one curled tendril at the top, one thin black cut-line ring around the waist (a tied cord) and one round-topped teardrop-shaped black gap in the lower lobe; solid, symmetric apart from the tendril, one bold weight; not a bottle, not a vase, not a heart, no checkerboard",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r0c1": {
+    "subject": "ninja archery tree, passive: keen aim, more damage and a little lifesteal",
+    "glyph": "one heavy arrow flying horizontally to the right straight through the middle of a hollow ring: the ring is a very thick circle outline (stroke about 1/5 of its diameter, diameter about 70 % of the cell) in the centre, the arrow shaft (about 1/7 of the cell thick, as thick as the ring stroke) passes through it with thin black gaps where it crosses the ring's edges so it reads as passing through, a huge solid triangular head on the right outside the ring (about 1/3 of the cell tall) and a deep fletching tail on the left outside the ring made of two stacked V-shaped feather vanes, each as thick as the shaft; the arrow about 95 % of the cell wide; bold and heavy everywhere, nothing thin; no bullseye, no centre dot, no inner rings, no target",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r0c2": {
+    "subject": "ninja archery tree, passive: hawk's eye, more critical chance and critical damage",
+    "glyph": "one wide almond-shaped eye drawn with thick tapered lid arcs (the upper lid arc and the lower lid arc each about 1/9 of the eye's height thick, meeting in sharp points at the left and right), a solid round iris about 1/3 of the eye's width with a thin vertical slit pupil cut out in black, and above the upper lid a fan of five bold tapering wedge rays radiating up and outward (the middle one longest, black gaps between them), so it reads as a keen watching eye; the eye nearly edge to edge; symmetric; no lashes, no face, no eyebrow, no bird",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r1c0": {
+    "subject": "ninja archery tree, upgrade of the Bow Shot skill: faster draw, harder hit",
+    "glyph": "a bold drawn bow seen from the side, aimed to the right: one thick recurved bow arc on the right (a thick crescent bulging to the right whose two tips flick back to the left), the bowstring pulled back into a sharp V pointing left (two straight strokes meeting at the arrow's tail, no straight vertical string), and one arrow lying horizontally from the V's point out through the middle of the arc with a big solid triangular head poking out on the right; every stroke about as thick as the arrow shaft (1/12 of the cell), the whole symbol about 90 % of the cell wide; not a letter D, no text",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r1c1": {
+    "subject": "ninja archery tree, upgrade of the Rapid Barrage skill: more arrows per volley",
+    "glyph": "three horizontal arrows stacked one above the other, all pointing right, staggered (the top one furthest left, the middle one centred, the bottom one furthest right); each arrow has a very thick shaft (about 1/10 of the cell thick), a big solid triangular head as tall as 1/4 of the cell and a deep V-notched tail; same size, the three arrows nearly fill the cell, the black gaps between them about as thick as a shaft",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r1c2": {
+    "subject": "ninja archery tree, upgrade of the Arrowfall skill: a wider rain of arrows",
+    "glyph": "four fat arrows raining down on a slant, all parallel and tilted 25 degrees from vertical (heads at the lower left, notched tails at the upper right), side by side in a staggered row, the two middle arrows longest and the outer ones shorter; every shaft very thick (about 1/8 of the cell) with a big solid triangular head as wide as 1/5 of the cell and a deep V-notched tail; same heavy weight for all four, the black gaps between them about as wide as a shaft, nothing thin; the four arrows form one chunky diagonal band filling the cell",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r2c0": {
+    "subject": "ninja archery tree, upgrade of the Kindled Shaft skill: hotter, quicker fire arrow",
+    "glyph": "one bold arrow pointing right, horizontal: a thick shaft (about 1/10 of the cell thick), and wrapped around the arrowhead one big solid flame with three tongues sweeping backwards along the shaft, a deep V-notched fletching tail at the left end; the flame as big as the head, solid, uniform bold weight",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r2c1": {
+    "subject": "ninja archery tree, upgrade of the Serpent Shafts skill: more poisoned arrows",
+    "glyph": "one bold arrow flying on the diagonal toward the upper right: a very thick shaft (about 1/9 of the cell), a big solid leaf-shaped head (as wide as 1/3 of the cell) with one round-topped teardrop black gap cut into it, a deep V-notched fletching tail at the lower left, and hanging down from the underside of the shaft three big solid poison drops (teardrops with the point up and a round belly below) dripping vertically at different heights, the largest about 1/5 of the cell tall and the smallest about 1/9, separated from the shaft by thin black gaps; bold uniform weight; not an anchor, no barbs, no fangs, no skull, not pointing down, no small dots",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r2c2": {
+    "subject": "ninja archery tree, upgrade of the Spark skill: longer-lasting, harder-hitting spark",
+    "glyph": "a fat eight-pointed starburst filling the cell: four long points (up, down, left, right), four shorter points on the diagonals, every point a wide triangle as wide at its base as 1/4 of the star's diameter (no thin spikes), and a big round black hole in the centre; perfectly symmetric, heavy and solid",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r3c0": {
+    "subject": "ninja archery tree, upgrade of the Swallow's Gait skill: lighter feet, longer and more often",
+    "glyph": "one bold bird feather tilted about 25 degrees from vertical with a gently curved spine: a long swept solid vane that is wider on one side, three deep V-notches (barb splits) cut into its wide side and four thin black diagonal hatch cuts across the vane, a short quill stub at the bottom; asymmetric and flat, clearly a bird feather and not a leaf",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r3c1": {
+    "subject": "ninja archery tree, upgrade of the thrown Bomb skill: a bigger, harder-hitting burst cloud",
+    "glyph": "one round pellet bomb: a thick ring outline (stroke about 1/9 of the ring's diameter, ring diameter about 72 % of the cell) as the bomb's shell, a short thick curved fuse rising from the top of the ring and ending in one small solid dot, and filling the inside of the ring one solid puffy cloud of three round lobes with a flat bottom (a big centre lobe and a smaller lobe on each side, the lobes bulging clearly) separated from the ring by a thin black gap all round; symmetric apart from the curl of the fuse; flat bold shapes, one even weight; no bomb face, no star, no sparkle, no rays, no flame, no drips, no thought bubble, no spirals",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r3c2": {
+    "subject": "ninja archery tree, passive: windborne speed, faster projectiles and faster movement",
+    "glyph": "one long wind streamer ribbon flying to the right in two smooth S-waves: a solid band of constant width about 1/8 of the cell, undulating across the full width of the cell, with a forked swallow-tail end at the right and three thin black cut-lines (hairline gaps) running along its length; below it one shorter parallel streamer of the same style at about 60 % of the length; flat, bold, no pole, no flag, no feather, no text",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r4c0": {
+    "subject": "ninja archery tree, upgrade of the Arrowfall skill: the master of the downpour, many more arrows over a wider area",
+    "glyph": "a thick flat ellipse ring (the target zone on the ground) with three arrows pointing straight down into it, the arrowheads inside the ellipse and the shafts reaching up past its top edge; symmetric",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r4c1": {
+    "subject": "ninja archery tree, passive: a picky hunter may banish unwanted cards",
+    "glyph": "one playing card pinned by a knife: a tall rounded rectangle (about 46 % of the cell wide and 82 % of its height) tilted about 12 degrees clockwise, drawn as a thick outline (about 1/8 of the card's width) with black inside and one solid diamond about 1/4 of the card's width near its top as the card's pictogram, and a long solid kunai throwing knife thrust diagonally through the lower half of the card from the lower left to the upper right at 45 degrees (a broad leaf-shaped blade with one thin black centre-line gap, a short grip and a ring pommel outside the card at the lower left, the blade's point sticking out past the card's right edge), with thin black gaps where the knife crosses the card's outline; no X, no ring, no banner, no vertical stick, no text",
+    "family": "warm"
+  },
+  "icon_talent_ninja_b_r4c2": {
+    "subject": "ninja archery tree, passive: a prodigy marksman starts the run with extra levels",
+    "glyph": "one ninja technique scroll lying on the diagonal from the lower left to the upper right: a thick rolled bar (about 1/4 of the cell thick, about 90 % of the cell long along the diagonal) with a wider flat disc cap at each end, one tie band wrapped around its middle separated from the bar by two thin black cut-lines, and a short knotted cord tail hanging from the band; solid, bold, flat; not a sword, not a log, not a bow",
+    "family": "warm"
+  },
+  "icon_talent_yacha_a_r0c0": {
+    "subject": "sura weaponry tree, passive: the curse in the hero's blood boils over, more damage",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a closed armoured fist seen from the front, knuckles up: a blocky solid fist with four short sharp spikes along the top knuckle ridge, three thick black finger-gap cut-lines and a flared wrist cuff at the bottom crossed by one black band; symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: was a slit eye (Sauron-like); fist = damage",
+    "allowFist": true
+  },
+  "icon_talent_yacha_a_r0c1": {
+    "subject": "sura weaponry tree, passive: armour and bone become one, more maximum HP",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; bone chest armour seen from the front: a solid breastplate with two rounded shoulder plates and a flared hem, carved by one thick black spine cut-line down the centre and two thick curved black rib cut-lines on each side sweeping outward and down; perfectly symmetric, wider than tall",
+    "family": "warm",
+    "note": "r3: solid cuirass"
+  },
+  "icon_talent_yacha_a_r0c2": {
+    "subject": "sura weaponry tree, passive: skin that drinks the dark, more armour",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a tall rounded-top shield covered in three staggered rows of angular scale plates, solid: each scale a hard-edged pointed-bottom plate, rows separated by thick black cut-lines, a thick solid rim and one solid diamond boss at the top centre; only straight hard edges, no curves, no waves, no cross, no chevrons; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3 pass 2: pass 1 quartered shield read as a Western cross shield; scale shield"
+  },
+  "icon_talent_yacha_a_r1c0": {
+    "subject": "sura weaponry tree, upgrade of the Scorch Palm skill: harder, faster finger blows",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a striking hand on the diagonal, solid: a forearm cuff at the lower left, curled fingers and a folded thumb forming a blocky palm, and the index and middle fingers extended together as one blade pointing to the upper right and ending in a sharp claw point, three thick solid speed streaks trailing behind the hand, two thick black finger cut-lines; no peace sign, the two fingers are pressed tightly together",
+    "family": "warm",
+    "note": "r3 pass 3: pass 2 upright two fingers read as a peace sign; diagonal strike hand"
+  },
+  "icon_talent_yacha_a_r1c1": {
+    "subject": "sura weaponry tree, upgrade of the dragon gale skill: a stronger, wider gust of the dragon",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a heraldic dragon head in profile facing right, solid: a filled head with a long snout, open jaws with three fangs (a thick black gap between the jaws), two swept-back horns, one round black eye, and three thick tapered solid gust streaks flowing back behind the head separated by black gaps; wider than tall",
+    "family": "warm",
+    "note": "r3: solid dragon head"
+  },
+  "icon_talent_yacha_a_r1c2": {
+    "subject": "sura weaponry tree, upgrade of the Umbral Plate skill: the armour spell lasts longer and recasts sooner",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a war helm seen from the front, solid: a round steel dome with a tall spike finial and a small plume tube on top, a thick brim band, a black T-shaped face opening (an eye bar over a nose bar) and two cheek flaps each with two thick black horizontal cut-lines; no horns; perfectly symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3 pass 2: pass 1 lamellar cone read as a tent; helm with a face opening"
+  },
+  "icon_talent_yacha_a_r2c0": {
+    "subject": "sura weaponry tree, upgrade of the Wraith Lunge skill: a faster, harder ghostly lunge",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; one heavy armoured boot in profile facing right, mid-stride, solid: a thick sole, a pointed toe, a flared cuff at the top whose lower edge ends in three ragged ghostly tails, two thick black cut-lines (an ankle strap and a sole line) and three thick solid speed streaks trailing behind the heel; wider than tall",
+    "family": "warm",
+    "note": "r3: was a hooded wraith comet (read as a flame trail); boot = lunge"
+  },
+  "icon_talent_yacha_a_r2c1": {
+    "subject": "sura weaponry tree, upgrade of the Haunted Steel skill: spectral blades hit harder over a wider area",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; three solid spectral blades rising upward in a fan from one solid round hub at the bottom: a long centre blade and two shorter blades tilted outward by 25 degrees, each a bold filled pointed blade with one thick black centre cut-line; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: solid blade fan"
+  },
+  "icon_talent_yacha_a_r2c2": {
+    "subject": "sura weaponry tree, upgrade of the Fear skill: a wider terrifying cry that recasts sooner",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a human skull seen from the front with the jaw dropped open in a scream, solid: a filled round cranium narrowing to a jaw, two big black oval eye sockets, one black inverted-heart nose hole and a wide black mouth gap with three solid teeth above and below; perfectly symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: solid screaming skull"
+  },
+  "icon_talent_yacha_a_r3c0": {
+    "subject": "sura weaponry tree, passive: battle experience, more XP and a wider pickup radius",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a loop of prayer beads, solid: nine big filled round beads (separate solid white discs with clear black gaps between them) arranged in a closed oval necklace, with a larger bead at the bottom from which a short solid tassel of three tapering strands hangs down; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: solid beads"
+  },
+  "icon_talent_yacha_a_r3c1": {
+    "subject": "sura weaponry tree, passive: a heavier coin purse, more Yeop gained",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a pile of three round coins: two coins side by side at the bottom and one on top between them, slightly overlapping, each a solid filled disc with a square black hole and one thick black rim cut-line; symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3 pass 2: pass 1 coin string was too thin (0.10 cream); coin pile"
+  },
+  "icon_talent_yacha_a_r3c2": {
+    "subject": "sura weaponry tree, upgrade of the Dispel skill: stronger, longer-lasting seals",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a shattering seal ring, solid: a thick filled ring broken into four heavy arc segments by four black gaps at the diagonals, one solid diamond core in the centre and four solid sharp thorns pointing outward from the middle of each arc; perfectly symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: was a hooked diamond rune; broken seal ring"
+  },
+  "icon_talent_yacha_a_r4c0": {
+    "subject": "sura weaponry tree, upgrade of the Scorch Palm skill: a hellfire brand that bursts into more strikes",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a hand-print seal: one thick solid ring (a heavy circle band) with eight short solid thorns on its outer edge, and inside it one solid open-hand print (a cream palm with five spread fingers, separated from the ring by a clear black gap); symmetric, as wide as tall; no flames, no handle",
+    "family": "warm",
+    "note": "r3 pass 2: pass 1 square plate was a 54 % cream slab; hand in a thorn ring"
+  },
+  "icon_talent_yacha_a_r4c1": {
+    "subject": "sura weaponry tree, upgrade of the Dark Blade skill: mastery of the cursed blade, faster and longer swings",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; one broad curved dao (single-edged sabre) on the diagonal, tip at the upper right, solid: a filled blade with a crescent-moon bite cut from the back edge and one thick black centre cut-line (fuller) along it, a solid round disc guard and a short grip with two thick black wrap cut-lines at the lower left",
+    "family": "warm",
+    "note": "r3: solid dao"
+  },
+  "icon_talent_yacha_a_r4c2": {
+    "subject": "sura weaponry tree, passive: born to the blade, the run starts with extra levels",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; an upright sword with a pair of swept-up wings as its crossguard, solid: a bold filled straight blade pointing up with one thick black centre cut-line, two big solid wings (each of three feather blades with black gaps between) rising from the guard on both sides, a short grip and a round pommel; perfectly symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: was a horn crest (crown-like); winged blade = rise"
+  },
+  "icon_talent_yacha_b_r0c0": {
+    "subject": "sura black magic tree, passive: dark magic surges, more damage and a little lifesteal",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a horned demon mask seen from the front, solid: a filled wide angular face with two big horns sweeping up and outward, two slanted black eye slits, a broad black zigzag grin with four solid fangs and two small black nose slits; perfectly symmetric, wider than tall",
+    "family": "warm",
+    "note": "r3: solid oni mask"
+  },
+  "icon_talent_yacha_b_r0c1": {
+    "subject": "sura black magic tree, passive: quickened casting, shorter cooldowns and a little lifesteal",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a ritual gong in a frame, solid: two thick upright posts with a thick top bar and two feet, and hanging from the bar by two short cords one big solid round gong disc carved with one thick black ring cut-line around a solid centre boss; symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: solid gong"
+  },
+  "icon_talent_yacha_b_r0c2": {
+    "subject": "sura black magic tree, passive: the spirit carries the body, more maximum HP and a little lifesteal",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a soul inside a heart: a heart drawn as one thick uniform solid band (a heart-shaped ring, hollow in the middle, band about 1/7 of the heart's width) and inside the hollow one tall solid ghost-flame teardrop with one thick black inner flame cut-line; symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3 pass 3: pass 2 solid nested heart was 0.45 cream; heart ring with a soul flame"
+  },
+  "icon_talent_yacha_b_r1c0": {
+    "subject": "sura black magic tree, upgrade of the Nightfall skill: a heavier rain of dark strikes",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; three heavy daggers falling point-down, solid: broad double-edged straight daggers with a thick T crossguard and a short plain grip (no ring pommel, no wrapped handle), tilted at three different angles (the centre one straight down and longest, the two others slanted outward), each blade with one thick black centre cut-line; taller than wide",
+    "family": "warm",
+    "note": "r3: was five ring-pommel knives (kunai = ninja); three fat daggers"
+  },
+  "icon_talent_yacha_b_r1c1": {
+    "subject": "sura black magic tree, upgrade of the Blaze Familiars skill: a hotter flame spirit that lasts longer",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; one tall ghost-flame (hitodama), solid: a filled teardrop flame with a long wavy tail curling to the right, one thick black inner flame-shaped cut-line (a nested flame) and one small solid dot as its core; no face, no eyes, no mouth, no side flames",
+    "family": "warm",
+    "note": "r3: solid nested ghost flame"
+  },
+  "icon_talent_yacha_b_r1c2": {
+    "subject": "sura black magic tree, upgrade of the Obsidian Bulwark skill: a shadow ward that lasts longer and recasts sooner",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a hooded shadow cloak seen from the front, solid: a tall filled cloak with a pointed hood whose opening is a black void, a wide flared hem cut into three ragged points, and two thick black vertical fold cut-lines; no face, no arms; perfectly symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: was bat wings (creature head family); hooded cloak"
+  },
+  "icon_talent_yacha_b_r2c0": {
+    "subject": "sura black magic tree, upgrade of the Soul Chain skill: harder-hitting chains with more links",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a chain dart on the diagonal, solid: a bold barbed spade-shaped dart head at the upper right pointing up and right, and from its socket a chain of four big oval links (each link a thick white ring with a black hole) curving down to the lower left and ending in a solid round ring; one stroke weight, no hook",
+    "family": "warm",
+    "note": "r3: solid chain dart with fat links"
+  },
+  "icon_talent_yacha_b_r2c1": {
+    "subject": "sura black magic tree, upgrade of the Blazing Column skill: a taller, wider pillar of hellfire",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a tall pillar of hellfire, solid: three stacked filled flame-tongue layers, each narrow at the top and widening downward, separated by thick black cut-lines, standing on one thick flat ground bar with one jagged black crack; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: solid flame pillar"
+  },
+  "icon_talent_yacha_b_r2c2": {
+    "subject": "sura black magic tree, upgrade of the Spirit Strike skill: a longer-lasting, harder phantom lance",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a fat upright spear point-up, solid: a broad filled leaf-shaped spearhead with one thick black centre cut-line and two big barbs at its base, a thick shaft, and two wide solid ribbon streamers curling sideways out of the collar; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: solid fat lance"
+  },
+  "icon_talent_yacha_b_r3c0": {
+    "subject": "sura black magic tree, passive: forbidden lore, more XP and a wider pickup radius",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a hanging soul-lantern, solid: a plump filled oval body with three thick black vertical rib cut-lines, a flat cap with a small hanging ring on top, a flat base plate with a short solid tassel of three strands and one small black teardrop flame cut-out at the centre; symmetric, taller than wide",
+    "family": "warm",
+    "note": "r3: solid lantern"
+  },
+  "icon_talent_yacha_b_r3c1": {
+    "subject": "sura black magic tree, upgrade of the Void Globes skill: a stronger, longer-lasting dark orb",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; three solid round orbs on one thick circular ring: a thick white circle line and three big filled discs set into it at the top, the lower left and the lower right (each disc with one black crescent cut-line), nothing else, no planet, no tilted ellipse; perfectly symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: was an orb with a tilted ring (read as a planet)"
+  },
+  "icon_talent_yacha_b_r3c2": {
+    "subject": "sura black magic tree, passive: the law of curses, extra card banishes each run",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a sealed spirit jar, solid: a squat filled urn with a narrow neck, a flat lid with a small knob, two thick black strap cut-lines crossing in an X over the belly and one thick black rim cut-line under the neck; symmetric, as wide as tall",
+    "family": "warm",
+    "note": "r3: was an ofuda tag with lightning (shaman cue); sealed jar"
+  },
+  "icon_talent_yacha_b_r4c0": {
+    "subject": "sura black magic tree, upgrade of the Dark Spark skill: a spark tempest that hits harder and casts faster",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a jagged spark burst, solid: one filled irregular explosion with eight uneven sharp points of different lengths, tilted, carved by three thick black jagged cut-lines radiating from the centre toward three of the points; no inner circle, no ring, no gear, no sun, no star, no snowflake, no lightning bolts; asymmetric",
+    "family": "warm",
+    "note": "r3 pass 3: pass 2 inner ring made it a gear; ringless burst"
+  },
+  "icon_talent_yacha_b_r4c1": {
+    "subject": "sura black magic tree, upgrade of the Blaze Familiars skill: a lord of many longer-lasting flame spirits",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; a demon lord's horns around a flame, solid: two huge filled curved horns forming a wide U (a lyre), each horn with one thick black centre cut-line, joined at a thick base, and one tall solid ghost-flame rising in the gap between the horns with a thick black inner flame cut-line; perfectly symmetric, wider than tall",
+    "family": "warm",
+    "note": "r3: was a spiked crown (same silhouette as the crest); horns around a flame"
+  },
+  "icon_talent_yacha_b_r4c2": {
+    "subject": "sura black magic tree, passive: fate's dice, extra card rerolls each run",
+    "glyph": "BOLD ENGRAVED STAMP (a heavy SOLID filled white silhouette like a carved seal, NOT a thin outline and NOT a plain slab): every stroke and limb at least 1/9 of the symbol's height thick, carved with only 3 to 5 THICK black cut-lines (each as wide as a stroke; no hairlines, no hatching, no tiny details) and open notches so the white covers only about half of the symbol's bounding box; an ouroboros, solid: one thick filled serpent bent into a ring, its horned dragon head at the top biting its own tail, three thick black scale cut-lines across the body and one black round eye; a snake-dragon ring, never a die or a cube; as wide as tall",
+    "family": "warm",
+    "note": "r3: was a d6 die (Western); ouroboros = reroll"
+  },
+  "icon_talent_shaman_a_r0c0": {
+    "subject": "shaman dragon tree, passive: dragon-blood vitality, more maximum HP",
+    "glyph": "a heraldic blood-drop emblem: one big upright teardrop with a pointed top drawn as a thick outline ring, enclosing one smaller solid teardrop of the same shape with a gap of the same width between them; symmetric, nothing else, no face, no dragon parts, no curl. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r0c1": {
+    "subject": "shaman dragon tree, passive: sacred might, more damage",
+    "glyph": "a very heavy ritual vajra (thunderbolt scepter) laid on the diagonal from the lower left to the upper right: a fat round grip bead in the middle of a thick shaft, and at each end a thick lotus collar opening into three very fat curved prongs that close to one sharp tip around a thick centre spike; the two ends identical, every part at least twice as thick as on a real vajra, the whole shape filling the diagonal of the cell; the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r0c2": {
+    "subject": "shaman dragon tree, passive: a ceremonial talisman sash, more armor",
+    "glyph": "a bold heraldic heater shield drawn as a thick outline ring (flat top, rounded shoulders, pointed bottom) enclosing a smaller solid shield of the same shape with a thin black gap between them, the inner shield crossed by one wide sash band running from the upper left to the lower right, shown only by two parallel thin black gaps, with one big round black dot punched in the band; nothing else. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r1c0": {
+    "subject": "shaman dragon tree, upgrade of the Dragon Fan skill: more damage, shorter cooldown",
+    "glyph": "an open folding fan tilted about 35 degrees, its hub at the lower left and the cloth opening toward the upper right: a half disc with exactly four thick black gaps radiating from a round hub (five thick ribs), a thick solid rim band along the outer edge, and a short thick handle stub at the hub; bold, the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r1c1": {
+    "subject": "shaman dragon tree, upgrade of the Gilded Serpent skill: more damage, bigger size",
+    "glyph": "a bold solid heraldic dragon head in profile rising to the upper right with the mouth wide open and two big fangs, two long swept-back horns, one thick whisker ribbon curling back, one round eye cut as a black dot; a heavy flat silhouette, no scale detail. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r1c2": {
+    "subject": "shaman dragon tree, upgrade of the Resounding Bellow skill: more damage, shorter cooldown",
+    "glyph": "a dragon roar emblem: one big curved dragon fang standing upright in the centre, thick at its root at the bottom and tapering to one sharp tip at the top, and on each side of it two thick concentric crescent arcs bowing outward like sound waves, the inner arcs taller than the outer ones, a black gap between every arc; perfectly symmetric, wide, nothing else, no face, no eyes, no crossing parts. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r2c0": {
+    "subject": "shaman dragon tree, upgrade of the Blessing skill: longer duration, shorter cooldown",
+    "glyph": "the sun of heaven: one solid round sun disc with exactly eight thick triangular rays attached to it and equally spaced, each ray wide where it joins the disc and pointed at its tip, separated from its neighbours by black wedge gaps, and one thin black ring gap cut inside the disc near its rim; perfectly symmetric, filling the cell. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r2c1": {
+    "subject": "shaman dragon tree, upgrade of the Wyrm Retinue skill: more damage, longer duration",
+    "glyph": "a dragon spirit emblem: a solid round pearl hub in the centre with one thick black crescent cut near its upper left, and three thick curved claw-blades tapering to sharp tips wrapping around it, all curving the same rotational direction like dragon claws, each blade wide where it joins the hub; one connected silhouette, round, no face, no body, no dots around it. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r2c2": {
+    "subject": "shaman dragon tree, upgrade of the Dragon Seal skill: bigger area, longer duration",
+    "glyph": "a taegeuk (yin-yang) seal emblem: one thick outer ring enclosing a solid disc divided by one thick S-shaped black curve into a solid half and a hollow outlined half, each half carrying one big round dot of the opposite tone; perfectly round, rotationally symmetric, no trigram lines, no text. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r3c0": {
+    "subject": "shaman dragon tree, passive: the seer's mirror, more XP and wider pickup range",
+    "glyph": "a bold all-seeing eye: a big almond lens shape drawn as a thick outline ring pointed at the left and right corners, enclosing one big solid round iris with one round black pupil hole in the centre, and above the eye three short thick rays (the middle one vertical, the two outer ones tilted outward) like a vision halo; symmetric, wide. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r3c1": {
+    "subject": "shaman dragon tree, passive: the chosen disciple, start every run one level higher",
+    "glyph": "a rank-up emblem: two thick upward chevrons stacked with a thin black gap between them, the lower one wider than the upper one, and one solid four-pointed star sitting on the apex of the upper chevron; symmetric and tall. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r3c2": {
+    "subject": "shaman dragon tree, passive: the dragon's hoard, more Yeop and luck",
+    "glyph": "an ancient round cash coin: a thick solid ring with a big square hole in the middle cut as black, a thin black ring gap just inside the outer rim, and a second identical coin partly hidden behind it offset toward the upper left so only its crescent rim shows; the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r4c0": {
+    "subject": "shaman dragon tree, upgrade of the Drifting Charms skill: more damage, more talismans, shorter cooldown",
+    "glyph": "three paper talisman slips fanned out like a hand of cards from one point at the bottom centre: the middle slip upright and the tallest, the other two tilted 30 degrees to the left and to the right, each a tall rectangle with a flat top and a V-notched swallowtail bottom and one thick round black seal ring near its top, no other marks, thin black gaps between neighbouring slips; symmetric. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r4c1": {
+    "subject": "shaman dragon tree, passive: the wheel of fate, extra rerolls",
+    "glyph": "a Dharma wheel of fate seen from the front: a thick round rim ring, six thick straight spokes of equal width running from a solid round hub (with one round black hole in the middle) to the rim, each spoke ending in a short pointed knob that sticks out beyond the rim, the black gaps between the spokes wider than a spoke; perfectly symmetric, no text. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_a_r4c2": {
+    "subject": "shaman dragon tree, upgrade of the Meteor skill: more damage, bigger area, shorter cooldown",
+    "glyph": "a shower of three meteors falling together toward the lower left on parallel diagonal tracks: the biggest in the middle with a solid rough round rock head cut by one thin black crack line, a medium one above it to the left and a small one to the upper right, each with a tail of two thick tapering streaks stretching to the upper right; the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r0c0": {
+    "subject": "shaman healing tree, passive: the healer's resolve, more maximum HP",
+    "glyph": "a medicine gourd bottle: two stacked round lobes, a small one on top and a big one at the bottom, waisted in the middle where one thick black cut-line is the rope tie, a short thick stopper cap on top, and one thin curved black highlight cut-line on the belly of the big lobe; no leaf, no tendril, one solid figure-eight silhouette, upright. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r0c1": {
+    "subject": "shaman healing tree, passive: a spring of renewal, health regeneration",
+    "glyph": "a sacred lotus flower in side view: one tall pointed centre petal and two curved petals on each side (five thick petals, the outer two curling outward), all rising from one thick crescent bowl as the water with one thick black ripple line; symmetric and wide. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r0c2": {
+    "subject": "shaman healing tree, passive: blessed ceremonial robes, more armor",
+    "glyph": "a ceremonial short jacket seen from the front, solid: a short body with a deep crossed V collar cut out as a thick black V, one thick black belt-tie band across the waist, and two wide sleeves spreading out to the left and the right like a T, each sleeve ending in a flat wide cuff separated by one thick black cut-line; wide, symmetric, the body no longer than the sleeves are wide. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r1c0": {
+    "subject": "shaman healing tree, upgrade of the Arcing Bolt skill: more damage, shorter cooldown",
+    "glyph": "one single fat lightning bolt on the diagonal from the upper right to the lower left: the classic zigzag with exactly two bends, thick (about a quarter of the cell wide) and ending in one long sharp point at the lower left, solid with one thin black cut-line along its length; nothing else; the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r1c1": {
+    "subject": "shaman healing tree, upgrade of the Stormcall skill: more damage, bigger area",
+    "glyph": "a thick flat storm cloud bar with three bumps at the top, one fat lightning bolt striking straight down from its centre with two zigzag bends, and at the bottom a wide flat open ellipse ring (a thick outline) on the ground where the bolt lands, the bolt's tip touching the ring's centre; symmetric, tall. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r1c2": {
+    "subject": "shaman healing tree, upgrade of the Crackling Stream skill: more damage, longer duration",
+    "glyph": "three thick zigzag lightning bolts fanned upward from one solid round hub at the bottom centre like three fingers of a hand: the middle bolt straight up and the longest, the two others leaning 35 degrees to the left and to the right, each with two bends ending in a sharp point, one thick black ring gap cut in the hub; symmetric. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r2c0": {
+    "subject": "shaman healing tree, upgrade of the Cure skill: shorter cooldown, longer duration",
+    "glyph": "a bold healing cross: a thick equal-armed cross whose four arms flare wider toward their rounded ends, with one big round black hole in the centre and nothing else cut into it; perfectly symmetric, filling the cell. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r2c1": {
+    "subject": "shaman healing tree, upgrade of the Swiftness skill: shorter cooldown, longer duration",
+    "glyph": "one single large bird wing seen from the side sweeping up to the upper right, with exactly four long thick feathers stepped from short at the bottom to long at the top, separated by thin black gaps and joined along a thick solid wing arm on the lower edge; bold flat shape. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r2c2": {
+    "subject": "shaman healing tree, upgrade of the Thunder Bells skill: more damage, more bells",
+    "glyph": "three temple bells hanging in a row from one thick horizontal beam, each from a short loop, the middle bell the biggest and the two side bells smaller, each bell a solid flared dome with a round clapper dot cut under its rim, and one small zigzag bolt notch cut into the middle bell; wide, bold",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r3c0": {
+    "subject": "shaman healing tree, passive: a calm mind, more XP and luck",
+    "glyph": "a calm bamboo grove: three thick upright bamboo stalks side by side, the middle one the tallest, each cut into segments by thin black node gaps (four nodes on the tall one), one bold pointed leaf sprouting up and to the left and one up and to the right from the middle stalk, all rising from one short flat base bar; tall and symmetric",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r3c1": {
+    "subject": "shaman healing tree, passive: a prayer of cleansing, one banish",
+    "glyph": "a prayer of cleansing: two open palms pressed together in prayer, fingers pointing straight up, drawn as one solid pointed leaf-like shape split by one thick black centre line, with two short flared sleeve cuffs at the bottom and a thick circular halo arc over the fingertips; symmetric, tall, no face, no arms, no body. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r3c2": {
+    "subject": "shaman healing tree, passive: an offering of thanks, more Yeop and wider pickup range",
+    "glyph": "a ritual bronze brazier cauldron seen from the front: a thick solid flat rim band on top, under it a wide round belly drawn as a thick outline ring whose hollow centre is black, no handles and no ears, three thick short tapered legs underneath; symmetric, wide, one connected silhouette. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r4c0": {
+    "subject": "shaman healing tree, upgrade of the Bell Chime skill: more damage, shorter cooldown",
+    "glyph": "a big Korean temple bell hanging from a thick ring loop: an almost cylindrical solid bell body narrowing slightly toward a flat top with a thick dragon-loop handle, a thick flat lip, two thick black ring gaps around the body, and one solid round clapper below the mouth; symmetric and tall, no sound lines. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r4c1": {
+    "subject": "shaman healing tree, passive: the sky acolyte, start every run one level higher",
+    "glyph": "the seven stars of the Northern Dipper: seven big solid round discs of equal size, each one fifth of the cell wide, joined by very thick straight bars as thick as half a disc, four discs forming a closed bowl at the lower left and three forming the handle bending up to the upper right, no dots inside the discs, the whole shape filling the cell diagonal; the lower-right corner stays empty. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_shaman_b_r4c2": {
+    "subject": "shaman healing tree, upgrade of the Stormglass Shell skill: longer duration, shorter cooldown, regeneration",
+    "glyph": "a ceremonial three-peaked crown: a thick solid band at the bottom with one big round black gem hole in its centre, and three tall thick triangular points rising from it, the middle one the tallest, each point ending in a round bead joined to it; symmetric, wide. Drawn bold and chunky from thick strokes, every stroke at least 1/12 of the cell wide, at most three thin black cut-lines inside, no rows of dots, no tiny separate pieces, one connected heraldic pictogram. Rendered like a chunky 32 by 32 pixel-art stencil enlarged, with hard stair-stepped square-pixel edges, like an old 32 px game icon",
+    "family": "warm"
+  },
+  "icon_talent_warrior_a_r0c0": {
+    "subject": "warrior body tree, passive: a tougher frame, more maximum HP",
+    "glyph": "a vein-tree emblem of life force: one thick tapering trunk rising from a short wide solid ground bar at the bottom centre and forking upward in three tiers like a blood vessel (the lowest fork splits into two thick branches sweeping out left and right, each of those forks once more, and the trunk continues up to a sharp crown tip), every branch tapering to a needle point, one thin black cut-line down the trunk; perfectly symmetric, tall, one connected solid silhouette, no leaves, no flames, no heart, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r0c1": {
+    "subject": "warrior body tree, passive: heavy weapon blows, more damage",
+    "glyph": "two very broad heavy swords crossed in a bold X, points up and hilts down with round pommels and wide crossguards, one thin black fuller line along each blade, nothing else; a compact perfectly symmetric X as wide as it is tall, the pommels and points all inside the central 90 percent of the cell. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r0c2": {
+    "subject": "warrior body tree, passive: a thick hide, more armor",
+    "glyph": "an eight-fold lattice mandala in an octagon: a medium-thick octagon outline, inside it a large diamond lattice built from thin solid struts (strut width about 1/16 of the cell) that frame eight big black diamond-shaped holes arranged in a ring around a small solid octagonal rosette with one round black hole, the struts meeting the outline; open and airy, the black holes together taking about half of the octagon's area; perfectly symmetric, filling the cell, no arcs, no text, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (never jagged or stair-stepped), no hatching, no shading, no highlights, filling its cell almost edge to edge",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r1c0": {
+    "subject": "warrior body tree, upgrade of the Lightning Trio skill: a trained triple slash",
+    "glyph": "three blade-cuts from one point: three fat broad triangular blades fanning upward from one small solid diamond-shaped pivot at the bottom centre like an open hand fan (counted 3: one straight up and tall, one tilted 38 degrees to each side and a little shorter), each blade a solid triangle with straight edges whose base is about 1/4 of the cell wide, so the three blades almost touch near the pivot, only thin black gaps between them, no inner lines at all; symmetric, bold, filling the cell; no leaves, no feathers, no curves. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r1c1": {
+    "subject": "warrior body tree, upgrade of the Sword Arc skill: a mightier sweeping arc",
+    "glyph": "a pair of nested crescent sweeps on the diagonal from the lower left to the upper right: one huge thick crescent and a smaller thick crescent nested inside its curve, both opening toward the upper left with needle-sharp horns, a clear black gap between them, one thin black cut-line along the spine of the big one; nothing else, no sword, no hilt, no dots. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r1c2": {
+    "subject": "warrior body tree, upgrade of the Bladewheel skill: a longer, harder whirlwind",
+    "glyph": "a spinning blade ring: one thick solid ring with six broad triangular blade-teeth pointing outward from its outer edge, all six sheared in the same clockwise direction like a saw wheel (counted 6), and inside the ring one solid round hub with a black hole, separated from the ring by a wide black gap; symmetric six-fold, no sword, no compass, no star. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r2c0": {
+    "subject": "warrior body tree, upgrade of the Berserk skill: longer, more frequent battle rage",
+    "glyph": "a rage burst emblem: one solid round core in the centre with one thin black ring-gap just inside its rim and one small black diamond hole at its centre, and around it, separated by a black gap, a crown of twelve thick straight triangular rays radiating outward (counted 12, long and short alternating, wide at the root, sharp at the tip); a perfectly symmetric radial burst; no face, no figure, no eyes, no flames, no curves, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r2c1": {
+    "subject": "warrior body tree, upgrade of the Swordlight Ring skill: a brighter, wider sword aura",
+    "glyph": "a winged blade crest: two mirrored fat wings swept up and outward, each wing a solid heavy mass made of three overlapping broad blade-feathers (each about 1/8 of the cell wide, rounded at the root, ending in a sharp point, counted 3 per wing, the lowest the longest), separated only by thin black gaps, the two wings joined at the bottom centre by one solid diamond; wide, symmetric; no leaf, no palm, no flower, no crown, no body, no ring, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r2c2": {
+    "subject": "warrior body tree, upgrade of the Dash skill: a faster, harder charge",
+    "glyph": "a dash sigil of one bold thick crescent blade with two needle-sharp horns, opening toward the upper right, and three solid round orbs of decreasing size (big, medium, small; counted 3) following its inner curve like a speed trail, the biggest orb tucked into the crescent's cradle; a wide diagonal composition from the lower left to the upper right, one crescent only, flat orbs with no highlight, no sword, no arrow. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r3c0": {
+    "subject": "warrior body tree, upgrade of the Second Wind skill: a lasting spring of vitality",
+    "glyph": "a fountain of vitality: one wide shallow elliptical basin ring (a thick ellipse outline, wider than tall) at the bottom and rising from its centre three thick tapering plumes (counted 3: the centre one straight up and tall, the two side ones curving outward and down like a palm fountain), each plume ending in a small flat round bead, the plumes joined at the base into one solid mound; symmetric; no leaves, no flames, no drops, no heart, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r3c1": {
+    "subject": "warrior body tree, upgrade of the Giant's Leap skill: a titan's stride and landing",
+    "glyph": "a titan's stride: one thick flat elliptical ring lying on the ground (an ellipse outline wider than tall, seen at a slant) and standing in its centre one solid bold boot in side view (a heavy ankle boot with a thick flat sole, a square toe pointing right and a short shaft, drawn as one big solid shape with one thin black cut-line along the sole, no laces, no details), and from the ring's left and right sides two thick straight crack wedges pointing outward and down (counted 2); symmetric, no lightning, no zigzags. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r3c2": {
+    "subject": "warrior body tree, passive: loaded dice give extra card rerolls",
+    "glyph": "a fortune triad: three solid diamonds (rhombi, taller than wide) arranged in a triangle (one at the top, two at the bottom, counted 3, touching only at their corners), each with one smaller diamond hole cut in its centre; symmetric, heavy, flat; no dots, no dice, no gem facets. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r4c0": {
+    "subject": "warrior body tree, passive: unbreakable, more HP, armor and regeneration",
+    "glyph": "a tortoise-shell emblem: one big solid hexagon (a point at the top and at the bottom) with a thick outline, inside it a honeycomb of seven black hexagonal holes (one in the centre and six around it) separated by thick solid walls, the walls meeting the outline; perfectly symmetric; no animal, no head, no legs, no text. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (never jagged or stair-stepped), solid strokes at least 1/12 of the cell wide, black gaps at least 1/24 of the cell wide, at most three thin black cut-lines besides the gaps, no hatching, no shading, no highlights, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r4c1": {
+    "subject": "warrior body tree, upgrade of the Lightning Trio skill: mastery of all three ways",
+    "glyph": "a broken ring with three converging cuts: a thick ring open in two places (two big C-shaped arcs, gaps at the upper right and the lower left), and through it three long thick straight blade-cuts converging on one point at the centre and fanning out toward the upper right (about 20 degrees apart, counted 3), each cut wide near the centre and tapering to a needle point at its outer end, narrow black gaps between the cuts; not parallel, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_a_r4c2": {
+    "subject": "warrior body tree, passive: a veteran starts with extra levels and earns more Yeop",
+    "glyph": "a Chinese gold ingot: a boat-shaped solid body, a wide shallow bowl with two upturned rounded ends, and a raised rounded dome on top of its middle with one thin black curved cut-line across the dome and one black gap line under the dome; wide, low, symmetric, bold; no coin, no text, no mast, no water. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r0c0": {
+    "subject": "warrior mind tree, passive: spiritual resilience, more maximum HP and a little lifesteal",
+    "glyph": "a tall calabash gourd emblem of vitality: a big round lower lobe and a smaller round upper lobe joined by a narrow waist, one thick black cut band across the waist, a short stem on top ending in one small curl, one thin black crescent cut-line inside the lower lobe; solid, symmetric left to right, tall, one connected silhouette, no flame, no liquid, no leaves, no cork, no heart. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r0c1": {
+    "subject": "warrior mind tree, passive: a keen mind, more damage and a little lifesteal",
+    "glyph": "a keen sword with a swoosh: one upright broad sword, point up, bold crossguard, round pommel, one thin black ridge line, and one thick S-shaped ribbon sweeping once around the blade from the lower left to the upper right (the ribbon passes behind the blade with a black gap on each side of it), tapering to needle points; no ring, no orbs, no feather. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r0c2": {
+    "subject": "warrior mind tree, passive: sharp focus, more critical chance and critical damage",
+    "glyph": "a focus emblem: two big thick crescents facing each other like round brackets, the left one opening to the right and the right one opening to the left, their needle tips almost touching at the top and at the bottom, and one solid diamond in the middle between them; perfectly symmetric; no ring, no circle, no crosshair, no ticks, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r1c0": {
+    "subject": "warrior mind tree, upgrade of the Spirit Edge skill: a keener spirit blade",
+    "glyph": "a spirit lance head, short and stout: one very fat diamond-shaped spearhead (a kite shape with straight sharp edges, pointing to the upper right on a 45 degree diagonal, only about 1.6 times as long as it is wide, so it is as broad as a hand), one thin black ridge cut-line along its centre, and a thick solid socket collar and a short stout shaft stub extending to the lower left; one solid heavy silhouette filling the diagonal of the cell; no barbs, no hilt, no crossguard, no pommel, not a leaf. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r1c1": {
+    "subject": "warrior mind tree, upgrade of the Spirit Strike skill: a harder, faster spirit strike",
+    "glyph": "a five-armed blade rotor: five broad curved scythe blades (counted 5) radiating from a small solid round hub, every blade sweeping clockwise with a thick curved back and a needle-sharp tip, equally spaced at 72 degrees, narrow black gaps between the arms, one small round black hole in the hub; a clean five-fold symmetric shape, never four arms, no hooked cross, no sword hilts. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r1c2": {
+    "subject": "warrior mind tree, upgrade of the Bash skill: a heavier bash",
+    "glyph": "a martial smash sigil: one huge broad greatsword raised in a downward chop on a steep diagonal, hilt at the upper left, point at the lower right, a very thick heavy blade, and below the point a flat solid ground bar from which three thick triangular shock wedges burst upward (counted 3: one in the centre, one on each side tilted outward), narrow black gaps between the wedges and the blade. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r2c0": {
+    "subject": "warrior mind tree, upgrade of the Edgewave skill: a faster, harder hurled sword",
+    "glyph": "a hurled sabre in flight on a steep diagonal: one very broad heavy single-edged sabre blade with a curved back (the blade about 1/4 of the cell wide and only about three times as long as it is wide), point at the upper right, a bold crossguard and a short grip with a round pommel at the lower left, one thin black ridge cut-line along the blade; behind the blade three thick tapering speed wedges pointing toward the lower left, set clearly apart from the blade by black gaps (counted 3, each about 1/12 of the cell wide); fills the diagonal of the cell; no feather, no leaf, no arrow. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r2c1": {
+    "subject": "warrior mind tree, upgrade of the Blade Orbit skill: more orbiting swords, harder hits",
+    "glyph": "a sword in a ring: one thick solid circular ring (a full round band about 80 percent of the cell wide) and one big upright broad sword with a bold crossguard and a round pommel standing inside it, the blade tip and the pommel both breaking through the ring at the top and bottom, with a thin black gap on each side of the blade where it crosses the ring; symmetric, bold; one ring only, no orbit, no orbs, no dots. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r2c2": {
+    "subject": "warrior mind tree, upgrade of the Graniteform skill: a body of stone",
+    "glyph": "a Korean dolmen: two upright stone pillars (each about 1/6 of the cell wide, slightly tapering) standing side by side with a wide gap between them, and one slab capstone about 1/6 of the cell tall resting across their tops and overhanging both sides, all standing on one thick ground bar; one thin black crack cut across the capstone; symmetric, wide, flat tops; no arch, no door, no roof, no tree, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r3c0": {
+    "subject": "warrior mind tree, upgrade of the Stump skill: a shaking, wider ground stomp",
+    "glyph": "a shockwave stomp: one big solid flat ellipse in the centre (wider than tall, about 2/3 of the cell wide) with one thick black ring-gap just inside its rim, and around it four very fat triangular crack wedges (counted 4, each as wide as 1/6 of the cell at its root) pointing diagonally outward from the ellipse's rim at the four corners of the cell and ending in sharp points; symmetric, heavy; no thin lines, no zigzags, no hairlines, no boot, no lightning. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r3c1": {
+    "subject": "warrior mind tree, upgrade of the Blade Seal skill: a longer, wider blade seal",
+    "glyph": "a square blade seal: a thick solid rounded-square frame, inside it one solid diamond (a square turned 45 degrees) separated by a thin black gap and cut by one thin black X through its centre into four triangles, and at each of the four corners of the frame one short thick triangular blade-point sticking outward diagonally (counted 4); perfectly symmetric and geometric, no circle, no wheel, no sword. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r3c2": {
+    "subject": "warrior mind tree, passive: a sage may banish unwanted cards, and a little luck",
+    "glyph": "a cleaved card: one narrow tall solid rounded rectangle (a card about 55 percent as wide as the cell and filling its height) with one thin black inner border line following its edge, cut clean in two by one broad straight diagonal black cleave from the upper right to the lower left (the gap about one seventh of the cell wide), the lower-right half shifted slightly down and right so the halves sit apart; plain solid halves, nothing in the middle, no symbols, no diamond, no marks, no numbers. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r4c0": {
+    "subject": "warrior mind tree, passive: perfect clarity, shorter cooldowns, more damage and critical chance",
+    "glyph": "a sword in a mandorla: one big tall almond-shaped (pointed oval) outline drawn with a thick bold stroke, filling the cell height and about 60 percent of its width, and inside it one big upright broad jian sword, point up, with a bold wide crossguard, a round pommel, one thin black ridge cut-line and a short tassel, the blade tip and the pommel touching the almond's top and bottom points; symmetric, bold; no ring, no circle, no sparks, no rays. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r4c1": {
+    "subject": "warrior mind tree, upgrade of the Blade Orbit skill: glorious blades, a mighty sword corona",
+    "glyph": "a crown of blades: five upright broad blade-points standing on one thick solid horizontal base band (counted 5: the centre one tallest, the next pair medium, the outer pair shortest and tilted slightly outward), one solid-black diamond hole cut in the middle of the band; wide, symmetric, bold; no gems, no sun, no crescents, no hilts. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_warrior_b_r4c2": {
+    "subject": "warrior mind tree, passive: a fate reader may skip cards and gains more XP",
+    "glyph": "a horizontal eye of fate: a thick almond eye outline, wide and pointed at the left and right ends (about twice as wide as tall), inside it one big solid round iris disc with one tall vertical black slit-pupil cut in its centre, and three short thick triangular lashes fanning above the upper lid (counted 3: one straight up and one tilted each way); symmetric, no tear, no face, no sword, no sun rays. Drawn as a clean flat heraldic emblem with smooth, crisp, anti-aliased vector edges (smooth curves and straight edges, never jagged or stair-stepped), every stroke the same bold weight and at least 1/12 of the cell wide, at most three thin black cut-lines inside, no hatching, no rows of dots, no tiny separate pieces, no shading, no highlights, no gloss, filling its cell almost edge to edge with about a quarter of the cell area white",
+    "family": "warm",
+    "bands": [
+      "n",
+      "m",
+      "g"
+    ]
+  },
+  "icon_talent_wolfman_a_r0c0": {
+    "subject": "wolfman Redmane tree, passive: raw wild blood, more maximum health",
+    "glyph": "one big solid heart, symmetric, very heavy and flat, like a heraldic charge: its two top lobes each end in a sharp horn-point curving up and outward like wolf ears, a deep V notch between the lobes, ONE thick black inner heart-shaped contour line cut into the body (as wide as a thick marker stroke) and two short thick black claw-cuts across its lower right; no thin hairlines, no ring, no face, no drops",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r0c1": {
+    "subject": "wolfman Redmane tree, passive: sharpened claws, more damage",
+    "glyph": "one single huge thick curved wolf talon filling the cell diagonally: a broad flat root at the lower-left, sweeping up in one smooth arc and ending in a needle tip at the upper-right, with three thin parallel black grooves cut along its length like sharpening grooves; solid, heavy; nothing else: no second claw, no ticks, no sparks, no bar, no hand",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r0c2": {
+    "subject": "wolfman Redmane tree, passive: a predator's quick tempo, faster attacks",
+    "glyph": "one very thick crescent shape bulging to the right with its two horns pointing left, one thin black cut-line along its length, and three thick horizontal tapering speed bars streaming into the crescent from the left (long at the top, medium in the middle, short at the bottom, thin black gaps between them); all shapes heavy and solid, filling the cell; no thin arcs, no wifi, no arrow, no letters",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r1c0": {
+    "subject": "wolfman Redmane tree, upgrade of the Shred skill: more damage and a wider rake",
+    "glyph": "two thick concentric rings (each ring as thick as a finger, a clear black gap between them) and ONE huge thick jagged claw-slash running diagonally from the upper-left to the lower-right through both rings, overshooting the outer ring at both ends and tapering to needle points, a thin black gap outlining the slash where it crosses the rings; heavy and bold; no thin lines, no extra slashes, no drops, no leaves",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": [
+      "icon_talent_wolfman_a_r4c0"
+    ]
+  },
+  "icon_talent_wolfman_a_r1c1": {
+    "subject": "wolfman Redmane tree, upgrade of the Lupine Lunge skill: harder pounce, shorter cooldown",
+    "glyph": "one big wolf paw print tilted about 25 degrees as if leaping up to the right: a large rounded triangular pad and four oval toe pads in an arc above it, each toe pad ending in a long thick needle-sharp curved claw pointing up and outward, two thick tapering speed wedges trailing from the lower-left of the pad, one thin black cut-line across the pad; heavy, flat and solid; no ground, no grass, no leaves, no body",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r1c2": {
+    "subject": "wolfman Redmane tree, upgrade of the Redmane Spirit skill: the soul lasts longer, shorter cooldown",
+    "glyph": "one big heraldic wolf eye seen from the front, symmetric: a thick solid pointed-almond band enclosing a black almond, inside it a large solid cream circle iris with a narrow vertical black slit pupil, and above it ONE thick pointed brow wedge slanting down toward the inner corner; completely flat and bold; no eyelashes, no tear, no face, no thin lines, no gem",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r2c0": {
+    "subject": "wolfman Redmane tree, upgrade of the Blood Whirl skill: more damage, longer whirl",
+    "glyph": "two huge thick crescent claw-swipes facing each other like the parentheses ( ) forming a broken circle with a clear gap between the tips at the top and the bottom, each crescent very thick in the middle and tapering to needle tips with two thin black cut-lines along its length, and ONE solid round core disc in the exact centre of the circle; symmetric; no spiral, no arrows, no tornado, no drops",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r2c1": {
+    "subject": "wolfman Redmane tree, upgrade of the Blood Mist skill: wider and longer-lasting blood mist",
+    "glyph": "one thick crescent moon with its horns pointing up like a bowl in the upper half, and below it three thick horizontal mist bars stacked with thin black gaps, the bars of decreasing length (long, medium, short), each tapering to a point at both ends, one thin black cut-line along the crescent; symmetric, wide; no full disc, no sun, no cloud, no wind, no rain, no drop, no waves",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r2c2": {
+    "subject": "wolfman Redmane tree, upgrade of the Predator's Rush skill: harder rush, shorter cooldown",
+    "glyph": "two huge solid wolf fangs side by side pointing straight down, their wide roots merged into one thick horizontal bar across the top whose ends are cut at 45 degrees, each fang a thick slightly curved canine ending in a needle tip with one thin black cut-line along its length, a narrow black gap between the two fangs; symmetric; no jawbone, no mouth outline, no skull, no gums, no extra teeth",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r3c0": {
+    "subject": "wolfman Redmane tree, passive: life drain and slow regeneration",
+    "glyph": "the open jaws of a wolf seen from the front built as two solid wedge blocks facing each other: an upper jaw block with four big triangular fangs pointing down and a lower jaw block with three big triangular fangs pointing up, the fangs interlocking across a zigzag black gap between the blocks, rounded outer corners, one thin black cut-line along each block; wide and heavy; no lips, no tongue, no eyes, no skull, no heart",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": [
+      "icon_talent_wolfman_a_r2c2"
+    ]
+  },
+  "icon_talent_wolfman_a_r3c1": {
+    "subject": "wolfman Redmane tree, passive: pack cunning, extra card rerolls",
+    "glyph": "two huge thick curved wolf fangs chasing each other around a circle: each a fat tapering crescent with a wide round root and a needle tip, the tip of the first almost touching the root of the second so the pair forms a nearly closed ring with two-fold rotational symmetry, a clear round black hole in the centre, one thin black cut-line along each fang; no arrowheads, no refresh arrows, no yin-yang dots, no card",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r3c2": {
+    "subject": "wolfman Redmane tree, passive: a nose for loot, more Yeop and a wider pickup radius",
+    "glyph": "one big round coin seen face-on: a thick solid disc with one thin black ring cut-line just inside its rim, and a bold wolf paw print (one large rounded pad and four oval toe pads) cut out of its centre as black negative shape; no square hole, no beads, no text, no stack, no sparkle",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r4c0": {
+    "subject": "wolfman Redmane tree, upgrade of the Shred skill: more damage, many more rakes",
+    "glyph": "five thick parallel claw-slashes running diagonally from the upper-left to the lower-right, each a long gash with a torn jagged edge tapering to needle points, evenly spaced with thick black gaps, the middle one longest and carrying one thin black cut-line; heavy and bold, filling the cell; no fan, no leaves, no feathers, no drops, no thin lines",
+    "family": "warm",
+    "pairOk": [
+      "icon_talent_wolfman_a_r1c0"
+    ]
+  },
+  "icon_talent_wolfman_a_r4c1": {
+    "subject": "wolfman Redmane tree, passive: first blood, start every run with an extra level",
+    "glyph": "one big solid blood drop standing upright (a sharp point at the top, a broad round belly at the bottom) cut diagonally in two by ONE wide jagged black claw-gash running from the upper-left to the lower-right, the upper-right half slightly offset from the lower-left half, one thin black cut-line along the upper half; heavy symmetric silhouette; no ring, no splash, no extra drops, no thin lines",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_a_r4c2": {
+    "subject": "wolfman Redmane tree, upgrade of the Rending Gale ultimate: more damage, shorter cooldown",
+    "glyph": "two huge thick curved wolf talons crossed in an X, tips pointing up and outward, flat plain roots at the lower corners, each a smooth crescent tapering to a needle tip with two thin black cut-lines along its length, a small round black gap at the crossing; symmetric; no hilt, no handle, no guard, no blade edge, no knife, no circle, no star",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r0c0": {
+    "subject": "wolfman Moonmane tree, passive: swift paws, faster movement",
+    "glyph": "one big wolf paw print: a large rounded triangular pad and four oval toe pads above it in an arc, the pad carrying one thin black cut-line, with three thick horizontal speed bars of decreasing length trailing from its left side, each tapering to a point; heavy and solid; no claws, no body",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r0c1": {
+    "subject": "wolfman Moonmane tree, passive: spirit might, more damage",
+    "glyph": "three huge solid wolf fangs rising from a thick upward-curving crescent bar like a crown: one large fang pointing straight up in the centre and a smaller fang leaning outward on each side, each fang a thick cone with one thin black cut-line along it, the bar with one thin black cut-line; symmetric and heavy; no sword, no jewels, no flames, no rays, no sound arcs",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": []
+  },
+  "icon_talent_wolfman_b_r0c2": {
+    "subject": "wolfman Moonmane tree, passive: a thick indigo pelt, more armor and evasion",
+    "glyph": "a wide fur mantle seen from the front: a solid shoulder-cape shape wider than tall with a flat top edge, sloping shoulders and a pointed bottom edge, its top edge and both lower edges drawn as rows of sharp fur-tuft zigzag points, one thick black V-shaped cut-line at the neck and one fang-shaped clasp left solid in the centre of the neck; symmetric and heavy; no face, no arms, no legs, no head",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": []
+  },
+  "icon_talent_wolfman_b_r1c0": {
+    "subject": "wolfman Moonmane tree, upgrade of the Rimewind skill: more damage, shorter cooldown",
+    "glyph": "a fan of five long thick pointed ice-crystal prisms radiating to the right from one small solid half-disc at the left, the middle prism longest, each prism a long hexagonal shard with a pointed tip and one thin black facet cut-line, thick black gaps between the prisms; no feathers, no leaves, no crescent, no snowflake, no tiny specks",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": []
+  },
+  "icon_talent_wolfman_b_r1c1": {
+    "subject": "wolfman Moonmane tree, upgrade of the Moonsteel Claws skill: more damage, wider claw sweep",
+    "glyph": "one big solid flat-topped hexagon plate split into two halves by ONE very wide jagged black diagonal claw-gash running from the upper-left to the lower-right, the two halves pushed slightly apart, one thin black cut-line on each half; the hexagon outline stays recognisable; no figure, no letters, no thin lines",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": []
+  },
+  "icon_talent_wolfman_b_r1c2": {
+    "subject": "wolfman Moonmane tree, upgrade of the Moonmane Spirit skill: the soul lasts longer, shorter cooldown",
+    "glyph": "two huge hooked claws interlocked like two chain links: one hooking down and to the right from the upper-left, the other hooking up and to the left from the lower-right, their hooks passing through each other with a clear over-under gap, each claw thick at its root and ending in a needle tip with one thin black cut-line along it; two-fold symmetric; no spiral, no yin-yang, no ring, no chain",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r2c0": {
+    "subject": "wolfman Moonmane tree, upgrade of the Spirit Wolves skill: more damage, more spirit wolves",
+    "glyph": "a symmetric front-facing wolf head mask like a heraldic crest built from straight-edged flat facets: two tall pointed ears curving slightly outward, a wide brow with a V-shaped black cut-line, two narrow slanted eye slits cut out as black gaps, a long muzzle ending in a triangular nose and two small fangs at the bottom edge; one bold solid silhouette; no mouth line, no fur lines, no shading, no curves, no neck",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r2c1": {
+    "subject": "wolfman Moonmane tree, upgrade of the Rime Circle skill: wider and longer-lasting frost circle",
+    "glyph": "one bold six-armed frost crystal: a solid hexagon in the centre with a small hexagon hole and six very thick straight pointed ice-shard arms radiating from it at 60 degree steps, each arm with one thin black centre cut-line and one pair of short sharp side prongs near its tip, the vertical arms longest; symmetric; no ring, no circle, no petals, no flower, no wheel, no sun",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r2c2": {
+    "subject": "wolfman Moonmane tree, upgrade of the Icefall skill: more damage, shorter cooldown",
+    "glyph": "three thick long icicle shards falling in parallel diagonally toward the lower-right, the middle one largest, each a thick faceted pointed crystal (elongated hexagon pointed at the lower end) with one thin black facet cut-line, thin black gaps between them; no snowflake, no drops, no tiny specks",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r3c0": {
+    "subject": "wolfman Moonmane tree, passive: the rhythm of the moon, shorter cooldowns on every skill",
+    "glyph": "one thick crescent moon with its horns pointing right, cradling a solid full-moon disc nested in its hollow with a thin black gap between them, and one thin black cut-line along the crescent; no hourglass, no clock, no stars, no face",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r3c1": {
+    "subject": "wolfman Moonmane tree, passive: culling instinct, banish cards from the pool",
+    "glyph": "a thick solid ring and ONE huge wolf fang laid diagonally across it from the upper-right to the lower-left like a prohibition bar, the fang's wide root outside the ring at the upper-right and its needle tip outside at the lower-left, a thin black gap outlining the fang where it crosses the ring, one thin black cut-line along the fang; no letters, no cross, no text",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r3c2": {
+    "subject": "wolfman Moonmane tree, passive: spirit lore, more experience",
+    "glyph": "one big solid faceted gem in the classic diamond silhouette (flat top, wide shoulders, tapering to a point at the bottom), its facets drawn as three thick black cut-lines (a V from the shoulders to the bottom tip and one horizontal girdle line), held from below by two thick curved wolf claws rising on each side like a prong setting, their needle tips curling inward over the gem's shoulders with a clear black gap; symmetric and heavy; no crescent, no sparkle rays, no stars, no text",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r4c0": {
+    "subject": "wolfman Moonmane tree, upgrade of the Rimewind skill: more damage, more breath pulses",
+    "glyph": "one very thick crescent moon with its horns pointing right (a big C shape), and from inside its hollow a fan of five thick pointed icicle shards radiating out to the right, the middle shard longest, thin black gaps between the shards, one thin black cut-line along the crescent; heavy and solid; no full disc, no snowflake, no dots, no tiny specks, no rays",
+    "fill": 0.7,
+    "family": "warm",
+    "pairOk": [
+      "icon_talent_wolfman_b_r1c0"
+    ]
+  },
+  "icon_talent_wolfman_b_r4c1": {
+    "subject": "wolfman Moonmane tree, passive: the pack's rhythm, faster attacks, faster movement and more evasion",
+    "glyph": "three big bold wolf paw prints marching in a diagonal row from the lower-left to the upper-right, growing in size (the smallest at the lower-left, the largest at the upper-right), each a simple rounded pad with three or four toe pads above it, slightly overlapping with thin black gaps; no claws, no speed bars, no drum",
+    "fill": 0.7,
+    "family": "warm"
+  },
+  "icon_talent_wolfman_b_r4c2": {
+    "subject": "wolfman Moonmane tree, upgrade of the Lunar Clarion ultimate: more damage, shorter cooldown",
+    "glyph": "a flat heraldic wolf head in side profile, muzzle raised steeply up and to the right in a howl, open jaw with one fang, one pointed ear swept back, a neck stub at the lower-left, built from straight-edged facets, with one thin black cut-line for the jaw gap; and, separate from it with a clear black gap at the upper-right, one big thick crescent moon with horns pointing down-left; two bold shapes only; no fur lines, no eye detail, no shading, no sound arcs, no waves, no stars",
+    "fill": 0.7,
+    "family": "warm"
+  }
+}

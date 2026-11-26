@@ -1,0 +1,843 @@
+@import './tokens.css'; /* kit v1 tokens (--k-*, --t-*, --focus-ring); must stay the first statement of this sheet */
+
+/* =====================================================================================================================
+   Metin Survivors UI skin — tokens, base, motion.  Everything is sized in rem (see layout.ts: 16px @1080p).
+   Material language: dark lacquered wood / carved stone, burnished gold filigree, red lacquer, parchment.
+   Painted textures arrive as CSS custom properties (--tex-*) from the asset manifest; every use has a CSS fallback.
+   ===================================================================================================================== */
+
+@property --ms-ang {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.ms-ui {
+  /* palette (ART.md §6) */
+  --c-wood: #1a1210;
+  --c-wood-2: #241814;
+  --c-wood-deep: #0d0a08;
+  --c-stone: #2a2d33;
+  --c-gold: #e8c36a;
+  --c-gold-hi: #fff0b8;
+  --c-gold-d: #8a6a2a;
+  --c-gold-dd: #4a3814;
+  --c-red: #a8281c;
+  --c-red-hot: #d8372a;
+  --c-red-deep: #4a0f0a;
+  --c-jade: #4fae8a;
+  --c-parch: #e9dcb8;
+  --c-ink: #2a1c12;
+  --c-text: #f1e6c8;
+  --c-muted: #b9a98a;
+  --c-dim: #7d6f58;
+  --c-good: #8bd68f;
+  --c-bad: #ee7a6c;
+  --c-hp: #c8322a;
+  --c-xp: #e8a33a; /* amber (mint retired, C1) */
+  --c-mana: #5b8fe0;
+
+  /* rarity (color + glow) */
+  --r-common: #a8a39a;
+  --r-uncommon: #5fbf6a;
+  --r-rare: #4a8fe8;
+  --r-epic: #a85fe0;
+  --r-legendary: #f0a030;
+
+  /* empires */
+  --e-saehwa: #c8281e;
+  --e-chowon: #d8b020;
+  --e-jihae: #2a62c8;
+
+  /* elements (ART.md §5) */
+  --el-physical: #e8dcb0;
+  --el-fire: #ff6a2a;
+  --el-ice: #6fd6ff;
+  --el-lightning: #7ab4ff;
+  --el-dark: #9a5cff;
+  --el-poison: #8be03c;
+  --el-holy: #ffd36a;
+  --el-wind: #8fe3c0;
+
+  /* type (C1: the decorative Cinzel display variant is retired: its swash O / L / K fuse at title size, "CH(OO)SE") */
+  --f-title: 'Cinzel', 'Palatino Linotype', Georgia, serif;
+  --f-head: 'Cinzel', 'Palatino Linotype', Georgia, serif;
+  --f-body: 'Alegreya Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --f-num: 'Barlow Condensed', 'Alegreya Sans', 'Segoe UI', sans-serif;
+
+  /* geometry */
+  --radius: 0.28rem;
+  --frame: 2.6rem;
+  --gap: 0.75rem;
+  --ease-out: cubic-bezier(0.18, 0.89, 0.32, 1.12);
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* layers */
+  --z-screen: 10;
+  --z-hud: 20;
+  --z-announce: 30;
+  --z-modal: 40;
+  --z-toast: 70;
+  --z-tip: 80;
+  --z-curtain: 90;
+}
+
+.ms-ui,
+.ms-ui *,
+.ms-ui *::before,
+.ms-ui *::after {
+  box-sizing: border-box;
+}
+
+.ms-ui {
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  font-family: var(--f-body);
+  font-size: 1rem;
+  font-weight: 400;
+  /* Alegreya Sans defaults to old-style figures ("oo:oo", "Tier ı"): lining everywhere (C1) */
+  font-variant-numeric: lining-nums;
+  line-height: 1.32;
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  cursor: default;
+}
+
+/* Cursor family (G9): our steel pointer with a gem badge, 32 px + 2x, hotspot = the tip pixel (1,1). Mouse only: touch is
+   untouched. teal = default, amber = interact, maroon + move arrows = grab / drag, red ring + slash = disabled. help / text keep the stock cursor. The
+   hashed files are the manifest ids cursor_<state>[_2x] (re-picking one changes its hash: update it here). A missing file
+   falls back to the stock keyword. !important because ~50 component rules each set the stock pointer / not-allowed. */
+@media (any-pointer: fine) and (hover: hover) {
+  :root {
+    --ms-cur-default: image-set(url('/assets/ui/cursor_default.4c883c.webp') 1x, url('/assets/ui/cursor_default_2x.732b99.webp') 2x) 1 1, default;
+    --ms-cur-pointer: image-set(url('/assets/ui/cursor_pointer.728951.webp') 1x, url('/assets/ui/cursor_pointer_2x.742f2a.webp') 2x) 1 1, pointer;
+    --ms-cur-grab: image-set(url('/assets/ui/cursor_grab.9bab97.webp') 1x, url('/assets/ui/cursor_grab_2x.049022.webp') 2x) 1 1, grab;
+    --ms-cur-disabled: image-set(url('/assets/ui/cursor_disabled.33eaee.webp') 1x, url('/assets/ui/cursor_disabled_2x.e38d8f.webp') 2x) 1 1, not-allowed;
+  }
+  :root,
+  .ms-ui {
+    cursor: var(--ms-cur-default);
+  }
+  .ms-ui :is(button, a[href], summary, select, [role='button'], [role='radio'], [role='tab'], [role='switch'], [role='slider'], [role='checkbox'], [role='menuitem'], [role='link'], [role='option'], [data-cursor='pointer'], .ms-zs-plate, .ms-ol-rail-ch, .ms-story-sheet, .ms-wtrack-cap):not(:disabled, [aria-disabled='true']) {
+    cursor: var(--ms-cur-pointer) !important;
+  }
+  .ms-ui :is(.ms-ol-thumb, [data-cursor='grab']) {
+    cursor: var(--ms-cur-grab) !important;
+  }
+  .ms-ui :is(:disabled, [aria-disabled='true'], [data-cursor='disabled'], .ms-wtrack.is-start .ms-wtrack-cap.is-up, .ms-wtrack.is-end .ms-wtrack-cap.is-down) {
+    cursor: var(--ms-cur-disabled) !important;
+  }
+}
+
+:where(.ms-ui) button,
+:where(.ms-ui) input,
+:where(.ms-ui) select,
+:where(.ms-ui) textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+:where(.ms-ui) button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+:where(.ms-ui) h1,
+:where(.ms-ui) h2,
+:where(.ms-ui) h3,
+:where(.ms-ui) h4,
+:where(.ms-ui) p {
+  margin: 0;
+  font-weight: inherit;
+}
+:where(.ms-ui) img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.ms-ui [hidden] {
+  display: none !important;
+}
+
+/* focus ring: keyboard / gamepad modality only (root gets .ms-kbd from nav.ts). C1: no square outline any more. A
+   box-shadow ring (dark gap + gold ring + glow) follows the element's own border-radius; a painted 9-slice plate (lacquer
+   button) is not box-shaped, so it glows through drop-shadow on its painted alpha instead. */
+.ms-ui [data-nav]:focus {
+  outline: none;
+}
+.ms-ui [data-nav]:focus-visible,
+.ms-ui.ms-kbd [data-nav]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1rem rgba(8, 4, 2, 0.85), 0 0 0 0.24rem var(--c-gold-hi), 0 0 0 0.42rem rgba(232, 195, 106, 0.28), 0 0 1.4rem rgba(255, 214, 120, 0.45);
+}
+.ms-ui.ms-has-art .ms-btn:not(.ms-btn--wood):not(.ms-btn--ghost)[data-nav]:focus-visible,
+.ms-ui.ms-has-art.ms-kbd .ms-btn:not(.ms-btn--wood):not(.ms-btn--ghost)[data-nav]:focus {
+  box-shadow: none;
+  filter: drop-shadow(0 0 0.06rem var(--c-gold-hi)) drop-shadow(0 0 0.06rem var(--c-gold-hi)) drop-shadow(0 0 0.6rem rgba(255, 214, 120, 0.85)) drop-shadow(0 0.35rem 0.4rem rgba(0, 0, 0, 0.55));
+}
+.ms-ui.ms-has-art .ms-btn--danger:not(.ms-btn--wood):not(.ms-btn--ghost)[data-nav]:focus-visible,
+.ms-ui.ms-has-art.ms-kbd .ms-btn--danger:not(.ms-btn--wood):not(.ms-btn--ghost)[data-nav]:focus {
+  filter: hue-rotate(-8deg) saturate(1.2) drop-shadow(0 0 0.06rem var(--c-gold-hi)) drop-shadow(0 0 0.06rem var(--c-gold-hi)) drop-shadow(0 0 0.6rem rgba(255, 214, 120, 0.85)) drop-shadow(0 0.35rem 0.4rem rgba(0, 0, 0, 0.55));
+}
+
+/* keyboard-only hints ("Press 1-3 to choose", Esc / Enter prompts): hidden on touch layouts (C1) */
+.ms-touch .ms-kbd-only {
+  display: none !important;
+}
+
+/* scrollbars: thin lacquered gold */
+.ms-ui .ms-scroll {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8a6a2a rgba(0, 0, 0, 0.35);
+  overscroll-behavior: contain;
+}
+.ms-ui .ms-scroll::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.ms-ui .ms-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+}
+.ms-ui .ms-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #6b4f1e, #b38a3a, #6b4f1e);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* ---- typography (C7): two voices per screen. Cinzel = display + heads + labels, Alegreya Sans = body; numerals are lining
+   (.ms-ui) and tabular + condensed Barlow only inside .ms-num (score, timer, wells, gauges). Sizes come from the --t-*
+   tokens of tokens.css: rem so layout scales, with a px floor so nothing drops under 12 px at 1080p / 10.5 px on phones. ---- */
+.ms-head {
+  font-family: var(--f-head);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.ms-head--sm {
+  font-size: var(--t-sm);
+}
+.ms-head--md {
+  font-size: var(--t-md);
+}
+.ms-head--lg {
+  font-size: var(--t-lg);
+}
+.ms-head--xl {
+  font-size: var(--t-xl);
+}
+.ms-title {
+  font-family: var(--f-title);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: var(--c-gold);
+  text-shadow: 0 0.08rem 0 #5a3a10, 0 0.2rem 0.5rem rgba(0, 0, 0, 0.85), 0 0 1.4rem rgba(232, 150, 60, 0.35);
+}
+.ms-title--xl {
+  font-size: var(--t-xl);
+}
+.ms-title--2xl {
+  font-size: var(--t-2xl);
+}
+.ms-title--3xl {
+  font-size: var(--t-3xl);
+}
+.ms-gold-text {
+  background: linear-gradient(180deg, #fff3c4 0%, #f1cd75 38%, #c8962e 62%, #f0cc70 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0.1rem 0 rgba(60, 30, 4, 0.9)) drop-shadow(0 0 0.7rem rgba(232, 150, 60, 0.3));
+}
+.ms-num {
+  font-family: var(--f-num);
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.02em;
+}
+.ms-num--md {
+  font-size: var(--t-md);
+}
+.ms-num--lg {
+  font-size: var(--t-lg);
+}
+.ms-num--xl {
+  font-size: var(--t-xl);
+}
+.ms-num--2xl {
+  font-size: var(--t-2xl);
+}
+.ms-num--3xl {
+  font-size: var(--t-3xl);
+}
+.ms-eyebrow {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-2xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+/* semantic text roles for builders: caption (small caps label), body, fine print */
+.ms-label {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-text-3, var(--c-muted));
+}
+.ms-body {
+  font-size: var(--t-md);
+  line-height: 1.4;
+}
+.ms-fine {
+  font-size: var(--t-xs);
+  line-height: 1.35;
+  color: var(--k-text-3, var(--c-muted));
+}
+.ms-t-2xs {
+  font-size: var(--t-2xs);
+}
+.ms-t-xs {
+  font-size: var(--t-xs);
+}
+.ms-t-sm {
+  font-size: var(--t-sm);
+}
+.ms-t-md {
+  font-size: var(--t-md);
+}
+.ms-t-lg {
+  font-size: var(--t-lg);
+}
+.ms-t-xl {
+  font-size: var(--t-xl);
+}
+.ms-t-2xl {
+  font-size: var(--t-2xl);
+}
+.ms-t-3xl {
+  font-size: var(--t-3xl);
+}
+.ms-muted {
+  color: var(--c-muted);
+}
+.ms-good {
+  color: var(--c-good);
+}
+.ms-bad {
+  color: var(--c-bad);
+}
+.ms-lore {
+  font-style: italic;
+  color: var(--c-muted);
+}
+
+/* ---- motion ------------------------------------------------------------------------------------------------- */
+/* Entry keyframes name only where they START. The end frame is implicit, i.e. the element's own current value, so a
+   finished `both` / `forwards` fill rests on what the element declares (a .3 backdrop, a .17 ghost chest, a translated
+   active tab) and follows later changes (:hover lift, .is-dim fade). An explicit `to { opacity: 1; transform: none }`
+   used to pin every user of these keyframes at full opacity / no transform for good (C1, 2026-10-13). */
+@keyframes ms-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes ms-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+}
+@keyframes ms-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+@keyframes ms-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+}
+@keyframes ms-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+}
+@keyframes ms-card-deal {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem) rotate(var(--deal-rot, -5deg)) scale(0.72);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-0.6rem) rotate(calc(var(--deal-rot, -5deg) * -0.25)) scale(1.03);
+  }
+}
+@keyframes ms-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes ms-shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+@keyframes ms-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ms-ang {
+  to {
+    --ms-ang: 360deg;
+  }
+}
+@keyframes ms-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes ms-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-0.35rem);
+  }
+  40% {
+    transform: translateX(0.35rem);
+  }
+  60% {
+    transform: translateX(-0.2rem);
+  }
+  80% {
+    transform: translateX(0.2rem);
+  }
+}
+@keyframes ms-float-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ms-ember-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--dx, 2rem), -110vh, 0);
+  }
+}
+@keyframes ms-kenburns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(-1.2%, -1.6%, 0);
+  }
+}
+@keyframes ms-curtain {
+  from {
+    opacity: 0.92;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.ms-ui .ms-anim-rise {
+  animation: ms-rise-in 0.42s var(--ease-soft) both;
+}
+.ms-ui .ms-anim-fade {
+  animation: ms-fade-in 0.3s ease-out both;
+}
+.ms-ui .ms-anim-scale {
+  animation: ms-scale-in 0.32s var(--ease-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-ui *,
+  .ms-ui *::before,
+  .ms-ui *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- screen shell ------------------------------------------------------------------------------------------- */
+.ms-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-layer > * {
+  pointer-events: auto;
+}
+.ms-screen {
+  position: absolute;
+  inset: 0;
+  padding: var(--safe-t) var(--safe-r) var(--safe-b) var(--safe-l);
+  z-index: var(--z-screen);
+  pointer-events: auto;
+  overflow: hidden;
+  background: #0b0705;
+  animation: ms-fade-in 0.28s ease-out both;
+}
+
+/* full-bleed painted background with warm vignette (key art when available, lacquer gradient otherwise) */
+.ms-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 40%, rgba(60, 20, 12, 0.35), rgba(8, 4, 3, 0.9) 70%),
+    linear-gradient(180deg, #1c110d, #0a0605);
+}
+.ms-backdrop--art {
+  overflow: hidden;
+}
+.ms-backdrop--art::before {
+  content: '';
+  position: absolute;
+  inset: -3%;
+  background-size: cover;
+  background-position: 30% 40%;
+  animation: ms-kenburns 38s ease-in-out infinite alternate;
+}
+.ms-has-art .ms-backdrop--art::before {
+  background-image: var(--tex-keyart, none);
+}
+/* phone portrait: the 9:16 painting behind the dimmed backdrop screens */
+.ms-tier-phone-p .ms-has-art .ms-backdrop--art::before {
+  background-image: var(--tex-keyart-portrait, var(--tex-keyart, none));
+  background-position: 50% 40%;
+}
+.ms-backdrop--art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 110% at 62% 38%, transparent 0%, rgba(8, 4, 3, 0.35) 55%, rgba(6, 3, 2, 0.92) 100%),
+    linear-gradient(90deg, rgba(6, 3, 2, 0.82) 0%, rgba(6, 3, 2, 0.28) 45%, rgba(6, 3, 2, 0.0) 70%),
+    linear-gradient(0deg, rgba(6, 3, 2, 0.75) 0%, transparent 40%);
+}
+.ms-backdrop--dim::after {
+  background: rgba(6, 3, 2, 0.82);
+}
+/* screen-change curtain (fades in from dark on every navigation) */
+.ms-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-curtain);
+  pointer-events: none;
+  background: #050302;
+  animation: ms-curtain 0.34s ease-out both;
+}
+
+/* =====================================================================================================================
+   C8 · PHONE TIER FOUNDATIONS — UI core lane C (2026-10-13). One writer: everything from here to the end of the file.
+   Phone / touch rules, the ScrollFade skin and the safe-area / hint utilities; nothing here changes a mouse desktop.
+   ui/layout.ts puts on the .ms-ui root: ms-tier-<phone-p|phone-l|tablet|laptop|desktop|ultra> (+ data-tier),
+   ms-compact (= the two phone tiers), ms-touch (coarse pointer), ms-hover (hover-capable pointer), ms-portrait|landscape.
+   Policy for every sheet: hover styling goes inside @media (hover: hover) (a tap leaves :hover stuck on touch); touch
+   targets are >= --tap (enforced below for the core controls); size buttons through --btn-h, never with a raw height.
+   ===================================================================================================================== */
+.ms-ui {
+  /* touch target edge (WCAG 2.5.5 / platform guidelines): 2.75rem, never under 44 CSS px (phones run 13-15 px/rem) */
+  --tap: max(2.75rem, 44px);
+  /* minimum gap between two neighbouring touch targets */
+  --tap-gap: max(0.5rem, 8px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- touch targets: the core controls never fall below --tap on a touch layout, whatever a screen sheet sets. A
+   button's touch height is max(--btn-h, --tap); the painted plate keeps its +0.5rem. !important on purpose: this is a
+   floor (max()), it only ever raises. ---- */
+.ms-ui.ms-touch .ms-btn {
+  min-height: max(var(--btn-h, 0px), var(--tap)) !important;
+}
+.ms-ui.ms-touch.ms-has-art .ms-btn:not(.ms-btn--wood):not(.ms-btn--ghost) {
+  min-height: max(calc(var(--btn-h, 0px) + 0.5rem), var(--tap)) !important;
+}
+.ms-ui.ms-touch .ms-btn--icon {
+  min-width: max(var(--btn-h, 0px), var(--tap)) !important;
+}
+.ms-ui.ms-touch :is(.ms-btn--small, .ms-seg-btn, .ms-tab) {
+  min-width: var(--tap) !important;
+}
+.ms-ui.ms-touch :is(.ms-tab, .ms-seg-btn, .ms-input, .ms-slider) {
+  min-height: var(--tap) !important;
+}
+/* invisible hit slop: a control drawn smaller than --tap (switch, small icon) keeps a --tap square hit box centred on
+   it. Opt in with .ms-hit on any positioned element whose ::before is free; the switch gets it by default. */
+.ms-ui.ms-touch :is(.ms-hit, .ms-toggle)::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, var(--tap));
+  height: max(100%, var(--tap));
+  translate: -50% -50%;
+  background: none;
+}
+
+
+.ms-ui.ms-touch :is(.ms-tab, .ms-seg-btn, .ms-toggle, .ms-slot.is-hoverable, .ms-press):active:not(:disabled):not([aria-disabled='true']) {
+  translate: 0 0.06rem;
+  scale: 0.97;
+}
+
+/* ---- hints: key caps and "press N" sentences only where a keyboard is likely; hover hints only where hover exists ---- */
+.ms-ui.ms-touch .ms-key--kbd {
+  display: none !important;
+}
+.ms-ui:not(.ms-touch) .ms-touch-only {
+  display: none !important;
+}
+.ms-ui:not(.ms-hover) .ms-hover-only {
+  display: none !important;
+}
+
+/* ---- safe area (notch, home indicator, rounded corners): your own distance from the screen edge goes in --edge (all
+   sides) or --edge-t / -r / -b / -l; the device inset is added on top. .ms-safe-pad pads a full-screen root,
+   .ms-safe-inset places a positioned one, .ms-safe-t / -r / -b / -l pad a single side. ---- */
+.ms-ui .ms-safe-pad {
+  padding: calc(var(--edge-t, var(--edge, 0px)) + var(--safe-t)) calc(var(--edge-r, var(--edge, 0px)) + var(--safe-r)) calc(var(--edge-b, var(--edge, 0px)) + var(--safe-b)) calc(var(--edge-l, var(--edge, 0px)) + var(--safe-l));
+}
+.ms-ui .ms-safe-inset {
+  top: calc(var(--edge-t, var(--edge, 0px)) + var(--safe-t));
+  right: calc(var(--edge-r, var(--edge, 0px)) + var(--safe-r));
+  bottom: calc(var(--edge-b, var(--edge, 0px)) + var(--safe-b));
+  left: calc(var(--edge-l, var(--edge, 0px)) + var(--safe-l));
+}
+.ms-ui .ms-safe-t {
+  padding-top: calc(var(--edge-t, var(--edge, 0px)) + var(--safe-t));
+}
+.ms-ui .ms-safe-r {
+  padding-right: calc(var(--edge-r, var(--edge, 0px)) + var(--safe-r));
+}
+.ms-ui .ms-safe-b {
+  padding-bottom: calc(var(--edge-b, var(--edge, 0px)) + var(--safe-b));
+}
+.ms-ui .ms-safe-l {
+  padding-left: calc(var(--edge-l, var(--edge, 0px)) + var(--safe-l));
+}
+
+/* ---- phone type floor for the card-modal shell (cardmodal.css): a screen sheet that sets its own size still wins ---- */
+.ms-ui.ms-compact.ms-landscape .ms-cm-level {
+  font-size: max(0.74rem, 11px);
+}
+
+/* ---- ScrollFade (components/ScrollFade.tsx): the edge fades only while there is more content in that direction ----
+   The scroller carries .ms-scrollfade + the live state .is-scrollable / .is-start / .is-end (set by useScrollFade).
+   Put it on a transparent scroll container, not on a skinned panel (a mask fades the panel's own frame too): skin the
+   wrapper. Fade length --sf-size (default 2.2rem); focus scrolling keeps items out of the fade (scroll-padding). */
+@property --sf-a {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --sf-b {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+.ms-ui .ms-sf {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.ms-ui .ms-sf > .ms-scrollfade {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  transition: --sf-a 0.22s var(--ease-soft), --sf-b 0.22s var(--ease-soft);
+}
+.ms-ui .ms-scrollfade {
+  scroll-padding-block: var(--sf-size, 2.2rem);
+}
+.ms-ui .ms-scrollfade--x {
+  scroll-padding-block: 0;
+  scroll-padding-inline: var(--sf-size, 2.2rem);
+}
+.ms-ui .ms-scrollfade.is-scrollable {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+}
+.ms-ui .ms-scrollfade--x.is-scrollable {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+}
+.ms-ui .ms-scrollfade.is-scrollable:not(.is-start) {
+  --sf-a: var(--sf-size, 2.2rem);
+}
+.ms-ui .ms-scrollfade.is-scrollable:not(.is-end) {
+  --sf-b: var(--sf-size, 2.2rem);
+}
+/* on touch the fade + cue are the scroll affordance: no scrollbar strip eating the phone's width */
+.ms-ui.ms-touch :is(.ms-scrollfade, .ms-edgefade) {
+  scrollbar-width: none;
+}
+.ms-ui.ms-touch :is(.ms-scrollfade, .ms-edgefade)::-webkit-scrollbar {
+  display: none;
+}
+
+/* chevron cue: a small chamfered stone plate with a bronze arrowhead (mouse: a 32 px button that pages; touch: a picture) */
+.ms-ui .ms-sf-cue {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: max(2.4rem, 32px);
+  height: max(2.4rem, 32px);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  opacity: 0;
+  scale: 0.8;
+  pointer-events: none;
+  transition: opacity 0.18s ease-out, scale 0.2s var(--ease-out);
+}
+.ms-ui .ms-sf-cue.is-on {
+  opacity: 1;
+  scale: 1;
+  pointer-events: auto;
+}
+/* on touch the cue is a picture only: a finger swipes, and a 44 px plate over the last visible row would swallow taps
+   meant for that row. (Mouse and keyboard users page with it; it stays out of the tab order either way.) */
+.ms-ui.ms-touch .ms-sf-cue.is-on {
+  pointer-events: none;
+}
+.ms-ui .ms-sf--y > .ms-sf-cue {
+  left: 50%;
+  translate: -50% 0;
+}
+.ms-ui .ms-sf--y > .ms-sf-cue--end {
+  bottom: 0;
+}
+.ms-ui .ms-sf--y > .ms-sf-cue--start {
+  top: 0;
+}
+.ms-ui .ms-sf--x > .ms-sf-cue {
+  top: 50%;
+  translate: 0 -50%;
+}
+.ms-ui .ms-sf--x > .ms-sf-cue--end {
+  right: 0;
+}
+.ms-ui .ms-sf--x > .ms-sf-cue--start {
+  left: 0;
+}
+.ms-ui .ms-sf-cue-art {
+  display: block;
+  width: max(1.75rem, 24px);
+  height: max(1.75rem, 24px);
+  overflow: visible;
+  filter: drop-shadow(0 0.1rem 0.2rem rgba(0, 0, 0, 0.85)) drop-shadow(0 0 0.55rem rgba(0, 0, 0, 0.6));
+  transition: filter 0.15s;
+}
+.ms-ui .ms-sf-cue.is-on .ms-sf-cue-arrow {
+  animation: ms-sf-bob 1.7s ease-in-out infinite;
+}
+@keyframes ms-sf-bob {
+  0%,
+  100% {
+    transform: translateY(-0.7px);
+  }
+  50% {
+    transform: translateY(1.5px);
+  }
+}
+@media (hover: hover) {
+  .ms-ui .ms-sf-cue:hover .ms-sf-cue-art {
+    filter: brightness(1.2) drop-shadow(0 0.1rem 0.2rem rgba(0, 0, 0, 0.85)) drop-shadow(0 0 0.5rem rgba(255, 200, 110, 0.35));
+  }
+}
+.ms-ui .ms-sf-cue:active .ms-sf-cue-art {
+  translate: 0 0.06rem;
+  filter: brightness(0.82) drop-shadow(0 0.05rem 0.1rem rgba(0, 0, 0, 0.9));
+}
+
+/* ---- .ms-edgefade: the zero-JS variant for a plain scroll list (no cue), driven by the element's own scroll timeline.
+   Where scroll-driven animations are missing it simply does not fade. A list that fits has an inactive timeline, so it
+   never fades. The core Modal body (components/Modal.tsx) uses it too. ---- */
+@keyframes ms-sf-in {
+  from {
+    --sf-a: 0px;
+  }
+  to {
+    --sf-a: var(--sf-size, 2.2rem);
+  }
+}
+@keyframes ms-sf-out {
+  from {
+    --sf-b: var(--sf-size, 2.2rem);
+  }
+  to {
+    --sf-b: 0px;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .ms-ui :is(.ms-edgefade, .ms-modal-body) {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    animation-name: ms-sf-in, ms-sf-out;
+    animation-duration: auto, auto;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: both, both;
+    animation-timeline: scroll(self block), scroll(self block);
+    animation-range: 0 var(--sf-size, 2.2rem), calc(100% - var(--sf-size, 2.2rem)) 100%;
+    scroll-padding-block: var(--sf-size, 2.2rem);
+  }
+  .ms-ui .ms-edgefade--x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, rgb(0 0 0 / 0.42) calc(var(--sf-a) * 0.45), #000 var(--sf-a), #000 calc(100% - var(--sf-b)), rgb(0 0 0 / 0.42) calc(100% - var(--sf-b) * 0.45), transparent 100%);
+    animation-timeline: scroll(self inline), scroll(self inline);
+    scroll-padding-block: 0;
+    scroll-padding-inline: var(--sf-size, 2.2rem);
+  }
+}
+/* =============================================== end of the C8 block =============================================== */

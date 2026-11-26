@@ -1,0 +1,9 @@
+{
+  "story.next": "İleri",
+  "story.skip": "Atla",
+  "story.missing": "Kayıtlar bu konuda sessiz.",
+  "story.hint": "Devam için Enter · Boşluk · tık — Esc atlar",
+  "story.defeatHead": "Yenik Düştün",
+  "story.bossLevel": "Seviye {n}",
+  "story.pages": "Sayfa {n} / {m}"
+}
