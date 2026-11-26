@@ -516,6 +516,18 @@
       #ui > * {
         pointer-events: auto;
       }
+      .sr-only-seo {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        pointer-events: none;
+      }
     </style>
   </head>
   <body>
@@ -539,28 +551,45 @@
     <script src="/boot-splash.js"></script>
     <!-- boot-splash:body:end -->
     <div id="ui"></div>
+    <section class="sr-only-seo" aria-label="Metin Survivors oyun özeti / game overview">
+      <h1>Metin Survivors — Ücretsiz 3D Tarayıcı Aksiyon Roguelite ve 4 Kişilik Çevrimiçi Co-op</h1>
+      <p>
+        Metin Survivors, indirme veya kurulum gerektirmeden doğrudan masaüstü ve mobil tarayıcılarda WebGL2 ile oynanan ücretsiz bir 3D aksiyon roguelite (survivors-like) ve hayatta kalma oyunudur.
+        Düşman dalgalarına karşı koyun, haritaya düşen yanan Metin taşlarını kırın, 20 patronu alt edin ve 114 yetenekle kendi yapınızı kurun.
+      </p>
+      <p lang="en">
+        Metin Survivors is a free-to-play 3D browser action roguelite (survivors-like) playable instantly with zero install on desktop and mobile browsers via WebGL2.
+        Survive escalating enemy waves, shatter corrupted Metin stones, defeat 20 bosses, and master 114 skills solo or in real-time 1–4 player online co-op.
+      </p>
+      <h2>Oynanabilir Sınıflar ve Doktrinler / Playable Classes &amp; Doctrines</h2>
+      <ul>
+        <li><strong>Savaşçı / Warrior:</strong> Kuvvet (Sinew), Ruh (Spirit)</li>
+        <li><strong>Ninja:</strong> Sessiz Bıçak (Silent Edge), Sadak (Quiver)</li>
+        <li><strong>Yacha:</strong> Büyü Çeliği (Spellsteel), Lanet Sanatı (Hexcraft)</li>
+        <li><strong>Şaman / Shaman:</strong> Tılsım (Talisman), Bora Merhemi (Stormbalm)</li>
+        <li><strong>Wolfman:</strong> Kızıl Yele (Redmane), Ay Yelesi (Moonmane)</li>
+      </ul>
+      <h2>Bölgeler ve Özellikler / Zones &amp; Features</h2>
+      <ul>
+        <li><strong>4 Bölge:</strong> Yeonmu Ovası (Yeonmu Plains), Suryeon Vadisi (Suryeon Valley), Seori Dağı (Mount Seori) ve Daeryeol.</li>
+        <li><strong>Tek Oyunculu ve 4 Kişilik Co-op:</strong> Paylaşılabilir oda kodu ile 4 oyuncuya kadar gerçek zamanlı çevrimiçi co-op, bulut kaydı ve tekli/co-op/haftalık/günlük/sınıf skor tabloları.</li>
+        <li><strong>Roguelite Meta-İlerleme:</strong> Yetenekler (Talents), Cephanelik (Armory), Demirci (Blacksmith), Koleksiyon (Collection) ve Kodeks (Codex).</li>
+      </ul>
+      <nav aria-label="Kaynaklar / Resources">
+        <a href="/llms.txt">AI Overview (llms.txt)</a>
+        <a href="/llms-full.txt">Complete Game Guide (llms-full.txt)</a>
+        <a href="/openapi.json">Public API (OpenAPI)</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
+    </section>
     <noscript>
       <main style="position:relative;z-index:10;max-width:48rem;margin:2rem auto;padding:1.5rem;background:#16100c;color:#e3d6b4;border:1px solid #4c3b28;font-family:system-ui,sans-serif;line-height:1.6;">
-        <h1>Metin Survivors — 3D Tarayıcı Aksiyon Roguelite / Free 3D Browser Action Roguelite</h1>
+        <h2>JavaScript &amp; WebGL2 Gerekli / Required</h2>
         <p>
-          Metin Survivors, indirme veya kurulum gerektirmeden doğrudan tarayıcıda oynanan ücretsiz bir 3D aksiyon roguelite (survivors-like) oyunudur.
-          Oynamak için JavaScript ve WebGL2 destekli bir tarayıcı gerekir.
+          Metin Survivors'ı oynamak için tarayıcınızda JavaScript ve WebGL2 etkin olmalıdır.
         </p>
         <p lang="en">
-          Metin Survivors is a free-to-play 3D browser action roguelite (survivors-like) playable instantly with zero install.
-          Enable JavaScript and WebGL2 to launch the game.
-        </p>
-        <h2>Öne Çıkan Özellikler / Key Features</h2>
-        <ul>
-          <li><strong>5 Oynanabilir Sınıf &amp; 10 Doktrin:</strong> Savaşçı / Warrior (Kuvvet, Ruh), Ninja (Sessiz Bıçak, Sadak), Yacha (Büyü Çeliği, Lanet Sanatı), Şaman / Shaman (Tılsım, Bora Merhemi), Wolfman (Kızıl Yele, Ay Yelesi).</li>
-          <li><strong>4 Bölge, 20 Patron, 114 Yetenek:</strong> Yeonmu Ovası (Yeonmu Plains), Suryeon Vadisi (Suryeon Valley), Seori Dağı (Mount Seori) ve Daeryeol.</li>
-          <li><strong>Tek Oyunculu &amp; 4 Kişilik Çevrimiçi Co-op:</strong> Oda kodu ile 4 oyuncuya kadar gerçek zamanlı co-op, bulut kaydı ve haftalık/sınıf/co-op skor tabloları.</li>
-          <li><strong>Roguelite Meta-İlerleme:</strong> Yetenekler (Talents), Cephanelik (Armory), Demirci (Blacksmith), Koleksiyon (Collection) ve Kodeks (Codex).</li>
-        </ul>
-        <p>
-          <a href="/llms.txt" style="color:#e6c07b;">AI &amp; Game Overview (llms.txt)</a> &middot;
-          <a href="/llms-full.txt" style="color:#e6c07b;">Full Reference (llms-full.txt)</a> &middot;
-          <a href="/sitemap.xml" style="color:#e6c07b;">Sitemap</a>
+          Enable JavaScript and WebGL2 in your browser to launch Metin Survivors.
         </p>
       </main>
     </noscript>

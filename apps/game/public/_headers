@@ -141,3 +141,7 @@
   Cache-Control: public, max-age=86400
   Content-Type: text/plain; charset=utf-8
   X-Robots-Tag: noindex
+
+# custom 404 page: return real HTTP 404 on unknown paths and keep out of search index
+/404.html
+  X-Robots-Tag: noindex, follow
