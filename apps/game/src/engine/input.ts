@@ -112,6 +112,27 @@ const SKILL_KEYS: Record<string, number> = {
   Numpad0: 9,
 };
 
+/** Keys consumed by gameplay/UI shortcuts whose browser defaults (Firefox Find-As-You-Type / Quick Find,
+ *  macOS press-and-hold, page scroll) must be suppressed outside text inputs. */
+const PREVENT_DEFAULT_KEYS = new Set<string>([
+  'KeyW',
+  'KeyA',
+  'KeyS',
+  'KeyD',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'Space',
+  'F3',
+  'KeyR',
+  'KeyB',
+  'KeyX',
+  'KeyP',
+  'Backquote',
+  ...Object.keys(SKILL_KEYS),
+]);
+
 function isUiClickTarget(t: EventTarget | null): boolean {
   const el = t as HTMLElement | null;
   if (!el || typeof el.closest !== 'function') return false;
@@ -410,6 +431,9 @@ export class Input {
 
   private readonly onKeyDown = (e: KeyboardEvent): void => {
     if (isTextTarget(e.target) || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (PREVENT_DEFAULT_KEYS.has(e.code) || (this.movementEnabled && (e.key === '/' || e.key === "'"))) {
+      e.preventDefault();
+    }
     if (this.movementEnabled && !e.repeat) {
       if (e.code === 'Space') this.pendingAttack = true;
       const slot = SKILL_KEYS[e.code];
@@ -417,7 +441,6 @@ export class Input {
     }
     const map = KEY_ACTIONS[e.code];
     if (map) {
-      if (e.code === 'F3' || e.code === 'Space' || e.code.startsWith('Arrow')) e.preventDefault();
       // In active gameplay, Space is basic attack rather than UI confirm so focused HUD controls are never accidentally activated.
       if (!(this.movementEnabled && e.code === 'Space')) {
         this.emit({ kind: map.kind, index: map.index ?? 0, repeat: e.repeat, source: 'keyboard' });

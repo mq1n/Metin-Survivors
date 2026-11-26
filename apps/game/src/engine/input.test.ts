@@ -3,8 +3,12 @@ import { Input, TouchJoystick, type MoveVector, type UiAction } from './input';
 
 class FakeWindow extends EventTarget {}
 
-function key(win: EventTarget, type: 'keydown' | 'keyup', code: string, extra: Record<string, unknown> = {}): void {
-  win.dispatchEvent(Object.assign(new Event(type, { cancelable: true }), { code, repeat: false, ctrlKey: false, metaKey: false, altKey: false }, extra));
+function key(win: EventTarget, type: 'keydown' | 'keyup', code: string, extra: Record<string, unknown> = {}): Event {
+  const { target, ...rest } = extra;
+  const ev = Object.assign(new Event(type, { cancelable: true }), { code, repeat: false, ctrlKey: false, metaKey: false, altKey: false }, rest);
+  if (target !== undefined) Object.defineProperty(ev, 'target', { value: target, configurable: true });
+  win.dispatchEvent(ev);
+  return ev;
 }
 
 describe('Input', () => {
@@ -88,5 +92,17 @@ describe('Input', () => {
     key(win, 'keydown', 'KeyD');
     input.sampleMove(v);
     expect(Math.hypot(v.x, v.z)).toBeLessThanOrEqual(1.0000001);
+  });
+
+  it('prevents browser default (Firefox Quick Find / Find-As-You-Type) on WASD, skill keys, and quick-find triggers, but not in text inputs or with modifiers', () => {
+    for (const code of ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'Digit1', 'KeyR', 'KeyP', 'Space', 'ArrowUp']) {
+      expect(key(win, 'keydown', code).defaultPrevented, code).toBe(true);
+    }
+    expect(key(win, 'keydown', 'Slash', { key: '/' }).defaultPrevented).toBe(true);
+    expect(key(win, 'keydown', 'Quote', { key: "'" }).defaultPrevented).toBe(true);
+    // Browser shortcuts (Cmd+F / Cmd+W / Ctrl+R) and text inputs must keep default behavior
+    expect(key(win, 'keydown', 'KeyW', { metaKey: true }).defaultPrevented).toBe(false);
+    expect(key(win, 'keydown', 'KeyR', { ctrlKey: true }).defaultPrevented).toBe(false);
+    expect(key(win, 'keydown', 'KeyW', { target: { tagName: 'INPUT' } }).defaultPrevented).toBe(false);
   });
 });
